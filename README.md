@@ -1,5 +1,5 @@
-# iHRIS-Uganda
-# iHRIS
+# iHRIS-Manage-Uganda
+# iHRIS 4.3
 Integrated Human Resource Information System
 
 ## Linux (Ubuntu) Installation - Supporting Software - 18.04 /20.04 LTS
