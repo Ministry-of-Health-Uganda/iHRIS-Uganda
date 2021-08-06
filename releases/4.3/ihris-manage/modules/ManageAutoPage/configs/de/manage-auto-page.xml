@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="manage-auto-page" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="manage-auto-page" path="/" locale="de">
+    <version>4.3.0.1</version>
+    <configurationGroup name="view_person" path="/I2CE/page/view_person">
+      <configurationGroup name="args">
+        <configurationGroup name="tabs">
+          <configurationGroup name="demo">
+            <configuration name="title" locale="de"></configuration>
+          </configurationGroup>
+          <configurationGroup name="position">
+            <configuration name="title" locale="de">
+              <value>Einsatz</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="auto_template">
+          <configuration name="title" locale="de"></configuration>
+        </configurationGroup>
+        <configuration name="title" locale="de">
+          <value>Person anzeigen</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="view_person_position" path="/I2CE/page/view_person_position">
+      <configurationGroup name="args">
+        <configuration name="title" locale="de"></configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="view_demographics" path="/I2CE/page/view_demographics">
+      <configurationGroup name="args">
+        <configurationGroup name="children">
+          <configurationGroup name="demographic">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="text" locale="de">
+                    <value>Diese Information aktualisieren</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="de"></configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="de"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="nextofkin">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="text" locale="de">
+                    <value>Diese Information aktualisieren</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="de"></configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="de">
+                <value>Angehörige</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person_contact_personal">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="text" locale="de">
+                    <value>Diese Information aktualisieren</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="de">
+                <value>Persönlicher Kontakt</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person_contact_emergency">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="text" locale="de">
+                    <value>Diese Information aktualisieren</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="de">
+                    <value>Notfallkontakt einrichten</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="de">
+                <value>Notfallkontakt</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person_contact_other">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="text" locale="de">
+                    <value>Diese Information aktualisieren</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="de">
+                    <value>Anderen Kontakt einrichten</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="de">
+                <value>Anderer Kontakt</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person_photo_passport">
+            <configuration name="title" locale="de">
+              <value>Passfoto</value>
+            </configuration>
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="text" locale="de">
+                    <value>Diese Information aktualisieren</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="de">
+                    <value>Neues Passfoto hochladen</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person_id">
+            <configuration name="title" locale="de">
+              <value>Kennung</value>
+            </configuration>
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="text" locale="de">
+                    <value>Diese Information aktualisieren</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="de">
+                    <value>Neue Kennung hinzufügen</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configuration name="title" locale="de"></configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

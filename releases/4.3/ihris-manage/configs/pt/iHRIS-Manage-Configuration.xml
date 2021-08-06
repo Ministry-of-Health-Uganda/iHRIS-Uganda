@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage" path="/I2CE">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage" path="/I2CE" locale="pt">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_planning_database_lists" locale="pt" values="single" type="string">
+        <value>Pode editar algumas listas da base de dados de planeamento</value>
+      </configuration>
+      <configuration name="can_view_planning_database_lists" locale="pt" values="single" type="string">
+        <value>Pode ver algumas listas da base de dados de planeamento</value>
+      </configuration>
+      <configuration name="can_edit_all_planning_database_lists" locale="pt" values="single" type="string">
+        <value>Pode editar todas as listas da base de dados de planeamento</value>
+      </configuration>
+      <configuration name="can_view_all_planning_database_lists" locale="pt" values="single" type="string">
+        <value>Pode ver todas as listas da base de dados de planeamento</value>
+      </configuration>
+      <configuration name="can_edit_organization_database_lists" locale="pt" values="single" type="string">
+        <value>Pode editar algumas listas de bases de dados da organização</value>
+      </configuration>
+      <configuration name="can_view_organization_database_lists" locale="pt" values="single" type="string">
+        <value>Pode visualizar algumas listas de bases de dados da organização</value>
+      </configuration>
+      <configuration name="can_edit_all_organization_database_lists" locale="pt" values="single" type="string">
+        <value>Pode editar todas as listas de bases de dados da organização</value>
+      </configuration>
+      <configuration name="can_view_all_organization_database_lists" locale="pt" values="single" type="string">
+        <value>Pode visualizar todas as listas de bases de dados da organização</value>
+      </configuration>
+      <configuration name="can_edit_employee_database_lists" locale="pt" values="single" type="string">
+        <value>Pode editar algumas listas de bases de dados de trabalhadores</value>
+      </configuration>
+      <configuration name="can_view_employee_database_lists" locale="pt" values="single" type="string">
+        <value>Pode visualizar algumas listas de bases de dados de trabalhadores</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" locale="pt" values="single" type="string">
+        <value>Pode editar todas as listas de bases de dados de trabalhadores</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" locale="pt" values="single" type="string">
+        <value>Pode visualizar todas as listas de bases de dados de trabalhadores</value>
+      </configuration>
+      <configuration name="can_edit_position_database_lists" locale="pt" values="single" type="string">
+        <value>Pode editar algumas listas de bases de dados de cargos</value>
+      </configuration>
+      <configuration name="can_view_position_database_lists" locale="pt" values="single" type="string">
+        <value>Pode visualizar algumas listas de bases de dados de cargos</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="roles" path="/I2CE/formsData/forms/role">
+      <configurationGroup name="hr_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="pt" type="string">
+            <value>Gestor de RH</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="hr_staff">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="pt" type="string">
+            <value>Pessoal de RH</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="exec_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="pt" type="string">
+            <value>Director Executivo</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="training_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="pt" type="string">
+            <value>Gestor de Formação</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="feedback">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pt" type="string">
+            <value>Enviar Feedback</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="manage">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pt" type="string">
+            <value>Gerir Pessoas</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="search_reports" path="/modules/CustomReports/search_reports">
+      <configuration name="search_people" values="many" type="delimited" locale="pt">
+        <value>name:Procurar Pessoas</value>
+        <value>description:Localizar o registo de qualquer pessoa no sistema, para rever, imprimir ou atualizar.</value>
+      </configuration>
+      <configuration name="position_list" values="many" type="delimited" locale="pt">
+        <value>name:Procurar Cargos</value>
+        <value>description:Localizar qualquer cargo no sistema, para rever, imprimir ou atualizar.</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

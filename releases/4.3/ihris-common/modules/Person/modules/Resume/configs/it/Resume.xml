@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonResume" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonResume" path="/I2CE" locale="it">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="it">
+      <configuration name="person_can_view_child_form_person_resume" locale="it">
+        <value>Visualizza la riassunzione di una persona</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_resume" locale="it">
+        <value>Modifica la riassunzione di una persona</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_resume">
+          <configuration name="display" values="single" locale="it">
+            <value>Riassunzione di una persona</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_resume">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="it">
+            <value>Aggiungi/aggiorna riassunzione</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

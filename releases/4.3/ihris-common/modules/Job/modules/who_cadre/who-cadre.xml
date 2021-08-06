@@ -1,0 +1,856 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="who_cadre">
+  <metadata>
+    <displayName>WHO Cadres</displayName>
+    <category>Site</category>
+    <description>WHO Cadres</description>
+    <creator>Kayode ODUSOTE</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage-liberia</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <configurationGroup name="who_cadre" path="/">
+    <version>4.1.8</version>
+    <configurationGroup name="who_cadre_form" path="/modules/forms/forms/who_cadre">
+      <configuration name="storage">
+        <value>magicdata</value>
+      </configuration>
+      <configuration name="class">
+        <value>I2CE_SimpleCodedList</value>
+      </configuration>
+      <configuration name="display" locale="en_US">
+        <value>Cadre (WHO)</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="who_cadre_field" path="/modules/forms/formClasses/iHRIS_Job/fields/who_cadre">
+      <configurationGroup name="headers">
+        <configuration name="default">
+          <value>Cadre (WHO)</value>
+        </configuration>
+      </configurationGroup>
+      <configuration name="formfield">
+        <value>MAP</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="who-cadre-data" path="/I2CE/formsData/forms/who_cadre">
+      <configurationGroup name="2211">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Generalist medical practitioners</value>
+          </configuration>
+          <configuration name="code">
+            <value>2211</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2212">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Specialist medical practitioners</value>
+          </configuration>
+          <configuration name="code">
+            <value>2212</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2221">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Nursing professionals</value>
+          </configuration>
+          <configuration name="code">
+            <value>2221</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2222">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Midwifery professionals</value>
+          </configuration>
+          <configuration name="code">
+            <value>2222</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2230">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Traditional and complementary medicine professionals</value>
+          </configuration>
+          <configuration name="code">
+            <value>2230</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2240">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Paramedical practitioners</value>
+          </configuration>
+          <configuration name="code">
+            <value>2240</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2261">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Dentists</value>
+          </configuration>
+          <configuration name="code">
+            <value>2261</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2262">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Pharmacists</value>
+          </configuration>
+          <configuration name="code">
+            <value>2262</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2263">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Environmental and occupational health &amp; hygiene workers</value>
+          </configuration>
+          <configuration name="code">
+            <value>2263</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2264">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Physiotherapists and physiotherapy assistants</value>
+          </configuration>
+          <configuration name="code">
+            <value>2264</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2265">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Dieticians and Nutritionists</value>
+          </configuration>
+          <configuration name="code">
+            <value>2265</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2266">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Audiologists and speech therapists</value>
+          </configuration>
+          <configuration name="code">
+            <value>2266</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2267">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Optometrists and ophthalmic opticians</value>
+          </configuration>
+          <configuration name="code">
+            <value>2267</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3211">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Medical imaging and therapeutic equipment technicians</value>
+          </configuration>
+          <configuration name="code">
+            <value>3211</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3212">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Medical and pathology laboratory technicians</value>
+          </configuration>
+          <configuration name="code">
+            <value>3211</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3213">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Pharmaceutical technicians and assistants</value>
+          </configuration>
+          <configuration name="code">
+            <value>3213</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3214">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Medical and dental prosthetic and related technicians</value>
+          </configuration>
+          <configuration name="code">
+            <value>3214</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3221">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Nursing associate professionals</value>
+          </configuration>
+          <configuration name="code">
+            <value>3221</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3222">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Midwifery associate professionals</value>
+          </configuration>
+          <configuration name="code">
+            <value>3222</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3230">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Traditional and complementary medicine associate practitioners</value>
+          </configuration>
+          <configuration name="code">
+            <value>3230</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3251">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Dental assistants and therapists</value>
+          </configuration>
+          <configuration name="code">
+            <value>3251</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3252">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Medical records and health information technicians</value>
+          </configuration>
+          <configuration name="code">
+            <value>3252</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3253">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Community health workers</value>
+          </configuration>
+          <configuration name="code">
+            <value>3253</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3254">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Dispensing opticians</value>
+          </configuration>
+          <configuration name="code">
+            <value>3254</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3255">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Physiotherapy technicians and assistants</value>
+          </configuration>
+          <configuration name="code">
+            <value>3255</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3256">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Medical assistants</value>
+          </configuration>
+          <configuration name="code">
+            <value>3256</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3257">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Environmental and occupational health inspectors and associates workers</value>
+          </configuration>
+          <configuration name="code">
+            <value>3257</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3258">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Ambulance workers</value>
+          </configuration>
+          <configuration name="code">
+            <value>3258</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3259">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Health associate professionals (n.o.c.)</value>
+          </configuration>
+          <configuration name="code">
+            <value>3259</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5321">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Health care assistants</value>
+          </configuration>
+          <configuration name="code">
+            <value>5321</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5322">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Home-based personal care workers</value>
+          </configuration>
+          <configuration name="code">
+            <value>5322</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5329">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Personal care workers in health services (n.o.c.)</value>
+          </configuration>
+          <configuration name="code">
+            <value>5329</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1342">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Health service managers</value>
+          </configuration>
+          <configuration name="code">
+            <value>1342</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1343">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Aged care service managers</value>
+          </configuration>
+          <configuration name="code">
+            <value>1343</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2634">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Psychologists</value>
+          </configuration>
+          <configuration name="code">
+            <value>2634</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2635">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Social worker and counselling professionals</value>
+          </configuration>
+          <configuration name="code">
+            <value>2635</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3344">
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2013-02-07 12:14:07</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>0</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="i2ce_hidden">
+            <displayName>I2ce Hidden</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>Medical secretaries</value>
+          </configuration>
+          <configuration name="code">
+            <value>3344</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

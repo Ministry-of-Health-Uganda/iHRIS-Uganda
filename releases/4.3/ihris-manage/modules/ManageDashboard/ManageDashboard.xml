@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ManageDashboard">
+  <metadata>
+    <displayName>iHRIS Manage Dashboard</displayName>
+    <category>Application Component</category>
+    <description>A module for configuring iHRIS Manage Dashboard</description>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Dashboard">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <priority>300</priority>
+  </metadata>
+  <configurationGroup name="ManageDashboard" path="/I2CE">
+    <configurationGroup name="page">
+      <configurationGroup name="dashboard">
+        <displayName>Dashboard Page</displayName>
+        <description>The page 'dashboard' for viewing dashboards</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_ManagePageDashboard</value>
+        </configuration>
+        <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US" value="many" type="delimited">
+          <configuration name="can_view_manager_dashboard" locale="en_US">
+            <value>Can view the managers' dashboard dashboard page</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configurationGroup name="dashes">
+            <configurationGroup name="default">
+              <!--the default dashboard can be viewed by everyone-->
+              <configurationGroup name="order">
+                <configuration name="2">
+                  <!-- first -->
+                  <value>nationality_breakdown</value>
+                </configuration>
+                <configuration name="1">
+                  <!--fifth-->
+                  <value>age_distribution</value>
+                </configuration>
+                <configuration name="0">
+                  <!--second-->
+                  <value>age_facility</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="report_views">
+                <configurationGroup name="age_distribution">
+                  <configuration name="height">
+                    <value>400</value>
+                  </configuration>
+                  <configuration name="width">
+                    <value>400</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="age_facility">
+                  <configuration name="height">
+                    <value>400</value>
+                  </configuration>
+                  <configuration name="width">
+                    <value>450</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="classification_breakdown">
+                  <configuration name="height">
+                    <value>400</value>
+                  </configuration>
+                  <configuration name="width">
+                    <value>450</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="manager_dashboard">
+              <!--this name will be used to differentiate from other dashes-->
+              <configuration name="tasks">
+                <value>can_view_manager_dashboard</value>
+                <!--only users with this task will be able to view this dashboard-->
+              </configuration>
+              <configurationGroup name="order">
+                <configuration name="4">
+                  <!-- first -->
+                  <value>nationality_breakdown</value>
+                </configuration>
+                <configuration name="1">
+                  <!--fifth-->
+                  <value>age_distribution</value>
+                </configuration>
+                <configuration name="0">
+                  <!--second-->
+                  <value>age_facility</value>
+                </configuration>
+                <configuration name="3">
+                  <!--fourth-->
+                  <value>classification_breakdown</value>
+                </configuration>
+                <configuration name="2">
+                  <!--third-->
+                  <value>retirement_planning</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="report_views">
+                <configurationGroup name="age_distribution">
+                  <configuration name="height">
+                    <value>400</value>
+                  </configuration>
+                  <configuration name="width">
+                    <value>400</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="age_facility">
+                  <configuration name="height">
+                    <value>400</value>
+                  </configuration>
+                  <configuration name="width">
+                    <value>450</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="classification_breakdown">
+                  <configuration name="height">
+                    <value>400</value>
+                  </configuration>
+                  <configuration name="width">
+                    <value>450</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="nationality_breakdown">
+                  <configuration name="height">
+                    <value>400</value>
+                  </configuration>
+                  <configuration name="width">
+                    <value>450</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="retirement_planning">
+                  <configuration name="height">
+                    <value>400</value>
+                  </configuration>
+                  <configuration name="width">
+                    <value>450</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="default_settings">
+            <configuration name="height">
+              <value>500</value>
+            </configuration>
+            <configuration name="width">
+              <value>800</value>
+            </configuration>
+            <configuration name="label">
+              <value>20</value>
+            </configuration>
+            <configuration name="title">
+              <value>iHRIS Manage Dashboard</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

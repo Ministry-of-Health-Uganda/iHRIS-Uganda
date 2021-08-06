@@ -1,0 +1,56 @@
+<div id="openlayers_layer_style" class="openlayers_layer_style">
+  <h3><span name="openlayers_layer_style_layer"></span></h3>
+  Layer Display Options<br /><br />
+  <select disabled="true" multiple="multiple" name="layer_display" id="layer_display">
+  </select>
+  <br /><br />
+  <span name="openlayers_style_details" ifset="true">
+    <table border="0" cellpadding="0" cellspacing="0" class="openlayers_layer_style_table">
+      <tr>
+        <td>Layer ID Field</td>
+        <td rowspan="2">=</td>
+        <td>Report ID Field</td>
+      </tr>
+      <tr>
+        <td>
+          <select disabled="true" name="layer_id" id="layer_id"></select>
+        </td>
+        <td>
+          <select disabled="true" name="report_id" id="report_id"></select>
+        </td>
+      </tr>
+    </table>
+    <span name="openlayers_style_details_vector" ifset="true">
+
+      <table border="0" cellpadding="0" cellspacing="0" class="openlayers_layer_style_table">
+        <tr>
+          <td colspan="2">
+            Report Threshold Field
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <select disabled="true" name="threshold" id="threshold"></select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Red Threshold:
+          </td>
+          <td>
+            Green Threshold:
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input name="red" id="red" class="layer_threshold_red" />
+          </td>
+          <td>
+            <input name="green" id="green" class="layer_threshold_green" />
+          </td>
+        </tr>
+      </table>
+    </span>
+    <br />
+  </span>
+</div>

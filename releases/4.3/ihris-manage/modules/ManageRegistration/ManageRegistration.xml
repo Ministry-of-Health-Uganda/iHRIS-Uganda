@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ManageRegistration">
+  <metadata>
+    <displayName>iHRIS Manage Registration</displayName>
+    <category>Application Component</category>
+    <description>A Person's Registration Details</description>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-manage-Person">
+      <atLeast version="4.2" />
+    </requirement>
+    <requirement name="ihris-common-ProfessionalRegistration">
+      <atLeast version="4.2" />
+    </requirement>
+    <priority>300</priority>
+  </metadata>
+  <configurationGroup name="ManageRegistration" path="/I2CE">
+    <!-- This module has been moved to ihris-common-ProfessionalRegistration
+    so this module only requires that one for compatibility. -->
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonLanguage" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonLanguage" path="/I2CE" locale="ar">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="ar">
+      <configuration name="person_can_view_child_form_person_language" locale="ar">
+        <value>يمكن عرض&#160;نموذج فرعي للغة شخص</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_language" locale="ar">
+        <value>يمكن تعديل نموذج فرعي للغة شخص</value>
+      </configuration>
+      <configuration name="can_edit_database_list_language" locale="ar">
+        <value>يمكن&#160;تعديل قائمة قاعدة بيانات اللغة</value>
+      </configuration>
+      <configuration name="can_view_database_list_language" locale="ar">
+        <value>يمكن عرض قائمة قاعدة بيانات اللغة</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="language_proficiency">
+        <configurationGroup name="elementary">
+          <configuration name="fields" value="many" type="delimited" locale="ar">
+            <value>name:ابتدائي</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="limited">
+          <configuration name="fields" value="many" type="delimited" locale="ar">
+            <value>name:إتقان محدود</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="professional">
+          <configuration name="fields" value="many" type="delimited" locale="ar">
+            <value>name:إتقان باحتراف</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="full_professional">
+          <configuration name="fields" value="many" type="delimited" locale="ar">
+            <value>name:إتقان كامل</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="fluent">
+          <configuration name="fields" value="many" type="delimited" locale="ar">
+            <value>name:بطلاقة</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_language">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ar">
+            <value>إضافة / تحديث&#160;اللغة</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="language">
+          <configuration name="display" values="single" locale="ar">
+            <value>لغة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="language_proficiency">
+          <configuration name="display" values="single" locale="ar">
+            <value>إتقان اللغة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_language">
+          <configuration name="display" values="single" locale="ar">
+            <value>إتقان شخص للغة</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PersonLanguage">
+          <configurationGroup name="fields">
+            <configurationGroup name="language">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:لغة</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="speaking">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:إتقان التخاطب</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reading">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:إتقان القراءة</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="writing">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:إتقان الكتابة</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

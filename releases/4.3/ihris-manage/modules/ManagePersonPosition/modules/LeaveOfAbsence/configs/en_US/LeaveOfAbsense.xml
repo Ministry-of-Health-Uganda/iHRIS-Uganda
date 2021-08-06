@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-LeaveOfAbsence" path="/I2CE">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-LeaveOfAbsence" path="/I2CE" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages/leave_of_absence">
+      <configuration name="start_date_overlap" path="start_date/date_overlap" locale="en_US">
+        <value>The start date overlaps with an existing leave of absence.</value>
+      </configuration>
+      <configuration name="end_date_overlap" path="end_date/date_overlap" locale="en_US">
+        <value>The end date overlaps with an existing leave of absence.</value>
+      </configuration>
+      <configuration name="end_date_before" path="end_date/before_start" locale="en_US">
+        <value>The end date must be after the start date.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_leave_of_absence" locale="en_US">
+        <value>Can view Leave Of Absence child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_leave_of_absence" locale="en_US">
+        <value>Can edit Leave Of Absence child forms of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="leave_of_absence">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Leave Of Absence</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_LeaveOfAbsence">
+          <configurationGroup name="fields">
+            <configurationGroup name="type">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Absence Type</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Start Date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:End Date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="paid">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Paid?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="incomplete">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Training incomplete? (for education)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="cause">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Cause / Diagnosis (for health)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Notes</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="leave_of_absence">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update Leave Of Absence</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

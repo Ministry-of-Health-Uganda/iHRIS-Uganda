@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="modDocumentor">
+  <metadata>
+    <displayName>Mod Documentor</displayName>
+    <description>Enables Documenting of existing mods and their relationship from the command line</description>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="modDocumentor">
+    <displayName>Mod Browser</displayName>
+    <configurationGroup name="schemes">
+      <configurationGroup name="dot">
+        <configuration name="graph_options" values="many" type="delimited">
+          <version>4.0.3</version>
+          <value>fontsize:50</value>
+          <value>labelloc:t</value>
+          <value>overlap:false</value>
+          <value>rankdir:LR</value>
+          <value>splines:true</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="command_line">
+      <displayName>Pages</displayName>
+      <configuration name="default_command_line" path="/modules/modDocumentor/page_default" values="single" type="string">
+        <displayName>Default page</displayName>
+        <value>text</value>
+      </configuration>
+      <configurationGroup name="text">
+        <configuration name="class" values="single" type="string">
+          <value>I2CE_Page_ModDocumentor</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="dot">
+        <configuration name="class" values="single" type="string">
+          <version>4.0.1</version>
+          <value>I2CE_Page_ModDocumentor</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="wiki">
+        <status>required:true</status>
+        <configuration name="class" values="single" type="string">
+          <version>4.0.1</version>
+          <value>I2CE_Page_ModDocumentor</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

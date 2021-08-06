@@ -1,0 +1,35 @@
+<div class="recordsData">
+  <h3>Assessment Section E</h3>
+  <h4>Comments, Recommendations (If Any) </h4>
+  <p class="editRecordsData" id="comments_links"><a href="" class="hide" title="Hide" onclick="return hideDiv('comments',true);">Hide</a>
+    <span type="form" name="assessment:id" ifset="!comments:id" href="comments?parent=">Add Comments, Recommendations (If Any)</span>
+  </p>
+
+  <div id="comments" task='person_can_view_child_form_assessment'>
+    <div class="editRecord">
+      <p>Edit This Information</p>
+      <ul>
+        <li task='person_can_edit_child_form_assessment'>
+          <span type="form" ifset="comments:id" name="comments:id" href="comments?id=" parent="true">Update this Information</span>
+        </li>
+      </ul>
+    </div> <!-- editRecord -->
+  
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tbody>
+	<tr>
+	  <th colspan="2">Comments, Recommendations (If Any)</th>
+	</tr>
+      <span type="form" name="comments:appraisee_comment" showhead="default"></span>
+      <span type="form" name="comments:appraisee_date" showhead="default" class="even"></span>
+      <span type="form" name="comments:appraiser_comment" showhead="default"></span>
+      <span type="form" name="comments:appraiser_date" showhead="default" class="even"></span>
+      <span type="form" name="comments:supervisor_comment" showhead="default"></span>
+      <span type="form" name="comments:supervisor_date" showhead="default" class="even"></span>
+      <span type="form" name="comments:responsible_officer_comment" showhead="default"></span>
+      <span type="form" name="comments:responsible_officer_date" showhead="default" class="even"></span>
+      </tbody>
+    </table>
+  </div> <!-- dataTable -->
+</div>

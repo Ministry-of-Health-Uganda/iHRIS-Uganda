@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="uganda-manage-gender-reports">
+  <metadata>
+    <displayName>Relationship: staff</displayName>
+    <description>loads reports related to gender</description>
+    <version>4.1.6.1</version>
+  </metadata>
+  <erase path="/modules/CustomReports/reportViews/gender_per_job">
+    <lessThan version="4.1.6.1" />
+  </erase>
+  <erase path="/modules/CustomReports/reportViews/gender_per_facility">
+    <lessThan version="4.1.6.1" />
+  </erase>
+  <requirement name="CustomReports-full-staff">
+      <atLeast version="4.0" />
+      <lessThan version="4.2" />
+    </requirement>
+  <configurationGroup name="uganda-manage-gender-reports" path="/modules/CustomReports">
+    <version>4.1.6.1</version>
+    <configurationGroup name="gender_per_job" path="//modules/CustomReports/reportViews/gender_per_job">
+      <displayName>Export</displayName>
+      <configuration name="report">
+        <displayName>Report</displayName>
+        <value>staff_list</value>
+      </configuration>
+      <configuration name="description" locale="en_US">
+        <displayName>Description</displayName>
+        <value>Shows the gender distribution per Job</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <displayName>Display Name</displayName>
+        <value>Gender Distribution per Job</value>
+      </configuration>
+      <configurationGroup name="display_options">
+        <displayName>Display Options</displayName>
+        <configurationGroup name="CrossTab">
+          <displayName>Cross Tab</displayName>
+          <configuration name="sort_order">
+            <displayName>Sort Order</displayName>
+            <value>position+job</value>
+          </configuration>
+          <configuration name="total">
+            <displayName>Total</displayName>
+            <value>1</value>
+          </configuration>
+          <configurationGroup name="displayFieldsTab">
+            <displayName>Display Fields Tab</displayName>
+            <configuration name="person+surname">
+              <displayName>Person Surname</displayName>
+              <value>0</value>
+            </configuration>
+            <configuration name="person+firstname">
+              <displayName>Person Firstname</displayName>
+              <value>0</value>
+            </configuration>
+            <configuration name="demographic+gender">
+              <displayName>Demographic Gender</displayName>
+              <value>2</value>
+            </configuration>
+            <configuration name="facility+facility_type">
+              <displayName>Facility Facility Type</displayName>
+              <value>0</value>
+            </configuration>
+            <configuration name="facility+name">
+              <displayName>Facility Name</displayName>
+              <value>0</value>
+            </configuration>
+            <configuration name="position+job">
+              <displayName>Position Job</displayName>
+              <value>1</value>
+            </configuration>
+            <configuration name="+age65">
+              <displayName>+age65</displayName>
+              <value>0</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configurationGroup name="demographic+gender">
+          <displayName>Demographic Gender</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="facility+facility_type">
+          <displayName>Facility Facility Type</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="facility+name">
+          <displayName>Facility Name</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person+firstname">
+          <displayName>Person Firstname</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person+surname">
+          <displayName>Person Surname</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position+job">
+          <displayName>Position Job</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="+age65">
+          <displayName>+age65</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configuration name="display_order">
+        <displayName>Display Order</displayName>
+        <value>computer_no+id_num,current_salary+salary,demographic+birth_date,person+surname,person+firstname,demographic+gender,demographic+marital_status,department+name,education+degree,education+institution,emergency+address,emergency+email,emergency+telephone,facility+facility_type,facility+name,file_no+id_num,home+address,home+email,home+telephone,job+cadre,person+nationality,person+othername,person_contact_personal+email,person_contact_personal+telephone,position+department,position+facility,position+job,position+title,primary_form+dofa_date,primary_form+employment_terms,primary_form+end_date,primary_form+minute,primary_form+reason,primary_form+start_date,salary_grade+name,start_salary+salary,work+email,work+telephone,+age65,+establishment,+filled_positions,+variance,+year65</value>
+      </configuration>
+      <configuration name="total">
+        <displayName>Total</displayName>
+        <value>0</value>
+      </configuration>
+      <configuration name="disable">
+        <displayName>Disable</displayName>
+        <value>0</value>
+      </configuration>
+      <configuration name="default_display">
+        <displayName>Default Display</displayName>
+        <value>CrossTab</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="gender_per_facility" path="//modules/CustomReports/reportViews/gender_per_facility">
+      <displayName>Export</displayName>
+      <configuration name="report">
+        <displayName>Report</displayName>
+        <value>staff_list</value>
+      </configuration>
+      <configuration name="description" locale="en_US">
+        <displayName>Description</displayName>
+        <value>Shows the gender distribution per facility</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <displayName>Display Name</displayName>
+        <value>Gender Distribution per Facility</value>
+      </configuration>
+      <configurationGroup name="display_options">
+        <displayName>Display Options</displayName>
+        <configurationGroup name="CrossTab">
+          <displayName>Cross Tab</displayName>
+          <configuration name="sort_order">
+            <displayName>Sort Order</displayName>
+            <value>facility+name</value>
+          </configuration>
+          <configuration name="total">
+            <displayName>Total</displayName>
+            <value>1</value>
+          </configuration>
+          <configurationGroup name="displayFieldsTab">
+            <displayName>Display Fields Tab</displayName>
+            <configuration name="demographic+gender">
+              <displayName>Demographic Gender</displayName>
+              <value>2</value>
+            </configuration>
+            <configuration name="facility+name">
+              <displayName>Facility Name</displayName>
+              <value>1</value>
+            </configuration>
+            <configuration name="person+firstname">
+              <displayName>Person Firstname</displayName>
+              <value>0</value>
+            </configuration>
+            <configuration name="person+surname">
+              <displayName>Person Surname</displayName>
+              <value>0</value>
+            </configuration>
+            <configuration name="+age65">
+              <displayName>+age65</displayName>
+              <value>0</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configurationGroup name="demographic+gender">
+          <displayName>Demographic Gender</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="facility+name">
+          <displayName>Facility Name</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person+firstname">
+          <displayName>Person Firstname</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person+surname">
+          <displayName>Person Surname</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="+age65">
+          <displayName>+age65</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configuration name="display_order">
+        <displayName>Display Order</displayName>
+        <value>computer_no+id_num,current_salary+salary,demographic+birth_date,demographic+gender,facility+name,demographic+marital_status,department+name,education+degree,education+institution,emergency+address,emergency+email,emergency+telephone,facility+facility_type,file_no+id_num,home+address,home+email,home+telephone,job+cadre,person+firstname,person+nationality,person+othername,person+surname,person_contact_personal+email,person_contact_personal+telephone,position+department,position+facility,position+job,position+title,primary_form+dofa_date,primary_form+employment_terms,primary_form+end_date,primary_form+minute,primary_form+reason,primary_form+start_date,salary_grade+name,start_salary+salary,work+email,work+telephone,+age65,+establishment,+filled_positions,+variance,+year65</value>
+      </configuration>
+      <configuration name="total">
+        <displayName>Total</displayName>
+        <value>0</value>
+      </configuration>
+      <configuration name="disable">
+        <displayName>Disable</displayName>
+        <value>0</value>
+      </configuration>
+      <configuration name="default_display">
+        <displayName>Default Display</displayName>
+        <value>CrossTab</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

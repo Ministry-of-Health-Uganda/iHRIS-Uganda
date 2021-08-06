@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ContactGroupsReport" path="/modules/CustomReports">
+  <metadata>
+    <version>4.3.0.0</version>
+  </metadata>
+  <configurationGroup name="ContactGroupsReport" path="/modules/CustomReports" locale="en_US">
+    <version>4.3.0.0</version>
+    <configurationGroup name="contact_group" path="//modules/CustomReports/relationships/contact_group">
+      <configuration name="description" locale="en_US">
+        <value>Relationship for report used to create/populate contact groups</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <value>Contact Groups</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="demographic">
+          <configuration name="display_name" locale="en_US">
+            <value>Demographic</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_position">
+          <configuration name="description" locale="en_US">
+            <value>Current position of a person</value>
+          </configuration>
+          <configuration name="display_name" locale="en_US">
+            <value>Person Position</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="position">
+              <configuration name="description" locale="en_US">
+                <value>The position title for the person</value>
+              </configuration>
+              <configuration name="display_name" locale="en_US">
+                <value>Position</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="department">
+                  <configuration name="description" locale="en_US">
+                    <value>Employee's Department</value>
+                  </configuration>
+                  <configuration name="display_name" locale="en_US">
+                    <value>Department</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="facility">
+                  <configuration name="description" locale="en_US">
+                    <value>Facility where an employee works</value>
+                  </configuration>
+                  <configuration name="display_name" locale="en_US">
+                    <value>Facility</value>
+                  </configuration>
+                  <configurationGroup name="joins">
+                    <configurationGroup name="county">
+                      <configuration name="display_name" locale="en_US">
+                        <value>County</value>
+                      </configuration>
+                    </configurationGroup>
+                    <configurationGroup name="district">
+                      <configuration name="display_name" locale="en_US">
+                        <value>District</value>
+                      </configuration>
+                    </configurationGroup>
+                    <configurationGroup name="facility_type">
+                      <configuration name="description" locale="en_US">
+                        <value>Facility Type</value>
+                      </configuration>
+                      <configuration name="display_name" locale="en_US">
+                        <value>Facility Type</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+                <configurationGroup name="job">
+                  <configuration name="description" locale="en_US">
+                    <value>Person's job title</value>
+                  </configuration>
+                  <configuration name="display_name" locale="en_US">
+                    <value>Job</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="position_status">
+                  <configuration name="description" locale="en_US">
+                    <value>Position Status of an employee</value>
+                  </configuration>
+                  <configuration name="display_name" locale="en_US">
+                    <value>Position Status</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="work_contact">
+          <configuration name="display_name" locale="en_US">
+            <value>Work Contact</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="contact_groups" path="//modules/CustomReports/reports/contact_groups">
+      <configurationGroup name="meta">
+        <configuration name="description" locale="en_US">
+          <value>A report for creating contact groups</value>
+        </configuration>
+        <configuration name="display_name" locale="en_US">
+          <value>Contact Groups Report</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="demographic">
+          <configurationGroup name="fields">
+            <configurationGroup name="gender">
+              <configuration name="header" locale="en_US">
+                <value>Gender</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Gender</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="department">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="header" locale="en_US">
+                <value>Department</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility_type">
+              <configuration name="header" locale="en_US">
+                <value>Office/Facility Facility Type</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Facility Type</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="header" locale="en_US">
+                <value>Office/Facility Location</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Office/Facility Location</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="en_US">
+                <value>Facility</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility_type">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="header" locale="en_US">
+                <value>Facility Type</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="job">
+          <configurationGroup name="fields">
+            <configurationGroup name="cadre">
+              <configuration name="header" locale="en_US">
+                <value>Job Cadre</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Cadre</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="salary_grade">
+              <configuration name="header" locale="en_US">
+                <value>Job Salary Grade</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Salary Grade</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="position">
+          <configurationGroup name="fields">
+            <configurationGroup name="job">
+              <configuration name="header" locale="en_US">
+                <value>Position Job</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Job</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="pos_type">
+              <configuration name="header" locale="en_US">
+                <value>Position Position Type</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Position Type</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="position_status">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="header" locale="en_US">
+                <value>Position Status</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="firstname">
+              <configuration name="header" locale="en_US">
+                <value>First Name</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="contains">
+                  <configuration name="header" locale="en_US">
+                    <value>First Name</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="othername">
+              <configuration name="header" locale="en_US">
+                <value>Other Names</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="surname">
+              <configuration name="header" locale="en_US">
+                <value>Surname</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="contains">
+                  <configuration name="header" locale="en_US">
+                    <value>Surname</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="work_contact">
+          <configurationGroup name="fields">
+            <configurationGroup name="contact_group">
+              <configuration name="header" locale="en_US">
+                <value>Work Contact Contact Groups</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="en_US">
+                <value>Work Contact Id</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="mobile_phone">
+              <configuration name="header" locale="en_US">
+                <value>Mobile Phone Number</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="1445836866" path="//modules/CustomReports/reportViews/1445836866">
+      <configuration name="description" locale="en_US">
+        <value>Report Used to populate contact groups</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <value>Populate Contact Groups</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

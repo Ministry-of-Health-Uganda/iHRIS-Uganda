@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-FilledPositions" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-FilledPositions" path="/modules/CustomReports" locale="gl">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships" config="CustomReports_Relationships">
+      <configurationGroup name="filled_positions" config="CustomReports_Relationship">
+        <configuration name="display_name" locale="gl">
+          <value>Cargos cubertos</value>
+        </configuration>
+        <configuration name="description" locale="gl">
+          <value>Lista histórica de todos os cargos cubertos.</value>
+        </configuration>
+        <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+          <configurationGroup name="first_salary" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="gl">
+              <value>Primeiro salario</value>
+            </configuration>
+            <configuration name="description" locale="gl">
+              <value>O primeiro salario deste cargo e da primeira persoa.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="last_salary" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="gl">
+              <value>Último salario</value>
+            </configuration>
+            <configuration name="description" locale="gl">
+              <value>O último salario deste cargo e da última persoa.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="person" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="gl">
+              <value>Persoa</value>
+            </configuration>
+            <configuration name="description" locale="gl">
+              <value>A persoa que ocupa este cargo.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="employee_position" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="gl">
+              <value>Cargo de empregado</value>
+            </configuration>
+            <configuration name="description" locale="gl">
+              <value>Os detalles do cargo.</value>
+            </configuration>
+            <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+              <configurationGroup name="supervisor" config="CustomReports_Relationship_Join">
+                <configuration name="display_name" locale="gl">
+                  <value>Cargo de supervisor</value>
+                </configuration>
+                <configuration name="description" locale="gl">
+                  <value>Os detalles do cargo para o supervisor.</value>
+                </configuration>
+                <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+                  <configurationGroup name="supervisor_person_position" config="CustomReports_Relationship_Join">
+                    <configuration name="display_name" locale="gl">
+                      <value>Cargo da persoa supervisora</value>
+                    </configuration>
+                    <configuration name="description" locale="gl">
+                      <value>A persoa que ocupa actualmente o cargo de supervisor ou a máis recente en ocupar o cargo de supervisor.</value>
+                    </configuration>
+                    <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+                      <configurationGroup name="supervisor_person" config="CustomReports_Relationship_Join">
+                        <configuration name="display_name" locale="gl">
+                          <value>Persoa supervisora</value>
+                        </configuration>
+                        <configuration name="description" locale="gl">
+                          <value>A persoa máis recente en ocupar o cargo de supervisor.</value>
+                        </configuration>
+                      </configurationGroup>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports" config="CustomReports_Reports">
+      <configurationGroup name="filled_positions" config="CustomReports_Report">
+        <configurationGroup name="meta" config="CustomReports_Report_Meta">
+          <configuration name="display_name" locale="gl">
+            <value>Cargos cubertos</value>
+          </configuration>
+          <configuration name="description" locale="gl">
+            <value>Un informe histórico de todos os cargos cubertos.</value>
+          </configuration>
+          <configuration name="category" locale="gl">
+            <value>Cargos cubertos</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms" config="CustomReports_Report_ReportingForms">
+          <configurationGroup name="primary_form" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="start_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Data de inicio da persoa</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="greaterthan">
+                    <configuration name="header" locale="gl">
+                      <value>Data de inicio despois de</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="lessthan">
+                    <configuration name="header" locale="gl">
+                      <value>Data de inicio antes de</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="end_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Data de fin da persoa</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="greaterthan">
+                    <configuration name="header" locale="gl">
+                      <value>Data de fin despois de</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="lessthan">
+                    <configuration name="header" locale="gl">
+                      <value>Data de fin antes de</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="first_salary" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="salary" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Primeiro salario</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last_salary" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="salary" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Último salario</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="surname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Apelidos</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="firstname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Nome</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="employee_position" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="job" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Título do emprego</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Título do cargo</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="facility" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Establecemento</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="department" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Departamento</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="status" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Estado do cargo</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Título do supervisor</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor_person_position" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="start_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Data de inicio do supervisor</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor_person" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="surname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Apelidos do supervisor</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="firstname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="gl">
+                  <value>Nome do supervisor</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews" config="CustomReports_ReportViews">
+      <configurationGroup name="filled_positions" config="CustomReports_ReportView">
+        <configuration name="display_name" locale="gl">
+          <value>Exportación dos cargos cubertos</value>
+        </configuration>
+        <configuration name="description" locale="gl">
+          <value>Unha lista histórica dos cargos cubertos para a súa exportación.</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

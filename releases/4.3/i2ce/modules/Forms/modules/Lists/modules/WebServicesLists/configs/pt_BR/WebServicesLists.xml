@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="web-services-lists" path="/modules/web-services">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="web-services-lists" path="/modules/web-services" locale="pt_BR">
+    <version>4.3.0.1</version>
+    <configurationGroup name="messages" locale="pt_BR">
+      <configuration name="invalid_list" values="single" type="string">
+        <value>Essa não é uma lista válida: '%s'</value>
+      </configuration>
+      <configuration name="invalid_form" values="single" type="string">
+        <value>Esse não é um formulário '%s' válido</value>
+      </configuration>
+      <configuration name="invalid_field" values="single" type="string">
+        <value>Esse não é um campo '%s' válido no formulário '%s'</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

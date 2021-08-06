@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-mcsd-update-supplier">
+  <metadata>
+    <displayName>mCSD Update Supplier</displayName>
+    <category>Application Component</category>
+    <description>mCSD Update Supplier</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <requirement name="FHIR">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ihris-manage-csd-qus">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ihris-manage-csd-PersonPosition">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <erase path="/modules/FHIR/page/Practitioner/args/access">
+    <lessThan version="4.3.0.3" />
+  </erase>
+  <erase path="/modules/FHIR/page/PractitionerRole/args/access">
+    <lessThan version="4.3.0.3" />
+  </erase>
+  <erase path="/modules/FHIR/page/Location/args/access">
+    <lessThan version="4.3.0.3" />
+  </erase>
+  <configurationGroup name="ihris-manage-mcsd-update-supplier" path="/">
+    <configurationGroup name="tasks" path="/I2CE/tasks">
+      <version>4.3.0.3</version>
+      <configurationGroup name="task_description" locale="en_US">
+        <configuration name="mcsd_can_access_all" locale="en_US" values="single" type="string">
+          <value>Allows access to mCSD/FHIR directories (Care Services Update Supplier)</value>
+        </configuration>
+        <configuration name="mcsd_can_access_practitioner" locale="en_US" values="single" type="string">
+          <value>Allows access to mCSD/FHIR directories for Practitioners (Care Services Update Supplier)</value>
+        </configuration>
+        <configuration name="mcsd_can_access_location" locale="en_US" values="single" type="string">
+          <value>Allows access to mCSD/FHIR directories for Locations (Care Services Update Supplier)</value>
+        </configuration>
+        <configuration name="mcsd_can_access_organization" locale="en_US" values="single" type="string">
+          <value>Allows access to mCSD/FHIR directories for Organizations (Care Services Update Supplier)</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="task_trickle_down">
+        <configuration name="mcsd_can_access_all" values="many" type="string">
+          <value>mcsd_can_access_practitioner</value>
+          <value>mcsd_can_access_location</value>
+          <value>mcsd_can_access_organization</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="role_trickle_down">
+        <configuration name="admin" values="many" type="string">
+          <status>uniquemerge:true</status>
+          <value>mcsd_can_access_all</value>
+        </configuration>
+        <configuration name="hr_manager" values="many" type="string">
+          <status>uniquemerge:true</status>
+          <value>mcsd_can_access_all</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="/modules/FHIR/page">
+      <version>4.3.0.2</version>
+      <configurationGroup name="Practitioner">
+        <configuration name="class" values="single" type="string">
+          <value>iHRIS_Page_FHIR_Resource</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <version>4.3.0.6</version>
+          <value>empty</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="resource" values="single" type="string">
+            <value>Practitioner</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <version>4.3.0.3</version>
+            <value>admin</value>
+          </configuration>
+          <configuration name="tasks" values="many" type="string">
+            <version>4.3.0.3</version>
+            <value>mcsd_can_access_practitioner</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="PractitionerRole">
+        <configuration name="class" values="single" type="string">
+          <value>iHRIS_Page_FHIR_Resource</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <version>4.3.0.6</version>
+          <value>empty</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="resource" values="single" type="string">
+            <value>PractitionerRole</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <version>4.3.0.3</version>
+            <value>admin</value>
+          </configuration>
+          <configuration name="tasks" values="many" type="string">
+            <version>4.3.0.3</version>
+            <value>mcsd_can_access_practitioner</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="Location">
+        <configuration name="class" values="single" type="string">
+          <value>iHRIS_Page_FHIR_Resource</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <version>4.3.0.6</version>
+          <value>empty</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="resource" values="single" type="string">
+            <value>Location</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <version>4.3.0.3</version>
+            <value>admin</value>
+          </configuration>
+          <configuration name="tasks" values="many" type="string">
+            <version>4.3.0.3</version>
+            <value>mcsd_can_access_location</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

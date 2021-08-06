@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-standard-data">
+  <metadata>
+    <displayName>iHRIS Manage Uganda Data</displayName>
+    <category>Site</category>
+    <description>The iHRIS Manage Uganda module for drop down data.</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.2.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+
+    <requirement name="Uganda-standard-data-district" />
+    <requirement name="Uganda-standard-data-county" />
+    <requirement name="Uganda-standard-data-country" />
+    <requirement name="Uganda-standard-data-currency" />
+    <requirement name="Uganda-standard-data-marital_status" />
+    <requirement name="Uganda-standard-data-id_type" />
+    <requirement name="Uganda-standard-data-edu_type" />
+    <requirement name="Uganda-standard-data-pos_change_reason" />
+    <requirement name="Uganda-standard-data-council" />
+    <requirement name="Uganda-standard-data-language" />
+    <requirement name="Uganda-standard-data-employment_terms" />
+   
+    
+    <priority>350</priority>
+  </metadata>
+  <configurationGroup name="Uganda-standard-data" path="/I2CE">
+    <displayName>iHRIS Manage Uganda Data</displayName>
+  </configurationGroup>
+</I2CEConfiguration>

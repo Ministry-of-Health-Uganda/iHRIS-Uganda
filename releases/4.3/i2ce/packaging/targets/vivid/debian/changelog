@@ -1,0 +1,182 @@
+i2ce (4.2.3.6~vivid) vivid; urgency=medium
+
+  * Ubuntu Release Version 4.2.3.6 4315: Luke Duncan 2016-06-13
+    Fised search function definition for FileSearch_Caching because
+    it didn't match the main FileSearch class.  4314: Luke Duncan
+    2016-06-10 Fixed error in form relationship importer for getting
+    the hash of the xml representation of a form.  4313: Launchpad
+    Translations on behalf of intrahealth+informatics 2016-05-24
+    Launchpad automatic translations update.  4312: Siebrand Mazeland
+    2016-05-23 Localisation updates from https://translatewiki.net.
+    4311: Launchpad Translations on behalf of intrahealth+informatics
+    2016-05-20 Launchpad automatic translations update.  4310:
+    Carl Leitner 2016-05-13 added support for search for classes
+    with namespaces 4309: Launchpad Translations on behalf
+    of intrahealth+informatics 2016-05-11 Launchpad automatic
+    translations update.  4308: Launchpad Translations on behalf
+    of intrahealth+informatics 2016-05-05 Launchpad automatic
+    translations update.  4307: Launchpad Translations on behalf of
+    intrahealth+informatics 2016-04-16 Launchpad automatic translations
+    update.  4306: Siebrand Mazeland 2016-04-08 Localisation updates
+    from https://translatewiki.net.  4305: Launchpad Translations
+    on behalf of intrahealth+informatics 2016-03-27 Launchpad
+    automatic translations update.  4304: Ally Shaban 2016-03-19
+    Commiting changes made by Carl 4303: Launchpad Translations on
+    behalf of intrahealth+informatics 2016-03-19 Launchpad automatic
+    translations update.  4302: Carl Leitner 2016-03-11 allow you
+    get report view name, report name and relationship name for
+    a custom report display 4301: Luke Duncan 2016-03-11 Added in
+    transaction for process_saves on the relationship queue so that
+    if one form fails to validate none will get saved and it rolls
+    back so the XML can be corrected and re-imported without issue.
+    Otherwise the top level form may be saved but some child forms or
+    mapped forms may not be there.  4300: Launchpad Translations on
+    behalf of intrahealth+informatics 2016-03-11 Launchpad automatic
+    translations update.  4299: Launchpad Translations on behalf of
+    intrahealth+informatics 2016-03-10 Launchpad automatic translations
+    update.  4298: Siebrand Mazeland 2016-03-09 Localisation updates
+    from https://translatewiki.net.  4297: Launchpad Translations on
+    behalf of intrahealth+informatics 2016-03-03 Launchpad automatic
+    translations update.  4296: Luke Duncan 2016-02-29 Removed forced
+    removal of CustomReports/limit_excludes/primary_form from all forms
+    in a relationship instead of just the top level.  4295: Luke Duncan
+    2016-02-29 Fixed fuzzy method set up for checkLimit_null_not_null
+    as well.  4294: Luke Duncan 2016-02-29 Fix fuzzy method called
+    for generateLimit_null_not_null to be the correct method isntead
+    of always not null.  Modified null_not_null template to allow a
+    blank option so it can be turned off as a limit when not needed.
+    Also changed text display to be clear on what is being chosen
+    for 'Null' or 'Not Null'.  4293: Ally Shaban 2016-02-26 Fixed
+    syntax error 4292: Luke Duncan 2016-02-24 Modified form field
+    processDOM to not copy over every attribute so there aren't issues
+    with later modules that may modify the DOM (specificaly display
+    with the Tags module).  4291: Launchpad Translations on behalf of
+    intrahealth+informatics 2016-02-20 Launchpad automatic translations
+    update.  4290: Siebrand Mazeland 2016-02-19 Localisation updates
+    from https://translatewiki.net.  4289: Siebrand Mazeland 2016-02-19
+    Localisation updates from https://translatewiki.net.  4288:
+    Launchpad Translations on behalf of intrahealth+informatics
+    2016-02-18 Launchpad automatic translations update.  4287:
+    Luke Duncan 2016-02-11 Added in option for limiting the number
+    of child forms that can exist for a parent by setting it under
+    /modules/forms/forms/FORM/meta/child_forms_limit/CHILD_FORM = #.
+    4286: Luke Duncan 2016-02-10 Added in option to use display reports
+    for web services lists.  This will allow better limiting of top
+    level values when nothing can be selected below them.  For an
+    example of use, see the ManageFacilityTree module in iHRIS Manage.
+    4285: Launchpad Translations on behalf of intrahealth+informatics
+    2016-02-05 Launchpad automatic translations update.  4284: Luke
+    Duncan 2016-02-03 Fixed typo in magic data form storage that was
+    breaking cached forms updates.  4283: Luke Duncan 2016-02-02
+    Added in variable definition to avoid type error.  4282: Luke
+    Duncan 2016-02-02 Fixed up reference to getSubSelectFieldsQuery in
+    updateCachedTable to avoid missing variable errors.  4281: Carl
+    Leitner 2016-01-29 XMLDB - fixed issue with subselect 4280: Carl
+    Leitner 2016-01-29 updated ignore 4279: Carl Leitner 2016-01-29
+    set modtime in slow populate for cached form 4278: Luke Duncan
+    2016-01-28 Put in a hack to make TIME() work with the datetime
+    value starts with 0000-00-00.  In MySQL TIME() returns null on
+    a datetime field that starts with 0s but it works when it's
+    a string.  DATE() works fine in both cases.  4277: Launchpad
+    Translations on behalf of intrahealth+informatics 2016-01-28
+    Launchpad automatic translations update.  4276: Siebrand Mazeland
+    2016-01-27 Localisation updates from https://translatewiki.net.
+    4275: Launchpad Translations on behalf of intrahealth+informatics
+    2015-12-20 Launchpad automatic translations update.  4274:
+    Luke Duncan 2015-12-11 Modified default options for gizmo form
+    to not skip i2ce_hidden in the display, added it back in to skip
+    by default on the view page (when is_edit is false) so it's only
+    there on the edit page.  4273: Luke Duncan 2015-12-11 Fixed link
+    for the show hidden/non-hidden/all menu on the auto list page.
+    4272: Launchpad Translations on behalf of intrahealth+informatics
+    2015-12-03 Launchpad automatic translations update.  4271: Sovello
+    Hildebrand 2015-11-25 {4.2.3.5-ubuntu-release} "Ubuntu Release
+    Version 4.2.3.5"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Thu, 16 Jun 2016 18:52:49 +0000
+
+i2ce (4.2.3.5~vivid) vivid; urgency=medium
+
+  * Ubuntu Release Version 4.2.3.5 4270: Launchpad Translations
+    on behalf of intrahealth+informatics 2015-11-22 Launchpad
+    automatic translations update.  4269: Launchpad Translations on
+    behalf of intrahealth+informatics 2015-11-17 Launchpad automatic
+    translations update.  4268: Luke Duncan 2015-11-10 Updated Swiss
+    SQLFunction getFieldObj method to include the relationship so
+    it can be passed through to web services lists to determine all
+    the details for displaying the field for limits.  Modified web
+    services lists to take this information to determine the correct
+    field object to use for display.  Added in field options for the
+    getFunctionDetails for I2CE_FormRelationship similar to what
+    is used for SQLFunction->getFieldObj.  Also fixed issue with
+    limits when now form field was being used for web services lists.
+    4267: Luke Duncan 2015-11-09 Updated web services lists to work
+    better with forms that refer to the same form limited by a field.
+    Also allowed the different limits set by the display string to be
+    used in this case.  4266: Luke Duncan 2015-11-09 Also removed new
+    link when the form isn't writable for auto list pages.  4265: Luke
+    Duncan 2015-11-09 Added option to display totals for configured
+    columns for ODT printed reports.  Pulled from 4.1-dev.  4264:
+    Luke Duncan 2015-11-09 Changed modified.value comparison for
+    magic data form storage to include STR_TO_DATE to avoid errors in
+    some versions of MySQL.  4263: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-10-31 Launchpad automatic translations
+    update.  4262: Luke Duncan 2015-10-27 Changed paginateList
+    calls to use the jumper_id of select_list as that is what is in
+    the template so paging shows up on auto list pages.  4261: Carl
+    Leitner 2015-10-26 {4.2.3.4-ubuntu-release} "Ubuntu Release Version
+    4.2.3.4"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Wed, 25 Nov 2015 16:41:50 +0000
+
+i2ce (4.2.3.4~vivid) vivid; urgency=medium
+
+  * Ubuntu Release Version 4.2.3.4 4260: Carl Leitner 2015-10-26
+    {4.2.3.3-ubuntu-release} "Ubuntu Release Version 4.2.3.3"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 26 Oct 2015 14:38:22 +0000
+
+i2ce (4.2.3.3~vivid) vivid; urgency=medium
+
+  * Ubuntu Release Version 4.2.3.3 4259: Carl Leitner 2015-10-25
+    XML DB form storage now supports the faster caching by creating a
+    subselect of values UNION'ed together 4258: Carl Leitner 2015-10-25
+    Cached forms and form storage for non-DB like form storage
+    mechanisms can support a faster (than slow) insert.  the form
+    storage mechanism needs to create a sub-select query for an insert
+    statement that looks something like (select 1 as id, 'A1' as code
+    union 2, 'A2') 4257: Carl Leitner 2015-10-25 better error checking
+    in Service Form Storage 4256: Carl Leitner 2015-10-25 Cached
+    forms and form storage for non-DB like form storage mechanisms can
+    support a faster (than slow) insert.  the form storage mechanism
+    needs to create a sub-select query for an insert statement that
+    looks something like (select 1 as id, 'A1' as code union 2, 'A2')
+    4255: Carl Leitner 2015-10-25 hack in Magic Data From Storage to
+    get parent field to work.  needs to be fixed 4254: Carl Leitner
+    2015-10-24 {4.2.3.2-ubuntu-release} "Ubuntu Release Version
+    4.2.3.2"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 26 Oct 2015 14:33:39 +0000
+
+i2ce (4.2.3.2~vivid) vivid; urgency=medium
+
+  * Ubuntu Release Version 4.2.3.2 4253: Carl Leitner 2015-10-24
+    {4.2.3.1-ubuntu-release} "Ubuntu Release Version 4.2.3.1"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sat, 24 Oct 2015 10:28:35 -0400
+
+i2ce (4.2.3.1~vivid) vivid; urgency=medium
+
+  * Ubuntu Release Version 4.2.3.1 4252: Ese Egerega 2015-10-23 [merge]
+    {4.2.3.0-ubuntu-release} Added requirement for forms-storage-entry
+    module
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sat, 24 Oct 2015 10:19:15 -0400
+
+i2ce (4.2.1.1~vivid) vivid; urgency=medium
+
+  * Ubuntu Release Version 4.2.1.1 for vivid
+    -Initial Packaging
+    --http://bazaar.launchpad.net/~intrahealth+informatics/i2ce/4.2-dev
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 16 Feb 2015 16:08:59 -0500

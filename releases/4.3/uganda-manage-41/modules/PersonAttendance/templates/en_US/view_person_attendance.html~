@@ -1,0 +1,37 @@
+<div task='person_can_view_child_form_person_attendance'>
+  <div class="editRecord">
+    <p>Edit This Information</p>
+    <ul>
+      <li task='person_can_edit_child_form_person_attendance'>
+	<span type="form" ifset="person_attendance:id" name="person_attendance:id" href="person_attendance?id=" parent="true">
+	  Update this Information
+	</span>
+      </li>
+    </ul>
+  </div> <!-- editRecord -->
+
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+	<th colspan="2">Attendance</th>
+      </tr>
+	<span type="form" name="person_attendance:position" showhead="default" ></span>
+        <span type="form" name="person_attendance:month_year" showhead="default" class="even"></span>
+	<span type="form" name="person_attendance:work_days" showhead="default" ></span>
+	<span type="form" name="person_attendance:final_work_days" showhead="default" ></span>
+	<span type="form" name="person_attendance:off_days" showhead="default" ></span>
+	<span type="form" name="person_attendance:leave_days" showhead="default" ></span>
+	<span type="form" name="person_attendance:other_days" showhead="default" ></span>
+        <span type="form" name="person_attendance:days_present" showhead="default" ></span>
+	<span type="form" name="person_attendance:days_od" showhead="default"></span>
+        <span type="form" name="person_attendance:days_or" showhead="default" class="even"></span>
+        <span type="form" name="person_attendance:days_leave" showhead="default" class="even"></span>
+        <span type="form" name="person_attendance:days_absent" showhead="default" ></span>
+        <span type="form" name="person_attendance:absenteeism_rate" showhead="default" class="even"></span>
+	<span type="form" name="person_attendance:absolute_days_absent" showhead="default" ></span>
+        <span type="form" name="person_attendance:absolute_absenteeism_rate" showhead="default" class="even"></span>
+	<span type="form" name="person_attendance:days_not_at_facility" showhead="default" ></span>
+        <span type="form" name="person_attendance:per_days_not_at_facility" showhead="default" class="even"></span>
+        </table>
+  </div> <!-- dataTable -->
+</div>

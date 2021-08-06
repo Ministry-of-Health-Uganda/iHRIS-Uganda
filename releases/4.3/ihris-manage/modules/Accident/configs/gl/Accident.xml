@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="accident" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="accident" path="/I2CE" locale="gl">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="gl">
+      <configuration name="accident_date" path="accident/end_date/bad_date">
+        <value>A data de fin debe ser posterior á data de inicio.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_accident" locale="gl">
+        <value>Pode editar as lesións e os accidentes laborais asignados a unha persoa</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_accident" locale="gl">
+        <value>Pode ollar as lesións e os accidentes laborais asignados a unha persoa</value>
+      </configuration>
+      <configuration name="can_edit_database_list_accident_type" locale="gl">
+        <value>Editar a lista dos tipos de accidentes laborais</value>
+      </configuration>
+      <configuration name="can_view_database_list_accident_type" locale="gl">
+        <value>Ollar a lista dos tipos de accidentes laborais</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="accident">
+          <configuration name="display" values="single" locale="gl">
+            <value>Accidente</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="accident_type">
+          <configuration name="display" values="single" locale="gl">
+            <value>Tipo de accidente laboral</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Accident">
+          <configurationGroup name="fields">
+            <configurationGroup name="occurence_date">
+              <configuration name="headers" type="delimited" locale="gl">
+                <value>default:Data do suceso</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="accident_type">
+              <configuration name="headers" type="delimited" locale="gl">
+                <value>default:Tipo de accidente</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="gl">
+                <value>default:Inicio de aplicabilidade</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="gl">
+                <value>default:Fin de aplicabilidade</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="followup">
+              <configuration name="headers" type="delimited" locale="gl">
+                <value>default:Cómpre un seguimento</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_involved">
+              <configuration name="headers" type="delimited" locale="gl">
+                <value>default:Xente involucrada</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="home" path="/modules/accident/page/home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="gl">
+            <value>Engadir/Actualizar un accidente laboral</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

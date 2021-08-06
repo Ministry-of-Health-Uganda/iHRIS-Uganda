@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Confirmation" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Confirmation" path="/I2CE" locale="si">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="si">
+      <configuration name="person_can_view_child_form_confirmation" locale="si">
+        <value>පුද්ගලයෙකුගේ තහවුරු කිරීමේ උප ආකෘති පත්‍රය නැරඹීමට හැක</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_confirmation" locale="si">
+        <value>පුද්ගලයෙකුගේ තහවුරු කිරීමේ උප ආකෘති පත්‍රය සංස්කරණය කළ හැක</value>
+      </configuration>
+      <configuration name="can_edit_database_list_confirmation_type" locale="si">
+        <value>තහවුරු කිරීම් දත්ත සමුදා ලැයිස්තුව සංස්කරණය කළ හැක</value>
+      </configuration>
+      <configuration name="can_view_database_list_confirmation_type" locale="si">
+        <value>තහවුරු කිරීම් දත්ත සමුදා ලැයිස්තුව නැරඹීමට හැක</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="confirmation">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="si">
+            <value>තහවුරු කිරීම් එකතු/යාවත්කාල කරන්න</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="confirmation">
+          <configuration name="display" values="single" locale="si">
+            <value>තහවුරු කිරීම</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="confirmation_type">
+          <configuration name="display" values="single" locale="si">
+            <value>තහවුරු කිරීමේ මාදිලිය</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_ConfirmationType">
+          <configurationGroup name="fields">
+            <configurationGroup name="probation_period">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:පරිවාස කාලසීමාව (මාස)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="job">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:ආශ්‍රිත කාර්යය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:නාමය</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Confirmation">
+          <configurationGroup name="fields">
+            <configurationGroup name="valid">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:වලංගු</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="confirmation_type">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:තහවුරු කිරීමේ මාදිලිය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:දිනය</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

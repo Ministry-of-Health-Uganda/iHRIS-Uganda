@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Lists" path="/I2CE/">
+  <metadata>
+    <version>4.3.3.0</version>
+  </metadata>
+  <configurationGroup name="Lists" path="/I2CE/" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="auto_list" path="/I2CE/page/auto_list">
+      <configuration name="title" locale="en_US" values="single" type="string">
+        <value>Administer Database Lists</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="Lists" path="/modules/Lists">
+      <configuration name="messages" type="delimited" values="many" locale="en_US">
+        <value>other_lists:Other Lists</value>
+        <value>title:View %s</value>
+        <value>edit_title:Add/Update %s</value>
+        <value>edit_text:Update this information</value>
+        <value>add_text:Add new %s</value>
+        <value>add_new:Add new</value>
+        <value>select_text:Select another %s</value>
+        <value>menu_title:Administer Database Lists</value>
+        <value>remap_field_text:Remap field %1$s in %2$s (%3$s matches)</value>
+        <value>remap_text:Set remapping data</value>
+        <value>view_remap_text:View remapping data</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="invalid_messages" path="/modules/forms/invalid_field_messages" locale="en_US">
+      <configuration name="unique_fields" values="single" type="string">
+        <value>This must be unique and another record has this value for the given values of the fields:</value>
+      </configuration>
+      <configuration name="unique_field" values="single" type="string">
+        <value>This must be unique and another record has this value for the given value of the field:</value>
+      </configuration>
+      <configuration name="unique" values="single" type="string">
+        <value>This must be unique and another record has this value.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="template_text" path="/modules/forms/template_text">
+      <configuration name="blank" values="single" locale="en_US" type="string">
+        <value>Select One</value>
+      </configuration>
+      <configuration name="loading" values="single" locale="en_US" type="string">
+        <value>Loading</value>
+      </configuration>
+      <configuration name="no_results" values="single" locale="en_US" type="string">
+        <value>No Results</value>
+      </configuration>
+      <configuration name="default_display" values="single" locale="en_US" type="string">
+        <value>Select from below</value>
+      </configuration>
+      <configuration name="clear_display" values="single" locale="en_US" type="string">
+        <value>Reset</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+      <configurationGroup name="I2CE_List">
+        <configurationGroup name="fields">
+          <configurationGroup name="remap">
+            <configuration name="headers" type="delimited" locale="en_US" values="single">
+              <value>default:Remapped Value</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="i2ce_hidden">
+            <configuration name="headers" type="delimited" locale="en_US" values="single">
+              <value>default:Hide</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="I2CE_SimpleList">
+        <configurationGroup name="fields">
+          <configurationGroup name="name">
+            <configuration name="headers" type="delimited" locale="en_US" values="single">
+              <value>default:Name</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="I2CE_SimpleCodedList">
+        <configurationGroup name="fields">
+          <configurationGroup name="code">
+            <configuration name="headers" type="delimited" locale="en_US" values="single">
+              <value>default:Code</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="can_hide_list_members" values="single" type="string">
+        <value>Can hide list members</value>
+      </configuration>
+      <configuration name="can_edit_database_lists" values="single" type="string">
+        <value>Can edit some of the lists stored in the database</value>
+      </configuration>
+      <configuration name="can_edit_all_database_lists" values="single" type="string">
+        <value>Can edit all the lists stored in the database</value>
+      </configuration>
+      <configuration name="can_view_database_lists" values="single" type="string">
+        <value>Can view some of the lists stored in the database</value>
+      </configuration>
+      <configuration name="can_view_all_database_lists" values="single" type="string">
+        <value>Can view all the lists stored in the database</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <configurationGroup name="view_list">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US" type="string">
+            <value>View List</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

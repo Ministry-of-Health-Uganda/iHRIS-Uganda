@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Job" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Job" path="/I2CE" locale="zh_CN">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_salary_grade" locale="zh_CN">
+        <value>编辑salary_grade列表</value>
+      </configuration>
+      <configuration name="can_view_database_list_salary_grade" locale="zh_CN">
+        <value>查看salary_grade列表</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="view_job">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="zh_CN">
+            <value>查看工作</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="salary_grade">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>薪酬范围</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_SalaryGrade">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:名字</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:开始</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:结束</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="midpoint">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:中点</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:注释</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_ManageJob">
+          <configurationGroup name="fields">
+            <configurationGroup name="salary_grade">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:薪酬范围</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

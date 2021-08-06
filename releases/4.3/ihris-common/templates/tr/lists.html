@@ -1,0 +1,37 @@
+<div id="siteContent">
+    <h1>Veritabanı Yönetme</h1>
+
+    <span type="module" ifenabled="true" name="Person">    
+	  <h3>Demografik Listeler</h3>
+	  <ul><li><a href="lists?type=id_type">Kimlik Türü</a></li>
+	    <li><a href="lists?type=marital_status">Medeni Durum</a></li>
+	  </ul></span>
+    <span type="module" ifenabled="true" name="Geography">    
+      <h3>Coğrafi Bilgiler</h3>
+      <ul><li><a href="lists?type=country">Ülke</a></li>
+        <li><a href="lists?type=region">Bölge</a></li>
+        <li><a href="lists?type=district">İlçe</a></li>
+        <li><a href="lists?type=county">İlçe</a></li>
+        <span type="module" ifenabled="true" name="Currency">    
+          <li><a href="lists?type=currency">Para birimi</a></li>
+        </span>
+      </ul></span>
+    <h3>Daha fazla bilgi</h3>
+    <ul><span type="module" ifenabled="true" name="simple-competency">	
+	  <li><a href="lists?type=competency_type">Yeterlik Türü</a></li>
+	  <li><a href="lists?type=competency&amp;field=competency_type">Yeterlik</a></li>
+    </span>
+    <span type="module" name="CEUs" ifenabled="true">
+	  <li><a href="lists?type=continuing_education_course">Sürekli eğitim kursu</a></li>
+    </span>
+    <span type="module" name="training-institution" ifenabled="true">
+	  <li><a href="lists?type=training_institution">Eğitim Kurumu</a></li>
+	  <li><a href="lists?type=training_funder">Training Funder</a></li>
+    </span>
+    </ul><span role="admin">
+      <span type="module" name="ihris-common-MassDeletePerson" ifenabled="true">
+        <h2>Kitlesel silme</h2>
+        <ul><li><a href="delete_by_search">By Person (Search Page)</a></li>
+        </ul></span>
+    </span>
+</div>

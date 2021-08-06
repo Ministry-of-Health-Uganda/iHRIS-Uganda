@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Tags">
+  <metadata>
+    <displayName>Tags</displayName>
+    <className>I2CE_Module_Tags</className>
+    <category>Base System Component</category>
+    <description>Adds module and script tag processing to the template</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="I2CE">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="template-data">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="DisplayData">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <priority>49</priority>
+  </metadata>
+</I2CEConfiguration>

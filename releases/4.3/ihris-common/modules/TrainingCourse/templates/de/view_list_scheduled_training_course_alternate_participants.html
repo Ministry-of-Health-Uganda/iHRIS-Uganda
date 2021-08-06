@@ -1,0 +1,42 @@
+<div id="list_display">
+  <div class="editRecord">
+    <p>Diese Informationen bearbeiten</p>
+    <ul><li>
+	<a href="lists?type=scheduled_training_course&amp;field=training_course">Eine andere Schulung auswählen</a>
+      </li>
+      <li task="can_edit_scheduled_training_course">
+	<span type="form" name="scheduled_training_course:id" href="lists?type=scheduled_training_course&amp;id=">Diese Informationen aktualisieren</span>
+      </li>
+      <li task="can_edit_scheduled_training_course">
+	<span type="form" name="scheduled_training_course:id" href="editstudents?id=">Studenten hinzufügen/entfernen</span>
+      </li>
+      <li>
+        <span type="form" name="scheduled_training_course:id" href="view_list?type=scheduled_training_course&amp;id=">Kursübersicht</span>
+      </li>
+      <li task="can_edit_scheduled_training_course">
+        <span type="form" name="scheduled_training_course:id" href="view_list?type=scheduled_training_course&amp;i2ce_template=participants_compact&amp;id=">Prüfungsergebnisse aller Studenten verwalten</span>
+      </li>
+
+      <li>
+        <span type="form" name="scheduled_training_course:id" href="view_list?type=scheduled_training_course&amp;i2ce_template=prepost&amp;id=">Vor-/Nach-dem-Test-Zusammenfassung</span>
+      </li>
+      <li>
+        <span type="form" name="scheduled_training_course:id" href="view_list?type=scheduled_training_course&amp;i2ce_template=mods&amp;id=">Kursmodule</span>
+      </li>
+      <li>
+        <span type="form" name="scheduled_training_course:id" href="studentparticipants?id=">Studententeilnahmebericht</span>
+      </li>
+      <li>
+        <span type="form" name="scheduled_training_course:id" href="studentcertificates?id=">Schulungszertifikate</span>
+      </li>
+    </ul></div> <!-- editRecord -->
+  
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0"><tr><th colspan="2">Geplante Schulung</th>
+      </tr><tr><td colspan="2">
+	  <span id="participant_list">
+	    <span type="form" name="scheduled_training_course-&gt;enrolledStudentsList()"></span>
+	  </span>
+	</td>	
+      </tr></table></div> <!-- dataTable -->
+</div> <!-- list_display -->

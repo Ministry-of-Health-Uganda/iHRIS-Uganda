@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SelfService" path="/">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="SelfService" path="/" locale="es">
+    <version>4.2.0.1.1</version>
+    <configurationGroup name="SS" path="/modules/SelfService">
+      <configurationGroup name="page">
+        <configurationGroup name="view">
+          <configurationGroup name="args">
+            <configuration name="title" locale="es">
+              <value>Ver</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="es">
+      <configuration name="person_can_view_child_form_user_map" locale="es">
+        <value>Puede ver el mapa de usuario del formulario secundario de una persona</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_user_map" locale="es">
+        <value>Puede editar el mapa de usuario del formulario seundario de una persona</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="user_map">
+          <configuration name="display" values="single" locale="es">
+            <value>Mapa de usuario</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_UserMap">
+          <configurationGroup name="fields">
+            <configurationGroup name="username">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Nombre de usuario</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page" path="/modules/SelfService/page">
+      <configurationGroup name="userAccount">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="es">
+            <value>Agregar/actualizar la cuenta de usuario</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonContact" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonContact" path="/I2CE" locale="es">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_messages" path="/modules/forms/formfield_messages" locale="es">
+      <configuration name="work" path="work/email/invalid_email">
+        <value>Escriba una dirección de correo electrónico válida</value>
+      </configuration>
+      <configuration name="personal" path="personal/email/invalid_email">
+        <value>Escriba una dirección de correo electrónico válida</value>
+      </configuration>
+      <configuration name="other" path="other/email/invalid_email">
+        <value>Escriba una dirección de correo electrónico válida</value>
+      </configuration>
+      <configuration name="emergency" path="emergency/email/invalid_email">
+        <value>Escriba una dirección de correo electrónico válida</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="es">
+      <configuration name="person_can_view_child_form_person_contact_work" locale="es">
+        <value>Puede ver formulario de contacto laboral de una persona</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_work" locale="es">
+        <value>Puede editar formulario de contacto laboral de una persona</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_emergency" locale="es">
+        <value>Puede ver formulario de contacto de emergencia de una persona</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_emergency" locale="es">
+        <value>Puede editar formulario de contacto de emergencia de una persona</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_personal" locale="es">
+        <value>Puede ver formulario de contacto personal de una persona</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_personal" locale="es">
+        <value>Puede editar formulario de contacto personal de una persona</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_other" locale="es">
+        <value>Puede ver formulario de otros contactos de una persona</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_other" locale="es">
+        <value>Puede editar formulario de otros contactos de una persona</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_contact_work">
+          <configuration name="display" values="single" locale="es">
+            <value>Contacto de trabajo</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_emergency">
+          <configuration name="display" values="single" locale="es">
+            <value>Contacto de emergencia</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_other">
+          <configuration name="display" values="single" locale="es">
+            <value>Otro contacto</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_personal">
+          <configuration name="display" values="single" locale="es">
+            <value>Contacto personal</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="contact">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="es">
+            <value>Agregar/actualizar información de contacto</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

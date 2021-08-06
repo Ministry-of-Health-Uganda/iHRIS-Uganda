@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>iHRIS Manage</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="robots" content="all" />
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta name="author" content="Development by IntraHealth International, Inc.  http://www.intrahealth.org/  Website graphic design by DesignHammer Media Group LLC, Building Smarter Websites http://www.designhammer.com" />
+    <meta name="copyright" content="" />
+    <meta name="Description" content="" />
+    <meta name="Keywords" content="" />
+    <link rel="Shortcut Icon" href="file/favicon.ico" />
+    <link rel="stylesheet" href="file/container-print.css" type="text/css" media="print" />
+    <style type="text/css" media="screen">
+      @import url(file/container-screen.css);
+    </style>
+    <!--[if lt IE 7]><link href="file/iehacks.css?newman" rel="stylesheet" type="text/css" media="screen" /><![endif]-->
+    <script type="text/javascript">
+    </script>
+  </head>
+  <body>
+
+    <div id="siteHeadWrap"><!-- ie6 redundant tag fix -->
+      <div id="siteHeader">
+
+	<a name="top"><img src="file/iHRISManage_logo.png" alt="" width="62" height="62" id="siteLogo" /></a>
+	<p id="siteName">iHRIS Manage</p>
+	<p id="siteTag">Demonstration Site</p>
+
+
+	<div id="inlineNavWrap"><!-- ie6 redundant tag fix -->
+	  <div id="inlineNavBar">
+	    <ul>
+        <li class="inlineNavOption" id="inlineNavMenu" role="any"><a name="menu" id="inlineNavMenuAnchor">Menu<span id="inlineNavMenuLock" class="open"><img id="inlineNavMenuLockOpen" height="12" width="12" src="file/nav-menu-lock-open-white.png" alt="Lock Menu in Current Position"/><img id="inlineNavMenuLockClose" height="12" width="12" src="file/nav-menu-lock-close-white.png" alt="Unlock Menu, Defaults to Hidden" /></span></a></li>
+        <!-- uncomment the following line and comment the one above for a floating menu -->
+        <!--<li class="inlineNavOption" id="inlineNavMenu" role="any"><a name="menu" id="inlineNavMenuAnchor">Menu</span></a></li>-->
+	      <li role='any' class="inlineNavOption" id="inlineNavHome"><a href="home">Home</a></li>
+        <span type="module" name="ihris-manage-help" ifenabled="true">
+          <li class="inlineNavOption" id="inlineNavHelp"><a href="file/help/index.html" target="_help">Help</a></li>
+        </span>
+	      <li role="NOT_LOGGED_IN" class="inlineNavOption" id="inlineNavMail"><a href="http://www.ihris.org/contact-us/">Feedback</a></li>
+        <li role="any" class="inlineNavOption" id="inlineNavMail"><a href="feedback">Feedback</a></li>
+        <li class="inlineNavOption" id="inlineNaviHRIS"><a href="http://www.ihris.org/" target="_new">iHRIS Website</a></li>
+	    </ul>
+	    <ul id="sysUser" role='any'>
+	      <li><a href="logout" class="logout"><span printf="'Log out as %s',ihris-common->getUserRole()" /></a></li>
+	    </ul>
+	    <ul id="sysUser" role='NOT_LOGGED_IN'>
+	      <li><a href="login" class="logout">Log In</a></li>
+	    </ul>
+	  </div><!-- /inlineNavBar -->
+	</div><!-- /inlineNavWrap -->
+
+	<div id="welcomeIntro" />
+
+      </div><!-- /siteHeader -->
+    </div><!-- /siteHeadWrap -->
+
+    <div id="siteOuterWrap" class="autoHideNav">
+
+      <div id="siteInnerWrap">
+
+	<div id="siteContent" />
+
+
+	<br style="clear: both;" />
+
+      </div><!-- /siteInnerWrap -->
+
+      <div id='StretchPage'></div>
+      <div id="siteFooter">
+	iHRIS Manage Version: <span type='module' call="ihris-common->showModuleVersion('ihris-manage')"/>
+	<span type='module' call='localeSelector->showSelectableLocales()'></span>
+      </div><!-- /siteFooter -->
+    </div><!-- /siteOuterWrap -->
+
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEducation" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEducation" path="/I2CE" locale="zh_CN">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="zh_CN">
+      <configuration name="person_can_view_child_form_education" locale="zh_CN">
+        <value>可以查看教育子窗体的人</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_education" locale="zh_CN">
+        <value>可以编辑教育子窗体的人</value>
+      </configuration>
+      <configuration name="can_edit_database_list_edu_type" locale="zh_CN">
+        <value>可以编辑教育类型数据库列表</value>
+      </configuration>
+      <configuration name="can_view_database_list_edu_type" locale="zh_CN">
+        <value>观教育可以键入数据库列表</value>
+      </configuration>
+      <configuration name="can_edit_database_list_degree" locale="zh_CN">
+        <value>可以编辑学位类型数据库列表</value>
+      </configuration>
+      <configuration name="can_view_database_list_degree" locale="zh_CN">
+        <value>视图程度可以键入数据库列表</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="education">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="zh_CN">
+            <value>添加更新教育史</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="degree">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>学位</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="edu_type">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>教育类型</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="education">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>教育史</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Degree">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:名</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="edu_type">
+              <configuration name="headers" type="delimited" values="many" locale="zh_CN">
+                <value>default:教育类型</value>
+                <value>select_degree:请选择教育类型然后度</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Education">
+          <configurationGroup name="fields">
+            <configurationGroup name="degree">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:学位</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="institution">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:学院名</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:学院地址</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="year">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:毕业 （空白如果在进步的许可） 的一年</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="major">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:大事</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS `zebra__user_statistics` (
+      `change_type` tinyint(3) unsigned NOT NULL,
+      `date` datetime NOT NULL,
+      `parent_id` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+      `record` int(10) unsigned NOT NULL,
+      `form` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+      `field` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+      `string_value` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+      `integer_value` int(11) DEFAULT NULL,
+      `date_value` datetime DEFAULT NULL,
+      `text_value` text CHARACTER SET utf8 COLLATE utf8_bin,
+      `blob_value` longblob,
+      `user` varchar(64) CHARACTER SET utf8 DEFAULT NULL,
+      `username` varchar(32) CHARACTER SET utf8 DEFAULT NULL,
+      KEY `date` (`date`),
+      KEY `parent_id` (`parent_id`(64)),
+      KEY `record` (`record`),
+      KEY `form` (`form`),
+      KEY `field` (`field`),
+      KEY `user` (`user`),
+      KEY `username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="generator" content="MediaWiki 1.15.1" /><meta name="keywords" content="Administer Database for iHRIS Manage,Books/iHRIS Manage User Manual,Add Geographical Areas,Administer Database for iHRIS Manage (versions)" /><link rel="canonical" href="ihris_administer_database_for_ihris_manage_4.0.html" /><link rel="shortcut icon" href="favicon.ico" /><link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Osi (en)" /><link title="Creative Commons" type="application/rdf+xml" href="" rel="meta" /><link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" /><link rel="alternate" type="application/rss+xml" title="Osi RSS Feed" href="" /><link rel="alternate" type="application/atom+xml" title="Osi Atom Feed" href="" /><title>Administer Database for iHRIS Manage - Osi</title><link rel="stylesheet" href="shared.css" type="text/css" media="screen" /><link rel="stylesheet" href="commonprint.css" type="text/css" media="print" /><link rel="stylesheet" href="main.css" type="text/css" media="screen" /><!--[if lt IE 5.5000]><link rel="stylesheet" href="ie50fixes.css" type="text/css" media="screen" /><![endif]--><!--[if IE 5.5000]><link rel="stylesheet" href="ie55fixes.css" type="text/css" media="screen" /><![endif]--><!--[if IE 6]><link rel="stylesheet" href="ie60fixes.css" type="text/css" media="screen" /><![endif]--><!--[if IE 7]><link rel="stylesheet" href="ie70fixes.css" type="text/css" media="screen" /><![endif]--><link rel="stylesheet" href="" type="text/css" /><link rel="stylesheet" href="" type="text/css" media="print" /><link rel="stylesheet" href="" type="text/css" /><link rel="stylesheet" href="" type="text/css" /><!--[if lt IE 7]><script type="text/javascript" src="iefixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]--><script type="text/javascript"><![CDATA[/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/w/skins";
+		var wgArticlePath = "/mediawiki/$1";
+		var wgScriptPath = "/w";
+		var wgScript = "/w/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://open.intrahealth.org";
+		var wgCanonicalNamespace = "iHRIS";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 100;
+		var wgPageName = "Administer_Database_for_iHRIS_Manage_(4.0.5)";
+		var wgTitle = "Administer Database for iHRIS Manage";
+		var wgAction = "view";
+		var wgArticleId = "19052";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 31339;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]]]><![CDATA[>*/]]></script><script type="text/javascript" src="wikibits.js"><![CDATA[<!-- wikibits js -->]]></script><!-- Head Scripts --><script type="text/javascript" src="ajax.js"></script><script type="text/javascript" src=""><![CDATA[<!-- site js -->]]></script></head><body class="mediawiki ltr ns-100 ns-subject page-iHRIS_Administer_Database_for_iHRIS_Manage_4_0_5 skin-monobook">
+	<div id="globalWrapperHacked">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Administer Database for iHRIS Manage</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Osi</h3>
+			
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			
+<p><br /></p>
+<div class="noprint"><b><i>Return to the</i> <a href="ihris_manage_user_manual.html" title="iHRIS Manage User Manual">iHRIS Manage User Manual index page</a>.</b></div>
+<p>To ensure that standard data types such as marital status, reasons for position changes, facility and department names, and the like are enforced across the system, those standard data types must be created as lists. These lists are used to create selection menus that provide options for selection when adding records, jobs and positions. Click <u>Configure System</u> and then click <u>Administer Database</u> to create and update standard lists of data for selection in system menus. Only the HR Manager and System Administrator can create data types. 
+</p><p><br /></p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul><li class="toclevel-1"><a href="#Add_a_Facility_Type"><span class="tocnumber">1</span> <span class="toctext">Add a Facility Type</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting"><span class="tocnumber">1.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_an_Office_or_Facility"><span class="tocnumber">2</span> <span class="toctext">Add an Office or Facility</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_2"><span class="tocnumber">2.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_a_Department"><span class="tocnumber">3</span> <span class="toctext">Add a Department</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_3"><span class="tocnumber">3.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_a_Registration_Council"><span class="tocnumber">4</span> <span class="toctext">Add a Registration Council</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_4"><span class="tocnumber">4.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_an_Education_Type"><span class="tocnumber">5</span> <span class="toctext">Add an Education Type</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_5"><span class="tocnumber">5.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_a_Degree"><span class="tocnumber">6</span> <span class="toctext">Add a Degree</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_6"><span class="tocnumber">6.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_a_Language"><span class="tocnumber">7</span> <span class="toctext">Add a Language</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_7"><span class="tocnumber">7.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_a_Competency_Type"><span class="tocnumber">8</span> <span class="toctext">Add a Competency Type</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_8"><span class="tocnumber">8.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_a_Competency"><span class="tocnumber">9</span> <span class="toctext">Add a Competency</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_9"><span class="tocnumber">9.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_a_Competency_Evaluation"><span class="tocnumber">10</span> <span class="toctext">Add a Competency Evaluation</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_10"><span class="tocnumber">10.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_an_Identification_Type"><span class="tocnumber">11</span> <span class="toctext">Add an Identification Type</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_11"><span class="tocnumber">11.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_a_Benefit_Type"><span class="tocnumber">12</span> <span class="toctext">Add a Benefit Type</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_12"><span class="tocnumber">12.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_a_Marital_Status"><span class="tocnumber">13</span> <span class="toctext">Add a Marital Status</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_13"><span class="tocnumber">13.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_a_Reason_for_Departure"><span class="tocnumber">14</span> <span class="toctext">Add a Reason for Departure</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_14"><span class="tocnumber">14.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+</ul></td></tr></table><script type="text/javascript"><![CDATA[ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } ]]></script><a name="Add_a_Facility_Type" id="Add_a_Facility_Type"></a><h2> <span class="mw-headline"> Add a Facility Type </span></h2>
+<p>The<i> facility type</i> classifies each office and facility in the organization for reporting and organizational purposes. Examples of facility types include Office, Hospital and Clinic. Specify at least one facility type. 
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  In the "Organization Lists" section, select <u>Facility Type</u>. </td><td> <a class="image" title="Image:OrgLists.png"><img alt="Image:OrgLists.png" src="orglists.png" width="187" height="135" border="0" /></a>
+</td></tr><tr valign="top"><td> The Facility Type page opens, showing all the Facility Types entered in the database. Either click <u>Add New Facility Type</u> or select an existing facility type and then click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:FacilityType1.png"><img alt="Image:FacilityType1.png" src="facilitytype1.png" width="456" height="327" border="0" /></a>
+</td></tr><tr valign="top"><td> The Facility Type form opens. Enter the <b>Name</b> of the facility type. Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:FacilityType2.png"><img alt="Image:FacilityType2.png" src="facilitytype2.png" width="598" height="193" border="0" /></a>
+</td></tr></table><a name="Troubleshooting" id="Troubleshooting"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears when Confirm is clicked.</b> 
+</p><p>Make certain you have entered a name for the facility type and that it is not the same as a facility type that was already entered. Change the name and try saving again. If you do not want to create the facility type after all, click <code>Return (do not save changes)</code>. 
+</p><p><br /></p>
+<a name="Add_an_Office_or_Facility" id="Add_an_Office_or_Facility"></a><h2> <span class="mw-headline"> Add an Office or Facility </span></h2>
+<p>If your organization has multiple offices or facilities, you may add each one to the system in order to link positions to the offices or facilities where they are located. You may also update information about an office or facility if it changes. Enter at least one office or facility, preferably the location of your organization's headquarters. 
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  In the "Organization Lists" section, select <u>Office/Facility</u>. </td><td> <a class="image" title="Image:OrgLists.png"><img alt="Image:OrgLists.png" src="orglists.png" width="187" height="135" border="0" /></a>
+</td></tr><tr valign="top"><td> The Office/Facility page opens. <br /><br /> Click <u>Add New Office/Facility</u>. (To edit an existing office or facility, first select or type the country, region and district where the facility is located; then click its name and click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:Offices1.png"><img alt="Image:Offices1.png" src="offices1.png" width="444" height="187" border="0" /></a>
+</td></tr><tr valign="top"><td> The Office/Facility form opens <br /><br /> Enter the <b>Name</b> of the office or facility. <br /><br />  Select a <b>Facility Type</b> for the office or facility. <br /><br /> Enter the <b>Contact Information</b> for the office or facility (optional). </td><td> <a class="image" title="Image:Offices2.png"><img alt="Image:Offices2.png" src="offices2.png" width="597" height="470" border="0" /></a>
+</td></tr><tr valign="top"><td> Under <b>Location</b>, either type the name of the district where the office or facility is located, or click <u>Select Value</u> and select the Country, Region and District where the office or facility is located. <br /><br /> Click <code>Confirm</code> and confirm that the information entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:Offices3.png"><img alt="Image:Offices3.png" src="offices3.png" width="601" height="418" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_2" id="Troubleshooting_2"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears when the Confirm button is clicked.</b>
+</p><p>Make sure that all required fields have been completed and that the name of the office or facility has not already been entered. Required fields are outlined in red. Fill in any missing information and try saving again. If you do not want to add the office or facility after all, click <code>Return (do not save changes)</code>. 
+</p><p><b>The correct facility type is not available for selection.</b> 
+</p><p>Click <u>Add New</u> beside the "Facility Type" menu and enter the name of the facility type. Then click <u>Administer Database</u> and follow the steps above to add the new office or facility. You will have to re-enter any information you previously entered for the office or facility. 
+</p><p><b>The correct country, district or county is not available for selection.</b> 
+</p><p>The geographical location needs to be added to the database (see <a href="ihris_add_geographical_areas.html" title="Add Geographical Areas" class="mw-redirect">Add geographical areas</a>). 
+</p><p><br /></p>
+<a name="Add_a_Department" id="Add_a_Department"></a><h2> <span class="mw-headline"> Add a Department </span></h2>
+<p>If any part of your organization is structured into departments, you may add them to the system and then link positions to their departments. Examples of departments include Finance, Information Technology and Human Resources. If your organization does not use departments, you may skip this step. 
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  In the "Organization Lists" section, select <u>Department</u>. </td><td> <a class="image" title="Image:OrgLists.png"><img alt="Image:OrgLists.png" src="orglists.png" width="187" height="135" border="0" /></a>
+</td></tr><tr valign="top"><td> The Department page opens, showing all departments entered in the database. Either click <u>Add New Department</u> or select an existing department and click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:Departments1.png"><img alt="Image:Departments1.png" src="departments1.png" width="460" height="348" border="0" /></a>
+</td></tr><tr valign="top"><td> The Department form opens. Enter the <b>Name</b> of the department. Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:Departments2.png"><img alt="Image:Departments2.png" src="departments2.png" width="599" height="194" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_3" id="Troubleshooting_3"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error appears when Confirm is clicked.</b> 
+</p><p>Make sure that you have entered a name for the department and that it is not the same as a department that was already entered. Change the name and try saving again. If you do not want to add the department after all, click <code>Return (do not save changes)</code>. 
+</p><p><br /></p>
+<a name="Add_a_Registration_Council" id="Add_a_Registration_Council"></a><h2> <span class="mw-headline"> Add a Registration Council </span></h2>
+<p>A <i>registration council</i> is the professional association or licensing board that registers health professionals, such as nurses or midwives. If your organization needs to track these registrations or licenses for your employees, enter the name of at least one registration council for selection.
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  In the "Organization Lists" section, select <u>Registration Councils</u>. </td><td> <a class="image" title="Image:OrgLists.png"><img alt="Image:OrgLists.png" src="orglists.png" width="187" height="135" border="0" /></a>
+</td></tr><tr valign="top"><td> The Registration Council page opens, showing all Registration Councils entered in the database. Either click <u>Add New Council</u> or select an existing registration council's name and click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:Councils1.png"><img alt="Image:Councils1.png" src="councils1.png" width="454" height="283" border="0" /></a>
+</td></tr><tr valign="top"><td> The Registration Council form opens. Enter the <b>Name</b> of the registration council. Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:Councils2.png"><img alt="Image:Councils2.png" src="councils2.png" width="595" height="192" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_4" id="Troubleshooting_4"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears when Confirm is clicked.</b> 
+</p><p>Make certain you have entered a name for the registration council and that it is not the same as a registration council that was already entered. Change the name and try saving again. If you do not want to create the registration council after all, click <code>Return (do not save changes)</code>. 
+</p><p><br /></p>
+<a name="Add_an_Education_Type" id="Add_an_Education_Type"></a><h2> <span class="mw-headline"> Add an Education Type </span></h2>
+<p>The <i>education type</i> classifies a type of educational institution that issues degrees. Education types are selected when entering a person's educational history. Examples of education types include High School, College and University. 
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  In the "Employee Lists" section, select <u>Education Type</u>. </td><td> <a class="image" title="Image:EmployeeLists.png"><img alt="Image:EmployeeLists.png" src="employeelists.png" width="174" height="178" border="0" /></a>
+</td></tr><tr valign="top"><td> The Education Type page opens, showing all Education Types entered in the database. Either click <u>Add New Education Type</u> or select an existing education type and click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:EducationType1.png"><img alt="Image:EducationType1.png" src="educationtype1.png" width="456" height="261" border="0" /></a>
+</td></tr><tr valign="top"><td> The Education Type form opens. Enter the <b>Name</b> of the education type. Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:EducationType2.png"><img alt="Image:EducationType2.png" src="educationtype2.png" width="593" height="196" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_5" id="Troubleshooting_5"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears when Confirm is clicked.</b> 
+</p><p>Make certain that the education type has not already been entered. Change the name and try saving again. If you do not want to add the education type after all, click <code>Return (do not save changes)</code>. 
+</p><p><br /></p>
+<a name="Add_a_Degree" id="Add_a_Degree"></a><h2> <span class="mw-headline"> Add a Degree </span></h2>
+<p>After adding an education type, you will need to add one or more kinds of degrees for that type. The degree will be selected when entering the educational history for a person into the system. Examples of degrees include: diploma for high school; Bachelor's degree for college; and Master's degree or PhD for university.
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  In the "Employee Lists" section, select <u>Degree</u>. </td><td> <a class="image" title="Image:EmployeeLists.png"><img alt="Image:EmployeeLists.png" src="employeelists.png" width="174" height="178" border="0" /></a>
+</td></tr><tr valign="top"><td> The Degree page opens. Either click <u>Add New Degree</u> or to edit an existing degree, select its education type and click the <code>View</code> button to display all matching degrees; then click the degree name and click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:Degrees1.png"><img alt="Image:Degrees1.png" src="degrees1.png" width="456" height="274" border="0" /></a>
+</td></tr><tr valign="top"><td> The Degree form opens. <br /><br /> Enter a <b>Name</b> for the degree. <br /><br /> Select the <b>Education Type</b> for the degree. <br /><br /> Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:Degrees2.png"><img alt="Image:Degrees2.png" src="degrees2.png" width="599" height="250" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_6" id="Troubleshooting_6"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears after clicking Confirm.</b> 
+</p><p>Make sure that the name of the degree has been entered and an education type has been selected -- these fields are required. The required fields will be outlined in red. Also make certain that the degree has not already been entered for that education type; duplicates are not allowed. Complete the missing or incorrect fields and try saving again. If you do not want to add the degree after all, click <code>Return (do not save changes)</code>. 
+</p><p><b>The matching education type does not appear in the list.</b> 
+</p><p>Click <u>Add New</u> beside the "Education Type" menu to add a new education type. Then click <u>Administer Database</u> and follow the steps above to add the new degree. You will have to re-enter any information you previously entered for the degree. 
+</p><p><br /></p>
+<a name="Add_a_Language" id="Add_a_Language"></a><h2> <span class="mw-headline"> Add a Language </span></h2>
+<p>If you want to track employee proficiency in speaking, reading and writing foreign languages, each language must be added to the system to be selected when adding the employee's qualifications. 
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  In the "Employee Lists" section, select <u>Language</u>. </td><td> <a class="image" title="Image:EmployeeLists.png"><img alt="Image:EmployeeLists.png" src="employeelists.png" width="174" height="178" border="0" /></a>
+</td></tr><tr valign="top"><td> The Language page opens, showing all languages entered in the database. Either click <u>Add New Language</u> or select an existing language and click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:Languages1.png"><img alt="Image:Languages1.png" src="languages1.png" width="457" height="347" border="0" /></a>
+</td></tr><tr valign="top"><td> The Language page opens. Enter the <b>Name</b> of the language. Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:Languages2.png"><img alt="Image:Languages2.png" src="languages2.png" width="598" height="196" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_7" id="Troubleshooting_7"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears when Confirm is clicked.</b> 
+</p><p>Make certain that the language has not already been entered. Change the name and try saving again. If you do not want to add the language after all, click <code>Return (do not save changes)</code>. 
+</p><p><br /></p>
+<a name="Add_a_Competency_Type" id="Add_a_Competency_Type"></a><h2> <span class="mw-headline"> Add a Competency Type </span></h2>
+<p>A <i>competency type</i> is a broad category for organizing competencies, or skills in which employees have been assessed as competent. Examples of competency types include Computer Skills, Client Interaction and Diagnostics. Competency types combined with competencies comprise your organization's competency model. 
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  In the "Employee Lists" section, select <u>Competency Type</u>. </td><td> <a class="image" title="Image:EmployeeLists.png"><img alt="Image:EmployeeLists.png" src="employeelists.png" width="174" height="178" border="0" /></a>
+</td></tr><tr valign="top"><td> The Competency Type page opens, showing all the Competency Types entered in the database. Either click <u>Add New Competency Type</u> or select an existing competency type and click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:CompetencyType1.png"><img alt="Image:CompetencyType1.png" src="competencytype1.png" width="462" height="484" border="0" /></a>
+</td></tr><tr valign="top"><td> The Competency Type form opens. Enter the <b>Name</b> of the competency type. Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:CompetencyType2.png"><img alt="Image:CompetencyType2.png" src="competencytype2.png" width="600" height="198" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_8" id="Troubleshooting_8"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears when Confirm is clicked.</b> 
+</p><p>Make certain that the competency type has not already been entered. Change the name and try saving again. If you do not want to add the competency type after all, click <code>Return (do not save changes)</code>. 
+</p><p><br /></p>
+<a name="Add_a_Competency" id="Add_a_Competency"></a><h2> <span class="mw-headline"> Add a Competency </span></h2>
+<p>After adding a competency type, add one or more <i>competencies</i>--skills or qualifications in which an employee has been assessed as competent--grouped under that competency type. For example, for the competency type Computer Skills, specific competencies could include Data Entry, Software Use and Document Formatting. The set of competencies and competency types comprise your organization's competency model. When an employee has been assessed as having a particular competency, that competency can be added to the employee's record. Competencies may also be earned by completing training courses.
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  In the "Employee Lists" section, select <u>Competency</u>. </td><td> <a class="image" title="Image:EmployeeLists.png"><img alt="Image:EmployeeLists.png" src="employeelists.png" width="174" height="178" border="0" /></a>
+</td></tr><tr valign="top"><td> The Competency page opens. Either click <u>Add New Competency</u> or to edit an existing competency, select its competency type and click the <code>View</code> button to display all matching competencies; then click the competency name and click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:Competency1.png"><img alt="Image:Competency1.png" src="competency1.png" width="480" height="293" border="0" /></a>
+</td></tr><tr valign="top"><td> The Competency form opens. <br /><br /> Enter a <b>Name</b> for the competency. <br /><br /> Select the <b>Competency Type</b> for the competency. <br /><br /> Enter any <b>Notes</b> about the competency (optional). <br /><br /> Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:Competency2.png"><img alt="Image:Competency2.png" src="competency2.png" width="597" height="335" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_9" id="Troubleshooting_9"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears when Confirm is clicked.</b> 
+</p><p>Make sure that a competency was not already entered for that competency type. Change the name or competency type and try saving again. If you do not want to add the competency after all, click <code>Return (do not save changes)</code>. 
+</p><p><b>The correct competency type is not available for selection.</b> 
+</p><p>Beside the "Competency Type" menu, click <u>Add New</u> and enter the correct competency type. Then click <u>Administer Database</u> and follow the steps above to add the new competency. You will have to re-enter any information you previously entered for the competency. 
+</p><p><br /></p>
+<a name="Add_a_Competency_Evaluation" id="Add_a_Competency_Evaluation"></a><h2> <span class="mw-headline"> Add a Competency Evaluation </span></h2>
+<p>If you want to assess an employee in a particular competency, each evaluation option must be added for selection when making the assessment. For example, you might enter "Competent," "Not Competent" and "Not Assessed" as options to select for the evaluation.
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  In the "Employee Lists" section, select <u>Competency Evaluation</u>. </td><td> <a class="image" title="Image:EmployeeLists.png"><img alt="Image:EmployeeLists.png" src="employeelists.png" width="174" height="178" border="0" /></a>
+</td></tr><tr valign="top"><td> The Competency Evaluation page opens, showing all the Competency Evaluations entered in the database. Either click <u>Add New Competency Evaluation</u> or select an existing competency evaluation and click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:CompetencyEvaluation1.png"><img alt="Image:CompetencyEvaluation1.png" src="competencyevaluation1.png" width="455" height="221" border="0" /></a>
+</td></tr><tr valign="top"><td> The Competency Evaluation form opens. Enter the <b>Name</b> of the competency evaluation. Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:CompetencyEvaluation2.png"><img alt="Image:CompetencyEvaluation2.png" src="competencyevaluation2.png" width="593" height="194" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_10" id="Troubleshooting_10"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears when Confirm is clicked.</b> 
+</p><p>Make certain that the competency evaluation has not already been entered. Change the name and try saving again. If you do not want to add the evaluation option after all, click <code>Return (do not save changes)</code>. 
+</p><p><br /></p>
+<a name="Add_an_Identification_Type" id="Add_an_Identification_Type"></a><h2> <span class="mw-headline"> Add an Identification Type </span></h2>
+<p>The <i>identification type</i> classifies a type of identification, or non-changing information, used to identify an employee or applicant. Examples of identification types include Passport, Social Security Number and National Health Insurance Card. 
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  In the "Employee Lists" section, select <u>Identification Type</u>. </td><td> <a class="image" title="Image:EmployeeLists.png"><img alt="Image:EmployeeLists.png" src="employeelists.png" width="174" height="178" border="0" /></a>
+</td></tr><tr valign="top"><td> The Identification Type page opens, showing all the Identification Types entered in the database. Either click <u>Add New Identification Type</u> or select an existing identification type and click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:Identification1.png"><img alt="Image:Identification1.png" src="identification1.png" width="458" height="241" border="0" /></a>
+</td></tr><tr valign="top"><td> The Identification Type form opens. Enter the <b>Name</b> of the identification type. Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:Identification2.png"><img alt="Image:Identification2.png" src="identification2.png" width="598" height="198" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_11" id="Troubleshooting_11"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears when Confirm is clicked.</b> 
+</p><p>Make sure that the identification type has not already been entered. Change the name and try saving again. If you do not want to add the identification type after all, click <code>Return (do not save changes)</code>. 
+</p><p><br /></p>
+<a name="Add_a_Benefit_Type" id="Add_a_Benefit_Type"></a><h2> <span class="mw-headline"> Add a Benefit Type </span></h2>
+<p>The <i>benefit type</i> classifies a type of benefit or special payment to an employee. Examples of benefit types include Allowance, Travel Advance and Bonus. 
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  In the "Employee Lists" section, select <u>Benefit Type</u>. </td><td> <a class="image" title="Image:EmployeeLists.png"><img alt="Image:EmployeeLists.png" src="employeelists.png" width="174" height="178" border="0" /></a>
+</td></tr><tr valign="top"><td> The Benefit Type page opens, showing all the Benefit Types entered in the database. Either click <u>Add New Benefit Type</u> or select an existing benefit type and click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:Benefit1.png"><img alt="Image:Benefit1.png" src="benefit1.png" width="458" height="242" border="0" /></a>
+</td></tr><tr valign="top"><td> The Benefit Type form opens. Enter the <b>Name</b> of the benefit type. Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:Benefit2.png"><img alt="Image:Benefit2.png" src="benefit2.png" width="599" height="195" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_12" id="Troubleshooting_12"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears when Confirm is clicked.</b> 
+</p><p>Make sure that the benefit type has not already been entered. Change the name and try saving again. If you do not want to add the benefit type after all, click <code>Return (do not save changes)</code>. 
+</p><p><br /></p>
+<a name="Add_a_Marital_Status" id="Add_a_Marital_Status"></a><h2> <span class="mw-headline"> Add a Marital Status </span></h2>
+<p><i>Marital status</i> is used to identify employees' legal status. Examples of marital status include Single, Married, Divorced and Widowed. 
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  In the "Employee Lists" section, select <u>Marital Status</u>. </td><td> <a class="image" title="Image:EmployeeLists.png"><img alt="Image:EmployeeLists.png" src="employeelists.png" width="174" height="178" border="0" /></a>
+</td></tr><tr valign="top"><td> The Marital Status page opens, showing all the Marital Status items entered in the database. Either click <u>Add New Marital Status</u> or select an existing marital status and click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:MaritalStatus1.png"><img alt="Image:MaritalStatus1.png" src="maritalstatus1.png" width="461" height="257" border="0" /></a>
+</td></tr><tr valign="top"><td> The Marital Status form opens. Enter the <b>Name</b> of the marital status. Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:MaritalStatus2.png"><img alt="Image:MaritalStatus2.png" src="maritalstatus2.png" width="599" height="191" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_13" id="Troubleshooting_13"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears when Confirm is clicked.</b> 
+</p><p>Make certain that the marital status has not already been entered. Change the name and try saving again. If you do not want to add the marital status after all, click <code>Return (do not save changes)</code>. 
+</p><p><br /></p>
+<a name="Add_a_Reason_for_Departure" id="Add_a_Reason_for_Departure"></a><h2> <span class="mw-headline"> Add a Reason for Departure </span></h2>
+<p><i>Reasons for departure</i> are used to classify the reasons why an employee has left the employment of the organization or changed positions. Examples of reasons for departure include Promotion, Termination, Layoff, Illness, Death and Out Migration. 
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  In the "Employee Lists" section, select <u>Reasons for Departure</u>. </td><td> <a class="image" title="Image:EmployeeLists.png"><img alt="Image:EmployeeLists.png" src="employeelists.png" width="174" height="178" border="0" /></a>
+</td></tr><tr valign="top"><td> The Reason for Departure page opens, showing all the reasons for departure entered in the database. Either click <u>Add New Reasons for Departure</u> or select an existing reason for departure and click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:Departure1.png"><img alt="Image:Departure1.png" src="departure1.png" width="458" height="351" border="0" /></a>
+</td></tr><tr valign="top"><td> The Reason for Departure form opens. Enter the <b>Name</b> of the reason for departure. Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:Departure2.png"><img alt="Image:Departure2.png" src="departure2.png" width="596" height="197" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_14" id="Troubleshooting_14"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears when Confirm is clicked.</b> 
+</p><p>Make certain that the reason for departure has not already been entered. Change the name and try saving again. If you do not want to add the reason for departure after all, click <code>Return (do not save changes)</code>.
+</p>
+<div class="noprint"><b><i>Return to the</i> <a href="ihris_manage_user_manual.html" title="iHRIS Manage User Manual">iHRIS Manage User Manual index page</a>.</b></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 65/1000000
+Post-expand include size: 730/2097152 bytes
+Template argument size: 285/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:19052-0!1!0!!en!2!edit=0 and timestamp 20100610172957 -->
+<div class="printfooter">
+Retrieved from "<a href="ihris_administer_database_for_ihris_manage_4.0.html">http://open.intrahealth.org/mediawiki/Administer_Database_for_iHRIS_Manage_(4.0.5)</a>"</div>
+						<!-- end content --><div class="visualClear"></div></div></div></div>
+    <div id="column-one">
+      <div id="p-cactions" class="portlet"></div>
+      <div class="portlet" id="p-personal"></div>
+      <div class="portlet" id="p-logo"></div>
+      <div class="portlet" id="p-nav">
+  
+      </div>
+      <div id="p-search" class="portlet"></div>
+      <div class="portlet" id="p-tb"></div>
+    </div>
+    <!-- end left column -->
+  <!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			
+</div>
+
+		<script type="text/javascript"><![CDATA[if (window.runOnloadHook) runOnloadHook();]]></script><script type="text/javascript"><![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+]]></script><script type="text/javascript"><![CDATA[
+var pageTracker = _gat._getTracker("UA-10400285-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+]]></script><!-- Served in 0.108 secs. --><br /></body></html>

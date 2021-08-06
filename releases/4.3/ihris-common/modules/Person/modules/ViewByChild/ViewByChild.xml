@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ViewByChild">
+  <metadata>
+    <displayName>View by child</displayName>
+    <category>Application Component</category>
+    <description>Visualize the parent on view from the child</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-common</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="ViewByChild" path="/I2CE/page">
+    <displayName>View by child</displayName>
+    <configurationGroup name="viewbychild">
+      <displayName>View by Child</displayName>
+      <description>View parent from child</description>
+      <configuration name="style" values="single">
+        <displayName>Page Style</displayName>
+        <description>The Page Style</description>
+        <value>empty</value>
+      </configuration>
+      <configuration name="class" values="single">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>iHRIS_PageViewByChild</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Page Options</displayName>
+        <description>The options that control the access and display of all pages</description>
+        <configuration name="tasks" values="many">
+          <value>person_can_view</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

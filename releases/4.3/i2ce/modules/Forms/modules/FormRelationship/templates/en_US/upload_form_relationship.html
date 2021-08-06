@@ -1,0 +1,28 @@
+<div >
+  <h2>Form Relationship Upload</h2>
+  Import iHRIS data from a form relationship export or from a transform of another data source, such as an Excel file, to the iHRIS form relationship format.
+
+  <form action='form_relationship_import' method='POST' enctype="multipart/form-data">
+    <label for='upload'>Form Relationship</label>
+    <p>XML File containing form relationship</p>
+    <input type='file' name='upload'/>
+    <br/>
+    <label for='ignore_ids'>Ignore IDs</label>
+    <p>Ignore the IDs of the primary form (and it's children)</p>
+    <select name='ignore_ids'>
+      <option value='0'>No</option>
+      <option value='1'>Yes</option>
+    </select>
+    <br/>
+<!--
+    <label for='allow_invalid'>Allow Invalid</label>
+    <p>Allow invalid forms to be upload</p>
+    <select name='allow_invalid'>
+      <option value='0'>No</option>
+      <option value='1'>Yes</option>
+    </select>
+    <br/>
+-->
+    <input type="submit" value="Import" />
+  </form>
+</div>

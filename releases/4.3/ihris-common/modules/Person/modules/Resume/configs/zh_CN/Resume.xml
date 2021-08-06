@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonResume" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonResume" path="/I2CE" locale="zh_CN">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="zh_CN">
+      <configuration name="person_can_view_child_form_person_resume" locale="zh_CN">
+        <value>可以查看简历的人</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_resume" locale="zh_CN">
+        <value>可以编辑的一个人的简历</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_resume">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>个人简历</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_resume">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="zh_CN">
+            <value>添加更新简历</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

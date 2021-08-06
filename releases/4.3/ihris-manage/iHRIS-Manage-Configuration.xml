@@ -1,0 +1,589 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage">
+  <metadata>
+    <displayName>iHRIS Manage</displayName>
+    <className>iHRIS_Module_Manage</className>
+    <category>Application</category>
+    <description>The iHRIS Manage system.</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-common">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ihris-manage-Person">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ihris-manage-PersonPosition">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <enable name="page-relationship-builder" />
+    <enable name="ihris-manage-Benefit" />
+    <enable name="ihris-manage-csd-qus" />
+    <enable name="web-services-lists" />
+    <requirement name="Currency">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="simple-competency">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ihris-common-Search">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ihris-common-RecentForm">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <conflict name="ihris-qualify">
+      <atLeast version="2" />
+      <lessThan version="5" />
+    </conflict>
+    <conflict name="ihris-plan">
+      <atLeast version="1" />
+      <lessThan version="2" />
+    </conflict>
+    <enable name="ihris-manage-CustomReports" />
+    <enable name="ihris-manage-AutoList" />
+    <enable name="ihris-manage-Application" />
+    <enable name="ihris-manage-help" />
+    <enable name="FacilityContact" />
+    <enable name="ManageRegistration" />
+    <enable name="ManageAccessFacility" />
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="images">
+      <value>./images</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <priority>200</priority>
+  </metadata>
+  <erase path="/modules/forms/forms/search">
+    <lessThan version="3.2.10" />
+  </erase>
+  <erase path="/modules/forms/formClasses/iHRIS_Search">
+    <lessThan version="3.2.10" />
+  </erase>
+  <erase path="/I2CE/page/search/args//defaultHTMLFile">
+    <lessThan version="3.2.11" />
+  </erase>
+  <configurationGroup name="ihris-manage" path="/I2CE">
+    <displayName>iHRIS Manage</displayName>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <version>3.2.24</version>
+      <configuration name="can_edit_planning_database_lists" locale="en_US" values="single" type="string">
+        <version>4.0.6</version>
+        <value>Can edit some planning database lists</value>
+      </configuration>
+      <configuration name="can_view_planning_database_lists" locale="en_US" values="single" type="string">
+        <version>4.0.6</version>
+        <value>Can view some planning database lists</value>
+      </configuration>
+      <configuration name="can_edit_all_planning_database_lists" locale="en_US" values="single" type="string">
+        <version>4.0.6</version>
+        <value>Can edit all planning database lists</value>
+      </configuration>
+      <configuration name="can_view_all_planning_database_lists" locale="en_US" values="single" type="string">
+        <version>4.0.6</version>
+        <value>Can view all planning database lists</value>
+      </configuration>
+      <configuration name="can_edit_organization_database_lists" locale="en_US" values="single" type="string">
+        <value>Can edit some organizational database lists</value>
+      </configuration>
+      <configuration name="can_view_organization_database_lists" locale="en_US" values="single" type="string">
+        <value>Can view some organizational database lists</value>
+      </configuration>
+      <configuration name="can_edit_all_organization_database_lists" locale="en_US" values="single" type="string">
+        <value>Can edit all organizational database lists</value>
+      </configuration>
+      <configuration name="can_view_all_organization_database_lists" locale="en_US" values="single" type="string">
+        <value>Can view all organizational database lists</value>
+      </configuration>
+      <configuration name="can_edit_employee_database_lists" locale="en_US" values="single" type="string">
+        <value>Can edit some employee database lists</value>
+      </configuration>
+      <configuration name="can_view_employee_database_lists" locale="en_US" values="single" type="string">
+        <value>Can view some employee database lists</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" locale="en_US" values="single" type="string">
+        <value>Can edit all employee database lists</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" locale="en_US" values="single" type="string">
+        <value>Can view all employee database lists</value>
+      </configuration>
+      <configuration name="can_edit_position_database_lists" locale="en_US" values="single" type="string">
+        <value>Can edit some position database lists</value>
+      </configuration>
+      <configuration name="can_view_position_database_lists" locale="en_US" values="single" type="string">
+        <value>Can view some position database lists</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down">
+      <version>3.2.24</version>
+      <configuration name="can_edit_organization_database_lists" values="many" type="string">
+        <value>can_edit_database_lists</value>
+        <value>can_view_organization_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_organization_database_lists" values="many" type="string">
+        <version>3.2.23</version>
+        <value>can_edit_organization_database_lists</value>
+        <value>can_view_all_organization_database_lists</value>
+      </configuration>
+      <configuration name="can_view_all_organization_database_lists" values="many" type="string">
+        <value>can_view_organization_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_employee_database_lists" values="many" type="string">
+        <value>can_edit_database_lists</value>
+        <value>can_view_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" values="many" type="string">
+        <version>3.2.23</version>
+        <value>can_edit_employee_database_lists</value>
+        <value>can_view_all_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" values="many" type="string">
+        <value>can_view_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_position_database_lists" values="many" type="string">
+        <version>4.1.0.2</version>
+        <value>can_edit_database_lists</value>
+        <value>can_view_position_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_database_lists" values="many" type="string">
+        <value>can_edit_all_organization_database_lists</value>
+        <value>can_edit_all_employee_database_lists</value>
+        <value>can_edit_position_database_lists</value>
+      </configuration>
+      <configuration name="can_view_all_database_lists" values="many" type="string">
+        <value>can_view_all_organization_database_lists</value>
+        <value>can_view_all_employee_database_lists</value>
+        <value>can_view_position_database_lists</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="role_trickle_down" path="/I2CE/tasks/role_trickle_down">
+      <status>visible:false</status>
+      <configuration name="hr_manager" values="many" type="string">
+        <version>3.2.22</version>
+        <status>uniquemerge:true</status>
+        <value>custom_reports_can_access_reports</value>
+        <value>custom_reports_can_edit_reportViews</value>
+        <value>custom_reports_can_view_reportViews</value>
+        <value>can_edit_all_database_lists</value>
+        <value>person_can_edit</value>
+        <value>person_can_edit_child_forms</value>
+        <value>users_can_edit</value>
+        <value>person_can_change_child_form_salary</value>
+        <value>person_can_change_child_form_person_position</value>
+        <value>can_change_own_password</value>
+        <value>can_edit_all_planning_database_lists</value>
+        <value>establishment_can_edit</value>
+      </configuration>
+      <configuration name="hr_staff" values="many" type="string">
+        <version>4.0.8.0</version>
+        <status>uniquemerge:true</status>
+        <value>can_view_all_database_lists</value>
+        <value>custom_reports_can_view_reportViews</value>
+        <value>person_can_edit_child_form_person_scheduled_training_course</value>
+        <value>person_can_view_child_form_person_scheduled_training_course</value>
+        <value>competency_can_view_history</value>
+        <value>person_can_view_child_forms</value>
+        <value>person_can_edit_child_form_demographic</value>
+        <value>person_can_edit_child_form_person_photo_passport</value>
+        <value>person_can_edit_child_form_person_resume</value>
+        <value>person_can_edit_child_form_archive_scan</value>
+        <value>person_can_edit_child_form_language</value>
+        <value>person_can_edit_child_form_registration</value>
+        <value>person_can_edit_child_form_application</value>
+        <value>person_can_edit_child_form_benefit</value>
+        <value>person_can_edit_child_form_dependent</value>
+        <value>person_can_edit_child_form_employment</value>
+        <value>person_can_edit_child_form_education</value>
+        <value>person_can_edit_child_form_person_id</value>
+        <value>person_can_edit_child_form_nextofkin</value>
+        <value>person_can_edit_child_form_notes</value>
+        <value>person_can_edit_child_form_person_competency</value>
+        <value>person_can_edit_child_form_person_contact_emergency</value>
+        <value>person_can_edit_child_form_person_contact_other</value>
+        <value>person_can_edit_child_form_person_contact_personal</value>
+        <value>person_can_edit_child_form_person_contact_work</value>
+        <value>person_can_edit_child_form_person_position</value>
+        <value>person_can_edit_child_form_position_decision</value>
+        <value>person_can_edit_child_form_position_interview</value>
+        <value>person_can_edit_child_form_salary</value>
+        <value>person_competency_can_view_evaluation_history</value>
+        <value>can_edit_database_list_department</value>
+        <value>can_edit_database_list_facility</value>
+        <value>can_edit_all_manage_positions_database_lists</value>
+        <value>can_configure_system</value>
+        <value>can_change_own_password</value>
+        <value>person_can_edit_child_form_accident</value>
+        <value>can_edit_database_list_accident_type</value>
+        <value>person_can_edit_child_form_disciplinary_action</value>
+        <value>can_edit_database_list_disciplinary_action_type</value>
+        <value>can_view_recent_forms</value>
+      </configuration>
+      <configuration name="exec_manager" values="many" type="string">
+        <version>3.2.28</version>
+        <status>uniquemerge:true</status>
+        <value>custom_reports_can_view_reportViews</value>
+        <value>can_change_own_password</value>
+        <value>person_can_view_child_forms</value>
+        <value>can_view_database_list_position</value>
+        <value>can_view_database_list_job</value>
+      </configuration>
+      <configuration name="training_manager" values="many" type="string">
+        <version>4.0.8.0</version>
+        <status>uniquemerge:true</status>
+        <value>custom_reports_can_view_reportViews</value>
+        <value>can_edit_database_lists_training</value>
+        <value>can_edit_scheduled_training_course</value>
+        <value>person_can_view_child_form_person_scheduled_training_course</value>
+        <value>person_can_edit_child_form_person_scheduled_training_course</value>
+        <value>person_can_view_child_forms</value>
+        <value>person_scheduled_training_course_can_edit_exam</value>
+        <value>person_scheduled_training_course_can_edit_evaluation</value>
+        <value>can_change_own_password</value>
+        <value>can_configure_system</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="template">
+      <displayName>Template Information</displayName>
+      <description>Various Default Information About The Templating System</description>
+      <configurationGroup name="page_styles">
+        <displayName>Page Style</displayName>
+        <description>Various Page styles with their default templates</description>
+        <status>required:false</status>
+        <configurationGroup name="ihris_manage_page_form_parent_person">
+          <!--defined in manage-person-->
+          <displayName>Page Form Parent Person</displayName>
+          <configurationGroup name="args">
+            <displayName>Arguements</displayName>
+            <description>Values passed to the pages constructor</description>
+            <configuration name="access" values="many" type="string">
+              <displayName>Page Access</displayName>
+              <description>All of the roles that have access to this page</description>
+              <status>required:false</status>
+              <value>hr_staff</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="roles" path="/I2CE/formsData/forms/role">
+      <version>3.2.14</version>
+      <!-- moved roles to be usable in form storage magic data-->
+      <displayName>Roles</displayName>
+      <description>The list of roles provided</description>
+      <status>advanced:true</status>
+      <status>required:true</status>
+      <configurationGroup name="hr_manager">
+        <displayName>'HR Manager' Role</displayName>
+        <description>The Role 'hr_manager' allows access for the Human Resources Manager</description>
+        <configuration name="last_modified" values="single" type="string">
+          <value>2009-06-15 1:23:45</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="en_US" type="string">
+            <displayName>Display Name</displayName>
+            <description>The name displayed for the role</description>
+            <status>advanced:true</status>
+            <value>HR Manager</value>
+          </configuration>
+          <configuration name="trickle_up" values="single" type="string">
+            <displayName>Trickle Up</displayName>
+            <description>The short Name of the roles that have privelages to anything with the role 'HR Manager', You do not need to include the role for the special role 'All' as it will be ignored</description>
+            <status>advanced:true</status>
+            <status>required:false</status>
+            <value>admin</value>
+          </configuration>
+          <configuration name="assignable" values="single" type="string">
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="hr_staff">
+        <displayName>'HR Staff' Role</displayName>
+        <description>The Role 'hr_staff' allows access for Human Resources Staff</description>
+        <configuration name="last_modified" values="single" type="string">
+          <value>2009-06-15 1:23:45</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="en_US" type="string">
+            <displayName>Display Name</displayName>
+            <description>The name displayed for the role</description>
+            <status>advanced:true</status>
+            <value>HR Staff</value>
+          </configuration>
+          <configuration name="trickle_up" values="single" type="string">
+            <displayName>Trickle Up</displayName>
+            <description>The short Name of the roles that have privelages to anything with the role 'HR Staff', You do not need to include the role for the special role 'All' as it will be ignored</description>
+            <value>admin,hr_manager</value>
+          </configuration>
+          <configuration name="assignable" values="single" type="string">
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="exec_manager">
+        <displayName>'Executive Manager' Role</displayName>
+        <description>The Role 'exec_manager' allows access for the Executive Manager</description>
+        <configuration name="last_modified" values="single" type="string">
+          <value>2009-06-15 1:23:45</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="en_US" type="string">
+            <displayName>Display Name</displayName>
+            <description>The name displayed for the role</description>
+            <value>Executive Manager</value>
+          </configuration>
+          <configuration name="trickle_up" values="single" type="string">
+            <displayName>Trickle Up</displayName>
+            <description>The short name of the roles that have privelages to anything with the role 'Executive Manager', You do not need to include the role for the special role 'All' as it will be ignored</description>
+            <value>admin</value>
+          </configuration>
+          <configuration name="assignable" values="single" type="string">
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="training_manager">
+        <version>3.2.17</version>
+        <displayName>'Training Manager' Role</displayName>
+        <description>The Role 'training_manager' allows access for the Executive Manager</description>
+        <configuration name="last_modified" values="single" type="string">
+          <value>2009-06-15 1:23:45</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="en_US" type="string">
+            <displayName>Display Name</displayName>
+            <description>The name displayed for the role</description>
+            <value>Training Manager</value>
+          </configuration>
+          <configuration name="trickle_up" values="single" type="string">
+            <displayName>Trickle Up</displayName>
+            <description>The short name of the roles that have privelages to anything with the role 'Executive Manager', You do not need to include the role for the special role 'All' as it will be ignored</description>
+            <value>admin,hr_manager</value>
+          </configuration>
+          <configuration name="assignable" values="single" type="string">
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+      <configurationGroup name="configure">
+        <!-- overwriting some values defined in ihris-common -->
+        <displayName>Configure Page</displayName>
+        <description>The page 'configure' which has the action of: Configure System</description>
+        <status>visible:false</status>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <status>overwrite:true</status>
+            <status>uniquemerge:true</status>
+            <value>hr_manager</value>
+            <value>training_manager</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="feedback">
+        <displayName>Feedback Page</displayName>
+        <description>The page 'feedback' which has the action of: Send Feedback</description>
+        <configuration name="style" values="single" type="string">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US" type="string">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Send Feedback</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many" type="string">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:false</status>
+            <value>feedback.html</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <value>any</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="view">
+        <displayName>View Page</displayName>
+        <description>The page 'view' which has the action of: View Person</description>
+        <configuration name="class" values="single" type="string">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <version>3.2.7</version>
+          <!--reverting iHRIS_PageViewManage to iHRIS_PageView -->
+          <status>required:true</status>
+          <value>iHRIS_PageView</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="manage">
+        <displayName>Manage Page</displayName>
+        <description>The page 'manage' which has the action of: Manage People</description>
+        <configuration name="class" values="single" type="string">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageManage</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US" type="string">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Manage People</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many" type="string">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>manage.html</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <status>uniquemerge:true</status>
+            <value>hr_staff</value>
+            <value>exec_manager</value>
+            <value>training_manager</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="user">
+        <displayName>User Page</displayName>
+        <description>The page 'user' which has the action of: Manage Users/Access</description>
+        <configuration name="class" values="single" type="string">
+          <version>3.2.5</version>
+          <!-- reverting back to iHRIS_PageFormUser -->
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <!--<value>iHRIS_PageFormUserManage</value> version < 3.2.4-->
+          <value>iHRIS_PageFormUser</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="search_reports" path="/modules/CustomReports/search_reports">
+      <displayName>Search Reports</displayName>
+      <description>A list of all reports that need to be generated for the search page. If the value is true then the report will be generated even if other report generation is turned off by /modules/CustomReports/times/background.</description>
+      <version>4.0.3.12</version>
+      <configuration name="search_people" values="many" type="delimited" locale="en_US">
+        <displayName>The search people report.</displayName>
+        <value>name:Search People</value>
+        <value>description:Locate any person's record in the system to review, print or update.</value>
+      </configuration>
+      <configuration name="position_list" values="many" type="delimited" locale="en_US">
+        <displayName>The position list report.</displayName>
+        <value>name:Search Positions</value>
+        <value>description:Locate any position in the system to review, print or update.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="recent_forms" path="/modules/RecentForm/forms">
+      <displayName>Recent Forms</displayName>
+      <description>A list of forms to display in the recent form list with details.</description>
+      <version>4.0.3.6</version>
+      <configurationGroup name="person">
+        <displayName>The person form</displayName>
+        <configuration name="fields" values="many" type="string">
+          <displayName>The fields to display in the results</displayName>
+          <value>surname</value>
+          <value>firstname</value>
+        </configuration>
+        <configuration name="display" values="single" type="string">
+          <displayName>How the results are displayed based on the fields</displayName>
+          <description>A printf string that matches the order of the fields for this form.</description>
+          <version>4.0.3.7</version>
+          <value>%s, %s</value>
+        </configuration>
+        <configuration name="link" values="single" type="string">
+          <displayName>The page to link to to display this form.</displayName>
+          <value>view?id=</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="position">
+        <displayName>The position form</displayName>
+        <version>4.0.3.11</version>
+        <configuration name="fields" values="many" type="string">
+          <displayName>The fields to display in the results</displayName>
+          <value>code</value>
+          <value>title</value>
+        </configuration>
+        <configuration name="display" values="single" type="string">
+          <displayName>How the results are displayed based on the fields</displayName>
+          <description>A printf string that matches the order of the fields for this form.</description>
+          <value>%s - %s</value>
+        </configuration>
+        <configuration name="link" values="single" type="string">
+          <displayName>The page to link to to display this form.</displayName>
+          <value>view_position?id=</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="manage_form_documentor_scheme" path="/modules/formDocumentor/schemes/dot">
+      <displayName>Form Docuemntor Scheme</displayName>
+      <version>4.0.0.1</version>
+      <configuration name="colors" values="many" type="delimited">
+        <displayName>Form Colors</displayName>
+        <description>forms are colorized according to the list below.</description>
+        <value>benefit:lemonchiffon</value>
+        <value>salary:lemonchiffon</value>
+        <value>position:moccasin</value>
+        <value>department:moccasin</value>
+        <value>classification:moccasin</value>
+        <value>cadre:moccasin</value>
+        <value>job:moccasin</value>
+        <value>isco:moccasin</value>
+        <value>application:mistyrose</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonResume">
+  <metadata>
+    <displayName>iHRIS Person Resume</displayName>
+    <className>iHRIS_Module_Resume</className>
+    <category>Application Component</category>
+    <description>A Person's Resume</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.0" />
+    </requirement>
+    <requirement name="Document">
+      <atLeast version="4.0" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="PersonResume" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_person_resume" locale="en_US">
+        <version>3.2.6</version>
+        <value>Can view resume of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_resume" locale="en_US">
+        <version>3.2.6</version>
+        <value>Can edit resume of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_person_resume" values="many">
+        <version>3.2.6</version>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_resume" values="many">
+        <version>3.2.6</version>
+        <value>person_can_view_child_form_person_resume</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <version>3.2.14</version>
+        <value>person_can_view_child_form_person_resume</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>3.2.14</version>
+        <value>person_can_edit_child_form_person_resume</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_resume">
+          <version>3.2.6</version>
+          <configuration name="class" values="single">
+            <value>iHRIS_Document</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Person Resume</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <value>person_resume</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!--end of /modules/forms/forms-->
+    </configurationGroup>
+    <!--end of /modules/forms-->
+    <configurationGroup name="page">
+      <configurationGroup name="person_resume">
+        <version>4.0.1.1</version>
+        <displayName>Person_language Page</displayName>
+        <description>The page 'person_language' which has the action of: Add/Update Language</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="confirm">
+            <version>4.0.6.0</version>
+            <value>1</value>
+          </configuration>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Resume</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>person_resume</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <!-- page -->
+  </configurationGroup>
+</I2CEConfiguration>

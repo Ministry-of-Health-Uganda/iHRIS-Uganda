@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-common" path="/I2CE">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-common" path="/I2CE" locale="fr">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_configure_system" locale="fr">
+        <value>Peut accéder au menu général de configuration du système</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr">
+            <value>Accueil</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="history">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr">
+            <value>Afficher l’historique</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="field_history">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr">
+            <value>Afficher l’historique des champs</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="noaccess">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr">
+            <value>Accès refusé</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="configure">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr">
+            <value>Configuration du système</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

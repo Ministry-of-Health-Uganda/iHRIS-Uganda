@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Application" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Application" path="/I2CE" locale="hu-formal">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="hu-formal">
+      <configuration name="app_felon" path="application/felony_circumstances/required"></configuration>
+      <configuration name="app_hours" path="application/hours/required"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="hu-formal">
+      <configuration name="person_can_view_child_form_position_decision" locale="hu-formal"></configuration>
+      <configuration name="person_can_edit_child_form_position_decision" locale="hu-formal"></configuration>
+      <configuration name="person_can_view_child_form_position_interview" locale="hu-formal"></configuration>
+      <configuration name="person_can_edit_child_form_position_interview" locale="hu-formal"></configuration>
+      <configuration name="person_can_view_child_form_application" locale="hu-formal"></configuration>
+      <configuration name="person_can_edit_child_form_application" locale="hu-formal"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="application">
+          <configuration name="display" values="single" locale="hu-formal">
+            <value>Jelentkező</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_interview">
+          <configuration name="display" values="single" locale="hu-formal">
+            <value>Állásinterjú</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_decision">
+          <configuration name="display" values="single" locale="hu-formal">
+            <value>Döntés</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Applicant">
+          <configurationGroup name="fields">
+            <configurationGroup name="position">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Tisztség(ek)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Elítélték valaha önt bűncselekmény miatt?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony_circumstance">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Amennyiben igen, adja meg a körülményeket.</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="other_info">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Az alkalmazási története mellett vannak-e más, figyelmuünkbe ajánlott képességei, minősítései vagy tapasztalatai?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hear">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Hogyan szerzett tudomást erről az állásajánlatról?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Mikor tud kezdeni?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="desired_wage">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Kívánt bér</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="full_time">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Teljes munkaidőben kíván dolgozni?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hours">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Amennyiben nem, mely órákban érhető el?</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionInterview">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Interjú dátuma</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Résztvett személyek</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Megjegyzések</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionDecision">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Döntés dátuma</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="offer">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Létrehoz egy állásajánlatot?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="hu-formal">
+                <value>default:Megjegyzések</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="application">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="hu-formal">
+            <value>Jelentkezés hozzáadása/frissítése</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_decision">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="hu-formal"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_interview">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="hu-formal"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

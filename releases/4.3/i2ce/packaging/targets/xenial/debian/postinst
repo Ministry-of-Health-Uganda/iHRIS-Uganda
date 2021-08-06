@@ -1,0 +1,28 @@
+#!/bin/bash
+set -x
+
+PECL=/usr/bin/pecl
+SVC=/usr/sbin/service
+LN=/bin/ln
+A2ENMOD=/usr/sbin/a2enmod
+
+echo '[mysqld]' > /etc/mysql/mysql.conf.d/sql-mode.cnf
+echo 'sql-mode = "ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"' >> /etc/mysql/mysql.conf.d/sql-mode.cnf
+
+$LN -sf /etc/php/7.0/mods-available/apcu.ini /etc/php/7.0/apache2/conf.d/20-apcu.ini
+$LN -sf /etc/php/7.0/mods-available/apcu.ini /etc/php/7.0/cli/conf.d/20-apcu.ini
+
+BASEDIR=/var/lib/iHRIS
+USERNAME=ihris
+ 
+
+$A2ENMOD rewrite
+$SVC mysql restart
+$SVC apache2 restart
+$SVC memcached restart
+
+chown -R $USERNAME:$USERNAME $BASEDIR
+
+
+
+

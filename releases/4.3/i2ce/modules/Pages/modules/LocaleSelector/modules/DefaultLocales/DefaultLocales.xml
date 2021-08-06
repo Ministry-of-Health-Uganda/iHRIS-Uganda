@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="default-locales">
+  <metadata>
+    <displayName>Default Locales</displayName>
+    <category>Base System Component</category>
+    <description>Provides List of Defauly Locales that are reasonably translated</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="localeSelector">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="default-locales">
+    <configuration name="default" path="/locales/default-available" values="many" type="delimited">
+      <version>4.2.0.1</version>
+      <value>ar:ar_AE</value>
+      <value>cs:cs_CZ</value>
+      <value>de:de_DE</value>
+      <value>es:es_ES</value>
+      <value>et:et_ET</value>
+      <value>fr:fr_FR</value>
+      <value>gl:gl_ES</value>
+      <value>it:it_IT</value>
+      <value>nl:nl_NL</value>
+      <value>pt:pt_PT</value>
+      <value>pt_BR:pt_BR</value>
+      <value>si:si_LK</value>
+      <value>sw:sw_TZ</value>
+      <value>tl:tl_TL</value>
+      <value>uk:uk_UA</value>
+      <value>zh:zh_CN</value>
+    </configuration>
+  </configurationGroup>
+</I2CEConfiguration>

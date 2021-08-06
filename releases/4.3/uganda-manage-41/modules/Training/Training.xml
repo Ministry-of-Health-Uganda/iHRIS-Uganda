@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name='Training'>     
+  <metadata>
+    <displayName> Training</displayName>   
+    <className>iHRIS_Module_Training</className>
+    <category>Application Component</category>
+    <description>Adds in Training Module</description>
+    <creator>iHRIS Uganda</creator>
+    <email>nmijumbi@intrahealth.org</email>
+    <version>4.1.3.1</version>
+    <path name='classes'>
+      <value>./lib</value>
+    </path>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name='templates'>
+      <value>./templates</value>
+    </path>
+    <priority>350</priority>
+  </metadata>
+ 
+  <configurationGroup name='Training' path='/I2CE'>
+    <displayName> Training</displayName>
+ 
+    <configurationGroup name='tasks' path='/I2CE/tasks/task_description' locale='en_US'>
+      <configuration name='person_can_view_child_form_person_training'>
+        <value>Can view person_training child form of a person</value>
+      </configuration>
+      <configuration name='person_can_edit_child_form_person_training'>
+        <value>Can edit person_training child forms of a person</value>
+      </configuration>
+      <configuration name="can_edit_database_list_training_type" locale="en_US">
+         <version>4.1.3</version>
+        <value>Can edit the database list training type.</value>
+      </configuration>
+      <configuration name="can_view_database_list_training_type" locale="en_US">
+         <version>4.1.3</version>
+        <value>Can view the database list training type.</value>
+      </configuration>
+
+	<configuration name="can_edit_database_list_training_institution" locale="en_US">
+        <version>4.1.3</version>
+        <value>Can edit the atabase list training institution.</value>
+      </configuration>
+      <configuration name="can_view_database_list_training_institution" locale="en_US">
+        <version>4.1.3</version>
+        <value>Can view the database list training institution.</value>
+      </configuration>
+
+
+      
+    </configurationGroup>
+ 
+    <configurationGroup name='tasks_trickle_down' path='/I2CE/tasks/task_trickle_down/'>
+      <configuration name='person_can_view_child_form_person_training' values='many'> 
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name='person_can_edit_child_form_person_training' values='many'> 
+        <value>person_can_view_child_form_person_training</value>
+        <value>person_can_view</value>
+      </configuration>
+      
+      <configuration name='person_can_view_child_forms' values='many'> 
+	 <value>person_can_view_child_form_person_training</value>
+      </configuration>
+      <configuration name='person_can_edit_child_forms' values='many'> 
+	 <value>person_can_edit_child_form_person_training</value>
+      </configuration>
+      <configuration name="can_edit_database_list_training_type" values="many">
+        <version>3.2.10</version>
+        <value>can_view_database_list_training_type</value>
+        <value>can_edit_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_database_list_training_institution" values="many">
+        <version>3.2.10</version>
+        <value>can_view_database_list_training_institution</value>
+        <value>can_edit_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" values="many">
+        <version>3.2.10</version>
+        <value>can_edit_database_list_training_type</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" values="many">
+        <version>3.2.10</version>
+        <value>can_view_database_list_training_type</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" values="many">
+        <version>3.2.10</version>
+        <value>can_edit_database_list_training_institution</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" values="many">
+        <version>3.2.10</version>
+        <value>can_view_database_list_training_institution</value>
+      </configuration>
+    </configurationGroup>
+ 
+ 
+    <configurationGroup name='forms' path='/modules/forms'>
+      <displayName>Forms</displayName>
+      <description>Information about the forms made available by _Training</description>
+ 
+      <configurationGroup name='forms'>
+        <displayName>Forms available to the form factory</displayName>
+        <status>advanced:true</status>
+        <status>required:true</status>
+ 
+        <!-- This section is to add a new form called person_training with the associated
+             class.  The class will be defined in the classes section below. -->
+        <configurationGroup name='person_training'>
+         <version>4.1.3</version>
+          <displayName>Person  Training</displayName>
+          <description>The Person  Training Form</description>
+          <configuration name='class' values='single'>
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Person_Training</value>
+          </configuration>
+          <configuration name='display' values='single'>
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Person Training</value>
+          </configuration>
+        </configurationGroup> <!-- person_training -->
+        <configurationGroup name="training_type">
+          <displayName> Training Type</displayName>
+          <description>The  Training Type Form</description>
+          <version>4.1.3</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Training Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="training_institution">
+          <displayName> Program Sponsor</displayName>
+          <description>The  Program Sponsor Form</description>
+          <version>4.1.2</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Training Institution/Organization</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>-->
+  
+         
+        <!-- This section will modify the existing information for the person form to include
+             two new child forms which are the new forms created for this module. -->
+        <configurationGroup name='person_meta' path='/modules/forms/forms/person/meta'>
+          <displayName>MetaData on the form</displayName>
+          <configuration name='child_forms' values='many' > 
+            <status>uniquemerge:true</status>
+            <displayName>Child Forms</displayName>
+            <value>person_training</value>
+          </configuration>
+        </configurationGroup> <!-- person_meta -->
+ 
+      </configurationGroup> <!-- End /modules/forms/forms-->
+ 
+ 
+      <configurationGroup name="formClasses" >
+        <displayName>Form Class Configuration</displayName>
+ 
+ 
+        <!-- This section will define the person_training form class with all the fields and field types. 
+             This class will be created dynamically since no extra funcationality needs to be added for it. -->
+        <configurationGroup name="iHRIS_Person_Training">
+           <version>4.1.3</version>
+          <displayName>Configuration for the class 'iHRIS_Person_Training'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+           <version>4.1.3</version>
+            <displayName>The fields defined for this form.</displayName>
+ 		   <configurationGroup name="training_type">
+              <displayName>The fields 'training_type'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Training Type</value>
+              </configuration>
+            <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup> <!-- training_type -->
+            
+            <configurationGroup name="training_institution">
+              <displayName>The fields 'training_institution'</displayName>
+              <version>4.1.2</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Training Institution/Organization</value>
+              </configuration>
+            <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>  <!-- training_institution -->
+          
+          
+            <configurationGroup name="venue">
+              <displayName>The fields 'venue'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Location Of Training</value>
+              </configuration>
+            <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup> <!-- venue -->
+
+           <configurationGroup name="pre_test">
+              <displayName>The fields 'region'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Pre Test</value>
+              </configuration>
+            </configurationGroup> <!-- pre_test -->
+            <configurationGroup name="post_test">
+              <displayName>The fields 'region'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Post Test</value>
+              </configuration>
+            </configurationGroup> <!-- pre_test -->
+
+         <configurationGroup name="start_date">
+              <displayName>The fields 'start_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Start Date</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup> <!-- Start Date -->
+
+         <configurationGroup name="end_date">
+              <displayName>The fields 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:End Date</value>
+              </configuration>
+            </configurationGroup> <!-- End Date -->
+           
+          </configurationGroup> <!-- fields -->
+        </configurationGroup> <!-- iHRIS_Person_Training -->
+ 
+         
+      </configurationGroup> <!-- End /modules/forms/formClasses -->
+ 
+    </configurationGroup> <!-- End /modules/forms -->
+ 
+ 
+    <configurationGroup name='page'>
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+ 
+ 
+      <!-- This section will create the person_training page so that new professional development
+           forms can be created and assigned to a person's record. -->
+      <configurationGroup name='person_training'>
+        <displayName>Person  Training Page</displayName>
+        <description> The page 'person_training' which has the action of: Add/Update Training</description>
+        <configuration name='class' values='single'>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageFormParentPerson</value>
+        </configuration>
+        <configuration name='style' values='single'>
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name='args'>
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name='title' values='single'>
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Training</value>
+          </configuration>
+          <configuration name='page_form' values='single'>
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>person_training</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup> <!-- person_training -->
+ 
+       
+    </configurationGroup> <!-- page -->
+ 
+ 
+  </configurationGroup> <!-- _Training -->
+</I2CEConfiguration>

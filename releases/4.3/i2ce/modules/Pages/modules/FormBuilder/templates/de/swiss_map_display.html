@@ -1,0 +1,58 @@
+<div>
+    <h2>Metadaten</h2>
+  <div id="display_container">
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Feld-Verknüpfung</h3>Durch Doppelpunkte getrennte Liste von Formularen[+Feld] um die Hierarchie zu bestimmen
+	</td>
+	<td>
+	  <input name="fields"></td>
+      </tr><tr><td>
+	  <h3>Anzeigestil</h3>Die Art wie dieses Formular während der Bearbeitung angezeigt wird.
+	</td>
+	<td>
+	  <select name="style"></select></td>
+      </tr><tr><td>
+	  <h3>Report Display</h3>The report used when populating data for populating drop-downs, tree views.  You should consider using this if the field linking is complicated.
+	</td>
+	<td>
+	  <select name="display_report"><option value="">Bericht auswählen</option></select></td>
+      </tr></table><span id="orders">
+      <h2><a id="orders_link" href="">Reihenfolge</a></h2>
+      Die Reihenfolge der Felder festlegen
+      <div class="indented" id="orders_ajax"></div>
+    </span>
+
+    <span id="printf">
+      <h2><a id="printf_link" href="">Printf</a></h2>
+      Set the printf string use for various forms
+      <div class="indented" id="printf_ajax"></div>
+    </span>
+
+    <span id="printf_args">
+      <h2><a id="printf_args_link" href="">PrintF Fields</a></h2>
+      Set the fields (arguments) used in the printf string for various forms
+      <div class="indented" id="printf_args_ajax"></div>
+    </span>
+
+    <span id="printf_arg_styles">
+      <h2><a id="printf_arg_styles_link" href="">PrintF Field Styles</a></h2>
+      Set the display styles used for the various fields
+      <div class="indented" id="printf_arg_styles_ajax"></div>
+    </span>
+
+
+    <span id="reportselect">
+      <h2><a id="reportselect_link" href="">Berichtsansicht-Auswahl</a></h2>
+      Specify report view used to select data
+      <div class="indented" id="reportselect_ajax"></div>
+    </span>
+
+    <span id="no_limits">
+      <h2><a id="no_limits_link" href="">Zeige Grenzen</a></h2>
+      Specify whether or not to do not show limits for a form in report view selector
+      <div class="indented" id="no_limits_ajax"></div>
+    </span>
+
+
+</div>
+</div>

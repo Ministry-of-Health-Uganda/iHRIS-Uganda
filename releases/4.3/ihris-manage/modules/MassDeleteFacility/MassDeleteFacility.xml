@@ -1,0 +1,450 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-MassDeleteFacility">
+  <metadata>
+    <displayName>Mass Delete by Facility</displayName>
+    <category>Site</category>
+    <description>Facility report to list by positions and pages to do mass deletion of records by facility.</description>
+    <creator>Luke Duncan</creator>
+    <email>lduncan@intrahealth.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-manage-PersonPosition">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="ihris-manage-MassDeleteFacility" path="/modules/CustomReports">
+    <configurationGroup name="page" path="/I2CE/page">
+      <displayName>Pages</displayName>
+      <configurationGroup name="delete_by_facility">
+        <displayName>Delete By Facility</displayName>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageMassDeleteFacilityList</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Mass Delete By Facility</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <value>mass_delete_by_facility.html</value>
+          </configuration>
+          <configuration name="access" values="many">
+            <version>4.1.4.4</version>
+            <value>admin</value>
+          </configuration>
+          <configuration name="report_view" values="single">
+            <value>facility_positions</value>
+          </configuration>
+          <configuration name="action_fields" type="delimited" values="many">
+            <value>0:primary_form+id</value>
+            <value>1:primary_form+name</value>
+          </configuration>
+          <configuration name="action_header" values="single" locale="en_US">
+            <version>4.1.4.1</version>
+            <value>Mark Facility for Deletion</value>
+          </configuration>
+          <configuration name="action_method" values="single">
+            <version>4.1.4.2</version>
+            <value>toggleFacility</value>
+          </configuration>
+          <configuration name="action_script" values="single">
+            <value>massdelete_facility.js</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="delete_by_facility_action">
+        <displayName>Delete By Facility Action page</displayName>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageMassDeleteFacilityAction</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Mass Delete By Facility</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <value>mass_delete_by_facility_action.html</value>
+          </configuration>
+          <configuration name="access" values="many">
+            <version>4.1.4.4</version>
+            <value>admin</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="facility_positions" path="//modules/CustomReports/relationships/facility_positions">
+      <displayName>Facility Positions</displayName>
+      <configuration name="form">
+        <displayName>Form</displayName>
+        <value>facility</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <displayName>Display Name</displayName>
+        <value>Facility Positions</value>
+      </configuration>
+      <configuration name="description" locale="en_US">
+        <displayName>Description</displayName>
+        <value>List of all facilities and current positions.</value>
+      </configuration>
+      <configurationGroup name="reporting_functions">
+        <displayName>Reporting Functions</displayName>
+        <configurationGroup name="filled_positions">
+          <displayName>Filled Positions</displayName>
+          <configuration name="qry">
+            <displayName>Qry</displayName>
+            <value>IF( `person_position+id` = '' OR `person_position+id` IS NULL , 0, 1 )</value>
+          </configuration>
+          <configuration name="description" locale="en_US">
+            <displayName>Description</displayName>
+            <value>1 if the position is filled, 0 if not.</value>
+          </configuration>
+          <configuration name="formfield">
+            <displayName>Formfield</displayName>
+            <value>YESNO</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="joins">
+        <displayName>Joins</displayName>
+        <configurationGroup name="position">
+          <displayName>Position</displayName>
+          <configuration name="limit_one">
+            <displayName>Limit One</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>position</value>
+          </configuration>
+          <configuration name="description" locale="en_US">
+            <displayName>Description</displayName>
+            <value>Positions in this facility.</value>
+          </configuration>
+          <configuration name="display_name" locale="en_US">
+            <displayName>Display Name</displayName>
+            <value>Position</value>
+          </configuration>
+          <configurationGroup name="join_data">
+            <displayName>Join Data</displayName>
+            <configuration name="field">
+              <displayName>Field</displayName>
+              <value>facility</value>
+            </configuration>
+            <configuration name="displaystyle">
+              <displayName>Displaystyle</displayName>
+              <value>default</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="join_style">
+            <displayName>Join Style</displayName>
+            <value>child_field</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <displayName>Joins</displayName>
+            <configurationGroup name="person_position">
+              <displayName>Person Position</displayName>
+              <configuration name="limit_one">
+                <displayName>Limit One</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form">
+                <displayName>Form</displayName>
+                <value>person_position</value>
+              </configuration>
+              <configuration name="description" locale="en_US">
+                <displayName>Description</displayName>
+                <value>The current person position linked to this position.</value>
+              </configuration>
+              <configuration name="display_name" locale="en_US">
+                <displayName>Display Name</displayName>
+                <value>Person Position</value>
+              </configuration>
+              <configurationGroup name="join_data">
+                <displayName>Join Data</displayName>
+                <configuration name="field">
+                  <displayName>Field</displayName>
+                  <value>position</value>
+                </configuration>
+                <configuration name="displaystyle">
+                  <displayName>Displaystyle</displayName>
+                  <value>default</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="join_style">
+                <displayName>Join Style</displayName>
+                <value>child_field</value>
+              </configuration>
+              <configurationGroup name="where">
+                <displayName>Where</displayName>
+                <configuration name="operator">
+                  <displayName>Operator</displayName>
+                  <value>FIELD_LIMIT</value>
+                </configuration>
+                <configuration name="style">
+                  <displayName>Style</displayName>
+                  <value>null</value>
+                </configuration>
+                <configuration name="field">
+                  <displayName>Field</displayName>
+                  <value>end_date</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="drop_empty">
+                <displayName>Drop Empty</displayName>
+                <value>0</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="facility_positions" path="//modules/CustomReports/reports/facility_positions">
+      <displayName>Facility Positions</displayName>
+      <configuration name="relationship">
+        <displayName>Relationship</displayName>
+        <value>facility_positions</value>
+      </configuration>
+      <configurationGroup name="meta">
+        <displayName>Meta</displayName>
+        <configuration name="display_name" locale="en_US">
+          <displayName>Display Name</displayName>
+          <value>Facility Positions</value>
+        </configuration>
+        <configuration name="description" locale="en_US">
+          <displayName>Description</displayName>
+          <value>List of all facilities with counts of positions.</value>
+        </configuration>
+        <configuration name="category">
+          <displayName>Category</displayName>
+          <value>Facility Report</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <displayName>Reporting Forms</displayName>
+        <configurationGroup name="primary_form">
+          <displayName>Primary Form</displayName>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="location">
+              <displayName>Location</displayName>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="equals">
+                  <displayName>Equals</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Office/Facility Location</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Office/Facility Location</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <displayName>Name</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Office/Facility</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="facility_type">
+              <displayName>Facility Type</displayName>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="equals">
+                  <displayName>Equals</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Facility Type</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Facility Type</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="position">
+          <displayName>Position</displayName>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="id">
+              <displayName>Id</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Total Positions</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_position">
+          <displayName>Person Position</displayName>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="reporting_functions">
+        <displayName>Reporting Functions</displayName>
+        <configurationGroup name="filled_positions">
+          <displayName>Filled Positions</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="facility_positions" path="//modules/CustomReports/reportViews/facility_positions">
+      <displayName>Facility Positions</displayName>
+      <configuration name="report">
+        <displayName>Report</displayName>
+        <value>facility_positions</value>
+      </configuration>
+      <configuration name="description" locale="en_US">
+        <displayName>Description</displayName>
+        <value>List of all facilities with position counts.</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <displayName>Display Name</displayName>
+        <value>Facility Positions</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configurationGroup name="primary_form+name">
+          <displayName>Primary Form Name</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position+id">
+          <displayName>Position Id</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>count</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="+filled_positions">
+          <displayName>+filled Positions</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>sum</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configuration name="display_order">
+        <displayName>Display Order</displayName>
+        <value>primary_form+location,primary_form+name,primary_form+facility_type,position+id,+filled_positions</value>
+      </configuration>
+      <configuration name="total">
+        <displayName>Total</displayName>
+        <value>0</value>
+      </configuration>
+      <configuration name="disable">
+        <displayName>Disable</displayName>
+        <value>0</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

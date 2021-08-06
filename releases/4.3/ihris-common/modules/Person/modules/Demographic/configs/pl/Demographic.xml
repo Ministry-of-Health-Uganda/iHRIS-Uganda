@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonDemographic" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonDemographic" path="/I2CE" locale="pl">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="pl">
+      <configuration name="person_can_view_child_form_demographic" locale="pl">
+        <value>Można wyświetlać formularze podrzędne danych demograficznych osoby</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_demographic" locale="pl">
+        <value>Można edytować formularze podrzędne danych demograficznych osoby</value>
+      </configuration>
+      <configuration name="can_edit_database_list_marital_status" locale="pl"></configuration>
+      <configuration name="can_view_database_list_marital_status" locale="pl"></configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="gender">
+        <configurationGroup name="F">
+          <configuration name="fields" value="many" type="delimited" locale="pl">
+            <value>name:Kobieta</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="M">
+          <configuration name="fields" value="many" type="delimited" locale="pl">
+            <value>name:Mężczyzna</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="demographic">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pl"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="demographic">
+          <configuration name="display" values="single" locale="pl">
+            <value>Informacje demograficzne</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="marital_status">
+          <configuration name="display" values="single" locale="pl">
+            <value>Ctan cywilny</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="gender">
+          <configuration name="display" values="single" locale="pl">
+            <value>Płeć</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Demographic">
+          <configurationGroup name="fields">
+            <configurationGroup name="birth_date">
+              <configuration name="headers" type="delimited" locale="pl">
+                <value>default:Data urodzenia</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="gender">
+              <configuration name="headers" type="delimited" locale="pl">
+                <value>default:Płeć</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="marital_status">
+              <configuration name="headers" type="delimited" locale="pl">
+                <value>default:Ctan cywilny</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

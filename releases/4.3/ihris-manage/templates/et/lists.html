@@ -1,0 +1,114 @@
+<div id="siteContent">
+
+  <h1>Halda andmebaasi</h1>
+
+  <span type="module" ifenabled="true" name="ihris-manage-PersonPosition">
+    <div task="can_edit_position_database_lists">
+      <h2>Halda positsioone</h2>
+      
+      <div task="can_edit_job_structure_database_lists">
+	<h3>Loo tööstruktuur</h3>
+	<ul><li task="can_edit_database_list_cadre"><a href="lists?type=cadre">Kaadrid</a></li>
+	  <li task="can_edit_database_list_classification"><a href="lists?type=classification">Töö klassifikatsioonid</a></li>
+	  <li task="can_edit_database_list_salary_grade"><a href="lists?type=salary_grade">Palgatasemed</a></li>
+	  <li task="can_edit_database_list_job"><a href="lists?type=job">Töökohad</a></li>
+	</ul></div>
+      <div task="can_edit_manage_positions_database_lists">
+	<h3>Halda positsioone</h3>
+	<ul><li task="can_edit_database_list_salary_source"><a href="lists?type=salary_source">Palga allikad</a></li>
+	  <li task="can_edit_database_list_position_type"><a href="lists?type=position_type">Positsioonitüübid</a></li>
+	  <li task="can_edit_database_list_position"><a href="lists?type=position&amp;field=facility">Positsioonid (jaoskonna üle)</a></li>
+	  <li task="can_edit_database_list_position"><a href="lists?type=position&amp;field=status&amp;nosetdefault=1">Positsioonid (oleku üle)</a></li>
+	  <span type="module" ifenabled="true" name="ihris-manage-confirmation">
+	    <li task="can_edit_database_list_confirmation_type"><a href="lists?type=confirmation_type">Confirmation Types</a></li>
+	  </span>
+	</ul></div>
+    </div>
+  </span>
+
+  <h2>Halda teisi nimekirju</h2>
+
+  <div task="can_edit_organization_database_lists">
+    <h3>Organisatsioonide nimekirjad</h3>
+    <ul><li task="can_edit_database_list_facility_type"><a href="lists?type=facility_type">Jaoskonna tüüp</a></li>
+      <li task="can_edit_database_list_facility"><a href="lists?type=facility&amp;field=location">Büroo/Jaoskond</a></li>
+      <li task="can_edit_database_list_department"><a href="lists?type=department">Osakond</a></li>
+      <span type="module" ifenabled="true" name="ManageRegistration">
+	<li task="can_edit_database_list_council"><a href="lists?type=council">Registratsiooni kantseleid</a></li>
+      </span>
+    </ul></div>
+  <div task="can_edit_employee_database_lists">
+    <h3>Töötaja nimekirjad</h3>
+    <ul><li task="can_edit_database_list_edu_type"><a href="lists?type=edu_type">Haridustüüp</a></li>
+      <li task="can_edit_database_list_degree"><a href="lists?type=degree&amp;field=edu_type">Teaduskraad</a></li>
+      <li task="can_edit_database_list_language"><a href="lists?type=language">Keel</a></li>
+      <span type="module" ifenabled="true" name="simple-competency">
+	<li task="can_edit_database_list_competency_type"><a href="lists?type=competency_type">Kompetentsustüüp</a></li>
+	<li task="can_edit_database_list_competency"><a href="lists?type=competency&amp;field=competency_type">Kompetentsus</a></li>
+	<span type="module" ifenabled="true" name="person-simple-competency">
+	  <li task="can_edit_database_list_competency_evaluation"><a href="lists?type=competency_evaluation">Kompetentsuse hinnang</a></li>
+	</span>
+      </span>
+      <li task="can_edit_database_list_id_type"><a href="lists?type=id_type">Identifikatsiooni tüüp</a></li>
+      <span type="module" ifenabled="true" name="leave">
+      	<li task="can_edit_database_list_leave_category"><a href="lists?type=leave_category">Leave Category</a></li>
+      </span>
+      <li task="can_edit_database_list_benefit_type"><a href="lists?type=benefit_type">Hüvitise tüüp</a></li>
+      <li task="can_edit_database_list_marital_status"><a href="lists?type=marital_status">Abieluseis</a></li>
+      <li task="can_edit_database_list_contact_group"><a href="lists?type=contact_group">Contact Group</a></li>
+      <li task="can_edit_database_list_pos_change_reason"><a href="lists?type=pos_change_reason">Lahkumise põhjused</a></li>
+      <span type="module" ifenabled="true" name="accident">
+	<li task="can_edit_database_list_accident_type"><a href="lists?type=accident_type">Õnnetuse tüüp</a></li>
+      </span>
+      <span type="module" ifenabled="true" name="disciplinary_action">
+	<li task="can_edit_database_list_disciplinary_action_type"><a href="lists?type=disciplinary_action_type">Distsiplinaarse toimingu tüüp</a></li>
+	<li task="can_edit_database_list_disciplinary_action_reason"><a href="lists?type=disciplinary_action_reason">Disciplinary Action Reason</a></li>
+      </span>
+    </ul></div>
+  <div task="can_edit_geographic_database_lists">
+    <h3>Geograafilised andmed</h3>
+    <ul><li task="can_edit_database_list_country"><a href="lists?type=country">Riik</a></li>
+      <li task="can_edit_database_list_region"><a href="lists?type=region&amp;field=country">Piirkond</a></li>
+      <li task="can_edit_database_list_district"><a href="lists?type=district&amp;field=region">Linnaosa</a></li>
+      <li task="can_edit_database_list_county"><a href="lists?type=county&amp;field=district">Maakond</a></li>
+      <li task="can_edit_database_list_currency"><a href="lists?type=currency">Valuuta</a></li>
+    </ul></div>
+  <div task="can_edit_planning_database_lists">
+    <span name="establishment" type="module" ifenabled="true">
+      <h3>Planeerimise informatsioon</h3>
+      <ul><li task="can_edit_database_list_establishment_type"><a href="lists?type=establishment_type">Asutustüüp</a></li>
+	<li task="can_edit_database_list_establishment_period"><a href="lists?type=establishment_period&amp;field=establishment_type">Asutusperiood</a></li>
+	<li task="can_edit_database_list_establishment"><a href="lists?type=establishment&amp;field=establishment_period">Asutused</a></li>
+      </ul></span>
+  </div>
+
+
+  <span name="training-course" type="module" ifenabled="true">
+    <div task="can_edit_training_course_database_lists">
+      <h3>Treeningkursuse informatsioon</h3>
+      <ul><li task="can_edit_database_list_training_course"><a href="lists?type=training_course&amp;mapped=scheduled_training_course">Treeningkursused</a></li>
+	<li task="can_edit_database_list_scheduled_training_course"><a href="lists?type=scheduled_training_course&amp;field=training_course">Kavandatud treeningkursused</a></li>
+	<li task="can_edit_database_list_training_course_status"><a href="lists?type=training_course_status">Kursuse olek</a></li>
+	<li task="can_edit_database_list_training_course_requestor"><a href="lists?type=training_course_requestor">Treeningkursuse soovijad</a></li>
+	<li task="can_edit_database_list_training_course_evaluation"><a href="lists?type=training_course_evaluation">Treeningkursuse hinnang</a></li>
+	<li task="can_edit_database_list_training_course_category"><a href="lists?type=training_course_category">Treeningkursuse kategooria</a></li>
+	<span type="module" name="manage-training-institution" ifenabled="true">
+	  <li task="can_edit_database_list_training_institution"><a href="lists?type=training_institution">Treeninguinstituut</a></li>
+	  <li task="can_edit_database_list_training_funder"><a href="lists?type=training_funder">Treeningu rahastaja</a></li>
+	</span>
+	<span type="module" name="CEUs" ifenabled="true">
+	  <li task="can_edit_database_list_continuing_education_course"><a href="lists?type=continuing_education_course">Hariduskursuse jätkamine</a></li>
+	</span>
+      </ul></div>
+  </span>
+
+  <span role="admin">
+      <h2>Mass Delete</h2>
+      <ul><span type="module" name="ihris-manage-MassDeleteFacility" ifenabled="true">
+          <li><a href="delete_by_facility">By Facility</a></li>
+        </span>
+        <span type="module" name="ihris-common-MassDeletePerson" ifenabled="true">
+          <li><a href="delete_by_search">By Person (Search Page)</a></li>
+        </span>
+      </ul></span>
+</div>

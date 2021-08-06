@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="training-institution">
+  <metadata>
+    <displayName>Training Institution</displayName>
+    <className>iHRIS_Module_TrainingInstitution</className>
+    <category>Application Component</category>
+    <description>Adds basic training institution and funder functionality</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-common">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Geography">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Contact">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="training-institution" path="/I2CE">
+    <displayName>Training Institution</displayName>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_training_institution" locale="en_US">
+        <value>Edit the training institutions list</value>
+      </configuration>
+      <configuration name="can_edit_database_list_training_funder" locale="en_US">
+        <value>Edit the training funder list</value>
+      </configuration>
+      <configuration name="can_view_database_list_training_institution" locale="en_US">
+        <value>View the training institutions list</value>
+      </configuration>
+      <configuration name="can_view_database_list_training_funder" locale="en_US">
+        <value>View the training funder list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <version>3.2.22</version>
+      <configuration name="can_edit_database_list_training_funder" values="many">
+        <value>can_edit_training_course_database_lists</value>
+        <value>can_view_database_list_training_funder</value>
+      </configuration>
+      <configuration name="can_edit_database_list_training_instituion" values="many">
+        <value>can_edit_training_course_database_lists</value>
+        <value>can_view_database_list_training_institution</value>
+      </configuration>
+      <configuration name="can_edit_all_training_course_database_lists" values="many">
+        <value>can_edit_database_list_training_funder</value>
+        <value>can_edit_database_list_training_institution</value>
+      </configuration>
+      <configuration name="can_view_all_training_course_database_lists" values="many">
+        <value>can_view_database_list_training_funder</value>
+        <value>can_view_database_list_training_institution</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <displayName>Forms</displayName>
+      <configurationGroup name="forms">
+        <displayName>Forms available to the form factory</displayName>
+        <description>Information about the forms made available by iHRIS-Common</description>
+        <status>advanced:true</status>
+        <status>required:true</status>
+        <configurationGroup name="training_institution_contact">
+          <version>3.2.5</version>
+          <configuration name="class" values="single">
+            <value>iHRIS_Contact</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="training_institution">
+          <displayName>Training Institution</displayName>
+          <description>The Training Institution Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_ListByCountry</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <version>3.2.21</version>
+            <value>Training Institution</value>
+          </configuration>
+          <configurationGroup name="meta">
+            <displayName>Meta information aboout this form</displayName>
+            <configuration name="child_forms" values="many">
+              <displayName>Child Forms</displayName>
+              <version>3.2.5</version>
+              <value>training_institution_contact</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="training_funder_contact">
+          <version>3.2.19</version>
+          <configuration name="class" values="single">
+            <value>iHRIS_Contact</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="training_funder">
+          <displayName>Training Institution</displayName>
+          <description>The Training Institution Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_ListByCountry</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Training Funder</value>
+          </configuration>
+          <configurationGroup name="meta">
+            <displayName>Meta information aboout this form</displayName>
+            <configuration name="child_forms" values="many">
+              <displayName>Child Forms</displayName>
+              <version>3.2.19</version>
+              <value>training_funder_contact</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- End of /modules/forms/forms -->
+      <configurationGroup name="formClasses">
+        <displayName>Form Class Configuration</displayName>
+      </configurationGroup>
+      <!-- End of /modules/forms/formClasses -->
+    </configurationGroup>
+    <!-- End of /modules/forms-->
+    <configurationGroup name="template">
+      <displayName>Template Information</displayName>
+      <description>Various Default Information About The Templating System</description>
+      <configurationGroup name="page_styles">
+        <displayName>Page Style</displayName>
+        <description>Various Page styles with their default templates</description>
+        <status>required:false</status>
+        <configurationGroup name="ihris_page_form_parent_training_institution">
+          <displayName>Page Form Parent Training Institution</displayName>
+          <configuration name="class" values="single">
+            <displayName>Page Class</displayName>
+            <description>The class responsible for displaying this page</description>
+            <status>required:true</status>
+            <value>iHRIS_PageFormParentTrainingInstitution</value>
+          </configuration>
+          <configuration name="style" values="single">
+            <displayName>Page Style</displayName>
+            <description>The page style that this style inherits from</description>
+            <value>shell</value>
+          </configuration>
+          <configurationGroup name="args">
+            <displayName>Arguements</displayName>
+            <description>Values passed to the pages constructor</description>
+            <configuration name="access" values="many">
+              <displayName>Page Access</displayName>
+              <description>All of the roles that have access to this page</description>
+              <status>required:false</status>
+              <value>manager</value>
+            </configuration>
+            <configuration name="defaultHTMLFile" values="many">
+              <displayName>Default HTML File</displayName>
+              <description>The default html template file containing the page content</description>
+              <value>lists_form_ti_base.html</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <!-- End of template -->
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+      <configurationGroup name="lists">
+        <!-- defined in ihris-common, we are just overwriting some values-->
+        <displayName>Lists Page</displayName>
+        <description>The page 'lists' which has the action of: Manage Lists</description>
+        <status>visible:false</status>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="lists_with_contact" values="many">
+            <displayName>List with contact</displayName>
+            <description>Lists that should show contact information when being edited</description>
+            <status>uniquemerge:true</status>
+            <value>training_institution</value>
+            <value>training_funder</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="view_list">
+        <displayName>View List Page</displayName>
+        <description>The page 'view_list' which has the action of: View List</description>
+        <configurationGroup name="args">
+          <displayName>Page Arguments</displayName>
+          <configurationGroup name="types">
+            <displayName>Type Information</displayName>
+            <description>Information about the types</description>
+            <configurationGroup name="training_institution">
+              <configuration name="has_contact" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="training_funder">
+              <configuration name="has_contact" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <!-- End of /I2CE/page-->
+  </configurationGroup>
+</I2CEConfiguration>

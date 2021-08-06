@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEducation" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEducation" path="/I2CE" locale="it">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="it">
+      <configuration name="person_can_view_child_form_education" locale="it">
+        <value>Visualizza il sottomodulo della formazione di una persona</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_education" locale="it">
+        <value>Modifica il sottomodulo della formazione di una persona</value>
+      </configuration>
+      <configuration name="can_edit_database_list_edu_type" locale="it">
+        <value>Modifica l'elenco delle tipologie di formazione</value>
+      </configuration>
+      <configuration name="can_view_database_list_edu_type" locale="it">
+        <value>Visualizza l'elenco delle tipologie di formazione</value>
+      </configuration>
+      <configuration name="can_edit_database_list_degree" locale="it">
+        <value>Modifica l'elenco delle tipologie di lauree</value>
+      </configuration>
+      <configuration name="can_view_database_list_degree" locale="it">
+        <value>Visualizza l'elenco delle tipologie di lauree</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="education">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="it">
+            <value>Aggiungi/aggiorna storico della formazione</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="degree">
+          <configuration name="display" values="single" locale="it">
+            <value>Titolo di studio</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="edu_type">
+          <configuration name="display" values="single" locale="it">
+            <value>Tipo di formazione</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="education">
+          <configuration name="display" values="single" locale="it">
+            <value>Storico della formazione</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Degree">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="it">
+                <value>default:Nome</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="edu_type">
+              <configuration name="headers" type="delimited" values="many" locale="it">
+                <value>default:Tipo di formazione</value>
+                <value>select_degree:Seleziona il tipo di formazione e poi la Laurea</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Education">
+          <configurationGroup name="fields">
+            <configurationGroup name="degree">
+              <configuration name="headers" type="delimited" locale="it">
+                <value>default:Titolo di studio</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="institution">
+              <configuration name="headers" type="delimited" locale="it">
+                <value>default:Nome istituto</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="headers" type="delimited" locale="it">
+                <value>default:Localita' istituto</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="year">
+              <configuration name="headers" type="delimited" locale="it">
+                <value>default:Anno di laurea (lascia bianco se in corso)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="major">
+              <configuration name="headers" type="delimited" locale="it">
+                <value>default:Maggiore</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

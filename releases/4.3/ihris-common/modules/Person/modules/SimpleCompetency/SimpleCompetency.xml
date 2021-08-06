@@ -1,0 +1,359 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="person-simple-competency">
+  <metadata>
+    <displayName>Simple Competency</displayName>
+    <className>iHRIS_Module_PersonSimpleCompetency</className>
+    <category>Application Component</category>
+    <description>A simple two-tiered compotency module enabled for a person</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-common">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Person">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="simple-competency">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="person-simple-competency" path="/I2CE">
+    <displayName>Person Simple Competency</displayName>
+    <configurationGroup name="formsdata" path="/I2CE/formsData/forms">
+      <configurationGroup name="competency_evaluation">
+        <version>3.2.7</version>
+        <configurationGroup name="not_evaluated">
+          <configuration name="last_modified">
+            <value>2009-05-20 12:34:56</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <configuration name="name" locale="en_US">
+              <value>Not Evaluated</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="competent">
+          <configuration name="last_modified">
+            <value>2009-05-20 12:34:56</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <configuration name="name" locale="en_US">
+              <value>Competent</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="not_competent">
+          <configuration name="last_modified">
+            <value>2009-05-20 12:34:56</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <configuration name="name" locale="en_US">
+              <value>Not Competent</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="person_tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_person_competency" locale="en_US">
+        <version>3.2.5</version>
+        <value>Can view person_competency child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_competency" locale="en_US">
+        <version>3.2.5</version>
+        <value>Can edit person_competency child forms of a person</value>
+      </configuration>
+      <configuration name="person_competency_can_view_evaluation_history" locale="en_US">
+        <version>3.2.5</version>
+        <value>Can view the competency evaluation history of a person</value>
+      </configuration>
+      <configuration name="person_competency_can_view_evaluation" locale="en_US">
+        <version>4.0.5</version>
+        <value>Can view the competency evaluation of a person</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_evaluation" locale="en_US">
+        <version>3.2.9</version>
+        <value>Edit the competency evaluation list</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency_evaluation" locale="en_US">
+        <version>3.2.9</version>
+        <value>View the competency evaluation list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="person_tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_person_competency" values="many">
+        <version>3.2.5</version>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_competency" values="many">
+        <version>3.2.5</version>
+        <value>person_competency_can_view_evaluation_history</value>
+        <value>person_can_view_child_form_person_competency</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <version>3.2.8</version>
+        <value>person_can_view_child_form_person_competency</value>
+        <value>person_competency_can_view_evaluation_history</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>3.2.8</version>
+        <value>person_can_edit_child_form_person_competency</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_evaluation" values="many">
+        <version>3.2.9</version>
+        <value>can_edit_employee_database_lists</value>
+        <value>can_view_database_list_competency_evaluation</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency_evaluation" values="many">
+        <version>3.2.9</version>
+        <value>can_view_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" values="many">
+        <version>3.2.9</version>
+        <value>can_edit_database_list_competency_evaluation</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" values="many">
+        <version>3.2.9</version>
+        <value>can_view_database_list_competency_evaluation</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <displayName>Forms</displayName>
+      <configurationGroup name="forms">
+        <displayName>Forms available to the form factory</displayName>
+        <description>Information about the forms made available by iHRIS-Common</description>
+        <status>advanced:true</status>
+        <status>required:true</status>
+        <configurationGroup name="competency_evaluation">
+          <displayName>Training Evaluation</displayName>
+          <description>Training Evaluation Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Competency Evaluation</value>
+          </configuration>
+          <configuration name="storage">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <version>3.2.7</version>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person">
+          <displayName>Person</displayName>
+          <description>The Person Form</description>
+          <configurationGroup name="meta">
+            <displayName>MetaData on the form</displayName>
+            <configuration name="child_forms" values="many">
+              <displayName>Child Forms</displayName>
+              <status>uniquemerge:true</status>
+              <value>person_competency</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="person_competency">
+          <displayName>Person Competency</displayName>
+          <description>The Person Competency Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_PersonCompetency</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Person Competency</value>
+          </configuration>
+          <!--            <configurationGroup name="meta">  -->
+          <!--              <displayName>MetaData on the form</displayName>  -->
+          <!--              <configuration name='child_forms' values='many' > -->
+          <!--                <displayName>Child Forms</displayName> -->
+          <!--                <status>uniquemerge:true</status> -->
+          <!--                <value>competency_evaluation</value> -->
+          <!--              </configuration> -->
+          <!--            </configurationGroup> -->
+        </configurationGroup>
+      </configurationGroup>
+      <!-- End of /modules/forms/forms -->
+      <configurationGroup name="formClasses">
+        <displayName>Form Class Configuration</displayName>
+        <configurationGroup name="iHRIS_PersonCompetency">
+          <displayName>Configuration for the class 'iHRIS_PersonCompetency'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="evaluation_date">
+              <displayName>The field 'evaluation_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="default_eval">
+                <version>4.0.1</version>
+                <displayName>The default Value as an eval string</displayName>
+                <value>I2CE_Date::now()</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Last Evaluated</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency_evaluation">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <version>3.2.8</version>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Evaluation</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency">
+              <displayName>The field 'competency'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <version>3.2.8</version>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="display">
+                  <configurationGroup name="default">
+                    <configuration name="fields">
+                      <version>3.2.8</version>
+                      <value>competency:competency_type</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Competency</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique" type="boolean">
+                <displayName>This field must be unique.</displayName>
+                <version>4.0.6</version>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique_field">
+                <displayName>The field used to determine uniqueness</displayName>
+                <version>4.0.6</version>
+                <value>parent</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- End of /modules/forms/formClasses -->
+    </configurationGroup>
+    <!-- End of /modules/forms-->
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+      <configurationGroup name="person_competency_history">
+        <displayName>Person_competency history Page</displayName>
+        <description>The page 'person_competency_history' which has the action of: View Competency Evaluation History</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_Page_Person_Competency_Evaluation_History</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Competency Evluation History</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <version>3.2.5</version>
+            <value>person_competency_can_view_evaluation_history</value>
+          </configuration>
+          <configuration name="access" values="many">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <value>admin</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>personal_competency_evaluation_history.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="person_competency">
+        <displayName>Person_competency Page</displayName>
+        <description>The page 'person_competency' which has the action of: Add/Update Competency</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="tasks" values="many">
+            <version>3.2.5</version>
+            <value>person_can_edit_child_form_person_competency</value>
+          </configuration>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Competency</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>person_competency</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <!-- End of /I2CE/page-->
+  </configurationGroup>
+</I2CEConfiguration>

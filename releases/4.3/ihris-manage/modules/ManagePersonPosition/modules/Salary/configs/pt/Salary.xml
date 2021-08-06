@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Salary" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Salary" path="/I2CE" locale="pt">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="pt">
+      <configuration name="sal_bad_date" path="salary/start_date/bad_date"></configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="salary">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pt"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="salary_history">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pt"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_salary" locale="pt"></configuration>
+      <configuration name="person_can_delete_child_form_salary" locale="pt"></configuration>
+      <configuration name="person_can_change_child_form_salary" locale="pt"></configuration>
+      <configuration name="person_can_view_child_form_salary" locale="pt"></configuration>
+      <configuration name="can_edit_database_list_salary_source" locale="pt">
+        <value>Editar lista de fonte_salarial</value>
+      </configuration>
+      <configuration name="can_view_database_list_salary_source" locale="pt">
+        <value>Visualizar lista de fonte_salarial</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="salary">
+          <configuration name="display" values="single" locale="pt">
+            <value>Salário</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="salary_source">
+          <configuration name="display" values="single" locale="pt">
+            <value>Fonte Salarial</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Position">
+          <configurationGroup name="fields">
+            <configurationGroup name="proposed_salary">
+              <configuration name="headers" type="delimited" locale="pt"></configuration>
+            </configurationGroup>
+            <configurationGroup name="source">
+              <configuration name="headers" type="delimited" locale="pt"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Salary">
+          <configurationGroup name="fields">
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="pt">
+                <value>default:Data-Início</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="salary">
+              <configuration name="headers" type="delimited" locale="pt">
+                <value>default:Salário</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="pt">
+                <value>default:Data-Fim</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="pt">
+                <value>default:Notas</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

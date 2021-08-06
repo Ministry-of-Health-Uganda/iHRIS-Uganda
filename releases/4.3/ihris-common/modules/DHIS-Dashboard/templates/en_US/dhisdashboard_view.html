@@ -1,0 +1,26 @@
+<div id="siteContent" xmlns="http://www.w3.org/1999/html">
+    <table class="multiFormTable toggable" border="0" cellpadding="0" cellspacing="0" >
+        <thead>Submit aggregate information of reports to DHIS2</thead>
+        <form  method="POST" action="DHISDashboardExport" id="SendReportID">
+            <tr>
+                <td><label>iHRIS Report</label></td>
+                <td>
+                    <select name='ReportViews'>
+                        <!--<option value='none'>Select a report</option> -->
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Period</label></td>
+                <td>
+                    <input name="Period" id="Period1" value="M" type="radio" onclick="check()">Monthly &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="Period" id="Period4" value="MA" type="radio">All Months &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><input type="submit" name="submit" value="submit" /> </td>
+            </tr>
+        </form>
+    </table>
+</div>

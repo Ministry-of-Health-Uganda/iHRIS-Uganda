@@ -1,0 +1,61 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+PKG=$(shell dpkg-parsechangelog | awk ‘/^Source:/ {print $2}’)
+VERSION=$(shell dpkg-parsechangelog | awk ‘/^Version:/ {print $2}’)
+
+TOP=$(CURDIR)/debian/$(PKG)
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+
+	touch $@
+
+build: build-stamp
+build-stamp: configure-stamp 
+	dh_testdir
+
+	touch $@
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f *-stamp
+
+	dh_clean 
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+
+# Build architecture-independent files here.
+binary-indep: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs 
+	dh_installdocs
+	dh_installexamples
+	dh_install
+	dh_installmenu
+	dh_installdebconf	
+	dh_installlogrotate
+	dh_installmime
+	dh_installman
+	dh_link
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep
+.PHONY: build clean binary-indep binary-arch binary install configure

@@ -1,0 +1,689 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="csd-search">
+  <metadata>
+    <displayName>Search Page</displayName>
+    <className>iHRIS_Module_CSD_Search</className>
+    <category>Reporting</category>
+    <description>The iHRIS Search page.</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-common</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-common">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="csd-infoman-storage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="web-services">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="xslts">
+      <value>./xslts</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="csd-search" path="/">
+    <configurationGroup name="styles" path="/I2CE/template/page_styles">
+      <configurationGroup name="csd_search">
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="buttons" values="many" type="delimited">
+            <version>4.2.0.20.16</version>
+            <value>button_confirm:csd_search_confirm.html</value>
+            <value>button_save_return:csd_search_confirm.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page" path="/I2CE/page">
+      <configurationGroup name="search_facility">
+        <version>4.2.0.20.2</version>
+        <configuration name="style" values="single">
+          <value>csd_search</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <value>CSD_PageSearch</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="primary_form">
+            <value>csd_facility_search</value>
+          </configuration>
+          <configuration name="title" values="single" locale="en_US">
+            <value>Search Facilties on Remote Directory</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_search_results">
+        <version>4.2.0.20.20.15</version>
+        <configuration name="style" values="single">
+          <value>action</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <value>CSD_WebServices_Search</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="search_organization">
+        <version>4.2.0.20.2</version>
+        <configuration name="style" values="single">
+          <value>csd_search</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <value>CSD_PageSearch</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="primary_form">
+            <value>csd_organization_search</value>
+          </configuration>
+          <configuration name="title" values="single" locale="en_US">
+            <value>Search Organizations on Remote Directory</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="search_service">
+        <version>4.2.0.20.2</version>
+        <configuration name="style" values="single">
+          <value>csd_search</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <value>CSD_PageSearch</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="primary_form">
+            <value>csd_service_search</value>
+          </configuration>
+          <configuration name="title" values="single" locale="en_US">
+            <value>Search Services on Remote Directory</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="search_provider">
+        <configuration name="style" values="single">
+          <value>csd_search</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <value>CSD_PageSearch</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="primary_form">
+            <value>csd_provider_search</value>
+          </configuration>
+          <configuration name="title" values="single" locale="en_US">
+            <version>4.2.0.20.14</version>
+            <value>Search Health Workers on Remote Directory</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/forms">
+      <configurationGroup name="csd_facility_name_search">
+        <version>4.2.0.20.20.13</version>
+        <configuration name="class" values="single">
+          <value>CSD_FacilityNameSearch</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Facility Name Search</value>
+        </configuration>
+        <configuration name="storage">
+          <value>CSDSearch</value>
+        </configuration>
+        <configuration name="csd_directory" path="storage_options/CSDSearch/csd_directory">
+          <value>facility</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_facility_search">
+        <version>4.2.0.20.4</version>
+        <configuration name="class" values="single">
+          <value>CSD_FacilitySearch</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.20.19</version>
+          <value>Facility Search</value>
+        </configuration>
+        <configuration name="storage">
+          <value>CSDSearch</value>
+        </configuration>
+        <configuration name="csd_directory" path="storage_options/CSDSearch/csd_directory">
+          <version>4.2.0.20.12</version>
+          <value>facility</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_service_search">
+        <version>4.2.0.20.4</version>
+        <configuration name="class" values="single">
+          <value>CSD_ServiceSearch</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.20.19</version>
+          <value>Service Search</value>
+        </configuration>
+        <configuration name="storage">
+          <value>CSDSearch</value>
+        </configuration>
+        <configuration name="csd_directory" path="storage_options/CSDSearch/csd_directory">
+          <version>4.2.0.20.11</version>
+          <value>service</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_organization_name_search">
+        <version>4.2.0.20.20.13</version>
+        <configuration name="class" values="single">
+          <value>CSD_OrganizationNameSearch</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Organization Name Search</value>
+        </configuration>
+        <configuration name="storage">
+          <value>CSDSearch</value>
+        </configuration>
+        <configuration name="csd_directory" path="storage_options/CSDSearch/csd_directory">
+          <value>organization</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_organization_search">
+        <version>4.2.0.20.4</version>
+        <configuration name="class" values="single">
+          <value>CSD_OrganizationSearch</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.20.19</version>
+          <value>Organization Search</value>
+        </configuration>
+        <configuration name="storage">
+          <value>CSDSearch</value>
+        </configuration>
+        <configuration name="csd_directory" path="storage_options/CSDSearch/csd_directory">
+          <version>4.2.0.20.11</version>
+          <value>organization</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_name_search">
+        <version>4.2.0.20.20.13</version>
+        <configuration name="class" values="single">
+          <value>CSD_ProviderNameSearch</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Provider Name Search</value>
+        </configuration>
+        <configuration name="storage">
+          <value>CSDSearch</value>
+        </configuration>
+        <configuration name="csd_directory" path="storage_options/CSDSearch/csd_directory">
+          <value>provider</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_search">
+        <configuration name="class" values="single">
+          <value>CSD_ProviderSearch</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.20.19</version>
+          <value>Health Worker Search</value>
+        </configuration>
+        <configuration name="storage">
+          <version>4.2.0.9</version>
+          <value>CSDSearch</value>
+        </configuration>
+        <configuration name="csd_directory" path="storage_options/CSDSearch/csd_directory">
+          <version>4.2.0.20.11</version>
+          <value>provider</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+      <configurationGroup name="provider_facility_search" path="CSD_ProviderFacility/fields/csd_facility/meta">
+        <version>4.2.0.20.20.14</version>
+        <configuration name="style" path="display/default/style">
+          <value>csd_search</value>
+        </configuration>
+        <configurationGroup name="display_style_options">
+          <configuration name="csd_search" values="many" type="delimited">
+            <value>form:csd_facility_name_search</value>
+            <value>field:primary_name</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="CSD_Search">
+        <version>4.2.0.20.20.8</version>
+        <configuration name="extends">
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="start">
+            <configuration name="formfield">
+              <value>INT</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Start Record</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="result">
+            <configuration name="formfield">
+              <value>STRING_MLINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Result</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="max">
+            <configuration name="formfield">
+              <value>INT</value>
+            </configuration>
+            <configuration name="default_value">
+              <value>10</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Maximum Number of Results</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="updated">
+            <configuration name="formfield">
+              <value>DATE_TIME</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Updated</value>
+            </configuration>
+            <configuration name="default_eval">
+              <value>I2CE_Date::blank()</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="CSD_SearchMatches">
+        <version>4.2.0.20.20.6</version>
+        <configuration name="extends">
+          <value>CSD_Search</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="matches">
+            <version>4.2.0.20.20.5</version>
+            <configuration name="formfield">
+              <value>ASSOC_MAP_RESULTS</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Matched Records</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="CSD_OrganizationNameSearch">
+        <version>4.2.0.20.20.6</version>
+        <configuration name="extends">
+          <value>CSD_SearchMatches</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="primary_name">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Primary Name</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="CSD_OrganizationSearch">
+        <version>4.2.0.20.4</version>
+        <configuration name="extends">
+          <value>CSD_OrganizationNameSearch</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <erase path="oid">
+            <lessThan version="4.2.0.20.20.16" />
+          </erase>
+          <erase path="urn">
+            <lessThan version="4.2.0.20.20.17" />
+          </erase>
+          <configurationGroup name="entityID">
+            <version>4.2.0.20.20.17</version>
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Entity ID</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_organization_otherid_type">
+            <version>4.2.0.20.7</version>
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:ID Type</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="assigning_authority">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Assigning Authority</value>
+            </configuration>
+          </configurationGroup>
+          <erase path="primary_name">
+            <lessThan version="4.2.0.20.20.6" />
+          </erase>
+          <erase path="csd_organization">
+            <lessThan version="4.2.0.20.20.6" />
+          </erase>
+          <configurationGroup name="number">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:ID Number</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_organization_type">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Organization Type</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_organization_status">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Organization Status</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="address">
+            <configuration name="formfield">
+              <value>ASSOC_MAP</value>
+            </configuration>
+            <configurationGroup name="meta">
+              <configuration name="list">
+                <value>csd_address_components</value>
+              </configuration>
+            </configurationGroup>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Address</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!--End CSD_OrganizationSearch-->
+      <configurationGroup name="CSD_FacilityNameSearch">
+        <version>4.2.0.20.20.6</version>
+        <configuration name="extends">
+          <value>CSD_SearchMatches</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="primary_name">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Primary Name</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="CSD_FacilitySearch">
+        <version>4.2.0.20.4</version>
+        <configuration name="extends">
+          <version>4.2.0.20.20.5</version>
+          <value>CSD_FacilityNameSearch</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <erase path="oid">
+            <lessThan version="4.2.0.20.20.16" />
+          </erase>
+          <erase path="urn">
+            <lessThan version="4.2.0.20.20.17" />
+          </erase>
+          <configurationGroup name="entityID">
+            <version>4.2.0.20.20.17</version>
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Entity ID</value>
+            </configuration>
+          </configurationGroup>
+          <erase path="primary_name">
+            <lessThan version="4.2.0.20.20.5" />
+          </erase>
+          <erase path="csd_facility">
+            <lessThan version="4.2.0.20.20.12" />
+          </erase>
+          <erase path="csd_facility_otheride_type">
+            <lessThan version="4.2.0.20.20.11" />
+          </erase>
+          <configurationGroup name="csd_facility_otherid_type">
+            <version>4.2.0.20.20.1</version>
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:ID Type</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="assigning_authority">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Assigning Authority</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="number">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:ID Number</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_facility_type">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Facility Type</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_facility_status">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Facility Status</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="address">
+            <configuration name="formfield">
+              <value>ASSOC_MAP</value>
+            </configuration>
+            <configurationGroup name="meta">
+              <configuration name="list">
+                <value>csd_address_components</value>
+              </configuration>
+            </configurationGroup>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Address</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!--End CSD_FacilitySearch-->
+      <configurationGroup name="CSD_ServiceSearch">
+        <version>4.2.0.20.4</version>
+        <configuration name="extends">
+          <value>CSD_Search</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <erase path="oid">
+            <lessThan version="4.2.0.20.20.16" />
+          </erase>
+          <erase path="urn">
+            <lessThan version="4.2.0.20.20.17" />
+          </erase>
+          <configurationGroup name="entityID">
+            <version>4.2.0.20.20.17</version>
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Enitity ID</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_service">
+            <configuration name="formfield">
+              <value>MAP_MULT</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Matched Service Record</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_service_type">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Service Type</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_service_status">
+            <version>4.2.0.20.13</version>
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Service Status</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!--End CSD_ServiceSearch-->
+      <configurationGroup name="CSD_ProviderNameSearch">
+        <version>4.2.0.20.20.6</version>
+        <configuration name="extends">
+          <value>CSD_SearchMatches</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="common_name">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Common Name</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="CSD_ProviderSearch">
+        <configuration name="extends">
+          <version>4.2.0.20.20.6</version>
+          <value>CSD_ProviderNameSearch</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <version>4.2.1.3</version>
+          <erase path="oid">
+            <lessThan version="4.2.0.20.20.16" />
+          </erase>
+          <erase path="urn">
+            <lessThan version="4.2.0.20.20.17" />
+          </erase>
+          <configurationGroup name="entityID">
+            <version>4.2.0.20.20.17</version>
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Entity ID</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_otherid_type">
+            <version>4.2.1.3</version>
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:ID Type</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="assigning_authority">
+            <configuration name="formfield">
+              <version>4.2.0.6</version>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Assigning Authority</value>
+            </configuration>
+          </configurationGroup>
+          <erase path="common_name">
+            <lessThan version="4.2.0.20.20.6" />
+          </erase>
+          <erase path="csd_provider">
+            <lessThan version="4.2.0.20.20.6" />
+          </erase>
+          <configurationGroup name="number">
+            <configuration name="formfield">
+              <version>4.2.0.8</version>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:ID Number</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_provider_type">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <version>4.2.0.20.14</version>
+              <value>default:Health Worker Type (Cadre)</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_provider_status">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <version>4.2.0.20.14</version>
+              <value>default:Health Worker Status</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="address">
+            <configuration name="formfield">
+              <value>ASSOC_MAP</value>
+            </configuration>
+            <configurationGroup name="meta">
+              <configuration name="list">
+                <value>csd_address_components</value>
+              </configuration>
+            </configurationGroup>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Address</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

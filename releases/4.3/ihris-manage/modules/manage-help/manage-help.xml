@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-help">
+  <metadata>
+    <displayName>iHRIS Manage Help</displayName>
+    <description>The iHRIS Manage Help system.</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="static">
+      <value>./static</value>
+    </path>
+    <path name="images">
+      <value>./images</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <requirement name="ihris-manage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+</I2CEConfiguration>

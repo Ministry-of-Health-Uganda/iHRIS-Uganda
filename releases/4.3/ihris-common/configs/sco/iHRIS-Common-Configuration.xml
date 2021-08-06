@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-common" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-common" path="/I2CE" locale="sco">
+    <version>4.2.0.1.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_configure_system" locale="sco">
+        <value>Can access the general confeegure system menu</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sco">
+            <value>Hame</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="history">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sco">
+            <value>See Histerie</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="field_history">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sco">
+            <value>See Field Histerie</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="noaccess">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sco"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="configure">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sco">
+            <value>Confeegure System</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

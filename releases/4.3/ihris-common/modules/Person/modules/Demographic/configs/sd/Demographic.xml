@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonDemographic" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonDemographic" path="/I2CE" locale="sd">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="sd">
+      <configuration name="person_can_view_child_form_demographic" locale="sd"></configuration>
+      <configuration name="person_can_edit_child_form_demographic" locale="sd"></configuration>
+      <configuration name="can_edit_database_list_marital_status" locale="sd"></configuration>
+      <configuration name="can_view_database_list_marital_status" locale="sd"></configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="gender">
+        <configurationGroup name="F">
+          <configuration name="fields" value="many" type="delimited" locale="sd">
+            <value>name:عورت</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="M">
+          <configuration name="fields" value="many" type="delimited" locale="sd">
+            <value>name:مرد</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="demographic">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sd"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="demographic">
+          <configuration name="display" values="single" locale="sd"></configuration>
+        </configurationGroup>
+        <configurationGroup name="marital_status">
+          <configuration name="display" values="single" locale="sd">
+            <value>ازدواجي حيثيت</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="gender">
+          <configuration name="display" values="single" locale="sd">
+            <value>جنس</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Demographic">
+          <configurationGroup name="fields">
+            <configurationGroup name="birth_date">
+              <configuration name="headers" type="delimited" locale="sd">
+                <value>default:پيدائش جي تاريخ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="gender">
+              <configuration name="headers" type="delimited" locale="sd">
+                <value>default:جنس</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="marital_status">
+              <configuration name="headers" type="delimited" locale="sd">
+                <value>default:ازدواجي حيثيت</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

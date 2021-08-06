@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonID" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonID" path="/I2CE" locale="fr_ML">
+    <version>4.2.1.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="fr_ML">
+      <configuration name="exp_date" path="person_id/expiration_date/bad_date" locale="fr_ML"></configuration>
+      <configuration name="wrong_pattern" path="person_id/id_num/wrong_pattern" locale="fr_ML"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="fr_ML">
+      <configuration name="person_can_view_child_form_person_id" locale="fr_ML">
+        <value>Peut afficher le formulaire enfant de l’ID d’une personne</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_id" locale="fr_ML">
+        <value>Peut éditer les formulaires enfants de l’ID d’une personne</value>
+      </configuration>
+      <configuration name="can_edit_database_list_id_type" locale="fr_ML">
+        <value>Peut éditer la liste de la base de données des types d’ID</value>
+      </configuration>
+      <configuration name="can_view_database_list_id_type" locale="fr_ML">
+        <value>Peut afficher la liste de la base de données des types d’ID</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_id">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr_ML">
+            <value>Ajouter/Mettre à jour une identification</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/forms">
+      <configurationGroup name="id_type">
+        <configuration name="display" values="single" locale="fr_ML">
+          <value>Type d’identification</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="person_id">
+        <configuration name="display" values="single" locale="fr_ML">
+          <value>Identification d'une personne</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <configuration name="description" locale="fr_ML">
+            <value>Ce formulaire contient des informations de base sur une identification pour une personne</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/formClasses">
+      <configurationGroup name="iHRIS_PersonID">
+        <configurationGroup name="fields">
+          <configurationGroup name="id_type">
+            <configuration name="headers" type="delimited" locale="fr_ML">
+              <value>default:Type d’identification</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="id_num">
+            <configuration name="headers" type="delimited" locale="fr_ML">
+              <value>default:Numéro d'identification</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="issue_date">
+            <configuration name="headers" type="delimited" locale="fr_ML"></configuration>
+          </configurationGroup>
+          <configurationGroup name="expiration_date">
+            <configuration name="headers" type="delimited" locale="fr_ML"></configuration>
+          </configurationGroup>
+          <configurationGroup name="country">
+            <configuration name="headers" type="delimited" locale="fr_ML"></configuration>
+          </configurationGroup>
+          <configurationGroup name="place">
+            <configuration name="headers" type="delimited" locale="fr_ML"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="iHRIS_PersonID_Type">
+        <configurationGroup name="fields">
+          <configurationGroup name="pattern">
+            <configuration name="headers" type="delimited" locale="fr_ML"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

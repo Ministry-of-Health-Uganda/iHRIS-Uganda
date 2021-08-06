@@ -1,0 +1,1243 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SDMX-HD-CodeLists">
+  <metadata>
+    <displayName>SDMX-HD Code Lists</displayName>
+    <description>Information to load SDMX-HD Code Lists.</description>
+    <creator>Luke Duncan</creator>
+    <email>lduncan@intrahealth.org</email>
+    <link>https://launchpad.net/ihris-common</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <link>https://launchpad.net/ihris-common</link>
+    <requirement name="ihris-common">
+      <atLeast version="4.0" />
+    </requirement>
+    <requirement name="forms-storage-SDMXHD">
+      <atLeast version="4.0" />
+    </requirement>
+    <path name="SDMXHD">
+      <value>./SDMX-HD</value>
+    </path>
+  </metadata>
+  <configurationGroup name="SDMX-HD-CodeLists" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>4.0.5.1</version>
+      <configuration name="can_view_database_list_cl_asource" locale="en_US">
+        <value>Can view database code list cl_asource</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_cstype" locale="en_US">
+        <value>Can view database code list cl_cstype</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_currency" locale="en_US">
+        <value>Can view database code list cl_currency</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_day" locale="en_US">
+        <value>Can view database code list cl_day</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_disagg" locale="en_US">
+        <value>Can view database code list cl_disagg</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_disease" locale="en_US">
+        <value>Can view database code list cl_disease</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_disstat" locale="en_US">
+        <value>Can view database code list cl_disstat</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_dsource" locale="en_US">
+        <value>Can view database code list cl_dsource</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_dstype" locale="en_US">
+        <value>Can view database code list cl_dstype</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_dtype" locale="en_US">
+        <value>Can view database code list cl_dtype</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_fperiod" locale="en_US">
+        <value>Can view database code list cl_fperiod</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_gboundary_type" locale="en_US">
+        <value>Can view database code list cl_gboundary_type</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_gcode_country" locale="en_US">
+        <value>Can view database code list cl_gcode_country</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_gender" locale="en_US">
+        <value>Can view database code list cl_gender</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_glevel" locale="en_US">
+        <value>Can view database code list cl_glevel</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_glocation" locale="en_US">
+        <value>Can view database code list cl_glocation</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_hif1" locale="en_US">
+        <value>Can view database code list cl_hif1</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_hif2" locale="en_US">
+        <value>Can view database code list cl_hif2</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_income" locale="en_US">
+        <value>Can view database code list cl_income</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_logical" locale="en_US">
+        <value>Can view database code list cl_logical</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_metype" locale="en_US">
+        <value>Can view database code list cl_metype</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_month" locale="en_US">
+        <value>Can view database code list cl_month</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_mult" locale="en_US">
+        <value>Can view database code list cl_mult</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_operand" locale="en_US">
+        <value>Can view database code list cl_operand</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_orphan" locale="en_US">
+        <value>Can view database code list cl_orphan</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_otype" locale="en_US">
+        <value>Can view database code list cl_otype</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_periodicity" locale="en_US">
+        <value>Can view database code list cl_periodicity</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_preg" locale="en_US">
+        <value>Can view database code list cl_preg</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_pstatus" locale="en_US">
+        <value>Can view database code list cl_pstatus</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_ptype" locale="en_US">
+        <value>Can view database code list cl_ptype</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_quarter" locale="en_US">
+        <value>Can view database code list cl_quarter</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_race" locale="en_US">
+        <value>Can view database code list cl_race</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_sector" locale="en_US">
+        <value>Can view database code list cl_sector</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_sex" locale="en_US">
+        <value>Can view database code list cl_sex</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_special_value" locale="en_US">
+        <value>Can view database code list cl_special_value</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_stype" locale="en_US">
+        <value>Can view database code list cl_stype</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_tpop" locale="en_US">
+        <value>Can view database code list cl_tpop</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_unit" locale="en_US">
+        <value>Can view database code list cl_unit</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_value_type" locale="en_US">
+        <value>Can view database code list cl_value_type</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_vstatus" locale="en_US">
+        <value>Can view database code list cl_vstatus</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_vulnstat" locale="en_US">
+        <value>Can view database code list cl_vulnstat</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_week" locale="en_US">
+        <value>Can view database code list cl_week</value>
+      </configuration>
+      <configuration name="can_view_database_list_cl_year" locale="en_US">
+        <value>Can view database code list cl_year</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_asource" locale="en_US">
+        <value>Can edit database code list cl_asource</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_cstype" locale="en_US">
+        <value>Can edit database code list cl_cstype</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_currency" locale="en_US">
+        <value>Can edit database code list cl_currency</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_day" locale="en_US">
+        <value>Can edit database code list cl_day</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_disagg" locale="en_US">
+        <value>Can edit database code list cl_disagg</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_disease" locale="en_US">
+        <value>Can edit database code list cl_disease</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_disstat" locale="en_US">
+        <value>Can edit database code list cl_disstat</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_dsource" locale="en_US">
+        <value>Can edit database code list cl_dsource</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_dstype" locale="en_US">
+        <value>Can edit database code list cl_dstype</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_dtype" locale="en_US">
+        <value>Can edit database code list cl_dtype</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_fperiod" locale="en_US">
+        <value>Can edit database code list cl_fperiod</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_gboundary_type" locale="en_US">
+        <value>Can edit database code list cl_gboundary_type</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_gcode_country" locale="en_US">
+        <value>Can edit database code list cl_gcode_country</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_gender" locale="en_US">
+        <value>Can edit database code list cl_gender</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_glevel" locale="en_US">
+        <value>Can edit database code list cl_glevel</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_glocation" locale="en_US">
+        <value>Can edit database code list cl_glocation</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_hif1" locale="en_US">
+        <value>Can edit database code list cl_hif1</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_hif2" locale="en_US">
+        <value>Can edit database code list cl_hif2</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_income" locale="en_US">
+        <value>Can edit database code list cl_income</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_logical" locale="en_US">
+        <value>Can edit database code list cl_logical</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_metype" locale="en_US">
+        <value>Can edit database code list cl_metype</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_month" locale="en_US">
+        <value>Can edit database code list cl_month</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_mult" locale="en_US">
+        <value>Can edit database code list cl_mult</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_operand" locale="en_US">
+        <value>Can edit database code list cl_operand</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_orphan" locale="en_US">
+        <value>Can edit database code list cl_orphan</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_otype" locale="en_US">
+        <value>Can edit database code list cl_otype</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_periodicity" locale="en_US">
+        <value>Can edit database code list cl_periodicity</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_preg" locale="en_US">
+        <value>Can edit database code list cl_preg</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_pstatus" locale="en_US">
+        <value>Can edit database code list cl_pstatus</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_ptype" locale="en_US">
+        <value>Can edit database code list cl_ptype</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_quarter" locale="en_US">
+        <value>Can edit database code list cl_quarter</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_race" locale="en_US">
+        <value>Can edit database code list cl_race</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_sector" locale="en_US">
+        <value>Can edit database code list cl_sector</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_sex" locale="en_US">
+        <value>Can edit database code list cl_sex</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_special_value" locale="en_US">
+        <value>Can edit database code list cl_special_value</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_stype" locale="en_US">
+        <value>Can edit database code list cl_stype</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_tpop" locale="en_US">
+        <value>Can edit database code list cl_tpop</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_unit" locale="en_US">
+        <value>Can edit database code list cl_unit</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_value_type" locale="en_US">
+        <value>Can edit database code list cl_value_type</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_vstatus" locale="en_US">
+        <value>Can edit database code list cl_vstatus</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_vulnstat" locale="en_US">
+        <value>Can edit database code list cl_vulnstat</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_week" locale="en_US">
+        <value>Can edit database code list cl_week</value>
+      </configuration>
+      <configuration name="can_edit_database_list_cl_year" locale="en_US">
+        <value>Can edit database code list cl_year</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down">
+      <configuration name="can_view_all_database_lists" values="many">
+        <value>can_view_database_list_cl_asource</value>
+        <value>can_view_database_list_cl_cstype</value>
+        <value>can_view_database_list_cl_currency</value>
+        <value>can_view_database_list_cl_day</value>
+        <value>can_view_database_list_cl_disagg</value>
+        <value>can_view_database_list_cl_disease</value>
+        <value>can_view_database_list_cl_disstat</value>
+        <value>can_view_database_list_cl_dsource</value>
+        <value>can_view_database_list_cl_dstype</value>
+        <value>can_view_database_list_cl_dtype</value>
+        <value>can_view_database_list_cl_fperiod</value>
+        <value>can_view_database_list_cl_gboundary_type</value>
+        <value>can_view_database_list_cl_gcode_country</value>
+        <value>can_view_database_list_cl_gender</value>
+        <value>can_view_database_list_cl_glevel</value>
+        <value>can_view_database_list_cl_glocation</value>
+        <value>can_view_database_list_cl_hif1</value>
+        <value>can_view_database_list_cl_hif2</value>
+        <value>can_view_database_list_cl_income</value>
+        <value>can_view_database_list_cl_logical</value>
+        <value>can_view_database_list_cl_metype</value>
+        <value>can_view_database_list_cl_month</value>
+        <value>can_view_database_list_cl_mult</value>
+        <value>can_view_database_list_cl_operand</value>
+        <value>can_view_database_list_cl_orphan</value>
+        <value>can_view_database_list_cl_otype</value>
+        <value>can_view_database_list_cl_periodicity</value>
+        <value>can_view_database_list_cl_preg</value>
+        <value>can_view_database_list_cl_pstatus</value>
+        <value>can_view_database_list_cl_ptype</value>
+        <value>can_view_database_list_cl_quarter</value>
+        <value>can_view_database_list_cl_race</value>
+        <value>can_view_database_list_cl_sector</value>
+        <value>can_view_database_list_cl_sex</value>
+        <value>can_view_database_list_cl_special_value</value>
+        <value>can_view_database_list_cl_stype</value>
+        <value>can_view_database_list_cl_tpop</value>
+        <value>can_view_database_list_cl_unit</value>
+        <value>can_view_database_list_cl_value_type</value>
+        <value>can_view_database_list_cl_vstatus</value>
+        <value>can_view_database_list_cl_vulnstat</value>
+        <value>can_view_database_list_cl_week</value>
+        <value>can_view_database_list_cl_year</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="cl_asource">
+          <displayName>SDMX-HD Code List: cl_asource</displayName>
+          <description>The SDMX-HD Code List: Administrative Source</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Administrative Source</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_ASOURCE+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_ASOURCE</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_cstype">
+          <displayName>SDMX-HD Code List: cl_cstype</displayName>
+          <description>The SDMX-HD Code List: Calculation Syntax Type</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Calculation Syntax Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_CSTYPE+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_CSTYPE</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_currency">
+          <displayName>SDMX-HD Code List: cl_currency</displayName>
+          <description>The SDMX-HD Code List: Currency</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Currency</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_CURRENCY+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_CURRENCY</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_day">
+          <displayName>SDMX-HD Code List: cl_day</displayName>
+          <description>The SDMX-HD Code List: Days</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Days</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_DAY+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_DAY</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_disagg">
+          <displayName>SDMX-HD Code List: cl_disagg</displayName>
+          <description>The SDMX-HD Code List: Disaggregation</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Disaggregation</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_DISAGG+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_DISAGG</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_disease">
+          <displayName>SDMX-HD Code List: cl_disease</displayName>
+          <description>The SDMX-HD Code List: Disease</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Disease</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_DISEASE+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_DISEASE</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_disstat">
+          <displayName>SDMX-HD Code List: cl_disstat</displayName>
+          <description>The SDMX-HD Code List: Disease Status</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Disease Status</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_DISSTAT+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_DISSTAT</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_dsource">
+          <displayName>SDMX-HD Code List: cl_dsource</displayName>
+          <description>The SDMX-HD Code List: Data Source</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Data Source</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_DSOURCE+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_DSOURCE</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_dstype">
+          <displayName>SDMX-HD Code List: cl_dstype</displayName>
+          <description>The SDMX-HD Code List: Data Source Type</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Data Source Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_DSTYPE+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_DSTYPE</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_dtype">
+          <displayName>SDMX-HD Code List: cl_dtype</displayName>
+          <description>The SDMX-HD Code List: Datatype</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Datatype</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_DTYPE+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_DTYPE</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_fperiod">
+          <displayName>SDMX-HD Code List: cl_fperiod</displayName>
+          <description>The SDMX-HD Code List: Followup Period</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Followup Period</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_FPERIOD+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_FPERIOD</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_gboundary_type">
+          <displayName>SDMX-HD Code List: cl_gboundary_type</displayName>
+          <description>The SDMX-HD Code List: Boundary Type</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Boundary Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_GBOUNDARY_TYPE+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_GBOUNDARY_TYPE</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_gcode_country">
+          <displayName>SDMX-HD Code List: cl_gcode_country</displayName>
+          <description>The SDMX-HD Code List: Country Code</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Country Code</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_GCODE_COUNTRY+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_GCODE_COUNTRY</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_gender">
+          <displayName>SDMX-HD Code List: cl_gender</displayName>
+          <description>The SDMX-HD Code List: Gender</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Gender</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_GENDER+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_GENDER</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_glevel">
+          <displayName>SDMX-HD Code List: cl_glevel</displayName>
+          <description>The SDMX-HD Code List: Geographic Level</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Geographic Level</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_GLEVEL+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_GLEVEL</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_glocation">
+          <displayName>SDMX-HD Code List: cl_glocation</displayName>
+          <description>The SDMX-HD Code List: Geographic Location</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Geographic Location</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_GLOCATION+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_GLOCATION</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_hif1">
+          <displayName>SDMX-HD Code List: cl_hif1</displayName>
+          <description>The SDMX-HD Code List: Health Indicator Framework 1</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Health Indicator Framework 1</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_HIF1+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_HIF1</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_hif2">
+          <displayName>SDMX-HD Code List: cl_hif2</displayName>
+          <description>The SDMX-HD Code List: Health Indicator Framework 2</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Health Indicator Framework 2</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_HIF2+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_HIF2</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_income">
+          <displayName>SDMX-HD Code List: cl_income</displayName>
+          <description>The SDMX-HD Code List: Individual Income</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Individual Income</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_INCOME+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_INCOME</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_logical">
+          <displayName>SDMX-HD Code List: cl_logical</displayName>
+          <description>The SDMX-HD Code List: Logical: extended list for boolean values</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Logical: extended list for boolean values</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_LOGICAL+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_LOGICAL</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_metype">
+          <displayName>SDMX-HD Code List: cl_metype</displayName>
+          <description>The SDMX-HD Code List: Monitoring and Evaluation Framework</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Monitoring and Evaluation Framework</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_METYPE+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_METYPE</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_month">
+          <displayName>SDMX-HD Code List: cl_month</displayName>
+          <description>The SDMX-HD Code List: Months</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Months</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_MONTH+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_MONTH</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_mult">
+          <displayName>SDMX-HD Code List: cl_mult</displayName>
+          <description>The SDMX-HD Code List: Multiplier</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Multiplier</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_MULT+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_MULT</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_operand">
+          <displayName>SDMX-HD Code List: cl_operand</displayName>
+          <description>The SDMX-HD Code List: Operand type of indicator</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Operand type of indicator</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_OPERAND+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_OPERAND</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_orphan">
+          <displayName>SDMX-HD Code List: cl_orphan</displayName>
+          <description>The SDMX-HD Code List: Orphan Type</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Orphan Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_ORPHAN+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_ORPHAN</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_otype">
+          <displayName>SDMX-HD Code List: cl_otype</displayName>
+          <description>The SDMX-HD Code List: Organization Type</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Organization Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_OTYPE+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_OTYPE</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_periodicity">
+          <displayName>SDMX-HD Code List: cl_periodicity</displayName>
+          <description>The SDMX-HD Code List: Periodicity</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Periodicity</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_PERIODICITY+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_PERIODICITY</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_preg">
+          <displayName>SDMX-HD Code List: cl_preg</displayName>
+          <description>The SDMX-HD Code List: Pregnancy Status</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Pregnancy Status</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_PREG+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_PREG</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_pstatus">
+          <displayName>SDMX-HD Code List: cl_pstatus</displayName>
+          <description>The SDMX-HD Code List: Programme Status</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Programme Status</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_PSTATUS+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_PSTATUS</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_ptype">
+          <displayName>SDMX-HD Code List: cl_ptype</displayName>
+          <description>The SDMX-HD Code List: Programme Type</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Programme Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_PTYPE+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_PTYPE</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_quarter">
+          <displayName>SDMX-HD Code List: cl_quarter</displayName>
+          <description>The SDMX-HD Code List: Quarters</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Quarters</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_QUARTER+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_QUARTER</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_race">
+          <displayName>SDMX-HD Code List: cl_race</displayName>
+          <description>The SDMX-HD Code List: Race</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Race</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_RACE+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_RACE</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_sector">
+          <displayName>SDMX-HD Code List: cl_sector</displayName>
+          <description>The SDMX-HD Code List: Sector</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Sector</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <version>4.0.5.2</version>
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_SECTOR+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_SECTOR</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_sex">
+          <displayName>SDMX-HD Code List: cl_sex</displayName>
+          <description>The SDMX-HD Code List: Biologic Sex</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Biologic Sex</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_SEX+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_SEX</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_special_value">
+          <displayName>SDMX-HD Code List: cl_special_value</displayName>
+          <description>The SDMX-HD Code List: Special Value</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Special Value</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_SPECIAL_VALUE+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_SPECIAL_VALUE</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_stype">
+          <displayName>SDMX-HD Code List: cl_stype</displayName>
+          <description>The SDMX-HD Code List: Statistic Type</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Statistic Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_STYPE+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_STYPE</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_tpop">
+          <displayName>SDMX-HD Code List: cl_tpop</displayName>
+          <description>The SDMX-HD Code List: Target Population</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Target Population</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_TPOP+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_TPOP</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_unit">
+          <displayName>SDMX-HD Code List: cl_unit</displayName>
+          <description>The SDMX-HD Code List: Unit</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Unit</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_UNIT+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_UNIT</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_value_type">
+          <displayName>SDMX-HD Code List: cl_value_type</displayName>
+          <description>The SDMX-HD Code List: Value Type</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Value Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_VALUE_TYPE+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_VALUE_TYPE</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_vstatus">
+          <displayName>SDMX-HD Code List: cl_vstatus</displayName>
+          <description>The SDMX-HD Code List: Version Status</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Version Status</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_VSTATUS+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_VSTATUS</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_vulnstat">
+          <displayName>SDMX-HD Code List: cl_vulnstat</displayName>
+          <description>The SDMX-HD Code List: Vulnerability Status</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Vulnerability Status</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_VULNSTAT+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_VULNSTAT</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_week">
+          <displayName>SDMX-HD Code List: cl_week</displayName>
+          <description>The SDMX-HD Code List: Weeks</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Weeks</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_WEEK+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_WEEK</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="cl_year">
+          <displayName>SDMX-HD Code List: cl_year</displayName>
+          <description>The SDMX-HD Code List: Years</description>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Years</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>SDMXHD</value>
+          </configuration>
+          <configurationGroup name="storage_options" path="storage_options/SDMXHD">
+            <configuration name="file" values="single">
+              <value>COMMON/SDMX-HD/v1.0/codelists/CL_YEAR+SDMX-HD+1.0.xml</value>
+            </configuration>
+            <configuration name="CodeListID" values="single">
+              <value>CL_YEAR</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

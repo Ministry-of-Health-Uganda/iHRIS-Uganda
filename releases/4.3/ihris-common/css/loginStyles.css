@@ -1,0 +1,136 @@
+#loginPage #siteInnerWrap {
+	background-image: none;
+}
+
+#loginPage #siteHeadWrap {
+	height: 325px;
+	background: transparent url(login/login_fade_bkgd.png) repeat-x;
+}
+#loginPage #siteHeader {
+	height: 325px;
+	background: #fff url(login/login_siteheader_bkgd.gif) repeat-x;
+}
+
+#welcomeIntro {
+	position: absolute;
+	top: 153px;
+	left: 25px;
+}
+
+#welcomeIntro h1 {
+	font: normal 2.4em "Trebuchet MS", Arial, Helvetica, sans-serif;
+	padding: 17px 0 0.5em;
+}
+
+#welcomeIntro p {
+	font: 1.2em Arial, Helvetica, sans-serif;
+}
+
+#welcomeIntro strong {
+	font-weight: normal;
+	color: #036;
+}
+
+#welcomeIntro img {
+	float: right;
+	margin: 0 22px 0 30px;
+	background: transparent url(login/loggin_pic_bkgd.png) no-repeat;
+	padding: 4px 7px 9px;
+}
+
+#loginPage #siteContent {
+	width: 578px;
+	padding: 38px 0 14px 24px;
+	float: none;
+    margin-left: 0px;
+}
+
+#siteContent h2 {
+	color: #c30;
+	font: 1.6em/1em "Trebuchet MS", Arial, Helvetica, sans-serif;
+	padding: 6px 0 10px;
+	/*padding-left: 27px;*/
+}
+#siteContent h2 a {
+	color: #c30;
+	text-decoration: none;
+	padding: 0 0 1px 27px;
+	background: transparent url(login/icon_default.gif) no-repeat 0 0;
+}
+#siteContent h2 a:hover {
+	text-decoration: underline;
+}
+#siteContent h2 a.updateRecords {
+	background-image: url(login/icon_update.gif);
+}
+#siteContent h2 a.searchRecords {
+	background-image: url(login/icon_search.gif);
+}
+#siteContent h2 a.createRecords {
+	background-image: url(login/icon_create.gif);
+}
+#siteContent h2 a.adminDatabase {
+	background-image: url(login/icon_admindb.gif);
+}
+
+#loginPage #siteContent p {
+	padding: 0 0 0.4em 27px;
+	
+	font: 1.1em Verdana, Arial, sans-serif;
+}
+
+/* login table ------------------------------------------------------------------- */
+#error_message {
+	color: #c30;
+	font: bold 14px Verdana, Arial, Helvetica, sans-serif;
+}
+table.loginTable {
+	margin-bottom: 30px;
+}
+
+#loginPage #siteContent table.loginTable h2 {
+	padding-bottom: 4px;
+}
+
+table.loginTable th {
+	background-color: #515151;
+	padding: 4px 6px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+	vertical-align: middle;
+	border-right: 2px solid #fff;
+	border-bottom: 4px solid #fff;
+	border-left: 2px solid #fff;
+}
+
+table.loginTable input {
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	background-color: #fff;
+	border: solid 2px #ccc;
+	padding: 3px 2px;
+	margin: 0 2px;
+	width: 182px;
+}
+
+table.loginTable input.button {
+	background: #ccc url(button_bkgd.gif) repeat-x;
+	border: 2px solid #BFBFBF;
+	color: #333;
+	padding: 4px 12px;
+	margin-top: 5px;
+	font: bold 10px Verdana, Arial, Helvetica, sans-serif;
+	width: auto;
+	float: right;
+}
+
+table.loginTable .forgot {
+	padding: 10px 2px;
+	font-size: 11px;
+	display: block;
+}
+
+table.loginTable .forgotRow {
+	padding: 2px 5px 2px 5px;
+}
+

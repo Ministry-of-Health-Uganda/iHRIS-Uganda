@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-search-people" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-search-people" path="/modules/CustomReports" locale="gl">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships">
+      <configurationGroup name="search_people">
+        <configuration name="display_name" locale="gl">
+          <value>Procurar persoas</value>
+        </configuration>
+        <configuration name="description" locale="gl">
+          <value>Procurar unha relación para todos os rexistros de persoas.</value>
+        </configuration>
+        <configurationGroup name="reporting_functions">
+          <configurationGroup name="employee_status">
+            <configuration name="description" locale="gl">
+              <value>O estado actual deste empregado</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="joins">
+          <configurationGroup name="last_person_position">
+            <configuration name="description" locale="gl">
+              <value>O último cargo que ocupou esta persoa.</value>
+            </configuration>
+            <configuration name="display_name" locale="gl">
+              <value>Último cargo da persoa</value>
+            </configuration>
+            <configurationGroup name="joins">
+              <configurationGroup name="last_position">
+                <configuration name="description" locale="gl">
+                  <value>Os detalles do último cargo ocupado por esta persoa.</value>
+                </configuration>
+                <configuration name="display_name" locale="gl">
+                  <value>Último cargo</value>
+                </configuration>
+                <configurationGroup name="joins">
+                  <configurationGroup name="last_job">
+                    <configuration name="description" locale="gl">
+                      <value>O último emprego ocupado por esta persoa.</value>
+                    </configuration>
+                    <configuration name="display_name" locale="gl">
+                      <value>Último emprego</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="last_facility">
+                    <configuration name="description" locale="gl">
+                      <value>O último establecemento no que traballou esta persoa.</value>
+                    </configuration>
+                    <configuration name="display_name" locale="gl">
+                      <value>Último establecemento</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="application">
+            <configuration name="description" locale="gl">
+              <value>Os detalles da candidatura desta persoa.</value>
+            </configuration>
+            <configuration name="display_name" locale="gl">
+              <value>Candidatura</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports">
+      <configurationGroup name="search_people">
+        <configurationGroup name="meta">
+          <configuration name="display_name" locale="gl">
+            <value>Procurar persoas</value>
+          </configuration>
+          <configuration name="description" locale="gl">
+            <value>Procurar todos os rexistros de persoas.</value>
+          </configuration>
+          <configuration name="category" locale="gl">
+            <value>Procurar</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms">
+          <configurationGroup name="primary_form">
+            <configurationGroup name="fields">
+              <configurationGroup name="surname">
+                <configurationGroup name="limits">
+                  <configurationGroup name="contains">
+                    <configuration name="header" locale="gl">
+                      <value>Apelidos</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="gl">
+                  <value>Apelidos</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="firstname">
+                <configuration name="header" locale="gl">
+                  <value>Nome</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last_person_position">
+            <configurationGroup name="fields">
+              <configurationGroup name="start_date">
+                <configuration name="header" locale="gl">
+                  <value>Data de inicio</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="end_date">
+                <configuration name="header" locale="gl">
+                  <value>Data de fin</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last_position">
+            <configurationGroup name="fields">
+              <configurationGroup name="job">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="gl">
+                      <value>Emprego</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="gl">
+                  <value>ID da tarefa do cargo</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="title">
+                <configuration name="header" locale="gl">
+                  <value>Título do cargo</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="facility">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="gl">
+                      <value>Establecemento</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="gl">
+                  <value>ID do establecemento</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last_facility">
+            <configurationGroup name="fields">
+              <configurationGroup name="name">
+                <configuration name="header" locale="gl">
+                  <value>Establecemento</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last_job">
+            <configurationGroup name="fields">
+              <configurationGroup name="title">
+                <configuration name="header" locale="gl">
+                  <value>Título do emprego</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="reporting_functions">
+          <configurationGroup name="employee_status">
+            <configurationGroup name="limits">
+              <configurationGroup name="equals">
+                <configuration name="header" locale="gl">
+                  <value>Estado do empregado</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews">
+      <configurationGroup name="search_people">
+        <configuration name="description" locale="gl">
+          <value>Procurar todos os rexistros de persoas no sistema.</value>
+        </configuration>
+        <configuration name="display_name" locale="gl">
+          <value>Procurar persoas</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

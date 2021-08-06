@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-standard-data-employment_terms">
+  <metadata>
+    <displayName>Uganda default data for: employment_terms</displayName>
+    <description>Data for form: employment_terms</description>
+    <version>4.1.6.2</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <erase path="/I2CE/formsData/forms/employment_terms">
+    <lessThan version="4.1.6.1" />
+  </erase>
+  <configurationGroup name="Uganda-standard-data-employment_terms" path="/I2CE/formsData/forms/employment_terms">
+    <displayName>Form data: employment_terms</displayName>
+    <configuration name="read_only" path="/modules/forms/forms/employment_terms/read_only" type="boolean">
+      <version>4.1.6.2</version>
+      <value>true</value>
+    </configuration>
+    
+   
+    <configurationGroup name="confirmation">
+      <displayName>Confirmation</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 14:34:56</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Confirmation</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="Probation">
+      <displayName>Probation</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 14:34:56</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Probation</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    
+    
+  </configurationGroup>
+</I2CEConfiguration>

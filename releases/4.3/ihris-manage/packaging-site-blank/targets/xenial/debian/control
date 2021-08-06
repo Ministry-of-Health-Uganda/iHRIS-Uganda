@@ -1,0 +1,16 @@
+Source: ihris-manage-site
+Maintainer: Carl Leitner <litlfred@ibiblio.org>
+Section: web
+Priority: optional
+Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 7)
+Homepage: http://launchpad.net/ihris-manage
+
+
+Package: ihris-manage-site
+Architecture: all
+Depends: ihris-manage
+Pre-Depends: mysql-server, dbconfig-common
+Recommends: 
+Description: iHRIS Manage Site
+ Site for the default iHRIS Manage install

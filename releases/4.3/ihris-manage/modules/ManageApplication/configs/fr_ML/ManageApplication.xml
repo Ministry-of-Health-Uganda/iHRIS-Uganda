@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Application" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Application" path="/I2CE" locale="fr_ML">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="fr_ML">
+      <configuration name="app_felon" path="application/felony_circumstances/required"></configuration>
+      <configuration name="app_hours" path="application/hours/required"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="fr_ML">
+      <configuration name="person_can_view_child_form_position_decision" locale="fr_ML">
+        <value>Peut afficher le formulaire enfant de la Décision du Poste d’une personne</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_decision" locale="fr_ML">
+        <value>Peut éditer le formulaire enfant de la Décision du Poste d’une personne</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_position_interview" locale="fr_ML">
+        <value>Peut afficher le formulaire enfant de l’Entretien du Poste d’une personne</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_interview" locale="fr_ML">
+        <value>Peut éditer le formulaire enfant de l’entretien du poste d’une personne</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_application" locale="fr_ML"></configuration>
+      <configuration name="person_can_edit_child_form_application" locale="fr_ML"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="application">
+          <configuration name="display" values="single" locale="fr_ML">
+            <value>Candidat</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_interview">
+          <configuration name="display" values="single" locale="fr_ML">
+            <value>Entretien du poste</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_decision">
+          <configuration name="display" values="single" locale="fr_ML">
+            <value>Décision du poste</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Applicant">
+          <configurationGroup name="fields">
+            <configurationGroup name="position">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Poste(s)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Avez vous déjà été reconnu coupable d’un crime?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony_circumstance">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Si oui, donnez les circonstances.</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="other_info">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:En plus de votre historique d'expériences professionnels, y a t-il d’autres compétences, qualifications ou expérience que nous devrions prendre en compte?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hear">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Comment avez-vous pris connaissance de cette vacance de poste?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Quand pouvez-vous commencer?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="desired_wage">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Salaires souhaites</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="full_time">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Recherchez-vous un emploi à pleintemps?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hours">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Si non, quelles sont les heures auxquelles vous êtes disponible?</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionInterview">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Date de l’entretien</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Personnes présentes</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Commentaires</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionDecision">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Date de prise la décision</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="offer">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Offrir de la fonction?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Commentaires</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="application">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr_ML">
+            <value>Ajouter/Mettre à jour d'une candidature</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_decision">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr_ML">
+            <value>Ajouter/Mettre à jour d'une décision de poste</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_interview">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr_ML">
+            <value>Ajouter/Mettre à jour d'un entretien pour un poste</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

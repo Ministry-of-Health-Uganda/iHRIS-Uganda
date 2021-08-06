@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="page-builder">
+  <metadata>
+    <displayName>Page Builder</displayName>
+    <category>Administration</category>
+    <description>Page Builder</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@gmail.com</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="swissfactory">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>100</priority>
+  </metadata>
+  <configurationGroup name="page-builder" path="/">
+    <configurationGroup name="page" path="/I2CE/page/PageBuilder">
+      <configuration name="class" values="single" type="string">
+        <value>I2CE_PageBuilder</value>
+      </configuration>
+      <configuration name="style" values="single" type="string">
+        <value>shell</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>4.2.0.3</version>
+      <configuration name="can_build_pages" locale="en_US" values="single" type="string">
+        <value>Can build or configure pages</value>
+      </configuration>
+      <configuration name="can_delete_pages" locale="en_US" values="single" type="string">
+        <value>Can delete entire pages from the page builder</value>
+      </configuration>
+      <configuration name="can_delete_pages_arguments" locale="en_US" values="single" type="string">
+        <value>Can delete arguments of a page</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page_builder_handler" path="/modules/page-builder/handlers">
+      <configurationGroup name="I2CE_Page">
+        <configuration name="swiss" values="single" type="string">
+          <value>Page</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>Default page with almost no functionality</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="fields-enum">
+  <metadata>
+    <displayName>Enumeration</displayName>
+    <description>A module that allows the enum formfield</description>
+    <version>4.3.0</version>
+    <link>https://launchpad.net/i2ce</link>
+    <requirement name="Fields">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="form_field" path="forms/FORMFIELD">
+    <displayName>Form Fields</displayName>
+    <description>Information about the various classes used to handle fields of a form</description>
+    <configuration name="ENUM" values="single" type="string">
+      <displayName>Enum</displayName>
+      <description>The class for a Enum field</description>
+      <value>I2CE_FormField_ENUM</value>
+    </configuration>
+  </configurationGroup>
+  <!-- form_field -->
+</I2CEConfiguration>

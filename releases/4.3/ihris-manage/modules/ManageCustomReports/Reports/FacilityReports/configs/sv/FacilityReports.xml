@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-facility-reports" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-facility-reports" path="/modules/CustomReports" locale="sv">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships">
+      <configurationGroup name="facility">
+        <configuration name="display_name" locale="sv"></configuration>
+        <configuration name="description" locale="sv">
+          <value>Information om anläggningen</value>
+        </configuration>
+        <configurationGroup name="joins">
+          <configurationGroup name="facility_type">
+            <configuration name="description" locale="sv">
+              <value>Anläggningstyp för den här anläggningen.</value>
+            </configuration>
+            <configuration name="display_name" locale="sv">
+              <value>Anläggningstyp</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="facility_contact">
+            <configuration name="description" locale="sv">
+              <value>Kontaktinformation för den här anläggningen.</value>
+            </configuration>
+            <configuration name="display_name" locale="sv">
+              <value>Kontakt för anläggningen</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="district">
+            <configuration name="description" locale="sv">
+              <value>Området där anläggningen är.</value>
+            </configuration>
+            <configuration name="display_name" locale="sv">
+              <value>Område</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports">
+      <configurationGroup name="facility_list">
+        <configurationGroup name="meta">
+          <configuration name="display_name" locale="sv"></configuration>
+          <configuration name="description" locale="sv">
+            <value>Information om anläggningen.</value>
+          </configuration>
+          <configuration name="category" locale="sv">
+            <value>Anläggningsrapport</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms">
+          <configurationGroup name="primary_form">
+            <configurationGroup name="fields">
+              <configurationGroup name="facility_type">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="sv">
+                      <value>Anläggningstyp</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="sv">
+                  <value>ID för anläggningstypen</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="location">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="sv">
+                      <value>Läget för anläggningen</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="within">
+                    <configuration name="header" locale="sv">
+                      <value>Läget för anläggningen</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="sv">
+                  <value>ID för anläggningens läge</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="name">
+                <configuration name="header" locale="sv">
+                  <value>Namnet på anläggningen</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="district">
+            <configurationGroup name="fields">
+              <configurationGroup name="name">
+                <configuration name="header" locale="sv">
+                  <value>Plats</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="facility_contact">
+            <configurationGroup name="fields">
+              <configurationGroup name="address">
+                <configuration name="header" locale="sv">
+                  <value>Postadress</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="telephone">
+                <configuration name="header" locale="sv">
+                  <value>Telefonnummer</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="email">
+                <configuration name="header" locale="sv">
+                  <value>E-postadress</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="notes">
+                <configuration name="header" locale="sv">
+                  <value>Kontaktanteckningar</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="facility_type">
+            <configurationGroup name="fields">
+              <configurationGroup name="name">
+                <configuration name="header" locale="sv">
+                  <value>Anläggningstyp</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews">
+      <configurationGroup name="facility_list">
+        <configuration name="description" locale="sv">
+          <value>En lista med alla anläggningar.</value>
+        </configuration>
+        <configuration name="display_name" locale="sv"></configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,18 @@
+#!/bin/bash
+set -x
+
+PECL=/usr/bin/pecl
+SVC=/usr/sbin/service
+LN=/bin/ln
+
+
+USERNAME=ihris
+
+BASEDIR=/var/lib/iHRIS
+
+chown -R $USERNAME:$USERNAME $BASEDIR
+
+
+
+$SVC apache2 restart
+$SVC memcached restart

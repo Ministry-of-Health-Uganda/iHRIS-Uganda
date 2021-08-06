@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CEUs">
+  <metadata>
+    <displayName>CEUs</displayName>
+    <className>iHRIS_Module_CEUs</className>
+    <category>Application Component</category>
+    <description>Makes Continuing Education Unit (CEU) information available to the system</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-common">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms-storage-magicdata">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <erase path="/I2CE/tasks/task_trickle_down/can_edit_all_training_course_database_lists">
+    <lessThan version="4.0.1" />
+  </erase>
+  <erase path="/I2CE/tasks/task_trickle_down/can_view_all_training_course_database_lists">
+    <lessThan version="4.0.1" />
+  </erase>
+  <configurationGroup name="CEUs" path="/I2CE">
+    <displayName>Continued Education Units</displayName>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_continuing_education_course" locale="en_US">
+        <value>Edit the continuing education list</value>
+      </configuration>
+      <configuration name="can_view_database_list_continuing_education_course" locale="en_US">
+        <value>View the continuing education list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="can_edit_database_list_continuing_education_course" values="many">
+        <value>can_edit_training_course_database_lists</value>
+        <value>can_view_database_list_continuing_education_course</value>
+      </configuration>
+      <configuration name="can_edit_all_training_course_database_lists" values="many">
+        <version>4.0.1</version>
+        <value>can_edit_database_list_continuing_education_course</value>
+      </configuration>
+      <configuration name="can_view_all_training_course_database_lists" values="many">
+        <version>4.0.1</version>
+        <value>can_view_database_list_continuing_education_course</value>
+      </configuration>
+      <configuration name="can_edit_all_database_lists" values="many">
+        <version>4.0.1.1</version>
+        <value>can_edit_database_list_continuing_education_course</value>
+      </configuration>
+      <configuration name="can_view_all_database_lists" values="many">
+        <version>4.0.1.1</version>
+        <value>can_view_database_list_continuing_education_course</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <displayName>Forms</displayName>
+      <description>Information about the forms made available by iHRIS-Qualify</description>
+      <configurationGroup name="forms">
+        <displayName>Forms available to the form factory</displayName>
+        <status>advanced:true</status>
+        <status>required:true</status>
+        <configurationGroup name="continuing_education">
+          <displayName>Continuing Education</displayName>
+          <description>The Continuing Education Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_ContinuingEducation</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Continuing Education</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="continuing_education_course">
+          <displayName>Continuing Education Course</displayName>
+          <description>The Continuing Education Course Form</description>
+          <version>3.2.3</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_ContinuingEducationCourse</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Continuing Education Course</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- End /modules/forms/forms-->
+      <configurationGroup name="formClasses">
+        <displayName>Form Class Configuration</displayName>
+        <configurationGroup name="iHRIS_ContinuingEducationCourse">
+          <displayName>Configuration for the class 'iHRIS_ContinuingEducationCourse'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_List</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="name">
+              <displayName>The field 'name'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Name</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="credit_hours">
+              <displayName>The field 'credit_hours'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Credit Hours</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_ContinuingEducation">
+          <displayName>Configuration for the class 'iHRIS_ContinuingEducation'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="continuing_education_course">
+              <displayName>The field 'continuing_education_course'</displayName>
+              <version>3.2.3</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Continuing Education Course</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="credit_hours">
+              <displayName>The field 'credit_hours'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Credit Hours</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <displayName>The field 'start_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Start Date</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <displayName>The field 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:End Date</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- End /modules/forms/formClasses -->
+    </configurationGroup>
+    <!-- End /modules/forms -->
+    <configurationGroup name="template">
+      <configurationGroup name="page_styles">
+        <configurationGroup name="ihris_page_form_parent_training">
+          <displayName>Page Form Parent Training</displayName>
+          <configuration name="class" values="single">
+            <displayName>Page Class</displayName>
+            <description>The class responsible for displaying this page</description>
+            <status>required:true</status>
+            <value>iHRIS_PageFormParentTraining</value>
+          </configuration>
+          <configuration name="style" values="single">
+            <displayName>Page Style</displayName>
+            <description>The page style that this style inherits from</description>
+            <value>shell</value>
+          </configuration>
+          <configurationGroup name="args">
+            <displayName>Arguements</displayName>
+            <description>Values passed to the pages constructor</description>
+            <configuration name="access" values="many">
+              <displayName>Page Access</displayName>
+              <description>All of the roles that have access to this page</description>
+              <status>required:false</status>
+              <value>records</value>
+            </configuration>
+            <configuration name="defaultHTMLFile" values="many">
+              <displayName>Default HTML File</displayName>
+              <description>The default html template file containing the page content</description>
+              <value>form_tr_base.html</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

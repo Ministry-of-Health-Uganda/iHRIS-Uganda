@@ -1,0 +1,633 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="manage-auto-page">
+  <metadata>
+    <displayName>Manage Auto Pages</displayName>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <configurationGroup name="manage-auto-page" path="/">
+    <configurationGroup name="parent_person" path="/I2CE/template/page_styles/parent_person">
+      <configuration name="class" values="single">
+        <value>I2CE_PageFormParent</value>
+      </configuration>
+      <configuration name="style" values="single">
+        <value>shell</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configuration name="page_parent_form">
+          <value>person</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="person_passport_photo" path="/I2CE/page/person_photo_passport">
+      <configurationGroup name="args">
+        <configuration name="title" local="en_US">
+          <value>Add/Update Passport Photo</value>
+        </configuration>
+        <configurationGroup name="auto_template">
+          <configuration name="enabled">
+            <version>4.1.2013.03.26.5</version>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="page_form">
+          <value>person_photo_passport</value>
+        </configuration>
+        <configuration name="tasks" values="many">
+          <version>4.1.2013.03.26.5</version>
+          <value>person_can_edit_child_form_person_photo_passport</value>
+        </configuration>
+      </configurationGroup>
+      <configuration name="style">
+        <value>parent_person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="person_id" path="/I2CE/page/person_id">
+      <configurationGroup name="args">
+        <configuration name="title" local="en_US">
+          <value>Add/Update Identification</value>
+        </configuration>
+        <configurationGroup name="auto_template">
+          <configuration name="enabled">
+            <version>4.1.2013.03.26.5</version>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="page_form">
+          <value>person_id</value>
+        </configuration>
+        <configuration name="tasks" type="delimited">
+          <value>person_can_edit_child_form_person_id</value>
+        </configuration>
+      </configurationGroup>
+      <configuration name="style">
+        <value>parent_person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="nextofkin" path="/I2CE/page/nextofkin">
+      <configurationGroup name="args">
+        <configuration name="title" local="en_US">
+          <value>Add/Update Next Of Kin</value>
+        </configuration>
+        <configurationGroup name="auto_template">
+          <configuration name="enabled">
+            <version>4.1.2013.03.26.5</version>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="page_form">
+          <value>nextofkin</value>
+        </configuration>
+        <configuration name="tasks" type="delimited">
+          <value>person_can_edit_child_form_nextofkin</value>
+        </configuration>
+      </configurationGroup>
+      <configuration name="style">
+        <value>parent_person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="demographic" path="/I2CE/page/demographic">
+      <configurationGroup name="args">
+        <configuration name="title" local="en_US">
+          <value>Add/Update Base Demographic Information</value>
+        </configuration>
+        <configurationGroup name="auto_template">
+          <configuration name="enabled">
+            <version>4.1.2013.03.26.5</version>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="page_form">
+          <value>demographic</value>
+        </configuration>
+        <configuration name="tasks" type="delimited">
+          <value>person_can_edit_child_form_demographic</value>
+        </configuration>
+      </configurationGroup>
+      <configuration name="style">
+        <value>parent_person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="person_contact_work" path="/I2CE/page/person_contact_work">
+      <configurationGroup name="args">
+        <configuration name="title" local="en_US">
+          <value>Add/Update Work Contact</value>
+        </configuration>
+        <configurationGroup name="auto_template">
+          <configuration name="enabled">
+            <version>4.1.2013.03.26.5</version>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="page_form">
+          <value>person_contact_work</value>
+        </configuration>
+        <configuration name="tasks" type="delimited">
+          <value>person_can_edit_child_form_person_contact_work</value>
+        </configuration>
+      </configurationGroup>
+      <configuration name="style">
+        <value>parent_person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="person_contact_emergency" path="/I2CE/page/person_contact_emergency">
+      <configurationGroup name="args">
+        <configuration name="title" local="en_US">
+          <value>Add/Update Emergency Contact</value>
+        </configuration>
+        <configurationGroup name="auto_template">
+          <configuration name="enabled">
+            <version>4.1.2013.03.26.5</version>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="page_form">
+          <value>person_contact_emergency</value>
+        </configuration>
+        <configuration name="tasks" type="delimited">
+          <value>person_can_edit_child_form_person_contact_emergency</value>
+        </configuration>
+      </configurationGroup>
+      <configuration name="style">
+        <value>parent_person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="person_contact_personal" path="/I2CE/page/person_contact_personal">
+      <configurationGroup name="args">
+        <configuration name="title" local="en_US">
+          <value>Add/Update Personal Contact</value>
+        </configuration>
+        <configurationGroup name="auto_template">
+          <configuration name="enabled">
+            <version>4.1.2013.03.26.5</version>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="page_form">
+          <value>person_contact_personal</value>
+        </configuration>
+        <configuration name="tasks" type="delimited">
+          <value>person_can_edit_child_form_person_contact_personal</value>
+        </configuration>
+      </configurationGroup>
+      <configuration name="style">
+        <value>parent_person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="person_contact_other" path="/I2CE/page/person_contact_other">
+      <configurationGroup name="args">
+        <configuration name="title" local="en_US">
+          <value>Add/Update Other Contact</value>
+        </configuration>
+        <configurationGroup name="auto_template">
+          <configuration name="enabled">
+            <version>4.1.2013.03.26.5</version>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="page_form">
+          <value>person_contact_other</value>
+        </configuration>
+        <configuration name="tasks" type="delimited">
+          <value>person_can_edit_child_form_person_contact_other</value>
+        </configuration>
+      </configurationGroup>
+      <configuration name="style">
+        <value>parent_person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="view_person" path="/I2CE/page/view_person">
+      <configuration name="style">
+        <value>shell</value>
+      </configuration>
+      <configuration name="class">
+        <value>I2CE_PageTabbed</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configurationGroup name="tabs">
+          <configurationGroup name="demo">
+            <configuration name="href">
+              <value>view_demographics?id=</value>
+            </configuration>
+            <configuration name="formfield">
+              <value>person:id</value>
+            </configuration>
+            <configuration name="title" locale="en_US">
+              <value>Demographics</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="position">
+            <configuration name="href">
+              <value>view_person_position?id=</value>
+            </configuration>
+            <configuration name="formfield">
+              <value>person_position:id</value>
+            </configuration>
+            <configuration name="title" locale="en_US">
+              <value>Employment</value>
+            </configuration>
+            <configurationGroup name="where">
+              <configuration name="operator">
+                <value>FIELD_LIMIT</value>
+              </configuration>
+              <configuration name="field">
+                <value>end_date</value>
+              </configuration>
+              <configuration name="style">
+                <value>null</value>
+              </configuration>
+            </configurationGroup>
+            <configuration name="order">
+              <value>-start_date</value>
+            </configuration>
+            <configuration name="form">
+              <value>person_position</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configuration name="tab_order">
+          <value>demo,position</value>
+        </configuration>
+        <configuration name="primary_form">
+          <value>person</value>
+        </configuration>
+        <configurationGroup name="auto_template">
+          <configuration name="default_disabled">
+            <value>1</value>
+          </configuration>
+          <configuration name="display_order">
+            <value>surname,firstname</value>
+          </configuration>
+          <configurationGroup name="title_args">
+            <configuration name="0">
+              <value>surname</value>
+            </configuration>
+            <configuration name="1">
+              <value>firstname</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="title" locale="en_US">
+            <value>View Person (%s, %s)</value>
+          </configuration>
+          <configuration name="subtitle">
+            <value />
+          </configuration>
+        </configurationGroup>
+        <configuration name="title" locale="en_US">
+          <value>View Person</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="view_person_position" path="/I2CE/page/view_person_position">
+      <configurationGroup name="args">
+        <configurationGroup name="children">
+          <configurationGroup name="salary">
+            <configuration name="method">
+              <value>person_position_action_salary</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form_data">
+          <configurationGroup name="href">
+            <configuration name="position">
+              <value>view_position?id=</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configuration name="primary_form">
+          <value>person_position</value>
+        </configuration>
+        <configuration name="title" locale="en_US">
+          <value>View Position Details</value>
+        </configuration>
+      </configurationGroup>
+      <configuration name="style">
+        <value>shell</value>
+      </configuration>
+      <configuration name="class">
+        <value>I2CE_PageViewChildren</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="view_demographics" path="/I2CE/page/view_demographics">
+      <configurationGroup name="args">
+        <configurationGroup name="children">
+          <configurationGroup name="demographic">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="formfield">
+                    <value>demographic:id</value>
+                  </configuration>
+                  <configuration name="href">
+                    <value>demographic?id=</value>
+                  </configuration>
+                  <configuration name="task">
+                    <value>person_can_edit_child_form_demographic</value>
+                  </configuration>
+                  <configuration name="text" locale="en_US">
+                    <value>Update This Information</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="en_US">
+                    <version>4.1.2013.03.26.1</version>
+                    <value>Add Base Demographic Information</value>
+                  </configuration>
+                  <configuration name="href">
+                    <value>demogrpahic?parent=</value>
+                  </configuration>
+                  <configuration name="formfield">
+                    <value>demographic:parent</value>
+                  </configuration>
+                  <configuration name="only_new">
+                    <value>1</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="en_US">
+                <value>Demographic</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="nextofkin">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="formfield">
+                    <value>nextofkin:id</value>
+                  </configuration>
+                  <configuration name="href">
+                    <value>nextofkin?id=</value>
+                  </configuration>
+                  <configuration name="task">
+                    <value>person_can_edit_child_form_nextofkin</value>
+                  </configuration>
+                  <configuration name="text" locale="en_US">
+                    <value>Update This Information</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="en_US">
+                    <version>4.1.2013.03.26.1</version>
+                    <value>Add New Next of Kin</value>
+                  </configuration>
+                  <configuration name="href">
+                    <value>nextofkin?parent=</value>
+                  </configuration>
+                  <configuration name="formfield">
+                    <value>person:id</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="en_US">
+                <value>Next of Kin</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person_contact_personal">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="formfield">
+                    <value>person_contact_personal:id</value>
+                  </configuration>
+                  <configuration name="href">
+                    <value>person_contact_personal?id=</value>
+                  </configuration>
+                  <configuration name="task">
+                    <value>person_can_edit_child_form_person_contact_personal</value>
+                  </configuration>
+                  <configuration name="text" locale="en_US">
+                    <value>Update This Information</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text">
+                    <version>4.1.2013.03.26.1</version>
+                    <value>Set Personal Contact</value>
+                  </configuration>
+                  <configuration name="href">
+                    <version>4.1.2013.03.26.3</version>
+                    <value>person_contact_personal?parent=</value>
+                  </configuration>
+                  <configuration name="formfield">
+                    <value>person:id</value>
+                  </configuration>
+                  <configuration name="only_new">
+                    <value>1</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="en_US">
+                <value>Personal Contact</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person_contact_emergency">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="formfield">
+                    <value>person_contact_emergency:id</value>
+                  </configuration>
+                  <configuration name="href">
+                    <value>person_contact_emergency?id=</value>
+                  </configuration>
+                  <configuration name="task">
+                    <value>person_can_edit_child_form_person_contact_emergency</value>
+                  </configuration>
+                  <configuration name="text" locale="en_US">
+                    <value>Update This Information</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="en_US">
+                    <version>4.1.2013.03.26.1</version>
+                    <value>Set Emergency Contact</value>
+                  </configuration>
+                  <configuration name="href">
+                    <version>4.1.2013.03.26.3</version>
+                    <value>person_contact_emergency?parent=</value>
+                  </configuration>
+                  <configuration name="formfield">
+                    <value>person:id</value>
+                  </configuration>
+                  <configuration name="only_new">
+                    <value>1</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="en_US">
+                <value>Emergency Contact</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person_contact_other">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="formfield">
+                    <value>person_contact_other:id</value>
+                  </configuration>
+                  <configuration name="href">
+                    <value>person_contact_other?id=</value>
+                  </configuration>
+                  <configuration name="task">
+                    <value>person_can_edit_child_form_person_contact_other</value>
+                  </configuration>
+                  <configuration name="text" locale="en_US">
+                    <value>Update This Information</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="en_US">
+                    <version>4.1.2013.03.26.1</version>
+                    <value>Set Other Contact</value>
+                  </configuration>
+                  <configuration name="href">
+                    <version>4.1.2013.03.26.3</version>
+                    <value>person_contact_other?parent=</value>
+                  </configuration>
+                  <configuration name="formfield">
+                    <value>person:id</value>
+                  </configuration>
+                  <configuration name="only_new">
+                    <value>1</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="en_US">
+                <value>Other Contact</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person_photo_passport">
+            <configuration name="title" locale="en_US">
+              <value>Passport Photo</value>
+            </configuration>
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="href">
+                    <value>person_photo_passport?id=</value>
+                  </configuration>
+                  <configuration name="formfield">
+                    <value>person_photo_passport:id</value>
+                  </configuration>
+                  <configuration name="text" locale="en_US">
+                    <value>Update This Information</value>
+                  </configuration>
+                  <configuration name="task">
+                    <value>person_can_edit_child_form_person_photo_passport</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="en_US">
+                    <value>Upload New Passport Photo</value>
+                  </configuration>
+                  <configuration name="href">
+                    <value>person_photo_passport?parent=</value>
+                  </configuration>
+                  <configuration name="formfield">
+                    <value>person:id</value>
+                  </configuration>
+                  <configuration name="task">
+                    <value>person_can_edit_child_form_person_photo_passport</value>
+                  </configuration>
+                  <configuration name="only_first">
+                    <value>1</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="fields">
+                <configurationGroup name="image">
+                  <configurationGroup name="attributes">
+                    <configuration name="height">
+                      <value>300px</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configuration name="order">
+              <version>4.1.2013.03.26.4</version>
+              <value>-date</value>
+            </configuration>
+            <configuration name="limit">
+              <value>1</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="person_id">
+            <configuration name="title" locale="en_US">
+              <value>Identification</value>
+            </configuration>
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="href">
+                    <value>person_id?id=</value>
+                  </configuration>
+                  <configuration name="formfield">
+                    <value>person_id:id</value>
+                  </configuration>
+                  <configuration name="text" locale="en_US">
+                    <value>Update This Information</value>
+                  </configuration>
+                  <configuration name="task">
+                    <value>person_can_edit_child_form_person_id</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="en_US">
+                    <value>Add New Identification</value>
+                  </configuration>
+                  <configuration name="href">
+                    <value>person_id?parent=</value>
+                  </configuration>
+                  <configuration name="formfield">
+                    <value>person:id</value>
+                  </configuration>
+                  <configuration name="task">
+                    <value>person_can_edit_child_form_person_id</value>
+                  </configuration>
+                  <configuration name="only_first">
+                    <value>1</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configuration name="primary_form">
+          <value>person</value>
+        </configuration>
+        <configuration name="title" locale="en_US">
+          <value>View Demographic Details</value>
+        </configuration>
+      </configurationGroup>
+      <configuration name="style">
+        <value>shell</value>
+      </configuration>
+      <configuration name="class">
+        <value>I2CE_PageViewChildren</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

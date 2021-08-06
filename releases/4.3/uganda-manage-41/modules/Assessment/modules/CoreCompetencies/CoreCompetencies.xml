@@ -1,0 +1,631 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CoreCompetencies">
+  <metadata>
+    <displayName>iHRIS CoreCompetencies</displayName>
+    <className>iHRIS_Module_CoreCompetencies</className>
+    <category>Application Component</category>
+    <description>An Person's CoreCompetencies</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.2.0</version>
+    <requirement name="Assessment">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="CoreCompetencies" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_assessment" locale="en_US">
+        <value>Can view assessment child form of an institution</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_assessment" locale="en_US">
+        <value>Can edit assessment child forms of an institution</value>
+      </configuration>      
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_assessment" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_assessment" values="many">
+        <value>person_can_view_child_form_assessment</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <value>person_can_view_child_form_assessment</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <value>person_can_edit_child_form_assessment</value>
+      </configuration>
+    </configurationGroup>
+
+    <configurationGroup name="page">
+      <configurationGroup name="core_competencies">
+        <version>4.1.10.13</version>
+        <configuration name="style">
+          <value>parent_assessment</value>
+        </configuration>
+        <configurationGroup name="args">
+         <version>4.1.10.13</version>
+          <configuration name="title" locale="en_US">
+            <value>Add/Update Assessment of Core Competencies</value>
+          </configuration>
+          <configuration name="primary_form">
+            <value>core_competencies</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_can_edit_child_form_assessment</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>core_competencies</value>
+            </configuration>
+        </configurationGroup>
+      </configurationGroup> <!-- core_competencies -->
+    </configurationGroup><!-- page -->
+
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+       <configurationGroup name="assessment">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>core_competencies</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- assessment -->
+        <configurationGroup name="core_competencies">
+          <displayName>Assesment Section C</displayName>
+          <version>4.1.10.9</version>
+          <configuration name="class" values="single">
+            <value>iHRIS_Assessment_CoreCompetencies</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Assessment of Core Competencies</value>
+          </configuration>
+        </configurationGroup> <!-- core_competencies -->
+      </configurationGroup>
+      <!-- end of forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Assessment_CoreCompetencies">
+          <version>4.1.10.4</version>
+          <displayName>Configuration for the class 'iHRIS_Assessment_CoreCompetencies'</displayName>  
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>        
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="skills">
+              <displayName>The field 'skills'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Professional knowledge/ skills</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="skills_comment">
+              <displayName>The field 'skills_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Professional knowledge/ skills </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="planning">
+              <displayName>The field 'planning'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Planning, organizing and coordinating</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="planning_comment">
+              <displayName>The field 'planning_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Planning, organizing and coordinating</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="leadership">
+              <displayName>The field 'leadership'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Leadership </value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>            
+            <configurationGroup name="leadership_comment">
+              <displayName>The field 'leadership_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Leadership </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="decision_making">
+              <displayName>The field 'decision_making'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Decision Making  </value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="decision_making_comment">
+              <displayName>The field 'decision_making_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Decision Making </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="team_work">
+              <displayName>The field 'team_work'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Team work </value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="team_work_comment">
+              <displayName>The field 'team_work_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Team work </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="initiative">
+              <displayName>The field 'initiative '</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Initiative</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="initiative_comment">
+              <displayName>The field 'initiative_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Initiative </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="communication">
+              <displayName>The field 'communication'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Communication </value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="communication_comment">
+              <displayName>The field 'communication_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Communication </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="result_orientation">
+              <displayName>The field 'result_orientation'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Result Orientation </value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="result_orientation_comment">
+              <displayName>The field 'result_orientation_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Result Orientation</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="integrity">
+              <displayName>The field 'integrity'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Integrity  </value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="integrity_comment">
+              <displayName>The field 'integrity_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Integrity </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hrm">
+              <displayName>The field 'hrm'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Human Resource Management</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="hrm_comment">
+              <displayName>The field 'hrm_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Human Resource Management</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="financial_management">
+              <displayName>The field 'financial_management'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Financial Management </value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="financial_management_comment">
+              <displayName>The field 'financial_management_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Financial Management </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="management_resources">
+              <displayName>The field 'management_resources'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Management of other resources (equipment and facilities)</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="management_resources_comment">
+              <displayName>The field 'management_resources_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Management of other resources (equipment and facilities)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="time_management">
+              <displayName>The field 'time_management'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Time Management </value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="time_management_comment">
+              <displayName>The field 'time_management_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Time Management </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="customer_care">
+              <displayName>The field 'customer_care'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Customer Care</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="customer_care_comment">
+              <displayName>The field 'customer_care_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Customer Care</value>
+              </configuration>
+            </configurationGroup> 
+            <configurationGroup name="loyalty">
+              <displayName>The field 'loyalty'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Loyalty</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:5 Excellent</value>
+                     <value>4:4 Very Good</value>
+                     <value>3:3 Good</value>
+                     <value>2:2 Fair</value>
+                     <value>1:1 Poor</value>
+                     <value>Null:Not Applicable</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="loyalty_comment">
+              <displayName>The field 'loyalty_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Loyalty</value>
+              </configuration>
+            </configurationGroup>         
+          </configurationGroup>
+        </configurationGroup> <!-- iHRIS_Assessment_CoreCompetencies -->
+      </configurationGroup>
+      <!-- end of  formClasses-->
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

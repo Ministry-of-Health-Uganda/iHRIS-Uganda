@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonContact" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonContact" path="/I2CE" locale="sk">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_messages" path="/modules/forms/formfield_messages" locale="sk">
+      <configuration name="work" path="work/email/invalid_email"></configuration>
+      <configuration name="personal" path="personal/email/invalid_email"></configuration>
+      <configuration name="other" path="other/email/invalid_email"></configuration>
+      <configuration name="emergency" path="emergency/email/invalid_email"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="sk">
+      <configuration name="person_can_view_child_form_person_contact_work" locale="sk">
+        <value>Možno zobraziť pracovný kontakt na dieťa z osobného formuláru</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_work" locale="sk">
+        <value>Možno upraviť pracovný kontakt z osobného formulára dieťaťa</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_emergency" locale="sk">
+        <value>Možno upraviť núdzový kontakt osobného formulára dieťaťa</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_emergency" locale="sk">
+        <value>Možno upraviť núdzový kontakt osobného formulára dieťaťa</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_personal" locale="sk">
+        <value>Možno zobraziť osobný kontakt osobného formulára dieťaťa</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_personal" locale="sk">
+        <value>Možno upraviť osobný kontakt osobného formulára dieťaťa</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_other" locale="sk">
+        <value>Možno zobraziť iný kontakt osobného formulára dieťaťa</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_other" locale="sk">
+        <value>Možno upraviť iný kontakt osobného formulára dieťaťa</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_contact_work">
+          <configuration name="display" values="single" locale="sk">
+            <value>Pracovný kontakt</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_emergency">
+          <configuration name="display" values="single" locale="sk">
+            <value>Núdzový kontakt</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_other">
+          <configuration name="display" values="single" locale="sk">
+            <value>Iné kontakty</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_personal">
+          <configuration name="display" values="single" locale="sk">
+            <value>Osobný kontakt</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="contact">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sk">
+            <value>Pridať/Upraviť kontaktný údaj</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="training-institution" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="training-institution" path="/I2CE" locale="de">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_training_institution" locale="de">
+        <value>Die Liste der Schulungsinstitutionen bearbeiten</value>
+      </configuration>
+      <configuration name="can_edit_database_list_training_funder" locale="de">
+        <value>Die Kostenträgerliste der Schulungen bearbeiten</value>
+      </configuration>
+      <configuration name="can_view_database_list_training_institution" locale="de">
+        <value>Die Liste der Schulungsinstitutionen einsehen</value>
+      </configuration>
+      <configuration name="can_view_database_list_training_funder" locale="de">
+        <value>Die Kostenträgerliste der Schulungen einsehen</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="training_institution">
+          <configuration name="display" values="single" locale="de">
+            <value>Schulungseinrichtung</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="training_funder">
+          <configuration name="display" values="single" locale="de">
+            <value>Kostenträger der Schulung</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

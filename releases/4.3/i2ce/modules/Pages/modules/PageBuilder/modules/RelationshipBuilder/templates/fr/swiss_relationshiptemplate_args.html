@@ -1,0 +1,84 @@
+<div>
+  
+
+  <h2>Arguments de la page</h2>
+  <div id="args_container">
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Titre:</h3>Le nom d'affichage pour le formulaire principal
+	</td>
+	<td>
+	  <input name="title"></td>
+      </tr><tr><td>
+	  <h3>Tâches:</h3>Tâche, en option, pour limiter l'accès à cette page.
+	</td>
+	<td>
+	  <select name="task"><option value="">Aucune tâche sélectionnée</option></select></td>
+      </tr></table><h2>Options de relation</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Relations:</h3>Le modèle de relation est basé sur
+	</td>
+	<td>
+	  <select name="relationship"><option value="">Aucune relation sélectionnée</option></select><br><span name="has_relationship" ifset="true"><a name="relationship_link">Modifier la relation</a></span>
+	</td>
+      </tr><tr><td>
+	  <h3>Utiliser le cache:</h3>Utiliser les caches dans les tables hippo lors de l’export de données dans la relation
+	</td>
+	<td>
+	  <select name="use_cache"><option value="1">Oui</option><option value="0">Non</option></select></td>
+      </tr><tr><td>
+	  <h3>Relation de l’entête:</h3>Relation facultative pour l’entête du modèle. Doit avoir le même formulaire principal que la relation principale. 
+	</td>
+	<td>
+	  <select name="header_relationship"><option value="">Aucune relation sélectionnée</option></select><br><span name="has_header_relationship" ifset="true"><a name="header_relationship_link">Modifier la relation</a></span>
+	  
+	</td>
+      </tr></table><h2>Options du modèle ODT</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Modèle ODT:</h3>Sélectionner ou télécharger un modèle ODT
+	</td>
+	<td>
+	  <input name="do_upload" value="1" type="checkbox">Télécharger un fichier <input name="upload" type="file"><span name="has_download" ifset="true"><a name="download_link">Télécharger</a></span>
+	  <hr><input name="do_select" value="1" type="checkbox">Sélectionner un modèle existant <select name="select"></select><br><span name="has_template" ifset="true"><a name="template_link">Télécharger un modèle</a></span>
+	</td>
+      </tr><tr><td>
+	  <h3>Style de segment de modèle</h3>Contrôle comment les lignes de données multiples sont appliquées dans le modèle. « Global » signifie que tout le modèle ODT est répété. « Ligne de rapport » signifie qu’on s’attend à <pre> [!-- BEGIN report_row --] Le contenu vient ici [!-- END report_row --]</pre>une section dans le modèle ODT pour chaque ligne de données.
+	</td>
+	<td>
+	  <select name="segment_style"><option value="global">Global</option><option value="report_row">Ligne de rapport</option></select></td>
+      </tr><tr><td>
+	  <h3>Rupture de segment</h3>Rupture à utiliser entre les lignes
+	</td>
+	<td>
+	  <select name="segment_break"><option value="page">Page</option><option value="line">Ligne</option></select></td>
+      </tr></table><h2>Options de conversion de modèle</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Format</h3>Format de sortie. Le format par défaut est ODT. Si vous voulez d’autres formats, vous devrez avoir unoconv d’installé.
+	</td>
+	<td>
+	  <select name="format"><option value="">Format par défaut (fichier ODT)</option></select></td>
+      </tr><tr><td>
+	  <h3>Options d’export</h3>Options d’export à appliquer à UnoConv. Les options disponibles dépendent du format d’export (par ex. pdf) que vous utilisez.  
+	</td>
+	<td>
+	  <input name="export_options"></td>
+      </tr><tr><td>
+	  <h3>Options de connexion</h3>Détails de connexion pour exécuter unoconv sur un serveur distant.
+	</td>
+	<td>
+	  <input name="connection"></td>
+      </tr><tr><td>
+	  <h3>Répertoire temporaire de UnoConv</h3>Spécifiez le répertoire temporaire de unoconv. Utilisé avec des lecteurs montés à distance .
+	</td>
+	<td>
+	  <input name="tmp_dir"></td>
+      </tr></table><span id="fields">
+      <h2><a id="fields_link" href="">Champs obligatoires</a></h2>
+      Si un champ obligatoire n’est pas renseigné, le modèle ne sera pas généré.
+      <div class="indented" id="fields_ajax">
+      </div>
+    </span>
+    
+  </div>
+
+
+</div>

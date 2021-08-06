@@ -1,0 +1,31 @@
+<div task='person_can_view_child_form_personleave'>
+  <div class="editRecord">
+    <p>Edit This Information</p>
+    <ul>
+      <li task='person_can_edit_child_form_personleave'>
+        <span type="form" ifset="personleave:id" name="personleave:id" href="personleave?id=" parent="true">Update this Information</span>
+      </li>
+      <li>
+<span type="form" history='false' name="person:id" href="history?form=personleave&amp;show_edit&amp;order_by:personleave:-start_date&amp;id="  ifset="personleave:id">View Leave History</span>
+      </li>
+    </ul>
+  </div> <!-- editRecord -->
+  
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <th colspan="2">Person Leave Information</th>
+        </tr>
+        <span type="form" name="personleave:person_leave_type" showhead="default"></span>
+        <span type="form" name="personleave:days_requested" showhead="default" class="even"></span>
+        <span type="form" name="personleave:start_date" showhead="default" ></span>
+        <span type="form" name="personleave:end_date" showhead="default" class="even"></span>
+        <span type="form" name="personleave:remaining_days" showhead="default"></span>
+		<!--<span type="form" name="personleave:hod_recomm" showhead="default" ifset="true" class="even"></span>
+		<span type="form" name="personleave:hr_recomm" showhead="default" ifset="true"></span>
+		<span type="form" name="personleave:approval" showhead="default" ifset="true" class="even"></span>-->
+      </tbody>
+    </table>
+  </div> <!-- dataTable -->
+</div>

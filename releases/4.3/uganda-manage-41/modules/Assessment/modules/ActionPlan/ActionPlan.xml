@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ActionPlan">
+  <metadata>
+    <displayName>iHRIS ActionPlan</displayName>
+    <className>iHRIS_Module_ActionPlan</className>
+    <category>Application Component</category>
+    <description>An Person's ActionPlan</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.2.0</version>
+    <requirement name="Assessment">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="ActionPlan" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_assessment" locale="en_US">
+        <value>Can view assessment child form of an institution</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_assessment" locale="en_US">
+        <value>Can edit assessment child forms of an institution</value>
+      </configuration>      
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_assessment" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_assessment" values="many">
+        <value>person_can_view_child_form_assessment</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <value>person_can_view_child_form_assessment</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <value>person_can_edit_child_form_assessment</value>
+      </configuration>
+    </configurationGroup>
+
+    <configurationGroup name="page">
+      <configurationGroup name="action_plan">
+        <version>4.1.10.13</version>
+        <configuration name="style">
+          <value>parent_assessment</value>
+        </configuration>
+        <configurationGroup name="args">
+         <version>4.1.10.13</version>
+          <configuration name="title" locale="en_US">
+            <value>Add/Update Action Plan to Improve Performance</value>
+          </configuration>
+          <configuration name="primary_form">
+            <value>action_plan</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_can_edit_child_form_assessment</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>action_plan</value>
+            </configuration>
+        </configurationGroup>
+      </configurationGroup> <!-- action_plan -->
+    </configurationGroup><!-- page -->
+
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+       <configurationGroup name="assessment">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>action_plan</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- assessment -->
+        <configurationGroup name="action_plan">
+          <displayName>Assesment Section B</displayName>
+          <version>4.1.10.9</version>
+          <configuration name="class" values="single">
+            <value>iHRIS_Assessment_ActionPlan</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Action Plan to Improve Performance</value>
+          </configuration>
+        </configurationGroup> <!-- action_plan -->
+      </configurationGroup>
+      <!-- end of forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Assessment_ActionPlan">
+          <version>4.1.10.4</version>
+          <displayName>Configuration for the class 'iHRIS_Assessment_ActionPlan'</displayName>  
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>        
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="gap_1">
+              <displayName>The field 'gap_1'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Gap</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="gap_2">
+              <displayName>The field 'gap_2'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Gap </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="gap_3">
+              <displayName>The field 'gap_3'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Gap</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="gap_4">
+              <displayName>The field 'gap_4'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Gap</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="gap_5">
+              <displayName>The field 'gap_5'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Gap</value>
+              </configuration>
+            </configurationGroup>            
+            <configurationGroup name="action_1">
+              <displayName>The field 'action_1'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Agreed Action</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="action_2">
+              <displayName>The field 'action_2'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Agreed Action </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="action_3">
+              <displayName>The field 'action_3'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Agreed Action</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="action_4">
+              <displayName>The field 'action_4'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Agreed Action</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="action_5">
+              <displayName>The field 'action_5'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Agreed Action</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="time_frame_1">
+              <displayName>The field 'time_frame_1'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Time Frame</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="time_frame_2">
+              <displayName>The field 'time_frame_2'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Time Frame </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="time_frame_3">
+              <displayName>The field 'time_frame_3'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Time Frame</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="time_frame_4">
+              <displayName>The field 'time_frame_4'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Time Frame</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="time_frame_5">
+              <displayName>The field 'time_frame_5'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Time Frame</value>
+              </configuration>
+            </configurationGroup>        
+          </configurationGroup>
+        </configurationGroup> <!-- iHRIS_Assessment_ActionPlan -->
+      </configurationGroup>
+      <!-- end of  formClasses-->
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

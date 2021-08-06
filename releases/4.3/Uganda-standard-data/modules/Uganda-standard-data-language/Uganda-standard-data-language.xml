@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-standard-data-language">
+  <metadata>
+    <displayName>Uganda Manage data for language</displayName>
+    <description>Data for form: language</description>
+    <version>4.1.6.1</version>
+    <requirement name="PersonLanguage">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <configurationGroup name="Uganda-standard-data-language" path="/I2CE/formsData/forms/language">
+    <displayName>Form data: language</displayName>
+    <configuration name="read_only" path="/modules/forms/forms/language/read_only" type="boolean">
+      <version>4.1.6.1</version>
+      <value>true</value>
+    </configuration>
+    <configurationGroup name="en">
+      <displayName>en</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 13:27:11</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>English</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="lg">
+      <displayName>lg</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 13:27:11</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Luganda</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="sw">
+      <displayName>sw</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 13:27:11</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Swahili</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="foldercontents.xsl"?>
+<contents>
+  <folder path="D:\_VSS\WHO_IMR\DOCS\SDMX\SDMX-HD-v1.0" relativePath="">
+    <file name="TemplateDSD.xml">
+      <sdmxName>Data Structure Definition</sdmxName>
+      <sdmxDescription>Use this file as a starting point to construct the DSD.xml specific to your data exchange needs</sdmxDescription>
+      <sdmxInfo structure="KeyFamily" id="SDMX-HD-DSD" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="TemplateMSD.xml">
+      <sdmxName>Metadata Structure Definition</sdmxName>
+      <sdmxDescription>Use this file as a starting point to construct the MSD.xml specific to your data exchange needs</sdmxDescription>
+      <sdmxInfo structure="MetadataStructureDefinition" id="SDMX-HD-MSD" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="TemplateGMS.xml">
+      <sdmxName>Generic Metadata</sdmxName>
+      <sdmxDescription>Use this file as a starting point to provide the metadata according to the MSD.xml structure</sdmxDescription>
+      <sdmxInfo structure="MetadataSet" id="SDMX-HD-GMS" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="TemplateCDS.xml">
+      <sdmxName>Compact Data</sdmxName>
+      <sdmxDescription>Use this file as a starting point to provide the data according to the DSD.xml structure</sdmxDescription>
+      <sdmxInfo structure="DataSet" id="SDMX-HD-CDS" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+  </folder>
+  <folder path="D:\_VSS\WHO_IMR\DOCS\SDMX\SDMX-HD-v1.0\COMMON\SDMX-HD\v1.0\codelists" relativePath="COMMON\SDMX-HD\v1.0\codelists">
+    <file name="CL_ASOURCE+SDMX-HD+1.0.xml">
+      <sdmxName>Administrative Source</sdmxName>
+      <sdmxDescription>Administrative source or name of initiative.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_ASOURCE" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_CSTYPE+SDMX-HD+1.0.xml">
+      <sdmxName>Calculation Syntax Type</sdmxName>
+      <sdmxDescription>Calculation syntax type.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_CSTYPE" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_CURRENCY+SDMX-HD+1.0.xml">
+      <sdmxName>Currency</sdmxName>
+      <sdmxDescription>Currency list based on ISO 4217 Currency Char 3 Code</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_CURRENCY" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_DAY+SDMX-HD+1.0.xml">
+      <sdmxName>Days</sdmxName>
+      <sdmxDescription />
+      <sdmxInfo structure="CodeList" id="CL_DAY" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_DISAGG+SDMX-HD+1.0.xml">
+      <sdmxName>Disaggregation</sdmxName>
+      <sdmxDescription>Disaggregation dimensions.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_DISAGG" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_DISEASE+SDMX-HD+1.0.xml">
+      <sdmxName>Disease</sdmxName>
+      <sdmxDescription>Disease or condition.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_DISEASE" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_DISSTAT+SDMX-HD+1.0.xml">
+      <sdmxName>Disease Status</sdmxName>
+      <sdmxDescription>Disease status.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_DISSTAT" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_DSOURCE+SDMX-HD+1.0.xml">
+      <sdmxName>Data Source</sdmxName>
+      <sdmxDescription>Data source.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_DSOURCE" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_DSTYPE+SDMX-HD+1.0.xml">
+      <sdmxName>Data Source Type</sdmxName>
+      <sdmxDescription>Data source type.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_DSTYPE" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_DTYPE+SDMX-HD+1.0.xml">
+      <sdmxName>Datatype</sdmxName>
+      <sdmxDescription>Datatype.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_DTYPE" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_FPERIOD+SDMX-HD+1.0.xml">
+      <sdmxName>Followup Period</sdmxName>
+      <sdmxDescription>Followup period.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_FPERIOD" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_GBOUNDARY_TYPE+SDMX-HD+1.0.xml">
+      <sdmxName>Boundary Type</sdmxName>
+      <sdmxDescription>Geographic boundary type.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_GBOUNDARY_TYPE" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_GCODE_COUNTRY+SDMX-HD+1.0.xml">
+      <sdmxName>Country Code</sdmxName>
+      <sdmxDescription>Country list based on ISO 3166-1 Country Char 2 Code</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_GCODE_COUNTRY" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_GENDER+SDMX-HD+1.0.xml">
+      <sdmxName>Gender</sdmxName>
+      <sdmxDescription>Gender.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_GENDER" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_GLEVEL+SDMX-HD+1.0.xml">
+      <sdmxName>Geographic Level</sdmxName>
+      <sdmxDescription>Geographic hierarchy level.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_GLEVEL" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_GLOCATION+SDMX-HD+1.0.xml">
+      <sdmxName>Geographic Location</sdmxName>
+      <sdmxDescription />
+      <sdmxInfo structure="CodeList" id="CL_GLOCATION" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_HIF1+SDMX-HD+1.0.xml">
+      <sdmxName>Health Indicator Framework</sdmxName>
+      <sdmxDescription>ISO Health Indicator level 1.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_HIF1" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_HIF2+SDMX-HD+1.0.xml">
+      <sdmxName>Health Indicator Framework</sdmxName>
+      <sdmxDescription>ISO Health Indicator framework level 2.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_HIF2" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_INCOME+SDMX-HD+1.0.xml">
+      <sdmxName>Individual Income</sdmxName>
+      <sdmxDescription>Individual income level.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_INCOME" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_LOGICAL+SDMX-HD+1.0.xml">
+      <sdmxName>Logical: extended list for boolean values</sdmxName>
+      <sdmxDescription />
+      <sdmxInfo structure="CodeList" id="CL_LOGICAL" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_METYPE+SDMX-HD+1.0.xml">
+      <sdmxName>Monitoring and Evaluation Framework</sdmxName>
+      <sdmxDescription>Monitoring and Evaluation framework.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_METYPE" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_MONTH+SDMX-HD+1.0.xml">
+      <sdmxName>Months</sdmxName>
+      <sdmxDescription />
+      <sdmxInfo structure="CodeList" id="CL_MONTH" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_MULT+SDMX-HD+1.0.xml">
+      <sdmxName>Multiplier</sdmxName>
+      <sdmxDescription>Value multiplier.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_MULT" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_OPERAND+SDMX-HD+1.0.xml">
+      <sdmxName>Operand type of indicator</sdmxName>
+      <sdmxDescription>Operand type of indicator, e.g. numerator</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_OPERAND" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_ORPHAN+SDMX-HD+1.0.xml">
+      <sdmxName>Orphan Type</sdmxName>
+      <sdmxDescription>Orphan type.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_ORPHAN" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_OTYPE+SDMX-HD+1.0.xml">
+      <sdmxName>Organization Type</sdmxName>
+      <sdmxDescription />
+      <sdmxInfo structure="CodeList" id="CL_OTYPE" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_PERIODICITY+SDMX-HD+1.0.xml">
+      <sdmxName>Periodicity</sdmxName>
+      <sdmxDescription>Periodicity.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_PERIODICITY" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_PREG+SDMX-HD+1.0.xml">
+      <sdmxName>Pregnancy Status</sdmxName>
+      <sdmxDescription>Pregnancy status.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_PREG" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_PSTATUS+SDMX-HD+1.0.xml">
+      <sdmxName>Programme Status</sdmxName>
+      <sdmxDescription>Programme status.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_PSTATUS" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_PTYPE+SDMX-HD+1.0.xml">
+      <sdmxName>Programme Type</sdmxName>
+      <sdmxDescription>Level in programme reporting hierarchy.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_PTYPE" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_QUARTER+SDMX-HD+1.0.xml">
+      <sdmxName>Quarters</sdmxName>
+      <sdmxDescription />
+      <sdmxInfo structure="CodeList" id="CL_QUARTER" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_RACE+SDMX-HD+1.0.xml">
+      <sdmxName>Race</sdmxName>
+      <sdmxDescription>Racial classification</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_RACE" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_SECTOR+SDMX-HD+1.0.xml">
+      <sdmxName>Sector</sdmxName>
+      <sdmxDescription>Sector.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_SECTOR" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_SEX+SDMX-HD+1.0.xml">
+      <sdmxName>Biologic Sex</sdmxName>
+      <sdmxDescription>Biologic sex.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_SEX" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_SPECIAL_VALUE+SDMX-HD+1.0.xml">
+      <sdmxName>Special Value</sdmxName>
+      <sdmxDescription />
+      <sdmxInfo structure="CodeList" id="CL_SPECIAL_VALUE" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_STYPE+SDMX-HD+1.0.xml">
+      <sdmxName>Statistic Type</sdmxName>
+      <sdmxDescription>Statistic type.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_STYPE" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_TPOP+SDMX-HD+1.0.xml">
+      <sdmxName>Target Population</sdmxName>
+      <sdmxDescription>Target population.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_TPOP" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_UNIT+SDMX-HD+1.0.xml">
+      <sdmxName>Unit</sdmxName>
+      <sdmxDescription />
+      <sdmxInfo structure="CodeList" id="CL_UNIT" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_VALUE_TYPE+SDMX-HD+1.0.xml">
+      <sdmxName>Value Type</sdmxName>
+      <sdmxDescription />
+      <sdmxInfo structure="CodeList" id="CL_VALUE_TYPE" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_VSTATUS+SDMX-HD+1.0.xml">
+      <sdmxName>Version Status</sdmxName>
+      <sdmxDescription>Version Status</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_VSTATUS" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_VULNSTAT+SDMX-HD+1.0.xml">
+      <sdmxName>Vulnerability Status</sdmxName>
+      <sdmxDescription>Child vulnerability status.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_VULNSTAT" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_WEEK+SDMX-HD+1.0.xml">
+      <sdmxName>Weeks</sdmxName>
+      <sdmxDescription />
+      <sdmxInfo structure="CodeList" id="CL_WEEK" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="CL_YEAR+SDMX-HD+1.0.xml">
+      <sdmxName>Years</sdmxName>
+      <sdmxDescription />
+      <sdmxInfo structure="CodeList" id="CL_YEAR" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+  </folder>
+  <folder path="D:\_VSS\WHO_IMR\DOCS\SDMX\SDMX-HD-v1.0\additional" relativePath="additional">
+    <file name="CL_GEOGRAPHIC_PLACE_NAME.xml">
+      <sdmxName>Geographic Place Name</sdmxName>
+      <sdmxDescription>
+        This is a placeholder codelist: populate it with ISO/3166-2 codes for sub-national level-1 places (see http://www.commondatahub.com/live/geography/state_province_region/iso_3166_2_state_codes)
+        Whenever a sub-national place is included in this list, the country it belongs to must also be included here, so that
+        GEOGRAPHIC_PLACE_NAME_HIERARCHY can be populated accordingly. The root of the hierarchy is always the international level, so it is included by default below.
+      </sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_GEOGRAPHIC_PLACE_NAME" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_INDICATOR.xml">
+      <sdmxName>Indicator</sdmxName>
+      <sdmxDescription>This is a placeholder codelist: populate it with indicator names.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_INDICATOR" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_ISET.xml">
+      <sdmxName>Indicator Set</sdmxName>
+      <sdmxDescription>This is a placeholder codelist: populate it with indicator sets for ad hoc grouping of related indicators</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_ISET" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_ORGANIZATION.xml">
+      <sdmxName>Organization</sdmxName>
+      <sdmxDescription>This is a placeholder codelist: populate it with organizations participating in your data exchange topology.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_ORGANIZATION" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_PROGRAM.xml">
+      <sdmxName>Program</sdmxName>
+      <sdmxDescription>This is a placeholder codelist: populate it with programs for which data is collected and rollup for reporting (monitoring plans, projects, interventions, activities, etc...)</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_PROGRAM" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_TIME_PERIOD.xml">
+      <sdmxName>Time Period</sdmxName>
+      <sdmxDescription>
+        This is a placeholder codelist: populate it with time periods referenced by the indicator data.
+        CL_TIME_PERIOD contents is constructed according to specific rules based on CL_DAY, CL_WEEK, CL_MONTH, CL_QUARTER and CL_YEAR.
+        These rules must be followed to prevent the need for custom parsing of time periods.
+      </sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_TIME_PERIOD" agencyID="SDMX-HD" version="1.0" isFinal="false" />
+    </file>
+  </folder>
+  <folder path="D:\_VSS\WHO_IMR\DOCS\SDMX\SDMX-HD-v1.0\COMMON\SDMX-HD\v1.0\conceptschemes" relativePath="COMMON\SDMX-HD\v1.0\conceptschemes">
+    <file name="COMMON+SDMX-HD+1.0.xml">
+      <sdmxName>SDMX-HD Common Data Elements</sdmxName>
+      <sdmxDescription>This Concept Scheme contains harmonized data elements.</sdmxDescription>
+      <sdmxInfo structure="ConceptScheme" id="CS_COMMON" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="COMMON_GEN+SDMX-HD+1.0.xml">
+      <sdmxName>SDMX-HD Common Generic Elements</sdmxName>
+      <sdmxDescription>This Concept Scheme contains harmonized data elements used across multiple codelists.</sdmxDescription>
+      <sdmxInfo structure="ConceptScheme" id="CS_COMMON_GEN" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+    <file name="COMMON_MSD+SDMX-HD+1.0.xml">
+      <sdmxName>SDMX-HD Common Metadata Elements</sdmxName>
+      <sdmxDescription>This Concept Scheme contains harmonized data elements used across multiple metadata codelists.</sdmxDescription>
+      <sdmxInfo structure="ConceptScheme" id="CS_COMMON_MSD" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+  </folder>
+  <folder path="D:\_VSS\WHO_IMR\DOCS\SDMX\SDMX-HD-v1.0\COMMON\SDMX-HD\v1.0\hierarchies" relativePath="COMMON\SDMX-HD\v1.0\hierarchies">
+    <file name="CODELIST_HIERARCHY+SDMX-HD+1.0.xml" />
+  </folder>
+  <folder path="D:\_VSS\WHO_IMR\DOCS\SDMX\SDMX-HD-v1.0\COMMON\SDMX-HD\v1.0\organisationschemes" relativePath="COMMON\SDMX-HD\v1.0\organisationschemes">
+    <file name="ORGS_COMMON+SDMX-HD+1.0.xml">
+      <sdmxName>WHO Organizational Scheme</sdmxName>
+      <sdmxDescription>WHO Organizational Scheme</sdmxDescription>
+      <sdmxInfo structure="OrganisationScheme" id="ORGS_COMMON" agencyID="SDMX-HD" version="1.0" isFinal="true" />
+    </file>
+  </folder>
+  <folder path="D:\_VSS\WHO_IMR\DOCS\SDMX\SDMX-HD-v1.0\CUSTOM\WHO\v1.0\codelists" relativePath="CUSTOM\WHO\v1.0\codelists">
+    <file name="CL_AGROUP+WHO+1.0.xml">
+      <sdmxName>Age Group</sdmxName>
+      <sdmxDescription />
+      <sdmxInfo structure="CodeList" id="CL_AGROUP" agencyID="WHO" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_COD+WHO+1.0.xml">
+      <sdmxName>Cause of Death</sdmxName>
+      <sdmxDescription>Cause of death.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_COD" agencyID="WHO" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_CODT+WHO+1.0.xml">
+      <sdmxName>Cause of Death Type</sdmxName>
+      <sdmxDescription />
+      <sdmxInfo structure="CodeList" id="CL_CODT" agencyID="WHO" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_EDUC+WHO+1.0.xml">
+      <sdmxName>Education Level</sdmxName>
+      <sdmxDescription>Education level attained.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_EDUC" agencyID="WHO" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_GCODE_REGION+WHO+1.0.xml">
+      <sdmxName>WHO Region</sdmxName>
+      <sdmxDescription>WHO Region.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_GCODE_REGION" agencyID="WHO" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_MORBIDITY+WHO+1.0.xml">
+      <sdmxName>Morbidity</sdmxName>
+      <sdmxDescription>Morbidity or mortality indicator.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_MORBIDITY" agencyID="WHO" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_SETTING+WHO+1.0.xml">
+      <sdmxName>Setting</sdmxName>
+      <sdmxDescription>Setting of data collection.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_SETTING" agencyID="WHO" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_TCOLLECT+WHO+1.0.xml">
+      <sdmxName>Type of Data Collection</sdmxName>
+      <sdmxDescription>Type of data collection.</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_TCOLLECT" agencyID="WHO" version="1.0" isFinal="false" />
+    </file>
+    <file name="CL_TOPIC+WHO+1.0.xml">
+      <sdmxName>Health Care Topic</sdmxName>
+      <sdmxDescription>Topic of the Global Health Report</sdmxDescription>
+      <sdmxInfo structure="CodeList" id="CL_SECTION" agencyID="WHO" version="1.0" isFinal="true" />
+    </file>
+  </folder>
+  <folder path="D:\_VSS\WHO_IMR\DOCS\SDMX\SDMX-HD-v1.0\CUSTOM\WHO\v1.0\conceptschemes" relativePath="CUSTOM\WHO\v1.0\conceptschemes">
+    <file name="CUSTOM+WHO+1.0.xml">
+      <sdmxName>WHO Custom Data Elements</sdmxName>
+      <sdmxDescription>This Concept Scheme contains un-harmonized data elements.</sdmxDescription>
+      <sdmxInfo structure="ConceptScheme" id="CS_CUSTOM_WHO" agencyID="WHO" version="1.0" isFinal="true" />
+    </file>
+  </folder>
+</contents>

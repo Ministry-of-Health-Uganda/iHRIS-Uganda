@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Tree Test</title>
+    <script src='../../../scripts/mootools-core.js' type='text/javascript'>
+    </script>
+    <script src='../../../scripts/mootools-more.js' type='text/javascript'>
+    </script>
+    <script src='../../Core/scripts/I2CE_ClassValues.js' type='text/javascript'>
+    </script>
+    <script src='../../Core/scripts/I2CE_Window.js' type='text/javascript'>
+    </script>
+    <script src='../../Core/scripts/I2CE_ToggableWindow.js' type='text/javascript'>
+    </script>
+    <script src='../scripts/I2CE_TreeSelect.js' type='text/javascript'>
+    </script>
+    <script type='text/javascript'>
+       var search, found, treeToggle, floatTreeToggle;
+       var max = 10;
+       function updateFloatInputs(display, value) {       
+          if (!floatTreeToggle) {
+	   return;
+          }
+	  floatTreeToggle.select({value:value, display:display});
+       }
+
+       function searchValues()  {
+         if ( !search || !found || !floatTreeToggle) {
+	  return;
+         } 
+	 var match_html = '';
+	 var matches = floatTreeToggle.matchDisplayedValue(search.get('value'),max);
+
+	 matches.each(
+	   function (value, match) {
+	      match_html += '<span onclick="updateFloatInputs(\'' + match  + '\',\'' +  value  + '\')">' + match  + '</span><br/>';
+	 });
+	 found.set('html',match_html);
+       }
+
+      var windows = new Hash();
+      window.addEvent('domready', function() {
+        treeToggle = new I2CE_TreeInputSelect('location_tree');
+        treeToggle.setToggleButtons($$('.location_tree_toggle'));
+        floatTreeToggle = new I2CE_TreeInputSelect('float_location_tree');
+        floatTreeToggle.setToggleButtons($$('.float_location_tree_toggle'));
+	search = $('search');
+	found = $('found');
+      });
+    </script>
+    <style type="text/css">
+      .tree_button_show {
+        background-image:url(minus.gif);
+	background-repeat: no-repeat;
+	background-position:left; 
+	min-height: 10px;
+	min-width:7px;
+	padding-left:7px;
+      }
+      .tree_button_show:hover{
+         cursor:pointer;
+      }
+      .tree_button_hide {
+        background-image:url(plus.gif);
+	background-repeat: no-repeat;
+	background-position:left; 
+	min-height: 10px;
+	min-width:7px; 
+	padding-left:7px;
+      }      
+      .tree_button_hide:hover{
+         cursor:pointer;
+      }
+      .tree_expandable{
+        margin-left:10px;
+	display:block;
+      }
+      .treeselect_selectable {
+        padding-left:10px;
+        text-decoration:underline;        
+      }        
+      .treeselect_selectable:hover{
+        cursor:pointer;
+      }  
+      .tree_closed {
+        display:none;
+      }
+      .tree_open {
+        display:block;
+	padding-left:5px;
+      }
+      .tree_children > .treeselect_selectable {
+        display:block;
+	margin-left:10px;
+      }
+      .tree_expandable > .treeselect_selectable {
+        margin-left:-5px;
+        padding-left:0px;
+      }
+      .select_from_list {
+        background-image: none;
+        color:blue;
+	text-decoration:underline;
+      }
+      /*InLine Tree Specific Stuff*/
+      #location_tree {
+         padding-left:10px;
+	 border-width: 1px;
+	 border-style: solid;
+	 max-width: 300px;
+	 max-height: 300px;
+	 overflow:auto;
+	 background-color: #ccffcc;
+      }
+
+      /*Float Specific Stuff*/
+      .window_hide {
+         background-color: #CCFF99;
+	 margin:5px;
+	 border-width: 1px;
+	 border-style: solid;
+	 float:right;
+         cursor:pointer;
+      }
+      .window_drag {
+         background-color: #CCFF99;
+	 margin:5px;
+	 border-width: 1px;
+	 border-style: solid;
+         cursor:pointer;
+      }
+      #float_location_tree {
+         background-color: #FFFFCC;
+	 border-style: solid;
+      }
+
+      #found {
+         background-color: #ffccaa;
+	 border-style: solid;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h2>Tree Test</h2>
+    <input id='location_display' type='text' value='Please Enter A Location'/>
+    <input name='location' id='location_value' type='hidden' />
+    <br/>
+    <ul>
+      <li>
+	There value in the input box can be set using any one of the location selects below.
+      </li>
+      <li>
+	A location can be selected if it is underlined.
+      </li>
+    </ul>
+    
+    <br/>
+    <ul>
+      <li>
+	Default Location select.  Escape key closes selector.  It has a scroll bar when there are too many locations in the list
+	<br/>
+	<span class='location_tree_toggle tree_button_hide select_from_list'>Select Location</span>
+	<div id="location_tree" 
+	     class='tree_closed treeSelectOpenDepth=0 windowHideOnKeys=[27] windowFloats=false toggleButtonShowClass=tree_button_show toggleButtonHideClass=tree_button_hide treeInputSelectHidden=location_value treeInputSelectVisible=location_display windowHideClass=tree_closed windowShowClass=tree_open' 
+	     >
+	  <span class="treeselect_selectable treeselect_value=2469 treeselect_display='No cheese?'">
+	    This is firstly not a country
+	  </span>
+	  <span class='tree_expandable'><!-- location expandable-->
+	    <span class='tree_toggle'>Locations</span>	
+	    <span class='tree_children tree_closed'><!-- children of location-->	  
+	      <span class='tree_expandable'> <!-- expandable for taifeiki-->
+		<span class='tree_toggle'>&nbsp;</span>
+		<span class='treeselect_selectable treeselect_value:country:9'>Taifafeki</span>
+		<span class='tree_children tree_closed'>
+		  <span class="treeselect_selectable treeselect_value=region:53">Buraba</span>
+		  <span class="treeselect_selectable treeselect_value=region:54">Bwogo</span>
+		  <span class="treeselect_selectable treeselect_value=region:41">Capital</span>
+		  <span class="treeselect_selectable treeselect_value=region:55">Ganemba</span>
+		  <span class="treeselect_selectable treeselect_value=region:84">Gasunga</span>
+		  <span class="treeselect_selectable treeselect_value=region:63">Gataba</span>
+		  <span class="treeselect_selectable treeselect_value=region:49">Gatarama</span>
+		  <span class="treeselect_selectable treeselect_value=region:44">Gisamba</span>
+		  <span class="treeselect_selectable treeselect_value=region:43">Gyumba</span>
+		  <span class="treeselect_selectable treeselect_value=region:53">Hugoma</span>
+		  <span class="treeselect_selectable treeselect_value=region:50">Kahini</span>
+		  <span class="treeselect_selectable treeselect_value=region:57">Kakoma</span>
+		  <span class="treeselect_selectable treeselect_value=region:65">Karita</span>
+		  <span class="treeselect_selectable treeselect_value=region:66">Kirasho</span>
+		  <span class="treeselect_selectable treeselect_value=region:82">Mubuye</span>
+		  <span class="treeselect_selectable treeselect_value=region:47">Musoza</span>
+		  <span class="treeselect_selectable treeselect_value=region:61">Ngotumba</span>
+		  <span class="treeselect_selectable treeselect_value=region:42">Ngungo</span>
+		  <span class="treeselect_selectable treeselect_value=region:83">Nyaduha</span>
+		  <span class="treeselect_selectable treeselect_value=region:45">Nyagano</span>
+		  <span class="treeselect_selectable treeselect_value=region:60">Nyaramba</span>
+		  <span class="treeselect_selectable treeselect_value=region:58">Nyatimba</span>
+		  <span class="treeselect_selectable treeselect_value=region:67">Nyira</span>
+		  <span class="treeselect_selectable treeselect_value=region:52">Nyusa</span>
+		  <span class="treeselect_selectable treeselect_value=region:51">Rusenyi</span>
+		  <span class="treeselect_selectable treeselect_value=region:46">Rushonga</span>
+		  <span class="treeselect_selectable treeselect_value=region:48">Rusoro</span>
+		  <span class="treeselect_selectable treeselect_value=region:56">Rutunda</span>
+		  <span class="treeselect_selectable treeselect_value=region:64">Ruwendo</span>
+		  <span class="treeselect_selectable treeselect_value=region:62">Rwabiro</span>
+		</span> <!--End Taifeiki children-->
+	      </span> <!--End expandable  Taifeiki -->	
+	      <span class='tree_expandable'> <!-- Testing expandable -->
+		<span class='tree_toggle'>&nbsp;</span>
+		<span class='treeselect_selectable treeselect_value=country:15436'>Testing</span>
+		<span class='tree_children tree_closed'>
+		  <span class="treeselect_selectable treeselect_value=region:15439">Capital</span>
+		</span>
+	      </span> <!--end Testing expandable-->
+	      <span class='tree_expandable'> <!-- Belgium expandable -->
+		<span class='tree_toggle'>&nbsp;</span>
+		<span class='treeselect_selectable treeselect_value=country:105'>Belgium</span>
+		<span class='tree_children tree_closed'>
+		  <span class="treeselect_selectable treeselect_value=region:119">Centre</span>
+		</span>
+	      </span> <!-- end Belgium expandable -->
+	      <span class='tree_expandable'> <!-- Germany expandable -->
+		<span class='tree_toggle'>&nbsp;Germany</span>
+		<span class='tree_children tree_closed'>
+		  <span class="treeselect_selectable treeselect_value=region:100000">Berlin</span>
+		  <span class="treeselect_selectable treeselect_value=region:100000 treeselect_display='Prague isn\'t in Germany'">Prague</span>
+		</span>
+	      </span> <!-- end Germany expandable -->
+	      <span class='treeselect_selectable treeselect_value=country:108'>
+		Burundi
+	      </span>
+	      <span class='treeselect_selectable treeselect_value=country:109'>
+		Congo
+	      </span>
+	      <span class="treeselect_selectable treeselect_value=country:110 treeselect_display='Right Wing Nuts'">
+		Left Wing Nuts
+	      </span>
+	    </span> <!-- end children for locations -->
+	  </span> <!-- end expandable for locations -->
+	  <span class="treeselect_selectable treeselect_value= treeselect_display='Why do you like to eat cheese?'">
+	    This is not a country
+	  </span>
+	</div> <!--End of main location tree window -->
+      </li>
+      <li>
+	Floating and draggable Location select.  Escape key does not close.
+	<br/>
+	<span class='float_location_tree_toggle tree_button_hide select_from_list'>Select Location</span>
+	<br/>	
+	Search (by regular expression):
+	<input id='search' type='text' /> <input type='submit' value='Search' onclick='searchValues(); return false'/>
+	<br/>
+	Found Values: 
+	<div id='found'></div>
+
+	<div id="float_location_tree" 
+	     class='tree_closed treeSelectOpenDepth=0 windowFloats=true windowDraggable=true toggleButtonShowClass=tree_button_show toggleButtonHideClass=tree_button_hide treeInputSelectHidden=location_value treeInputSelectVisible=location_display treeSelectCheckTitle=true' 
+	     >
+	  <div class='window_drag'>
+	    <center>Select Location<font size='-2'>(drag me)</font></center>
+	  </div>
+	  <span class="treeselect_selectable treeselect_value=2469 treeselect_display='No cheese?'">
+	    This is firstly not a country
+	  </span>
+	  <span class='tree_expandable'><!-- location expandable-->
+	    <span class='tree_toggle'>Locations</span>	
+	    <span class='tree_children tree_closed windowFloats=false  windowHideClass=tree_closed windowShowClass=tree_open'><!-- children of location-->	  
+	      <span class='tree_expandable'> <!-- expandable for taifeiki-->
+		<span class='tree_toggle'>&nbsp;</span>
+		<span class='treeselect_selectable treeselect_value:country:9' title='Where is Taifafeki?'>Taifafeki</span>
+		<span class='tree_children tree_closed'>
+		  <span class="treeselect_selectable treeselect_value=region:53">Buraba</span>
+		  <span class="treeselect_selectable treeselect_value=region:54">Bwogo</span>
+		  <span class="treeselect_selectable treeselect_value=region:41">Capital</span>
+		  <span class="treeselect_selectable treeselect_value=region:55">Ganemba</span>
+		  <span class="treeselect_selectable treeselect_value=region:84">Gasunga</span>
+		  <span class="treeselect_selectable treeselect_value=region:63">Gataba</span>
+		  <span class="treeselect_selectable treeselect_value=region:49">Gatarama</span>
+		  <span class="treeselect_selectable treeselect_value=region:44">Gisamba</span>
+		  <span class="treeselect_selectable treeselect_value=region:43">Gyumba</span>
+		  <span class="treeselect_selectable treeselect_value=region:53">Hugoma</span>
+		  <span class="treeselect_selectable treeselect_value=region:50">Kahini</span>
+		  <span class="treeselect_selectable treeselect_value=region:57">Kakoma</span>
+		  <span class="treeselect_selectable treeselect_value=region:65">Karita</span>
+		  <span class="treeselect_selectable treeselect_value=region:66">Kirasho</span>
+		  <span class="treeselect_selectable treeselect_value=region:82">Mubuye</span>
+		  <span class="treeselect_selectable treeselect_value=region:47">Musoza</span>
+		  <span class="treeselect_selectable treeselect_value=region:61">Ngotumba</span>
+		  <span class="treeselect_selectable treeselect_value=region:42">Ngungo</span>
+		  <span class="treeselect_selectable treeselect_value=region:83">Nyaduha</span>
+		  <span class="treeselect_selectable treeselect_value=region:45">Nyagano</span>
+		  <span class="treeselect_selectable treeselect_value=region:60">Nyaramba</span>
+		  <span class="treeselect_selectable treeselect_value=region:58">Nyatimba</span>
+		  <span class="treeselect_selectable treeselect_value=region:67">Nyira</span>
+		  <span class="treeselect_selectable treeselect_value=region:52">Nyusa</span>
+		  <span class="treeselect_selectable treeselect_value=region:51">Rusenyi</span>
+		  <span class="treeselect_selectable treeselect_value=region:46">Rushonga</span>
+		  <span class="treeselect_selectable treeselect_value=region:48">Rusoro</span>
+		  <span class="treeselect_selectable treeselect_value=region:56">Rutunda</span>
+		  <span class="treeselect_selectable treeselect_value=region:64">Ruwendo</span>
+		  <span class="treeselect_selectable treeselect_value=region:62">Rwabiro</span>
+		</span> <!--End Taifeiki children-->
+	      </span> <!--End expandable  Taifeiki -->	
+	      <span class='tree_expandable'> <!-- Testing expandable -->
+		<span class='tree_toggle'>&nbsp;</span>
+		<span class='treeselect_selectable treeselect_value=country:15436'>Testing</span>
+		<span class='tree_children tree_closed windowFloats=false  windowHideClass=tree_closed windowShowClass=tree_open'>
+		  <span class="treeselect_selectable treeselect_value=region:15439">Capital</span>
+		</span>
+	      </span> <!--end Testing expandable-->
+	      <span class='tree_expandable'> <!-- Belgium expandable -->
+		<span class='tree_toggle'>&nbsp;</span>
+		<span class='treeselect_selectable treeselect_value=country:105' title='Where is Belgium?'>Belgium</span>
+		<span class='tree_children tree_closed windowFloats=false  windowHideClass=tree_closed windowShowClass=tree_open'>
+		  <span class="treeselect_selectable treeselect_value=region:119">Centre</span>
+		</span>
+	      </span> <!-- end Belgium expandable -->
+	      <span class='tree_expandable'> <!-- Germany expandable -->
+		<span class='tree_toggle'>&nbsp;Germany</span>
+		<span class='tree_children tree_closed'>
+		  <span class="treeselect_selectable treeselect_value=region:100000">Berlin</span>
+		  <span class="treeselect_selectable treeselect_value=region:100000 treeselect_display='Prague isn\'t in Germany'">Prague</span>
+		</span>
+	      </span> <!-- end Germany expandable -->
+	      <span class='treeselect_selectable treeselect_value=country:108'>
+		Burundi
+	      </span>
+	      <span class='treeselect_selectable treeselect_value=country:109'>
+		Congo
+	      </span>
+	      <span class="treeselect_selectable treeselect_value=country:110 treeselect_display='Right Wing Nuts'">
+		Left Wing Nuts
+	      </span>
+	    </span> <!-- end children for locations -->
+	  </span> <!-- end expandable for locations -->
+	  <span class="treeselect_selectable treeselect_value= treeselect_display='Why do you like to eat cheese?'">
+	    This is not a country
+	  </span>
+	  <br/>
+	  <span class='window_hide'>
+	    Close
+	  </span>
+	</div> <!--End of main location floar tree window -->
+      </li>
+    </ul>
+  </body>
+</html>

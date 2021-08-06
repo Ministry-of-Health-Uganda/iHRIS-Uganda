@@ -1,0 +1,132 @@
+<div id="siteContent">
+  <h1 dir="rtl">ਸ਼ਖ਼ਸ ਵੇਖੋ: <span type="form" name="person:surname"></span>, <span type="form" name="person:firstname"></span></h1>
+  <div id="external_hwr_apps" class="extenral_hwr_apps" style="float:right;display:block;width:100%">
+    <span type="module" name="IL-HWR" ifenabled="true">
+      <span role="admin" style="display:inline-block;float:right;">
+	<span type="form" href="IL-HWR-redirect?id=" name="person:id" target="_ILHWR">
+	  <center style="max-width:8em">
+	    <img text="Interlinked Health Worker Registry" style="margin-top:-3em;max-width:12em;max-height:5em;display-inline" src="file/OpenInfoMan.png"></center>
+	  <center style="max-width:8em">
+	    Interlinked Health Worker Registry
+	  </center>
+	</span>
+      </span>
+    </span>
+    <span type="module" name="mHero" ifenabled="true">
+      <span role="admin" style="display:inline-block;float:right;">
+	<span type="form" href="mHero_person_workflow?id=" name="person:id" target="_mHero">
+	  <center>
+	  <img text="mHero" style="width:12em;max-height:2em;" src="file/mHero.png"></center>
+	  <center>
+	    mHero
+	  </center>
+	</span>
+      </span>
+    </span>
+  </div>
+
+  <div class="recordsData">
+    <h3><a name="jump_individual" dir="rtl">ਨਿੱਜੀ ਜਾਣਕਾਰੀ</a></h3>
+    <p class="editRecordsData" id="individual_links"><a href="" class="hide" title="Hide" onclick="return hideDiv('individual', this );" dir="rtl">ਲੁਕਾਉ</a>
+    <span type="module" name="PersonID" ifenabled="true">
+      <span task="person_can_edit_child_form_id" type="form" name="person:id" href="person_id?parent=" dir="rtl">ਸ਼ਨਾਖ਼ਤ ਜੋੜੋ</span>
+    </span>
+    </p>
+    
+    <div id="individual">
+      <div class="editRecord" task="person_can_edit">
+	<p dir="rtl">ਇਹ ਜਾਣਕਾਰੀ ਸੋਧੋ</p>
+	<ul><li><span type="form" name="person:id" href="person?id=" dir="rtl">ਇਹ ਜਾਣਕਾਰੀ ਨਵਿਆਉ</span></li>
+	  <li><span type="form" name="person:id" parent="true" href="field_history?field=surname,firstname,othername&amp;template=fullname&amp;type=person&amp;id=" dir="rtl">
+	    ਨਾਂ ਦਾ ਅਤੀਤ ਵੇਖੋ </span></li>
+	</ul></div> <!-- editRecord -->
+      
+      <div class="dataTable">
+	<table border="0" cellspacing="0" cellpadding="0"><tr><th colspan="2" dir="rtl">ਨਾਂ / ਕੌਮੀਅਤ</th>
+	  </tr><span type="form" name="person:surname" showhead="default"></span>
+	  <span type="form" name="person:firstname" showhead="default" class="even"></span>
+	  <span type="form" name="person:othername" showhead="default"></span>
+	  <span type="form" name="person:nationality" showhead="default" class="even"></span>
+	  <span type="form" name="person:residence" showhead="location" mline="true"></span>
+	</table></div> <!-- dataTable -->
+
+
+      <div id="person_id"></div>
+      <div id="demographic">  </div>
+
+      <span type="module" name="PersonContact" ifenabled="true">
+	<div class="recordsData" task="person_can_view_child_form_contact">
+	  <h3><a name="jump_contact" dir="rtl">ਰਾਬਤੇ ਦੀ ਜਾਣਕਾਰੀ</a></h3>
+	  <p class="editRecordsData" id="contact_links"><a href="" class="hide" title="Hide" onclick="return hideDiv('contact', this );" dir="rtl">ਲੁਕਾਉ</a>
+	  </p>	  
+	  <span id="contact">
+	    <div id="person_contact_work"></div> <!-- work contact -->
+	    <div id="person_contact_personal"></div> <!-- personal contact -->
+	    <div id="person_contact_emergency"></div> <!-- emefencye contact -->
+	    <div id="person_contact_other"></div> <!-- other contact -->
+	  </span>
+	  <br style="clear: both;"></div> <!-- recordsData -->
+      </span>
+
+      <div class="recordsData">
+	<h3><a name="jump_qualification" dir="rtl">ਕਾਬਲੀਅਤ</a></h3>
+	<p class="editRecordsData"><a href="" class="hide" title="Hide" onclick="return hideDiv('qualification', this);" dir="rtl">ਲੁਕਾਉ</a>
+	<span type="module" name="PersonLanguage" ifenabled="true">
+	  <span task="person_can_edit_child_form_person_language" type="form" name="person:id" href="person_language?parent=" dir="rtl">ਭਾਸ਼ਾਈ ਮੁਹਾਰਤ ਜੋੜੋ</span>
+	</span>
+	<span type="module" name="simple-competency" ifenabled="true">
+	  <span task="person_can_edit_child_form_person_competency" type="form" name="person:id" href="person_competency?parent=" dir="rtl">ਯੋਗਤਾ ਜੋੜੋ</span>
+	  <span task="person_competency_can_view_evaluation" type="form" name="person:id" href="person_competency_history?parent=">Competency Evaluations</span>
+	</span>
+	</p>
+	
+	<div id="qualification">
+	  
+	  <div id="person_language" task="person_can_view_child_form_person_language"></div>
+	  <div id="person_competency" task="person_can_view_child_form_person_competency"></div>
+	  
+	</div> <!-- qualification -->
+	
+	<br style="clear: both;"></div> <!-- recordsData -->
+
+
+      
+      <span type="module" name="PersonEmployment" ifenabled="true">
+	<div class="recordsData" task="person_can_view_child_form_employment">
+	  <h3><a name="jump_employment" dir="rtl">ਪੇਸ਼ੇ ਦਾ ਅਤੀਤ</a></h3>
+	  <p class="editRecordsData"><a href="" class="hide" title="Hide" onclick="return hideDiv('employment', this );" dir="rtl">ਲੁਕਾਉ</a>
+	  <span task="person_can_edit_child_form_employment" type="form" name="person:id" href="employment?parent=" dir="rtl">ਪੇਸ਼ਾ ਜੋੜੋ</span>
+	  </p>
+	  
+	  <div id="employment"></div>
+	  <br style="clear: both;"></div> <!-- recordsData -->
+      </span>
+
+      <span type="module" name="PersonEducation" ifenabled="true">
+	<div class="recordsData" task="person_can_view_child_form_education">
+	  <h3><a name="jump_education" dir="rtl">ਸਿੱਖਿਆ ਦਾ ਅਤੀਤ</a></h3>
+	  <p class="editRecordsData"><a href="" class="hide" title="Hide" onclick="return hideDiv('education', this );" dir="rtl">ਲੁਕਾਉ</a>
+	  <span task="person_can_edit_child_form_education" type="form" name="person:id" href="education?parent=" dir="rtl">ਸਿੱਖਿਆ ਜੋੜੋ</span>
+	  </p>
+	  
+	  <div id="education"></div>
+	  <br style="clear: both;"></div> <!--  recordsData -->
+      </span>
+
+      <span type="module" name="Notes" ifenabled="true">
+	<div class="recordsData" task="person_can_view_child_form_notes">
+	  <h3><a name="jump_notes" dir="rtl">ਟਿੱਪਣੀਆਂ</a></h3>
+	  <p class="editRecordsData"><a href="" class="hide" title="Hide" onclick="return hideDiv('notes', this );" dir="rtl">ਲੁਕਾਉ</a>
+	  <span task="person_can_edit_child_form_notes" type="form" name="person:id" href="notes?parent=" dir="rtl">ਟਿੱਪਣੀ ਜੋੜੋ</span>
+	  </p>
+	  
+	  <div id="notes"></div>
+	  <br style="clear: both;"></div> <!--  recordsData -->
+      </span>
+
+
+
+
+    </div>
+  </div>
+</div>

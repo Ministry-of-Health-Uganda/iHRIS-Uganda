@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="manage-training-course">
+  <metadata>
+    <displayName>Manage Traning Course</displayName>
+    <category>Application Component</category>
+    <description>Makes the training course module available to iHRIS Manage</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <requirement name="ihris-manage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="training-course">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <enable name="manage-training-institution" />
+    <enable name="manage-training-simple-competency" />
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <priority>350</priority>
+  </metadata>
+  <configurationGroup name="manage-training-course" path="/I2CE">
+    <configurationGroup name="roles" path="roles/names">
+      <configurationGroup name="training_manager">
+        <configuration name="trickle_up" values="many">
+          <status>unqiuemerge:true</status>
+          <value>hr_manager</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+      <configurationGroup name="configure">
+        <!-- overwriting some values defined in ihris-common -->
+        <displayName>Configure Page</displayName>
+        <description>The page 'configure' which has the action of: Configure System</description>
+        <status>visible:false</status>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="access" values="many">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <status>uniquemerge:true</status>
+            <value>training_manager</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="lists">
+        <!-- page is defined in ihris-common, we are just overwriting some values here -->
+        <displayName>Lists Page</displayName>
+        <description>The page 'lists' which has the action of: Manage Lists</description>
+        <status>visible:false</status>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="access" values="many">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <version>3.2.1</version>
+            <status>required:false</status>
+            <status>uniquemerge:true</status>
+            <value>training_manager</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="view_list">
+        <!-- page is defined in ihris-common, we are just overwriting some values here -->
+        <displayName>Lists Page</displayName>
+        <description>The page 'lists' which has the action of: Manage Lists</description>
+        <status>visible:false</status>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="access" values="many">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <status>uniquemerge:true</status>
+            <value>training_manager</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <!--End of /I2CE/page-->
+  </configurationGroup>
+</I2CEConfiguration>

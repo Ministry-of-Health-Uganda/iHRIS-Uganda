@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="DHIS_FacilityMap">
+  <metadata>
+    <displayName>DHIS Facility Map</displayName>
+    <category>Application Component</category>
+    <description>Adds field to Facility form to map to DHIS Org Units</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="DHIS_Metadata">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <priority>100</priority>
+  </metadata>
+  <configurationGroup name="DHIS_FacilityMap" path="/">
+    <configurationGroup name="orgunit_field" path="/modules/forms/formClasses/iHRIS_Facility/fields/dhis_orgunit">
+      <configuration name="formfield">
+        <value>MAP</value>
+      </configuration>
+      <configuration name="headers" type="delimited" locale="en_US">
+        <value>default:DHIS Organizational Unit</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

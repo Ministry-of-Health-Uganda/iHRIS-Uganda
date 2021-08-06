@@ -1,0 +1,686 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SampleData-establishment">
+  <metadata>
+    <displayName>Establishment Sample Data</displayName>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-manage-sample-data">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="establishment">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="SampleData-establishment" path="/">
+    <version>4.0.6.2010.07.13.4</version>
+    <configurationGroup name="establishment_type" path="/I2CE/formsData/forms/establishment_type/staff_norm">
+      <configuration name="last_modified">
+        <value>2010-07-13 12:00:32</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <configuration name="name">
+          <value>Staffing Norm</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="establishment_period" path="/I2CE/formsData/forms/establishment_period/2010">
+    <configuration name="last_modified">
+      <value>2010-07-13 12:10:15</value>
+    </configuration>
+    <configurationGroup name="fields">
+      <configuration name="establishment_type">
+        <value>establishment_type|staff_norm</value>
+      </configuration>
+      <configuration name="year">
+        <value>2010-00-00</value>
+      </configuration>
+    </configurationGroup>i</configurationGroup>
+    <configurationGroup name="establishment" path="/I2CE/formsData/forms/establishment">
+      <configurationGroup name="1">
+        <configuration name="last_modified">
+          <value>2010-07-13 12:18:30</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="amount">
+            <value>2</value>
+          </configuration>
+          <configuration name="establishment_period">
+            <value>establishment_period|2010</value>
+          </configuration>
+          <configuration name="job_cadre">
+            <value>job|3223-1C</value>
+          </configuration>
+          <configuration name="location">
+            <value>facility|2</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2">
+        <configuration name="last_modified">
+          <value>2010-07-13 12:15:45</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="amount">
+            <value>8</value>
+          </configuration>
+          <configuration name="establishment_period">
+            <value>establishment_period|2010</value>
+          </configuration>
+          <configuration name="job_cadre">
+            <value>job|3221-2B</value>
+          </configuration>
+          <configuration name="location">
+            <value>facility|2</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3">
+        <configuration name="last_modified">
+          <value>2010-07-13 12:17:50</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="amount">
+            <value>15</value>
+          </configuration>
+          <configuration name="establishment_period">
+            <value>establishment_period|2010</value>
+          </configuration>
+          <configuration name="job_cadre">
+            <value>job|3221-1C</value>
+          </configuration>
+          <configuration name="location">
+            <value>facility|2</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4">
+        <configuration name="last_modified">
+          <value>2010-07-13 12:19:05</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="amount">
+            <value>15</value>
+          </configuration>
+          <configuration name="establishment_period">
+            <value>establishment_period|2010</value>
+          </configuration>
+          <configuration name="job_cadre">
+            <value>job|2230-2B</value>
+          </configuration>
+          <configuration name="location">
+            <value>facility|2</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5">
+        <configuration name="last_modified">
+          <value>2010-07-13 12:19:32</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="amount">
+            <value>1</value>
+          </configuration>
+          <configuration name="establishment_period">
+            <value>establishment_period|2010</value>
+          </configuration>
+          <configuration name="job_cadre">
+            <value>job|2230-1D</value>
+          </configuration>
+          <configuration name="location">
+            <value>facility|2</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6">
+        <configuration name="last_modified">
+          <value>2010-07-13 12:20:05</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="amount">
+            <value>30</value>
+          </configuration>
+          <configuration name="establishment_period">
+            <value>establishment_period|2010</value>
+          </configuration>
+          <configuration name="job_cadre">
+            <value>job|2230-1B</value>
+          </configuration>
+          <configuration name="location">
+            <value>facility|2</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7">
+        <configuration name="last_modified">
+          <value>2010-07-13 12:21:11</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="amount">
+            <value>10</value>
+          </configuration>
+          <configuration name="establishment_period">
+            <value>establishment_period|2010</value>
+          </configuration>
+          <configuration name="job_cadre">
+            <value>job|2224-1D</value>
+          </configuration>
+          <configuration name="location">
+            <value>facility|2</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="8">
+        <configuration name="last_modified">
+          <value>2010-07-13 12:21:48</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="amount">
+            <value>12</value>
+          </configuration>
+          <configuration name="establishment_period">
+            <value>establishment_period|2010</value>
+          </configuration>
+          <configuration name="job_cadre">
+            <value>job|3223-1B</value>
+          </configuration>
+          <configuration name="location">
+            <value>facility|2</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="relationship" path="/modules/CustomReports/relationships/staff_norm_2010">
+      <displayName>Export</displayName>
+      <version>4.0.6.2010.07.13.5</version>
+      <configuration name="description" locale="en_US">
+        <displayName>Description</displayName>
+        <value>Staffing Norm for 2010</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <displayName>Display Name</displayName>
+        <value>Staffing Norm for 2010</value>
+      </configuration>
+      <configuration name="form">
+        <displayName>Form</displayName>
+        <value>person_position</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <displayName>Joins</displayName>
+        <configurationGroup name="position">
+          <displayName>Position</displayName>
+          <configuration name="description" locale="en_US">
+            <displayName>Description</displayName>
+            <value>The position held by this person.</value>
+          </configuration>
+          <configuration name="display_name" locale="en_US">
+            <displayName>Display Name</displayName>
+            <value>Position</value>
+          </configuration>
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>position</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <displayName>Joins</displayName>
+            <configurationGroup name="job">
+              <displayName>Job</displayName>
+              <configuration name="description" locale="en_US">
+                <displayName>Description</displayName>
+                <value>The job associated with this position.</value>
+              </configuration>
+              <configuration name="display_name" locale="en_US">
+                <displayName>Display Name</displayName>
+                <value>Job</value>
+              </configuration>
+              <configuration name="form">
+                <displayName>Form</displayName>
+                <value>job</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <displayName>Joins</displayName>
+                <configurationGroup name="cadre">
+                  <displayName>Cadre</displayName>
+                  <configuration name="drop_empty">
+                    <displayName>Drop Empty</displayName>
+                    <value>0</value>
+                  </configuration>
+                  <configuration name="form">
+                    <displayName>Form</displayName>
+                    <value>cadre</value>
+                  </configuration>
+                  <configuration name="description" locale="en_US">
+                    <displayName>Description</displayName>
+                    <value>Cadre</value>
+                  </configuration>
+                  <configuration name="display_name" locale="en_US">
+                    <displayName>Display Name</displayName>
+                    <value>Cadre</value>
+                  </configuration>
+                  <configurationGroup name="join_data">
+                    <displayName>Join Data</displayName>
+                    <configuration name="field">
+                      <displayName>Field</displayName>
+                      <value>cadre</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configuration name="join_style">
+                    <displayName>Join Style</displayName>
+                    <value>parent_field</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="join_data">
+                <displayName>Join Data</displayName>
+                <configuration name="field">
+                  <displayName>Field</displayName>
+                  <value>job</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="join_style">
+                <displayName>Join Style</displayName>
+                <value>parent_field</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="facility">
+              <displayName>Facility</displayName>
+              <configuration name="description" locale="en_US">
+                <displayName>Description</displayName>
+                <value>The facility where this position works.</value>
+              </configuration>
+              <configuration name="display_name" locale="en_US">
+                <displayName>Display Name</displayName>
+                <value>Facility</value>
+              </configuration>
+              <configuration name="form">
+                <displayName>Form</displayName>
+                <value>facility</value>
+              </configuration>
+              <configurationGroup name="join_data">
+                <displayName>Join Data</displayName>
+                <configuration name="field">
+                  <displayName>Field</displayName>
+                  <value>facility</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="join_style">
+                <displayName>Join Style</displayName>
+                <value>parent_field</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <displayName>Joins</displayName>
+                <configurationGroup name="facility_type">
+                  <displayName>Facility Type</displayName>
+                  <configuration name="description" locale="en_US">
+                    <displayName>Description</displayName>
+                    <value>The Facility Type</value>
+                  </configuration>
+                  <configuration name="display_name" locale="en_US">
+                    <displayName>Display Name</displayName>
+                    <value>Facility Type</value>
+                  </configuration>
+                  <configuration name="drop_empty">
+                    <displayName>Drop Empty</displayName>
+                    <value>0</value>
+                  </configuration>
+                  <configuration name="form">
+                    <displayName>Form</displayName>
+                    <value>facility_type</value>
+                  </configuration>
+                  <configurationGroup name="joins">
+                    <displayName>Joins</displayName>
+                    <configurationGroup name="establishment">
+                      <displayName>Establishment</displayName>
+                      <configuration name="drop_empty">
+                        <displayName>Drop Empty</displayName>
+                        <value>1</value>
+                      </configuration>
+                      <configuration name="form">
+                        <displayName>Form</displayName>
+                        <value>establishment</value>
+                      </configuration>
+                      <configuration name="description" locale="en_US">
+                        <displayName>Description</displayName>
+                        <value>Establishment</value>
+                      </configuration>
+                      <configuration name="display_name" locale="en_US">
+                        <displayName>Display Name</displayName>
+                        <value>Establishment</value>
+                      </configuration>
+                      <configurationGroup name="join_data">
+                        <displayName>Join Data</displayName>
+                        <configuration name="field">
+                          <displayName>Field</displayName>
+                          <value>location</value>
+                        </configuration>
+                      </configurationGroup>
+                      <configuration name="join_style">
+                        <displayName>Join Style</displayName>
+                        <value>child_field</value>
+                      </configuration>
+                      <configurationGroup name="where">
+                        <version>4.0.6.2010.08.03.01</version>
+                        <configuration name="operator">
+                          <displayName>Operator</displayName>
+                          <value>FIELD_LIMIT</value>
+                        </configuration>
+                        <configuration name="style">
+                          <displayName>Style</displayName>
+                          <value>equals</value>
+                        </configuration>
+                        <configuration name="field">
+                          <displayName>Field</displayName>
+                          <value>establishment_period</value>
+                        </configuration>
+                        <configurationGroup name="data">
+                          <displayName>Data</displayName>
+                          <configuration name="value">
+                            <displayName>Value</displayName>
+                            <value>establishment_period|2010</value>
+                          </configuration>
+                        </configurationGroup>
+                      </configurationGroup>
+                      <configurationGroup name="ancestral_conditions">
+                        <displayName>Ancestral Conditions</displayName>
+                        <configurationGroup name="0">
+                          <displayName>0</displayName>
+                          <configuration name="anc_form">
+                            <displayName>Anc Form</displayName>
+                            <value>cadre</value>
+                          </configuration>
+                          <configuration name="child_field">
+                            <displayName>Child Field</displayName>
+                            <value>job_cadre</value>
+                          </configuration>
+                          <configuration name="anc_field">
+                            <displayName>Anc Field</displayName>
+                            <value>id</value>
+                          </configuration>
+                        </configurationGroup>
+                      </configurationGroup>
+                    </configurationGroup>
+                  </configurationGroup>
+                  <configurationGroup name="join_data">
+                    <displayName>Join Data</displayName>
+                    <configuration name="field">
+                      <displayName>Field</displayName>
+                      <value>facility_type</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configuration name="join_style">
+                    <displayName>Join Style</displayName>
+                    <value>parent_field</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="join_data">
+            <displayName>Join Data</displayName>
+            <configuration name="field">
+              <displayName>Field</displayName>
+              <value>position</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="join_style">
+            <displayName>Join Style</displayName>
+            <value>parent_field</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="where">
+        <displayName>Where</displayName>
+        <configuration name="field">
+          <displayName>Field</displayName>
+          <value>end_date</value>
+        </configuration>
+        <configuration name="operator">
+          <displayName>Operator</displayName>
+          <value>FIELD_LIMIT</value>
+        </configuration>
+        <configuration name="style">
+          <displayName>Style</displayName>
+          <value>null</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="report" path="/modules/CustomReports/reports/staff_norm_2010">
+      <displayName>Export</displayName>
+      <version>4.0.6.2010.07.15</version>
+      <configurationGroup name="meta">
+        <displayName>Meta</displayName>
+        <configuration name="category">
+          <displayName>Category</displayName>
+          <value>Staff Reports</value>
+        </configuration>
+        <configuration name="description" locale="en_US">
+          <displayName>Description</displayName>
+          <value>Staffing Norms for 2010</value>
+        </configuration>
+        <configuration name="display_name" locale="en_US">
+          <displayName>Display Name</displayName>
+          <value>Staffing Norm for 2010</value>
+        </configuration>
+      </configurationGroup>
+      <configuration name="relationship">
+        <displayName>Relationship</displayName>
+        <value>staff_norm_2010</value>
+      </configuration>
+      <configurationGroup name="reporting_forms">
+        <displayName>Reporting Forms</displayName>
+        <configurationGroup name="establishment">
+          <displayName>Establishment</displayName>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="amount">
+              <displayName>Amount</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Staffing Norm</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <displayName>Facility</displayName>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="facility_type">
+              <displayName>Facility Type</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Facility Type</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="facility_type">
+          <displayName>Facility Type</displayName>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position">
+          <displayName>Position</displayName>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="facility">
+              <displayName>Facility</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Facility</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="job">
+              <displayName>Job</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Job</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="job">
+          <version>4.0.6.2010.07.15.2</version>
+          <configuration name="drop_empty">
+            <value>0</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <configurationGroup name="cadre">
+              <configuration name="enabled">
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <value>Cadre</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <displayName>Primary Form</displayName>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="id">
+              <displayName>Id</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Filled Positions</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportView" path="/modules/CustomReports/reportViews/staff_norm_2010">
+      <displayName>Export</displayName>
+      <version>4.0.6.2010.07.15</version>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configurationGroup name="primary_form+id">
+          <displayName>Primary Form Id</displayName>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>count</value>
+          </configuration>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="establishment+amount">
+          <displayName>Establishment Amount</displayName>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position+facility">
+          <displayName>Position Facility</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position+job">
+          <displayName>Position Job</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="job+cadre">
+          <displayName>Job Cadre</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="facility+facility_type">
+          <displayName>Facility Facility Type</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configuration name="report">
+        <displayName>Report</displayName>
+        <value>staff_norm_2010</value>
+      </configuration>
+      <configuration name="description" locale="en_US">
+        <displayName>Description</displayName>
+        <value>Staffing Norms for 2010</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <displayName>Display Name</displayName>
+        <value>Staffing Norm 2010</value>
+      </configuration>
+      <configuration name="total">
+        <displayName>Total</displayName>
+        <value>0</value>
+      </configuration>
+      <configuration name="display_order">
+        <displayName>Display Order</displayName>
+        <version>4.0.6.2010.07.15.2</version>
+        <value>position+job,job+cadre,position+facility,facility+facility_type,primary_form+id,establishment+amount</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

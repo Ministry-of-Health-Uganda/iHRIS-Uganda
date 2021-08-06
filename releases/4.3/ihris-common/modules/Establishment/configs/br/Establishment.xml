@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="establishment" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="establishment" path="/I2CE" locale="br">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="br">
+      <configuration name="can_edit_database_list_establishment_type" locale="br">
+        <value>A c'hall cheñch diaz titouroù ar roll seurtoù reoladoù</value>
+      </configuration>
+      <configuration name="can_view_database_list_establishment_type" locale="br">
+        <value>A c'hall gwelet diaz titouroù ar roll seurtoù reoladoù</value>
+      </configuration>
+      <configuration name="can_edit_database_list_establishment_period" locale="br">
+        <value>A c'hall cheñch diaz titouroù ar prantad evit lakaat roll ar reoladoù da dalvezout</value>
+      </configuration>
+      <configuration name="can_view_database_list_establishment_period" locale="br">
+        <value>A c'hell gwelet diaz roadennoù ar prantad da lakaat ar reoladoù da dalvezout</value>
+      </configuration>
+      <configuration name="can_edit_database_list_establishment" locale="br">
+        <value>A c'hall cheñch diaz titouroù ar reoladoù</value>
+      </configuration>
+      <configuration name="can_view_database_list_establishment" locale="br">
+        <value>A c'hall gwelet diaz roadennoù ar reolennoù</value>
+      </configuration>
+      <configuration name="establishment_can_access" locale="br">
+        <value>A c'hall mont da didouroù war ar reoladoù</value>
+      </configuration>
+      <configuration name="establishment_can_edit" locale="br">
+        <value>A c'hall cheñch an titouroù war ar reoladoù</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="establishment">
+          <configuration name="display" values="single" locale="br">
+            <value>Ar reoladoù</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="establishment_period">
+          <configuration name="display" values="single" locale="br">
+            <value>Prantad lakaat reoladoù da dalvezout</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="establishment_type">
+          <configuration name="display" values="single" locale="br">
+            <value>Seurtoù reoladoù</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_EstablishmentPeriod">
+          <configurationGroup name="fields">
+            <configurationGroup name="establishment_type">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Seurtoù reoladoù</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="year">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Bloavezh an dedalvezaduster</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Establishment">
+          <configurationGroup name="meta" path="meta/list/default">
+            <configuration name="display_string" locale="br">
+              <value>%s da %s (%s)</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="fields">
+            <configurationGroup name="establishment_period">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Prantad lakaat reoladoù da dalvezout</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="job_cadre">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Implij pe Stern</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Staliadur pe seurt staliadur</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="amount">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Niver a warzourien yec'hed</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

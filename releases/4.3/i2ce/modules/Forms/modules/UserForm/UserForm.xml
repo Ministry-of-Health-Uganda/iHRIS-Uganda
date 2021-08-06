@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="UserForm">
+  <metadata>
+    <displayName>User Form</displayName>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <description />
+    <longDescription>User Forms</longDescription>
+    <link>https://launchpad.net/i2ce</link>
+    <requirement name="forms">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms-storage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="LocaleForm">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+  </metadata>
+  <erase path="/modules/forms/formClasses/I2CE_User_Form/fields/firstname">
+    <lessThan version="4.0.0" />
+  </erase>
+  <erase path="/modules/forms/formClasses/I2CE_User_Form/fields/lastname">
+    <lessThan version="4.0.0" />
+  </erase>
+  <erase path="/modules/forms/formClasses/I2CE_User_Form/fields/firstname">
+    <lessThan version="4.0.0" />
+  </erase>
+  <erase path="/modules/forms/formClasses/I2CE_User_Form/fields/email">
+    <lessThan version="4.0.0" />
+  </erase>
+  <erase path="/modules/forms/formClasses/I2CE_User_Form/fields/creator">
+    <lessThan version="4.0.0" />
+  </erase>
+  <configurationGroup name="UserForm" path="/">
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="en_US">
+      <version>4.1.1.1</version>
+      <configuration name="username" path="user/username/unique" values="single" type="string">
+        <value>That username is already being used.</value>
+      </configuration>
+      <configuration name="pass_match" path="user/password/mismatch" values="single" type="string">
+        <value>The password and confirmation password weren't the same.</value>
+      </configuration>
+      <configuration name="pass_match" path="user/password/required" values="single" type="string">
+        <value>For new users you must enter an initial password.</value>
+      </configuration>
+      <configuration name="role_notallowed" path="user/role/notallowed" values="single" type="string">
+        <version>4.2.0.1</version>
+        <value>You aren't allowed to assign that role to other users.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>4.0.5</version>
+      <configuration name="users_can_edit" locale="en_US" values="single" type="string">
+        <value>Can create a user on the system</value>
+      </configuration>
+      <configuration name="users_can_edit_all" locale="en_US" values="single" type="string">
+        <value>Can edit all the users in the system.</value>
+      </configuration>
+      <configuration name="can_create_or_edit_users" locale="en_US" values="single" type="string">
+        <value>Can create or edit the users in the system.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="users_can_edit_all" values="many" type="string">
+        <version>3.2.2</version>
+        <value>users_can_edit</value>
+      </configuration>
+    </configurationGroup>
+    <displayName>User Form Configuration</displayName>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+      <configurationGroup name="user">
+        <displayName>User Page</displayName>
+        <description>The page 'user' which has the action of: Manage Users/Access</description>
+        <configuration name="class" values="single" type="string">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>I2CE_PageFormUser</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>main</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US" type="string">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Manage Users/Access</value>
+          </configuration>
+          <configuration name="tasks" values="many" type="string">
+            <version>3.2.2</version>
+            <value>users_can_edit</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="view_user">
+        <displayName>User Page</displayName>
+        <description>The page 'view_user' which has the action of: Manage Users/Access</description>
+        <version>4.1.0.1</version>
+        <configuration name="class" values="single" type="string">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <value>I2CE_PageViewUser</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>main</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US" type="string">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Manage Users/Access</value>
+          </configuration>
+          <configuration name="tasks" values="many" type="string">
+            <value>users_can_edit</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <displayName>Information about forms made available by this modules</displayName>
+      <configurationGroup name="userForm" path="/modules/forms/forms/user">
+        <displayName>The User Form</displayName>
+        <description>Information about the forms made available by iHRIS-Common</description>
+        <status>advanced:true</status>
+        <configuration name="class" values="single" type="string">
+          <displayName>Class Name</displayName>
+          <description>The name of the class providing the form</description>
+          <value>I2CE_User_Form</value>
+        </configuration>
+        <configuration name="storage" values="single" type="string">
+          <displayName>Storage Details</displayName>
+          <description>The storage mechanism for this form.</description>
+          <version>4.0.7</version>
+          <value>userform</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="roleForm" path="/modules/forms/forms/role">
+        <version>3.2.6</version>
+        <configuration name="class" values="single" type="string">
+          <displayName>Class Name</displayName>
+          <description>The name of the class providing the form</description>
+          <value>I2CE_Role</value>
+        </configuration>
+        <configuration name="storage" values="single" type="string">
+          <displayName>Storage Details</displayName>
+          <description>The storage mechanism for this form.</description>
+          <value>magicdata</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US" type="string">
+          <displayName>Display name</displayName>
+          <description>The display name for this form</description>
+          <value>Role</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+        <displayName>Form Class Configuration</displayName>
+        <configurationGroup name="I2CE_Role">
+          <version>3.2.11</version>
+          <configuration name="extends" values="single" type="string">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_List</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="name">
+              <displayName>The field 'name'</displayName>
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US" values="single">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Role</value>
+              </configuration>
+              <configuration name="required" type="boolean" values="single">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique" type="boolean" values="single">
+                <displayName>This field is required to be unique</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="assignable">
+              <displayName>The field 'name'</displayName>
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>YESNO</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US" values="single">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Can Assign To User</value>
+              </configuration>
+              <configuration name="required" type="boolean" values="single">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="default_value" values="single" type="string">
+                <value>yes</value>
+                <!-- Default that this role is assignable to a user-->
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="homepage">
+              <version>4.1.5.1</version>
+              <configuration name="formfield" values="single" type="string">
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US" values="single">
+                <value>default:Preferred Home Page</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="trickle_up">
+              <displayName>The field 'name'</displayName>
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>MAP_MULT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US" values="single">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Trickle Up</value>
+              </configuration>
+              <configuration name="required" type="boolean" values="single">
+                <displayName>This field is required to be set</displayName>
+                <value>false</value>
+              </configuration>
+              <configuration name="unique" type="boolean" values="single">
+                <displayName>This field is required to be unique</displayName>
+                <value>false</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many" type="string">
+                  <value>role</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <!-- end of fields for I2CE_Role -->
+        </configurationGroup>
+        <!--end of I2CE_Role-->
+        <configurationGroup name="I2CE_User_Form">
+          <displayName>Configuration for the class 'I2CE_User_Form'</displayName>
+          <configuration name="extends" values="single" type="string">
+            <displayName>The class this form extends</displayName>
+            <version>4.0.7.0</version>
+            <value>I2CE_List</value>
+          </configuration>
+          <configurationGroup name="meta" path="meta/list/default">
+            <version>4.0.7.0</version>
+            <configuration name="display_string" values="single" type="string">
+              <value>%s</value>
+            </configuration>
+            <configuration name="display_args" type="delimited" values="many">
+              <value>0:username</value>
+            </configuration>
+            <configuration name="sort_fields" type="delimited" values="many">
+              <version>4.1.1.2</version>
+              <value>0:username</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="username">
+              <displayName>The field 'username'</displayName>
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US" values="single">
+                <displayName>The headers for this form field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Username</value>
+              </configuration>
+              <configuration name="required" type="boolean" values="single">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="password">
+              <displayName>The field 'password'</displayName>
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>STRING_PASS</value>
+              </configuration>
+              <configuration name="headers" type="delimited" values="many" locale="en_US">
+                <displayName>The headers for this form field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Password (leave blank to keep the same password)</value>
+                <value>generate:Generate New Password</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="confirm">
+              <displayName>The field 'confirm'</displayName>
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>STRING_PASS</value>
+              </configuration>
+              <configuration name="in_db" type="boolean" values="single">
+                <displayName>Store the field in the database</displayName>
+                <value>false</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="role">
+              <displayName>The field 'role'</displayName>
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <version>3.2.4</version>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US" values="single">
+                <displayName>The headers for this form field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Role</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <version>3.2.10</version>
+                <configurationGroup name="limits">
+                  <configurationGroup name="default">
+                    <!-- default limits are only those that are assignable-->
+                    <configurationGroup name="role">
+                      <configuration name="operator" values="single" type="string">
+                        <value>FIELD_LIMIT</value>
+                      </configuration>
+                      <configuration name="field" values="single" type="string">
+                        <value>assignable</value>
+                      </configuration>
+                      <configuration name="style" values="single" type="string">
+                        <value>yes</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="generate_password">
+              <displayName>The field 'generate_password'</displayName>
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>YESNO</value>
+              </configuration>
+              <configuration name="in_db" type="boolean" values="single">
+                <displayName>Store the field in the database</displayName>
+                <value>false</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

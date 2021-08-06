@@ -1,0 +1,23 @@
+<div id="list_display">
+
+    <div class="editRecord">
+        <p>Edit This Information</p>
+        <ul>
+            <li task='can_edit_database_list_dataelement'><span type="form" name="dataelement:id" href="lists?type=dataelement&amp;id=" >Update this Information</span></li>
+            <li><a href="lists?type=dataelement">Select another Data Element</a></li>
+        </ul>
+    </div> <!-- editRecord -->
+
+    <div class="dataTable">
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <th colspan="2">Data Element</th>
+            </tr>
+            <span type="form" name="dataelement:name" showhead="default"></span>
+            <span type="form" name="dataelement:shortname" showhead="default"></span>
+            <span type="form" name="dataelement:dataelement_code" showhead="default" class="even"></span>
+            <span type="form" name="dataelement:dataset" showhead="default" addlink="lists?type=dataset&amp;add=1" ></span>
+        </table>
+    </div> <!-- dataTable -->
+
+</div> <!-- list_display -->

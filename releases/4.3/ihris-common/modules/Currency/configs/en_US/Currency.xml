@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Currency" path="/I2CE">
+  <metadata>
+    <version>4.3.3.0</version>
+  </metadata>
+  <configurationGroup name="Currency" path="/I2CE" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="can_edit_database_list_currency" locale="en_US">
+        <value>Can edit currency information</value>
+      </configuration>
+      <configuration name="can_view_database_list_currency" locale="en_US">
+        <value>Can view currency information</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="currency">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Currency</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Currency">
+          <configurationGroup name="fields">
+            <configurationGroup name="code">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Currency Code</value>
+                <value>title:The international currency code (Ex. "USD", "GBP", etc.)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Name</value>
+                <value>title:Ex. "United States Dollar", "British Pound"</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="country">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Country</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="symbol">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Symbol</value>
+                <value>title:Ex. "$"</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

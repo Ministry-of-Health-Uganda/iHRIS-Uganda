@@ -1,0 +1,358 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SampleData-disciplinary_action_type">
+  <metadata>
+    <displayName>Disciplinary Action Type</displayName>
+    <description>Sample Data for form: disciplinary_action_type</description>
+    <version>4.3.0</version>
+    <requirement name="disciplinary_action">
+      <atLeast version="4.0" />
+    </requirement>
+  </metadata>
+  <erase path="/I2CE/formsData/forms/disciplinary_action_type">
+    <lessThan version="4.1.0.1" />
+  </erase>
+  <configurationGroup name="SampleData-disciplinary_action_type" path="/">
+    <configurationGroup name="disciplinary_action_type" path="/I2CE/formsData/forms/disciplinary_action_type">
+      <version>4.1.0.1</version>
+      <configurationGroup name="1">
+        <configuration name="last_modified">
+          <value>2009-06-23 10:00:37</value>
+        </configuration>
+        <configuration name="who">
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Probation</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2">
+        <configuration name="last_modified">
+          <value>2009-06-23 10:00:37</value>
+        </configuration>
+        <configuration name="who">
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Warning</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3">
+        <configuration name="last_modified">
+          <value>2009-06-23 10:00:37</value>
+        </configuration>
+        <configuration name="who">
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>None</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4">
+        <configuration name="last_modified">
+          <value>2009-06-23 10:00:37</value>
+        </configuration>
+        <configuration name="who">
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Invalid</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5">
+        <configuration name="last_modified">
+          <value>2009-06-23 10:00:37</value>
+        </configuration>
+        <configuration name="who">
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Dismissal</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="disciplinary_action_type" path="/I2CE/formsData/forms/disciplinary_action_reason">
+      <version>4.1.0.1</version>
+      <configurationGroup name="1">
+        <displayName>1</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:37</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Assessed Mentally Incompetent</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="2">
+        <displayName>2</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:37</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Death of Patient</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3">
+        <displayName>3</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:37</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Drug-Related</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4">
+        <displayName>4</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:38</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Failure to Disclose Criminal Conviction</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5">
+        <displayName>5</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:38</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Falsification of Credentials</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6">
+        <displayName>6</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:38</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Harm to Public</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7">
+        <displayName>7</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:38</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Injury to Patient</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="8">
+        <displayName>8</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:38</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Insurance Fraud</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9">
+        <displayName>9</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:38</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Minor Injury of Patient</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="10">
+        <displayName>10</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:38</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Permanent Injury of Patient</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="11">
+        <displayName>11</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:38</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Physical Abuse</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="12">
+        <displayName>12</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:38</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Serious Injury of Patient</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="13">
+        <displayName>13</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:38</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Stealing</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="14">
+        <displayName>14</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:38</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Verbal Abuse</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="15">
+        <displayName>15</displayName>
+        <configuration name="last_modified">
+          <displayName>Last Modified</displayName>
+          <value>2009-06-23 10:00:38</value>
+        </configuration>
+        <configuration name="who">
+          <displayName>Who</displayName>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields</displayName>
+          <configuration name="name">
+            <displayName>Name</displayName>
+            <value>Practicing With Expired License</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

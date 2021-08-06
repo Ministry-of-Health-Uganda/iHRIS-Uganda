@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-site-demo" path="/I2CE">
+  <metadata>
+    <version>4.1.1.0</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-site-demo" path="/I2CE" locale="en_US">
+    <version>4.1.1.0</version>
+    <configurationGroup name="template">
+      <configuration name="prefix_title" values="single" locale="en_US">
+        <value>iHRIS Manage Demo</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pdf_options" path="/modules/report-pdf/PDF/display-options">
+      <configurationGroup name="header">
+        <configuration name="text" locale="en_US">
+          <value>iHRIS Manage Demo</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="custom_report_pdf_options" path="/modules/CustomReports/displays/PDF/display_options">
+      <configurationGroup name="header">
+        <configuration name="text_prefix" locale="en_US">
+          <value>iHRIS Manage Demo</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

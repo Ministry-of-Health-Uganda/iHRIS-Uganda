@@ -1,0 +1,186 @@
+<div id="siteContent">
+    <h1>配置系统</h1>
+
+  <div task="can_edit_database_lists">
+    <h2><a href="lists" class="adminDatabase">数据库管理</a></h2>
+    <p>
+    <!-- Create and update standard lists of data for selection in system menus. -->
+    管理职位和创建和更新下拉菜单。
+    </p>
+      <hr></div>
+
+
+  <span type="module" name="admin" ifenabled="true">
+    <div task="can_configure_modules">
+      <h2><a href="admin/modules" class="adminDatabase">配置模块</a></h2>
+      <p>
+	启用和禁用系统的各种模块。
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" name="page-builder" ifenabled="true">
+    <div task="can_build_pages">
+      <h2><a href="PageBuilder" class="adminDatabase">页面生成器</a></h2>
+      <p>
+	生成与重新配置页面
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" name="form-builder" ifenabled="true">
+    <div task="can_build_forms">
+      <h2>窗体生成器</h2>
+      <p>
+	生成与重新配置窗体
+      </p>
+      <ul><li><a href="FormBuilder/forms" class="adminDatabase">表格生成器</a></li>
+	<li><a href="FormBuilder/formClasses" class="adminDatabase">表格类生成器</a></li>
+      </ul><hr></div>
+  </span>
+
+
+  <span type="module" name="formRelationships" ifenabled="true">
+    <div role="admin">
+      <h2><a href="form_relationship_import" class="searchRecords"> Import Form Relationship Data</a></h2>
+      <p>
+	Import iHRIS data from a form relationship export or from a transform of another data source, such as an Excel file, to the iHRIS form relationship format.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="CustomReports" ifenabled="true">
+    <span task="custom_reports_can_edit_reportViews">
+        <h2><a name="manage_reports" class="adminDatabase">管理报表</a></h2>
+      <p>
+	管理标准的报告，供用户使用，并创建新的自定义报表。
+      </p>
+      <ul><li task="custom_reports_can_edit_relationships"><a href="CustomReports/edit/relationships">窗体的关系</a>
+          <dl><dd>定义在报表中使用的窗体如何相关。</dd></dl></li>
+          <li task="custom_reports_can_edit_reports"><a href="CustomReports/edit/reports">报告</a>
+          <dl><dd>定义报表基于先前定义的关系。您可以选择哪些域可为每个报表和哪些域可用于限制报表。</dd></dl></li>
+          <li><a href="CustomReports/edit/reportViews">报告的意见</a>
+          <dl><dd>定义基于以前的视图定义报表的报表。您可以选择哪些字段显示，并且还可以定义的默认视图，用户访问报表视图时显示的图表或有限的成果。</dd></dl></li>
+      </ul><hr></span>
+  </span>
+
+
+
+  <span type="module" name="magicDataBrowser" ifenabled="true">
+    <div task="can_view_magic_data_browser">
+      <h2><a href="magicDataBrowser/show" class="searchRecords">浏览魔术数据</a></h2>
+      <p>
+	浏览系统所使用的配置数据。
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="SVS" ifenabled="true">
+    <div task="SVS_allow_RetreieveValueSet">
+      <h2><a href="SVS/config" class="searchRecords">分享值集合</a></h2>
+      <p>
+	下载或配置共享数据集，在您的健康信息系统组件间交换元数据。
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="csd_cache" ifenabled="true">
+    <div task="csd_cache_admin">
+      <h2><a href="csd_cache" class="searchRecords">护理服务发现</a></h2>
+      <p>
+	管理护理服务发现（CSD）数据导出的缓存
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="csd-infoman-storage" ifenabled="true">
+    <div role="admin">
+      <h2><a href="remote_directory_selector/edit" class="searchRecords"> 互联卫生工作者注册表</a></h2>
+      <p>
+	设置用于连接服从于护理服务发现（CSD）的互联卫生工作者注册表的连接详情。
+      </p>
+      <hr></div>
+  </span>
+
+
+
+
+
+  <span type="module" name="tasks-roles" ifenabled="true">
+    <div task="tasks_and_roles_can_access">
+      <h2><a href="tasks-roles" class="adminDatabase">任务和角色</a></h2>
+      <p>
+	系统管理任务和角色
+      </p>
+      
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="localeSelector" ifenabled="true">
+    <div task="locales_can_edit_site_locale">
+      <h2><a href="localeSelector/edit" class="adminDatabase">管理区域设置</a></h2>
+      <p>
+	管理提供了系统的区域设置
+      </p>
+      <hr></div>      
+  </span>
+
+
+
+  <span type="module" name="BackgroundProcess" ifenabled="true">
+    <div task="can_view_background_processes">
+      <h2><a href="BackgroundProcess" class="searchRecords">后台进程</a></h2>
+      <p>
+	检查您已经启动后台进程
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="formBrowser" ifenabled="true">
+    <div task="can_view_form_browser">
+      <h2><a href="formBrowser/showForm" class="searchRecords">浏览形式</a></h2>
+      <p>
+	浏览系统使用的形式。
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" ifenabled="true" name="DHIS_Metadata">
+    <div role="admin">
+      <h2><a href="dhis_metadata">管理DHIS2元数据</a></h2>
+      <p>
+	上传 <a href="http://dhis2.org">DHIS2</a> 元数据例如组织单位和数据元素。
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="CachedForms" ifenabled="true">
+    <div task="cached_forms_can_administer">
+      <h2><a href="CachedForms" class="adminDatabase">缓存的窗体</a></h2>
+      <p>
+	控制创建缓存表单
+      </p>
+      <hr></div>
+  </span>
+  
+  <div task="can_create_or_edit_users">
+
+    <h2><a href="user" class="adminDatabase">管理用户</a></h2>
+    <p>
+    创建、 更新和禁用强制执行系统的安全访问权限的用户帐户。访问仅限于系统管理员。
+    </p>
+      <hr></div>
+  <span type="module" name="UserStatistics" ifenabled="true">
+	<div task="can_view_user_statistics">
+	  <h2><a href="UserStatistics" class="searchRecords">用户统计</a></h2>
+      查询用户资料输入统计
+    </div>
+  </span>
+</div>

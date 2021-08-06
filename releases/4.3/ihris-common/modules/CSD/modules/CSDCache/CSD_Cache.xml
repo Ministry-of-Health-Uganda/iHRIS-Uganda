@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="csd_cache">
+  <metadata>
+    <displayName>CSD Cache</displayName>
+    <className>iHRIS_Module_CSDCache</className>
+    <category>Data Standards</category>
+    <description>Allows caching of health worker data (or other entities) in the CSD compliant fashion into a table for quick responses to Query for Updated Serivces transactions</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/common</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="formRelationships">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="UUID_map">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="SVS">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="iso-country">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="sql">
+      <value>./sql</value>
+    </path>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="CSD_Cache" path="/">
+    <configurationGroup name="csd_cache_admin" path="/I2CE/command_line/csd_cache">
+      <version>4.2.0.5</version>
+      <configuration name="class" values="single">
+        <value>iHRIS_Page_CSDCacheAdmin</value>
+      </configuration>
+      <configuration name="style" values="single">
+        <value>action</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configuration name="tasks" values="many">
+          <value>csd_cache_admin</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_cache_admin" path="/I2CE/page/csd_cache">
+      <version>4.2.0.3</version>
+      <configuration name="class" values="single">
+        <value>iHRIS_Page_CSDCacheAdmin</value>
+      </configuration>
+      <configuration name="style" values="single">
+        <value>shell</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configuration name="defaultHTMLFile" values="many">
+          <value>csd_cache_admin_menu.html</value>
+        </configuration>
+        <configuration name="tasks" values="many">
+          <value>csd_cache_admin</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>4.2.0.3</version>
+      <configuration name="csd_cache_admin" locale="en_US">
+        <value>Can administer caches of CSD Export</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

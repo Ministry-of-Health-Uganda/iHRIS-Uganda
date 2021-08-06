@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonAppraisal" path="/I2CE">
+  <metadata>
+    <version>4.0.0</version>
+  </metadata>
+  <configurationGroup name="PersonAppraisal" path="/I2CE" locale="en_US">
+    <version>4.0.70</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_appraisal" locale="en_US">
+        <value>Can view appraisal child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_appraisal" locale="en_US">
+        <value>Can edit appraisal child forms of a person</value>
+      </configuration>      
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="perfomance_level">
+        <configurationGroup name="excellent">
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:5 - Excellent</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="v_good">
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:4 - Very Good</value>
+          </configuration>
+        </configurationGroup>
+         <configurationGroup name="good">
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:3 - Good</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="fair">
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:2 - Fair</value>
+          </configuration>
+        </configurationGroup>
+         <configurationGroup name="poor">
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:1 - Poor</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="appraisal">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update Appraisal Information</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="appraisal">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Appraisal Information</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="perfomance_level">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Overall Perfomance Level</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Appraisal">
+          <configurationGroup name="fields">
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Period of Assessment start Date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Period of Assessment end Date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="perfomance_level">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Overall Perfomance Level</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="action_points">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Agreed action points to improve performance</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="appraiser">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Appraiser</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="appraisal_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Date Of Aprraisal</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="note">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Comments From Appraiser</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

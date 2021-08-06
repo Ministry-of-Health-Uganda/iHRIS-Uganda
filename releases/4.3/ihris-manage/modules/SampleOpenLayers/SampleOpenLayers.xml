@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SampleOpenLayers">
+  <metadata>
+    <displayName>Sample Open Layers Mapping</displayName>
+    <category>Site</category>
+    <description>Sample Open Layers page for examples and testing.</description>
+    <creator>Luke Duncan</creator>
+    <email>lduncan@intrahealth.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="OpenLayers">
+      <atLeast version="3.0" />
+    </requirement>
+    <path name="geo">
+      <value>./geo</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+  </metadata>
+  <configurationGroup name="SampleOpenLayers" path="/modules/OpenLayers">
+    <version>4.1.10.18</version>
+    <configurationGroup name="default">
+      <configuration name="_height">
+        <value>600px</value>
+      </configuration>
+      <configuration name="_width">
+        <value>800px</value>
+      </configuration>
+      <configuration name="view" type="delimited">
+        <value>zoom:7</value>
+        <value>minZoom:6</value>
+      </configuration>
+      <configurationGroup name="view">
+        <configurationGroup name="center">
+          <configuration name="func">
+            <value>ol.proj.transform</value>
+          </configuration>
+          <configurationGroup name="args">
+            <configuration name="0" values="many">
+              <value>62.772</value>
+              <value>4.610</value>
+            </configuration>
+            <configuration name="1" values="single">
+              <value>EPSG:4326</value>
+            </configuration>
+            <configuration name="2" values="single">
+              <value>EPSG:3857</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="extent">
+          <configuration name="func">
+            <value>ol.proj.transformExtent</value>
+          </configuration>
+          <configurationGroup name="args">
+            <configuration name="0" values="many">
+              <value>59.7</value>
+              <value>2.6</value>
+              <value>65.9</value>
+              <value>6.6</value>
+            </configuration>
+            <configuration name="1" values="single">
+              <value>EPSG:4326</value>
+            </configuration>
+            <configuration name="2" values="single">
+              <value>EPSG:3857</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="layers">
+        <configurationGroup name="tf_facilities_heat">
+          <configuration name="_display" values="single" locale="en_US">
+            <value>Taifafeki Facilities Heatmap</value>
+          </configuration>
+          <configuration name="_order" values="single">
+            <value>3</value>
+          </configuration>
+          <configuration name="_class" values="single">
+            <value>Heatmap</value>
+          </configuration>
+          <configuration name="source" type="delimited">
+            <value>_class:GeoJSON</value>
+            <value>extractStyles:0</value>
+            <value>projection:EPSG:3857</value>
+            <value>url:file/tf_facility.geojson</value>
+          </configuration>
+          <configuration name="radius" values="single">
+            <value>5</value>
+          </configuration>
+          <configuration name="gradient" type="delimited">
+            <value>0:#000</value>
+            <value>1:#00f</value>
+            <value>2:#0f0</value>
+            <value>3:#ff0</value>
+            <value>4:#f00</value>
+          </configuration>
+        </configurationGroup>
+        <!-- tf_facilities_heat -->
+        <configurationGroup name="tf_facilities_vector">
+          <configuration name="_display" values="single" locale="en_US">
+            <value>Taifafeki Facilities</value>
+          </configuration>
+          <configuration name="_order" values="single">
+            <value>4</value>
+          </configuration>
+          <configuration name="_class" values="single">
+            <value>Vector</value>
+          </configuration>
+          <configuration name="source" type="delimited">
+            <value>_class:GeoJSON</value>
+            <value>extractStyles:0</value>
+            <value>projection:EPSG:3857</value>
+            <value>url:file/tf_facility.geojson</value>
+          </configuration>
+          <configurationGroup name="style">
+            <configurationGroup name="image">
+              <configuration name="_class" values="single">
+                <value>Circle</value>
+              </configuration>
+              <configuration name="radius" values="single">
+                <value>5</value>
+              </configuration>
+              <configuration name="fill" type="delimited">
+                <value>color:white</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- tf_facilities_vector -->
+        <configurationGroup name="tf_districts">
+          <configuration name="_display" values="single" locale="en_US">
+            <value>Taifefeki Districts</value>
+          </configuration>
+          <configuration name="_order" values="single">
+            <value>2</value>
+          </configuration>
+          <configuration name="_class" values="single">
+            <value>Vector</value>
+          </configuration>
+          <configuration name="source" type="delimited">
+            <value>_class:GeoJSON</value>
+            <value>projection:EPSG:3857</value>
+            <value>url:file/tf_district.geojson</value>
+          </configuration>
+          <configurationGroup name="style">
+            <configurationGroup name="stroke">
+              <configuration name="color" values="single">
+                <value>brown</value>
+              </configuration>
+              <configuration name="width" values="single">
+                <value>3</value>
+              </configuration>
+              <configuration name="lineDash" values="many">
+                <value>4</value>
+              </configuration>
+            </configurationGroup>
+            <configuration name="fill" type="delimited">
+              <value>color:tan</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- tf_districts -->
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="sample_map" path="/I2CE/page/sample_map">
+      <configuration name="style" values="single">
+        <value>openlayers</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configuration name="title" locale="en_US">
+          <value>Sample Map</value>
+        </configuration>
+        <configurationGroup name="maps">
+          <configurationGroup name="map">
+            <configurationGroup name="layers">
+              <configuration name="_order" type="delimited">
+                <value>osm:1</value>
+                <value>tf_districts:2</value>
+                <value>tf_facilities_heat:3</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

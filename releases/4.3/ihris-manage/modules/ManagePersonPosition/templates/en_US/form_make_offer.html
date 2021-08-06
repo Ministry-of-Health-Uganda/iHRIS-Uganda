@@ -1,0 +1,33 @@
+<tbody id="person_form">
+  <tr id="list_fields">
+    <td id="new_position">
+      <input type="hidden" name="can_edit_position" value="0" />
+      <p name="allow_new_position_tab" ifset="true" id='position_tab' class="tabBar">
+        <span id="select_position_tab" class="active">
+          <input type="radio" name="position_option" value="select" id="select_position_button" onClick="enablePositionNode('select_position', 'create_position');">
+          <label for="select_position_button" class="active" href='' onClick="enablePositionNode('select_position','create_position');">Select Existing Position</label>
+        </span>
+        <span id="create_position_tab" class="select">
+          <input type="radio" name="position_option" value="create" id="create_position_button" onClick="enablePositionNode('create_position', 'select_position');">
+          <label for="create_position_button" href='' onClick="enablePositionNode('create_position','select_position');">Add New Position</label>
+        </span>
+      </p>
+      <span id="select_position">
+        <span type="form" id="set_person_position" name="person_position:position" noedit="true" showhead="default"></span>
+      </span>
+      <span id="create_position" style="display: none;" name="allow_new_position" ifset="true">
+        <span type="form" name="position:job" showhead="default"
+          onchange="if ( document.getElementById('forms[position][0][0][fields][title]').value == '' &amp;&amp; this.selectedIndex != 0 ) document.getElementById('forms[position][0][0][fields][title]').value = this.options[this.selectedIndex].text;"></span>
+        <span type="form" name="position:title" showhead="default"></span>
+        <span type="form" name="position:facility" showhead="default"></span>
+        <span type="form" name="position:code" showhead="default"></span>
+      </span>
+      <span type="form" name="person_position:start_date" showhead="default"></span>
+    </td>
+    <td>
+      <span task='person_can_edit_child_form_salary' type='module' name='ihris-manage-Salary' ifenabled='true'>
+        <span type="form" name="salary:salary" showhead="default"></span>
+      </span>
+    </td>
+  </tr>
+</tbody>

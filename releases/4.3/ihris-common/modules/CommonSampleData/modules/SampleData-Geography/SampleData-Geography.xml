@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SampleData-Geography">
+  <metadata>
+    <displayName>Geography Sample Data</displayName>
+    <description>Sample Data for Geography forms.</description>
+    <version>4.3.0</version>
+    <link>https://launchpad.net/ihris-common</link>
+    <requirement name="Geography">
+      <atLeast version="4.0" />
+    </requirement>
+    <enable name="SampleData-country" />
+    <enable name="SampleData-region" />
+    <enable name="SampleData-district" />
+    <enable name="SampleData-county" />
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

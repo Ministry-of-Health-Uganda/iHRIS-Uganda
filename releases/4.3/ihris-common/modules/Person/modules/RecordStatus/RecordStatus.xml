@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="RecordStatus">
+  <metadata>
+    <displayName>Record Status</displayName>
+    <className>iHRIS_Module_RecordStatus</className>
+    <category>Application Component</category>
+    <description>Adds in two new forms for tracking professional development</description>
+    <version>4.3.0</version>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>325</priority>
+  </metadata>
+  <configurationGroup name="RecordStatus" path="/I2CE">
+    <displayName>Professional Development</displayName>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_view_child_form_person_record_status">
+        <value>Can view Record Status child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_record_status">
+        <value>Can edit Record Status child form of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_person_record_status" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_record_status" values="many">
+        <value>person_can_view_child_form_person_record_status</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <value>person_can_view_child_form_person_record_status</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <value>person_can_edit_child_form_person_record_status</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/forms">
+      <displayName>Forms available to the form factory</displayName>
+      <!-- This section is to add a new form called person_record_status with the associated
+           class.  The class will be defined in the classes section below. -->
+      <configurationGroup name="person_record_status">
+        <displayName>Person Record Status</displayName>
+        <description>The Person Record Status Form</description>
+        <configuration name="class" values="single">
+          <displayName>Class Name</displayName>
+          <description>The name of the class providing the form</description>
+          <value>iHRIS_Person_Record_Status</value>
+        </configuration>
+        <configuration name="display" values="single">
+          <displayName>Display name</displayName>
+          <description>The display name for this form</description>
+          <value>Person Record Status</value>
+        </configuration>
+      </configurationGroup>
+      <!-- person_record_status -->
+    </configurationGroup>
+    <!-- End /modules/forms/forms-->
+    <!-- This section will modify the existing information for the person form to include
+         five new child forms which are the new forms created for this module. -->
+    <configuration path="/modules/forms/forms/person/meta/child_forms" name="person_child_forms" values="many">
+      <displayName>Child Forms</displayName>
+      <value>person_record_status</value>
+    </configuration>
+    <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+      <displayName>Form Class Configuration</displayName>
+      <!-- This section will define the person_record_status form class with all the 
+           fields and field types. 
+           This class will be created dynamically since no extra functionality needs to be added for it. -->
+      <version>4.0.8.1</version>
+      <configurationGroup name="iHRIS_Person_Record_Status">
+        <displayName>Configuration for the class 'iHRIS_Person_Record_Status'</displayName>
+        <configuration name="extends">
+          <displayName>The class this form extends</displayName>
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>The fields defined for this form.</displayName>
+          <configurationGroup name="duplicate">
+            <displayName>The fields 'incomplete'</displayName>
+            <version>4.0.7</version>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>YESNO</value>
+            </configuration>
+            <configuration name="headers" type="delimited">
+              <displayName>The headers for this field.</displayName>
+              <value>default:Duplicate</value>
+            </configuration>
+            <configuration name="default_value">
+              <displayName>The default value for this field as an eval() string</displayName>
+              <value>0</value>
+            </configuration>
+          </configurationGroup>
+          <!-- incomplete -->
+          <configurationGroup name="incomplete">
+            <displayName>The fields 'incomplete'</displayName>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>YESNO</value>
+            </configuration>
+            <configuration name="headers" type="delimited">
+              <displayName>The headers for this field.</displayName>
+              <value>default:Incomplete</value>
+            </configuration>
+          </configurationGroup>
+          <!-- incomplete -->
+          <configurationGroup name="incorrect">
+            <displayName>The fields 'incorrect'</displayName>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>YESNO</value>
+            </configuration>
+            <configuration name="headers" type="delimited">
+              <displayName>The headers for this field.</displayName>
+              <value>default:Incorrect</value>
+            </configuration>
+          </configurationGroup>
+          <!-- comment -->
+          <configurationGroup name="comment">
+            <displayName>The fields 'comment'</displayName>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>STRING_MLINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited">
+              <displayName>The headers for this field.</displayName>
+              <value>default:Comments</value>
+            </configuration>
+          </configurationGroup>
+          <!-- comment -->
+        </configurationGroup>
+        <!-- fields -->
+      </configurationGroup>
+      <!-- iHRIS_PersonRecord_Status-->
+    </configurationGroup>
+    <!-- End /modules/forms/formClasses -->
+    <configurationGroup name="page">
+      <!-- This section will create the person_record_status page so that a new next of kin 
+           form can be created and assigned to a person's record. -->
+      <configurationGroup name="person_record_status">
+        <displayName>Person Record Status Page</displayName>
+        <description>The page 'person_record_status' which has the action of: Add/Update Record Status</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageFormParentPerson</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Record Status</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>person_record_status</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- person_record_status -->
+    </configurationGroup>
+    <!-- page -->
+  </configurationGroup>
+</I2CEConfiguration>

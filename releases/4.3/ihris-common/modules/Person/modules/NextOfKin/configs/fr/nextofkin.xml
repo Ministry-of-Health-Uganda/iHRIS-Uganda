@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="nextOfKin" path="/">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="nextOfKin" path="/" locale="fr">
+    <version>4.2.0.1</version>
+    <configurationGroup name="dep_class" path="/modules/forms/formClasses/iHRIS_NextOfKin">
+      <configurationGroup name="fields">
+        <configurationGroup name="name">
+          <configuration name="headers" type="delimited" values="many" locale="fr">
+            <value>default:Nom</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="relationship">
+          <configuration name="headers" type="delimited" values="many" locale="fr">
+            <value>default:Relation</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="dep_form" path="/modules/forms/forms/nextofkin">
+      <configuration name="display" locale="fr">
+        <value>Parent le plus proche</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="fr">
+      <configuration name="person_can_view_child_form_nextofkin" locale="fr">
+        <value>Peut visualiser les proches de la personne</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_nextofkin" locale="fr">
+        <value>Peut modifier les proches de la personne</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="nextofkin_page" path="/I2CE/page/nextofkin">
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="fr">
+          <value>Ajouter/Mettre à jour les information sur un proche parent</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

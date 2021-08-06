@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration PUBLIC "SYSTEM"
+"I2CE_Configuration.dtd">
+<I2CEConfiguration name="isco-88-major-04">
+  <metadata>
+    <displayName>ISCO 88 Job Codes</displayName>
+    <description>The ISCO 88 Job Codes</description>
+    <version>4.3.0</version>
+    <requirement name="isco-88">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="formsData" path="/I2CE/formsData/forms">
+    <displayName>Forms Data</displayName>
+    <description>Form data saved in magic data</description>
+    <configurationGroup name="isco_88_major">
+      <configurationGroup name="4">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>CLERKS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Secretaries and keyboard-operating clerks record oral or written information on paper or in machine-readable form, operate bookkeeping and calculating machines, edit and transcribe correspondence and documents to conform to office standards, and perform other secretarial duties. Tasks performed usually include: recording dictated and other matter in shorthand; typing it on paper or using word processors or teleprinters; entering various data into electronic equipment or in the form of perforations on cards or special tapes; operating bookkeeping and calculating machines; editing and transcribing correspondence and documents to conform to office standards; performing various secretarial duties. Supervision of other workers may be included.</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_sub_major">
+      <configurationGroup name="41">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>OFFICE CLERKS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Stenographers and typists record oral or written matter in shorthand and, using type-, writers, produce documents on paper. Tasks include - (a) taking dictation and recording other matter in shorthand; (b) making transcripts in typewritten form; (c) performing limited clerical duties, such as filing or using photocopying machines; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_major">
+            <value>isco_88_major|4</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="42">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>CUSTOMER SERVICES CLERKS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Cashiers and ticket clerks receive, directly from clients, payments for goods or services bought in establishments such as stores and ticket offices, or they pay out cash in banks and related organisations. Tasks include - (a) receiving and verifying cash, cheque or credit-card payments in stores, ticket offices, or similar establishments; (b) giving change and issuing receipts; (c) issuing tickets at ticket offices, and taking corresponding payments; (d) paying out cash, mostly in banks, against written orders, credit notes, or resulting from currency exchanges, and obtaining receipts; (e) keeping records and reconciling them with cash balance; (f) receiving incoming cash of an establishment, checking it against sales slips and other documents, and preparing it for deposit at bank; (g) paying out wages to establishments\' personnel; (h) operating cash register; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_major">
+            <value>isco_88_major|4</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_minor">
+      <configurationGroup name="411">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>SECRETARIES AND KEYBOARD-OPERATING CLERKS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Word-processor and related operators type, edit, and print various documents using word-processing equipment, or send and receive messages and facsimiles by means of a teleprinter, telefax or similar machines. Tasks include - (a) typing correspondence, business forms and other documents into word-processing machines; (b) planning and executing layout and format, if not preset; (c) altering, rearranging and editing typed text; (d) operating printer, usually linked to the word processor; (e) sending and receiving messages or facsimiles by means of a teleprinter, telefax or similar machines-, (f) performing limited clerical duties; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|41</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="412">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>NUMERICAL CLERKS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Statistical and finance clerks obtain, compile and compute statistical or actuarial data or perform clerical tasks relating to the transactions of a bank and other financial establishments. Tasks include - (a) obtaining and compiling statistical or actuarial data based on routine or special sources of information; (b) calculating totals, averages, percentages and other details and presenting them in the required tabular form; (c) preparing financial documents, and calculating interest or brokerage charges and stamp duties payable; (d) maintaining records of bonds, shares and other securities bought or sold on behalf of clients or employer; (e) performing related tasks; (f) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|41</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="413">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>MATERIAL-RECORDING AND TRANSPORT CLERKS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Production clerks compute quantities of materials required at specified dates for the production programme and prepare and check production operation schedules. Tasks include - (a) computing quantities, qualities and types of materials required by production programme; (b) preparing production requirements schedules, ensuring that materials are available when needed, and keeping relevant records: (c) preparing or assisting in the preparation of production operation schedules on the basis of customers\' orders and production capacity and performance; (d) verifying stocks, arranging deliveries and investigating delays; (f) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|41</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="414">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>LIBRARY, MAIL AND RELATED CLERKS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Mail carriers and sorting clerks perform sorting, recording, delivery and other duties in connection with mail services from post offices or related organisations, as well as from or within an establishment. Tasks include - (a) performing mail-handling duties in public post offices; (b) sorting and delivering mail to private houses and elsewhere; (c) sorting and keeping simple records of incoming and outgoing correspondence and dispatching outgoing mail in various establishments; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|41</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="419">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>OTHER OFFICE CLERKS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Customer services clerks deal directly with clients in connection with money handling operations, travel arrangements, requests for information, appointments, and by operating telephone switchboards. Tasks performed by workers in this sub-major group usually include: performing money-handling operations in banks, post- offices, betting and gambling establishments, or as payments for goods and services bought or pledged; dealing with travel arrangements; supplying information requested by clients and making appointments; operating a telephone switchboard. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|41</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="421">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>CASHIERS, TELLERS AND RELATED CLERKS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Tellers and other counter clerks deal directly with clients of banks or post offices in connection with receiving, changing and paying out money, or providing mail services. Tasks include - (a) receiving money or cheques from clients; (b) paying out money to clients; (c) paying bills and making money transfers on clients\' behalf; (d) crediting and debiting clients\' accounts; (e) changing money from one currency to another, as requested by clients; (f) making records of all transactions and reconciling them with cash balance; (g) receiving mail, selling postage stamps and conducting other post office counter business such as bill payments, money transfers and related business; (h) performing related tasks; (i) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|42</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="422">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>CLIENT INFORMATION CLERKS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Receptionists and information clerks receive clients or patients, provide information and make appointments on behalf of various establishments including hospitals, medical or dental surgeries. Tasks include - (a) receiving clients or patients, noting inquiries and providing relevant information: (b) making appointments for clients or patients; (c) dealing with telephone requests for information or appointments; (d) directing clients or patients to appropriate location or person; (e) making reservations and arranging registration for hotel guests or patients, as well as keeping records, or presenting bills on departure; (f) supplying information pamphlets, brochures or forms; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|42</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_unit">
+      <configurationGroup name="4111">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Stenographers and typists</value>
+          </configuration>
+          <configuration name="description">
+            <value>Data entry operators enter numerical and other data into electronic equipment for processing and transmission, or enter data on cards and tapes, using punching machines. Tasks include - (a) entering numerical and other data from source material into computer-compatible storage and processing devices; (b) entering data from source material in the form of perforations on, cards or paper tapes; (c) correcting entered data, if needed; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|411</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4112">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Word-processor and related operators</value>
+          </configuration>
+          <configuration name="description">
+            <value>Calculating-machine operators operate bookkeeping and calculating machines. Tasks include - (a) operating bookkeeping machines to make records of business transactions; (b) operating electrical or manual machines to make arithmetical calculations; (c) performing related tasks; (d) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|411</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4113">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Data entry operators</value>
+          </configuration>
+          <configuration name="description">
+            <value>Secretaries use typewriters or word-processing equipment to check and transcribe correspondence and other documents, deal with incoming and outgoing mail, screen requests for meetings or appointments, record and screen leave and other staff entitlements, organise and supervise filing systems, and deal with routine correspondence on their own initiative. Tasks include - (a) checking and transcribing correspondence, minutes and reports from dictation or written drafts to conform to off ice standards, using typewriter or word processing equipment; (b) dealing with incoming or outgoing mail; (c) scanning, recording and distributing mail, correspondence and documents; (d) screening requests for meetings or appointments and helping to organise meetings; (e) screening and recording leave and other staff-members\' entitlements; (f) organising and supervising filing systems; (g) dealing with routine correspondence on their own initiative; (h) performing related tasks; (i) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|411</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4114">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Calculating-machine operators</value>
+          </configuration>
+          <configuration name="description">
+            <value>Numerical clerks obtain, compile and compute accounting, bookkeeping, statistical, financial and other numerical data, and take charge of cash transactions incidental to business matters. Tasks performed usually include: helping with accounting and bookkeeping records and computations; calculating unit production costs; calculating wages and in some cases preparing wage packets and paying wages, taking charge of cash transactions incidental to the business; obtaining, compiling and computing statistical or actuarial data; performing clerical tasks relating to the financial transactions of a bank or similar establishment. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|411</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4115">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Secretaries</value>
+          </configuration>
+          <configuration name="description">
+            <value>Accounting and bookkeeping clerks help with accounting and bookkeeping records and computations, wages and production costs computations as well as with cash payments. Tasks include - (a) making entries in accounting and bookkeeping records; (b) making necessary calculations; (c) performing other limited accounting and bookkeeping functions; (d) calculating from existing records production costs per unit; (e) calculating wages due from records of hours worked, or work performed by individual employees; (f) taking charge of cash and keeping records of cash transactions incidental to the business; may prepare wage packets and pay wages; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|411</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4121">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Accounting and bookkeeping clerks</value>
+          </configuration>
+          <configuration name="description">
+            <value>Material-recording and transport clerks keep records of goods produced, purchased, stocked, dispatched, and of materials needed at specified production dates, or keep records of operational aspects and coordinate the timing of passenger and freight transport. Tasks performed usually include: recording produced, stocked, ordered and dispatched goods; recording production materials received, put into stock or issued; computing quantities of the production materials required at specified dates and helping with preparation and checking of production operation schedules; keeping records of operational aspects and coordinating the timing of passenger and freight transport. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|412</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4122">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Statistical and finance clerks</value>
+          </configuration>
+          <configuration name="description">
+            <value>Stock clerks maintain records of goods produced and production materials received, weighed, issued, dispatched or put into stock. Tasks include - (a) arranging and controlling receipt and dispatch of goods and keeping relevant records; (b) maintaining stock records, verifying issue of goods, estimating needs and making requisitions of new stocks; (c) receiving, storing and issuing tools, spare parts, or various equipment and maintaining relevant records; (d) weighing goods received, issued, produced, or dispatched and maintaining relevant records; (e) compiling inventories of furniture and other items received for storage; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|412</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4131">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Stock clerks</value>
+          </configuration>
+          <configuration name="description">
+            <value>Transport clerks keep records of operational aspects and coordinate the timing of train, road and air passenger and freight transport, and prepare reports for management. Tasks include - (a) keeping records of operational aspects, and coordinating the timing of passenger and freight transport; (b) directing train routings within a division or zone of a railway system and keeping related records; (c) directing, controlling and keeping records of freight handling at a railway yard; (d) coordinating and keeping records of operational activities concerning road transport, such as allocation and scheduling of vehicles and drivers, loading and unloading of vehicles and storage of goods in transit; (e) coordinating and keeping records of operational activities concerning air transport of passengers and freight, such as passenger lists and freight manifests; (f) preparing reports for management; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|413</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4132">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Production clerks</value>
+          </configuration>
+          <configuration name="description">
+            <value>Library, mail and related clerks perform clerical duties in libraries and post offices, file documents, prepare data for processing, check material for printing and write on behalf of illiterate persons. Tasks performed usually include: recording information regarding acquisition, issue and return of books; classifying and filing various documents and other records; sorting, recording and delivering mail from post offices, as well as from or within an enterprise; coding; correcting proofs; performing a number of miscellaneous clerical duties; writing on behalf of illiterate persons. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|413</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4133">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Transport clerks</value>
+          </configuration>
+          <configuration name="description">
+            <value>Library and filing clerks maintain library services or perform duties related to the filing and classification of records. Tasks include - (a) maintaining library records relating to the acquisition, issue and return of books and other publications; (b) photocopying or reproducing documents and other records; (c) classifying and systematically filing papers, documents and other records; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|413</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4141">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Library and filing clerks</value>
+          </configuration>
+          <configuration name="description">
+            <value>Coding, proof-reading, and related clerks convert information into codes, verify and correct proofs, and perform a number of miscellaneous clerical duties. Tasks include - (a) converting information into codes and classifying information by codes for data-processing purposes; (b) comparing proofs of texts and related material prepared for printing with original material, correcting errors and marking texts for printer according to the established rules; (c) sorting forms and marking them with identification numbers; (d) sorting documents for filing or to collate sets of pages; (e) addressing circulars and envelopes by hand; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|414</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4142">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Mail carriers and sorting clerks</value>
+          </configuration>
+          <configuration name="description">
+            <value>Scribes and related workers write letters and complete forms on behalf of illiterate persons. Tasks include - (a) reading letters and other written matter to illiterate persons and providing necessary interpretation and information; (b) writing letters and completing forms on behalf of illiterate persons; (c) offering advice to individuals and interpreting and helping with the completion of government and other official forms; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|414</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4143">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Coding, proof-reading and related clerks</value>
+          </configuration>
+          <configuration name="description">
+            <value>Other office clerks perform a wide range of general clerical duties, mostly connected with the keeping of various office records. Tasks performed usually include: keeping address lists; keeping mailing lists; keeping personnel or any other office records; or performing clerical services such as filing, photocopying, or mimeographing. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|414</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4144">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Scribes and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Other office clerks perform a wide range of general clerical duties mostly connected with the keeping of various office records. Tasks include - (a) keeping personnel records of all the organisation\'s employees, showing name, address, and other details; (b) keeping personnel records of employees\' leave and other information; (c) preparing and maintaining the organisation\'s address and telephone lists; (d) preparing and maintaining the organisation\'s mailing lists; (e) performing related tasks; (f) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|414</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4190">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Other office clerks</value>
+          </configuration>
+          <configuration name="description">
+            <value>Cashiers, tellers and related clerks perform money-handling operations in stores and other establishments, including those related to betting or gambling, pawning and debt-collecting. Tasks performed usually include: receiving payments from clients for goods and services bought; dealing with clients of banks or post off ices in connection with money operations or postal services; receiving and paying off bets on results of sporting events; conducting gambling games; lending money against articles deposited or other securities; collecting debts and other payments. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|419</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4211">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Cashiers and ticket clerks</value>
+          </configuration>
+          <configuration name="description">
+            <value>Bookmakers and croupiers determine odds and receive and pay off bets on results of sporting or other events, or conduct games of chance in gambling establishments. Tasks include - (a) determining risks to decide odds and to hedge or refuse bets; (b) preparing and issuing lists of approximate odds; (c) distributing cards, rolling dice or spinning a roulette wheel: (d) explaining and interpreting operating rules of a gambling establishment; (e) announcing winning numbers, paying winners and collecting payments from losers; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|421</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4212">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Tellers and other counter clerks</value>
+          </configuration>
+          <configuration name="description">
+            <value>Pawnbrokers and money-lenders lend money against articles deposited as pledges, or against property or other security. Tasks include - (a) evaluating articles offered as pledges, calculating interest, and lending money; (b) returning articles when the loan is paid or, in the event of non-payment, selling pledged articles; (c) lending money as personal loans against success of future harvest and other similar undertakings; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|421</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4213">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Bookmakers and croupiers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Debt-collectors and related workers collect payments and perform clerical duties associated with these collections. Tasks include - (a) telephoning or writing to customers to collect money or arrange for later payments; (b) tracing addresses of customers and paying visits to collect debts; (c) noting amounts collected; (d) recommending legal action when payment cannot be otherwise obtained; (e) asking for and collecting charity payments; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|421</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4214">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Pawnbrokers and money-lenders</value>
+          </configuration>
+          <configuration name="description">
+            <value>Client information clerks deal directly with clients in connection with travel arrangements, various types of information requested, appointments to be made, including those for hospitals, medical and dental surgeries, as well as incoming or requested telephone calls. Tasks performed usually include: preparing itineraries and making travel and hotel reservations for clients; receiving clients or patients, providing relevant information and making appointments on behalf of various establishments, including hospitals, medical \'or dental surgeries: operating a telephone switchboard. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|421</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4215">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Debt-collectors and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Tasks include - (a) advising customer on itineraries and method of travel; (b) preparing itineraries; (c) making necessary reservations; (d) issuing tickets, vouchers and other documents; (e) obtaining visas, if necessary; (f) preparing bills and receiving payments-, (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|421</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4221">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Travel agency and related clerks</value>
+          </configuration>
+          <configuration name="description">
+            <value>Telephone switchboard operators operate a telephone switchboard or a section thereof, and deal with local or long distance calls, and various telephone inquiries. Tasks include - (a) establishing contact between caller and person called; (b) making connections for outgoing calls, and routing long- distance calls; (c) recording charges; (d) dealing with telephone inquiries and recording messages; (e) performing related tasks; (f) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|422</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4222">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Receptionists and information clerks</value>
+          </configuration>
+          <configuration name="description">
+            <value>Service workers and shop and market sales workers provide personal and protective services related to travel, housekeeping, catering, personal care, or protection against fire and unlawful acts, or they pose as models for artistic creation and display, or demonstrate and sell goods in wholesale or retail shops and similar establishments, as well as at stalls and on markets. Most occupations in this major group require skills at the second ISCO skill level. Tasks performed by service workers and shop and market sales workers usually include: organisation and provision of services during travel; housekeeping; preparation and serving of food and beverages; child care; rudimentary nursing and related care at homes or in institutions; personal care, such as hairdressing or beauty treatment; companionship; astrology and fortune- telling; embalming; funeral arrangements; protection of individuals and property against fire and unlawful acts and enforcement of law and order; posing as models for advertising, artistic creation and display of goods; selling goods in wholesale or retail establishments, as well as at stalls and on markets; demonstrating goods to potential customers. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|422</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="4223">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Telephone switchboard operators</value>
+          </configuration>
+          <configuration name="description">
+            <value>Personal and protective services workers provide personal and protective services related to travel, housekeeping, catering, personal care, or protection against fire and unlawful acts. Tasks performed by workers in this sub-major group usually include: organisation and provision of services during travel; housekeeping; preparation and serving of food and beverages; child care; rudimentary nursing and related care at homes or in institutions; personal care, such as hairdressing or beauty treatment; companionship; astrology and fortune-telling; embalming; funeral arrangements; protection of individuals and property against fire and unlawful acts and enforcement of law and order. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|422</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

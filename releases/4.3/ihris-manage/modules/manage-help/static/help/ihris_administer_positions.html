@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="generator" content="MediaWiki 1.15.1" /><meta name="keywords" content="Administer Positions,Administer Positions,Add Geographical Areas,Add Position Information,Administer Database for iHRIS Manage,Administer Positions (versions),Create a Job Structure,Books/iHRIS Manage User Manual" /><link rel="canonical" href="ihris_administer_positions_4.0.html" /><link rel="shortcut icon" href="favicon.ico" /><link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Osi (en)" /><link title="Creative Commons" type="application/rdf+xml" href="" rel="meta" /><link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" /><link rel="alternate" type="application/rss+xml" title="Osi RSS Feed" href="" /><link rel="alternate" type="application/atom+xml" title="Osi Atom Feed" href="" /><title>Administer Positions - Osi</title><link rel="stylesheet" href="shared.css" type="text/css" media="screen" /><link rel="stylesheet" href="commonprint.css" type="text/css" media="print" /><link rel="stylesheet" href="main.css" type="text/css" media="screen" /><!--[if lt IE 5.5000]><link rel="stylesheet" href="ie50fixes.css" type="text/css" media="screen" /><![endif]--><!--[if IE 5.5000]><link rel="stylesheet" href="ie55fixes.css" type="text/css" media="screen" /><![endif]--><!--[if IE 6]><link rel="stylesheet" href="ie60fixes.css" type="text/css" media="screen" /><![endif]--><!--[if IE 7]><link rel="stylesheet" href="ie70fixes.css" type="text/css" media="screen" /><![endif]--><link rel="stylesheet" href="" type="text/css" /><link rel="stylesheet" href="" type="text/css" media="print" /><link rel="stylesheet" href="" type="text/css" /><link rel="stylesheet" href="" type="text/css" /><!--[if lt IE 7]><script type="text/javascript" src="iefixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]--><script type="text/javascript"><![CDATA[/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/w/skins";
+		var wgArticlePath = "/mediawiki/$1";
+		var wgScriptPath = "/w";
+		var wgScript = "/w/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://open.intrahealth.org";
+		var wgCanonicalNamespace = "iHRIS";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 100;
+		var wgPageName = "Administer_Positions_(4.0.5)";
+		var wgTitle = "Administer Positions";
+		var wgAction = "view";
+		var wgArticleId = "19055";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 31348;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]]]><![CDATA[>*/]]></script><script type="text/javascript" src="wikibits.js"><![CDATA[<!-- wikibits js -->]]></script><!-- Head Scripts --><script type="text/javascript" src="ajax.js"></script><script type="text/javascript" src=""><![CDATA[<!-- site js -->]]></script></head><body class="mediawiki ltr ns-100 ns-subject page-iHRIS_Administer_Positions_4_0_5 skin-monobook">
+	<div id="globalWrapperHacked">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Administer Positions</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Osi</h3>
+			
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			
+<p><br /></p>
+<div class="noprint"><b><i>Return to the</i> <a href="ihris_manage_user_manual.html" title="iHRIS Manage User Manual">iHRIS Manage User Manual index page</a>.</b></div>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul><li class="toclevel-1"><a href="#Add_Salary_Sources"><span class="tocnumber">1</span> <span class="toctext">Add Salary Sources</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting"><span class="tocnumber">1.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_Position_Types"><span class="tocnumber">2</span> <span class="toctext">Add Position Types</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_2"><span class="tocnumber">2.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Add_Positions"><span class="tocnumber">3</span> <span class="toctext">Add Positions</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_3"><span class="tocnumber">3.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Edit_a_Position"><span class="tocnumber">4</span> <span class="toctext">Edit a Position</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_4"><span class="tocnumber">4.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+<li class="toclevel-1"><a href="#Discontinue_a_Position"><span class="tocnumber">5</span> <span class="toctext">Discontinue a Position</span></a>
+<ul><li class="toclevel-2"><a href="#Troubleshooting_5"><span class="tocnumber">5.1</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul></li>
+</ul></td></tr></table><script type="text/javascript"><![CDATA[ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } ]]></script><a name="Add_Salary_Sources" id="Add_Salary_Sources"></a><h2> <span class="mw-headline"> Add Salary Sources </span></h2>
+<p>If your organization tracks multiple monetary sources of salaries and/or special payments, add those to the system so the source can be linked to a salary or special payment. Only the HR Manager or System Administrator can add or edit salary sources. 
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  Under the "Manage Positions" section, select <u>Salary Sources</u>. </td><td> <a class="image" title="Image:Positions.png"><img alt="Image:Positions.png" src="positions.png" width="169" height="268" border="0" /></a>
+</td></tr><tr valign="top"><td> The Salary Source page opens. Either click <u>Add New Salary Source</u> or select an existing salary source and then click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:SalarySource1.png"><img alt="Image:SalarySource1.png" src="salarysource1.png" width="465" height="304" border="0" /></a>
+</td></tr><tr valign="top"><td> The Salary Source form opens. Enter the <b>Name</b> of the salary source. Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:SalarySource2.png"><img alt="Image:SalarySource2.png" src="salarysource2.png" width="599" height="200" border="0" /></a>
+</td></tr></table><a name="Troubleshooting" id="Troubleshooting"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears when Confirm is clicked.</b> 
+</p><p>Make sure that the salary source has not already been entered. Change the name and try saving again. If you do not want to add the salary source after all, click <code>Return (do not save changes)</code>.
+</p><p><br /></p>
+<a name="Add_Position_Types" id="Add_Position_Types"></a><h2> <span class="mw-headline"> Add Position Types </span></h2>
+<p>To classify positions by a category or type, add those position types to the system. Examples of position types include Permanent, Temporary, Consultant, Part-time and the like. Only the HR Manager or System Administrator can add or edit position types. 
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  Under the "Manage Positions" section, select <u>Position Types</u>. </td><td> <a class="image" title="Image:Positions.png"><img alt="Image:Positions.png" src="positions.png" width="169" height="268" border="0" /></a>
+</td></tr><tr valign="top"><td> The Position Type page opens, showing all position types entered in the database. Either click <u>Add New Position Type</u> or select an existing position type and then click <u>Update This Information</u> to edit it. </td><td> <a class="image" title="Image:PositionType1.png"><img alt="Image:PositionType1.png" src="positiontype1.png" width="458" height="240" border="0" /></a>
+</td></tr><tr valign="top"><td> The Position Type form opens. Enter the <b>Name</b> of the position type. Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:PositionType2.png"><img alt="Image:PositionType2.png" src="positiontype2.png" width="597" height="198" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_2" id="Troubleshooting_2"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message appears when Confirm is clicked.</b> 
+</p><p>Make sure that the position type has been already been entered. Change the name and try saving again. If you do not want to add the position type after all, click <code>Return (do not save changes)</code>. 
+</p><p><br /></p>
+<a name="Add_Positions" id="Add_Positions"></a><h2> <span class="mw-headline"> Add Positions </span></h2>
+<p>Adding a position creates a new position in the organization that a single employee will fill. The position must be created before it can be assigned to an existing employee or applications can be accepted for the position. A position that is not linked to an employee but for which you intend to hire someone to fill it is called an <i>open position</i>. A position that is not linked to an employee and for which you are not intending to hire someone is called a <i>discontinued position</i>. A position that is filled by an employee is called a <i>closed position</i>. Either an HR Staff person or an HR Manager can add a new position or update an existing position. 
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  Under the "Manage Positions" section, select <u>Positions (by Facility)</u>. </td><td> <a class="image" title="Image:Positions.png"><img alt="Image:Positions.png" src="positions.png" width="169" height="268" border="0" /></a>
+</td></tr><tr valign="top"><td> The Position page opens. Click <u>Add New Position</u>. </td><td> <a class="image" title="Image:Position1.png"><img alt="Image:Position1.png" src="position1.png" width="405" height="183" border="0" /></a>
+</td></tr><tr valign="top"><td> The Position form opens. <br /><br /> Select the <b>Job</b> for the new position. <br /><br /> Enter the <b>Position Title</b> (this may be the same as the job title). <br /><br /> Enter a <b>Position Description</b> as an addendum to the job description (optional). <br /><br /> Select a <b>Currency</b> for the salary and enter the <b>Proposed Salary</b> amount for the position; this amount will be changed to the actual salary when the position is filled (optional). <br /><br /> If there are one or more salary sources to track for the position, select them in the <b>Source</b> box; to select more than one salary source, hold down the CTRL key while clicking the name of each salary source (optional). <br /><br /> Today's date displays for the <b>Date Posted</b>, the date the position was opened. If this is incorrect, change the date. <br /><br /> Enter any comments or notes about the position in the <b>Position Comments</b> box (optional). <br /><br /> Enter the <b>Position Code</b>. <br /><br /> Either type or select the code and title of the position that will supervise this position under <b>Supervisor</b> (optional). <br /><br /> Select the office or facility where the position is located in the <b>Facility</b> menu. <br /><br /> Select the <b>Department</b> where the position is located (optional). <br /><br /> Select the <b>Position Type</b> (optional). <br /><br /> Select the <b>Proposed Hiring Date</b> for the position (optional). <br /><br /> If the position is short-term, select the <b>Proposed End Date</b> for the position (optional). <br /><br /> Select the <b>Status</b> of the position: Open or Discontinued. Select <i>Open</i> if you want the position to be available for assignment to an employee. <br /><br /> If an interview has been held for the position, enter any comments or notes about it in the <b>Interview Comments</b> box (optional). <br /><br /> Click <code>Confirm</code> and confirm that the name entered is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:Position2.png"><img alt="Image:Position2.png" src="position2.png" width="594" height="612" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_3" id="Troubleshooting_3"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>Instead of creating a new position, you want to use a position that was previously created but was discontinued.</b> 
+</p><p>Under the "Manage Positions" section, select <u>Positions (by Status)</u>. Select "Discontinued" from the <b>Status</b> menu and click the <code>View</code> button; all discontinued positions will display. Select the position to re-open and click <u>Open This Position</u>. Then click <u>Update This Information</u> to edit any of the position's fields.
+</p><p><b>An error message displays when Confirm is clicked.</b> 
+</p><p>Make certain that you have completed all required fields. Required fields are outlined in red. Fill in all missing information and try saving again. Also make certain that the position code is unique; the system will not save two positions with the same code. If you do not want to create the position after all, click <code>Return (do not save changes)</code>.
+</p><p><b>The correct job for the position is not available for selection.</b> 
+</p><p>The HR Manager must create the new job before the position can be added (see <a href="ihris_create_a_job_structure.html#Add_Jobs" title="Create a Job Structure" class="mw-redirect">Add jobs</a>). Click <u>Add New</u> beside the <b>Job</b> selection menu to add the job and then follow the steps above to add the position (you will have to re-enter any position information that was previously entered).
+</p><p><b>The supervisor's position is not available for selection.</b>
+</p><p>The supervisor's position must be added to the system before it can be selected. Repeat these steps to add the supervisor's position, then edit the current position to select the correct supervisor (see <a href="#Edit_a_Position" title="Administer Positions" class="mw-redirect">Edit a position</a>). 
+</p><p><b>The correct currency is not available for selection.</b> 
+</p><p>The currency must be added to the system by an HR Manager (see <a href="ihris_add_geographical_areas.html#Add_a_Currency" title="Add Geographical Areas" class="mw-redirect">Add a currency</a>). 
+</p><p><b>The correct salary source is not available for selection.</b> 
+</p><p>The salary source must be added to the system by an HR Manager (see <a href="#Add_Salary_Sources" title="Administer Positions" class="mw-redirect">Add salary sources</a>). 
+</p><p><b>The office or facility for the position is not available for selection.</b> 
+</p><p>The office or facility must be added to the system by an HR Manager (see <a href="ihris_administer_database_for_ihris_manage.html#Add_an_Office_or_Facility" title="Administer Database for iHRIS Manage" class="mw-redirect">Add an office or facility</a>). 
+</p><p><b>The department is not available for selection.</b> 
+</p><p>The department must be added to the system by an HR Manager (see <a href="ihris_administer_database_for_ihris_manage.html#Add_a_Department" title="Administer Database for iHRIS Manage" class="mw-redirect">Add a department</a>). 
+</p><p><b>The position type is not available for selection.</b> 
+</p><p>The position type must be added to the system by an HR Manager (see <a href="#Add_Position_Types" title="Administer Positions" class="mw-redirect">Add position types</a>). 
+</p><p><br /></p>
+<a name="Edit_a_Position" id="Edit_a_Position"></a><h2> <span class="mw-headline"> Edit a Position </span></h2>
+<p>Once a position has been created in the system, an HR Staff person or an HR Manager can change any of the information for the position. 
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  Under the "Manage Positions" section, select <u>Positions (by Facility)</u> add or edit a position based on the facility where it is located or select <u>Positions (by Status)</u> to add or edit a position based on its status as open, closed or discontinued. </td><td> <a class="image" title="Image:Positions.png"><img alt="Image:Positions.png" src="positions.png" width="169" height="268" border="0" /></a>
+</td></tr><tr valign="top"><td> The Position page opens. If you chose <u>Positions (by Facility)</u>, select the name of the facility where the position is located from the <b>Facility</b> menu. If you chose <u>Positions (by Status)</u>, select the status of the position from the <b>Status</b> menu. Click the <code>View</code> button to display all the positions entered for that facility or status. </td><td> <a class="image" title="Image:Position3.png"><img alt="Image:Position3.png" src="position3.png" width="405" height="453" border="0" /></a>
+</td></tr><tr valign="top"><td> A list of positions already entered in the database appears. Click the name of the position to edit. </td><td> <a class="image" title="Image:Position4.png"><img alt="Image:Position4.png" src="position4.png" width="462" height="514" border="0" /></a>
+</td></tr><tr valign="top"><td> The position information displays. Click <u>Update This Information</u>. <br /><br /> The Position form opens, showing the position information that was previously entered. Change any field. <br /><br /> Click <code>Confirm</code> and confirm that the changed information is correct. If it is not correct, click <code>Edit</code> to change it. If it is, click <code>Save</code> to save it. </td><td> <a class="image" title="Image:Position5.png"><img alt="Image:Position5.png" src="position5.png" width="605" height="548" border="0" /></a>
+</td></tr></table><a name="Troubleshooting_4" id="Troubleshooting_4"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>An error message displays when Confirm is clicked.</b> 
+</p><p>Make certain that you have completed all required fields. Required fields are outlined in red. Fill in all missing information and try saving again. Also make certain that the position code is unique; the system will not save two positions with the same code. If you do not want to update the position after all, click <code>Return (do not save changes)</code>. 
+</p><p><br /></p>
+<a name="Discontinue_a_Position" id="Discontinue_a_Position"></a><h2> <span class="mw-headline"> Discontinue a Position </span></h2>
+<p>If a position is no longer needed and is not filled by an employee, it can be discontinued. This will prevent the position from displaying in open position lists. The position can be re-opened at any time. Either an HR Staff person or an HR Manager can discontinue a position.
+</p>
+<table cellpadding="10" border="1"><tr valign="top"><td> From the home page or left menu, click <u>Administer Database</u> under <u>Configure System</u>.  <br /><br />  Under the "Manage Positions" section, select <u>Positions (by Status)</u>. </td><td> <a class="image" title="Image:Positions.png"><img alt="Image:Positions.png" src="positions.png" width="169" height="268" border="0" /></a>
+</td></tr><tr valign="top"><td> The Position page opens. Select Open from the <b>Status</b> menu and click the <code>View</code> button. All of the open positions will display. Click the name of the position to edit. </td><td> <a class="image" title="Image:Position6.png"><img alt="Image:Position6.png" src="position6.png" width="453" height="278" border="0" /></a>
+</td></tr><tr valign="top"><td> The position information displays. Click <u>Discontinue This Position</u> to mark the position as discontinued. </td><td> <a class="image" title="Image:Position7.png"><img alt="Image:Position7.png" src="position7.png" width="599" height="491" border="0" /></a>
+</td></tr></table><p>To re-open a discontinued position, repeat the steps above but select Discontinued from the <b>Status</b> menu. Then click <u>Open This Position</u> beside the position information. 
+</p>
+<a name="Troubleshooting_5" id="Troubleshooting_5"></a><h3> <span class="mw-headline"> Troubleshooting </span></h3>
+<p><b>The position is not displayed in the selection menu.</b>
+</p><p>Make certain the position has not been filled by an employee. To see all filled positions, select Closed in the <b>Status</b> menu; all closed positions will display underneath. You will need to remove the employee from the position before you can discontinue the position (see <a href="ihris_add_position_information.html#Record_a_Departure" title="Add Position Information" class="mw-redirect">Record a departure</a> and <a href="ihris_add_position_information.html#Record_a_Position_Change" title="Add Position Information" class="mw-redirect">Record a position change</a>).
+</p>
+<div class="noprint"><b><i>Return to the</i> <a href="ihris_manage_user_manual.html" title="iHRIS Manage User Manual">iHRIS Manage User Manual index page</a>.</b></div>}
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 47/1000000
+Post-expand include size: 650/2097152 bytes
+Template argument size: 221/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:19055-0!1!0!!en!2!edit=0 and timestamp 20100610172957 -->
+<div class="printfooter">
+Retrieved from "<a href="ihris_administer_positions_4.0.html">http://open.intrahealth.org/mediawiki/Administer_Positions_(4.0.5)</a>"</div>
+						<!-- end content --><div class="visualClear"></div></div></div></div>
+    <div id="column-one">
+      <div id="p-cactions" class="portlet"></div>
+      <div class="portlet" id="p-personal"></div>
+      <div class="portlet" id="p-logo"></div>
+      <div class="portlet" id="p-nav">
+  
+      </div>
+      <div id="p-search" class="portlet"></div>
+      <div class="portlet" id="p-tb"></div>
+    </div>
+    <!-- end left column -->
+  <!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			
+</div>
+
+		<script type="text/javascript"><![CDATA[if (window.runOnloadHook) runOnloadHook();]]></script><script type="text/javascript"><![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+]]></script><script type="text/javascript"><![CDATA[
+var pageTracker = _gat._getTracker("UA-10400285-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+]]></script><!-- Served in 0.176 secs. --><br /></body></html>

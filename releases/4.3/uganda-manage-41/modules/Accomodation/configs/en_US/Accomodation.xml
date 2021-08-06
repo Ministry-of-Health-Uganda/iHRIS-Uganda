@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonAccomodation" path="/I2CE">
+  <metadata>
+    <version>4.0.0</version>
+  </metadata>
+  <configurationGroup name="PersonAccomodation" path="/I2CE" locale="en_US">
+    <version>4.0.0</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_accomodation" locale="en_US">
+        <value>Can view accomodation child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_accomodation" locale="en_US">
+        <value>Can edit accomodation child forms of a person</value>
+      </configuration>
+     </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="accomodation">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update Accomodation Information</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="accomodation">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Accomodation Information</value>
+          </configuration>
+        </configurationGroup>
+       </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Accomodation">
+          <configurationGroup name="fields">
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Start date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:End date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="house">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:House Number</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

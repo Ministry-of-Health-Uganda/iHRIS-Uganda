@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonFileTrack" path="/I2CE">
+  <metadata>
+    <version>4.0.20</version>
+  </metadata>
+  <configurationGroup name="PersonFileTrack" path="/I2CE" locale="en_US">
+    <version>4.0.0</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_filetrack" locale="en_US">
+        <value>Can view filetrack child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_filetrack" locale="en_US">
+        <value>Can edit filetrack child forms of a person</value>
+      </configuration>      
+    </configurationGroup>
+   
+    <configurationGroup name="page">
+      <configurationGroup name="filetrack">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update FileTrack Information</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="filetrack">
+          <configuration name="display" values="single" locale="en_US">
+            <value>File Movement Information</value>
+          </configuration>
+        </configurationGroup>
+        
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_FileTrack">
+          <configurationGroup name="fields">
+            <configurationGroup name="date_taken">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Date Taken</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="return_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Date Returned</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="office_taken">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Office Taken To</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reason">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Reason For Taking File</value>
+              </configuration>
+            </configurationGroup>
+           
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

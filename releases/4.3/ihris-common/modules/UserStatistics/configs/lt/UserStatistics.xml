@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="UserStatistics" path="/modules/UserStatistics">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="UserStatistics" path="/modules/UserStatistics" locale="lt">
+    <version>4.2.0.5.1</version>
+    <configurationGroup name="task_description" path="/I2CE/tasks/task_description">
+      <configuration name="can_view_user_statistics" locale="lt"></configuration>
+    </configurationGroup>
+    <configuration name="display_name" locale="lt"></configuration>
+    <configuration name="description" locale="lt"></configuration>
+    <configurationGroup name="fields">
+      <configurationGroup name="date">
+        <configuration name="header" locale="lt"></configuration>
+        <configurationGroup name="limits">
+          <configurationGroup name="greaterthan_equals">
+            <configuration name="header" locale="lt"></configuration>
+          </configurationGroup>
+          <configurationGroup name="lessthan_equals">
+            <configuration name="header" locale="lt"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="username">
+        <configuration name="header" locale="lt">
+          <value>Vartotojo vardas</value>
+        </configuration>
+        <configurationGroup name="limits">
+          <configurationGroup name="equals">
+            <configuration name="header" locale="lt">
+              <value>Vartotojo vardas</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="user">
+        <configuration name="header" locale="lt">
+          <value>Naudotojas</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="form">
+        <configuration name="header" locale="lt">
+          <value>Forma</value>
+        </configuration>
+        <configurationGroup name="limits">
+          <configurationGroup name="equals">
+            <configuration name="header" locale="lt">
+              <value>Forma</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="field">
+        <configuration name="header" locale="lt">
+          <value>Laukas</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="record">
+        <configuration name="header" locale="lt">
+          <value>Įrašo ID</value>
+        </configuration>
+        <configurationGroup name="limits">
+          <configurationGroup name="equals">
+            <configuration name="header" locale="lt">
+              <value>Įrašo ID</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="null_not_null">
+            <configuration name="header" locale="lt"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="parent_id">
+        <configuration name="header" locale="lt"></configuration>
+        <configurationGroup name="limits">
+          <configurationGroup name="equals">
+            <configuration name="header" locale="lt"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="value">
+        <configuration name="header" locale="lt">
+          <value>Reikšmė</value>
+        </configuration>
+        <configurationGroup name="limits">
+          <configurationGroup name="contains">
+            <configuration name="header" locale="lt"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="change_type">
+        <configuration name="header" locale="lt">
+          <value>Pakeisti tipą</value>
+        </configuration>
+        <configurationGroup name="limits">
+          <configurationGroup name="equals">
+            <configuration name="header" locale="lt">
+              <value>Pakeisti tipą</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="lt"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

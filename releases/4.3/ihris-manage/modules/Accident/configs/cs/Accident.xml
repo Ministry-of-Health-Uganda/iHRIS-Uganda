@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="accident" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="accident" path="/I2CE" locale="cs">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="cs">
+      <configuration name="accident_date" path="accident/end_date/bad_date">
+        <value>Konečné datum musí být po počátečním.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_accident" locale="cs">
+        <value>Může upravovat zranění a nehody na pracovišti přidělené osobě</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_accident" locale="cs">
+        <value>Může zobrazit zranění a nehody pracovní síly přidělené osobě</value>
+      </configuration>
+      <configuration name="can_edit_database_list_accident_type" locale="cs">
+        <value>Upravit seznam typů nehod na pracovišti</value>
+      </configuration>
+      <configuration name="can_view_database_list_accident_type" locale="cs">
+        <value>Zobrazit seznam typů nehod na pracovišti</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="accident">
+          <configuration name="display" values="single" locale="cs">
+            <value>Nehoda</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="accident_type">
+          <configuration name="display" values="single" locale="cs">
+            <value>Typ zranění na pracovišti</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Accident">
+          <configurationGroup name="fields">
+            <configurationGroup name="occurence_date">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Datum události</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="accident_type">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Typ nehody</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Začátek použitelnosti</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Konec použitelnosti</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="followup">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Vyžadováno sledování</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_involved">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Zapojení lidé</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="home" path="/modules/accident/page/home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs">
+            <value>Přidat/Aktualizovat nehodu na pracovišti</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

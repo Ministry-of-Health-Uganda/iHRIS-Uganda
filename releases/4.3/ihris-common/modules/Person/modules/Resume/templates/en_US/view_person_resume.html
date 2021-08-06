@@ -1,0 +1,23 @@
+<div task='person_can_view_child_form_person_resume'>  
+  <div class="editRecord">
+    <p>Edit This Information</p>
+    <ul>
+      <li task='person_can_edit_child_form_person_resume'>
+	<span type="form" ifset="person_resume:id" name="person_resume:id" href="person_resume?id=" parent="true">
+	  Update this Information
+	</span>
+      </li>
+    </ul>
+  </div> <!-- editRecord -->
+  
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tbody>
+	<tr>
+	  <th colspan="2">Resume</th>
+	</tr>
+	<span type="form" showhead='default' name="person_resume:document" />
+      </tbody>
+    </table>
+  </div> <!-- dataTable -->
+</div>

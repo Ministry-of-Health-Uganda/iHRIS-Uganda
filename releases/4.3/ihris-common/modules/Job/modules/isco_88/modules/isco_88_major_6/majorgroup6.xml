@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration PUBLIC "SYSTEM"
+"I2CE_Configuration.dtd">
+<I2CEConfiguration name="isco-88-major-06">
+  <metadata>
+    <displayName>ISCO 88 Job Codes</displayName>
+    <description>The ISCO 88 Job Codes</description>
+    <version>4.3.0</version>
+    <requirement name="isco-88">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="formsData" path="/I2CE/formsData/forms">
+    <displayName>Forms Data</displayName>
+    <description>Form data saved in magic data</description>
+    <configurationGroup name="isco_88_major">
+      <configurationGroup name="6">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>SKILLED AGRICULTURAL AND FISHERY WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Market gardeners and crop growers plan and carry out the necessary operations to grow and harvest field crops, to grow fruit and other tree and shrub crops, to grow garden vegetables and medicinal and other plants, and to produce horticultural and horticultural nurseries products, for sale or delivery on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks performed usually include: determining kinds and amounts of field, tree and shrub crops to be grown, as well as vegetables and horticultural products, including those of horticultural nurseries; purchasing seeds, bulbs and fertiliser; renting or investing in land and land improvements, buildings, working animals, equipment and machinery; preparing land, sowing, planting, cultivating and harvesting various crops; tending working animals and maintaining farm buildings, machinery and equipment; producing saplings, bulbs and seeds; storing and carrying out some basic processing of their produce; delivering or marketing farm products. Supervision of other workers may be included.</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_sub_major">
+      <configurationGroup name="61">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>MARKET-ORIENTED SKILLED AGRICULTURAL AND FISHERY WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Field crop and vegetable growers plan and carry out the necessary operations to grow and harvest various types of field crops such as wheat and other cereals, rice, beetroot, sugar- cane, ground-nuts, tobacco, reeds or other field crops and potatoes, cabbages or other field vegetables, for sale or delivery on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks include - (a) determining kinds and amounts of crops to be grown; (b) purchasing seeds, fertiliser and other supplies, (c) renting or investing in land and land improvements, buildings, working animals, equipment and machinery; (d) performing farm operations such as land preparation, sowing, planting, cultivating and harvesting crops and field vegetables; (e) storing and carrying out some basic processing of their produce; (f) tending working animals and maintaining farm buildings, machinery and equipment; (g) delivering or marketing farm products; (h) performing related tasks. (i) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_major">
+            <value>isco_88_major|6</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="62">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>SUBSISTENCE AGRICULTURAL AND FISHERY WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Subsistence agricultural and fishery workers grow and harvest field or tree and shrub crops, grow vegetables and fruit, gather wild fruits, medicinal and other plants, tend or hunt animals, catch fish and gather various forms of aquatic life in order to provide food, shelter and a minimum of cash income for themselves and their households. Tasks include - (a) preparing the soil, sowing, planting, tending and harvesting field crops; (b) growing vegetables, fruit and other tree and shrub crops; (c) gathering wild fruits, medicinal and other plants; (d) tending, feeding or hunting animals mainly to obtain meat, milk, hair, skin or other products; (e) fetching water and gathering firewood (f) catching fish and gathering other forms of aquatic life; (g) storing or carrying out some basic processing of their produce; (h) building shelters and making simple tools, clothes and utensils for use by the household; (i) selling some products at local markets; (j) performing related tasks.</value>
+          </configuration>
+          <configuration name="isco_88_major">
+            <value>isco_88_major|6</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_minor">
+      <configurationGroup name="611">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>MARKET GARDENERS AND CROP GROWERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Tree and shrub crop growers plan and carry out the necessary operations to grow and harvest trees and shrubs, such as fruit and nut trees, tea and coffee bushes, grape vines, berry-bearing bushes, cocoa trees and rubber trees and to collect sap, for sale or delivery on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks include - (a) determining kinds and amounts of crops to be grown (b) purchasing seeds, fertiliser and other supplies; (c) renting or investing in land and land improvements, buildings, working animals, equipment and machinery; (d) performing farm operations such as land preparation, sowing, planting and tending trees or bushes, collecting sap and harvesting crops; (e) storing and carrying out some basic processing of their produce; (f) tending working animals and maintaining farm buildings, machinery and equipment; (g) delivering or marketing farm products; (h) performing related tasks; (i) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|61</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="612">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>MARKET-ORIENTED ANIMAL PRODUCERS AND RELATED WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Poultry producers plan and carry out the necessary operations to breed, raise and tend poultry for sale or delivery of eggs, meat or feathers on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks include - (a) determining kinds and amounts of poultry and poultry products to be produced; (b) purchasing chicks, growing and purchasing food and other supplies; (c) renting or investing in buildings, equipment and machinery; (d) breeding, raising and tending poultry, and collecting eggs; (e) killing, dressing and packing poultry for shipment; (f) storing and carrying out some basic processing of their produce; (g) maintaining farm buildings, machinery and equipment; (h) delivering or marketing farm products; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|61</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="613">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>MARKET-ORIENTED CROP AND ANIMAL PRODUCERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Forestry and related workers plan and carry out the necessary operations to cultivate, conserve and exploit forests, for sale or delivery of forestry products on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks performed usually include: establishing and caring for forest stands; locating trees to be felled and estimating volume of timber; felling trees and sawing them into logs; trimming and topping trees; shaping rough wooden products from logs at felling site-, stacking logs, loading them in chutes or floating them down rivers\" operating a simple kiln or digester to convert wood into charcoal or extract crude turpentine from wood; keeping watch to detect forest fires and participating in fire-fighting operations. Supervision of other workers may be included."</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|61</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="614">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>FORESTRY AND RELATED WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Charcoal burners and related workers carry out the necessary operations to convert wood into charcoal or to extract crude turpentine from wood, using traditional techniques. Tasks include - (a) operating a simple kiln to convert wood into charcoal by a slow-burning process. (b) operating a simple digester or still at the tree-felling site to obtain or distil crude wood turpentine-, (c) performing related tasks; (d) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|61</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="615">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>FISHERY WORKERS, HUNTERS AND TRAPPERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Inland and coastal waters fishery workers, alone or as members of fishing-vessel crews, catch fish or gather other forms of aquatic life in inland or coastal waters, for sale or delivery on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks include - (a) preparing and repairing nets and other fishing gear and equipment; (b) operating fishing vessels to, from and at fishing grounds; (c) baiting, setting and hauling in fishing gear; (d) gathering different forms of aquatic life from shores and shallow waters; (e) cleaning, freezing, icing or salting catch (f) delivering or marketing products; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|61</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="621">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>SUBSISTENCE AGRICULTURAL AND FISHERY WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Craft and related workers apply their specific knowledge and skills int he fields of mining and construction, form metal, erect metal structures, set machine tools, or make, fit, maintain and repair machinery, equipment or tools, carry out printing work as well as produce or process foodstuffs, textiles, or wooden, metal and other articles, including handicraft goods. The work is carried out by hand and by hand-powered and other tools which are used to reduce the amount of physical effort and time required for specific tasks, as well as to improve the quality of the products, The tasks call for an understanding of all stages of the production process, the materials and tools used, and the nature and purpose of the final product. Most occupations in this major group require skills at the second ISCO skill level. Tasks performed by craft and related trades workers usually include: extracting and working solid minerals; constructing, maintaining and repairing buildings and other structures; casting, welding and shaping metal; installing and erecting heavy metal structures, tackle and related equipment; making machinery, tools, equipment, and other metal articles; setting for operators, or setting and operating various machine tools; fitting, maintaining and repairing industrial machinery, including engines and vehicles, as wells as electrical and electronic instruments and other equipment; making precision instruments, jewellery, household and other precious-metal articles, pottery, glass and related products; producing handicrafts; executing printing work; producing and processing foodstuffs and various articles made of wood, textiles, leather and related materials. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|62</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_unit">
+      <configurationGroup name="6111">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Field crop and vegetable growers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Gardeners, horticultural and nursery growers plan and carry out the necessary operations to grow vegetables by intensive cultivation techniques, to cultivate trees, shrubs, flowers and other plants, and to produce saplings, bulbs and seeds, for sale or delivery on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks include - (a) determining kinds and amounts of vegetables, horticultural and nursery products to be grown; (b) purchasing seeds, bulbs, fertiliser and other supplies; (c) renting or investing in land and land improvements, buildings, working animals, equipment and machinery- (d) performing farm operations such as land preparation, sowing, growing vegetables by intensive cultivation, cultivating flowers, trees or bushes and harvesting crops; (e) producing saplings, bulbs and seeds; (f) cultivating flowers, trees, shrubs and other plants in parks or public or private gardens; (g) growing plants for exhibition or medicinal purposes; (h) delivering or marketing products; (i) storing and carrying out some basic processing of their produce; (j) tending working animals and maintaining buildings, machinery and equipment; (k) performing related tasks; (l) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|611</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6112">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Tree and shrub crop growers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Mixed-crop growers plan and carry out the necessary operations to grow and harvest specific combinations of field crops, field vegetables, tree and shrub crops, and garden, horticultural and nursery products, for sale or delivery on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks include - (a) determining kinds and amounts of crops to be grown; (b) purchasing seeds, fertiliser and other supplies; (c) renting or investing in land and land improvements, buildings, working animals, equipment and machinery; (d) performing farm operations such as land preparation, sowing, planting and tending trees or bushes and cultivating and harvesting crops; (e) growing vegetables by intensive cultivation, and producing saplings, bulbs and seeds; (f) cultivating flowers, trees, shrubs and other plants for parks or public or private gardens; (g) growing plants for exhibition or medicinal purposes; (h) storing and carrying out some basic processing of their produce; (i) tending working animals and maintaining buildings, machinery and equipment; (j) delivering or marketing products; (k) performing related tasks; (l) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|611</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6113">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Gardeners, horticultural and nursery growers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Market-oriented animal producers and related workers plan and carry out the necessary operations to breed, raise and tend livestock such as cattle, sheep, pigs, goats, horses or other animals, including birds, reptiles, fur-producing animals, poultry, game, and to produce a variety of animal husbandry products, for sale or delivery on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks performed usually include: determining kinds and amounts of livestock, poultry, game, birds, reptiles, bees, silkworms and other animals to be raised; purchasing animals, producing and purchasing fodder and other supplies; renting or investing in grazing land and land improvements, buildings, machinery, livestock and other animals; performing farm operations such as breeding and raising livestock, poultry, etc., and producing various animal husbandry products; storing and carrying out some basic processing of their produce; maintaining farm buildings, machinery and equipment; delivering or marketing farm products. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|611</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6114">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Mixed-crop growers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Dairy and livestock producers plan and carry out the necessary operations to breed, raise and tend livestock such as cattle, sheep, pigs, goats, horses, dogs or cats to be used as working, sporting, or pet animals, as well as for meat, milk, hair, hides and other products, for sale or delivery on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks include - (a) determining kinds and amounts of livestock and livestock products to be produced; (b) purchasing animals, producing and purchasing fodder and other supplies; (c) renting or investing in grazing land, buildings, equipment and machinery; (d) breeding, raising and tending livestock; (e) milking animals and shearing sheep; (f) killing and skinning animals, and preparing animals or animal products for market; (g) storing and carrying out some basic processing of their produce; (h) maintaining farm buildings, machinery and equipment; (i) delivering or marketing farm products; (j) performing related tasks; (k) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|611</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6121">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Dairy and livestock producers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Apiarists and sericulturists plan and carry out the necessary operations to breed, raise and tend insects such as honey bees, silkworms or other species, for sale or delivery of honey, beeswax, silk cocoons, etc., on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks include - (a) determining kinds and amounts of insect products to be produced-, (b) purchasing insects, growing or purchasing food and other supplies; (c) renting or investing in buildings, equipment and machinery; (d) breeding, raising and tending insects and collecting their products; (e) storing and carrying out some basic processing of their produce; (f) maintaining buildings, machinery and equipment; (g) delivering or marketing products; (h) performing related tasks; (i) supervising other worker\'s.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|612</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6122">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Poultry producers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Mixed-animal producers plan and carry out the necessary operations to breed, raise and tend different types of livestock, such as cattle, sheep, pigs, goats and horses, as well as poultry, and to produce apiarian and sericultural products, for sale or delivery on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks include - (a) deciding on the specific combinations of mixed-animal husbandry; (b) determining kinds and amounts of livestock and livestock products, poultry and poultry products, and apiarian and sericultural products to be produced; (c) purchasing animals, producing and purchasing fodder, other kinds of food and supplies; (d) renting or investing in grazing land buildings, equipment and machinery; (e) breeding, raising and tending the particular combination of livestock, poultry and/or insects; (f) milking animals and shearing sheep; (g) killing and skinning animals, and preparing animals or animal products for market ; (h) collecting eggs, honey and other produce storing and carrying out some basic processing of their produce; (i) storing and carrying out some basic processing of their produce; (j) maintaining farm buildings, machinery and equipment; (k) delivering or marketing farm products; (l) performing related tasks; (m) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|612</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6123">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Apiarists and sericulturists</value>
+          </configuration>
+          <configuration name="description">
+            <value>This unit group covers market-oriented animal producers and related workers not classified elsewhere in Minor group 612, Market-oriented animal producers and related workers. For instance, here should be classified those who are engaged in breeding, raising and tending wild mammals, game birds and other birds, snails, non-domesticated fur-giving animals, snakes and other reptiles, as well as various insects and animals used for laboratory tests, for sale or delivery on a regular basis to wholesale buyers, marketing organisations, zoos and circuses, or at markets. Here should also be classified those who look after or train animals in animal reserves, stables, zoos, circuses, research organisations, animal homes, and similar institutions. In such cases tasks would include - (a) buying or setting up necessary buildings, open or sheltered space, equipment, etc., and maintaining them; (b) determining kinds and amounts of animals to be raised; (c) purchasing animals, growing or purchasing food and other supplies; (d) breeding, raising, feeding and tending animals; (e) killing and skinning animals, and preparing animals or animal products for market (f) storing and carrying out some basic processing of their produce; (g) protecting animals, especially in animal reserves; (h) training animals for racing, circus performances and the like; (i) delivering or marketing products; (j) performing related tasks; (k) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|612</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6124">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Mixed-animal producers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Market-oriented crop and animal producers plan and carry out the necessary operations for mixed farming of the kind that produces a combination of both crops and animals and related products,for delivery or sale on a regular basis to whole sale buyers, marketing organisations or at markets. Tasks performed usually include: determining kinds and amounts of field, tree and other crops to be grown and animals to be raised; purchasing seeds, fertiliser, fodder and other supplies; renting or investing in arable or grazing land, animals, buildings and machinery; performing farm operations such as land preparation, sowing, cultivating and harvesting crops; breeding, raising and tending animals, and producing various animal husbandry products; maintaining farm buildings, machinery and equipment; storing and carrying out some basic processing of their produce; delivering or marketing farm products. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|612</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6129">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Market-oriented animal producers and related workers elsewhere classified</value>
+          </configuration>
+          <configuration name="description">
+            <value>Market-oriented crop and animal producers plan and carry out the necessary operations to grow and harvest field, tree and various other crops, as well as to breed, raise and tend animals and to produce a variety of animal husbandry products, for sale or delivery on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks include - (a) determining kinds and amounts of crops to be grown and animals to be raised; (b) purchasing seeds, fertiliser, and other supplies; (c) renting or investing in land and land improvements, buildings, machinery, livestock and other animals; (d) performing operations such as land preparation, sowing, planting, cultivating and harvesting crops; (e) producing or buying fodder and other food supplies; (f) breeding, raising and tending animals; (g) killing and skinning animals, and preparing animals or animal products for market; (h) storing and carrying out some basic processing of their produce: (i) maintaining farm buildings, machinery and equipment; (j) delivering or marketing farm products; (k) performing related tasks; (l) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|612</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6130">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Market-oriented crop and animal producers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Forestry workers and loggers carry out the necessary operations to cultivate, conserve and exploit forests, for sale or delivery of forestry products on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks include - (a) establishing and caring for forest stands; (b) locating trees to be felled and estimating volume of timber; (c) trimming, topping and felling trees and sawing them into logs; (d) shaping rough wooden products from logs at felling site; (e) stacking logs, loading them in chutes or floating them down rivers; (f) keeping watch to detect forest fires and participating in firefighting operations; (g) delivering or marketing forestry products; (h) performing related tasks; (i) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|613</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6141">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Forestry workers and loggers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Fishery workers, hunters and trappers catch, breed and cultivate fish and other forms of aquatic life, or hunt and trap mammals, birds and reptiles, for sale or delivery, on a regular basis, of the animals or animal products to wholesale buyers, marketing organisations or at markets. Tasks performed usually include-. preparing nets and other fishing gear and equipment; operating fishing vessels to, from and at fishing grounds; baiting, setting and hauling in fishing gear; cleaning, freezing, icing or salting catch on- or offshore breeding, raising and cultivating fish, oysters, mussels, or other forms of aquatic life; hunting or trapping mammals, birds or reptiles. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|614</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6142">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Charcoal burners and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Tasks include - (a) renting or investing in buildings, equipment and machinery; (b) purchasing food and other supplies; (c) breeding, raising and cultivating fish, mussels, oysters and other forms of aquatic life; (d) killing and preparing fish and other products for shipment; (e) cleaning, freezing, icing or salting catch on- or offshore; (f) maintaining buildings, machinery and equipment; (g) delivering or marketing products; (h) performing related tasks; (i) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|614</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6151">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Aquatic-life cultivation workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Deep-sea fishery workers, as members of fishing vessel crews, catch deep-sea fish, for sale or delivery on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks include - (a) preparing and repairing nets and other fishing gear and equipment; (b) operating fishing vessels to, from and at fishing grounds; (c) baiting, setting and hauling in fishing gear; (d) cleaning, freezing, icing or salting catch on- or offshore; (e) delivering or marketing catch; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|615</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6152">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Inland and coastal waters fishery workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Hunters and trappers catch and kill mammals, birds or reptiles mainly for meat, skin, feathers and other products, for sale or delivery on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks include - (a) setting traps to catch mammals, birds or reptiles; (b) killing trapped or free mammals, birds or reptiles with firearms or other weapons; (c) skinning and otherwise treating killed mammals, birds or reptiles to obtain desired products for sale or delivery. (d) delivering or selling trapped live mammals, birds or reptiles-, (e) repairing and maintaining equipment. (f) performing related tasks-, (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|615</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6153">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Deep-sea fishery workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Subsistence agricultural and fishery workers grow and harvest field or tree and shrub crops, grow vegetables and fruit, tend or hunt animals, gather wild fruits and plants, catch fish and gather other forms of aquatic life in order to provide food, shelter and a minimum of cash income for themselves and their households. Tasks performed by workers in this sub-major group usually include preparing the soil-, sowing, planting, tending and harvesting field crops; growing vegetables; growing and gathering fruit and other tree and shrub crops, gathering wild fruits, medicinal and other plants; tending, feeding or hunting animals mainly to obtain meat, milk, hair, skin or other products; gathering firewood; fetching water; breeding or catching fish and cultivating or gathering other forms of aquatic life; building shelters and making simple tools, clothes and utensils for use by the household; storing and carrying out some basic processing of their produce; selling some products at local markets. It should be noted that the necessary skills - an understanding of the natural environment and the crops and animals worked with, as well as manual strength and dexterity - are usually acquired by working from childhood with other members of the household to produce the necessities for subsisting.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|615</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6154">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Hunters and trappers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Subsistence agricultural and fishery workers grow and harvest field or tree and shrub crops, grow vegetables and fruit, tend or hunt animals, gather wild fruits and plants, catch fish and gather other forms of aquatic life in order to provide food, shelter and a minimum of cash income for themselves and their households. Tasks performed usually include: preparing the soil; sowing, planting, tending and harvesting field crops; growing vegetables, plants, fruit and other tree and shrub crops; gathering wild fruits, medicinal and other plants; tending, feeding or hunting animals mainly to obtain meat, milk, hair, skin or other products; fetching water, gathering firewood; catching fish and gathering other forms of aquatic life; building shelters and making simple tools, clothes and utensils for use by the household; storing and carrying out some basic processing of their produce; selling some products at local markets.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|615</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="6210">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Subsistence agricultural and fishery workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Extraction and building trades workers extract and work solid minerals from underground or surface mines or quarries, shape and finish stone for building and other purposes, or construct, maintain and repair buildings and other structures. The work is carried out by hand and by hand-powered and other tools which are used to reduce the amount of physical effort and time required for specific tasks, as well as to improve the quality of the products. The tasks call for an understanding of the work organisation, the materials and tools used, and the nature and purpose of the final product. Tasks performed by workers in this sub-major group usually include: extracting and working solid minerals from underground or surface mines or quarries; cutting and shaping stone for building and other purposes; constructing, maintaining and repairing buildings and other structures; applying paint to buildings and other structures, as well as to various products such as vehicles, or various manufactured articles, or covering interior walls with wallpaper or fabric; cleaning chimneys and exterior surfaces of buildings and other structures. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|621</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

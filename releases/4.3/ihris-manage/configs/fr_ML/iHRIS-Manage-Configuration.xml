@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage" path="/I2CE" locale="fr_ML">
+    <version>4.2.1.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_planning_database_lists" locale="fr_ML" values="single" type="string">
+        <value>Peut éditer certaines listes de bases de données de planning</value>
+      </configuration>
+      <configuration name="can_view_planning_database_lists" locale="fr_ML" values="single" type="string">
+        <value>Peut afficher certaines listes de bases de données de planning</value>
+      </configuration>
+      <configuration name="can_edit_all_planning_database_lists" locale="fr_ML" values="single" type="string">
+        <value>Peut éditer toutes les listes de bases de données de planning</value>
+      </configuration>
+      <configuration name="can_view_all_planning_database_lists" locale="fr_ML" values="single" type="string">
+        <value>Peut afficher toutes les listes de bases de données de planning</value>
+      </configuration>
+      <configuration name="can_edit_organization_database_lists" locale="fr_ML" values="single" type="string">
+        <value>Peut éditer certaines listes de bases de données des organisations</value>
+      </configuration>
+      <configuration name="can_view_organization_database_lists" locale="fr_ML" values="single" type="string">
+        <value>Peut afficher certaines listes de bases de données des organisations</value>
+      </configuration>
+      <configuration name="can_edit_all_organization_database_lists" locale="fr_ML" values="single" type="string">
+        <value>Peut éditer toutes les listes de bases de données des organisations</value>
+      </configuration>
+      <configuration name="can_view_all_organization_database_lists" locale="fr_ML" values="single" type="string">
+        <value>Peut afficher toutes les listes de bases de données des organisations</value>
+      </configuration>
+      <configuration name="can_edit_employee_database_lists" locale="fr_ML" values="single" type="string">
+        <value>Peut éditer certaines listes de bases de données des employés</value>
+      </configuration>
+      <configuration name="can_view_employee_database_lists" locale="fr_ML" values="single" type="string">
+        <value>Peut afficher certaines listes de bases de données des employés</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" locale="fr_ML" values="single" type="string">
+        <value>Peut éditer toutes les listes de bases de données du personnel</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" locale="fr_ML" values="single" type="string">
+        <value>Peut afficher toutes les listes de bases de données du personnel</value>
+      </configuration>
+      <configuration name="can_edit_position_database_lists" locale="fr_ML" values="single" type="string">
+        <value>Peut éditer certaines listes de base de donnéesde des postes</value>
+      </configuration>
+      <configuration name="can_view_position_database_lists" locale="fr_ML" values="single" type="string">
+        <value>Peut afficher certaines listes de base de donnéesde des postes</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="roles" path="/I2CE/formsData/forms/role">
+      <configurationGroup name="hr_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="fr_ML" type="string">
+            <value>Gestionnaire des RH</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="hr_staff">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="fr_ML" type="string">
+            <value>Personnel des RH</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="exec_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="fr_ML" type="string">
+            <value>Cadre supérieur</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="training_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="fr_ML" type="string">
+            <value>Gestionnaire de la formation</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="feedback">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr_ML" type="string">
+            <value>Envoyer un Feedback</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="manage">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr_ML" type="string">
+            <value>Gérer des personnes</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="search_reports" path="/modules/CustomReports/search_reports">
+      <configuration name="search_people" values="many" type="delimited" locale="fr_ML">
+        <value>name:Rechercher des personnes</value>
+        <value>description:Trouver n'importe quelles enregistrements d'une personne dans le système pour les revoir, les imprimer ou les mettre à jour.</value>
+      </configuration>
+      <configuration name="position_list" values="many" type="delimited" locale="fr_ML">
+        <value>name:Rechercher les postes</value>
+        <value>description:Retrouver n'importe quel poste dans le système pour le revoir, l'imprimer ou le mettre à jour.</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="accident" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="accident" path="/I2CE" locale="sw">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="sw">
+      <configuration name="accident_date" path="accident/end_date/bad_date"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_accident" locale="sw">
+        <value>Weza kuhariri majeraha ya sehemu ya kazi na ajali alizopata mtu</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_accident" locale="sw">
+        <value>Weza kuangalia majeraha ya sehemu ya kazi na ajali alizopata mtu</value>
+      </configuration>
+      <configuration name="can_edit_database_list_accident_type" locale="sw">
+        <value>Hariri orodha ya aina ya ajali ya sehemu ya kazi</value>
+      </configuration>
+      <configuration name="can_view_database_list_accident_type" locale="sw">
+        <value>Angalia orodha ya aina ajali za kazini</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="accident">
+          <configuration name="display" values="single" locale="sw">
+            <value>Ajali</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="accident_type">
+          <configuration name="display" values="single" locale="sw">
+            <value>Aina ya Ajali ya Sehemu ya Kazi</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Accident">
+          <configurationGroup name="fields">
+            <configurationGroup name="occurence_date">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Tarehe ya Kutokea</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="accident_type">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Aina ya Ajali</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Kuanza Kutumika</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Kuisha Kutumika</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="followup">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Ufuatiliaji Unaotakiwa</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_involved">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Watu Waliohusika</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="home" path="/modules/accident/page/home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw">
+            <value>Ongeza/Sasisha Ajali ya Sehemu ya Kazi</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

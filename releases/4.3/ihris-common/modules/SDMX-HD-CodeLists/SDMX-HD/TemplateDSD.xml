@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message SDMXMessage.xsd"
+           xmlns="http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message"
+           xmlns:structure="http://www.SDMX.org/resources/SDMXML/schemas/v2_0/structure">	
+	<Header>
+		<ID>SDMX-HD-DSD</ID>
+		<Test>false</Test>
+		<Truncated>false</Truncated>
+		<Name xml:lang="en">SDMX Health Domain</Name>
+		<Prepared>2009-03-20</Prepared>
+		<Sender id="SenderSystemIdentification">
+			<Name>Sender System Name</Name>
+			<Contact>
+				<Name xml:lang="en">Contact Name</Name>
+				<Department>Agency Department Name</Department>
+				<Telephone>+00.0000.0000</Telephone>
+				<Email>user@host.com</Email>
+			</Contact>
+		</Sender>
+		<Extracted>2009-03-20T13:03:46</Extracted>
+	</Header>
+	
+	<!-- COMMON ORGANIZATIONS SPECIFIED IN THE ORGANISATION SCHEME-->
+	
+	<OrganisationSchemes>
+		<structure:OrganisationScheme id="ORGS_COMMON" agencyID="SDMX-HD" isExternalReference="true" version="1.0" isFinal="true" uri="./COMMON/SDMX-HD/v1.0/organisationschemes/ORGS_COMMON+SDMX-HD+1.0.xml">
+			<structure:Name>SDMX-HD Common Organisation Scheme</structure:Name>
+		</structure:OrganisationScheme>
+	</OrganisationSchemes>
+	
+	<CodeLists>
+	
+		<!-- AGENCY GENERIC COMMON CODE LISTS -->
+				
+		<!-- PLACEHOLDER FOR CODE LISTS (isFinal=true) -->
+		
+		<structure:CodeList id="CL_GENDER" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_GENDER" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_GENDER+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Gender</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_INCOME" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_INCOME" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_INCOME+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Individual Income</structure:Name></structure:CodeList>		
+		<structure:CodeList id="CL_LOGICAL" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_LOGICAL" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_LOGICAL+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Logical Value</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_MULT" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_MULT" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_MULT+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Multiplier</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_OPERAND" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_OPERAND" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_OPERAND+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Operand Type</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_ORPHAN" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_ORPHAN" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_ORPHAN+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Orphan Type</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_PERIODICITY" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_PERIODICITY" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_PERIODICITY+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Periodicity</structure:Name></structure:CodeList>		
+		<structure:CodeList id="CL_PREG" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_PREG" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_PREG+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Pregnancy Status</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_RACE" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_RACE" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_RACE+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Race</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_SECTOR" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_SECTOR" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_SECTOR+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Sector</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_SEX" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_SEX" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_SEX+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Biologic Sex</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_SPECIAL_VALUE" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_SPECIAL_VALUE" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_SPECIAL_VALUE+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Special Value</structure:Name></structure:CodeList>		
+		<structure:CodeList id="CL_STYPE" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_STYPE" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_STYPE+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Statistic Type</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_TPOP" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_TPOP" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_TPOP+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Target Population</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_UNIT" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_UNIT" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_UNIT+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Unit</structure:Name></structure:CodeList>		
+		<structure:CodeList id="CL_VSTATUS" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_VSTATUS" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_VSTATUS+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Version Status</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_VULNSTAT" agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_VULNSTAT" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_VULNSTAT+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Vulnerability Status</structure:Name></structure:CodeList>
+		
+		<!-- PLACEHOLDER FOR VOLATILE CODE LISTS (isFinal=false) -->
+		
+		<structure:CodeList id="CL_DSOURCE" agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_DSOURCE" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_DSOURCE+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Data Source</structure:Name></structure:CodeList>		
+		<structure:CodeList id="CL_DSTYPE" agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_DSTYPE" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_DSTYPE+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Data Source Type</structure:Name></structure:CodeList>				
+		<structure:CodeList id="CL_GLOCATION" agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_GLOCATION" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_GLOCATION+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Geographic Location</structure:Name></structure:CodeList>		
+		<structure:CodeList id="CL_DISEASE" agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_DISEASE" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_DISEASE+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Disease</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_VALUE_TYPE" agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_VALUE_TYPE" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_VALUE_TYPE+SDMX-HD+1.0.xml"><structure:Name xml:lang="en">Value entered is of which type</structure:Name></structure:CodeList>
+		
+		<!-- AGENCY SPECIFIC CUSTOM CODE LISTS -->	
+				
+		<!-- AGENCY SPECIFIC CUSTOM CODE LISTS - OVERRIDE THE COMMON CODE LIST -->
+		
+		<!--  NOTE YOU NEED TO CHANGE THE agencyID + urn to reference you own agency. The code lists have placeholder in the common library  and are located in the additions folder in the samples -->
+
+		<structure:CodeList id="CL_GEOGRAPHIC_PLACE_NAME" agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_GEOGRAPHIC_PLACE_NAME" isExternalReference="true" uri="./additional/CL_GEOGRAPHIC_PLACE_NAME.xml"><structure:Name xml:lang="en">Geographic Place Name</structure:Name></structure:CodeList>		
+		<structure:CodeList id="CL_INDICATOR" agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_INDICATOR" isExternalReference="true" uri="./additional/CL_INDICATOR.xml"><structure:Name xml:lang="en">Indicator</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_TIME_PERIOD" agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_TIME_PERIOD" isExternalReference="true" uri="./additional/CL_TIME_PERIOD.xml"><structure:Name xml:lang="en">Time Period</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_PROGRAM" agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_PROGRAM" isExternalReference="true" uri="./additional/CL_PROGRAM.xml"><structure:Name xml:lang="en">Program</structure:Name></structure:CodeList>
+    <structure:CodeList id="CL_ORGANIZATION" agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_ORGANIZATION" isExternalReference="true" uri="./additional/CL_ORGANIZATION.xml"><structure:Name xml:lang="en">Organization</structure:Name></structure:CodeList>
+
+  </CodeLists>
+	<HierarchicalCodelists>
+		<structure:HierarchicalCodelist id="CODELIST_HIERARCHY" version="1.0" isFinal="true" agencyID="SDMX-HD" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/hierarchies/CODELIST_HIERARCHY+SDMX-HD+1.0.xml">
+			<structure:Name>Predefined stable hierarchies that change infrequently</structure:Name>
+		</structure:HierarchicalCodelist>
+		<structure:HierarchicalCodelist id="VOLATILE_CODELIST_HIERARCHY" version="1.0" isFinal="false" agencyID="SDMX-HD">
+			<structure:Name>hierarchies that change frequently</structure:Name>
+			
+			<!-- CODELISTREF ALIASES GENERATED HERE -->
+			
+			<!-- PLACEHOLDER FOR KNOWN HIERARCHIES -->
+			
+			<structure:Hierarchy id="TIME_PERIOD_HIERARCHY">
+				<structure:Name>TimePeriod hierarchy</structure:Name>
+				<!-- ADD THE CODEREFs HERE -->
+			</structure:Hierarchy>	    	
+			<structure:Hierarchy id="INDICATOR_HIERARCHY">
+				<structure:Name>Indicator to Indicator to Operand hierarchy</structure:Name>
+				<!-- ADD THE CODEREFs HERE -->
+			</structure:Hierarchy>	    	
+			<structure:Hierarchy id="INDICATOR_DISAGGREGATION_HIERARCHY">
+				<structure:Name>Indicator to Disaggregation Hierarchy</structure:Name>
+				<!-- ADD THE CODEREFs HERE -->
+			</structure:Hierarchy>
+			<structure:Hierarchy id="GEOGRAPHIC_PLACE_NAME_HIERARCHY">
+				<structure:Name>Geographical Placename Hierarchy</structure:Name>
+				<!-- ADD THE CODEREFs HERE -->
+			</structure:Hierarchy>
+			<structure:Hierarchy id="PROGRAM_HIERARCHY">
+				<structure:Name>Program Hierarchy</structure:Name>
+				<!-- ADD THE CODEREFs HERE -->
+			</structure:Hierarchy>
+			<structure:Hierarchy id="INDICATOR_INDICATORSET_HIERARCHY">
+				<structure:Name>Indicator to Indicator Set Hierarchy</structure:Name>
+				<!-- ADD THE CODEREFs HERE -->
+			</structure:Hierarchy>
+			<structure:Hierarchy id="INDICATOR_SPECIAL_VALUE_HIERARCHY">
+				<structure:Name>Indicator to Special Value Hierarchy</structure:Name>
+				<!-- ADD THE CODEREFs HERE -->
+			</structure:Hierarchy>
+									
+			<!-- ADDITIONAL HIERARCHY  GENERATED HERE -->
+			
+		</structure:HierarchicalCodelist>
+	</HierarchicalCodelists>
+
+	<Concepts>
+		
+		<!-- COMMON CONCEPT SCHEME'S Externally Referenced -->
+		
+		<structure:ConceptScheme id="CS_COMMON" agencyID="SDMX-HD" version="1.0" isFinal="true" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/conceptschemes/COMMON+SDMX-HD+1.0.xml">
+			<structure:Name>SDMX-HD Common Data Elements</structure:Name>					
+		</structure:ConceptScheme>
+
+		<!-- CUSTOM CONCEPT SCHEME'S Inline in the file  -->
+
+	</Concepts>
+
+	<KeyFamilies>		
+		<structure:KeyFamily id="SDMX-HD" agencyID="WHO" version="1.0" isFinal="false">
+			<structure:Name xml:lang="en">SDMX-HD</structure:Name>
+			<structure:Description xml:lang="en">UN SDMX-HD (Health Domain)</structure:Description>
+			<structure:Components>
+				
+				<!-- DIMENSIONS -->
+				
+				<!--
+					The list of dimensions in this DSD file is built on-the-fly (as the comprehensive list of possible dimensions found in the data keys), from
+					- common concepts from the recommended core list of SDMX-HD concepts referenced externally
+					- custom agency-specific concepts included inline in this file.					
+				-->
+				
+				<!-- COMMON -->
+				
+				<structure:Dimension conceptRef="DISEASE" conceptSchemeRef="CS_COMMON" conceptVersion="1.0"
+                                     conceptSchemeAgency="SDMX-HD" codelist="CL_DISEASE" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+				
+				
+				<structure:Dimension conceptRef="ORGANIZATION" conceptSchemeRef="CS_COMMON" conceptVersion="1.0"
+                                     conceptSchemeAgency="SDMX-HD" codelist="CL_ORGANIZATION" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+
+
+				<structure:Dimension conceptRef="VALUE_TYPE" conceptSchemeRef="CS_COMMON" conceptVersion="1.0"
+                                     conceptSchemeAgency="SDMX-HD" codelist="CL_VALUE_TYPE" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+				
+				<!-- Note that these Common Dimension + the TimeDimension expect to have a custom code lists so you need to update the codelistAgency value appropriately  -->
+				
+				<structure:Dimension conceptRef="GEOGRAPHIC_PLACE_NAME" conceptSchemeRef="CS_COMMON" conceptVersion="1.0"
+                                     conceptSchemeAgency="SDMX-HD" codelist="CL_GEOGRAPHIC_PLACE_NAME" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+				
+				<structure:Dimension conceptRef="PROG" conceptSchemeRef="CS_COMMON" conceptVersion="1.0"
+                                     conceptSchemeAgency="SDMX-HD" codelist="CL_PROGRAM" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+				
+				<structure:Dimension conceptRef="INDICATOR" conceptSchemeRef="CS_COMMON" conceptVersion="1.0"
+                                     conceptSchemeAgency="SDMX-HD" codelist="CL_INDICATOR" codelistVersion="1.0" codelistAgency="SDMX-HD"/>				
+								
+				<!-- Uncomment as needed
+				
+				<structure:Dimension conceptRef="SEX" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_SEX" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+				<structure:Dimension conceptRef="GENDER" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_GENDER" codelistVersion="1.0" codelistAgency="SDMX-HD"/>				
+				<structure:Dimension conceptRef="INCOME" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_INCOME" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+				<structure:Dimension conceptRef="PREG" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_PREG" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+				<structure:Dimension conceptRef="RACE" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_RACE" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+				<structure:Dimension conceptRef="SECTOR" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_SECTOR" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+				<structure:Dimension conceptRef="ORPHAN" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_ORPHAN" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+				<structure:Dimension conceptRef="VULNSTAT" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_VULNSTAT" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+				<structure:Dimension conceptRef="TPOP" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_TPOP" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+				
+				-->
+				
+				<!-- CUSTOM -->
+
+				<!-- Uncomment as needed and update the conceptSchemeRef, conceptSchemeAgency & codelistAgency attributes
+				
+				<structure:Dimension conceptRef="AGROUP" conceptSchemeRef="CS_CUSTOM_WHO" conceptVersion="1.0" conceptSchemeAgency="WHO" codelist="CL_AGROUP" codelistVersion="1.0" codelistAgency="WHO"/>
+				<structure:Dimension conceptRef="COD" conceptSchemeRef="CS_CUSTOM_WHO" conceptVersion="1.0" conceptSchemeAgency="WHO" codelist="CL_COD" codelistVersion="1.0" codelistAgency="WHO"/>
+				<structure:Dimension conceptRef="CODT" conceptSchemeRef="CS_CUSTOM_WHO" conceptVersion="1.0" conceptSchemeAgency="WHO" codelist="CL_CODT" codelistVersion="1.0" codelistAgency="WHO"/>
+				<structure:Dimension conceptRef="EDUC" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_EDUC" codelistVersion="1.0" codelistAgency="WHO"/>
+				<structure:Dimension conceptRef="GLOCATION" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_GLOCATION" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+				<structure:Dimension conceptRef="SETTING" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_SETTING" codelistVersion="1.0" codelistAgency="WHO"/>
+				
+				-->				
+				
+				<!-- TIME DIMENSION -->
+				
+				<structure:TimeDimension conceptRef="TIME_PERIOD" conceptSchemeRef="CS_COMMON" conceptVersion="1.0"
+                                         conceptSchemeAgency="SDMX-HD" codelist="CL_TIME_PERIOD" codelistVersion="1.0" codelistAgency="SDMX-HD"/>
+				
+				<!-- GROUPS -->
+				
+				<!--
+					As groups reference dimension they also need generating dynamically. Here is an example used to Group a Series of observation into a Program grouped by Program and Disease
+					
+					<structure:Group id="PROGRAMS" >
+						<structure:DimensionRef>PROG</structure:DimensionRef>
+						<structure:DimensionRef>DISEASE</structure:DimensionRef>
+					</structure:Group>
+				
+				-->
+				
+				<!-- PRIMARY MEASURE -->
+				
+				<structure:PrimaryMeasure conceptRef="OBS_VALUE" conceptSchemeRef="CS_COMMON"
+                                          conceptVersion="1.0" conceptSchemeAgency="SDMX-HD">
+					<structure:TextFormat textType="Decimal"/>	
+				</structure:PrimaryMeasure>			
+				
+				<!-- Below we have additional attributes (Mandatory & Conditional ) attached to different level in the Compact Data Set : Observation, Series, Group and DataSet -->
+				
+				<!-- OBSERVATION -->
+
+				<!-- COMMON -->
+				
+				<!-- Mandatory  -->
+											
+				<structure:Attribute conceptRef="DATE_COLLECT" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" attachmentLevel="Observation" assignmentStatus="Mandatory"><structure:TextFormat textType="Date"/></structure:Attribute>
+								
+				<!-- Conditional  -->
+
+				<structure:Attribute conceptRef="SPECIAL_VALUE" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_SPECIAL_VALUE" codelistVersion="1.0" codelistAgency="SDMX-HD" attachmentLevel="Observation" assignmentStatus="Conditional"/>
+				<structure:Attribute conceptRef="LOGICAL_VALUE" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_LOGICAL" codelistVersion="1.0" codelistAgency="SDMX-HD" attachmentLevel="Observation" assignmentStatus="Conditional"/>				
+				<structure:Attribute conceptRef="COMMENT_OBS" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" attachmentLevel="Observation" assignmentStatus="Conditional"><structure:TextFormat textType="String"/></structure:Attribute>
+				
+				<!-- CUSTOM -->
+				
+				<!-- ADD YOUR CUSTOM OBERVATION ATTRIBUTES HERE -->
+				
+				<!-- SERIES -->
+				
+				<!-- COMMON -->
+				
+				<!-- Mandatory  -->
+						<!-- 0 = there is no REPEATS limit -->
+				<structure:Attribute conceptRef="PERIODICITY" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_PERIODICITY" codelistVersion="1.0" codelistAgency="SDMX-HD" attachmentLevel="Series" assignmentStatus="Mandatory"/>
+				<structure:Attribute conceptRef="UNIT" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_UNIT" codelistVersion="1.0" codelistAgency="SDMX-HD" attachmentLevel="Series" assignmentStatus="Mandatory"/>
+				<structure:Attribute conceptRef="REPEATS" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" attachmentLevel="Series" assignmentStatus="Mandatory"><structure:TextFormat textType="Count"/></structure:Attribute>				
+
+				
+				<!-- Conditional  -->
+
+				<structure:Attribute conceptRef="OPERAND" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_OPERAND" codelistVersion="1.0" codelistAgency="SDMX-HD" attachmentLevel="Series" assignmentStatus="Conditional"/>				
+				<structure:Attribute conceptRef="DSOURCE" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_DSOURCE" codelistVersion="1.0" codelistAgency="SDMX-HD" attachmentLevel="Series" assignmentStatus="Conditional"/>
+				<structure:Attribute conceptRef="DSTYPE" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_DSTYPE" codelistVersion="1.0" codelistAgency="SDMX-HD" attachmentLevel="Series" assignmentStatus="Conditional"/>
+				<structure:Attribute conceptRef="MULT" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" codelist="CL_MULT" codelistVersion="1.0" codelistAgency="SDMX-HD" attachmentLevel="Series" assignmentStatus="Conditional"/>
+				<structure:Attribute conceptRef="SDESIGN" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" attachmentLevel="Series" assignmentStatus="Conditional"><structure:TextFormat textType="String"/></structure:Attribute>				
+				<structure:Attribute conceptRef="SSIZE" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" attachmentLevel="Series" assignmentStatus="Conditional"><structure:TextFormat textType="String"/></structure:Attribute>				
+				<structure:Attribute conceptRef="TSTAT" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" attachmentLevel="Series" assignmentStatus="Conditional"><structure:TextFormat textType="String"/></structure:Attribute>								
+				<structure:Attribute conceptRef="COMMENT_IND" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" attachmentLevel="Series" assignmentStatus="Conditional"><structure:TextFormat textType="String"/></structure:Attribute>
+
+												
+				<!-- CUSTOM -->
+				
+				<!-- ADD YOUR CUSTOM SERIES ATTRIBUTES HERE -->
+				
+				<!-- GROUP -->
+
+				<!-- COMMON -->				
+				
+				<!-- Mandatory  -->
+				
+				<!-- Conditional  -->
+								
+				<structure:Attribute conceptRef="RPERIOD" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" attachmentLevel="Group" assignmentStatus="Conditional"><structure:TextFormat textType="String"/></structure:Attribute>				
+				<structure:Attribute conceptRef="FDATE" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" attachmentLevel="Group" assignmentStatus="Conditional"><structure:TextFormat textType="Date"/></structure:Attribute>				
+				<structure:Attribute conceptRef="LDATE" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" attachmentLevel="Group" assignmentStatus="Conditional"><structure:TextFormat textType="Date"/></structure:Attribute>				
+				<structure:Attribute conceptRef="RDATE" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" attachmentLevel="Group" assignmentStatus="Conditional"><structure:TextFormat textType="String"/></structure:Attribute>	
+
+				<!-- CUSTOM -->
+				
+				<!-- ADD YOUR CUSTOM GROUP ATTRIBUTES HERE -->
+				
+				<!-- DATASET -->
+				
+				<!-- COMMON  -->				
+				
+				<!-- Mandatory  -->				
+				
+				<!-- Conditional  -->
+							
+				<structure:Attribute conceptRef="COMMENT_DATASET" conceptSchemeRef="CS_COMMON" conceptVersion="1.0" conceptSchemeAgency="SDMX-HD" attachmentLevel="DataSet" assignmentStatus="Conditional"><structure:TextFormat textType="String"/></structure:Attribute>
+				
+				<!-- CUSTOM -->
+				
+				<!-- ADD YOUR CUSTOM DATASET ATTRIBUTES HERE -->				
+								
+			</structure:Components>
+		</structure:KeyFamily>
+	</KeyFamilies>
+
+</Structure>

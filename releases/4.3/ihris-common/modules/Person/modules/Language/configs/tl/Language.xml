@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonLanguage" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonLanguage" path="/I2CE" locale="tl">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="tl">
+      <configuration name="person_can_view_child_form_person_language" locale="tl">
+        <value>Matitingnan ang wika_ng_tao ng pormularyong pambata ng isang tao</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_language" locale="tl">
+        <value>Mababago ang wika_ng_tao ng mga pormularyong pambata ng isang tao</value>
+      </configuration>
+      <configuration name="can_edit_database_list_language" locale="tl">
+        <value>Mababago ang tala ng wika ng kalipunan ng dato</value>
+      </configuration>
+      <configuration name="can_view_database_list_language" locale="tl">
+        <value>Matitingnan ang tala ng wika ng kalipunan ng dato</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="language_proficiency">
+        <configurationGroup name="elementary">
+          <configuration name="fields" value="many" type="delimited" locale="tl">
+            <value>name:Mababang Paaralan</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="limited">
+          <configuration name="fields" value="many" type="delimited" locale="tl">
+            <value>name:May Hangganang Paggawa</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="professional">
+          <configuration name="fields" value="many" type="delimited" locale="tl">
+            <value>name:Paghahanapbuhay na Propesyunal</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="full_professional">
+          <configuration name="fields" value="many" type="delimited" locale="tl">
+            <value>name:Buo ang Pagkapropesyunal</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="fluent">
+          <configuration name="fields" value="many" type="delimited" locale="tl">
+            <value>name:Matatas</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_language">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="tl">
+            <value>Magdagdag/Magsapanahon ng Wika</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="language">
+          <configuration name="display" values="single" locale="tl">
+            <value>Wika</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="language_proficiency">
+          <configuration name="display" values="single" locale="tl">
+            <value>Pagkabihasa sa Wika</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_language">
+          <configuration name="display" values="single" locale="tl">
+            <value>Pagkabihasa sa Wika ng Tao</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PersonLanguage">
+          <configurationGroup name="fields">
+            <configurationGroup name="language">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Wika</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="speaking">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Kabihasaan sa Pagsasalita</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reading">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Kabihasaan sa Pagbasa</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="writing">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Kabihasaan sa Pagsusulat</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

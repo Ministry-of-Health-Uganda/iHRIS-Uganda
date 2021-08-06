@@ -1,0 +1,32 @@
+<div id="siteInnerWrap">
+  
+  <div id="navBar">
+    <ul id="navBarUL"><li id="menuManage" task="person_can_view"><a href="manage">Merañ tud</a></li>
+      <span type="module" name="CustomReports" ifenabled="true">
+	<li id="menuSearch" task="custom_reports_can_access"><a href="search">Klask enrolladennoù</a></li>
+	<li id="menuCustomReports" task="custom_reports_can_view_reportViews"><a href="CustomReports/view/reportViews">Gwelet an danevelloù</a></li>
+      </span>
+      
+    <span type="module" name="DHIS-Dashboard" ifenabled="true">
+            <li><a href="http://192.168.0.19:8090/new_dhis/dhis-web-dashboard-integration/index.action">Gwelet an daolenn-vourzh</a></li>
+            <li><a href="index.php/DHISDashboard">Ezporzhiañ roadennoù</a></li>
+    </span>
+	<span type="module" name="Dashboard" ifenabled="true">
+	    <li id="menuDashboard" task="can_view_dashboard"><a href="dashboard">Dashboards</a></li>
+	</span>	
+	<span type="module" name="mHero" ifenabled="true">
+	    <li id="menumHero"><a href="mHero">mHero</a></li>
+	</span>       
+      <li id="menuConfigure" task="can_configure_system"><a href="configure">Arventenniñ ar reizhiad</a></li>
+      <li id="menuPassword" task="can_change_own_password"><a href="password">Cheñch ger-tremen</a></li>
+      <span type="module" name="SelfService" ifenabled="true" task="can_view_own_personnel">
+	<span type="module" name="SelfService" if="userHasRecord()">
+	  <li>	  <span type="module" name="SelfService" call="linkToPersonRecord('view?id=')">Gwelet hoc'h enrolladur</span></li>
+	</span>
+      </span>
+
+    </ul></div>
+
+  <div id="siteContent"></div>
+
+  <br style="clear: both;"></div><!-- /siteInnerWrap -->

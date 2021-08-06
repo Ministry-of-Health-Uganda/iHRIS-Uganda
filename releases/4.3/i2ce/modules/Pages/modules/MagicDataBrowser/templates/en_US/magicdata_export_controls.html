@@ -1,0 +1,51 @@
+<div id="magicdata_export_control" >  
+  <span type='module' ifenable='true' name='magicDataExport'>
+    <form id="magicdata_export_form" method="GET" >
+      <!--<input id="magicdata_export" class="button action=index.php/magicDataExport/export" type="submit"   value="Export" /> -->
+      <div class="clickableText magicdata_export_options_toggle centered button" >Export</div>
+      <div class="optionsMenu toggable windowFloats=true windowDraggable=true" id="magicdata_export_options_menu">
+	<input type='hidden' name='config_path'/>
+	<div class="optionsMenuTitle window_drag"> Export Options </div>
+	<hr/>
+	<p>
+	  <span class="field_head"><label>Module Name</label></span>
+	  <br/>
+	  <span class="form_field"><input name="name" type="text" value="" class='validate=[nonempty,magicdatakey]' /></span>
+	  <br/>
+	  <span class="field_description">	A module name for the exported data (required).</span>
+	</p>
+	<p>
+	  <span class="field_head"><label>Displayed Name</label></span>
+	  <br/>
+	  <span class="form_field"><input name="displayName" type="text" value="" class='validate=[nonempty]'  /></span>
+	  <br/>
+	  <span class="field_description">	A displayed name for  the exported data (required).</span>
+	</p>
+	<p>
+	  <span class="field_head"><label>Version</label></span>
+	  <br/>
+	  <span class="form_field"><input name="version" type="text" value="1.0.0" class='validate=[nonempty,version]' /></span>
+	  <br/>
+	  <span class="field_description">	A version number for the data (required)</span>
+	</p>
+	<p>
+	  <span class="field_head"><label>Description</label></span>
+	  <br/>
+	  <span class="form_field"><textarea name="description" id="description" rows="5" cols="25"></textarea>       </span>
+	  <br/>
+	  <span class="field_description">A brief description of the exported data (optional)</span>
+	</p>
+	<table>
+	  <tr>
+	    <td>
+	      <div class="button optionsMenuButton window_hide"> Close </div>
+	    </td>
+	    <td>
+	      <input id="magicdata_export" class="button action=index.php/magicDataExport/export" type="submit"   value="Export" />
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </form>
+  </span>
+</div>

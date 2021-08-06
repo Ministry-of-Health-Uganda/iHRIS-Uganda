@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonDemographic" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonDemographic" path="/I2CE" locale="cs">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="cs">
+      <configuration name="person_can_view_child_form_demographic" locale="cs">
+        <value>Může zobrazit podřazený formulář demografie osoby</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_demographic" locale="cs">
+        <value>Může upravit podřazený formulář demografie osoby</value>
+      </configuration>
+      <configuration name="can_edit_database_list_marital_status" locale="cs">
+        <value>Může upravit seznam rodinných stavů oddělení.</value>
+      </configuration>
+      <configuration name="can_view_database_list_marital_status" locale="cs">
+        <value>Může zobrazit seznam rodinných stavů oddělení.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="gender">
+        <configurationGroup name="F">
+          <configuration name="fields" value="many" type="delimited" locale="cs">
+            <value>name:Žena</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="M">
+          <configuration name="fields" value="many" type="delimited" locale="cs">
+            <value>name:Muž</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="demographic">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs">
+            <value>Přidat/Aktualizovat demografické informace</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="demographic">
+          <configuration name="display" values="single" locale="cs">
+            <value>Demografické informace</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="marital_status">
+          <configuration name="display" values="single" locale="cs">
+            <value>Rodinný stav</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="gender">
+          <configuration name="display" values="single" locale="cs">
+            <value>Pohlaví</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Demographic">
+          <configurationGroup name="fields">
+            <configurationGroup name="birth_date">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Datum narození</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="gender">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Pohlaví</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="marital_status">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Rodinný stav</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

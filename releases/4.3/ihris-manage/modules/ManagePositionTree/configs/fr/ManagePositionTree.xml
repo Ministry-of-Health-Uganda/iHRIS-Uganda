@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-PositionTree" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-PositionTree" path="/modules/CustomReports" locale="fr">
+    <version>4.2.0.2.1</version>
+    <configurationGroup name="position_tree" path="//modules/CustomReports/relationships/position_tree">
+      <configuration name="display_name" locale="fr">
+        <value>Arborescence des positions</value>
+      </configuration>
+      <configuration name="description" locale="fr">
+        <value>Rapport de position à utiliser pour construire la vue arborescente pour la liste déroulante des positions.</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="facility">
+          <configuration name="description" locale="fr">
+            <value>L’établissement où se situe la position de travail.</value>
+          </configuration>
+          <configuration name="display_name" locale="fr">
+            <value>Établissement</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="county">
+              <configuration name="description" locale="fr">
+                <value>Le canton où se situe cet établissement.</value>
+              </configuration>
+              <configuration name="display_name" locale="fr">
+                <value>Canton</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="district">
+              <configuration name="description" locale="fr">
+                <value>Le département où se situe cet établissement.</value>
+              </configuration>
+              <configuration name="display_name" locale="fr">
+                <value>Département</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="region">
+                  <configuration name="description" locale="fr">
+                    <value>La région où se situe cet établissement.</value>
+                  </configuration>
+                  <configuration name="display_name" locale="fr">
+                    <value>Région</value>
+                  </configuration>
+                  <configurationGroup name="joins">
+                    <configurationGroup name="country">
+                      <configuration name="description" locale="fr">
+                        <value>Le pays où se situe cet établissement.</value>
+                      </configuration>
+                      <configuration name="display_name" locale="fr">
+                        <value>Pays</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="position_tree" path="//modules/CustomReports/reports/position_tree">
+      <configurationGroup name="meta">
+        <configuration name="display_name" locale="fr">
+          <value>Arborescence des positions</value>
+        </configuration>
+        <configuration name="description" locale="fr">
+          <value>Le rapport pour afficher les positions sous forme de vue arborescente pour les champs en correspondance.</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="fr">
+                <value>Masque de la position</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="code">
+              <configuration name="header" locale="fr">
+                <value>Code de position de la position</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="facility">
+              <configuration name="header" locale="fr">
+                <value>Établissement de la position</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="status">
+              <configuration name="header" locale="fr">
+                <value>État de la position</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="title">
+              <configuration name="header" locale="fr">
+                <value>Titre de position de la position</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="fr">
+                <value>Id de la position</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="fr">
+                <value>Masque du bureau/de l’établissement</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="header" locale="fr">
+                <value>Emplacement du bureau/de l’établissement</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="fr">
+                <value>Nom du bureau/de l’établissement</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="fr">
+                <value>Id du bureau/de l’établissement</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="county">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="fr">
+                <value>Masque du canton</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="district">
+              <configuration name="header" locale="fr">
+                <value>Département du canton</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="fr">
+                <value>Nom du canton</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="fr">
+                <value>Id du canton</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="district">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="fr">
+                <value>Masque du département</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="fr">
+                <value>Nom du département</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="region">
+              <configuration name="header" locale="fr">
+                <value>Région du département</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="fr">
+                <value>Id du département</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="region">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="fr">
+                <value>Masque de la région</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="country">
+              <configuration name="header" locale="fr">
+                <value>Pays de la région</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="fr">
+                <value>Nom de la région</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="fr">
+                <value>Id de la région</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="country">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="fr">
+                <value>Masque du pays</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="fr">
+                <value>Nom du pays</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="primary">
+              <configuration name="header" locale="fr">
+                <value>Pays principal du pays</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="fr">
+                <value>Id du pays</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

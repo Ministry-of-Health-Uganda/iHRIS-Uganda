@@ -1,0 +1,2601 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-standard-data-district">
+  <metadata>
+    <displayName>Uganda default data for: district</displayName>
+    <description>Data for form: district</description>
+    <version>4.1.6.2</version>
+    <requirement name="Uganda-standard-data-region">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <erase path="/I2CE/formsData/forms/district">
+    <lessThan version="4.1.6.1" />
+  </erase>
+  <configurationGroup name="Uganda-standard-data-district" path="/I2CE/formsData/forms/district">
+    <displayName>Form data: district</displayName>
+    <configuration name="read_only" path="/modules/forms/forms/district/read_only" type="boolean">
+      <version>4.1.6.2</version>
+      <value>true</value>
+    </configuration>
+    <configurationGroup name="102">
+      <displayName>102</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-102</value>
+        </configuration>
+        <configuration name="name">
+          <value>KAMPALA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="301">
+      <displayName>301</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-301</value>
+        </configuration>
+        <configuration name="name">
+          <value>ADJUMANI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="303">
+      <displayName>303</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-303</value>
+        </configuration>
+        <configuration name="name">
+          <value>ARUA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="401">
+      <displayName>401</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-401</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUNDIBUGYO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="202">
+      <displayName>202</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-202</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUSIA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="221">
+      <displayName>221</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-221</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUTALEJA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="404">
+      <displayName>404</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-404</value>
+        </configuration>
+        <configuration name="name">
+          <value>KABALE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="414">
+      <displayName>414</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-414</value>
+        </configuration>
+        <configuration name="name">
+          <value>KANUNGU</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="406">
+      <displayName>406</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-406</value>
+        </configuration>
+        <configuration name="name">
+          <value>KASESE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="408">
+      <displayName>408</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-408</value>
+        </configuration>
+        <configuration name="name">
+          <value>KISORO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="319">
+      <displayName>319</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-319</value>
+        </configuration>
+        <configuration name="name">
+          <value>KOBOKO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="223">
+      <displayName>223</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-223</value>
+        </configuration>
+        <configuration name="name">
+          <value>MANAFWA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="209">
+      <displayName>209</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-209</value>
+        </configuration>
+        <configuration name="name">
+          <value>MBALE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="309">
+      <displayName>309</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-309</value>
+        </configuration>
+        <configuration name="name">
+          <value>MOYO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="310">
+      <displayName>310</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-310</value>
+        </configuration>
+        <configuration name="name">
+          <value>NEBBI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="210">
+      <displayName>210</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-210</value>
+        </configuration>
+        <configuration name="name">
+          <value>PALLISA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="217">
+      <displayName>217</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-217</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUDAKA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="412">
+      <displayName>412</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-412</value>
+        </configuration>
+        <configuration name="name">
+          <value>RUKUNGIRI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="215">
+      <displayName>215</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-215</value>
+        </configuration>
+        <configuration name="name">
+          <value>SIRONKO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="212">
+      <displayName>212</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-212</value>
+        </configuration>
+        <configuration name="name">
+          <value>TORORO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="313">
+      <displayName>313</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-313</value>
+        </configuration>
+        <configuration name="name">
+          <value>YUMBE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="314">
+      <displayName>314</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-314</value>
+        </configuration>
+        <configuration name="name">
+          <value>ABIM</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="318">
+      <displayName>318</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-318</value>
+        </configuration>
+        <configuration name="name">
+          <value>KAABONG</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="306">
+      <displayName>306</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-306</value>
+        </configuration>
+        <configuration name="name">
+          <value>KOTIDO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="311">
+      <displayName>311</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-311</value>
+        </configuration>
+        <configuration name="name">
+          <value>NAKAPIRIPIRIT</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="308">
+      <displayName>308</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-308</value>
+        </configuration>
+        <configuration name="name">
+          <value>MOROTO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="220">
+      <displayName>220</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-220</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUKWO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="206">
+      <displayName>206</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-206</value>
+        </configuration>
+        <configuration name="name">
+          <value>KAPCHORWA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="315">
+      <displayName>315</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-315</value>
+        </configuration>
+        <configuration name="name">
+          <value>AMOLATAR</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="302">
+      <displayName>302</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-302</value>
+        </configuration>
+        <configuration name="name">
+          <value>APAC</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="307">
+      <displayName>307</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-307</value>
+        </configuration>
+        <configuration name="name">
+          <value>LIRA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="321">
+      <displayName>321</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-321</value>
+        </configuration>
+        <configuration name="name">
+          <value>OYAM</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="317">
+      <displayName>317</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-317</value>
+        </configuration>
+        <configuration name="name">
+          <value>DOKOLO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="304">
+      <displayName>304</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-304</value>
+        </configuration>
+        <configuration name="name">
+          <value>GULU</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="316">
+      <displayName>316</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-316</value>
+        </configuration>
+        <configuration name="name">
+          <value>AMURU</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="312">
+      <displayName>312</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-312</value>
+        </configuration>
+        <configuration name="name">
+          <value>PADER</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="305">
+      <displayName>305</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-305</value>
+        </configuration>
+        <configuration name="name">
+          <value>KITGUM</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="201">
+      <displayName>201</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-201</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUGIRI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="203">
+      <displayName>203</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-203</value>
+        </configuration>
+        <configuration name="name">
+          <value>IGANGA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="204">
+      <displayName>204</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-204</value>
+        </configuration>
+        <configuration name="name">
+          <value>JINJA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="214">
+      <displayName>214</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-214</value>
+        </configuration>
+        <configuration name="name">
+          <value>MAYUGE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="222">
+      <displayName>222</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-222</value>
+        </configuration>
+        <configuration name="name">
+          <value>KALIRO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="224">
+      <displayName>224</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-224</value>
+        </configuration>
+        <configuration name="name">
+          <value>NAMUTUMBA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="205">
+      <displayName>205</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-205</value>
+        </configuration>
+        <configuration name="name">
+          <value>KAMULI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="410">
+      <displayName>410</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-410</value>
+        </configuration>
+        <configuration name="name">
+          <value>MBARARA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="402">
+      <displayName>402</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-402</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUSHENYI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="411">
+      <displayName>411</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-411</value>
+        </configuration>
+        <configuration name="name">
+          <value>NTUNGAMO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="417">
+      <displayName>417</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-417</value>
+        </configuration>
+        <configuration name="name">
+          <value>IBANDA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="418">
+      <displayName>418</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-418</value>
+        </configuration>
+        <configuration name="name">
+          <value>ISINGIRO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="419">
+      <displayName>419</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-419</value>
+        </configuration>
+        <configuration name="name">
+          <value>KIRUHURA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="112">
+      <displayName>112</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-112</value>
+        </configuration>
+        <configuration name="name">
+          <value>KAYUNGA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="101">
+      <displayName>101</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-101</value>
+        </configuration>
+        <configuration name="name">
+          <value>KALANGALA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="103">
+      <displayName>103</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-103</value>
+        </configuration>
+        <configuration name="name">
+          <value>KIBOGA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="104">
+      <displayName>104</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-104</value>
+        </configuration>
+        <configuration name="name">
+          <value>LUWERO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="114">
+      <displayName>114</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-114</value>
+        </configuration>
+        <configuration name="name">
+          <value>LYANTONDE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="105">
+      <displayName>105</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-105</value>
+        </configuration>
+        <configuration name="name">
+          <value>MASAKA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="106">
+      <displayName>106</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-106</value>
+        </configuration>
+        <configuration name="name">
+          <value>MPIGI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="107">
+      <displayName>107</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-107</value>
+        </configuration>
+        <configuration name="name">
+          <value>MUBENDE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="108">
+      <displayName>108</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-108</value>
+        </configuration>
+        <configuration name="name">
+          <value>MUKONO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="115">
+      <displayName>115</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-115</value>
+        </configuration>
+        <configuration name="name">
+          <value>MITYANA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="116">
+      <displayName>116</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-116</value>
+        </configuration>
+        <configuration name="name">
+          <value>NAKASEKE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="109">
+      <displayName>109</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-109</value>
+        </configuration>
+        <configuration name="name">
+          <value>NAKASONGOLA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="110">
+      <displayName>110</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-110</value>
+        </configuration>
+        <configuration name="name">
+          <value>RAKAI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="111">
+      <displayName>111</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-111</value>
+        </configuration>
+        <configuration name="name">
+          <value>SSEMBABULE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="113">
+      <displayName>113</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-113</value>
+        </configuration>
+        <configuration name="name">
+          <value>WAKISO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="403">
+      <displayName>403</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-403</value>
+        </configuration>
+        <configuration name="name">
+          <value>HOIMA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="407">
+      <displayName>407</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-407</value>
+        </configuration>
+        <configuration name="name">
+          <value>KIBAALE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="409">
+      <displayName>409</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-409</value>
+        </configuration>
+        <configuration name="name">
+          <value>MASINDI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="416">
+      <displayName>416</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-416</value>
+        </configuration>
+        <configuration name="name">
+          <value>BULIISA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="216">
+      <displayName>216</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-216</value>
+        </configuration>
+        <configuration name="name">
+          <value>AMURIA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="219">
+      <displayName>219</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-219</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUKEDEA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="213">
+      <displayName>213</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-213</value>
+        </configuration>
+        <configuration name="name">
+          <value>KABERAMAIDO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="208">
+      <displayName>208</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-208</value>
+        </configuration>
+        <configuration name="name">
+          <value>KUMI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="211">
+      <displayName>211</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-211</value>
+        </configuration>
+        <configuration name="name">
+          <value>SOROTI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="207">
+      <displayName>207</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-207</value>
+        </configuration>
+        <configuration name="name">
+          <value>KATAKWI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="405">
+      <displayName>405</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-405</value>
+        </configuration>
+        <configuration name="name">
+          <value>KABAROLE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="413">
+      <displayName>413</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-413</value>
+        </configuration>
+        <configuration name="name">
+          <value>KAMWENGE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="415">
+      <displayName>415</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-415</value>
+        </configuration>
+        <configuration name="name">
+          <value>KYENJOJO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="218">
+      <displayName>218</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-218</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUDUDA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="324">
+      <displayName>324</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-324</value>
+        </configuration>
+        <configuration name="name">
+          <value>AMUDAT</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="117">
+      <displayName>117</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-117</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUIKWE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="226">
+      <displayName>226</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-226</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUYENDE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="422">
+      <displayName>422</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-422</value>
+        </configuration>
+        <configuration name="name">
+          <value>KYEGEGWA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="326">
+      <displayName>326</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-326</value>
+        </configuration>
+        <configuration name="name">
+          <value>LAMWO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="329">
+      <displayName>329</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-329</value>
+        </configuration>
+        <configuration name="name">
+          <value>OTUKE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="330">
+      <displayName>330</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-330</value>
+        </configuration>
+        <configuration name="name">
+          <value>ZOMBO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="323">
+      <displayName>323</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-323</value>
+        </configuration>
+        <configuration name="name">
+          <value>ALEBTONG</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="225">
+      <displayName>225</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-225</value>
+        </configuration>
+        <configuration name="name">
+          <value>BULAMBULI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="120">
+      <displayName>120</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-120</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUVUMA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="121">
+      <displayName>121</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-121</value>
+        </configuration>
+        <configuration name="name">
+          <value>GOMBA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="421">
+      <displayName>421</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-421</value>
+        </configuration>
+        <configuration name="name">
+          <value>KIRYANDONGO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="123">
+      <displayName>123</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-123</value>
+        </configuration>
+        <configuration name="name">
+          <value>KYANKWANZI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="229">
+      <displayName>229</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-229</value>
+        </configuration>
+        <configuration name="name">
+          <value>LUUKA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="230">
+      <displayName>230</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-230</value>
+        </configuration>
+        <configuration name="name">
+          <value>NAMAYINGO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="424">
+      <displayName>424</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-424</value>
+        </configuration>
+        <configuration name="name">
+          <value>NTOROKO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="232">
+      <displayName>232</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-232</value>
+        </configuration>
+        <configuration name="name">
+          <value>SERERE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="122">
+      <displayName>122</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-122</value>
+        </configuration>
+        <configuration name="name">
+          <value>KALUNGU</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="118">
+      <displayName>118</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-118</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUKOMANSIMBI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="119">
+      <displayName>119</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-119</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUTAMBALA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="124">
+      <displayName>124</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-C</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-124</value>
+        </configuration>
+        <configuration name="name">
+          <value>LWENGO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="423">
+      <displayName>423</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-423</value>
+        </configuration>
+        <configuration name="name">
+          <value>MITOOMA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="425">
+      <displayName>425</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-425</value>
+        </configuration>
+        <configuration name="name">
+          <value>RUBIRIZI</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="426">
+      <displayName>426</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-426</value>
+        </configuration>
+        <configuration name="name">
+          <value>SHEEMA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="420">
+      <displayName>420</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-W</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-420</value>
+        </configuration>
+        <configuration name="name">
+          <value>BUHWEJU</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="231">
+      <displayName>231</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-231</value>
+        </configuration>
+        <configuration name="name">
+          <value>NGORA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="327">
+      <displayName>327</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-327</value>
+        </configuration>
+        <configuration name="name">
+          <value>NAPAK</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="227">
+      <displayName>227</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-227</value>
+        </configuration>
+        <configuration name="name">
+          <value>KIBUKU</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="328">
+      <displayName>328</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-328</value>
+        </configuration>
+        <configuration name="name">
+          <value>NWOYA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="325">
+      <displayName>325</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-325</value>
+        </configuration>
+        <configuration name="name">
+          <value>KOLE</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="322">
+      <displayName>322</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-322</value>
+        </configuration>
+        <configuration name="name">
+          <value>AGAGO</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="320">
+      <displayName>320</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-N</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-320</value>
+        </configuration>
+        <configuration name="name">
+          <value>MARACHA</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="228">
+      <displayName>228</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 11:38:52</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="region">
+          <value>region|UG-E</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-228</value>
+        </configuration>
+        <configuration name="name">
+          <value>KWEEN</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

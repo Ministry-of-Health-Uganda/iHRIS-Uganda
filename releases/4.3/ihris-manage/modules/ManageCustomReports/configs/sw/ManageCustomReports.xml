@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports" path="/modules/CustomReports" locale="sw">
+    <version>4.2.0.1</version>
+    <configurationGroup name="pdf_options" path="displays/PDF/display_options">
+      <configurationGroup name="header">
+        <configuration name="title_prefix" locale="sw">
+          <value>Ongoza Mfumo wa iHRIS</value>
+        </configuration>
+        <configuration name="text_prefix" locale="sw">
+          <value>Ago ya Kuongoza Mfumo wa iHRIS</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

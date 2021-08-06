@@ -1,0 +1,28 @@
+<div id="siteContent">
+    <h1>Administer Users</h1>
+    <div id="error" />
+    <form method="post" action="user">
+        <input type="hidden" name="user:id" value="" />
+        <table class="multiFormTable" align="center">
+            <tr><td>
+                <div id="form">
+                	<span type="form" name="user:username" showhead="default"></span>
+                	<span type="form" name="user:firstname" showhead="default"></span>
+                	<span type="form" name="user:lastname" showhead="default"></span>
+                	<span type="form" name="user:commonname" showhead="default"></span>
+                	<span type="form" name="user:email" showhead="default"></span>
+                	<span type="form" name="user:locale" showhead="default"></span>
+                	<span type="form" name="user:role" showhead="default" blank="Select One / No Access"></span>
+                	<span type="form" name="user:password" 
+                            showhead="default" confirm="confirm">
+                	</span>
+                </div>
+            </td></tr>
+            <tr class="submitCell">
+                <td>
+                    <div id="button" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

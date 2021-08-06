@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="accident" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="accident" path="/I2CE" locale="ar">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="ar">
+      <configuration name="accident_date" path="accident/end_date/bad_date"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_accident" locale="ar">
+        <value>يمكن تعديل&#160;إصابات العمل&#160;والحوادث&#160;الملحقة بالشخص</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_accident" locale="ar">
+        <value>يمكن عرض&#160;إصابات العمل&#160;والحوادث&#160;الملحقة بالشخص</value>
+      </configuration>
+      <configuration name="can_edit_database_list_accident_type" locale="ar">
+        <value>تعديل نوع&#160;حادث&#160;العمل</value>
+      </configuration>
+      <configuration name="can_view_database_list_accident_type" locale="ar">
+        <value>عرض قائمة أنواع&#160;حوادث العمل</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="accident">
+          <configuration name="display" values="single" locale="ar">
+            <value>حادث</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="accident_type">
+          <configuration name="display" values="single" locale="ar">
+            <value>نوع حادث العمل</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Accident">
+          <configurationGroup name="fields">
+            <configurationGroup name="occurence_date">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:تاريخ&#160;الحدوث</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="accident_type">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:نوع الحادث</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:بداية التطبيق</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:نهاية&#160;التطبيق</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="followup">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:المتابعة المطلوبة</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_involved">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:الأشخاص المعنيون</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="home" path="/modules/accident/page/home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ar">
+            <value>إضافة/تحديث&#160;حادث&#160;العمل</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

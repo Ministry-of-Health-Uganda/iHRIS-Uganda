@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-MultiPosition" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-MultiPosition" path="/I2CE" locale="oc">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="oc">
+      <configuration name="code_req" path="position/code_start/required"></configuration>
+      <configuration name="code_req" path="position/code_format/unique"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_MultiPosition">
+          <configurationGroup name="fields">
+            <configurationGroup name="count">
+              <configuration name="headers" type="delimited" locale="oc">
+                <value>default:Nombre de pòstes de crear</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="code_start">
+              <configuration name="headers" type="delimited" locale="oc">
+                <value>default:Numèro de despart pel còde de pòste</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="code_format">
+              <configuration name="headers" type="delimited" locale="oc">
+                <value>default:Format del còde d'utilizar amb lo numèro</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

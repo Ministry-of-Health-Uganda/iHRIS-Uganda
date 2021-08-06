@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="disciplinary_action" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="disciplinary_action" path="/I2CE" locale="cs">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="cs">
+      <configuration name="disciplinary_date" path="disciplinary_action/end_date/bad_date">
+        <value>Datum ukončení musí být pozdější než datum zahájení.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_disciplinary_action" locale="cs">
+        <value>Může upravit zranění na pracovišti a disciplinárního řízení určená osobě</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_disciplinary_action" locale="cs">
+        <value>Může zobrazit zranění na pracovišti a disciplinárního řízení určená osobě</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_type" locale="cs">
+        <value>Upravit seznam typů disciplinárního řízení na pracovišti</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_type" locale="cs">
+        <value>Zobrazit seznam typů disciplinárního řízení na pracovišti</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_reason" locale="cs">
+        <value>Upravit seznam typů důvodů discilpinárního řízení pracoviště</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_reason" locale="cs">
+        <value>Zobrazit seznam typů důvodů discilpinárního řízení pracoviště</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="disciplinary_action">
+          <configuration name="display" values="single" locale="cs">
+            <value>Disciplinární opatření</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_type">
+          <configuration name="display" values="single" locale="cs">
+            <value>Typ disciplinárního řízení</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_reason">
+          <configuration name="display" values="single" locale="cs">
+            <value>Důvod disciplinárního řízení</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_DisciplinaryAction">
+          <configurationGroup name="fields">
+            <configurationGroup name="action_date">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Datum diskuze</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_type">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Provedená akce</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_reason">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Důvod pro řízení</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Začátek použitelnosti</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Konec použitelnosti</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Poznámky</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_present">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Přítomní lidé</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="editAction" path="/modules/disciplinary_action/page/editAction">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs">
+            <value>Přidat/Aktualizovat disciplinární řízení</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

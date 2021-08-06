@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="manage-auto-page" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="manage-auto-page" path="/" locale="fr">
+    <version>4.3.0.1</version>
+    <configurationGroup name="view_person" path="/I2CE/page/view_person">
+      <configurationGroup name="args">
+        <configurationGroup name="tabs">
+          <configurationGroup name="demo">
+            <configuration name="title" locale="fr">
+              <value>Données démographiques</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="position">
+            <configuration name="title" locale="fr">
+              <value>Déploiement</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="auto_template">
+          <configuration name="title" locale="fr">
+            <value>Afficher la personne (%s, %s)</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="title" locale="fr">
+          <value>Afficher la personne</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="view_person_position" path="/I2CE/page/view_person_position">
+      <configurationGroup name="args">
+        <configuration name="title" locale="fr">
+          <value>Afficher les détails de la position</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="view_demographics" path="/I2CE/page/view_demographics">
+      <configurationGroup name="args">
+        <configurationGroup name="children">
+          <configurationGroup name="demographic">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="text" locale="fr">
+                    <value>Mettre à jour cette information</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="fr">
+                    <value>Ajouter les informations démographiques de base</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="fr">
+                <value>Données démographiques</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="nextofkin">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="text" locale="fr">
+                    <value>Mettre à jour cette information</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="fr">
+                    <value>Ajouter un nouveau parent proche</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="fr">
+                <value>Parent proche</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person_contact_personal">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="text" locale="fr">
+                    <value>Mettre à jour cette information</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="fr">
+                <value>Contact personnel</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person_contact_emergency">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="text" locale="fr">
+                    <value>Mettre à jour cette information</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="fr">
+                    <value>Définir un contact d’urgence</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="fr">
+                <value>Contact d’urgence</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person_contact_other">
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="text" locale="fr">
+                    <value>Mettre à jour cette information</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="fr">
+                    <value>Définir un autre contact</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="title" locale="fr">
+                <value>Autre contact</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person_photo_passport">
+            <configuration name="title" locale="fr">
+              <value>Photo d'identité</value>
+            </configuration>
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="text" locale="fr">
+                    <value>Mettre à jour cette information</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="fr">
+                    <value>Importer une nouvelle photo d'identité</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person_id">
+            <configuration name="title" locale="fr"></configuration>
+            <configurationGroup name="auto_template">
+              <configurationGroup name="edit_links">
+                <configurationGroup name="edit">
+                  <configuration name="text" locale="fr">
+                    <value>Mettre à jour cette information</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="action_links">
+                <configurationGroup name="new">
+                  <configuration name="text" locale="fr">
+                    <value>Ajouter une nouvelle identification</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configuration name="title" locale="fr">
+          <value>Afficher les détails démographiques</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

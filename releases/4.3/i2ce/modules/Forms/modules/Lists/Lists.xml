@@ -1,0 +1,401 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Lists">
+  <metadata>
+    <displayName>Form Lists</displayName>
+    <className>I2CE_Module_Lists</className>
+    <version>4.3.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <description>Database Lists</description>
+    <link>https://launchpad.net/i2ce</link>
+    <requirement name="forms">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms-storage-magicdata">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="TreeSelect">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="jumper">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <enable name="tabbed-pages" />
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="sql">
+      <value>./sql</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+  <configurationGroup name="Lists" path="/I2CE/">
+    <configurationGroup name="auto_list" path="/I2CE/page/auto_list">
+      <version>4.1.5.8</version>
+      <configuration name="class" values="single" type="string">
+        <value>I2CE_PageAutoList</value>
+      </configuration>
+      <configuration name="title" locale="en_US" values="single" type="string">
+        <value>Administer Database Lists</value>
+      </configuration>
+      <configuration name="style" values="single" type="string">
+        <value>shell</value>
+      </configuration>
+    </configurationGroup>
+    <erase path="/I2CE/page/auto_list_edit">
+      <lessThan version="4.2.0.6" />
+    </erase>
+    <erase path="/I2CE/page/auto_list_remap">
+      <lessThan version="4.2.0.6" />
+    </erase>
+    <configurationGroup name="Lists" path="/modules/Lists">
+      <version>4.1.5.13</version>
+      <configuration name="messages" type="delimited" values="many" locale="en_US">
+        <version>4.2.0.7</version>
+        <value>other_lists:Other Lists</value>
+        <value>title:View %s</value>
+        <value>edit_title:Add/Update %s</value>
+        <value>edit_text:Update this information</value>
+        <value>add_text:Add new %s</value>
+        <value>add_new:Add new</value>
+        <value>select_text:Select another %s</value>
+        <value>menu_title:Administer Database Lists</value>
+        <value>remap_field_text:Remap field %1$s in %2$s (%3$s matches)</value>
+        <value>remap_text:Set remapping data</value>
+        <value>view_remap_text:View remapping data</value>
+      </configuration>
+    </configurationGroup>
+    <displayName>List Type Forms</displayName>
+    <configurationGroup name="invalid_messages" path="/modules/forms/invalid_field_messages" locale="en_US">
+      <version>4.1.1.3</version>
+      <configuration name="unique_fields" values="single" type="string">
+        <value>This must be unique and another record has this value for the given values of the fields:</value>
+      </configuration>
+      <configuration name="unique_field" values="single" type="string">
+        <value>This must be unique and another record has this value for the given value of the field:</value>
+      </configuration>
+      <configuration name="unique" values="single" type="string">
+        <value>This must be unique and another record has this value.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="template_text" path="/modules/forms/template_text">
+      <version>4.2.0.2</version>
+      <configuration name="blank" values="single" locale="en_US" type="string">
+        <value>Select One</value>
+      </configuration>
+      <configuration name="loading" values="single" locale="en_US" type="string">
+        <value>Loading</value>
+      </configuration>
+      <configuration name="no_results" values="single" locale="en_US" type="string">
+        <value>No Results</value>
+      </configuration>
+      <configuration name="default_display" values="single" locale="en_US" type="string">
+        <value>Select from below</value>
+      </configuration>
+      <configuration name="clear_display" values="single" locale="en_US" type="string">
+        <value>Reset</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="form_field" path="/modules/forms/FORMFIELD">
+      <version>3.2.2</version>
+      <displayName>Form Fields</displayName>
+      <description>Information about the various classes used to handle fields of a form</description>
+      <erase path="MAP_LINE">
+        <lessThan version="4.1.1.1" />
+      </erase>
+      <configuration name="ASSOC_MAP_RESULTS" values="single" type="string">
+        <version>4.2.0.9</version>
+        <value>I2CE_FormField_ASSOC_MAP_RESULTS</value>
+      </configuration>
+      <configuration name="REMAP" values="single" type="string">
+        <version>4.1.5.12</version>
+        <displayName>Map</displayName>
+        <description>The class for a Map field</description>
+        <value>I2CE_FormField_REMAP</value>
+      </configuration>
+      <configuration name="MAP" values="single" type="string">
+        <displayName>Map</displayName>
+        <description>The class for a Map field</description>
+        <value>I2CE_FormField_MAP</value>
+      </configuration>
+      <configuration name="MAP_LINE" values="single" type="string">
+        <displayName>Multi Selection Map</displayName>
+        <description>The class for a Multiple Selection Map field</description>
+        <value>I2CE_FormField_MAP_LINE</value>
+      </configuration>
+      <configuration name="MAP_MULT" values="single" type="string">
+        <displayName>Multi Selection Map</displayName>
+        <description>The class for a Multiple Selection Map field</description>
+        <value>I2CE_FormField_MAP_MULT</value>
+      </configuration>
+      <configuration name="MAP_MULTUNION" values="single" type="string">
+        <version>4.1.1.2</version>
+        <displayName>Multi Selection Map</displayName>
+        <description>The class for a Multiple Selection Map field Across multiple unrelated forms</description>
+        <value>I2CE_FormField_MAP_MULTUNION</value>
+      </configuration>
+      <configuration name="ASSOC_MAP" values="single" type="string">
+        <version>4.2.0.1</version>
+        <value>I2CE_FormField_ASSOC_MAP</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+      <displayName>Form Class Configuration</displayName>
+      <configurationGroup name="I2CE_List">
+        <displayName>Configuration for I2CE_List</displayName>
+        <configuration name="extends" values="single" type="string">
+          <displayName>The class this form extends</displayName>
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="meta" path="meta/list/default">
+          <version>4.0.6.1</version>
+          <configuration name="display_string" values="single" type="string">
+            <value>%s</value>
+          </configuration>
+          <configuration name="display_args" type="delimited" values="many">
+            <value>0:name</value>
+          </configuration>
+          <configuration name="sort_fields" type="delimited" values="many">
+            <value>0:name</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="fields">
+          <configurationGroup name="remap">
+            <version>4.1.5.12</version>
+            <configuration name="formfield" values="single" type="string">
+              <value>REMAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US" values="single">
+              <value>default:Remapped Value</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="i2ce_hidden">
+            <displayName>The field 'name'</displayName>
+            <version>4.0.4.1</version>
+            <configuration name="formfield" values="single" type="string">
+              <displayName>Form Field</displayName>
+              <value>YESNO</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US" values="single">
+              <displayName>The headers for this field.</displayName>
+              <value>default:Hide</value>
+            </configuration>
+            <configuration name="default_value" values="single" type="string">
+              <value>0</value>
+              <!-- defaults that we do not hide this  list member-->
+            </configuration>
+            <configuration name="required" type="boolean" values="single">
+              <displayName>Required</displayName>
+              <value>false</value>
+            </configuration>
+            <configuration name="unique" type="boolean" values="single">
+              <displayName>Unique</displayName>
+              <value>false</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="I2CE_SimpleList">
+        <displayName>Configuration for I2CE_SimpleList</displayName>
+        <configuration name="extends" values="single" type="string">
+          <displayName>The class this form extends</displayName>
+          <value>I2CE_List</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields for I2CE_SimpleList</displayName>
+          <configurationGroup name="name">
+            <displayName>The field 'name'</displayName>
+            <configuration name="formfield" values="single" type="string">
+              <displayName>Form Field</displayName>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US" values="single">
+              <displayName>The headers for this field.</displayName>
+              <version>3.2.1</version>
+              <value>default:Name</value>
+            </configuration>
+            <configuration name="required" type="boolean" values="single">
+              <displayName>Required</displayName>
+              <value>true</value>
+            </configuration>
+            <configuration name="unique" type="boolean" values="single">
+              <displayName>Unique</displayName>
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="I2CE_SimpleCodedList">
+        <version>4.1.5.1</version>
+        <configuration name="extends" values="single" type="string">
+          <value>I2CE_SimpleList</value>
+        </configuration>
+        <configurationGroup name="meta" path="meta/list/code">
+          <version>4.1.7.1</version>
+          <configuration name="display_string" values="single" type="string">
+            <value>%s</value>
+          </configuration>
+          <configuration name="display_args" type="delimited" values="many">
+            <value>0:code</value>
+          </configuration>
+          <configuration name="sort_fields" type="delimited" values="many">
+            <value>0:code</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="meta" path="meta/list/default">
+          <version>4.1.5.17</version>
+          <configuration name="display_string" values="single" type="string">
+            <value>%s - %s</value>
+          </configuration>
+          <configuration name="display_args" type="delimited" values="many">
+            <value>0:code</value>
+            <value>1:name</value>
+          </configuration>
+          <configuration name="sort_fields" type="delimited" values="many">
+            <value>0:code</value>
+            <value>1:name</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="fields">
+          <configurationGroup name="code">
+            <configuration name="formfield" values="single" type="string">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US" values="single">
+              <value>default:Code</value>
+            </configuration>
+            <configuration name="required" type="boolean" values="single">
+              <value>true</value>
+            </configuration>
+            <configuration name="unique" type="boolean" values="single">
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="can_hide_list_members" values="single" type="string">
+        <version>4.0.4.1</version>
+        <value>Can hide list members</value>
+      </configuration>
+      <configuration name="can_edit_database_lists" values="single" type="string">
+        <value>Can edit some of the lists stored in the database</value>
+      </configuration>
+      <configuration name="can_edit_all_database_lists" values="single" type="string">
+        <value>Can edit all the lists stored in the database</value>
+      </configuration>
+      <configuration name="can_view_database_lists" values="single" type="string">
+        <value>Can view some of the lists stored in the database</value>
+      </configuration>
+      <configuration name="can_view_all_database_lists" values="single" type="string">
+        <value>Can view all the lists stored in the database</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="can_edit_database_lists" values="many" type="string">
+        <value>can_view_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_database_lists" values="many" type="string">
+        <value>can_edit_database_lists</value>
+        <value>can_view_all_database_lists</value>
+      </configuration>
+      <configuration name="can_view_all_database_lists" values="many" type="string">
+        <value>can_view_database_lists</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <configurationGroup name="lists">
+        <displayName>Lists Page</displayName>
+        <description>The page 'lists' which has the action of: Manage Lists</description>
+        <configuration name="class" values="single" type="string">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>I2CE_PageFormLists</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>main</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="tasks" values="many" type="string">
+            <value>can_edit_database_lists</value>
+          </configuration>
+          <configuration name="buttons" values="many" type="delimited">
+            <version>4.1.0.2</version>
+            <value>button_confirm:button_confirm_admin.html</value>
+          </configuration>
+          <configuration name="page_length" values="single" type="string">
+            <displayName>Page Length</displayName>
+            <description>The number of records list on a page</description>
+            <version>4.0.4</version>
+            <value>50</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single" type="string">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>lists.html</value>
+          </configuration>
+          <!--    <configuration name='access' values='many'> -->
+          <!--      <displayName>Page Access</displayName> -->
+          <!--      <description>All of the roles that have access to this page</description> -->
+          <!--      <status>required:false</status> -->
+          <!--      <value>admin</value> -->
+          <!--    </configuration> -->
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="view_list">
+        <displayName>View List Page</displayName>
+        <description>The page 'view_list' which has the action of: View List</description>
+        <configuration name="class" values="single" type="string">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>I2CE_PageViewList</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>main</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US" type="string">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>View List</value>
+          </configuration>
+          <configuration name="tasks" values="many" type="string">
+            <value>can_view_database_lists</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single" type="string">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>view_list.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

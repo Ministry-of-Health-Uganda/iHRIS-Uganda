@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-FacilityTree" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-FacilityTree" path="/modules/CustomReports" locale="sco">
+    <version>4.2.0.2.1</version>
+    <configurationGroup name="facility_tree" path="//modules/CustomReports/relationships/facility_tree">
+      <configuration name="description" locale="sco">
+        <value>Ae faceelitie report fer uise in biggin the tree luik fer the faceelitie drap douns.</value>
+      </configuration>
+      <configuration name="display_name" locale="sco">
+        <value>Faceelitie Tree</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="county">
+          <configuration name="description" locale="sco">
+            <value>The kintra whaur this faceelitie is foond.</value>
+          </configuration>
+          <configuration name="display_name" locale="sco">
+            <value>Kintra</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="district">
+          <configuration name="description" locale="sco">
+            <value>The launaurie whaur this faceelitie can be foond.</value>
+          </configuration>
+          <configuration name="display_name" locale="sco">
+            <value>Laundaurie</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="region">
+              <configuration name="description" locale="sco">
+                <value>The region whaur this faceelitie is foond.</value>
+              </configuration>
+              <configuration name="display_name" locale="sco"></configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="country">
+                  <configuration name="description" locale="sco">
+                    <value>The kintra whaur this faceelitie is locatit.</value>
+                  </configuration>
+                  <configuration name="display_name" locale="sco">
+                    <value>Kintra</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="facility_tree" path="//modules/CustomReports/reports/facility_tree">
+      <configurationGroup name="meta">
+        <configuration name="description" locale="sco">
+          <value>The report tae displey the faceelities aes ae tree luik fer mapt fields.</value>
+        </configuration>
+        <configuration name="display_name" locale="sco">
+          <value>Faceelitie Tree</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="country">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="sco">
+                <value>Kintra Skauk</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="sco">
+                <value>Kintra Id</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="sco">
+                <value>Kintra Name</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="primary">
+              <configuration name="header" locale="sco">
+                <value>Kintra Primarie</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="county">
+          <configurationGroup name="fields">
+            <configurationGroup name="district">
+              <configuration name="header" locale="sco">
+                <value>Kintra Laundaurie</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="sco">
+                <value>Skauk Kintra</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="sco">
+                <value>Kintra Id</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="sco">
+                <value>Kintra Name</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="district">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="sco">
+                <value>Skauk Laundaurie</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="sco">
+                <value>Launaurie Id</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="sco">
+                <value>Laundaurie Name</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="region">
+              <configuration name="header" locale="sco">
+                <value>The Laundaurie Region</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="sco">
+                <value>Affice/Faceelitie Skauk</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="sco">
+                <value>Affice/Faceelitie Id</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="header" locale="sco">
+                <value>The Faceelitie Location</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="facility_type">
+              <configuration name="header" locale="sco">
+                <value>Faceelitie Type</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="sco">
+                <value>Affice/Faceelitie Name</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="region">
+          <configurationGroup name="fields">
+            <configurationGroup name="country">
+              <configuration name="header" locale="sco">
+                <value>Region Kintra</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="sco">
+                <value>Skauk Region</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="sco"></configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="sco">
+                <value>The Region Name</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

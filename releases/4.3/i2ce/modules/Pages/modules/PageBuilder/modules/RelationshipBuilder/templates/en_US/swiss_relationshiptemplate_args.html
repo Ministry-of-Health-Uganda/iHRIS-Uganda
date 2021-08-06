@@ -1,0 +1,138 @@
+<div>
+  
+
+  <h2>Page Arguments</h2>
+  <div id='args_container'>
+    <table class='multiFormTable' cellpadding="0" cellspacing="0" border="0">
+      <tr>
+	<td>
+	  <h3>Title:</h3>The display name for the primary form
+	</td>
+	<td>
+	  <input name='title'/>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Tasks:</h3>Optional task for limiting access to this page.
+	</td>
+	<td>
+	  <select name='task'><option value=''>No Task Selected</option></select>
+	</td>
+      </tr>
+    </table>
+    <h2>Relationship Options</h2>
+    <table class='multiFormTable' cellpadding="0" cellspacing="0" border="0">
+      <tr>
+	<td>
+	  <h3>Relationship:</h3>Relationship the template is based on
+	</td>
+	<td>
+	  <select name='relationship'><option value=''>No Relationship  Selected</option></select>
+	  <br/>
+	  <span name='has_relationship' ifset='true'><a name='relationship_link'>Edit Relationship</a></span>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Use Cache:</h3>Use caches in hippo tables when exporting data in the relationship
+	</td>
+	<td>
+	  <select name='use_cache'><option value='1'>Yes</option><option value='0'>No</option></select>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Header Relationship:</h3>Optional relationship for the header of the template.  Needs to have the same primary form as the main relationship. 
+	</td>
+	<td>
+	  <select name='header_relationship'><option value=''>No Relationship  Selected</option></select>
+	  <br/>
+	  <span name='has_header_relationship' ifset='true'><a name='header_relationship_link'>Edit Relationship</a></span>
+	  
+	</td>
+      </tr>
+    </table>
+    <h2>ODT Template Options</h2>
+    <table class='multiFormTable' cellpadding="0" cellspacing="0" border="0">
+      <tr>
+	<td>
+	  <h3>ODT Template:</h3>Select or upload an ODT Template
+	</td>
+	<td>
+	  <input name='do_upload' value='1' type='checkbox'/>Upload File <input name='upload' type='file'>
+	  <span name='has_download' ifset='true'><a name='download_link'>Download</a></span>
+	  <hr/>
+	  <input name='do_select' value='1' type='checkbox'/>Select Existing Template <select name='select'/>
+	  <br/>
+	  <span name='has_template' ifset='true'><a name='template_link'>Download Template</a></span>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Template Segment Style</h3>Controls how multiple rows of data are applied to the template.  "Global" means that the entire ODT template is repeated.  
+	  "Report Row" means that there is an expected <pre> [!-- BEGIN report_row --] Stuff Goes Here [!-- END report_row --]</pre>section in the ODT template used for each row of data.
+	</td>
+	<td>
+	  <select name='segment_style'><option value='global'>Global</option><option value='report_row'>Report Row</option></select>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Segment Break</h3>Break to use between rows
+	</td>
+	<td>
+	  <select name='segment_break'><option value='page'>Page</option><option value='line'>Line</option></select>
+	</td>
+      </tr>
+    </table>
+    <h2>Template Conversion Options</h2>
+    <table class='multiFormTable' cellpadding="0" cellspacing="0" border="0">
+      <tr>
+	<td>
+	  <h3>Format</h3>Output Format.  The default format is ODT.  If you would like other formats, you will need to have unoconv installed.
+	</td>
+	<td>
+	  <select name='format'><option value=''>Default Formant (ODT file)</option></select>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Export Options</h3>Export options to apply to UnoConv.  The available options depend on the export format (e.g. pdf) that you are using.  
+	</td>
+	<td>
+	  <input name='export_options'/>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Connection Options</h3>Connection details for running unoconv on remote server.
+	</td>
+	<td>
+	  <input name='connection'/>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>UnoConv Temporary Directory</h3>Specify the temporary directory to process unoconv in.  Intended for use with remotely mounted drives.
+	</td>
+	<td>
+	  <input name='tmp_dir'/>
+	</td>
+      </tr>
+
+    </table>
+
+    
+    
+    <span id='fields'>
+      <h2><a id="fields_link" href=''>Required Fields</a></h2>
+      If a a required field is not set, the template will not be generated.
+      <div class='indented' id='fields_ajax'>
+      </div>
+    </span>
+    
+  </div>
+
+
+</div>

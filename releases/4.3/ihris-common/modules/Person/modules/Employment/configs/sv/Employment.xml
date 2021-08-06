@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEmployment" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEmployment" path="/I2CE" locale="sv">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="sv">
+      <configuration name="person_can_view_child_form_employment" locale="sv"></configuration>
+      <configuration name="person_can_edit_child_form_employment" locale="sv"></configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="employment">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sv">
+            <value>Lägg till/uppdatera arbetshistoria</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="employment">
+          <configuration name="display" values="single" locale="sv">
+            <value>Arbetshistoria</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Employment">
+          <configurationGroup name="fields">
+            <configurationGroup name="company_name">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Företagsnamn</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="company_address">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Företagsadress</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="company_phone">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Företagets telefon</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Startdatum</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_wage">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Startlön</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_position">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Startposition</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Slutdatum (lämna tomt om den fortfarande är anställd)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_wage">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Slutlön</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_position">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Slutposition</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="supervisor">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Handledare</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="contact_ok">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:OK att kontakta?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="responsibilities">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Arbetsansvar</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reason_for_leaving">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Anledning till avsked</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="DHIS_Metadata" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="DHIS_Metadata" path="/" locale="uk">
+    <version>4.3.0.1</version>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <configurationGroup name="dhis_submit">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="uk">
+            <value>Подати до DHIS</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="dhis_metadata">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="uk">
+            <value>DHIS Завантаження Метаданих</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="uk">
+      <configuration name="can_edit_database_list_dhis_orgunit" locale="uk"></configuration>
+      <configuration name="can_view_database_list_dhis_orgunit" locale="uk"></configuration>
+      <configuration name="can_edit_database_list_dhis_data_element" locale="uk"></configuration>
+      <configuration name="can_view_database_list_dhis_data_element" locale="uk"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="dhis_data_element">
+          <configuration name="display" values="single" locale="uk">
+            <value>Елемент Даних</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="dhis_orgunit">
+          <configuration name="display" values="single" locale="uk">
+            <value>DHIS організаційний підрозділ</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_DHIS_CodedList">
+          <configurationGroup name="fields">
+            <configurationGroup name="dhis_uid">
+              <configuration name="headers" type="delimited" locale="uk"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

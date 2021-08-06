@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonDemographic">
+  <metadata>
+    <displayName>iHRIS Person Demographic</displayName>
+    <className>iHRIS_Module_PersonDemographic</className>
+    <category>Application Component</category>
+    <description>A Person's Demographic</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="PersonDemographic" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_demographic" locale="en_US">
+        <value>Can view demographic child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_demographic" locale="en_US">
+        <value>Can edit demographic child forms of a person</value>
+      </configuration>
+      <configuration name="can_edit_database_list_marital_status" locale="en_US">
+        <version>3.2.9</version>
+        <value>Can edit the department marital status list.</value>
+      </configuration>
+      <configuration name="can_view_database_list_marital_status" locale="en_US">
+        <version>3.2.9</version>
+        <value>Can view the department marital status list.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_demographic" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_demographic" values="many">
+        <value>person_can_view_child_form_demographic</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <version>3.2.8</version>
+        <value>person_can_view_child_form_demographic</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>3.2.8</version>
+        <value>person_can_edit_child_form_demographic</value>
+      </configuration>
+      <configuration name="can_edit_database_list_marital_status" values="many">
+        <version>3.2.9</version>
+        <value>can_view_database_list_marital_status</value>
+        <value>can_edit_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" values="many">
+        <version>3.2.9</version>
+        <value>can_edit_database_list_marital_status</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" values="many">
+        <version>3.2.9</version>
+        <value>can_view_database_list_marital_status</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <displayName>Forms Data</displayName>
+      <description>Form data saved in magic data</description>
+      <version>3.2.5</version>
+      <configurationGroup name="gender">
+        <displayName>Gender</displayName>
+        <description>The gender form data</description>
+        <configurationGroup name="F">
+          <configuration name="last_modified">
+            <version>3.2.6</version>
+            <value>2009-04-27 1:23:45</value>
+          </configuration>
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:Female</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="M">
+          <configuration name="last_modified">
+            <version>3.2.6</version>
+            <value>2009-04-27 1:23:45</value>
+          </configuration>
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:Male</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="demographic">
+        <displayName>Demographic Page</displayName>
+        <description>The page 'demographic' which has the action of: Add/Update Demographic Information</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Demographic Information</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>demographic</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- demographic -->
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <version>3.2.5</version>
+        <configurationGroup name="demographic">
+          <displayName>Demographic Information</displayName>
+          <description>The Demographic Information Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Demographic</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Demographic Information</value>
+          </configuration>
+        </configurationGroup>
+        <!-- demographic -->
+        <configurationGroup name="marital_status">
+          <displayName>Marital Status</displayName>
+          <description>The Marital Status Form</description>
+          <version>3.2.5</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Marital Status</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <!-- marital_status -->
+        <configurationGroup name="gender">
+          <displayName>Gender</displayName>
+          <description>The Gender Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Gender</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <!-- gender -->
+        <configurationGroup name="person">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>demographic</value>
+            </configuration>
+            <configuration name="child_forms_limit" type="delimited">
+              <version>4.2.1.1</version>
+              <value>demographic:1</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- person -->
+      </configurationGroup>
+      <!-- end of  forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Demographic">
+          <displayName>Configuration for the class 'iHRIS_Demographic'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="birth_date">
+              <displayName>The field 'birth_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Date of Birth</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default value for this field as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="gender">
+              <displayName>The field 'gender'</displayName>
+              <version>3.2.5</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Gender</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="marital_status">
+              <displayName>The field 'marital_status'</displayName>
+              <version>3.2.5</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Marital Status</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_Demographic -->
+      </configurationGroup>
+      <!-- end of  formClasses-->
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

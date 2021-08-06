@@ -1,0 +1,21 @@
+<div id="siteContent">
+  <form id="form1" method="post" action="login">
+  <table border="0" cellspacing="0" cellpadding="0" class="loginTable"><tr><td colspan="2"><h2>请登录</h2>
+        <span style="font-size: 12px;">请输入您的用户名和密码。</span>
+        <hr><span id="error_message" name="error_message"></span></td>
+    </tr><tr><th>用户名:</th>
+      <th>密码:</th>
+    </tr><tr><td><input type="text" name="username"></td>
+      <td><input type="password" name="password"></td>
+    </tr><tr><td colspan="2">
+      <input type="submit" value="Login" name="submit" class="button"><span class="forgot"><a href="forgot">忘了用户名或密码？</a></span></td>
+    </tr></table></form>
+  <span type="module" name="ManageSelfServiceApplication" ifenabled="true">
+    <h2>目前的职位</h2>
+    <!--    <span type='module' name='SelfService' if='canSelfRegister()'><a href="SelfService/register">Register</a></span> -->
+    <p></p>
+    <span type="module" name="SelfService" if='canViewReport("open_position")'><a href="SelfService/view/open_position">查看开放式的职位</a></span>
+  </span>
+
+</div>
+

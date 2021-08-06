@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="MohAPI">
+  <metadata>
+    <displayName>API</displayName>
+    <category>Application Component</category>
+    <description>Practitioner Data Supplier</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0.5</version>
+    <!--<requirement name="FHIR">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>-->
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+  </metadata>
+  <configurationGroup name="MohAPI" path="/I2CE">
+   <configurationGroup name="tasks" path="/I2CE/tasks">
+      <version>4.3.0.5</version>
+      <configurationGroup name="task_description" locale="en_US">
+        <configuration name="api_can_access_all" locale="en_US" values="single" type="string">
+          <value>Allows access to api</value>
+        </configuration>
+        <configuration name="api_can_access_practitioner" locale="en_US" values="single" type="string">
+          <value>Allows access to api for Practitioners </value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="task_trickle_down">
+      <version>4.3.0.1</version>
+        <configuration name="api_can_access_all" values="many" type="string">
+          <value>api_can_access_practitioner</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="role_trickle_down">
+        <configuration name="admin" values="many" type="string">
+          <status>uniquemerge:true</status>
+          <value>api_can_access_all</value>
+        </configuration>
+        <configuration name="hr_manager" values="many" type="string">
+          <status>uniquemerge:true</status>
+          <value>api_can_access_all</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <version>4.3.0</version>
+      <configurationGroup name="api">
+        <configuration name="class" values="single" type="string">
+          <value>iHRIS_Page_DataSupplier</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <value>empty</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="resource" values="single" type="string">
+            <value>Practitioner</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <version>4.3.0</version>
+            <value>admin</value>
+          </configuration>
+          <configuration name="tasks" values="many" type="string">
+            <version>4.3.0.3</version>
+            <value>api_can_access_practitioner</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="Department">
+      <version>4.3.0.3</version>
+        <configuration name="class" values="single" type="string">
+          <value>iHRIS_Page_DataSupplier</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <value>empty</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="resource" values="single" type="string">
+            <value>Department</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <version>4.3.0.3</version>
+            <value>admin</value>
+          </configuration>
+          <configuration name="tasks" values="many" type="string">
+            <version>4.3.0.3</version>
+            <value>api_can_access_practitioner</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="Facility">
+      <version>4.3.0.5</version>
+        <configuration name="class" values="single" type="string">
+          <value>iHRIS_Page_DataSupplier</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <value>empty</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="resource" values="single" type="string">
+            <value>Facility</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <version>4.3.0.5</version>
+            <value>admin</value>
+          </configuration>
+          <configuration name="tasks" values="many" type="string">
+            <version>4.3.0.5</version>
+            <value>api_can_access_practitioner</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="Designation">
+      <version>4.3.0.5</version>
+        <configuration name="class" values="single" type="string">
+          <value>iHRIS_Page_DataSupplier</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <value>empty</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="resource" values="single" type="string">
+            <value>Designation</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <version>4.3.0.5</version>
+            <value>admin</value>
+          </configuration>
+          <configuration name="tasks" values="many" type="string">
+            <version>4.3.0.5</version>
+            <value>api_can_access_practitioner</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+
+    </configurationGroup>
+
+  </configurationGroup>
+</I2CEConfiguration>

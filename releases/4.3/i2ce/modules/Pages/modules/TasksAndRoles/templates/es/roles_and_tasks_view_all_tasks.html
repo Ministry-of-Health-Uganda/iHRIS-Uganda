@@ -1,0 +1,21 @@
+<div id="siteContent">
+  <h1>Administrar Tareas</h1>
+  <h2>Tareas Existentes</h2>
+  <ul id="task_list"></ul><form method="post" action="tasks-roles/tasks" id="add_user_task">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Añadir una nueva tarea
+	</th>
+      </tr><tr><td>
+	  <label>Nombre corto de la tarea:</label> Un nombre corto que consista de letras, números, -, . y _ usado para referirse a la tarea en páginas y plantillas.
+	</td>
+	<td>
+	  <input type="text" id="task_short_name" name="task_short_name" class="validate=[notinlist,nonempty,magicdatakey]"></td>
+      </tr><tr><td>
+	  <label>Descripción de la Tarea:</label> Una descripción corta de esta tarea.
+	</td>
+	<td>
+	  <input type="text" name="task_description" class="validate=[nonempty]"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Create"></td>
+      </tr></table></form>
+</div>

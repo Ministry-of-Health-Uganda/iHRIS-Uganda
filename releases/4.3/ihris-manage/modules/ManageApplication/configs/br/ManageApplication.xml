@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Application" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Application" path="/I2CE" locale="br">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="br">
+      <configuration name="app_felon" path="application/felony_circumstances/required"></configuration>
+      <configuration name="app_hours" path="application/hours/required"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="br">
+      <configuration name="person_can_view_child_form_position_decision" locale="br">
+        <value>A c'hall diskwel isfurmskrid divizout ar post evit un den</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_decision" locale="br">
+        <value>a c'hall kemmañ an isfurmskrid divizout post un den</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_position_interview" locale="br"></configuration>
+      <configuration name="person_can_edit_child_form_position_interview" locale="br"></configuration>
+      <configuration name="person_can_view_child_form_application" locale="br"></configuration>
+      <configuration name="person_can_edit_child_form_application" locale="br"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="application">
+          <configuration name="display" values="single" locale="br">
+            <value>Emstriver</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_interview">
+          <configuration name="display" values="single" locale="br">
+            <value>Emziviz a denn d'ar post</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_decision">
+          <configuration name="display" values="single" locale="br">
+            <value>Diviz a denn d'ar post</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Applicant">
+          <configurationGroup name="fields">
+            <configurationGroup name="position">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Post(où)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Ha lakaet oc'h bet evel kiriek d'un torfed dija ?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony_circumstance">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Ma respontit "ya", displegit an traoù.</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="other_info">
+              <configuration name="headers" type="delimited" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="hear">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Penaos ho peus klevet anv eus an digoradur-mañ ?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Pegoulz e c'hallit kregiñ ?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="desired_wage">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Peseurt gopr ho peus c'hoant da gaout</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="full_time">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Hag emaoc'h o klask un implij leunamzer ?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hours">
+              <configuration name="headers" type="delimited" locale="br"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionInterview">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Deiziad an emziviz</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Tud war al lec'h</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Evezhiadennoù</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionDecision">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Deiziad an diviz</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="offer">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Ober ur c'hinnig labour ?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Evezhiadennoù</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="application">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="br">
+            <value>Ouzhpennañ/Hizivaat un emstrivadur</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_decision">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="br">
+            <value>Ouzhpennañ/Hizivaat un diviz post</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_interview">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="br">
+            <value>Ouzhpennañ/Hizivaat un emziviz evit ur post</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

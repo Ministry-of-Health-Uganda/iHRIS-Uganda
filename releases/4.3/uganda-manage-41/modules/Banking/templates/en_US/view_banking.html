@@ -1,0 +1,27 @@
+<div task='person_can_view_child_form_banking'>
+  <div class="editRecord">
+    <p>Edit This Information</p>
+    <ul>
+      <li task='person_can_edit_child_form_banking'>
+	<span type="form" ifset="banking:id" name="banking:id" href="banking?id=" parent="true">
+	  Update this Information
+	</span>
+      </li>
+    </ul>
+  </div> <!-- editRecord -->
+  
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tbody>
+	<tr>
+	  <th colspan="2">Bank Details</th>
+	</tr>
+	  <span type="form" name="banking:account_name" showhead="default"></span>
+      <span type="form" name="banking:account_number" showhead="default" class="even" ></span>
+      <span type="form" name="banking:account_type" showhead="default"></span>
+      <span type="form" name="banking:bank_name" showhead="default" class="even" ></span>
+      <span type="form" name="banking:bank_branch" showhead="default"></span>
+      </tbody>
+    </table>
+  </div> <!-- dataTable -->
+</div>

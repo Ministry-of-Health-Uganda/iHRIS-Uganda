@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Application" path="/I2CE">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Application" path="/I2CE" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="en_US">
+      <configuration name="app_felon" path="application/felony_circumstances/required">
+        <value>You selected you were convicted of a felony but didn't describe the circumstances.</value>
+      </configuration>
+      <configuration name="app_hours" path="application/hours/required">
+        <value>You selected not full time, but you didn't give what hours you are available.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_position_decision" locale="en_US">
+        <value>Can view position decision child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_decision" locale="en_US">
+        <value>Can edit position decision child forms of a person</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_position_interview" locale="en_US">
+        <value>Can view position interview child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_interview" locale="en_US">
+        <value>Can edit position interview child forms of a person</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_application" locale="en_US">
+        <value>Can view application child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_application" locale="en_US">
+        <value>Can edit application child forms of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="application">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Applicant</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_interview">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Position Interview</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_decision">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Position Decision</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Applicant">
+          <configurationGroup name="fields">
+            <configurationGroup name="position">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Position(s)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Have you ever been convicted of a felony?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony_circumstance">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:If yes, give the circumstances.</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="other_info">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:In addition to your work history, are there other skills, qualifications or experience we should consider?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hear">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:How did you hear of this opening?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:When can you start?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="desired_wage">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Desired Wage</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="full_time">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Are you looking for full-time employment?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hours">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:If no, what hours are you available?</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionInterview">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Date of Interview</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:People Attending</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Comments</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionDecision">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Date of Decision</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="offer">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Make a Job Offer?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Comments</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="application">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update Application</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_decision">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update Position Decision</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_interview">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update Position Interview</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

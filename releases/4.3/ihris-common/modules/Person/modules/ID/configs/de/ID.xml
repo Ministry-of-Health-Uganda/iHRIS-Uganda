@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonID" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonID" path="/I2CE" locale="de">
+    <version>4.2.1.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="de">
+      <configuration name="exp_date" path="person_id/expiration_date/bad_date" locale="de">
+        <value>Das Ablaufdatum muss nach dem Ausstelldatum liegen.</value>
+      </configuration>
+      <configuration name="wrong_pattern" path="person_id/id_num/wrong_pattern" locale="de">
+        <value>Diese ID stimmt nicht mit dem ID-Typ-Muster überein</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="de">
+      <configuration name="person_can_view_child_form_person_id" locale="de">
+        <value>Kann das Datenblatt mit den Identifizierungsinformationen zu einer Person einsehen</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_id" locale="de">
+        <value>Kann das Datenblatt mit den Identifizierungsinformationen zu einer Person bearbeiten</value>
+      </configuration>
+      <configuration name="can_edit_database_list_id_type" locale="de">
+        <value>Kann die Datenbankliste mit den Identifizierungsarten bearbeiten</value>
+      </configuration>
+      <configuration name="can_view_database_list_id_type" locale="de">
+        <value>Kann die Datenbankliste mit den Identifizierungsarten einsehen</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_id">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="de">
+            <value>Identifizierung hinzufügen/aktualisieren</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/forms">
+      <configurationGroup name="id_type">
+        <configuration name="display" values="single" locale="de">
+          <value>Identifizierungsart</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="person_id">
+        <configuration name="display" values="single" locale="de">
+          <value>Personenidentifizierung</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <configuration name="description" locale="de">
+            <value>Dieses Datenblatt enthält grundlegende Informationen zur Identifizierung einer Person</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/formClasses">
+      <configurationGroup name="iHRIS_PersonID">
+        <configurationGroup name="fields">
+          <configurationGroup name="id_type">
+            <configuration name="headers" type="delimited" locale="de">
+              <value>default:Identifizierungsart</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="id_num">
+            <configuration name="headers" type="delimited" locale="de">
+              <value>default:Identifizierungsnummer</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="issue_date">
+            <configuration name="headers" type="delimited" locale="de">
+              <value>default:Ausstelldatum</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="expiration_date">
+            <configuration name="headers" type="delimited" locale="de">
+              <value>default:Ablaufdatum</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="country">
+            <configuration name="headers" type="delimited" locale="de">
+              <value>default:Ausstellender Staat</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="place">
+            <configuration name="headers" type="delimited" locale="de">
+              <value>default:Ort der Ausstellung</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="iHRIS_PersonID_Type">
+        <configurationGroup name="fields">
+          <configurationGroup name="pattern">
+            <configuration name="headers" type="delimited" locale="de">
+              <value>default:Muster (regulärer Ausdruck)</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

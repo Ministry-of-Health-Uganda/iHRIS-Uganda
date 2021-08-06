@@ -1,0 +1,37 @@
+<div id="siteContent">
+    <h1>데이터베이스 관리</h1>
+
+    <span type="module" ifenabled="true" name="Person">    
+	  <h3>인구 통계 목록</h3>
+	  <ul><li><a href="lists?type=id_type">식별 유형</a></li>
+	    <li><a href="lists?type=marital_status">결혼 여부</a></li>
+	  </ul></span>
+    <span type="module" ifenabled="true" name="Geography">    
+      <h3>지리 정보</h3>
+      <ul><li><a href="lists?type=country">국가</a></li>
+        <li><a href="lists?type=region">지역</a></li>
+        <li><a href="lists?type=district">구역(District)</a></li>
+        <li><a href="lists?type=county">카운티</a></li>
+        <span type="module" ifenabled="true" name="Currency">    
+          <li><a href="lists?type=currency">통화:</a></li>
+        </span>
+      </ul></span>
+    <h3>추가 정보</h3>
+    <ul><span type="module" ifenabled="true" name="simple-competency">	
+	  <li><a href="lists?type=competency_type">역량 유형</a></li>
+	  <li><a href="lists?type=competency&amp;field=competency_type">역량</a></li>
+    </span>
+    <span type="module" name="CEUs" ifenabled="true">
+	  <li><a href="lists?type=continuing_education_course">평생 교육 과정</a></li>
+    </span>
+    <span type="module" name="training-institution" ifenabled="true">
+	  <li><a href="lists?type=training_institution">교육 기관</a></li>
+	  <li><a href="lists?type=training_funder">Training Funder</a></li>
+    </span>
+    </ul><span role="admin">
+      <span type="module" name="ihris-common-MassDeletePerson" ifenabled="true">
+        <h2>대량 삭제</h2>
+        <ul><li><a href="delete_by_search">사람으로 검색</a></li>
+        </ul></span>
+    </span>
+</div>

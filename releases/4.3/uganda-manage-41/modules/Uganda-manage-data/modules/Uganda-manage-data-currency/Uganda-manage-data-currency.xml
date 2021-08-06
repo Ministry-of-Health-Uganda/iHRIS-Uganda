@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-manage-data-currency">
+  <metadata>
+    <displayName>Uganda Manage data for currency</displayName>
+    <description>Data for form: currency</description>
+    <version>4.1.0.0</version>
+    <requirement name="Currency">
+      <atLeast version="4.1" />
+    </requirement>
+    <requirement name="Uganda-manage-data-country">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <configurationGroup name="Uganda-manage-data-currency" path="/I2CE/formsData/forms/currency">
+    <displayName>Form data: currency</displayName>
+    <configurationGroup name="UGX">
+      <displayName>UGX</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:02:24</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="code">
+          <value>UGX</value>
+        </configuration>
+        <configuration name="name">
+          <value>Ugandan Shillings</value>
+        </configuration>
+        <configuration name="country">
+          <value>country|UG</value>
+        </configuration>
+        <configuration name="symbol">
+          <value>\-</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

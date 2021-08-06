@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="accident" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="accident" path="/I2CE" locale="br">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="br">
+      <configuration name="accident_date" path="accident/end_date/bad_date">
+        <value>Ret eo d'an deiziad dibenn bezañ war-lerc'h an deiziad kregiñ.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_accident" locale="br">
+        <value>Gallout a ra aozañ ar gloazioù hag ar gwallzarvoudoù labour lakaet war gwall unan bennak</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_accident" locale="br">
+        <value>Gallout a ra aozañ ar gloazioù hag ar gwallzarvoudoù labour lakaet war gwall unan bennak</value>
+      </configuration>
+      <configuration name="can_edit_database_list_accident_type" locale="br">
+        <value>Aozañ roll ar seurtoù gwallzarvoudoù labour</value>
+      </configuration>
+      <configuration name="can_view_database_list_accident_type" locale="br">
+        <value>Diskwel roll ar seurtoù gwallzarvoudoù labour</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="accident">
+          <configuration name="display" values="single" locale="br">
+            <value>Gwallzarvoud</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="accident_type">
+          <configuration name="display" values="single" locale="br">
+            <value>Seurt gwallzarvoud war al lec'h labour</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Accident">
+          <configurationGroup name="fields">
+            <configurationGroup name="occurence_date">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Deiziad an darvoud</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="accident_type">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Seurt gwallzarvoud</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Deroù an dedalvezaduster</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Fin an dedalvezaduster</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="followup">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Heuliañ dre ret</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_involved">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Tud empleget</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="home" path="/modules/accident/page/home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="br">
+            <value>Ouzhpennañ/hizivaat ur gwallzarvoud war al lec'h labour</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

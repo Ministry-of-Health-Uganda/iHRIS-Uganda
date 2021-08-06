@@ -1,0 +1,16 @@
+#!/bin/bash
+set -x
+
+action="$1"
+cur_version="$2"
+
+
+. /usr/share/debconf/confmodule 
+
+. /usr/share/dbconfig-common/dpkg/config.mysql
+
+if ! dbc_go ihris-manage-site-demo $@ ; then
+        echo 'Automatic configuration of ihris-manage-site-demo using dbconfig-common failed!'
+fi
+
+exit 0

@@ -1,0 +1,1038 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="training_participation_report">
+  <metadata>
+    <displayName>Training Participation Report</displayName>
+    <description>Training Participation Report with Participant List. Note, this module referes to positions and facilities and so is not suitable for qualify</description>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <erase path="/modules/CustomReports/relationships/training_participation">
+    <lessThan version="4.1.11.2013.03.19" />
+  </erase>
+  <erase path="/modules/CustomReports/reports/training_participation">
+    <lessThan version="4.1.11.2013.03.19" />
+  </erase>
+  <erase path="/modules/CustomReports/reportViews/training_participants">
+    <lessThan version="4.1.11.2013.03.19" />
+  </erase>
+  <requirement name="CustomReports-PrintedReportsODT">
+    <atLeast version="4.1" />
+    <lessThan version="4.2" />
+  </requirement>
+  <configurationGroup name="training_participation_report" path="/modules/CustomReports">
+    <configurationGroup name="training_participation" path="//modules/CustomReports/relationships/training_participation">
+      <displayName>Export</displayName>
+      <configuration name="form">
+        <displayName>Form</displayName>
+        <value>person_scheduled_training_course</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <version>4.2.0.1</version>
+        <value>Training Participation</value>
+      </configuration>
+      <configuration name="description" locale="en_US">
+        <displayName>Description</displayName>
+        <value>List of all training partipipation</value>
+      </configuration>
+      <configurationGroup name="where">
+        <displayName>Where</displayName>
+        <configuration name="operator">
+          <displayName>Operator</displayName>
+          <value>OR</value>
+        </configuration>
+        <configurationGroup name="operand">
+          <displayName>Operand</displayName>
+          <configurationGroup name="0">
+            <displayName>0</displayName>
+            <configuration name="operator">
+              <displayName>Operator</displayName>
+              <value>FIELD_LIMIT</value>
+            </configuration>
+            <configuration name="style">
+              <displayName>Style</displayName>
+              <value>null</value>
+            </configuration>
+            <configuration name="field">
+              <displayName>Field</displayName>
+              <value>attending</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="1">
+            <displayName>1</displayName>
+            <configuration name="operator">
+              <displayName>Operator</displayName>
+              <value>FIELD_LIMIT</value>
+            </configuration>
+            <configuration name="style">
+              <displayName>Style</displayName>
+              <value>yes</value>
+            </configuration>
+            <configuration name="field">
+              <displayName>Field</displayName>
+              <value>attending</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="joins">
+        <displayName>Joins</displayName>
+        <configurationGroup name="person">
+          <displayName>Person</displayName>
+          <configuration name="limit_one">
+            <displayName>Limit One</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>person</value>
+          </configuration>
+          <configuration name="display_name" locale="en_US">
+            <displayName>Display Name</displayName>
+            <value>person</value>
+          </configuration>
+          <configuration name="join_style">
+            <displayName>Join Style</displayName>
+            <value>parent</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <displayName>Joins</displayName>
+            <configurationGroup name="person_position">
+              <displayName>Person Position</displayName>
+              <configuration name="limit_one">
+                <displayName>Limit One</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form">
+                <displayName>Form</displayName>
+                <value>person_position</value>
+              </configuration>
+              <configuration name="display_name" locale="en_US">
+                <displayName>Display Name</displayName>
+                <value>Current Position</value>
+              </configuration>
+              <configuration name="join_style">
+                <displayName>Join Style</displayName>
+                <value>child</value>
+              </configuration>
+              <configurationGroup name="where">
+                <displayName>Where</displayName>
+                <configuration name="operator">
+                  <displayName>Operator</displayName>
+                  <value>FIELD_LIMIT</value>
+                </configuration>
+                <configuration name="style">
+                  <displayName>Style</displayName>
+                  <value>max_parent</value>
+                </configuration>
+                <configuration name="field">
+                  <displayName>Field</displayName>
+                  <value>start_date</value>
+                </configuration>
+                <configurationGroup name="data">
+                  <displayName>Data</displayName>
+                  <configuration name="linked_field">
+                    <displayName>Linked Field</displayName>
+                    <value>parent</value>
+                  </configuration>
+                  <configuration name="offset">
+                    <displayName>Offset</displayName>
+                    <value>0</value>
+                  </configuration>
+                  <configuration name="allow_null">
+                    <displayName>Allow Null</displayName>
+                    <value>0</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="joins">
+                <displayName>Joins</displayName>
+                <configurationGroup name="position">
+                  <displayName>Position</displayName>
+                  <configuration name="limit_one">
+                    <displayName>Limit One</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="form">
+                    <displayName>Form</displayName>
+                    <value>position</value>
+                  </configuration>
+                  <configuration name="display_name" locale="en_US">
+                    <displayName>Display Name</displayName>
+                    <value>Position</value>
+                  </configuration>
+                  <configurationGroup name="join_data">
+                    <displayName>Join Data</displayName>
+                    <configuration name="field">
+                      <displayName>Field</displayName>
+                      <value>position</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configuration name="join_style">
+                    <displayName>Join Style</displayName>
+                    <value>parent_field</value>
+                  </configuration>
+                  <configurationGroup name="joins">
+                    <displayName>Joins</displayName>
+                    <configurationGroup name="facility">
+                      <displayName>Facility</displayName>
+                      <configuration name="limit_one">
+                        <displayName>Limit One</displayName>
+                        <value>1</value>
+                      </configuration>
+                      <configuration name="form">
+                        <displayName>Form</displayName>
+                        <value>facility</value>
+                      </configuration>
+                      <configuration name="display_name" locale="en_US">
+                        <displayName>Display Name</displayName>
+                        <value>facility</value>
+                      </configuration>
+                      <configurationGroup name="join_data">
+                        <displayName>Join Data</displayName>
+                        <configuration name="field">
+                          <displayName>Field</displayName>
+                          <value>facility</value>
+                        </configuration>
+                      </configurationGroup>
+                      <configuration name="join_style">
+                        <displayName>Join Style</displayName>
+                        <value>parent_field</value>
+                      </configuration>
+                      <configurationGroup name="joins">
+                        <displayName>Joins</displayName>
+                        <configurationGroup name="facility_contact">
+                          <displayName>Facility Contact</displayName>
+                          <configuration name="limit_one">
+                            <displayName>Limit One</displayName>
+                            <value>1</value>
+                          </configuration>
+                          <configuration name="form">
+                            <displayName>Form</displayName>
+                            <value>facility_contact</value>
+                          </configuration>
+                          <configuration name="display_name" locale="en_US">
+                            <displayName>Display Name</displayName>
+                            <value>Facility Contact</value>
+                          </configuration>
+                          <configuration name="join_style">
+                            <displayName>Join Style</displayName>
+                            <value>child</value>
+                          </configuration>
+                        </configurationGroup>
+                      </configurationGroup>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="join_data">
+                <displayName>Join Data</displayName>
+                <configuration name="displaystyle">
+                  <displayName>Displaystyle</displayName>
+                  <value>default</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="drop_empty">
+                <displayName>Drop Empty</displayName>
+                <value>0</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person_contact">
+              <displayName>Person Contact</displayName>
+              <configuration name="limit_one">
+                <displayName>Limit One</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form">
+                <displayName>Form</displayName>
+                <value>person_contact_personal</value>
+              </configuration>
+              <configuration name="display_name" locale="en_US">
+                <displayName>Display Name</displayName>
+                <value>Person Contact</value>
+              </configuration>
+              <configuration name="join_style">
+                <displayName>Join Style</displayName>
+                <value>child</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="join_data">
+            <displayName>Join Data</displayName>
+            <configuration name="displaystyle">
+              <displayName>Displaystyle</displayName>
+              <value>default</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="scheduled_course">
+          <displayName>Scheduled Course</displayName>
+          <configuration name="limit_one">
+            <displayName>Limit One</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>scheduled_training_course</value>
+          </configuration>
+          <configuration name="display_name" locale="en_US">
+            <displayName>Display Name</displayName>
+            <value>Scheduled Course</value>
+          </configuration>
+          <configurationGroup name="join_data">
+            <displayName>Join Data</displayName>
+            <configuration name="field">
+              <displayName>Field</displayName>
+              <value>scheduled_training_course</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="join_style">
+            <displayName>Join Style</displayName>
+            <value>parent_field</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <displayName>Joins</displayName>
+            <configurationGroup name="training_course">
+              <displayName>Training Course</displayName>
+              <configuration name="limit_one">
+                <displayName>Limit One</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form">
+                <displayName>Form</displayName>
+                <value>training_course</value>
+              </configuration>
+              <configuration name="display_name" locale="en_US">
+                <displayName>Display Name</displayName>
+                <value>Training Course</value>
+              </configuration>
+              <configurationGroup name="join_data">
+                <displayName>Join Data</displayName>
+                <configuration name="field">
+                  <displayName>Field</displayName>
+                  <value>training_course</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="join_style">
+                <displayName>Join Style</displayName>
+                <value>parent_field</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="training_participation" path="//modules/CustomReports/reports/training_participation">
+      <displayName>Export</displayName>
+      <configuration name="relationship">
+        <displayName>Relationship</displayName>
+        <value>training_participation</value>
+      </configuration>
+      <configurationGroup name="meta">
+        <displayName>Meta</displayName>
+        <configuration name="display_name" locale="en_US">
+          <displayName>Display Name</displayName>
+          <value>Training Particpation</value>
+        </configuration>
+        <configuration name="category">
+          <displayName>Category</displayName>
+          <value>Training Reports</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <displayName>Reporting Forms</displayName>
+        <configurationGroup name="primary_form">
+          <displayName>Primary Form</displayName>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="scheduled_training_course">
+              <version>4.1.11.2013.03.20</version>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="equals">
+                  <displayName>Equals</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Course Instance</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Course Instance</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="training_course_evaluation">
+              <displayName>Training Course Evaluation</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Evaluation</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="person">
+          <displayName>Person</displayName>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="firstname">
+              <displayName>Firstname</displayName>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="contains">
+                  <displayName>Contains</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>First Name</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>First Name</value>
+              </configuration>
+              <configuration name="link">
+                <displayName>Link</displayName>
+                <value>view?id=</value>
+              </configuration>
+              <configuration name="link_append">
+                <displayName>Link Append</displayName>
+                <value>person+id</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="surname">
+              <displayName>Surname</displayName>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="contains">
+                  <displayName>Contains</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Surname</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Surname</value>
+              </configuration>
+              <configuration name="link">
+                <displayName>Link</displayName>
+                <value>view?id=</value>
+              </configuration>
+              <configuration name="link_append">
+                <displayName>Link Append</displayName>
+                <value>person+id</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact">
+          <displayName>Person Contact</displayName>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="address">
+              <displayName>Address</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Personal Address</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="telephone">
+              <displayName>Telephone</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Personal Telephone</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_position">
+          <displayName>Person Position</displayName>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position">
+          <displayName>Position</displayName>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="facility">
+              <displayName>Facility</displayName>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="equals">
+                  <displayName>Equals</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Facility</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Facility</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="title">
+              <displayName>Title</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Position</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <displayName>Facility</displayName>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="name">
+              <displayName>Name</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Facility</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="facility_contact">
+          <displayName>Facility Contact</displayName>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="address">
+              <displayName>Address</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Facility Address</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="telephone">
+              <displayName>Telephone</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Facility Telephone</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="scheduled_course">
+          <displayName>Scheduled Course</displayName>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="end_date">
+              <displayName>End Date</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>End Date</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <displayName>Start Date</displayName>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="greaterthan_equals">
+                  <displayName>Greaterthan Equals</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Start Date On Or After</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="lessthan">
+                  <displayName>Lessthan</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Start Date Before</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Start Date</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="training_course">
+              <displayName>Training Course</displayName>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="equals">
+                  <displayName>Equals</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Training Course</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Training Course</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="training_course">
+          <displayName>Training Course</displayName>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="training_funder">
+              <displayName>Training Funder</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Training Funders</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="training_institution">
+              <displayName>Training Institution</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Training Institution</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="training_participants" path="//modules/CustomReports/reportViews/training_participants">
+      <displayName>Export</displayName>
+      <configuration name="report">
+        <displayName>Report</displayName>
+        <value>training_participation</value>
+      </configuration>
+      <configuration name="description" locale="en_US">
+        <displayName>Description</displayName>
+        <value>Training Participation Report</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <displayName>Display Name</displayName>
+        <value>Training Participation</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configurationGroup name="primary_form+training_course_evaluation">
+          <displayName>Primary Form Training Course Evaluation</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person+firstname">
+          <displayName>Person Firstname</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person+surname">
+          <displayName>Person Surname</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact+telephone">
+          <displayName>Person Contact Telephone</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position+facility">
+          <displayName>Position Facility</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position+title">
+          <displayName>Position Title</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="facility+name">
+          <displayName>Facility Name</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="facility_contact+address">
+          <displayName>Facility Contact Address</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="facility_contact+telephone">
+          <displayName>Facility Contact Telephone</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="scheduled_course+training_course">
+          <displayName>Scheduled Course Training Course</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="training_course+training_funder">
+          <displayName>Training Course Training Funder</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="training_course+training_institution">
+          <displayName>Training Course Training Institution</displayName>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configuration name="display_order">
+        <displayName>Display Order</displayName>
+        <value>person+surname,person+firstname,primary_form+training_course_evaluation,person_contact+address,person_contact+telephone,position+facility,position+title,facility+name,facility_contact+address,facility_contact+telephone,scheduled_course+end_date,scheduled_course+start_date,scheduled_course+training_course,training_course+training_funder,training_course+training_institution</value>
+      </configuration>
+      <configuration name="total">
+        <displayName>Total</displayName>
+        <value>0</value>
+      </configuration>
+      <configuration name="disable">
+        <displayName>Disable</displayName>
+        <value>0</value>
+      </configuration>
+      <configurationGroup name="printed_forms">
+        <displayName>Printed Forms</displayName>
+        <configurationGroup name="participant_list">
+          <displayName>Participant List</displayName>
+          <configuration name="displayName">
+            <displayName>Display Name</displayName>
+            <value>Participant List</value>
+          </configuration>
+          <configurationGroup name="template_upload">
+            <displayName>Template Upload</displayName>
+            <configurationGroup name="content">
+              <displayName>Content</displayName>
+              <configuration name="content" binary="1" encoding="base64">
+                <displayName>Content</displayName>
+                <version>4.1.11.2013.03.20.1</version>
+                <value>UEsDBBQAAAgAAHdmc0JexjIMJwAAACcAAAAIAAAAbWltZXR5cGVhcHBsaWNhdGlvbi92bmQub2FzaXMub3BlbmRvY3VtZW50LnRleHRQSwMEFAAACAAAd2ZzQtPYb5bYAwAA2AMAAAgAAABtZXRhLnhtbDw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9IlVURi04Ij8+CjxvZmZpY2U6ZG9jdW1lbnQtbWV0YSB4bWxuczpvZmZpY2U9InVybjpvYXNpczpuYW1lczp0YzpvcGVuZG9jdW1lbnQ6eG1sbnM6b2ZmaWNlOjEuMCIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6bWV0YT0idXJuOm9hc2lzOm5hbWVzOnRjOm9wZW5kb2N1bWVudDp4bWxuczptZXRhOjEuMCIgeG1sbnM6b29vPSJodHRwOi8vb3Blbm9mZmljZS5vcmcvMjAwNC9vZmZpY2UiIHhtbG5zOmdyZGRsPSJodHRwOi8vd3d3LnczLm9yZy8yMDAzL2cvZGF0YS12aWV3IyIgb2ZmaWNlOnZlcnNpb249IjEuMiI+PG9mZmljZTptZXRhPjxtZXRhOmNyZWF0aW9uLWRhdGU+MjAxMy0wMy0xOFQxMToxMDo1NzwvbWV0YTpjcmVhdGlvbi1kYXRlPjxkYzpkYXRlPjIwMTMtMDMtMTlUMDg6NTE6NDc8L2RjOmRhdGU+PG1ldGE6ZWRpdGluZy1kdXJhdGlvbj5QVDE2SDQ4TTI4UzwvbWV0YTplZGl0aW5nLWR1cmF0aW9uPjxtZXRhOmVkaXRpbmctY3ljbGVzPjE1PC9tZXRhOmVkaXRpbmctY3ljbGVzPjxtZXRhOmdlbmVyYXRvcj5MaWJyZU9mZmljZS8zLjYkTWFjT1NYX3g4NiBMaWJyZU9mZmljZV9wcm9qZWN0L2UyOWEyMTQtMmJiZWQ3Mi0wNjIxZGU2LWE5NzUyOGMtOGYwNjZkPC9tZXRhOmdlbmVyYXRvcj48bWV0YTpkb2N1bWVudC1zdGF0aXN0aWMgbWV0YTp0YWJsZS1jb3VudD0iMSIgbWV0YTppbWFnZS1jb3VudD0iMCIgbWV0YTpvYmplY3QtY291bnQ9IjAiIG1ldGE6cGFnZS1jb3VudD0iMSIgbWV0YTpwYXJhZ3JhcGgtY291bnQ9IjExIiBtZXRhOndvcmQtY291bnQ9IjM1IiBtZXRhOmNoYXJhY3Rlci1jb3VudD0iNTM5IiBtZXRhOm5vbi13aGl0ZXNwYWNlLWNoYXJhY3Rlci1jb3VudD0iNTExIi8+PC9vZmZpY2U6bWV0YT48L29mZmljZTpkb2N1bWVudC1tZXRhPlBLAwQUAAgICAB3ZnNCAAAAAAAAAAAAAAAADAAAAHNldHRpbmdzLnhtbLVa23LaSBB9369w6d3mkhS2KZuUwCEhxoYCHNfmbZAa0Ho0rZoZGfj77ZHA6wXJIZLmiUKXvk2f7tMNN182IT97BakCFLdO46LunIHw0A/E8tZ5mvXPr5wvnb9ucLEIPGj76MUhCH2uQGt6RJ3R60K109u3TixFG5kKVFuwEFRbe22MQOxfa79/up0oS69seCBebp2V1lG7Vluv1xfrTxcol7XG9fV1Lbm7f9RDsQiWp6pKn36vChHfFJkXUmMSZc16/XMt/e6c7Yx8F5qm09nHYe9+52anIP04DzSEJjZnu8vGtFuHVLZfA1i/Rc3Jeu//7/yk510JbIaRs7+jtxHdCYR2OvWb2rGE06UOYaEtiH0OfL3KkttstlpX5WR/h2C5yjS6UW/Wr4sJn65wPQGf8gt6KyaWoA4UzBE5MOF0tIyhmI6B6EpcK3hAH/KkLxhXJ4s/D1l0HggfNuAfxyo7uZJ3CBZye1rEB/6BqUpLylynY/K4Wfwk8xKvcXnZ+FRcbA5KmtdXhbNOBXMOleMkkVo1phOhkzx4GOy1SonuotYY5kGvYIR/IYYzknSYZyuUJLhELgzZFmPdQx6H4hDOO+klylwqvYv4Uhmej+PSZ55GmW371WXBMqSmwMHT4PclXShgecbF92Ul7/auUmU/QB3x9B6aXogl09SR/6SZUm2X2o01PkU+07m+l6jxasjmwO925MNCWjwwveoyBaZVuTxYio/0FHdkooLDyp8CvdVo1S8LFv5RrI3ZQ3gF/ncA3FePcTiHpKFUH6kxydWmcI+ZlX5+h4+of8RKB4vtkNxSz4FePTARM94lnvJiwaXkwGdsPtUYjVEFJv+rdywJ3Aw2esyZByvkPhzWoCqceVIw4r7NDOjFUhI67phmc4JMD8OQiRxCUzslLqipcPZRHvbAytK1SxF/6aPQuflaVgM5oSLyYjIbWlAxDRnnPRapMUiPQk/Ia7VsudKjOEnkFqBt+gS1XpCUMpEEZSa/fI5SkEUkPnwPfB+EAZsdhJlkBWnkP0sWRXZwNlD3IIWrAibGsfB0zD4qTFVlsC35X8NIby31jCcxN62BEZl+K3w2oP528qP5PxSqfa+wVGZREFv4L8tGgrSSSguqZiZyE1zfAxyOTpWd/wTMrgcO+0RF5qsJcILHKw1/AyLENrhb6oUZAy1lcQpDFoHsSwynoGMbh+H66YQyWiyI4tvIJtIwpkI/jZhHyJhhkl094DZaSjpxmHjNIIy4lemD/Pm6oa4lGB8C8z9Ae8mzn5JoDj9wbo2mgDToMHtcgkg6a+csolaU6OfUo2nONyWu+LgzQczcm1w365dXBXs8zQUv6clnbAl29KFRIkyuEKiTbpsvv6DpKT3fHcYDULQ9G6e927ruuDU5cg/bQzXE3Vufu4FgcnsaT09szqxLfyhqsBQooR9Ipc2Il1bsgbA6tCDnRKAhoSGmGJkSZQnHIB+PV0CnD0QDQZ1Sd1FS898VUWukjzpZl2ajpcT4aISrapinwUXHEu4kWxODUSNhtNqhASOK3ILj2kITiCK+JfBKM/ZWL55sd5OtSooFYpkmP5dE+1ZqIIaBsjLIiA0p8uAXSKQO95vmVmZ+Za/wM/2lbyR6HJWN408Sus82pbC34y4JZfkN9koWCQOHj8aU4uKHyPwJnSUKflTzq4rzN5OZH7Su4tb3zQbT5jLZ5VQgEieIafWY8IBb4KX7SdH0N3tF3ADrG8c5e9uNG2pkg1AcLP3M5xRj6ZVocwkJMLObK/wuZ2Q3hczEq8e4F3Nb247s9WXGHqrMr4ZJ45sATVimnLhaS+McERyzhbThFA8iV70t2FzhEUsF/1nSo7LPt8nIZ22sSMqlhVqQUY1dPdVMFhjvc38eqx396aSW93eczr9QSwcIlnzotI8FAADQIwAAUEsDBBQACAgIAHdmc0IAAAAAAAAAAAAAAAALAAAAY29udGVudC54bWzVWltv2zgWfp9fodEA8+KR5UuS2t7Gg84VA7SdoMkCCywWAU1RNmcoUkNScbxF//sekpIsWbYijdNg2wcXOtfvXEnLef39Y8K8ByIVFfzaHw9Hvkc4FhHl62v/n3e/BDP/++VXr0UcU0wWkcBZQrgOsOAa/vdAm6uF4177meQLgRRVC44SohYaL0RKeKG1qEovrC9HUXrHOqtb4aq2Jo+6q7KRremiVXfPVriqHUm07apsZCGpVfVYdFV+VCyIBWQ9SZGmBygeGeV/XvsbrdNFGG632+F2OhRyHY7n83louSVgXMqlmWRWKsIhYcQ4U+F4OA4L2YRo1BWfka1C4lmyIrJzapBGjaqqh3XnjnhYn0gN3iDZuTescL2806h7eadRVTdBenOiJrPwHTDtx7u3+16QSVdfRraWKixp2jlMJ13VF0KUUI2CG1ALdzIaXYTuuSK9bRXfSqqJrIjjVnGMGC4zLpJjSQO5cQgSAXkwbVo2vkmEOqEwCR27FFbRSdP/evf2Fm9IgvbC9GnhgHKlEd9nRpoinIz0MpQkFVKXiYm7L0yo1qTEttEJOz3uhluIrmUUHRUFONMQRh8GL3igZPuNX9vk7Q0xP2gIuxafUrFC5VhCyfdLW67LcyUWGQdQcBblCSGPKZHUsBCzaouahdo2pYQV41oCOGYGoAaJgupBl4p0UdGuL2eZPHYzZzpTRPGhxYMpxUpN9bFi3H0IDS8wZxNs39xT5Uye+MviAHbDq8KSEMNBHMQIkyAimKnla7dIS7Lnng3ua/9thmmEvFvE1dj3YG0Wcgllu2v/W5QK9Y+KkCP4Xs2mkQ3WhEMGYLDVlirlh+1+fxSZpER678n2pNuKTAe3iYiI5DWRlGoMKzemjyR6CtAdFE8ZV94HkSB+EtSBXAdgMrfXwPWAJLUz8AS0NyDGjgAq6E+V4gzXlco/V3fslCbJOZhuaXKbHStQyTjXe3hqknI6yjTUVFMcWDvliNnPelcZk+PSXw7Ubb5Cyz4FKawJIjWF5nLkLY3MfeFqOJ+OriiEFQu4Qsg15QEjMayNYDQcjSeXhuWuoYjRNWwHw7VRVEA9hXD45ihGuEOxLOEHUB2xiTinHwLvDeV4vgJMGDtEAqQqDkhRiiL3TQWyM51N8sSthITtkCeOC06qVEnXmyNkLVJr5TLVnhKMRt43I/uvKrQSWpsbilXuHenkc0XaF9BNI+cpkmgtUbopGEAwX/PsQ5BPItx1IiSjEmupdADVnGNB3p6YcHsXdBp/ZErTeBcoiATsbgE9LGzEVGUNWO26QTuZW+IKtxIsKg5JOMkXcEqCESgUGWGMa8PuVAK4XyFeKDbZ5psDI4+5QPckNsr5BSWRw93EnCbNNI7Hk2g+r3L2CEuZGZrhWUuqC/Mtyc5Fuqd7+izpPkzMyT7qDuziC+qDZwj38oXq0KkRnUx38FefBXwxXYr+F8Tnqe64n4x8MTJW65BXTovhdo/y1RfUkb1y19oLo9Fs9jL5nX1B+W1N2cUYY9TjItO8q4G3z7hb75pXpjaH/69XhbvG2dUrjKcP65c8iO8a591zBTOZxRejFw6mcZo9VzDTy/jV0R76jME0TrfnCsbtiZcNpnGI9dw148kKz+IeDhtbva9DV/LuDufnOuy9vkfnerwks1mfEMfnnhjjK7SaXvbx2O/IOOJxNiXzqz4e+233Yx7t16mGx/DkC6icsRLRrnwwfpav7e+bivyVEb5/kdUkepYUUZUytAtEphnlJGDkgTBA5Du2i+83xuDaIe1LeYPxLGN3xUu386yY/J5r5Cf3e6xN++mspU6lepG7GfvLGwTFxDRFXHtvqdK5ibRFy7zEd1TQavJNGy0/fvw4GDCaUD1IJU2Q3N2bXxEGCm9IlDES3UMhKAfY91hkUpHBwfOnT5+KaMDLsgOs2ROwrv4OKqUhP/cR0gaQF3j9LRAeFfo9A7ooO+MY99Jf/vvrIPB++PnX39577ge5eym2XhD8p2LcvmG1n/nb1voLXker5clxaqr5q9OT0sM3FmpFAYAcWCCMteiP978WIZaRQO9S4MK0msY+nYXKV5HWjsxLD6jueZZAKYZeruCk8bV/UZkfW6A2gxNrEBahEnygMmnIYPU7b0+NqVQ6px8vfHiYnwNSI4d9kzr5e0m9gfn9HeMsdT9f2piEouZhoKlmlYja2hes/IIwZVTvwt/l2tqJc8KgnpgWM90rXDjz3kSRJEotvM7lfGXLWYC7N38ShLAeIGeo/+RC6Dcbwcli3w+lUU0YSQ3TmLWqdrOvJEF/FvNepdzC12ekM0nKeLq2TpXSIcFdls3P7386vWpOZ6PN9FUrFyrzwfrzYN1yTSJvtXNLOFNE3udt5CHtiJra52ElU7VLRVi7bxRPh38LtvwfUEsHCGV8ejUJBwAATCYAAFBLAwQUAAAIAAB3ZnNCqbutF+AFAADgBQAAGAAAAFRodW1ibmFpbHMvdGh1bWJuYWlsLnBuZ4lQTkcNChoKAAAADUlIRFIAAADGAAABAAgCAAAAZz+eFwAABadJREFUeJzt3dtyolgAQFFTNf//yz09Y5dFy0XEnQi41kNXokhMZTccD6D//Pr16wKdf979BDgbSRGTFDFJEZMUMUkRkxQxSRGTFDFJEZMUMUkRkxQxSRGTFDFJEZMUMUkRk9Tl6+vr97+3E6Z/f/v76+u/4yXn7uJGUn9cwxp+PbxlcmFhTZLUf67bnjVLrlzsk0nqz8Zmbjf3jmd0bG9O6vaffjiUuYxGNncPmftLr7lruP7h8uNx0sOe1gytxr/g6e10K3U3shnWcFkxyrlaeNTCjQsrv1vhmod8oJ0m9az1g6FXVri8Qcqfw0HtLqnlHcTkvV//m7v34V5pchT17ArnHvKBkb05qadGGHMLbx6mhCvMn9txvTOpPY/Nn/1F7oZZk99+iN3t+C7HGZtfBuOnu9s/eQJij0k9aw9j8/EawudzLPtK6nBj8/GeeuH5f4h3JrVmLvG22ORY55Wh1XWFwx3r3Q9as1kaD/s+eRR1ta+t1KSjDK1Me14dIKln7XBo9VF2ndSBhlYGVTe7TmrB3qY97xb75A3YUZNityRFTFLEJEVse1J3h2Bvtw9fcq8/Fus1+Wm8tJVamLAZzvvNHWrllF7d8U0en7/bSj18+HgNHFczllo+ffYyOjlp+SEc2sakNhzPmtuSLdzCe237b78xqW3H299+fH7DE3j4uuHtv9TexJMI37SlebjaySFdtUKbz6d817zU8t/YlMGJxUkNQxkPwzfvIxYucJj76ZMmz6B6ZYUX27CRV+elnrr39S3Ti2vY4VM6HwdkiEmK2EtJTQ5E7m4cXy25cGHC8GDOxT7lmF46bDx3vGWyiburBsYHbbxiP4dXt1LV8+A0tie1/pK6yeWXV7X5WfF25flS41HU9QrM4fJXywOmZCqLd3n1Fd/CweCFbiavzHQe1Tn0p+Ddbn9qA2MjdBqvjqUmJxEufx9Cudshzj1k+S6Oop/qnLtIctuhNFuvw4kvZ1h+r5yV67ytatvpTZe/t5HProEXfePwfPLGbXmtOYF9/fJ8q28Zni8s/5M/jrf4luH5d5wxsvwOKnO3S/DnBcf4Hr7oe8rcFTXbVmgI9fOCY3xzQ6WVW4i7kdD4C47lR8dSfIJ+LHW3wM36kdDcGVccwrdPdT68/eGSxkPH4kRhYpIiJilikiIWzEsZPjMUzJ7PvciX2mdyhQyx4AoZuz+GguG5mBjyio+YpIhJipikiEmKWH/R1VNzCt4H9nziszpvPY1nQZ0C+iHiz5BZPkRz96iL+fcz6j9DZu6UX5PsHyJ7y7KHy0wur7Dz8YqPmKSISYqYpIhJipikiEmK2EmSquZR17zxkDdrXHaSpK7Cz6ud/DDI8TKqGjtJUgsfozX+wy98Bumaz4ywlVp2kqSuJt+f6Kl3wPau/687VVLsgaSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJipikiEmKmKSISYqYpIhJiti/EQZMIhbOPlwAAAAASUVORK5CYIJQSwMEFAAICAgAd2ZzQgAAAAAAAAAAAAAAAAwAAABtYW5pZmVzdC5yZGbNk81ugzAQhO88hWXO2EAvBQVyKMq5ap/ANYZYBS/ymhLevo6TVlGkquqf1OOuRjPfjrSb7WEcyIuyqMFUNGMpJcpIaLXpKzq7Lrml2zra2LYrH5od8WqDpZ8qunduKjlfloUtNwxsz7OiKHia8zxPvCLB1ThxSAzGtI4ICR6NQmn15HwaOc7iCWZXUXTroJB59yA9i906qaCyCmG2Ur2HtiCRgUCNCUzKhHSDHLpOS8UzlvNROcGh7eLHYL3Tg6I8YPArjs/Y3ogMpuVe4L2w7lyD33yVaHruY3p108Xx3yOUYJwy7k/quzt5/+f+Ls//GeKvtHZEbEDOo2f6kOe08h9VR69Q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</value>
+              </configuration>
+              <configuration name="name" locale="en_US">
+                <displayName>Name</displayName>
+                <value>training_participant_list.odt</value>
+              </configuration>
+              <configuration name="type">
+                <displayName>Type</displayName>
+                <value>application/vnd.oasis.opendocument.text</value>
+              </configuration>
+            </configurationGroup>
+            <configuration name="name" locale="en_US">
+              <displayName>Name</displayName>
+              <value>participant_list.odt</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

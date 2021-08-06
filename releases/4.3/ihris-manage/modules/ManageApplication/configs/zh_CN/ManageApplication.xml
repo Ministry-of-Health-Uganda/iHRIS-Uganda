@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Application" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Application" path="/I2CE" locale="zh_CN">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="zh_CN">
+      <configuration name="app_felon" path="application/felony_circumstances/required">
+        <value>您选择了您被判重罪但没说明情况。</value>
+      </configuration>
+      <configuration name="app_hours" path="application/hours/required">
+        <value>您选择了没有充足时间，但您未指明您何时可以抽出时间。</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="zh_CN">
+      <configuration name="person_can_view_child_form_position_decision" locale="zh_CN">
+        <value>可以查看某人的职位决定子窗体</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_decision" locale="zh_CN">
+        <value>可以编辑某人的职位决定子窗体</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_position_interview" locale="zh_CN">
+        <value>可以查看某人的职位面试子窗体</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_interview" locale="zh_CN">
+        <value>可以编辑某人的职位面试子窗体</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_application" locale="zh_CN">
+        <value>可以查看一个人的申请子表格</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_application" locale="zh_CN">
+        <value>可以编辑一个人的申请子表格</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="application">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>申请人</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_interview">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>职位面试</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_decision">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>位置决定</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Applicant">
+          <configurationGroup name="fields">
+            <configurationGroup name="position">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:本公司</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:你曾经被定罪的重罪吗？</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony_circumstance">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:如是，则提供情况。</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="other_info">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:在您工作的历史记录，有其他技能、 资格或我们应考虑的经验吗？</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hear">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:你听到这个开放的？</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:你什么时候可以开始？</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="desired_wage">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:所需的工资</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="full_time">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:您正在寻找全职工作吗？</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hours">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:如果不是，你什么时间是否可用？</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionInterview">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:采访的日期</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:出席的人</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:评论</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionDecision">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:决定之日起</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="offer">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:使一个工作机会吗？</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:评论</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="application">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="zh_CN">
+            <value>添加/更新应用程序</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_decision">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="zh_CN">
+            <value>添加/更新位置决定</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_interview">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="zh_CN">
+            <value>添加/更新位置面试</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

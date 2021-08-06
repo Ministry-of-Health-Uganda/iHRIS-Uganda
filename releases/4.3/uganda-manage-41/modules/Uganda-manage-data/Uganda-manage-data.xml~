@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-manage-data">
+  <metadata>
+    <displayName>iHRIS Manage Uganda Data</displayName>
+    <category>Site</category>
+    <description>The iHRIS Manage Uganda module for drop down data.</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.1.0.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+
+    <enable name="Uganda-manage-data-district" />
+    <enable name="Uganda-manage-data-county" />
+    <enable name="Uganda-manage-data-currency" />
+    <enable name="Uganda-manage-data-marital_status" />
+    <enable name="Uganda-manage-data-salary_source" />
+    <enable name="Uganda-manage-data-salary_grade" />
+    <enable name="Uganda-manage-data-benefit_type" />
+    <enable name="Uganda-manage-data-disciplinary_action_type" />
+    <enable name="Uganda-manage-data-id_type" />
+    <enable name="Uganda-manage-data-facility_type" />
+    <enable name="Uganda-manage-data-pos_change_reason" />
+    <enable name="Uganda-manage-data-department" />
+    <enable name="Uganda-manage-data-council" />
+    <enable name="Uganda-manage-data-language" />
+    <enable name="Uganda-manage-data-facility" />
+    <enable name="Uganda-manage-data-job" />
+    <enable name="Uganda-manage-data-employment_terms" />
+    <!--<enable name="SampleData-degree" />-->
+    <priority>350</priority>
+  </metadata>
+  <configurationGroup name="Uganda-manage-data" path="/I2CE">
+    <displayName>iHRIS Manage Uganda Data</displayName>
+  </configurationGroup>
+</I2CEConfiguration>

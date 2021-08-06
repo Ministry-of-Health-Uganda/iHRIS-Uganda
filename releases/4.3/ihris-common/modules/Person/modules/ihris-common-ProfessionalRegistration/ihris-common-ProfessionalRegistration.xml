@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-common-ProfessionalRegistration">
+  <metadata>
+    <displayName>iHRIS Common Professional Registration</displayName>
+    <className>iHRIS_Module_ProfessionalRegistration</className>
+    <category>Application Component</category>
+    <description>A Person's Registration Details. Creates the registration child form of person and the council list form.</description>
+    <link>https://launchpad.net/ihris-common</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.2" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="ihris-common-ProfessionalRegistration" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_registration" locale="en_US">
+        <value>Can view registration child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_registration" locale="en_US">
+        <value>Can edit registration child forms of a person</value>
+      </configuration>
+      <configuration name="can_edit_database_list_council" locale="en_US">
+        <value>Can edit the council database list</value>
+      </configuration>
+      <configuration name="can_view_database_list_council" locale="en_US">
+        <value>Can view the council database list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_registration" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_registration" values="many">
+        <value>person_can_view_child_form_registration</value>
+        <value>person_can_view</value>
+        <value>person_can_edit</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <value>person_can_view_child_form_registration</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <value>person_can_edit_child_form_registration</value>
+      </configuration>
+      <configuration name="can_edit_database_list_council" values="many">
+        <value>can_edit_organization_database_lists</value>
+        <value>can_view_database_list_council</value>
+      </configuration>
+      <configuration name="can_edit_all_organization_database_lists" values="many">
+        <value>can_edit_database_list_council</value>
+      </configuration>
+      <configuration name="can_view_all_organization_database_lists" values="many">
+        <value>can_view_database_list_council</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="registration">
+        <displayName>Registration Page</displayName>
+        <description>The page 'registration' which has the action of: Add/Update Registration</description>
+        <status>overwrite:true</status>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Registration</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>registration</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <!-- end of page-->
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>registration</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="council">
+          <displayName>Council</displayName>
+          <description>The Council Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Council</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Mechanism</displayName>
+            <description>The storage method this form uses.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="registration">
+          <displayName>Registration</displayName>
+          <description>The Registration Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Registration</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Registration</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Registration">
+          <displayName>Configuration for the class 'iHRIS_Registration'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="council">
+              <displayName>The field 'council'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Registration Council</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="registration_number">
+              <displayName>The field 'registration_number'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Registration Number</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="license_number">
+              <displayName>The field 'license_number'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:License Number</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="registration_date">
+              <displayName>The field 'registration_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Registration Date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="license_expiration">
+              <displayName>The field 'license_expiration'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:License Expiration Date</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- enf of formclasses-->
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

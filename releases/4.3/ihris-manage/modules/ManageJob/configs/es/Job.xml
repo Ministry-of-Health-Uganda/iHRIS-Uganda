@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Job" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Job" path="/I2CE" locale="es">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_salary_grade" locale="es">
+        <value>Editar el Listado de Niveles Salariales</value>
+      </configuration>
+      <configuration name="can_view_database_list_salary_grade" locale="es">
+        <value>Visualizar el listado de Niveles Salariales</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="view_job">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="es">
+            <value>Ver Trabajo</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="salary_grade">
+          <configuration name="display" values="single" locale="es">
+            <value>Nivel Salarial</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_SalaryGrade">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Nombre</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Inicio</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Fin</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="midpoint">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Punto medio</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Notas</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_ManageJob">
+          <configurationGroup name="fields">
+            <configurationGroup name="salary_grade">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Nivel Salarial</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

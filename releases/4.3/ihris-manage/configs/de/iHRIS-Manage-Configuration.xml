@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage" path="/I2CE">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage" path="/I2CE" locale="de">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_planning_database_lists" locale="de" values="single" type="string">
+        <value>Kann einige Listen in der Planungsdatenbank bearbeiten</value>
+      </configuration>
+      <configuration name="can_view_planning_database_lists" locale="de" values="single" type="string">
+        <value>Kann einige Listen in der Planungsdatenbank einsehen</value>
+      </configuration>
+      <configuration name="can_edit_all_planning_database_lists" locale="de" values="single" type="string">
+        <value>Kann alle Listen in der Planungsdatenbank bearbeiten</value>
+      </configuration>
+      <configuration name="can_view_all_planning_database_lists" locale="de" values="single" type="string">
+        <value>Kann alle Listen in der Planungsdatenbank einsehen</value>
+      </configuration>
+      <configuration name="can_edit_organization_database_lists" locale="de" values="single" type="string">
+        <value>Kann einige Listen in der Organisationsdatenbank bearbeiten</value>
+      </configuration>
+      <configuration name="can_view_organization_database_lists" locale="de" values="single" type="string">
+        <value>Kann einige Listen in der Organisationsdatenbank einsehen</value>
+      </configuration>
+      <configuration name="can_edit_all_organization_database_lists" locale="de" values="single" type="string">
+        <value>Kann alle Listen in der Organisationsdatenbank bearbeiten</value>
+      </configuration>
+      <configuration name="can_view_all_organization_database_lists" locale="de" values="single" type="string">
+        <value>Kann alle Listen in der Organisationsdatenbank einsehen</value>
+      </configuration>
+      <configuration name="can_edit_employee_database_lists" locale="de" values="single" type="string">
+        <value>Kann einige Listen in der Mitarbeiterdatenbank bearbeiten</value>
+      </configuration>
+      <configuration name="can_view_employee_database_lists" locale="de" values="single" type="string">
+        <value>Kann einige Listen in der Mitarbeiterdatenbank einsehen</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" locale="de" values="single" type="string">
+        <value>Kann alle Listen in der Mitarbeiterdatenbank bearbeiten</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" locale="de" values="single" type="string">
+        <value>Kann alle Listen in der Mitarbeiterdatenbank einsehen</value>
+      </configuration>
+      <configuration name="can_edit_position_database_lists" locale="de" values="single" type="string">
+        <value>Kann einige Listen in der Stellendatenbank bearbeiten</value>
+      </configuration>
+      <configuration name="can_view_position_database_lists" locale="de" values="single" type="string">
+        <value>Kann einige Listen in der Stellendatenbank einsehen</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="roles" path="/I2CE/formsData/forms/role">
+      <configurationGroup name="hr_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="de" type="string">
+            <value>Personalleiter</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="hr_staff">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="de" type="string">
+            <value>Mitarbeiter Personal</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="exec_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="de" type="string">
+            <value>Führungskraft</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="training_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="de" type="string">
+            <value>Schulungsleiter</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="feedback">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="de" type="string">
+            <value>Rückmeldung senden</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="manage">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="de" type="string">
+            <value>Mitarbeiter verwalten</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="search_reports" path="/modules/CustomReports/search_reports">
+      <configuration name="search_people" values="many" type="delimited" locale="de">
+        <value>name:Mitarbeiter suchen</value>
+        <value>description:Personalunterlagen zum Durchsehen, Drucken oder Aktualisieren ausfindig machen.</value>
+      </configuration>
+      <configuration name="position_list" values="many" type="delimited" locale="de">
+        <value>name:Stellen suchen</value>
+        <value>description:Stellenunterlagen zum Durchsehen, Drucken oder Aktualisieren ausfindig machen.</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

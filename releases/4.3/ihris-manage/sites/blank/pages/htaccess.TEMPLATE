@@ -1,0 +1,17 @@
+# Configure RewriteBase to be the path in your web root for this directory
+# and rename this file to .htaccess
+# Make sure your apache config allows overwrite these options
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase  /iHRIS/manage
+    DirectoryIndex index.php
+    ErrorDocument 403 index.php/home
+    ErrorDocument 404 index.php/home   
+    RewriteRule (^/?$) home [L] 
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule (.*) index.php/$1 [L]
+    SetEnv I2CE_Rewritten On
+</IfModule>
+#turn off magic quotes -- deprecated in php 5.3
+#php_flag magic_quotes_gpc off

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Confirmation" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Confirmation" path="/I2CE" locale="br">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="br">
+      <configuration name="person_can_view_child_form_confirmation" locale="br">
+        <value>A c'hall diskwel furmskridoù bugel kadarnaat un den</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_confirmation" locale="br">
+        <value>A c'hall kemmañ furmskridoù kadarnaat un den</value>
+      </configuration>
+      <configuration name="can_edit_database_list_confirmation_type" locale="br"></configuration>
+      <configuration name="can_view_database_list_confirmation_type" locale="br">
+        <value>A c'hall diskwel ar roll seurt kadarnadur</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="confirmation">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="br">
+            <value>Ouzhpennañ/hizivaat ar c'hadarnadur</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="confirmation">
+          <configuration name="display" values="single" locale="br">
+            <value>Kadarnadur</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="confirmation_type">
+          <configuration name="display" values="single" locale="br">
+            <value>Seurt kadarnaat</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_ConfirmationType">
+          <configurationGroup name="fields">
+            <configurationGroup name="probation_period">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:prantad amprou (miz)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="job">
+              <configuration name="headers" type="delimited" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Anv</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Confirmation">
+          <configurationGroup name="fields">
+            <configurationGroup name="valid">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Kadarnaat</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="confirmation_type">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Seurt kadarnaat</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Deiziad</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

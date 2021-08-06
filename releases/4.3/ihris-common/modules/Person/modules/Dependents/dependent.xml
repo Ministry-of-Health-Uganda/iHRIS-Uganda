@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="dependents">
+  <metadata>
+    <displayName>Person's Dependents</displayName>
+    <className>iHRIS_Module_Dependents</className>
+    <category>Application Component</category>
+    <description>Adds Dependent Information to a Person</description>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="dependents" path="/">
+    <configurationGroup name="dep_class" path="/modules/forms/formClasses/iHRIS_Dependent">
+      <configuration name="extends">
+        <value>I2CE_Form</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <configurationGroup name="gender">
+          <configuration name="formfield">
+            <value>MAP</value>
+          </configuration>
+          <configuration name="headers" type="delimited" values="many" locale="en_US">
+            <value>default:Gender</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="date_of_birth">
+          <configuration name="formfield">
+            <value>DATE_YMD</value>
+          </configuration>
+          <configuration name="headers" type="delimited" values="many" locale="en_US">
+            <value>default:Date of Birth</value>
+          </configuration>
+          <configuration name="default_eval">
+            <displayName>The default values for this field as an eval string</displayName>
+            <version>4.0.6.1</version>
+            <value>I2CE_Date::blank()</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="name">
+          <configuration name="formfield">
+            <value>STRING_LINE</value>
+          </configuration>
+          <configuration name="headers" type="delimited" values="many" locale="en_US">
+            <value>default:Name</value>
+          </configuration>
+          <configuration name="required" type="boolean">
+            <displayName>This field is required to be set</displayName>
+            <version>4.0.6.0</version>
+            <value>true</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <!-- end of form class -->
+    <configurationGroup name="dep_form" path="/modules/forms/forms/dependent">
+    <configuration name="class">
+      <value>iHRIS_Dependent</value>
+    </configuration>
+    <configuration name="display" locale="en_US">
+      <value>Dependent</value>
+    </configuration>'</configurationGroup>
+    <configuration name="person_child_forms" path="/modules/forms/forms/person/meta/child_forms" values="many">
+      <value>dependent</value>
+    </configuration>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_dependent" locale="en_US">
+        <value>Can view a person's dependents</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_dependent" locale="en_US">
+        <value>Can edit a person's dependents</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <version>4.1.0.1</version>
+      <configuration name="person_can_view_child_form_dependent" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_dependent" values="many">
+        <version>4.1.5.0</version>
+        <value>person_can_view_child_form_person_dependent</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <version>4.1.5.0</version>
+        <value>person_can_view_child_form_person_dependent</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>4.1.5.0</version>
+        <value>person_can_edit_child_form_person_dependent</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="dependent_page" path="/I2CE/page/dependent">
+      <configuration name="style" values="single">
+        <value>ihris_common_page_form_parent_person</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="en_US">
+          <value>Add/Update Dependent Information</value>
+        </configuration>
+        <configuration name="page_form" values="single">
+          <value>dependent</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

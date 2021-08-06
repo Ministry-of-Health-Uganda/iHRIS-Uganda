@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonResume" path="/I2CE">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="PersonResume" path="/I2CE" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_person_resume" locale="en_US">
+        <value>Can view resume of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_resume" locale="en_US">
+        <value>Can edit resume of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_resume">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Person Resume</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_resume">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update Resume</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

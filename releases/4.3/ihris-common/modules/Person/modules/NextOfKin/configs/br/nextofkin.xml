@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="nextOfKin" path="/">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="nextOfKin" path="/" locale="br">
+    <version>4.2.0.1</version>
+    <configurationGroup name="dep_class" path="/modules/forms/formClasses/iHRIS_NextOfKin">
+      <configurationGroup name="fields">
+        <configurationGroup name="name">
+          <configuration name="headers" type="delimited" values="many" locale="br">
+            <value>default:Anv</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="relationship">
+          <configuration name="headers" type="delimited" values="many" locale="br">
+            <value>default:Darempredoù</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="dep_form" path="/modules/forms/forms/nextofkin">
+      <configuration name="display" locale="br">
+        <value>Den kar an nesañ</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="br">
+      <configuration name="person_can_view_child_form_nextofkin" locale="br">
+        <value>a c'hall gwelet tud-nes d'un den</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_nextofkin" locale="br">
+        <value>a c'hall kemmañ tud-nes d'un den</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="nextofkin_page" path="/I2CE/page/nextofkin">
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="br">
+          <value>Ouzhpennañ/Hizivaat an titouroù war un den kar</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

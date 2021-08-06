@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ManageAccessSupervisor">
+  <metadata>
+    <displayName>Manage Access Supervisor</displayName>
+    <className>iHRIS_Module_ManageAccessSupervisor</className>
+    <category>Application Component</category>
+    <description>A module that enables permission based on assigning a department and any positions that belong to that department.</description>
+    <creator>Luke Duncan</creator>
+    <email>lduncan@intrahealth.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="form-relationship-based-permission">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ManageSelfService">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ihris-manage-PersonPosition">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="ManageAccessSupervisor" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks">
+      <configurationGroup name="role_trickle_down">
+        <configuration name="supervisor" values="many">
+          <value>custom_reports_can_view_reportViews</value>
+          <value>can_change_own_password</value>
+          <value>person_can_view</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="alt_satisfaction">
+        <configuration name="person_can_edit" values="many">
+          <value>ManageAccessSupervisor-&gt;userAccessSupervisor()</value>
+        </configuration>
+        <configuration name="person_can_view_child_forms" values="many">
+          <value>ManageAccessSupervisor-&gt;userAccessSupervisor()</value>
+        </configuration>
+        <configuration name="person_can_view_child_form_salary" values="many">
+          <value>ManageAccessSupervisor-&gt;userAccessSupervisor()</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+  <configurationGroup name="page" path="/I2CE/page">
+    <displayName>Pages</displayName>
+    <description>Information about various pages made available by the system</description>
+    <status>required:true</status>
+    <configurationGroup name="supervisee">
+      <displayName>Supervisee Page</displayName>
+      <description>The page 'supervisor' which has the action of: Supervisee Access</description>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>iHRIS_PageSupervisee</value>
+      </configuration>
+      <configuration name="style" values="single" type="string">
+        <displayName>Page Style</displayName>
+        <description>The Page Style</description>
+        <value>shell</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Page Options</displayName>
+        <description>The options that control the access and display of all pages</description>
+        <configuration name="title" values="single" locale="en_US" type="string">
+          <displayName>Page Title</displayName>
+          <description>Page Title</description>
+          <status>required:true</status>
+          <value>Supervisee List</value>
+        </configuration>
+        <configuration name="defaultHTMLFile" values="many" type="string">
+          <displayName>Default HTML File</displayName>
+          <description>The default HTML File for this page</description>
+          <status>required:true</status>
+          <value>supervisee_base.html</value>
+        </configuration>
+        <configuration name="access" values="many" type="string">
+          <displayName>Page Access</displayName>
+          <description>All of the roles that have access to this page</description>
+          <status>required:false</status>
+          <status>uniquemerge:true</status>
+          <value>hr_staff</value>
+          <value>exec_manager</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

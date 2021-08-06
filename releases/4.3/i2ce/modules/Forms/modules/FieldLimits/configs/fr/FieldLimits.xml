@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="field-limits">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="field-limits" locale="fr">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/modules/field-limits/text/" locale="fr">
+      <configuration name="select_value" values="single" type="string">
+        <value>Sélectionner une valeur</value>
+      </configuration>
+      <configurationGroup name="description">
+        <configurationGroup name="default">
+          <configuration name="text" locale="fr" values="single" type="string"></configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:valeur</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="max_parent">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>valeur maximum pour %s, offset %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:champ_lié</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="min_parent">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>valeur minimum pour %s, offset %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:champ_lié</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="not_null">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Pas nul</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="null">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Nul</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="true">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Vrai</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="false">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Faux</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="yes">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Oui</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="no">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Non</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="lessthan">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Moins de %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:valeur</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="lessthan_equals">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Moins de ou égal de %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:valeur</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="greaterthan">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Plus de %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:valeur</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="greaterthan_equals">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Plus de ou égal de %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:valeur</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="between">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Entre %s et %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single"></configuration>
+        </configurationGroup>
+        <configurationGroup name="max_parent_form">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Valeur maximum pour le parent</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="min_parent_form">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Valeur minimum pour le parent</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="greaterthan_now">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Plus de maintenant</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="lessthan_now">
+          <configuration name="text" locale="fr" values="single" type="string">
+            <value>Moins de maintenant</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

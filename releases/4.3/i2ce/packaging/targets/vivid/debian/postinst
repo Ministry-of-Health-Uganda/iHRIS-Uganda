@@ -1,0 +1,27 @@
+#!/bin/bash
+set -x
+
+PECL=/usr/bin/pecl
+SVC=/usr/sbin/service
+LN=/bin/ln
+A2ENMOD=/usr/sbin/a2enmod
+
+
+$PECL  install -sf apcu-4.0.4
+
+$LN -sf /etc/php5/mods-available/apcu.ini /etc/php5/apache2/conf.d/20-apcu.ini
+$LN -sf /etc/php5/mods-available/apcu.ini /etc/php5/cli/conf.d/20-apcu.ini
+
+BASEDIR=/var/lib/iHRIS
+USERNAME=ihris
+ 
+
+$A2ENMOD rewrite
+$SVC apache2 restart
+$SVC memcached restart
+
+chown -R $USERNAME:$USERNAME $BASEDIR
+
+
+
+

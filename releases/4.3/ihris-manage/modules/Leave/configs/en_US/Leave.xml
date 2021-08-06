@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="leave" path="/I2CE">
+  <metadata>
+    <version>4.2.2.13</version>
+  </metadata>
+  <configurationGroup name="leave" path="/I2CE" locale="en_US">
+    <version>4.2.2.13</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_leave_request" locale="en_US">
+        <value>Can edit child form leave_request</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_leave_request" locale="en_US">
+        <value>Can view child form leave_request</value>
+      </configuration>
+      <configuration name="can_edit_database_list_leave_category" locale="en_US">
+        <value>Edit the leave category type list</value>
+      </configuration>
+      <configuration name="can_view_database_list_leave_category" locale="en_US">
+        <value>View the leave category type list</value>
+      </configuration>
+      <configuration name="can_edit_database_list_leave_cycle" locale="en_US">
+        <value>Edit the leave cycle type list</value>
+      </configuration>
+      <configuration name="can_view_database_list_leave_cycle" locale="en_US">
+        <value>View the leave cycle type list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="leave_category">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Leave Category</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="leave_status">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Leave Status</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="leave_cycle">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Leave Cyscle</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="leave_balance">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Leave Balance</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="leave_request">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Leave Request</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_LeaveCategory">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Category Name</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="days">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Number Of Days</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Start Date in a Year**</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:End Date in a Year**</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="leave_cycle">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Leave Cycle in Years (Years Before Taking Another Leave)**</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_LeaveRequest">
+          <configurationGroup name="fields">
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Notes</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="leave_category">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Leave Category</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="leave_status">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Leave Status</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="supervisor_approval">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Supervisor Approval</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hr_approval">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Human Resource Approval</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Leave Start Date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Leave End Date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="leave_days">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Leave Days</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="return_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Return Date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="approved_return_date">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Approved Return Date</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_LeaveCycle">
+          <configurationGroup name="fields">
+            <configurationGroup name="years">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Years</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Name</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_LeaveBalance">
+          <configurationGroup name="fields">
+            <configurationGroup name="leave_category">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Leave Category</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="balance">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Balance</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="taken">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Days On Leave</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="leave_request">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Request Leave</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

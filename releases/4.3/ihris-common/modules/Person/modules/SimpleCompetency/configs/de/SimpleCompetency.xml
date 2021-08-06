@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="person-simple-competency" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="person-simple-competency" path="/I2CE" locale="de">
+    <version>4.3.0.1</version>
+    <configurationGroup name="formsdata" path="/I2CE/formsData/forms">
+      <configurationGroup name="competency_evaluation">
+        <configurationGroup name="not_evaluated">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="de">
+              <value>Nicht bewertet</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="competent">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="de">
+              <value>kompetent</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="not_competent">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="de">
+              <value>nicht kompetent</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="person_tasks" path="/I2CE/tasks/task_description" locale="de">
+      <configuration name="person_can_view_child_form_person_competency" locale="de">
+        <value>Kann das Datenblatt mit den Informationen zu den Fähigkeiten einer Person einsehen</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_competency" locale="de">
+        <value>Kann das Datenblatt mit den Informationen zu den Fähigkeiten einer Person bearbeiten</value>
+      </configuration>
+      <configuration name="person_competency_can_view_evaluation_history" locale="de">
+        <value>Kann die Bewertungsgeschichte zu Fähigkeiten einer Person ansehen</value>
+      </configuration>
+      <configuration name="person_competency_can_view_evaluation" locale="de">
+        <value>Kann die Kompetenzevaluierung eines Mitarbeiters ansehen</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_evaluation" locale="de">
+        <value>Kann die Bewertungsliste zu den Fähigkeiten bearbeiten</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency_evaluation" locale="de">
+        <value>Kann die Bewertungsliste zu den Fähigkeiten einsehen</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="competency_evaluation">
+          <configuration name="display" values="single" locale="de">
+            <value>Bewertung der Fähigkeiten</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_competency">
+          <configuration name="display" values="single" locale="de">
+            <value>Fähigkeiten der Person</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PersonCompetency">
+          <configurationGroup name="fields">
+            <configurationGroup name="evaluation_date">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Zuletzt evaluiert</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency_evaluation">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Beurteilung</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Fähigkeiten</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_competency_history">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="de">
+            <value>Bewertungsgeschichte zu Fähigkeiten</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="person_competency">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="de">
+            <value>Fähigkeit hinzufügen/aktualisieren</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

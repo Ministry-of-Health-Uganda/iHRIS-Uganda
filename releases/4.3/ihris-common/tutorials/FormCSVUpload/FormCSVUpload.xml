@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="FormCSVUpload">
+  <metadata>
+    <displayName>FormCSVUpload</displayName>
+    <category>Tutorial</category>
+    <description>Tutorial for uploading CSV data into iHRIS.  This example will load education details to a person.</description>
+    <creator>IntraHealth Informatics</creator>
+    <email>hris@capacityplus.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.2.0.1</version>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <requirement name="forms">
+      <atLeast version="4.2" />
+    </requirement>
+    <requirement name="PersonEducation">
+      <atLeast version="4.2" />
+    </requirement>
+    <priority>200</priority>
+  </metadata>
+  <configurationGroup name="FormCSVUpload" path="/I2CE">
+    <displayName>FormCSVUpload</displayName>
+    <configurationGroup name="page">
+      <configurationGroup name="upload_education">
+        <displayName>Upload page</displayName>
+        <description>The page 'upload_education' which is used to add education details to a person from a CSV file upload.</description>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageFormUpload_Education</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Upload Education</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <value>upload_education.html</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_can_edit_child_form_education</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup> <!-- end of upload_education page -->
+    </configurationGroup> <!-- end of page -->
+    <configurationGroup name="command_line">
+      <version>4.2.0.1</version>
+      <configurationGroup name="upload_education">
+        <displayName>Upload command line page</displayName>
+        <description>The command line page 'upload_education' which is used to add education details to a person from a CSV file.</description>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageFormUpload_Education</value>
+        </configuration>
+      </configurationGroup> <!-- end of upload_education page -->
+    </configurationGroup> <!-- end of command_line -->
+   </configurationGroup>
+</I2CEConfiguration>

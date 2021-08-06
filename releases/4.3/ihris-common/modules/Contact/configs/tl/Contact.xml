@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Contact" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="Contact" path="/I2CE" locale="tl">
+    <version>4.3.0.1</version>
+    <configurationGroup name="/modules/forms/forms/contact_group">
+      <configuration name="display" values="single" locale="tl"></configuration>
+      <configurationGroup name="meta">
+        <configuration name="description" locale="tl"></configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="/modules/forms/formClasses/iHRIS_Contact/fields/contact_group">
+      <configuration name="headers" type="delimited" locale="tl"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Contact">
+          <configurationGroup name="fields">
+            <configurationGroup name="address">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Tirahang Padalahan ng Liham</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="telephone">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Numero ng Telepono</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="mobile_phone">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Numero ng Teleponong Mobil</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="alt_telephone">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Kahaliling Numero ng Telepono</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="fax">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Numero ng Fax</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="email">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Direksyon ng E-liham</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" values="many" locale="tl">
+                <value>default:Mga tala</value>
+                <value>contact_person:Mga tala (Pangunahing Tao na Kauugnayin)</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_NamedContact">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Pangalan</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Salary">
+  <metadata>
+    <displayName>iHRIS Manage Salary</displayName>
+    <className>iHRIS_Module_ManageSalary</className>
+    <category>Application Component</category>
+    <description>The iHRIS Manage Salary module provides salary and salary source forms</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-manage-Person">
+      <atLeast version="4.0" />
+    </requirement>
+    <priority>350</priority>
+    <requirement name="Currency">
+      <atLeast version="4.0" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+  </metadata>
+  <configurationGroup name="ihris-manage-Salary" path="/I2CE">
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="en_US">
+      <configuration name="sal_bad_date" path="salary/start_date/bad_date">
+        <value>The start date must be after the start date of the current salary.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="salary">
+        <displayName>Salary Page</displayName>
+        <description>The page 'salary' which has the action of: Salary Change</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageFormSalary</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Salary Change</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_salary_can_edit</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>salary</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="salary_history">
+        <displayName>Salary Page</displayName>
+        <description>The page 'salary' which has the action of: Salary Change</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_SalaryHistoryPage</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Salary History</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_salary_can_view</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>salary_history.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <version>4.1.8.1</version>
+      <configuration name="person_can_edit_child_form_salary" locale="en_US">
+        <value>Can edit the salary of a person</value>
+      </configuration>
+      <configuration name="person_can_delete_child_form_salary" locale="en_US">
+        <value>Can delete the salary of a person</value>
+      </configuration>
+      <configuration name="person_can_change_child_form_salary" locale="en_US">
+        <value>Can change an existing salary of a person</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_salary" locale="en_US">
+        <value>Can view an existing salary of a person</value>
+      </configuration>
+      <configuration name="can_edit_database_list_salary_source" locale="en_US">
+        <version>3.2.7</version>
+        <value>Edit the salary_source list</value>
+      </configuration>
+      <configuration name="can_view_database_list_salary_source" locale="en_US">
+        <version>3.2.7</version>
+        <value>View the salary_source list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <version>4.1.8.1</version>
+      <configuration name="person_can_delete_child_form_salary" values="many">
+        <value>person_can_edit_child_form_salary</value>
+        <value>person_can_view_child_form_salary</value>
+        <value>person_can_change_child_form_salary</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <value>person_can_view_child_form_person_position</value>
+        <value>person_can_view_child_form_salary</value>
+      </configuration>
+      <configuration name="person_can_change_child_form_salary" values="many">
+        <value>person_can_edit_child_form_salary</value>
+        <value>person_can_view_child_form_salary</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_salary" values="many">
+        <value>person_can_view_child_form_salary</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_salary" values="many">
+        <version>4.1.0.1</version>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>4.1.0.1</version>
+        <value>person_can_edit_child_form_salary</value>
+      </configuration>
+      <configuration name="can_edit_database_list_salary_source" values="many">
+        <value>can_edit_manage_positions_database_lists</value>
+        <value>can_view_database_list_salary_source</value>
+      </configuration>
+      <configuration name="can_edit_all_manage_positions_database_lists" values="many">
+        <version>3.2.9</version>
+        <value>can_edit_database_list_salary_source</value>
+      </configuration>
+      <configuration name="can_view_all_manage_positions_database_lists" values="many">
+        <version>3.2.9</version>
+        <value>can_view_database_list_salary_source</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_position">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <value>salary</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="salary">
+          <displayName>Salary</displayName>
+          <description>The Salary Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Salary</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Salary</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="salary_source">
+          <displayName>Salary Source</displayName>
+          <description>The Salary Source Form</description>
+          <version>3.2.5</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Salary Source</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Position">
+          <configurationGroup name="fields">
+            <configurationGroup name="proposed_salary">
+              <configuration name="formfield">
+                <value>CURRENCY</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Proposed Salary</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="source">
+              <configuration name="formfield">
+                <value>MAP_MULT</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>salary_source</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Source</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Salary">
+          <displayName>Configuration for the class 'iHRIS_Salary'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="start_date">
+              <displayName>The field 'start_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Start Date</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="salary">
+              <displayName>The field 'salary'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>CURRENCY</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Salary</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <displayName>The field 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:End Date</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="last">
+              <displayName>The field 'last'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="in_db" type="boolean">
+                <displayName>Store the field in the database</displayName>
+                <value>false</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <displayName>The field 'notes'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Notes</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,186 @@
+<div id="siteContent">
+    <h1>Configuration du système</h1>
+
+  <div task="can_edit_database_lists">
+    <h2><a href="lists" class="adminDatabase">Administrer la base de données</a></h2>
+    <p>
+    <!-- Create and update standard lists of data for selection in system menus. -->
+    Administrer les positions et créer et actualiser les menus déroulants
+    </p>
+      <hr></div>
+
+
+  <span type="module" name="admin" ifenabled="true">
+    <div task="can_configure_modules">
+      <h2><a href="admin/modules" class="adminDatabase">Configuration des modules</a></h2>
+      <p>
+	Activer et désactiver les différents modules du système.
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" name="page-builder" ifenabled="true">
+    <div task="can_build_pages">
+      <h2><a href="PageBuilder" class="adminDatabase">Générateur de page</a></h2>
+      <p>
+	Générer et reconfigurer les pages
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" name="form-builder" ifenabled="true">
+    <div task="can_build_forms">
+      <h2>Générateur de formulaire</h2>
+      <p>
+	Construire et reconfigurer les formulaires
+      </p>
+      <ul><li><a href="FormBuilder/forms" class="adminDatabase">Générateur de formulaire</a></li>
+	<li><a href="FormBuilder/formClasses" class="adminDatabase">Générateur de classe de formulaire</a></li>
+      </ul><hr></div>
+  </span>
+
+
+  <span type="module" name="formRelationships" ifenabled="true">
+    <div role="admin">
+      <h2><a href="form_relationship_import" class="searchRecords"> Import Form Relationship Data</a></h2>
+      <p>
+	Import iHRIS data from a form relationship export or from a transform of another data source, such as an Excel file, to the iHRIS form relationship format.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="CustomReports" ifenabled="true">
+    <span task="custom_reports_can_edit_reportViews">
+        <h2><a name="manage_reports" class="adminDatabase">Gérer les rapports</a></h2>
+      <p>
+	Gérer les rapports standard disponibles pour les utilisateurs et créer de nouveaux rapports personnalisés
+      </p>
+      <ul><li task="custom_reports_can_edit_relationships"><a href="CustomReports/edit/relationships">Relations entre les formulaires</a>
+          <dl><dd>Définit comment les formulaires sont liés pour être utilisés dans les rapports.</dd></dl></li>
+          <li task="custom_reports_can_edit_reports"><a href="CustomReports/edit/reports">Rapports</a>
+          <dl><dd>Definir des rapports fondés sur des relations préalablement définies. Vous pouvez choisir les champs disponibles pour chaque rapport et ceux qui peuvent être utilisés pour limiter le rapport.</dd></dl></li>
+          <li><a href="CustomReports/edit/reportViews">Affichages des rapports</a>
+          <dl><dd>Définir les affichages de rapport d’après les rapports précédemment définis. Vous pouvez choisir quels champs afficher et aussi définir un affichage par défaut qui affichera un graphique ou des résultats limités quand un utilisateur accède à l’affichage du rapport.</dd></dl></li>
+      </ul><hr></span>
+  </span>
+
+
+
+  <span type="module" name="magicDataBrowser" ifenabled="true">
+    <div task="can_view_magic_data_browser">
+      <h2><a href="magicDataBrowser/show" class="searchRecords">Parcourir Magic Data</a></h2>
+      <p>
+	Parcourir les données de configuration utilisées par le système.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="SVS" ifenabled="true">
+    <div task="SVS_allow_RetreieveValueSet">
+      <h2><a href="SVS/config" class="searchRecords">Ensembles de valeurs partagées</a></h2>
+      <p>
+	Télécharger ou configurer des ensembles de valeurs partagées pour échanger des métadonnées entre les composants de votre système d’information de santé.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="csd_cache" ifenabled="true">
+    <div task="csd_cache_admin">
+      <h2><a href="csd_cache" class="searchRecords">Découverte des services de soin</a></h2>
+      <p>
+	Administrer les caches pour l’exportation de données des Découvertes des services de soin (CSD)
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="csd-infoman-storage" ifenabled="true">
+    <div role="admin">
+      <h2><a href="remote_directory_selector/edit" class="searchRecords"> Registre des Travailleurs de Santé Interconnecté</a></h2>
+      <p>
+	Définir les détails de connexion pour se connecter à un Registre des Travailleurs de Santé Interconnecté compatible avec la Découverte des Services de Santé (CSD)
+      </p>
+      <hr></div>
+  </span>
+
+
+
+
+
+  <span type="module" name="tasks-roles" ifenabled="true">
+    <div task="tasks_and_roles_can_access">
+      <h2><a href="tasks-roles" class="adminDatabase">Tâches et rôles</a></h2>
+      <p>
+	Administre les tâches et les rôles pour le système
+      </p>
+      
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="localeSelector" ifenabled="true">
+    <div task="locales_can_edit_site_locale">
+      <h2><a href="localeSelector/edit" class="adminDatabase">Gérer les options régionles</a></h2>
+      <p>
+	Gérer les options régionales rendues disponibles par le système
+      </p>
+      <hr></div>      
+  </span>
+
+
+
+  <span type="module" name="BackgroundProcess" ifenabled="true">
+    <div task="can_view_background_processes">
+      <h2><a href="BackgroundProcess" class="searchRecords">Processus d’arrière-plan</a></h2>
+      <p>
+	Examiner les processus d’arrière-plan que vous avez démarrés
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="formBrowser" ifenabled="true">
+    <div task="can_view_form_browser">
+      <h2><a href="formBrowser/showForm" class="searchRecords">Parcourir les formulaires</a></h2>
+      <p>
+	Parcourir les formulaires utilisés par le système.
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" ifenabled="true" name="DHIS_Metadata">
+    <div role="admin">
+      <h2><a href="dhis_metadata">Gérer les métadonnées DHIS2</a></h2>
+      <p>
+	Téléverser <a href="http://dhis2.org">DHIS2</a> Métadonnées telles que unités d’organisation et éléments de données.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="CachedForms" ifenabled="true">
+    <div task="cached_forms_can_administer">
+      <h2><a href="CachedForms" class="adminDatabase">Formulaires antémémorisés</a></h2>
+      <p>
+	Contrôler la création des formulaires antémémorisés
+      </p>
+      <hr></div>
+  </span>
+  
+  <div task="can_create_or_edit_users">
+
+    <h2><a href="user" class="adminDatabase">Administrer les utilisateurs</a></h2>
+    <p>
+    Créer, mettre à jour et désactiver des comptes utilisateur pour s'assurer de la securité de l' accès au système. Accès limité à l'Administrateur Système.
+    </p>
+      <hr></div>
+  <span type="module" name="UserStatistics" ifenabled="true">
+	<div task="can_view_user_statistics">
+	  <h2><a href="UserStatistics" class="searchRecords">Statistiques utilisateur</a></h2>
+      Voir les statistiques d’entrée de donnée pour les utilisateurs.
+    </div>
+  </span>
+</div>

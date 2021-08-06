@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonClockIn" path="/I2CE">
+  <metadata>
+    <version>4.1.3</version>
+  </metadata>
+  <configurationGroup name="PersonClockIn" path="/I2CE" locale="en_US">
+    <version>4.1.3</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_clockin" locale="en_US">
+        <value>Can view clockin child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_clockin" locale="en_US">
+        <value>Can edit clockin child forms of a person</value>
+      </configuration>      
+    </configurationGroup>
+   
+    <configurationGroup name="page">
+      <configurationGroup name="clockin">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Enter Clock-In Information</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="clockin">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Clock-In Information</value>
+          </configuration>
+        </configurationGroup>
+        
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_ClockIn">
+          <configurationGroup name="fields">
+            <configurationGroup name="time_in">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Time-In</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="time_out">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Time-Out</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="shift">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Shift</value>
+              </configuration>
+            </configurationGroup>           
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

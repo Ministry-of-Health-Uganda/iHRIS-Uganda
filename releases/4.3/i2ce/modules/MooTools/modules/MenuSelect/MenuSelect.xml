@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="menu_select">
+  <metadata>
+    <displayName>Menu Select</displayName>
+    <className>I2CE_Module_MenuSelect</className>
+    <category>Base System Component</category>
+    <description>Handles Nested Select Options</description>
+    <creator>Luke Duncan &amp; Carl Leitner</creator>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="MooTools">
+      <atLeast version="1.4" />
+      <lessThan version="1.5" />
+    </requirement>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

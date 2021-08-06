@@ -1,0 +1,37 @@
+<div id='siteContent'>
+  <h1>Administer Tasks</h1>
+  <h2>Existing Tasks</h2>
+  <ul id='task_list'>
+  </ul>
+  <form method='post' action='tasks-roles/tasks' id='add_user_task'>
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0" >
+      <tr>
+	<th colspan="2">
+	  Add a new task
+	</th>
+      </tr>   
+      <tr>
+	<td>
+	  <label>Task Short Name:</label> A short name consisting of letter and number, -, .  and _ used to
+	  refer the task in pages and templates.
+	</td>
+	<td>
+	  <input type='text' id='task_short_name' name='task_short_name' class='validate=[notinlist,nonempty,magicdatakey]'/>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <label>Task Description:</label> A short description of this task.
+	</td>
+	<td>
+	  <input type='text' name='task_description' class='validate=[nonempty]'/>
+	</td>
+      </tr>
+      <tr>
+	<td colspan='2'>
+	  <input  class="button" type="submit"   value="Create" />
+	</td>
+      </tr>
+    </table>
+  </form>
+</div>

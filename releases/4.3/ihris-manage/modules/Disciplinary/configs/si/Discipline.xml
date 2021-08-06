@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="disciplinary_action" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="disciplinary_action" path="/I2CE" locale="si">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="si">
+      <configuration name="disciplinary_date" path="disciplinary_action/end_date/bad_date">
+        <value>අවසන් වන දිනය, ආරම්භක දිනයට පසු දිනයක් විය යුතුය.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_disciplinary_action" locale="si">
+        <value>පුද්ගලයෙකුට අදාල වැඩපළ අනතුරු හා විනය_ක්‍රියාමාර්ග සකසන්න</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_disciplinary_action" locale="si">
+        <value>පුද්ගලයෙකුට අදාල වැඩපළ අනතුරු හා විනය_ක්‍රියාමාර්ග බලන්න</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_type" locale="si">
+        <value>වැඩපළ විනය_ක්‍රියාමාර්ග වර්ග ලැයිස්තුව සකසන්න</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_type" locale="si">
+        <value>වැඩපල විනය_ක්‍රියාමාර්ග වර්ග ලැයිස්තු බලන්න</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_reason" locale="si">
+        <value>වැඩපළ විනය ක්‍රියාමාර්ග සඳහා හේතු ලැයිස්තුව සකසන්න</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_reason" locale="si">
+        <value>වැඩපළ විනය ක්‍රියාමාර්ග සඳහා හේතු ලැයිස්තුව බලන්න</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="disciplinary_action">
+          <configuration name="display" values="single" locale="si">
+            <value>විනය ක්‍රියාමාර්ග</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_type">
+          <configuration name="display" values="single" locale="si">
+            <value>විනය ක්‍රියාමාර්ග වර්ගය</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_reason">
+          <configuration name="display" values="single" locale="si">
+            <value>විනය ක්‍රියාමාර්ග හේතු</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_DisciplinaryAction">
+          <configurationGroup name="fields">
+            <configurationGroup name="action_date">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:සාකච්ඡාව පවත් වූ දිනය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_type">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:ගත් ක්‍රියාමාර්ග</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_reason">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:ක්‍රියාමාර්ග සඳහා හේතු</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:උපයෝගීතාවය ආරම්භය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:උපයෝගීතාවය අවසානය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:සටහන්</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_present">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:පැමිණි පුද්ගලයන්</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="editAction" path="/modules/disciplinary_action/page/editAction">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="si">
+            <value>විනය ක්‍රියාමාර්ගය එක් කරන්න/යාවත්කාලීන කරන්න</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

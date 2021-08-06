@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="disciplinary_action" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="disciplinary_action" path="/I2CE" locale="et">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="et">
+      <configuration name="disciplinary_date" path="disciplinary_action/end_date/bad_date"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_disciplinary_action" locale="et">
+        <value>Saab redigeerida tööõnnetusi ja distsiplinaarsed_toimingud, mida isikule rakendatud</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_disciplinary_action" locale="et">
+        <value>Saab vaadata tööõnnetusi ja distsiplinaarsed_toimingud, mida isikule rakendatud</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_type" locale="et">
+        <value>Saab redigeerida töökoha distsiplinaarsed_toimingud nimekirja</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_type" locale="et">
+        <value>Vaata töökoha distsiplinaarsed_toimingud tüüpide nimekirja</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_reason" locale="et"></configuration>
+      <configuration name="can_view_database_list_disciplinary_action_reason" locale="et"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="disciplinary_action">
+          <configuration name="display" values="single" locale="et">
+            <value>Distsiplinaarne toiming</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_type">
+          <configuration name="display" values="single" locale="et">
+            <value>Distsiplinaarse toimingu tüüp</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_reason">
+          <configuration name="display" values="single" locale="et"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_DisciplinaryAction">
+          <configurationGroup name="fields">
+            <configurationGroup name="action_date">
+              <configuration name="headers" type="delimited" locale="et">
+                <value>default:Arutelu kuupäev</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_type">
+              <configuration name="headers" type="delimited" locale="et">
+                <value>default:Toiming võetud</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_reason">
+              <configuration name="headers" type="delimited" locale="et"></configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="et">
+                <value>default:Kohaldatavuse algus</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="et">
+                <value>default:Kohaldatavuse lõpp</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="et">
+                <value>default:Märkmed</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_present">
+              <configuration name="headers" type="delimited" locale="et">
+                <value>default:Kohalolevad isikud</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="editAction" path="/modules/disciplinary_action/page/editAction">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="et">
+            <value>Lisa/Uuenda distsiplinaarne toiming</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

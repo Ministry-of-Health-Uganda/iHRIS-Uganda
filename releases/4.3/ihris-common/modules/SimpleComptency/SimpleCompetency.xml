@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="simple-competency">
+  <metadata>
+    <displayName>Simple Competency</displayName>
+    <className>iHRIS_Module_SimpleCompetency</className>
+    <category>Application Component</category>
+    <description>A simple two-tiered compotency module</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-common">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="form-limits">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms-storage-magicdata">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="simple-competency" path="/I2CE">
+    <displayName>Simple Competency</displayName>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <version>3.2.8</version>
+      <configuration name="can_edit_database_lists_competency" locale="en_US">
+        <value>Edit all list associated with competency</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency" locale="en_US">
+        <value>Edit the competency list</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_type" locale="en_US">
+        <value>Edit the competency type list</value>
+      </configuration>
+      <configuration name="can_view_database_lists_competency" locale="en_US">
+        <value>View all list associated with competency</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency" locale="en_US">
+        <value>View the competency list</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency_type" locale="en_US">
+        <value>View the competency type list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <version>3.2.8</version>
+      <configuration name="can_edit_database_lists_competency" values="many">
+        <value>can_edit_database_list_competency</value>
+        <value>can_edit_database_list_competency_type</value>
+        <value>can_edit_database_list_competency_evaluation</value>
+        <value>can_edit_employee_database_lists</value>
+        <value>can_view_database_lists_competency</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency" values="many">
+        <value>can_edit_employee_database_lists</value>
+        <value>can_view_database_list_competency</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_type" values="many">
+        <value>can_edit_employee_database_lists</value>
+        <value>can_view_database_list_competency_type</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_evaluation" values="many">
+        <value>can_edit_employee_database_lists</value>
+        <value>can_view_database_list_competency_evaluation</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency" values="many">
+        <value>can_view_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency_type" values="many">
+        <value>can_view_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency_evaluation" values="many">
+        <value>can_view_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" values="many">
+        <value>can_edit_database_lists_competency</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" values="many">
+        <value>can_view_database_lists_competency</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <displayName>Forms</displayName>
+      <configurationGroup name="forms">
+        <displayName>Forms available to the form factory</displayName>
+        <description>Information about the forms made available by iHRIS-Common</description>
+        <status>advanced:true</status>
+        <status>required:true</status>
+        <configurationGroup name="competency">
+          <displayName>Competency</displayName>
+          <description>The Competency Form</description>
+          <version>3.2.6</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Competency</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Competency</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="competency_type">
+          <displayName>Competency Type</displayName>
+          <description>The Competency Type Form</description>
+          <version>3.2.6</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Competency Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- End of /modules/forms/forms -->
+      <configurationGroup name="formClasses">
+        <displayName>Form Class Configuration</displayName>
+        <configurationGroup name="iHRIS_Competency">
+          <displayName>Configuration for the class 'iHRIS_Competency'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_List</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <version>3.2.6</version>
+            <configurationGroup name="name">
+              <displayName>The field 'name'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Name</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique" type="boolean">
+                <displayName>This field is required to be unique</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique_field">
+                <displayName>This field is required to be unique</displayName>
+                <value>competency_type</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency_type">
+              <displayName>The field 'competency_type'</displayName>
+              <version>3.2.6</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" values="many" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Competency Type</value>
+                <value>select_competency_type:Select Competency Type then Competency</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <displayName>The field 'notes'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Notes</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- End of /modules/forms/formClasses -->
+    </configurationGroup>
+    <!-- End of /modules/forms-->
+  </configurationGroup>
+</I2CEConfiguration>

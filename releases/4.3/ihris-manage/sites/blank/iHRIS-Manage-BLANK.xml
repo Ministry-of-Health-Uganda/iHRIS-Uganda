@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-site">
+  <metadata>
+    <displayName>iHRIS Manage</displayName>
+    <category>Site</category>
+    <description>the iHRIS Manage Site</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-manage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="UserAccess">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <enable name="default-locales" />
+    <enable name="PersonContact" />
+    <enable name="ihris-manage-PersonDemographic" />
+    <enable name="PersonEducation" />
+    <enable name="PersonEmployment" />
+    <enable name="PersonID" />
+    <enable name="PersonLanguage" />
+    <enable name="stub" />
+    <enable name="messageBox" />
+    <enable name="messageNotice" />
+    <enable name="messageHandler" />
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="images">
+      <value>./images</value>
+    </path>
+    <priority>400</priority>
+  </metadata>
+  <configurationGroup name="ihris-manage-site" path="/I2CE">
+    <displayName>iHRIS Manage Site</displayName>
+    <status>advanced:false</status>
+    <configurationGroup name="feedback">
+      <displayName>Feedback Information</displayName>
+      <status>required:false</status>
+      <configuration name="email" path="to" values="single">
+        <displayName>Email Address</displayName>
+        <value>root@localhost</value>
+      </configuration>
+      <configuration name="subject" values="single" locale="en_US">
+        <displayName>Subject Line</displayName>
+        <value>iHRIS Manage</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cache_times">
+      <displayName>Cache Times</displayName>
+      <description>Override caching times for this site.</description>
+      <status>advanced:true</status>
+      <configuration name="stale" path="/I2CE/update/times/stale">
+        <displayName>Stale Time</displayName>
+        <description>The time in seconds we wait until we check that the configuration files for the system and the modules are up to date. Defaults to 10. If negative, we check the system files on each page request</description>
+        <status>required:true</status>
+        <value>600</value>
+      </configuration>
+      <configuration name="stale_time" path="/I2CE/fileSearch/stale_time">
+        <displayName>Stale Time</displayName>
+        <description>The time in seconds until a file found in the file search utility is considered stale. If stale, it will search for the file, if not stale, it will use the previously found location of the file (it will cache the file location). If negative, then we do not cache the file location.</description>
+        <status>required:true</status>
+        <value>1800</value>
+      </configuration>
+      <configuration name="cache_time" path="/modules/FileDump/cache_time">
+        <displayName>Cache Time</displayName>
+        <description>The time (in minutes) to cache content</description>
+        <status>required:true</status>
+        <value>60</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="template">
+      <displayName>Template Information</displayName>
+      <description>Various Default Information About The Templating System</description>
+      <status>advanced:false</status>
+      <status>required:true</status>
+      <configuration name="prefix_title" values="single" locale="en_US">
+        <displayName>Page title prefix</displayName>
+        <description>Page titile prefix</description>
+        <value>iHRIS Manage</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pdf_options" path="/modules/report-pdf/PDF/display-options">
+      <displayName>PDF Options</displayName>
+      <status>visible:false</status>
+      <configurationGroup name="header">
+        <displayName>Header Options</displayName>
+        <configuration name="text" locale="en_US">
+          <displayName>Header Text</displayName>
+          <value>iHRIS Manage</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

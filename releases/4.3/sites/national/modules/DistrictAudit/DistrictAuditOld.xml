@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-DistrictAuditSummary">
+  <metadata>
+    <displayName>District Audit Summary for Uganda</displayName>
+    <category>Site</category>
+    <description>Create a page to display audit summary by district.</description>
+    <creator>IntraHealth Informatics</creator>
+    <email>ihris@capacityplus.org</email>
+    <link>https://launchpad.net/ihris-uganda</link>
+    <version>4.1.6.0</version>
+    <requirement name="uganda-manage-staffing-norm-report">
+      <atLeast version="4.1.6.0" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+  </metadata>
+  <configurationGroup name="Uganda-DistrictAuditSummary" path="/I2CE">
+    <configurationGroup name="page">
+      <configurationGroup name="audit_district_report">
+        <displayName>District Audit Summary</displayName>
+        <description>The audit summary for Uganda</description>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageUgandaDistrictAuditSummary</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Audit Summary</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <value>audit_district_report_base.html</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>custom_reports_can_access</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

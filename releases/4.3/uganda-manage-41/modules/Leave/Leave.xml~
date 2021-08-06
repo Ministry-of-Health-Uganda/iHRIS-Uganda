@@ -1,0 +1,523 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonLeave">
+  <metadata>
+    <displayName>Leave Management</displayName>
+    <className>iHRIS_Module_PersonLeave</className>
+    <category>Application Component</category>
+    <description>A Person's Leave Management Module</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.2.0.2</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>350</priority>
+  </metadata>
+  <configurationGroup name="PersonLeave" path="/I2CE">
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="en_US">
+      <version>4.1.6.1</version>
+      <configuration name="bad_start_date" path="salary/end_date/bad_date">
+        <value>The end date is to be after the start date.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_personleave" locale="en_US">
+        <value>Can view personleave child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_personleave" locale="en_US">
+        <value>Can edit personleave child forms of a person</value>
+      </configuration>
+      <configuration name="can_edit_database_list_public_holiday" locale="en_US">
+        <value>Can edit the public holiday list.</value>
+      </configuration>
+      <configuration name="can_view_database_list_public_holiday" locale="en_US">
+        <value>Can view the public holiday list.</value>
+      </configuration>
+      <configuration name="can_edit_database_list_person_leave_type" locale="en_US">
+        <value>Can edit the person leave type list.</value>
+      </configuration>
+      <configuration name="can_view_database_list_person_leave_type" locale="en_US">
+        <value>Can view the person leave type list.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_personleave" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_personleave" values="many">
+        <value>person_can_view_child_form_personleave</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <value>person_can_view_child_form_personleave</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <value>person_can_edit_child_form_personleave</value>
+      </configuration>
+      <configuration name="can_edit_database_list_public_holiday" values="many">
+        <value>can_view_database_list_public_holiday</value>
+        <value>can_edit_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_database_list_person_leave_type" values="many">
+        <value>can_view_database_list_person_leave_type</value>
+        <value>can_edit_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" values="many">
+        <value>can_edit_database_list_person_leave_type</value>
+        <value>can_edit_database_list_public_holiday</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" values="many">
+        <value>can_view_database_list_person_leave_type</value>
+        <value>can_view_database_list_public_holiday</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="requestleave">
+        <displayName>Request Leave Page</displayName>
+        <description>The page 'requestleave' which allows a person to request leave.</description>
+        <version>4.2.0.2</version>
+        <configuration name="style">
+          <value>main</value>
+        </configuration>
+        <configuration name="class">
+          <value>iHRIS_PageFormRequestLeave</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" locale="en_US">
+            <value>Request Leave</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <value>request_leave.html</value>
+          </configuration>
+          <configuration name="access" values="many">
+            <value>all</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="personleave">
+        <displayName>Person Leave Page</displayName>
+        <description>The page 'personleave' which has the action of: Add/Update Leave Information</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <!--
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <version>4.1.6.7</version>
+          <status>required:true</status>
+          <value>iHRIS_PageFormPersonLeave</value>
+        </configuration>-->
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Leave Information</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>personleave</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- personleave -->
+      <configurationGroup name="leave_history">
+        <displayName>Person Leave History</displayName>
+        <description>The page 'leave_history' which has the action of: Person Leave History</description>
+        <version>4.1.6.5</version>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageLeaveHistory</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Person Leave History</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>leave_history.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- leave-history -->
+      
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person">
+          <displayName>Person</displayName>
+          <version>4.1.6.2</version>
+          <configurationGroup name="meta">
+            <displayName>MetaData on the form</displayName>
+            <configuration name="child_forms" values="many">
+              <displayName>Child Forms</displayName>
+              <status>uniquemerge:true</status>
+              <value>personleave</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        
+        <configurationGroup name="personleave">
+          <displayName>Person Leave Information</displayName>
+          <description>The Person Leave Information Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_PersonLeave</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Person Leave Information</value>
+          </configuration>
+        </configurationGroup>
+        <!-- personleave -->
+        <configurationGroup name="person_leave_type">
+          <displayName>Person Leave Type</displayName>
+          <description>The Person Leave Type Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_LeaveType</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <version>4.1.0.1</version>
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <version>4.1.7.9</version>
+            <value>Leave Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <!-- person_leave_type -->
+        <configurationGroup name="public_holiday">
+          <displayName>Public Holiday</displayName>
+          <description>The Public Holiday Form</description>
+          <version>4.1.6.3</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_PublicHoliday</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Public Holiday</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <!-- public_holiday -->
+      </configurationGroup>
+      <!-- end of  forms-->
+      <configurationGroup name="formClasses">
+        
+        <configurationGroup name="iHRIS_PersonLeave">
+          <displayName>Configuration for the class 'iHRIS_PersonLeave'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+
+            <configurationGroup name="person_id">
+              <displayName>The field 'person_id'</displayName>
+              <version>4.2.0.2</version>
+              <configuration name="formfield">
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Employee ID</value>
+              </configuration>
+              <configuration name="in_db" type="boolean">
+                <value>false</value>
+              </configuration>
+            </configurationGroup>
+            
+            <configurationGroup name="person_leave_type">
+              <displayName>The field 'person_leave_type'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Leave Applied For</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <version>4.1.6.6</version>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            
+            <configurationGroup name="remaining_days">
+              <displayName>The field 'remaining_days'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.1.7.7</version>
+                <value>default:Leave Balance</value>
+              </configuration>
+            </configurationGroup>
+            
+            <configurationGroup name="days_requested">
+              <displayName>The field 'days_requested'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.1.7.7</version>
+                <value>default:Days Requested</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <version>4.1.6.6</version>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            
+            <configurationGroup name="start_date">
+              <displayName>The field 'start_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Leave Start Date</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <value>I2CE_Date::now()</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            
+            <configurationGroup name="end_date">
+              <displayName>The field 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Leave End Date</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hod_recomm">
+              <version>4.2.0</version>
+              <displayName>The fields 'hod_recomm'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>YESNO</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Recommended By Head Of Department?</value>
+              </configuration>
+            </configurationGroup>
+             <!-- approval -->
+            <configurationGroup name="hr_recomm">
+              <version>4.2.0</version>
+              <displayName>The fields 'hr_recomm'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>YESNO</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Noted For Action By Head Of HR and SS?</value>
+              </configuration>
+            </configurationGroup>
+             <!-- approval -->
+            
+            <configurationGroup name="approval">
+              <version>4.2.0</version>
+              <displayName>The fields 'approval'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>YESNO</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Leave Approved/Rejected By General Manager?</value>
+              </configuration>
+            </configurationGroup>
+             <!-- approval -->
+            
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_PersonLeave -->
+        
+        <configurationGroup name="iHRIS_LeaveType">
+          <displayName>Configuration for the class 'iHRIS_LeaveType'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            
+            <configurationGroup name="length">
+              <displayName>The field 'length'</displayName>
+              <version>4.1.7.9</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Total Allowable No. Of Days</value>
+                <version>4.2.0.1</version>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            
+            <configurationGroup name="allow_carryover">
+              <displayName>The field 'allow_carryover'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>YESNO</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Carry Over Allowed?</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>false</value>
+              </configuration>
+            </configurationGroup>
+            
+            <configurationGroup name="carryover_days">
+              <displayName>The field 'carryover_days'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Carry Over Days</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            
+            <configurationGroup name="recurrence">
+              <displayName>The field 'recurrence'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Cycle (Months)</value>
+                <version>4.1.7.9</version>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_LeaveType -->
+        
+        <configurationGroup name="iHRIS_PublicHoliday">
+          <displayName>Configuration for the class 'iHRIS_PublicHoliday'</displayName>
+          <version>4.1.6.4</version>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configurationGroup name="meta" path="meta/list/default">
+            <version>4.1.6.4</version>
+            <configuration name="display_string">
+              <value>%s (%s)</value>
+            </configuration>
+            <configuration name="display_args" type="delimited" values="many">
+              <value>0:name</value>
+              <value>1:holiday_date</value>
+            </configuration>
+            <configuration name="sort_fields" type="delimited" values="many">
+              <value>0:holiday_date</value>
+              <value>1:name</value>
+            </configuration>
+          </configurationGroup>
+          
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            
+            <configurationGroup name="holiday_date">
+              <displayName>The field 'holiday_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Public Holiday Date</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_PublicHoliday -->
+        
+      </configurationGroup>
+      <!-- end of  formClasses-->
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-FacilityTree" path="/modules/CustomReports">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-FacilityTree" path="/modules/CustomReports" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="facility_tree" path="//modules/CustomReports/relationships/facility_tree">
+      <configuration name="description" locale="en_US">
+        <value>Facility report for use in building the tree view for facility drop downs.</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <value>Facility Tree</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="county">
+          <configuration name="description" locale="en_US">
+            <value>The county where this facility is located.</value>
+          </configuration>
+          <configuration name="display_name" locale="en_US">
+            <value>County</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="district">
+          <configuration name="description" locale="en_US">
+            <value>The district where this facility is located.</value>
+          </configuration>
+          <configuration name="display_name" locale="en_US">
+            <value>District</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="region">
+              <configuration name="description" locale="en_US">
+                <value>The region where this facility is located.</value>
+              </configuration>
+              <configuration name="display_name" locale="en_US">
+                <value>Region</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="country">
+                  <configuration name="description" locale="en_US">
+                    <value>The country where this facility is located.</value>
+                  </configuration>
+                  <configuration name="display_name" locale="en_US">
+                    <value>Country</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="facility_tree" path="//modules/CustomReports/reports/facility_tree">
+      <configurationGroup name="meta">
+        <configuration name="description" locale="en_US">
+          <value>The report to display facilities as a tree view for mapped fields.</value>
+        </configuration>
+        <configuration name="display_name" locale="en_US">
+          <value>Facility Tree</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="country">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="en_US">
+                <value>Country Hide</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="en_US">
+                <value>Country Id</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="en_US">
+                <value>Country Name</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="primary">
+              <configuration name="header" locale="en_US">
+                <value>Country Primary</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="county">
+          <configurationGroup name="fields">
+            <configurationGroup name="district">
+              <configuration name="header" locale="en_US">
+                <value>County District</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="en_US">
+                <value>County Hide</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="en_US">
+                <value>County Id</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="en_US">
+                <value>County Name</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="district">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="en_US">
+                <value>District Hide</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="en_US">
+                <value>District Id</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="en_US">
+                <value>District Name</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="region">
+              <configuration name="header" locale="en_US">
+                <value>District Region</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="en_US">
+                <value>Office/Facility Hide</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="en_US">
+                <value>Office/Facility Id</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="header" locale="en_US">
+                <value>Facility Location</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="facility_type">
+              <configuration name="header" locale="en_US">
+                <value>Facility Type</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="en_US">
+                <value>Office/Facility Name</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="region">
+          <configurationGroup name="fields">
+            <configurationGroup name="country">
+              <configuration name="header" locale="en_US">
+                <value>Region Country</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="en_US">
+                <value>Region Hide</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="en_US">
+                <value>Region Id</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="en_US">
+                <value>Region Name</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

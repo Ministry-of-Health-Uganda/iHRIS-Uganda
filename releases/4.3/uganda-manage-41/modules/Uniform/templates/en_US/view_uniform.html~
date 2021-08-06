@@ -1,0 +1,25 @@
+<div task='person_can_view_child_form_uniform'>
+  <div class="editRecord">
+    <p>Edit This Information</p>
+    <ul>
+      <li task='person_can_edit_child_form_banking'>
+	<span type="form" ifset="uniform:id" name="uniform:id" href="uniform?id=" parent="true">
+	  Update this Information
+	</span>
+      </li>
+    </ul>
+  </div> <!-- editRecord -->
+  
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tbody>
+	<tr>
+	  <th colspan="2">Uniform Details</th>
+	</tr>
+	  <span type="form" name="uniform:uniform_size" showhead="default"></span>
+          <span type="form" name="uniform:shoe_size" showhead="default"></span>
+     
+      </tbody>
+    </table>
+  </div> <!-- dataTable -->
+</div>

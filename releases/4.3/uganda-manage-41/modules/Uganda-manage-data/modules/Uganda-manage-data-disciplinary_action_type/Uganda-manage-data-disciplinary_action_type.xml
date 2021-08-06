@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-manage-data-disciplinary_action_type">
+  <metadata>
+    <displayName>Uganda Manage data for disciplinary action type</displayName>
+    <description>Data for form: disciplinary_action_type</description>
+    <version>4.1.0.0</version>
+    <requirement name="disciplinary_action">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <configurationGroup name="Uganda-manage-data-disciplinary_action_type" path="/I2CE/formsData/forms/disciplinary_action_type">
+    <displayName>Form data: disciplinary_action_type</displayName>
+    <configurationGroup name="half_pay">
+      <displayName>half_pay</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:31:50</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Half Pay</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="early_retirement">
+      <displayName>early_retirement</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:31:50</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Early retirement</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="suspension">
+      <displayName>suspension</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:31:50</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Suspension</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="dismissal">
+      <displayName>dismissal</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:31:50</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Dismissal</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="warning">
+      <displayName>warning</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:31:50</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Warning or reprimand</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="transfer">
+      <displayName>transfer</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:31:50</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Transfer</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="removal">
+      <displayName>removal</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:31:50</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Removal from Office</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="increment_suspension">
+      <displayName>increment_suspension</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:31:50</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Suspension of increment</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="increment_withholding">
+      <displayName>increment_withholding</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:31:50</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Withholding increment</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="increment_deferment">
+      <displayName>increment_deferment</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:31:50</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Deferment of increment</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="increment_stoppage">
+      <displayName>increment_stoppage</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:31:50</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Stoppage of increment</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="surcharge">
+      <displayName>surcharge</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:31:50</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Surcharge or refund</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="making_good">
+      <displayName>making_good</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:31:50</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Making good of the loss</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reduction_in_rank">
+      <displayName>reduction_in_rank</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 12:31:50</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Reduction in rank</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

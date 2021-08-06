@@ -1,0 +1,62 @@
+<div id="siteContent">
+<h1>Manage People</h1>
+<div task='person_can_edit'>
+  <h2><a href="person" class="createRecords">Add Person</a></h2>
+  <p>
+    <span type='module' name='ihris-manage-Application' ifenabled='true'>
+      To track a person in the database, whether 
+      an employee or a job applicant, add a
+      record for that person. Certain information is required to start a new record. 
+      Once the record is generated, additional options for adding data about the person 
+      will become available. An HR Staff person or an HR Manager can add a new person 
+      to the system.     
+    </span>
+    <span type='module' name='ihris-manage-Application' ifenabled='!true'>
+      To track a person in the database, add a
+      record for that person. Certain information is required to start a new record. 
+      Once the record is generated, additional options for adding data about the person 
+      will become available. An HR Staff person or an HR Manager can add a new person 
+      to the system.
+    </span>
+
+  </p>
+
+  <hr />
+</div>
+
+<!--
+<h2><a href="search?search_limit=3" class="searchRecords">Find Employee</a></h2>
+<p>
+  After entering an employee's record into the system and setting a position for that 
+  employee, the record may be reviewed at any time. Click Find Employee to locate 
+  the record. From the record, additional information can be added or existing 
+  information can be updated. 
+</p>
+
+<hr />
+-->
+
+<span type='module' name='ihris-manage-Application' ifenabled='true'>
+<span role='hr_staff|exec_manager'>
+    <!--
+  <h2><a href="search?search_limit=2" class="searchRecords">Find Applicant</a></h2>
+  <p>
+    After entering an person's record into the system and adding an application for 
+    that person, the record may be reviewed at any time. Click Find Applicant to locate 
+    the record. From the record, additional information can be added or existing 
+    information can be updated.
+  </p>
+
+  <hr />
+  -->
+  <h2><a href="manage?action=review">Review Applicants</a></h2>
+  <p>
+    Once one or more applications have been recorded for an open position, an HR Staff 
+    person, HR Manager or Executive Manager can review the applications and record 
+    notes during the hiring process. Click Review Applicants to review all of the 
+    applications for any open position.
+  </p>
+</span>
+</span>
+
+</div>

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="stub">
+  <metadata>
+    <displayName>Page Stubs</displayName>
+    <className>I2CE_Stub</className>
+    <category>Base System Component</category>
+    <description>Request only the stub of a page -- intended for ajax use.</description>
+    <longDescription>I2CE_Stub has a static method hasAjax() which returns true if the client is making successful ajax requests and false if not (or unknown). There is also a fuzzy method hasAjax for I2CE_Page and I2CE_Template. Other fuzzy methods are addAjaxUpdate(), addAjaxUpdateFunctionRequest(), and addAjaxUpdateFunctionComplete(). The first function allows for painless updates of a page's elements (by id) on a specified event and by a specified (by id) element of a specified page. The later two function are used to exectute some javascript at the beginning of the Ajax request and on the request completion.</longDescription>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="I2CE">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="MooTools">
+      <atLeast version="1.4" />
+      <lessThan version="1.5" />
+    </requirement>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="images">
+      <value>./images</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+  </metadata>
+  <configurationGroup name="stub">
+    <displayName>Stubs</displayName>
+    <description>Information about page stubs</description>
+    <configurationGroup name="page" path="/I2CE/page/stub">
+      <displayName>Stub Page</displayName>
+      <description>Information about the page stub page</description>
+      <status>required:true</status>
+      <configuration name="style" values="single" type="string">
+        <displayName>Style</displayName>
+        <value>main</value>
+      </configuration>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_Page_Stub</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Page Options</displayName>
+        <description>The options that control the access and display of all pages</description>
+        <configuration name="title" values="single" locale="en_US" type="string">
+          <displayName>Page Title</displayName>
+          <description>Page Title</description>
+          <status>required:true</status>
+          <value>Page Stub</value>
+        </configuration>
+        <configuration name="access" values="many" type="string">
+          <displayName>Page Access</displayName>
+          <description>All of the roles that have access to this page</description>
+          <status>required:false</status>
+          <value>all</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="ajax-page" path="/I2CE/page/stub-ajax">
+      <displayName>Ajax Test</displayName>
+      <description>Information about the page stub page</description>
+      <status>required:true</status>
+      <configuration name="style" values="single" type="string">
+        <displayName>Style</displayName>
+        <value>empty</value>
+      </configuration>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_Page_Stub_Ajax_Test</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Page Arguments</displayName>
+        <configuration name="access" values="many" type="string">
+          <displayName>Page Access</displayName>
+          <description>All of the roles that have access to this page</description>
+          <status>required:false</status>
+          <value>any</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

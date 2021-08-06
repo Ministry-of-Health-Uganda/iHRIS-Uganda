@@ -1,0 +1,492 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonAttendance">
+  <metadata>
+    <displayName>iHRIS Person Attendance</displayName>
+    <className>iHRIS_Module_PersonAttendance</className>
+    <category>Application Component</category>
+    <description>A Person's Attendance</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>dkibiye@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.2.0.16</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.0" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="PersonAttendance" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+	<version>4.2.0.1</version>
+      <configuration name="person_can_view_child_form_person_attendance" locale="en_US">
+        <value>Can view person_attendance child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_attendance" locale="en_US">
+        <value>Can edit person_attendance child forms of a person</value>
+      </configuration>
+      <configuration name="can_edit_person_attendance" locale="en_US">
+	<value>Can Edit Person Attendance</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+	<version>4.2.0.1</version>
+      <configuration name="person_can_view_child_form_person_attendance" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_attendance" values="many">
+        <value>person_can_view_child_form_person_attendance</value>
+        <value>person_can_view</value>
+	<value>can_edit_person_attendance</value>
+      </configuration>
+	 
+      <configuration name="person_can_view_child_forms" values="many">
+        <version>3.2.8</version>
+        <value>person_can_view_child_form_person_attendance</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>3.2.8</version>
+        <value>person_can_edit_child_form_person_attendance</value>
+      </configuration>
+    
+    </configurationGroup>
+    <configurationGroup name="page">
+    	<version>4.2.0.2</version>
+      <configurationGroup name="person_attendance">
+        <displayName>Attendance Page</displayName>
+        <description>The page 'person_attendance' which has the action of: Add/Update Attendance Information</description>
+	 <configuration name='class' values='single'>
+	  <version>4.2.0.2</version>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageFormPersonAttendance</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Attendance Information</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>person_attendance</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+
+	
+      <!-- person_attendance -->
+
+     <configurationGroup name="editpersonattendance">
+        <version>4.2.0.1</version>
+        <configuration name="class">
+          <value>iHRIS_PagePersonAttendance</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <version>4.1.9.8</version>
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Enter Attendance Data</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+          	<version>4.1.9.8</version>
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>edit_person_attendance_base.html</value>
+          </configuration>
+	<configuration name="report_view" values="single">
+	  <version>4.2.0.1</version>
+	 <value>1442998916</value>
+	  </configuration>
+	  <configuration name="access" values="many">
+		<displayName>Page Access</displayName>
+		<description>All of the roles that have access to this page</description>
+		<version>4.1.9.8</version>
+		<value>admin</value>
+	  </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>	
+
+
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <version>4.2.0.1</version>
+        <configurationGroup name="person_attendance">
+          <displayName>Attendance Information</displayName>
+          <description>The Attendance Information Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_PersonAttendance</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+          <version>4.1.9</version>
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Attendance Information</value>
+          </configuration>
+        </configurationGroup>
+        <!-- person_attendance -->
+       
+        <configurationGroup name="person">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>person_attendance</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- person -->
+      </configurationGroup>
+      <!-- end of  forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PersonAttendance">
+          <displayName>Configuration for the class 'iHRIS_Attendance'</displayName>
+          <version>4.2.0.9</version>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            
+             <configurationGroup name="month_year">
+              <displayName>The field 'month_year'</displayName>
+              <version>4.2.0.4</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Month and Year</value>
+              </configuration>
+             <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            </configurationGroup>
+            
+           <configurationGroup name="days_present">
+              <displayName>The fields 'days_present'</displayName>
+              <version>4.2.0.7</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Number of Days Present (P)</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            </configurationGroup> <!-- days_present -->
+
+       
+
+
+
+	 <configurationGroup name="days_or">
+              <displayName>The fields 'days_or'</displayName>
+              <version>4.2.0.7</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Number of Days of Official Request (R)</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            </configurationGroup> <!-- days_or -->
+
+            <configurationGroup name="days_od">
+              <displayName>The fields 'days_od'</displayName>
+              <version>4.2.0.7</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Number of Days Off Duty (O)</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            </configurationGroup> <!-- days_od -->
+
+
+
+	   <configurationGroup name="days_leave">
+              <displayName>The fields 'days_leave'</displayName>
+              <version>4.2.0.7</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Number of Days on Leave (L)</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            </configurationGroup> <!-- days_leave -->
+
+	 
+
+	
+
+          <configurationGroup name="work_days">
+              <displayName>The fields 'work_days'</displayName>
+              <version>4.2.0.13</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Number of Days Sheduled to work (WD)</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>false</value>
+            </configuration>
+            </configurationGroup> <!-- work_days -->
+
+
+	<configurationGroup name="final_work_days">
+              <displayName>The fields 'final_work_days'</displayName>
+              <version>4.2.0.16</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Final Number of Days Sheduled to work (FWD)</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>false</value>
+            </configuration>
+            </configurationGroup> <!-- final_work_days -->
+
+           <configurationGroup name="off_days">
+              <displayName>The fields 'off_days'</displayName>
+              <version>4.2.0.13</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Number of Days Sheduled for Off Duty (OD)</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            </configurationGroup> <!-- off_days -->
+
+	 <configurationGroup name="leave_days">
+              <displayName>The fields 'leave_days'</displayName>
+              <version>4.2.0.13</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Number of Days Sheduled for Leave (LD)</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>false</value>
+            </configuration>
+            </configurationGroup> <!-- leave_days -->
+
+
+	<configurationGroup name="other_days">
+              <displayName>The fields 'other_days'</displayName>
+              <version>4.2.0.15</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Number of Days Sheduled for Other (OTD)</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>false</value>
+            </configuration>
+            </configurationGroup> <!-- other_days -->
+
+
+  	    <configurationGroup name="position">
+		<version>4.2.0.3</version>
+              <displayName>The fields 'person_position'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+	      <configurationGroup name="meta">
+                <configurationGroup name="display">
+                  <configurationGroup name="default">
+                    <configuration name="fields">
+                      <version>4.2.0.2</version>
+                      <value>position:facility</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Current Position</value>
+              </configuration>
+            </configurationGroup> <!-- person_position -->
+            
+             <configurationGroup name="days_absent">
+		<version>4.2.0.11</version>
+              <displayName>The fields 'days_absent'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+	          <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Days Absent</value>
+              </configuration>
+            </configurationGroup> <!-- days_absent -->
+            
+            <configurationGroup name="absenteeism_rate">
+	     <version>4.2.0.11</version>
+              <displayName>The fields 'absenteeism_rate'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>PERCENT_INT</value>
+              </configuration>
+	          <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Absenteeism Rate</value>
+              </configuration>
+            </configurationGroup> <!-- absenteeism_rate -->
+
+
+	<configurationGroup name="absolute_days_absent">
+		<version>4.2.0.15</version>
+              <displayName>The fields 'absolute_days_absent'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+	          <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Absolute Days Absent</value>
+              </configuration>
+            </configurationGroup> <!-- absolute_days_absent -->
+            
+            <configurationGroup name="absolute_absenteeism_rate">
+	     <version>4.2.0.15</version>
+              <displayName>The fields 'absolute_absenteeism_rate'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>PERCENT_INT</value>
+              </configuration>
+	          <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Absolute Absenteeism Rate</value>
+              </configuration>
+            </configurationGroup> <!-- absolute_absenteeism_rate -->
+
+
+	<configurationGroup name="days_not_at_facility">
+		<version>4.2.0.15</version>
+              <displayName>The fields 'days_not_at_facility'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+	          <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Days Not At Facility</value>
+              </configuration>
+            </configurationGroup> <!-- days_not_at_facility -->
+            
+            <configurationGroup name="per_days_not_at_facility">
+	     <version>4.2.0.15</version>
+              <displayName>The fields 'per_days_not_at_facility'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>PERCENT_INT</value>
+              </configuration>
+	          <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Percentage days Not at Facility</value>
+              </configuration>
+            </configurationGroup> <!-- per_days_not_at_facility -->
+            
+            <configurationGroup name="month_year_day">
+		      <version>4.2.0.11</version>
+              <displayName>The fields 'month_year_day'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+	          <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Month Year Day</value>
+              </configuration>
+            </configurationGroup> <!-- month_year_day -->
+            
+
+         
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_PersonAttendance -->
+      </configurationGroup>
+      <!-- end of  formClasses-->
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

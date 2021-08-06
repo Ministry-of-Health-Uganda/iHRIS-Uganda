@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage" path="/I2CE">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage" path="/I2CE" locale="tl">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_planning_database_lists" locale="tl" values="single" type="string">
+        <value>Makapagbabago ng ilang mga tala ng kalipunan ng dato na pangpagpaplano</value>
+      </configuration>
+      <configuration name="can_view_planning_database_lists" locale="tl" values="single" type="string">
+        <value>Matitingnan ang ilang mga tala ng kalipunan ng dato na pangpagpaplano</value>
+      </configuration>
+      <configuration name="can_edit_all_planning_database_lists" locale="tl" values="single" type="string">
+        <value>Makapagbabago ng lahat ng mga tala ng kalipunan ng dato na pangpagpaplano</value>
+      </configuration>
+      <configuration name="can_view_all_planning_database_lists" locale="tl" values="single" type="string">
+        <value>Matitingnan ang lahat ng mga tala ng kalipunan ng dato na pangpagpaplano</value>
+      </configuration>
+      <configuration name="can_edit_organization_database_lists" locale="tl" values="single" type="string">
+        <value>Makapagbabago ng ilang mga talaan ng kalipunan ng dato na pang-organisasyon</value>
+      </configuration>
+      <configuration name="can_view_organization_database_lists" locale="tl" values="single" type="string">
+        <value>Matitingnan ang ang ilang mga talaan ng kalipunan ng dato na pang-organisasyon</value>
+      </configuration>
+      <configuration name="can_edit_all_organization_database_lists" locale="tl" values="single" type="string">
+        <value>Mababago ang lahat ng mga tala ng kalipunan ng dato na pang-organisasyon</value>
+      </configuration>
+      <configuration name="can_view_all_organization_database_lists" locale="tl" values="single" type="string">
+        <value>Makikita ang lahat ng mga tala ng kalipunan ng dato na pang-organisasyon</value>
+      </configuration>
+      <configuration name="can_edit_employee_database_lists" locale="tl" values="single" type="string">
+        <value>Mababago ang ilang tala ng kalipunan ng dato na pang-empleyado</value>
+      </configuration>
+      <configuration name="can_view_employee_database_lists" locale="tl" values="single" type="string">
+        <value>Matitingnan ang ilang mga tala ng kalipunan ng dato na pang-empleyado</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" locale="tl" values="single" type="string">
+        <value>Mababago ang lahat ng mga tala ng kalipunan ng dato na pang-empleyado</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" locale="tl" values="single" type="string">
+        <value>Makikita ang lahat ng mga tala ng kalipunan ng dato na pang-empleyado</value>
+      </configuration>
+      <configuration name="can_edit_position_database_lists" locale="tl" values="single" type="string">
+        <value>Mababago ang ilang tala ng kalipunan ng dato na pamposisyon</value>
+      </configuration>
+      <configuration name="can_view_position_database_lists" locale="tl" values="single" type="string">
+        <value>Makikita ang mga tala ng kalipunan ng dato na pamposisyon</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="roles" path="/I2CE/formsData/forms/role">
+      <configurationGroup name="hr_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="tl" type="string">
+            <value>Tagapamahala ng Kuhanan ng Tao</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="hr_staff">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="tl" type="string">
+            <value>Tauhan ng Kuhanan ng Tao</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="exec_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="tl" type="string">
+            <value>Tagapamahalang Tagapagpatupad</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="training_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="tl" type="string">
+            <value>Tagapamahalang Tagapagsanay</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="feedback">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="tl" type="string">
+            <value>Magpadala ng Tugon</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="manage">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="tl" type="string">
+            <value>Pamahalaan ang mga Tao</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="search_reports" path="/modules/CustomReports/search_reports">
+      <configuration name="search_people" values="many" type="delimited" locale="tl">
+        <value>name:Maghanap ng mga Tao</value>
+        <value>description:Maghanap ng anumang rekord ng tao na nasa sistema upang suriin, ilimbag o isapanahon.</value>
+      </configuration>
+      <configuration name="position_list" values="many" type="delimited" locale="tl">
+        <value>name:Maghanap ng mga Posisyon</value>
+        <value>description:Maghanap ng anumang posisyon sa loob ng sistema na susuriin, ililimbag o isasapanahon.</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

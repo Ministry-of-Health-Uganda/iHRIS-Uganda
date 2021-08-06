@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonResume" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonResume" path="/I2CE" locale="nb">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="nb">
+      <configuration name="person_can_view_child_form_person_resume" locale="nb">
+        <value>Kan se resymé for en person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_resume" locale="nb">
+        <value>Kan redigere resymé for en person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_resume">
+          <configuration name="display" values="single" locale="nb">
+            <value>Personresymé</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_resume">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="nb">
+            <value>Legg til/Oppdater resymé</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

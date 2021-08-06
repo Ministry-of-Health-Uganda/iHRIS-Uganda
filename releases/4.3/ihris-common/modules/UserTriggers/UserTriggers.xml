@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="UserTriggers">
+  <metadata>
+    <displayName>User Triggers</displayName>
+    <className>iHRIS_Module_UserTriggers</className>
+    <category>Application Component</category>
+    <description>A module that enables assigning a trigger to a user to be notified when the trigger is called.</description>
+    <creator>Luke Duncan</creator>
+    <email>lduncan@intrahealth.org</email>
+    <link>https://launchpad.net/ihris-common</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="fields-enum">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Mailer">
+      <atLeast version="1.2" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="UserTriggers" path="/modules/UserTriggers">
+    <configurationGroup name="messages" locale="en_US">
+      <configuration name="default_email_subject">
+        <value>Automated email for:</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="handlers">
+      <configuration name="email" type="delimited">
+        <value>UserTriggers:triggerEmail</value>
+      </configuration>
+      <configuration name="hook" type="delimited">
+        <value>UserTriggers:triggerHook</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="user">
+          <configuration name="child_forms" values="many" path="meta/child_forms">
+            <value>user_trigger</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="user_trigger">
+          <displayName>User Trigger</displayName>
+          <description>The User Triger form that links a user to a trigger.</description>
+          <configuration name="class" values="single">
+            <value>iHRIS_UserTrigger</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>User Trigger</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_UserTrigger">
+          <displayName>Configuration for the class 'iHRIS_UserTrigger'</displayName>
+          <configuration name="extends">
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form.</displayName>
+            <configurationGroup name="trigger">
+              <configuration name="formfield">
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Trigger</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="unique" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="unique_field" values="single">
+                <value>parent</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configurationGroup name="method">
+                    <configurationGroup name="module">
+                      <configuration name="UserTriggers">
+                        <value>listTriggers</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <!-- end trigger -->
+          </configurationGroup>
+          <!-- end fields -->
+        </configurationGroup>
+        <!-- end iHRIS_UserTrigger -->
+      </configurationGroup>
+      <!-- end formClasses -->
+    </configurationGroup>
+    <!-- end forms -->
+    <configurationGroup name="page" path="/I2CE/page">
+      <configurationGroup name="user_trigger">
+        <displayName>User Trigger Page</displayName>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageFormParentUser</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>ihris_common_page_form_parent_user</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update User Trigger</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <value>user_trigger</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>users_can_edit</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end user_trigger -->
+    </configurationGroup>
+    <!-- end page -->
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,92 @@
+<div id="siteContent">
+  <span task="person_can_view">
+    <h2><a href="manage" class="updateRecords">Раководење со лица</a></h2>
+    <p>
+      Додај нов вработен <span type="module" name="ihris-manage-Application" ifenabled="true">или кандидат </span>запис во системот, и пребарајте и подновете ги записите внесени во системот. 
+      <span type="module" name="ihris-manage-Application" ifenabled="true">
+	Исто така довршете ги пријавниците за отворени раб. места, прегледајте ги довршените пријавници и доделете му раб. место на одбраниот 
+канидидат. </span>
+    </p>
+  </span>
+
+  <span type="module" name="CustomReports" ifenabled="true">
+    <div task="custom_reports_can_access">
+      <hr><h2><a href="search" class="searchRecords">Пребарај записи</a></h2>
+      <p>
+	Пронаоѓање на запис за лице или раб. место во системот за проверка, печатење или поднова. 
+      </p>
+    </div>
+  </span>
+    <span type="module" name="ManageDashboard" ifenabled="true">
+    <div task="can_view_dashboard">
+      <hr><h2><a href="dashboard" class="createRecords">View Dashboards</a></h2>
+      <p>
+		  View system dashboards
+      </p>
+    </div>
+  </span>    
+  <div task="custom_reports_can_view_reportViews">
+    <hr><h2><a href="CustomReports/view/reportViews" class="createRecords">Преглед на извештаи</a></h2>
+    <p>
+      Извештаите даваат можност за анализа на податоци за човечки ресурси на разни начини. Со нив можете да прилагодувате, прикажувате и печатите списоци на пероснал, статистички графикони и други стандардни извештаи. 
+    </p>
+  </div>
+
+	<span type="module" name="DHIS-Dashboard" ifenabled="true">
+		<div>
+			<hr><h2><a href="http://192.168.0.19:8090/new_dhis/dhis-web-dashboard-integration/index.action">View Dashboard</a></h2>
+		<!--        <h2><a href="DHIS-Dashboard/dashboard" >View Dashboard</a></h2>-->
+			<p>
+				View DHIS Dashboard
+			</p>
+		</div>
+		</span>
+
+		<span type="module" name="DHIS-Dashboard" ifenabled="true">
+		<div>
+			<hr><h2><a href="index.php/DHISDashboard">DHIS Export</a></h2>
+			<p>
+				Send DHIS Report
+			</p>
+		</div>
+	</span>
+
+  <span role="admin" type="module" name="mHero" ifenabled="true">      
+    <h2>
+      <a href="mHero">mHero</a>
+    </h2>
+    <p>
+      <span style="display:inline-block">
+	<span type="form" href="mHero_person_workflow?id=" name="person:id" target="_mHero">
+	  <img text="mHero" style="width:10em;" src="file/mHero.png"></span>
+      </span>
+      mHero intgerated health system communications platform
+
+    </p>
+  </span>
+
+
+  <div task="can_configure_system">
+    <hr><h2><a href="configure" class="adminDatabase">Поставки за системот</a></h2>
+    <p>
+      Поставки за модули, управување со работни места, прилагодување на паѓачки менија и создавање или подновување на кориснички сметки.
+    </p>
+  </div>
+  
+  <span type="module" name="SelfService" ifenabled="true" task="can_view_own_personnel">
+    <span type="module" name="SelfService" if="!userHasRecord()">
+    </span>
+    <span type="module" name="SelfService" if="userHasRecord()">
+      <div>
+	<h2><span type="module" name="SelfService" call="linkToPersonRecord('view?id=')">View Your Personnel Details</span></h2>
+	<p>
+	  View your personnel details.
+	</p>
+      </div>
+    </span>
+  </span>
+
+
+  <hr><h2><a href="password">Смени лозинка</a></h2>
+
+</div>

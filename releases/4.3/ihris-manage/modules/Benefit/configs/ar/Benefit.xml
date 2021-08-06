@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Benefit" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Benefit" path="/I2CE" locale="ar">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="ar">
+      <configuration name="benefit_date" path="benefit/end_date/bad_date"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="ar">
+      <configuration name="person_can_view_child_form_benefit" locale="ar">
+        <value>يمكن عرض النماذج الفرعية لميزة شخص</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_benefit" locale="ar">
+        <value>يمكن تعديل&#160;نماذج الفرعية لميزة شخص</value>
+      </configuration>
+      <configuration name="can_edit_database_list_benefit_type" locale="ar">
+        <value>يمكن&#160;تعديل قائمة قاعدة البيانات&#160;نوع الميزة</value>
+      </configuration>
+      <configuration name="can_view_database_list_benefit_type" locale="ar">
+        <value>يمكن عرض قائمة قاعدة البيانات&#160;نوع الميزة</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="benefit_recurrence">
+        <configurationGroup name="once">
+          <configuration name="fields" value="many" type="delimited" locale="ar">
+            <value>name:مرة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="weekly">
+          <configuration name="fields" value="many" type="delimited" locale="ar">
+            <value>name:الأسبوعية</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="monthly">
+          <configuration name="fields" value="many" type="delimited" locale="ar">
+            <value>name:شهرياً</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="yearly">
+          <configuration name="fields" value="many" type="delimited" locale="ar">
+            <value>name:سنوياً</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="benefit">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ar">
+            <value>تحديث / إضافة&#160;الميزات</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="benefit">
+          <configuration name="display" values="single" locale="ar">
+            <value>ميزة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="benefit_type">
+          <configuration name="display" values="single" locale="ar">
+            <value>نوع الميزة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="benefit_recurrence">
+          <configuration name="display" values="single" locale="ar">
+            <value>تكرار الميزة</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Benefit">
+          <configurationGroup name="fields">
+            <configurationGroup name="type">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:نوع الميزة</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="amount">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:مبلغ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="source">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:مصدر</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:تاريخ البدء</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:تاريخ الانتهاء</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="recurrence">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:تكرار التردد</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

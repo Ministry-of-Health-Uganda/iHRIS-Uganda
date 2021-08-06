@@ -1,0 +1,473 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="AgreedPerformance">
+  <metadata>
+    <displayName>iHRIS AgreedPerformance</displayName>
+    <className>iHRIS_Module_AgreedPerformance</className>
+    <category>Application Component</category>
+    <description>An Person's AgreedPerformance</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.2.0</version>
+    <requirement name="Assessment">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="AgreedPerformance" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_assessment" locale="en_US">
+        <value>Can view assessment child form of an institution</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_assessment" locale="en_US">
+        <value>Can edit assessment child forms of an institution</value>
+      </configuration>      
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_assessment" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_assessment" values="many">
+        <value>person_can_view_child_form_assessment</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <value>person_can_view_child_form_assessment</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <value>person_can_edit_child_form_assessment</value>
+      </configuration>
+    </configurationGroup>
+
+    <configurationGroup name="page">
+      <configurationGroup name="agreed_performance">
+        <version>4.1.10.13</version>
+        <configuration name="style">
+          <value>parent_assessment</value>
+        </configuration>
+        <configurationGroup name="args">
+         <version>4.1.10.13</version>
+          <configuration name="title" locale="en_US">
+            <value>Add/Update Agreed Key Outputs, Performance Indicators and Targets</value>
+          </configuration>
+          <configuration name="primary_form">
+            <value>agreed_performance</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_can_edit_child_form_assessment</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>agreed_performance</value>
+            </configuration>
+        </configurationGroup>
+      </configurationGroup> <!-- agreed_performance -->
+    </configurationGroup><!-- page -->
+
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+       <configurationGroup name="assessment">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>agreed_performance</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- assessment -->
+        <configurationGroup name="agreed_performance">
+          <displayName>Assesment Section B</displayName>
+          <version>4.1.10.9</version>
+          <configuration name="class" values="single">
+            <value>iHRIS_Assessment_AgreedPerformance</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Agreed Key Outputs, Performance Indicators and Targets</value>
+          </configuration>
+        </configurationGroup> <!-- agreed_performance -->
+      </configurationGroup>
+      <!-- end of forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Assessment_AgreedPerformance">
+          <version>4.1.10.4</version>
+          <displayName>Configuration for the class 'iHRIS_Assessment_AgreedPerformance'</displayName>  
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>        
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="output_1">
+              <displayName>The field 'output_1'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Key Output</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="output_2">
+              <displayName>The field 'output_2'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Key Output </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="output_3">
+              <displayName>The field 'output_3'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Key Output</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="output_4">
+              <displayName>The field 'output_4'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Key Output</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="output_5">
+              <displayName>The field 'output_5'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Key Output</value>
+              </configuration>
+            </configurationGroup>            
+            <configurationGroup name="indicator_1">
+              <displayName>The field 'indicator_1'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Indicator</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="indicator_2">
+              <displayName>The field 'indicator_2'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Indicator </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="indicator_3">
+              <displayName>The field 'indicator_3'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Indicator</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="indicator_4">
+              <displayName>The field 'indicator_4'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Indicator</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="indicator_5">
+              <displayName>The field 'indicator_5'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Indicator</value>
+              </configuration>
+            </configurationGroup>
+                        <configurationGroup name="target_1">
+              <displayName>The field 'target_1'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Target</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="target_2">
+              <displayName>The field 'target_2'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Target </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="target_3">
+              <displayName>The field 'target_3'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Target</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="target_4">
+              <displayName>The field 'target_4'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Target</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="target_5">
+              <displayName>The field 'target_5'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Target</value>
+              </configuration>
+            </configurationGroup>
+                        <configurationGroup name="level_1">
+              <displayName>The field 'level_1'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Level</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:Excellent (5)</value>
+                     <value>4:Very Good (4)</value>
+                     <value>3:Good (3)</value>
+                     <value>2:Fair (2)</value>
+                     <value>1:Poor (1)</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="level_2">
+              <displayName>The field 'level_2'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Level </value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:Excellent (5)</value>
+                     <value>4:Very Good (4)</value>
+                     <value>3:Good (3)</value>
+                     <value>2:Fair (2)</value>
+                     <value>1:Poor (1)</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="level_3">
+              <displayName>The field 'level_3'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Level</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:Excellent (5)</value>
+                     <value>4:Very Good (4)</value>
+                     <value>3:Good (3)</value>
+                     <value>2:Fair (2)</value>
+                     <value>1:Poor (1)</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="level_4">
+              <displayName>The field 'level_4'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Level</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:Excellent (5)</value>
+                     <value>4:Very Good (4)</value>
+                     <value>3:Good (3)</value>
+                     <value>2:Fair (2)</value>
+                     <value>1:Poor (1)</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="level_5">
+              <displayName>The field 'level_5'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Performance Level</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:Excellent (5)</value>
+                     <value>4:Very Good (4)</value>
+                     <value>3:Good (3)</value>
+                     <value>2:Fair (2)</value>
+                     <value>1:Poor (1)</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>
+                        <configurationGroup name="comment_1">
+              <displayName>The field 'comment_1'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Comments on Performance</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comment_2">
+              <displayName>The field 'comment_2'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Comments on Performance </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comment_3">
+              <displayName>The field 'comment_3'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Comments on Performance</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comment_4">
+              <displayName>The field 'comment_4'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Comments on Performance</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comment_5">
+              <displayName>The field 'comment_5'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Comments on Performance</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="overall_assesment">
+              <displayName>The field 'overall_assesment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Overall Assessment of Performance</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                     <value>5:Excellent (5)</value>
+                     <value>4:Very Good (4)</value>
+                     <value>3:Good (3)</value>
+                     <value>2:Fair (2)</value>
+                     <value>1:Poor (1)</value>
+                  </configuration>
+                 </configurationGroup>
+               </configurationGroup>
+            </configurationGroup>        
+          </configurationGroup>
+        </configurationGroup> <!-- iHRIS_Assessment_AgreedPerformance -->
+      </configurationGroup>
+      <!-- end of  formClasses-->
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

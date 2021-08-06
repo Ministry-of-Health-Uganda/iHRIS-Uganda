@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Application" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Application" path="/I2CE" locale="si">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="si">
+      <configuration name="app_felon" path="application/felony_circumstances/required">
+        <value>ඔබ අපරාධයකට වරදකරුවෙකු වී ඇති බව සඳහන් කර ඇතත් ඒ පිළිබඳ පැහැදිළි කිරීමක් කර නොමැත</value>
+      </configuration>
+      <configuration name="app_hours" path="application/hours/required">
+        <value>ඔබ පුර්ණ කාලීන සේවාව තෝරාගෙන නොමැත. නමුත් ඔබට වැඩකළ හැකි කාල හෝරාවන් සඳහන් කර නොමැත</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="si">
+      <configuration name="person_can_view_child_form_position_decision" locale="si">
+        <value>පුද්ගල තනතුරු තීරණ උප ආකෘති පත්‍රය බලන්න</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_decision" locale="si">
+        <value>පුද්ගල තනතුරු තීරණ උප ආකෘති පත්‍රය සකසන්න</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_position_interview" locale="si">
+        <value>පුද්ගල තනතුරු සම්මුඛ පරීක්ෂණ උප ආකෘති පත්‍රය බලන්න</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_interview" locale="si">
+        <value>පුද්ගල තනතුරු සම්මුඛ පරීක්ෂණ උප ආකෘති පත්‍රය සකසන්න</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_application" locale="si">
+        <value>පුද්ගලයෙකුගේ අයදුම් උප ෆෝරමය නැරඹීමට හැක</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_application" locale="si">
+        <value>සියලුම පුද්ගල අයදුම්පත් උප ආකෘති පත්‍ර සකසන්න</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="application">
+          <configuration name="display" values="single" locale="si">
+            <value>අයදුම්කරු</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_interview">
+          <configuration name="display" values="single" locale="si">
+            <value>තනතුරු සඳහා සම්මුඛ පරීක්ෂණ</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_decision">
+          <configuration name="display" values="single" locale="si">
+            <value>තනතුරු තීරණ</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Applicant">
+          <configurationGroup name="fields">
+            <configurationGroup name="position">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:තනතුරු</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:ඔබ කිසිදිනක අපරාධයක් සම්බන්ධයෙන් වරදකරු වී තිබේද?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony_circumstance">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:ඔව් නම් පැහැදිළි කිරීමක් කරන්න</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="other_info">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:ඔබගේ රැකියා ඉතිහාසයට අමතරව අප විසින් සලකා බැලිය යුතු තවත් හැකියාවන්, සුදුසුකම් හෝ පළපුරුද්ද තිබේද?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hear">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:මෙම ආරම්භය පිළිබඳ දැනුවත් වූයේ කෙසේද?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:ඔබට ආරම්භ කල හැක්කේ කවදාද?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="desired_wage">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:බලාපොරොත්තු වන වැටුප</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="full_time">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:ඔබ අපේක්ෂා කරන්නේ පූර්ණ කාලීන රැකියාවක්ද?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hours">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:නැත නම්, වැඩකළ හැකි කාල හෝරාවන් මොනවාද?</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionInterview">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:සම්මුඛ පරීක්ෂණ පැවැත්වෙන දිනය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:සහභාගීවන පුද්ගලයින්</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:ප්‍රතිචාර</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionDecision">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:තීරණය ගන්නා දිනය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="offer">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:රැකියා පොරොන්දුව නිර්මාණය?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:ප්‍රතිචාර</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="application">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="si">
+            <value>අයදුම්පත එක් කරන්න/යාවත්කාලීන කරන්න</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_decision">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="si">
+            <value>තනතුරු තීරණ එක් කරන්න/යාවත්කාලීන කරන්න</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_interview">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="si">
+            <value>තනතුරු සම්මුඛපරීක්ෂණ එක් කරන්න/යාවත්කාලීන කරන්න</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

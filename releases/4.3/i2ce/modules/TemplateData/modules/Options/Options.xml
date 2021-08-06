@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Options">
+  <metadata>
+    <displayName>I2CE Options Data</displayName>
+    <className>I2CE_Template_Options</className>
+    <category>Base System Component</category>
+    <description>Adds options data to the template</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="I2CE">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="template-data">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+</I2CEConfiguration>

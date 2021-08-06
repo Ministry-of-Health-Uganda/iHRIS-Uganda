@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-medical-data">
+  <metadata>
+    <displayName>iHRIS Manage Medical Base Data</displayName>
+    <category>Site</category>
+    <description>iHRIS Manage Medical Base Data</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <requirement name="ihris-manage-base-data">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <enable name="SampleData-cadre" />
+    <enable name="SampleData-department" />
+    <enable name="SampleData-salary_grade" />
+    <enable name="SampleData-classification" />
+    <enable name="SampleData-facility_type" />
+    <enable name="SampleData-salary_source" />
+    <enable name="SampleData-competency" />
+    <enable name="SampleData-job" />
+    <enable name="SampleData-training_course_category" />
+    <enable name="SampleData-competency_type" />
+    <enable name="SampleData-position_type" />
+    <enable name="SampleData-training_course_requestor" />
+    <enable name="SampleData-council" />
+    <enable name="SampleData-disciplinary_action_type" />
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

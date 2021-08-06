@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="disciplinary_action" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="disciplinary_action" path="/I2CE" locale="sw">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="sw">
+      <configuration name="disciplinary_date" path="disciplinary_action/end_date/bad_date"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_disciplinary_action" locale="sw">
+        <value>Weza kuhariri majeraha ya sehemu ya kazi na hatua za_ kinidhamu zilizochukuliwa dhidi ya mtu</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_disciplinary_action" locale="sw">
+        <value>Weza kuangalia majeraha ya sehemu ya kazi na hatua za_ kinidhamu zilizochukuliwa dhidi ya mtu</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_type" locale="sw">
+        <value>Hariri orodha ya aina ya hatua ya_ kinidhamu ya sehemu ya kazi</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_type" locale="sw">
+        <value>Angalia aina orodha ya hatua_kinidhamu za kazini</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_reason" locale="sw"></configuration>
+      <configuration name="can_view_database_list_disciplinary_action_reason" locale="sw"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="disciplinary_action">
+          <configuration name="display" values="single" locale="sw">
+            <value>Hatua ya Kinidhamu</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_type">
+          <configuration name="display" values="single" locale="sw">
+            <value>Aina ya Hatua ya Kinidhamu</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_reason">
+          <configuration name="display" values="single" locale="sw"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_DisciplinaryAction">
+          <configurationGroup name="fields">
+            <configurationGroup name="action_date">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Tarehe ya Majadiliano</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_type">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Hatua Iliyochukuliwa</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_reason">
+              <configuration name="headers" type="delimited" locale="sw"></configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Kuanza Kutumika</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Mwisho wa Kutumika</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Maelezo</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_present">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Watu Waliopo</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="editAction" path="/modules/disciplinary_action/page/editAction">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw">
+            <value>Ongeza/Sasisha Hatua ya Kinidhamu</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

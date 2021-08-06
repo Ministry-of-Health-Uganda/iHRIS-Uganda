@@ -1,0 +1,1652 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-AutoList">
+  <metadata>
+    <displayName>iHRIS Manage Auto List Configuration</displayName>
+    <category>Site</category>
+    <description>iHRIS Manage Auto List</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <configurationGroup name="ihris-manage-AutoList" path="/I2CE/page/auto_list/args/forms">
+    <version>4.2.0.1</version>
+    <configurationGroup name="cadre">
+      <configuration name="form">
+        <value>cadre</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_cadre</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Positions</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Create Job Structure</value>
+      </configuration>
+      <configuration name="mods">
+        <value>ihris-manage-PersonPosition</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Cadres</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="classification">
+      <configuration name="form">
+        <value>classification</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_classification</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Positions</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Create Job Structure</value>
+      </configuration>
+      <configuration name="mods">
+        <value>ihris-manage-PersonPosition</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Job Classifications</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="salary_grade">
+      <configuration name="form">
+        <value>salary_grade</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_salary_grade</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Positions</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Create Job Structure</value>
+      </configuration>
+      <configuration name="mods">
+        <value>ihris-manage-PersonPosition</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Salary Grades</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="job">
+      <configuration name="form">
+        <value>job</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_job</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Positions</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Create Job Structure</value>
+      </configuration>
+      <configuration name="mods">
+        <value>ihris-manage-PersonPosition</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Jobs</value>
+      </configuration>
+      <configurationGroup name="linked">
+        <configurationGroup name="position">
+          <configuration name="form">
+            <value>position</value>
+          </configuration>
+          <configuration name="style">
+            <value>default</value>
+          </configuration>
+          <configuration name="title" locale="en_US">
+            <value>View Associated Postions</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="salary_source">
+      <configuration name="form">
+        <value>salary_source</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_salary_source</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Positions</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Manage Positions</value>
+      </configuration>
+      <configuration name="mods">
+        <value>ihris-manage-PersonPosition</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Salary Sources</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="position_type">
+      <configuration name="form">
+        <value>position_type</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_position_type</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Positions</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Manage Positions</value>
+      </configuration>
+      <configuration name="mods">
+        <value>ihris-manage-PersonPosition</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Position Types</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="position">
+      <configuration name="field">
+        <value>status</value>
+      </configuration>
+      <configuration name="nosetdefault">
+        <value>1</value>
+      </configuration>
+      <configuration name="form">
+        <value>position</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_position</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Positions</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Manage Positions</value>
+      </configuration>
+      <configuration name="mods">
+        <value>ihris-manage-PersonPosition</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Positions (by Status)</value>
+      </configuration>
+      <configurationGroup name="linked">
+        <configurationGroup name="person">
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>person_position</value>
+          </configuration>
+          <configuration name="link">
+            <displayName>Link</displayName>
+            <value>view?id=</value>
+          </configuration>
+          <configurationGroup name="where">
+            <displayName>Where</displayName>
+            <configuration name="operator">
+              <displayName>Operator</displayName>
+              <value>FIELD_LIMIT</value>
+            </configuration>
+            <configuration name="field">
+              <displayName>Field</displayName>
+              <value>end_date</value>
+            </configuration>
+            <configuration name="style">
+              <displayName>Style</displayName>
+              <value>null</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="title">
+            <displayName>Title</displayName>
+            <value>Position Filled By</value>
+          </configuration>
+          <configuration name="printf">
+            <displayName>Printf</displayName>
+            <value>%s %s on %s</value>
+          </configuration>
+          <configurationGroup name="printf_args">
+            <displayName>Printf Args</displayName>
+            <configuration name="0">
+              <displayName>0</displayName>
+              <value>parent:firstname</value>
+            </configuration>
+            <configuration name="1">
+              <displayName>1</displayName>
+              <value>parent:surname</value>
+            </configuration>
+            <configuration name="2">
+              <displayName>2</displayName>
+              <value>start_date</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="link_field">
+            <displayName>Link Field</displayName>
+            <value>parent</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="position_by_facility">
+      <configuration name="field">
+        <value>facility</value>
+      </configuration>
+      <configuration name="nosetdefault">
+        <value>1</value>
+      </configuration>
+      <configuration name="form">
+        <value>position</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_position</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Positions</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Manage Positions</value>
+      </configuration>
+      <configuration name="mods">
+        <value>ihris-manage-PersonPosition</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Positions (by Facility)</value>
+      </configuration>
+      <configurationGroup name="linked">
+        <configurationGroup name="person">
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>person_position</value>
+          </configuration>
+          <configuration name="link">
+            <displayName>Link</displayName>
+            <value>view?id=</value>
+          </configuration>
+          <configurationGroup name="where">
+            <displayName>Where</displayName>
+            <configuration name="operator">
+              <displayName>Operator</displayName>
+              <value>FIELD_LIMIT</value>
+            </configuration>
+            <configuration name="field">
+              <displayName>Field</displayName>
+              <value>end_date</value>
+            </configuration>
+            <configuration name="style">
+              <displayName>Style</displayName>
+              <value>null</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="title">
+            <displayName>Title</displayName>
+            <value>Position Filled By</value>
+          </configuration>
+          <configuration name="printf">
+            <displayName>Printf</displayName>
+            <value>%s %s on %s</value>
+          </configuration>
+          <configurationGroup name="printf_args">
+            <displayName>Printf Args</displayName>
+            <configuration name="0">
+              <displayName>0</displayName>
+              <value>parent:firstname</value>
+            </configuration>
+            <configuration name="1">
+              <displayName>1</displayName>
+              <value>parent:surname</value>
+            </configuration>
+            <configuration name="2">
+              <displayName>2</displayName>
+              <value>start_date</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="link_field">
+            <displayName>Link Field</displayName>
+            <value>parent</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="confirmation_type">
+      <configuration name="form">
+        <value>confirmation_type</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_confirmation_type</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Positions</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Manage Positions</value>
+      </configuration>
+      <configuration name="mods">
+        <value>ihris-manage-confirmation</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Confirmation Types</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="facility_type">
+      <configuration name="form">
+        <value>facility_type</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_facility_type</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Organization Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Facility Type</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="facility">
+      <configuration name="field">
+        <value>location</value>
+      </configuration>
+      <configuration name="form">
+        <value>facility</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_facility</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Organization Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Office/Facility</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="department">
+      <configuration name="form">
+        <value>department</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_department</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Organization Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Department</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="council">
+      <configuration name="form">
+        <value>council</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_council</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Organization Lists</value>
+      </configuration>
+      <configuration name="mods">
+        <value>ManageRegistration</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Registration Councils</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="edu_type">
+      <configuration name="form">
+        <value>edu_type</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_edu_type</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Employee Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Education Type</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="degree">
+      <configuration name="field">
+        <value>edu_type</value>
+      </configuration>
+      <configuration name="form">
+        <value>degree</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_degree</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Employee Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Degree</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="language">
+      <configuration name="form">
+        <value>language</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_language</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Employee Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Language</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="competency_type">
+      <configuration name="form">
+        <value>competency_type</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_competency_type</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Employee Lists</value>
+      </configuration>
+      <configuration name="mods">
+        <value>simple-competency</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Competency Type</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="competency">
+      <configuration name="field">
+        <value>competency_type</value>
+      </configuration>
+      <configuration name="form">
+        <value>competency</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_competency</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Employee Lists</value>
+      </configuration>
+      <configuration name="mods">
+        <value>simple-competency</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Competency</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="competency_evaluation">
+      <configuration name="form">
+        <value>competency_evaluation</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_competency_evaluation</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Employee Lists</value>
+      </configuration>
+      <configuration name="mods">
+        <value>person-simple-competency</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Competency Evaluation</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="id_type">
+      <configuration name="form">
+        <value>id_type</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_id_type</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Employee Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Identification Type</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="benefit_type">
+      <configuration name="form">
+        <value>benefit_type</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_benefit_type</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Employee Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Benefit Type</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="marital_status">
+      <configuration name="form">
+        <value>marital_status</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_marital_status</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Employee Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Marital Status</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="contact_group">
+      <version>4.2.1.0</version>
+      <configuration name="form">
+        <value>contact_group</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_contact_group</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Employee Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Contact Group</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pos_change_reason">
+      <configuration name="form">
+        <value>pos_change_reason</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_pos_change_reason</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Employee Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Reasons for Departure</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="accident_type">
+      <configuration name="form">
+        <value>accident_type</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_accident_type</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Employee Lists</value>
+      </configuration>
+      <configuration name="mods">
+        <value>accident</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Accident Type</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="disciplinary_action_type">
+      <configuration name="form">
+        <value>disciplinary_action_type</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_disciplinary_action_type</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Employee Lists</value>
+      </configuration>
+      <configuration name="mods">
+        <value>disciplinary_action</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Disciplinary Action Type</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="disciplinary_action_reason">
+      <configuration name="form">
+        <value>disciplinary_action_reason</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_disciplinary_action_reason</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Employee Lists</value>
+      </configuration>
+      <configuration name="mods">
+        <value>disciplinary_action</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Disciplinary Action Reason</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="country">
+      <configuration name="form">
+        <value>country</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_country</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Geographic Information</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Country</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="region">
+      <configuration name="field">
+        <value>country</value>
+      </configuration>
+      <configuration name="form">
+        <value>region</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_region</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Geographic Information</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Region</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="district">
+      <configuration name="field">
+        <value>region</value>
+      </configuration>
+      <configuration name="form">
+        <value>district</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_district</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Geographic Information</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>District</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="county">
+      <configuration name="field">
+        <value>district</value>
+      </configuration>
+      <configuration name="form">
+        <value>county</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_county</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Geographic Information</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>County</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="currency">
+      <configuration name="form">
+        <value>currency</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_currency</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Geographic Information</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Currency</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="establishment_type">
+      <configuration name="form">
+        <value>establishment_type</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_establishment_type</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Planning Information</value>
+      </configuration>
+      <configuration name="mods">
+        <value>establishment</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Establishment Type</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="establishment_period">
+      <configuration name="field">
+        <value>establishment_type</value>
+      </configuration>
+      <configuration name="form">
+        <value>establishment_period</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_establishment_period</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Planning Information</value>
+      </configuration>
+      <configuration name="mods">
+        <value>establishment</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Establishment Period</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="establishment">
+      <configuration name="field">
+        <value>establishment_period</value>
+      </configuration>
+      <configuration name="form">
+        <value>establishment</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_establishment</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Planning Information</value>
+      </configuration>
+      <configuration name="mods">
+        <value>establishment</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Establishments</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="training_course_exam_type">
+      <configuration name="form">
+        <value>training_course_exam_type</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_training_course_exam_type</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Training Course Information</value>
+      </configuration>
+      <configuration name="mods">
+        <value>training-course</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Training Course Exam Types</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="training_course_mod">
+      <configuration name="form">
+        <value>training_course_mod</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_training_course_mod</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Training Course Information</value>
+      </configuration>
+      <configuration name="mods">
+        <value>training-course</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Training Course Modules</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="training_course">
+      <configuration name="mapped">
+        <value>scheduled_training_course</value>
+      </configuration>
+      <configuration name="form">
+        <value>training_course</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_training_course</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Training Course Information</value>
+      </configuration>
+      <configuration name="mods">
+        <value>training-course</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Training Courses</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="scheduled_training_course">
+      <configuration name="field">
+        <value>training_course</value>
+      </configuration>
+      <configuration name="form">
+        <value>scheduled_training_course</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_scheduled_training_course</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Training Course Information</value>
+      </configuration>
+      <configuration name="mods">
+        <value>training-course</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Scheduled Training Courses</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="training_course_status">
+      <configuration name="form">
+        <value>training_course_status</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_training_course_status</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Training Course Information</value>
+      </configuration>
+      <configuration name="mods">
+        <value>training-course</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Status of a Training Course</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="training_course_requestor">
+      <configuration name="form">
+        <value>training_course_requestor</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_training_course_requestor</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Training Course Information</value>
+      </configuration>
+      <configuration name="mods">
+        <value>training-course</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Requestors of a Training Course</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="training_course_evaluation">
+      <configuration name="form">
+        <value>training_course_evaluation</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_training_course_evaluation</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Training Course Information</value>
+      </configuration>
+      <configuration name="mods">
+        <value>training-course</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Evaluation of a Training Course</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="training_course_category">
+      <configuration name="form">
+        <value>training_course_category</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_training_course_category</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Training Course Information</value>
+      </configuration>
+      <configuration name="mods">
+        <value>training-course</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Category of a Training Course</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="training_institution">
+      <configuration name="form">
+        <value>training_institution</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_training_institution</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Training Course Information</value>
+      </configuration>
+      <configuration name="mods">
+        <value>manage-training-institution</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Training Institution</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="training_funder">
+      <configuration name="form">
+        <value>training_funder</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_training_funder</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Training Course Information</value>
+      </configuration>
+      <configuration name="mods">
+        <value>manage-training-institution</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Training Funder</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="continuing_education_course">
+      <configuration name="form">
+        <value>continuing_education_course</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_continuing_education_course</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Training Course Information</value>
+      </configuration>
+      <configuration name="mods">
+        <value>CEUs</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Continuing Education Course</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_asource">
+      <configuration name="form">
+        <value>cl_asource</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_asource</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_sex">
+      <configuration name="form">
+        <value>cl_sex</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_sex</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_gboundary_type">
+      <configuration name="form">
+        <value>cl_gboundary_type</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_gboundary_type</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_cstype">
+      <configuration name="form">
+        <value>cl_cstype</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_cstype</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_gcode_country">
+      <configuration name="form">
+        <value>cl_gcode_country</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_gcode_country</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_currency">
+      <configuration name="form">
+        <value>cl_currency</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_currency</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_dsource">
+      <configuration name="form">
+        <value>cl_dsource</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_dsource</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_dstype">
+      <configuration name="form">
+        <value>cl_dstype</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_dstype</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_dtype">
+      <configuration name="form">
+        <value>cl_dtype</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_dtype</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_day">
+      <configuration name="form">
+        <value>cl_day</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_day</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_disagg">
+      <configuration name="form">
+        <value>cl_disagg</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_disagg</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_disease">
+      <configuration name="form">
+        <value>cl_disease</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_disease</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_disstat">
+      <configuration name="form">
+        <value>cl_disstat</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_disstat</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_fperiod">
+      <configuration name="form">
+        <value>cl_fperiod</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_fperiod</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_gender">
+      <configuration name="form">
+        <value>cl_gender</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_gender</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_glevel">
+      <configuration name="form">
+        <value>cl_glevel</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_glevel</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_glocation">
+      <configuration name="form">
+        <value>cl_glocation</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_glocation</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_hif1">
+      <configuration name="form">
+        <value>cl_hif1</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_hif1</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_hif2">
+      <configuration name="form">
+        <value>cl_hif2</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_hif2</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_income">
+      <configuration name="form">
+        <value>cl_income</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_income</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_logical">
+      <configuration name="form">
+        <value>cl_logical</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_logical</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_metype">
+      <configuration name="form">
+        <value>cl_metype</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_metype</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_month">
+      <configuration name="form">
+        <value>cl_month</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_month</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_mult">
+      <configuration name="form">
+        <value>cl_mult</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_mult</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_operand">
+      <configuration name="form">
+        <value>cl_operand</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_operand</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_otype">
+      <configuration name="form">
+        <value>cl_otype</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_otype</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_orphan">
+      <configuration name="form">
+        <value>cl_orphan</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_orphan</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_periodicity">
+      <configuration name="form">
+        <value>cl_periodicity</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_periodicity</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_preg">
+      <configuration name="form">
+        <value>cl_preg</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_preg</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_pstatus">
+      <configuration name="form">
+        <value>cl_pstatus</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_pstatus</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_ptype">
+      <configuration name="form">
+        <value>cl_ptype</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_ptype</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_quarter">
+      <configuration name="form">
+        <value>cl_quarter</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_quarter</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_race">
+      <configuration name="form">
+        <value>cl_race</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_race</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_sector">
+      <configuration name="form">
+        <value>cl_sector</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_sector</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_special_value">
+      <configuration name="form">
+        <value>cl_special_value</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_special_value</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_stype">
+      <configuration name="form">
+        <value>cl_stype</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_stype</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_tpop">
+      <configuration name="form">
+        <value>cl_tpop</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_tpop</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_unit">
+      <configuration name="form">
+        <value>cl_unit</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_unit</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_value_type">
+      <configuration name="form">
+        <value>cl_value_type</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_value_type</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_vstatus">
+      <configuration name="form">
+        <value>cl_vstatus</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_vstatus</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_vulnstat">
+      <configuration name="form">
+        <value>cl_vulnstat</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_vulnstat</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_week">
+      <configuration name="form">
+        <value>cl_week</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_week</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cl_year">
+      <configuration name="form">
+        <value>cl_year</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_cl_year</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>SDMX-HD</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="isco_88_major">
+      <configuration name="form">
+        <value>isco_88_major</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_isco_88_major</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>ISCO</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="isco_88_minor">
+      <configuration name="form">
+        <value>isco_88_minor</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_isco_88_minor</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>ISCO</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="isco_88_sub_major">
+      <configuration name="form">
+        <value>isco_88_sub_major</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_isco_88_sub_major</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>ISCO</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="isco_88_unit">
+      <configuration name="form">
+        <value>isco_88_unit</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_view_database_list_isco_88_unit</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>ISCO</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="user">
+      <configuration name="form">
+        <value>user</value>
+      </configuration>
+      <configuration name="skip" type="boolean">
+        <value>true</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="user_map">
+      <configuration name="form">
+        <value>user_map</value>
+      </configuration>
+      <configuration name="skip" type="boolean">
+        <value>true</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="locale">
+      <configuration name="form">
+        <value>locale</value>
+      </configuration>
+      <configuration name="skip" type="boolean">
+        <value>true</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="gender">
+      <configuration name="form">
+        <value>gender</value>
+      </configuration>
+      <configuration name="skip" type="boolean">
+        <value>true</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="employee_status">
+      <configuration name="form">
+        <value>employee_status</value>
+      </configuration>
+      <configuration name="skip" type="boolean">
+        <value>true</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="benefit_recurrence">
+      <configuration name="form">
+        <value>benefit_recurrence</value>
+      </configuration>
+      <configuration name="skip" type="boolean">
+        <value>true</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="archived_report">
+      <configuration name="form">
+        <value>archived_report</value>
+      </configuration>
+      <configuration name="skip" type="boolean">
+        <value>true</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="language_proficiency">
+      <configuration name="form">
+        <value>language_proficiency</value>
+      </configuration>
+      <configuration name="skip" type="boolean">
+        <value>true</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="position_status">
+      <configuration name="form">
+        <value>position_status</value>
+      </configuration>
+      <configuration name="skip" type="boolean">
+        <value>true</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="role">
+      <configuration name="form">
+        <value>role</value>
+      </configuration>
+      <configuration name="skip" type="boolean">
+        <value>true</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

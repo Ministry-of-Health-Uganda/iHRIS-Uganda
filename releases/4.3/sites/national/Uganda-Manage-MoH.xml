@@ -1,0 +1,1325 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-manage-site-moh">
+  <metadata>
+    <displayName>iHRIS Manage Uganda MoH</displayName>
+    <category>Site</category>
+    <description>The iHRIS Manage Demo Site</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.3.43</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Uganda-manage">
+      <lessThan version="4.4" />
+    </requirement>
+    <conflict name="UploadAttendanceCli">
+      <lessThan version="4.4" />
+    </conflict>
+    <enable name="PersonAccomodation" />
+    <enable name="PersonAppraisal" />
+    <enable name="PersonFileTrack" />
+    <enable name="PersonClockIn" />
+    <enable name="CustomReports-full-staff" />
+    <enable name="CustomReports-full-search_people" />
+    <enable name="CustomReports-full-facility" />
+    <enable name="CustomReports-full-staffing_norm" />
+    <!--<enable name="Uganda-AuditPage-moh_hq" />-->
+    <!--<enable name="UploadAttendanceCli" />-->
+    <enable name="ManageAccessInstitutionType" />
+    <enable name="MohAPI" />
+    <enable name="web-services-lists" />
+   <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="images">
+      <value>./images</value>
+    </path>
+    <path name="pages">
+      <value>./pages</value>
+    </path>
+    <priority>400</priority>
+  </metadata>
+   <erase path="/modules/forms/formClasses/iHRIS_Job/fields/cadre/">
+      <atLeast version="4.2" />
+      <lessThan version="4.4" />
+    </erase>
+  <configurationGroup name="Uganda-manage-site-moh" path="/I2CE">
+    <displayName>iHRIS Manage Demo Site</displayName>
+    <status>advanced:false</status>
+    <configurationGroup name="feedback">
+      <displayName>Feedback Information</displayName>
+      <status>required:false</status>
+      <configuration name="email" path="to" values="single">
+        <displayName>Email Address</displayName>
+        <value>nmijumbi@intrahealth.org</value>
+      </configuration>
+      <configuration name="subject" values="single">
+        <displayName>Subject Line</displayName>
+        <value>iHRIS Manage Uganda MoH Feedback</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="template">
+      <displayName>Template Information</displayName>
+      <description>Various Default Information About The Templating System</description>
+      <status>advanced:false</status>
+      <status>required:true</status>
+      <configuration name="prefix_title" values="single" locale="en_US">
+        <displayName>Page title prefix</displayName>
+        <description>Page titile prefix</description>
+        <value>Human Resources Information System</value>
+      </configuration>
+    </configurationGroup>
+   <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+    <version>4.3.3.20</version>
+  <configuration name='can_edit_database_list_facility_office'>
+        <value>Edit the facility/department list</value>
+      </configuration>
+      <configuration name='can_view_database_list_facility_office'>
+        <value>View the facility/department list</value>
+      </configuration> 
+  <configuration name="can_edit_database_list_division" locale="en_US">
+    <value>Can edit division list</value>
+  </configuration>
+  <configuration name="can_view_database_list_division" locale="en_US">
+    <value>Can view division list</value>
+  </configuration>
+  <configuration name="can_edit_database_list_section" locale="en_US">
+    <value>Can edit section list</value>
+  </configuration>
+  <configuration name="can_view_database_list_section" locale="en_US">
+    <value>Can view section list</value>
+  </configuration>
+  <configuration name="can_edit_database_list_unit" locale="en_US">
+    <version>4.3.3.6</version>
+     <value>Can edit unit list</value>
+  </configuration>
+  <configuration name="can_view_database_list_unit" locale="en_US">
+    <version>4.3.3.6</version>
+    <value>Can view unit list</value>
+  </configuration>
+  <configuration name="can_edit_organization_database_lists" locale="en_US">
+    <value>Can edit some organization data</value>
+  </configuration>
+  <configuration name="can_view_organization_database_lists" locale="en_US">
+    <value>Can view some organization data</value>
+  </configuration>
+  <configuration name="can_edit_all_organization_database_lists" locale="en_US">
+    <value>Can edit all organization data</value>
+  </configuration>
+  <configuration name="can_view_all_organization_database_lists" locale="en_US">
+    <value>Can view all organization data</value>
+  </configuration>
+</configurationGroup>
+<configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+<version>4.3.3.20</version>
+<configuration name='can_edit_database_list_facility_department' values='many'>
+      <version>4.3.3.20</version>     
+        <value>can_edit_organization_database_lists</value>
+        <value>can_view_database_list_facility_office</value>
+      </configuration>
+<configuration name="can_edit_database_list_department" values="many">
+  <value>can_edit_organization_database_lists</value>
+  <value>can_view_database_list_department</value>
+</configuration>
+<configuration name="can_edit_database_list_division" values="many">
+  <version>4.3.3.20</version>
+  <value>can_edit_organization_database_lists</value>
+  <value>can_view_database_list_division</value>
+</configuration>
+<configuration name="can_edit_database_list_section" values="many">
+  <version>4.3.3.20</version>
+  <value>can_edit_organization_database_lists</value>
+  <value>can_view_database_list_section</value>
+</configuration>
+<configuration name="can_edit_database_list_unit" values="many">
+  <version>4.3.3.20</version>
+  <value>can_edit_organization_database_lists</value>
+  <value>can_view_database_list_unit</value>
+</configuration>
+<configuration name="can_edit_all_database_lists" values="many">
+  <value>can_edit_all_organization_database_lists</value>
+</configuration>
+<configuration name="can_edit_all_organization_database_lists" values="many">
+  <version>4.3.3.20</version>
+  <value>can_edit_database_list_department</value>
+  <value>can_edit_database_list_division</value>
+  <value>can_edit_database_list_section</value>
+  <value>can_edit_database_list_unit</value>
+  <value>can_edit_database_list_facility_office</value>
+  <value>can_edit_organization_database_lists</value>
+  <value>can_view_all_organization_database_lists</value>
+</configuration>
+<configuration name="can_view_all_organization_database_lists" values="many">
+  <version>4.3.3.20</version>
+  <value>can_view_database_list_department</value>
+  <value>can_view_database_list_division</value>
+  <value>can_view_database_list_section</value>
+  <value>can_view_database_list_unit</value>
+   <value>can_view_database_list_facility_office</value>
+  <value>can_view_organization_database_lists</value>
+</configuration>
+<configuration name="can_edit_organization_database_lists" values="many">
+  <value>can_edit_database_lists</value>
+  <value>can_view_organization_database_lists</value>
+</configuration>
+<configuration name="can_edit_all_database_lists" values="many">
+  <version>4.3.3.20</version>
+  <value>can_edit_all_organization_database_lists</value>
+</configuration>
+<configuration name="can_view_all_database_lists" values="many">
+  <version>4.3.3.20</version>
+  <value>can_view_all_organization_database_lists</value>
+</configuration>
+</configurationGroup>
+<!--
+<configurationGroup name="is_supervisor" path="/modules/forms/formClasses/iHRIS_PersonPosition/fields/is_supervisor">
+    <version>4.3.3.6</version>
+      <configuration name="formfield">
+        <value>YESNO</value>
+      </configuration>
+      <configuration name="headers" type="delimited" locale="en_US">
+        <value>default:Is Supervisor</value>
+      </configuration>
+     </configurationGroup>
+
+  <configurationGroup name="supervisor" path="/modules/forms/formClasses/iHRIS_PersonPosition/fields/supervisor">
+    <version>4.3.3.6</version>
+              <configuration name="formfield">
+                <value>REFERENCE</value>
+              </configuration>
+              <configuration name="headers" values="many" type="delimited" locale="en_US">
+                <value>default:Supervisor</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>person</value>
+                </configuration>
+                <configurationGroup name="display">
+                  <configurationGroup name="person">
+                    <configurationGroup name="default">
+                      <configuration name="printf" locale="en_US">
+                        <value>%s, %s</value>
+                      </configuration>
+                      <configuration name="printf_args" values="many" type="delimited">
+                        <value>0:surname</value>
+                        <value>1:firstname</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+                <configurationGroup name="reportSelect">
+                  <configurationGroup name="default">
+                    <configuration name="reportView">
+                      <value>1569965704</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+
+<configurationGroup name="facility_office" path="/modules/forms/formClasses/iHRIS_Establishment/fields/facility_office/">
+    <version>4.3.3.6</version>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+      <value>MAP</value>
+    </configuration>
+    <configuration name="headers" type="delimited">
+      <displayName>The headers for this field.</displayName>
+      <value>default:Facility - Office/Division/Department</value>
+    </configuration>        
+    <configuration name="required" type="boolean">
+      <displayName>This field is requried to be set</displayName>
+      <value>true</value>
+    </configuration>
+      <configurationGroup name="meta">
+        <configuration name="form" values="many">
+        <value>facility_office</value>
+        <value>facility</value>
+        <value>facility_type</value>
+      </configuration>
+        <configurationGroup name="display">
+          <configurationGroup name="default">
+            <configuration name="fields">
+              <value>facility_office:facility:facility_type</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>         
+  </configurationGroup>-->
+
+<configurationGroup name="location" path="/modules/forms/formClasses/iHRIS_Facility/fields/location">
+    <version>4.3.3.37</version>
+   <configuration name="required" type="boolean">
+      <displayName>This field is requried to be set</displayName>
+      <value>true</value>
+    </configuration>    
+  </configurationGroup> 
+
+<configurationGroup name='facility_office' path="/modules/forms/forms/facility_office">
+    <version>4.3.3.9</version>
+  <displayName>Facility Office</displayName>
+  <description>The Facility Office Form</description>
+  <configuration name='class' values='single'>
+  <displayName>Class Name</displayName>
+   <description>The name of the class providing the form</description>
+   <value>Facility_Office</value>
+  </configuration>
+  <configuration name='display' values='single'>
+    <displayName>Display name</displayName>
+    <description>The display name for this form</description>
+     <value>Facility- Office Structure</value>
+  </configuration>
+  <configuration name="storage" values='single'>
+    <displayName>Storage Details</displayName>
+    <description>The storage mechanism for this form.</description>
+    <value>magicdata</value>
+  </configuration>
+ </configurationGroup>
+
+<configurationGroup name="section" path="/modules/forms/forms/section">
+  <displayName>Section</displayName>
+  <description>The Section Form</description>
+    <version>4.3.3.6</version>
+  <configuration name="class" values="single">
+    <displayName>Class Name</displayName>
+    <description>The name of the class providing the form</description>
+    <value>iHRIS_Section</value>
+  </configuration>
+  <configuration name="display" values="single" locale="en_US">
+    <displayName>Display name</displayName>
+    <description>The display name for this form</description>
+    <value>Section</value>
+  </configuration>
+  <configuration name="storage" values="single">
+    <displayName>Storage Details</displayName>
+    <description>The storage mechanism for this form.</description>
+    <value>magicdata</value>
+  </configuration>
+  </configurationGroup>
+  <!-- section -->
+  <configurationGroup name="division" path="/modules/forms/forms/division">
+  <displayName>Division</displayName>
+  <description>The Division Form</description>
+    <version>4.3.3.6</version>
+  <configuration name="class" values="single">
+    <displayName>Class Name</displayName>
+    <description>The name of the class providing the form</description>
+    <value>iHRIS_Division</value>
+  </configuration>
+  <configuration name="display" values="single" locale="en_US">
+    <displayName>Display name</displayName>
+    <description>The display name for this form</description>
+    <value>Division</value>
+  </configuration>
+  <configuration name="storage" values="single">
+    <displayName>Storage Details</displayName>
+    <description>The storage mechanism for this form.</description>
+    <value>magicdata</value>
+  </configuration>
+</configurationGroup>
+<!-- division -->
+<configurationGroup name="iHRIS_ListByDirectorate" path="/modules/forms/formClasses/iHRIS_ListByDirectorate">
+<displayName>Configuration for the class 'iHRIS_ListByDirectorate'</displayName>
+<description>A list class which has data organized by directorate/department/section/county</description>
+    <version>4.3.3.6</version>
+<configuration name="extends">
+  <displayName>The class this form extends</displayName>
+  <value>I2CE_SimpleList</value>
+</configuration>
+<configurationGroup name="fields">
+  <displayName>The fields defined for this form</displayName>
+  <configurationGroup name="name">
+    <displayName>The field 'name'</displayName>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+      <value>STRING_LINE</value>
+    </configuration>
+    <configuration name="headers" type="delimited" locale="en_US">
+      <displayName>The headers for this field.</displayName>
+    <version>4.3.3.6</version>
+      <value>default:Name</value>
+    </configuration>
+    <configuration name="required" type="boolean">
+      <displayName>This field is required to be set</displayName>
+      <value>true</value>
+    </configuration>
+    <configuration name="unique" type="boolean">
+      <displayName>This field is required to be unique</displayName>
+      <value>true</value>
+    </configuration>
+  </configurationGroup>
+  <configurationGroup name="office_structure">
+    <displayName>The field 'office_structure'</displayName>
+    <version>4.3.3.6</version>
+    <configurationGroup name="meta">
+      <configuration name="form" values="many">
+    <version>4.3.3.6</version>
+        <value>unit</value>
+	<value>section</value>
+ 	<value>division</value>
+	<value>department</value>
+	<value>directorate</value>
+      </configuration>
+      <configurationGroup name="display">
+        <configurationGroup name="default">
+          <configuration name="fields">
+            <version>4.2.1.10</version>
+            <value>unit:section:division:department:directorate</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+      <value>MAP</value>
+    </configuration>
+    <configuration name="headers" type="delimited" locale="en_US">
+      <displayName>The headers for this field.</displayName>
+      <value>default:Office Structure</value>
+    </configuration>
+  </configurationGroup>
+</configurationGroup>
+</configurationGroup>
+<configurationGroup name="meta" path="/modules/forms/formClasses/iHRIS_Directorate/meta/list/default">
+    <version>4.3.3.6</version>
+  <configuration name="sort_fields" type="delimited" values="many">
+    <value>0:name</value>
+  </configuration>
+</configurationGroup>
+
+<configurationGroup name="office_structure" path="/modules/forms/formClasses/iHRIS_Directorate/fields/office_structure">
+  <displayName>The field 'office_structure'</displayName>
+  <configuration name="formfield">
+    <displayName>The form field type</displayName>
+    <value>YESNO</value>
+  </configuration>
+  <configuration name="headers" type="delimited" locale="en_US">
+    <displayName>The headers for this field.</displayName>
+    <version>4.3.3.6</version>
+    <value>default:Use for Office Selection</value>
+  </configuration>
+</configurationGroup>
+
+<configurationGroup name="unit" path="/modules/forms/forms/unit">
+  <displayName>Unit</displayName>
+  <description>The Unit Form</description>
+    <version>4.3.3.6</version>
+  <configuration name="class" values="single">
+    <displayName>Class Name</displayName>
+    <description>The name of the class providing the form</description>
+    <value>iHRIS_Unit</value>
+  </configuration>
+  <configuration name="display" values="single" locale="en_US">
+    <displayName>Display name</displayName>
+    <description>The display name for this form</description>
+    <value>Unit</value>
+  </configuration>
+  <configuration name="storage" values="single">
+    <displayName>Storage Details</displayName>
+    <description>The storage mechanism for this form.</description>
+    <value>magicdata</value>
+  </configuration>
+</configurationGroup>
+<configurationGroup name="iHRIS_Unit" path="/modules/forms/formClasses/iHRIS_Unit" >
+    <version>4.3.3.6</version>
+<displayName>Configuration for the class 'iHRIS_Section'</displayName>
+<configuration name="extends">
+  <displayName>The class this form extends</displayName>
+  <value>I2CE_SimpleList</value>
+</configuration>
+<configurationGroup name="meta" path="meta/list/default">
+  <configuration name="display_string">
+    <value>%s, %s</value>
+  </configuration>
+  <configuration name="display_args" type="delimited" values="many">
+    <value>0:name</value>
+    <value>1:section</value>
+  </configuration>
+  <configuration name="sort_fields" type="delimited" values="many">
+    <value>0:section</value>
+    <value>1:name</value>
+  </configuration>
+</configurationGroup>
+<configurationGroup name="fields">
+  <displayName>The fields defined for this form</displayName>
+  <configurationGroup name="name">
+    <displayName>The field 'name'</displayName>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+      <value>STRING_LINE</value>
+    </configuration>
+    <configuration name="headers" type="delimited" locale="en_US">
+      <displayName>The headers for this field.</displayName>
+    <version>4.3.3.6</version>
+      <value>default:Name</value>
+    </configuration>
+    <configuration name="required" type="boolean">
+      <displayName>This field is required to be set</displayName>
+      <value>true</value>
+    </configuration>
+    <configuration name="unique" type="boolean">
+      <displayName>This field is required to be unique</displayName>
+      <value>true</value>
+    </configuration>
+    <configuration name="unique_field">
+      <displayName>This field is required to be unique</displayName>
+      <value>section:division:department:directorate</value>
+    </configuration>
+  </configurationGroup>
+  <configurationGroup name="section">
+    <displayName>The field 'division'</displayName>
+    <configurationGroup name="meta">
+      <configurationGroup name="display">
+        <configurationGroup name="default">
+          <configuration name="fields">
+            <value>section:division:department:directorate</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+      <value>MAP</value>
+    </configuration>
+    <configuration name="headers" type="delimited" locale="en_US">
+      <displayName>The headers for this field.</displayName>
+      <value>default:Section</value>
+    </configuration>
+    <configuration name="required" type="boolean">
+      <displayName>This field is required to be set</displayName>
+      <value>true</value>
+    </configuration>
+  </configurationGroup>
+</configurationGroup>
+</configurationGroup>
+<!-- iHRIS_Unit -->
+<configurationGroup name="iHRIS_Section" path="/modules/forms/formClasses/iHRIS_Section" >
+    <version>4.3.3.6</version>
+<displayName>Configuration for the class 'iHRIS_Section'</displayName>
+<configuration name="extends">
+  <displayName>The class this form extends</displayName>
+  <value>I2CE_SimpleList</value>
+</configuration>
+<configurationGroup name="meta" path="meta/list/default">
+    <version>4.3.3.6</version>
+  <configuration name="display_string">
+    <value>%s, %s</value>
+  </configuration>
+  <configuration name="display_args" type="delimited" values="many">
+    <value>0:name</value>
+    <value>1:division</value>
+  </configuration>
+  <configuration name="sort_fields" type="delimited" values="many">
+    <value>0:division</value>
+    <value>1:name</value>
+  </configuration>
+</configurationGroup>
+<configurationGroup name="fields">
+  <displayName>The fields defined for this form</displayName>
+  <configurationGroup name="name">
+    <displayName>The field 'name'</displayName>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+      <value>STRING_LINE</value>
+    </configuration>
+    <configuration name="headers" type="delimited" locale="en_US">
+      <displayName>The headers for this field.</displayName>
+    <version>4.3.3.6</version>
+      <value>default:Name</value>
+    </configuration>
+    <configuration name="required" type="boolean">
+      <displayName>This field is required to be set</displayName>
+      <value>true</value>
+    </configuration>
+    <configuration name="unique" type="boolean">
+      <displayName>This field is required to be unique</displayName>
+      <value>true</value>
+    </configuration>
+    <configuration name="unique_field">
+      <displayName>This field is required to be unique</displayName>
+      <value>division:department</value>
+    </configuration>
+  </configurationGroup>
+  <configurationGroup name="division">
+    <displayName>The field 'division'</displayName>
+    <version>4.3.3.6</version>
+    <configurationGroup name="meta">
+      <configurationGroup name="display">
+        <configurationGroup name="default">
+          <configuration name="fields">
+            <version>4.3.3.6</version>
+            <value>division:department</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+      <value>MAP</value>
+    </configuration>
+    <configuration name="headers" type="delimited" locale="en_US">
+      <displayName>The headers for this field.</displayName>
+    <version>4.3.3.6</version>
+      <value>default:Division</value>
+    </configuration>
+    <configuration name="required" type="boolean">
+      <displayName>This field is required to be set</displayName>
+      <value>true</value>
+    </configuration>
+  </configurationGroup>
+</configurationGroup>
+</configurationGroup>
+<!-- iHRIS_Section -->
+<configurationGroup name="iHRIS_Division" path="/modules/forms/formClasses/iHRIS_Division">
+    <version>4.3.3.6</version>
+<displayName>Configuration for the class 'iHRIS_Division'</displayName>
+<configuration name="extends">
+  <displayName>The class this form extends</displayName>
+  <value>I2CE_SimpleList</value>
+</configuration>
+<configurationGroup name="meta" path="meta/list/default">
+    <version>4.3.3.6</version>
+  <configuration name="display_string">
+    <value>%s, %s</value>
+  </configuration>
+  <configuration name="display_args" type="delimited" values="many">
+    <value>0:name</value>
+    <value>1:department</value>
+  </configuration>
+  <configuration name="sort_fields" type="delimited" values="many">
+    <value>0:department</value>
+    <value>1:name</value>
+  </configuration>
+</configurationGroup>
+<configurationGroup name="fields">
+  <displayName>The fields defined for this form</displayName>
+  <configurationGroup name="name">
+    <displayName>The field 'name'</displayName>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+      <value>STRING_LINE</value>
+    </configuration>
+    <configuration name="headers" type="delimited" locale="en_US">
+      <displayName>The headers for this field.</displayName>
+    <version>4.3.3.6</version>
+      <value>default:Name</value>
+    </configuration>
+    <configuration name="required" type="boolean">
+      <displayName>This field is required to be set</displayName>
+      <value>true</value>
+    </configuration>
+    <configuration name="unique" type="boolean">
+      <displayName>This field is required to be unique</displayName>
+      <value>true</value>
+    </configuration>
+    <configuration name="unique_field">
+      <displayName>This field is required to be unique</displayName>
+      <value>department</value>
+    </configuration>
+  </configurationGroup>
+  <configurationGroup name="department">
+    <displayName>The field 'department'</displayName>
+    <version>4.3.3.6</version>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+      <value>MAP</value>
+    </configuration>
+    <configuration name="headers" type="delimited" values="many" locale="en_US">
+      <displayName>The headers for this field.</displayName>
+    <version>4.3.3.6</version>
+      <value>default:Department</value>
+    </configuration>
+    <configuration name="required" type="boolean">
+      <displayName>This field is required to be set</displayName>
+      <value>true</value>
+    </configuration>
+  </configurationGroup>
+</configurationGroup>
+</configurationGroup>
+<!-- iHRIS_Division -->
+
+<configurationGroup name="department" path="/modules/forms/formClasses/iHRIS_Position/fields/department">
+    <version>4.3.3.6</version>
+    <displayName>The field 'department'</displayName>
+    <configuration name='required' type='boolean'>
+      <value>false</value>
+    </configuration>
+    <configuration name='in_db' type='boolean'>
+      <value>false</value>
+    </configuration>
+  </configurationGroup>
+   <!--<configurationGroup name="facility" path="/modules/forms/formClasses/iHRIS_Position/fields/facility">
+    <version>4.3.3.6</version>
+    <displayName>The field 'department'</displayName>
+    <configuration name='required' type='boolean'>
+      <value>false</value>
+    </configuration>
+    <configuration name='in_db' type='boolean'>
+      <value>false</value>
+    </configuration>
+  </configurationGroup>
+ <configurationGroup name="office_structure" path="/modules/forms/formClasses/iHRIS_Position/fields/office_structure">
+    <version>4.3.3.6</version>
+    <displayName>The field 'office_structure'</displayName>
+    <configuration name='required' type='boolean'>
+      <value>false</value>
+    </configuration>
+    <configuration name='in_db' type='boolean'>
+      <value>false</value>
+    </configuration>
+  </configurationGroup>-->
+  <configurationGroup name="facility_office" path="/modules/forms/formClasses/iHRIS_Position/fields/facility_office">
+    <version>4.3.3.14</version>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+    <version>4.3.3.14</version>
+      <value>MAP</value>
+    </configuration>
+    <configuration name="headers" type="delimited">
+      <displayName>The headers for this field.</displayName>
+      <value>default:Facility/Office Structure</value>
+    </configuration>        
+    <configuration name="required" type="boolean">
+      <displayName>This field is requried to be set</displayName>
+      <value>true</value>
+    </configuration>
+    <!--  <configurationGroup name="meta">
+    <version>4.3.3.13</version>
+         <configuration name="form" values="many">
+	    <value>office_structure</value>
+            <value>facility_type</value>
+	   </configuration>
+        <configurationGroup name="display">
+          <configurationGroup name="default">
+            <configuration name="fields">
+            <value>office_structure:facility_type</value>
+	    </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>  -->       
+  </configurationGroup> 
+
+ <configurationGroup name="duty_station" path="/modules/forms/formClasses/iHRIS_PersonPosition/fields/duty_station">
+    <version>4.3.3.7</version>
+    <configuration name="formfield">
+     <displayName>The form field type</displayName>
+    <version>4.3.3.7</version>
+      <value>MAP</value>
+    </configuration>
+    <configuration name="headers" type="delimited">
+      <displayName>The headers for this field.</displayName>
+      <value>default:Duty Station</value>
+    </configuration>        
+    <configuration name="required" type="boolean">
+      <displayName>This field is requried to be set</displayName>
+      <value>true</value>
+    </configuration>
+      <configurationGroup name="meta">
+    <version>4.3.3.7</version>
+         <configuration name="form" values="many">
+	    
+            <value>facility</value>
+	    <value>facility_type</value>
+	    <value>district</value>
+            </configuration>
+        <configurationGroup name="display">
+          <configurationGroup name="default">
+            <configuration name="fields">
+            <value>facility:facility_type:district</value>
+	    </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>         
+  </configurationGroup> 
+
+
+
+
+
+
+<configurationGroup name="cadre" path="/modules/forms/formClasses/iHRIS_Classification/fields/cadre">
+    <version>4.3.3.6</version>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+      <value>MAP</value>
+    </configuration>
+    <configuration name="headers" type="delimited">
+      <displayName>The headers for this field.</displayName>
+      <value>default:Cadre</value>
+    </configuration>        
+    <configuration name="required" type="boolean">
+      <displayName>This field is requried to be set</displayName>
+      <value>true</value>
+    </configuration>    
+  </configurationGroup> 
+
+<configurationGroup name="job" path="/modules/forms/formClasses/iHRIS_Position/fields/job">
+    <version>4.3.3.6</version>
+     <configurationGroup name="meta">
+      <configuration name="form" values="many">
+	    <value>job</value>
+	    <value>classification</value>
+	  </configuration>
+        <configurationGroup name="display">
+          <configurationGroup name="default">
+            <configuration name="fields">
+             <value>job:classification</value>
+	    </configuration>
+        </configurationGroup>
+      </configurationGroup>  
+  </configurationGroup> 
+</configurationGroup> 
+
+
+<configurationGroup name="classification" path="/modules/forms/formClasses/iHRIS_Job/fields/classification">
+    <version>4.3.3.6</version>
+     <configurationGroup name="meta">
+	<configuration name="form" values="many">
+	    <value>classification</value>
+	    <value>cadre</value>
+	  </configuration>
+        <configurationGroup name="display">
+	  <configurationGroup name="default">
+		<configuration name="fields">
+             <value>classification:cadre</value>
+	    </configuration>
+        </configurationGroup>
+      </configurationGroup>  
+  </configurationGroup> 
+</configurationGroup> 
+
+<!--<configurationGroup name="office_structure" path="/modules/forms/formClasses/iHRIS_Position/fields/office_structure">
+ <version>4.2.1.10</version>
+  <configuration name="formfield">
+<value>MAP</value>
+  </configuration>
+<configuration name="headers" type="delimited" locale="en_US">
+ <value>default:Directorate/Department/Divison/Section/Unit</value>
+  </configuration>
+<configurationGroup name="meta">
+  <version>4.2.1.10</version>
+  <configuration name="form" values="many">
+    <value>unit</value>
+  </configuration>
+  <configurationGroup name="display">
+    <configurationGroup name="default">
+      <configuration name="fields">
+        <value>unit:section:division:department:directorate</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</configurationGroup>
+</configurationGroup> -->
+
+<configurationGroup name="facility_type" path="/modules/forms/formClasses/Facility_Office/fields/facility_type">
+    <version>4.3.3.7</version>
+    <configurationGroup name="meta">
+	<configuration name="form" values="many">
+	  <value>facility_type</value>
+	</configuration>
+	<configurationGroup name="display">
+	  <configurationGroup name="default">
+	    <configuration name="fields">
+	      <value>facility_type</value>
+	    </configuration>
+	  </configurationGroup>
+	</configurationGroup>
+   </configurationGroup>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+      <value>MAP</value>
+    </configuration>
+    <configuration name="headers" type="delimited">
+      <displayName>The headers for this field.</displayName>
+      <value>default:Facility Level</value>
+    </configuration>        
+    <configuration name="required" type="boolean">
+      <displayName>This field is requried to be set</displayName>
+      <value>true</value>
+    </configuration>    
+  </configurationGroup> 
+
+
+
+
+<configurationGroup name='Facility_Office' path="/modules/forms/formClasses/Facility_Office">
+    <version>4.3.3.7</version>
+  <configuration name="extends">
+   <displayName>The class this form extends</displayName>
+   <value>I2CE_List</value>
+  </configuration>
+  
+  <configurationGroup name="meta" path="meta/list/default">
+    <version>4.3.3.7</version>
+    <configuration name="display_string">
+      <value>%s, %s</value>
+    </configuration>
+    <configuration name="display_args" type="delimited" values="many">
+      <value>0:facility_type</value>
+      <value>1:office_structure</value>
+     </configuration>
+    <configuration name="sort_fields" type="delimited" values="many">
+      <value>0:facility_type</value>
+      <value>1:office_structure</value>
+     </configuration>
+  </configurationGroup>
+
+
+
+  <configurationGroup name="fields">
+    <version>4.3.3.6</version>
+  <!-- <configurationGroup name='facility'>
+    <configuration name="formfield">
+     <displayName>The form field type</displayName>
+     <value>MAP</value>
+    </configuration>
+    <configuration name="required" type="boolean">
+     <displayName>This field is required to be set</displayName>
+     <value>true</value>
+    </configuration>
+   </configurationGroup>-->
+   <configurationGroup name='office_structure'>
+    <configuration name="formfield">
+     <displayName>The form field type</displayName>
+     <value>MAP</value>
+    </configuration>
+    <configuration name="headers" type="delimited" locale="en_US">
+     <value>default:Directorate/Department/Divison/Section/Unit</value>
+    </configuration>
+    <configuration name="unique" type="boolean">
+     <displayName>This field is requried to be unique</displayName>
+     <value>true</value>
+    </configuration>
+    <configuration name="unique_field">
+     <displayName>This field is required to be unique for each facility_type</displayName>
+     <value>facility_type</value>
+    </configuration>
+    <configuration name="required" type="boolean">
+     <displayName>This field is required to be set</displayName>
+     <value>true</value>
+    </configuration>
+    <configurationGroup name="meta">
+      <configuration name="form" values="many">
+        <value>unit</value>
+        <value>section</value>
+        <value>division</value>
+        <value>department</value>
+        <value>directorate</value>
+      </configuration>
+      <configurationGroup name="display">
+        <configurationGroup name="default">
+          <configuration name="fields">
+            <value>unit:section:division:department:directorate</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+   </configurationGroup>
+ </configurationGroup>
+</configurationGroup>
+
+
+<configurationGroup name="institution_category" path="/modules/forms/forms/institution_category">
+      <displayName>Institution Category</displayName>
+    <version>4.3.3.6</version>
+      <description>The'institution_category' Form</description>
+      <configuration name="class" values="single">
+        <value>I2CE_SimpleList</value>
+      </configuration>
+      <configuration name="display" values="single" locale="en_US">
+        <value>Institution Category</value>
+      </configuration>
+      <configuration name="storage" values="single">
+        <value>magicdata</value>
+      </configuration>
+</configurationGroup>
+
+<configurationGroup name="institution_type" path="/modules/forms/forms/institution_type">
+          <displayName>Institution Type Information</displayName>
+    <version>4.3.3.6</version>
+          <description>The Institution Type Information Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_InstitutionType</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+           <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Institution Type</value>
+          </configuration>
+      </configurationGroup>
+
+<configurationGroup name="iHRIS_InstitutionType" path="/modules/forms/formClasses/iHRIS_InstitutionType" >
+<displayName>Configuration for the class 'iHRIS_InstitutionType'</displayName>
+    <version>4.3.3.6</version>
+<configuration name="extends">
+  <displayName>The class this form extends</displayName>
+  <value>I2CE_List</value>
+</configuration>
+<configurationGroup name="meta" path="meta/list/default">
+    <version>4.3.3.6</version>
+  <configuration name="display_string">
+    <value>%s, %s</value>
+  </configuration>
+  <configuration name="display_args" type="delimited" values="many">
+    <value>0:name</value>
+    <value>1:institution_category</value>
+  </configuration>
+  <configuration name="sort_fields" type="delimited" values="many">
+    <value>0:name</value>
+    <value>1:institution_category</value>
+  </configuration>
+</configurationGroup>
+<configurationGroup name="fields">
+  <displayName>The fields defined for this form</displayName>
+  <configurationGroup name="name">
+    <displayName>The field 'name'</displayName>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+      <value>STRING_LINE</value>
+    </configuration>
+    <configuration name="headers" type="delimited" locale="en_US">
+      <displayName>The headers for this field.</displayName>
+      <value>default:Name</value>
+    </configuration>
+    <configuration name="required" type="boolean">
+      <displayName>This field is required to be set</displayName>
+      <value>true</value>
+    </configuration>
+    <configuration name="unique" type="boolean">
+      <displayName>This field is required to be unique</displayName>
+      <value>true</value>
+    </configuration>
+  </configurationGroup>
+
+  <configurationGroup name="institution_category">
+    <version>4.3.3.6</version>
+	<displayName>The fields 'institution_category'</displayName>
+	<configuration name="formfield">
+	<displayName>The form field type</displayName>
+	<value>MAP</value>
+	</configuration>
+	<configurationGroup name="meta">
+	<configurationGroup name="display">
+	 <configurationGroup name="default">
+	  <configuration name="fields">
+         <value>institution_category</value>
+         </configuration>
+	  </configurationGroup>
+	</configurationGroup>
+	</configurationGroup>
+	<configuration name="headers" type="delimited">
+	<displayName>The headers for this field.</displayName>
+	<value>default:Institution Category</value>
+	</configuration>
+	</configurationGroup>
+     </configurationGroup>
+  </configurationGroup>
+
+
+<configurationGroup name="institution_type" path="/modules/forms/formClasses/iHRIS_Facility/fields/institution_type">
+    <version>4.3.3.6</version>
+  <displayName>The fields 'Institution Type'</displayName>
+  <configuration name="formfield">
+<value>MAP</value>
+  </configuration>
+<configuration name="headers" type="delimited" locale="en_US">
+ <value>default:Institution Type</value>
+  </configuration>
+<configurationGroup name="meta" path="meta/list/default">
+    <version>4.3.3.6</version>
+  <configuration name="display_string">
+    <value>%s, %s</value>
+  </configuration>
+  <configuration name="display_args" type="delimited" values="many">
+    <value>0:name</value>
+    <value>1:institution_category</value>
+  </configuration>
+  <configuration name="sort_fields" type="delimited" values="many">
+    <value>0:name</value>
+    <value>1:institution_category</value>
+  </configuration>
+</configurationGroup>
+</configurationGroup>
+
+<configurationGroup name="directorate" path="/modules/forms/forms/directorate">
+  <displayName>Directorate</displayName>
+  <description>The Directorate Form</description>
+    <version>4.3.3.6</version>
+  <configuration name="class" values="single">
+    <displayName>Class Name</displayName>
+    <description>The name of the class providing the form</description>
+    <value>iHRIS_Directorate</value>
+  </configuration>
+  <configuration name="display" values="single" locale="en_US">
+    <displayName>Display name</displayName>
+    <description>The display name for this form</description>
+    <value>Directorate</value>
+  </configuration>
+  <configuration name="storage" values="single">
+    <displayName>Storage Details</displayName>
+    <description>The storage mechanism for this form.</description>
+    <value>magicdata</value>
+  </configuration>
+</configurationGroup>
+<configurationGroup name="iHRIS_Directorate" path="/modules/forms/formClasses/iHRIS_Directorate" >
+    <version>4.3.3.7</version>
+<displayName>Configuration for the class 'iHRIS_Directorate'</displayName>
+<configuration name="extends">
+  <displayName>The class this form extends</displayName>
+  <value>I2CE_SimpleList</value>
+</configuration>
+<configurationGroup name="meta" path="meta/list/default">
+    <version>4.3.3.7</version>
+  <configuration name="display_string">
+    <value>%s</value>
+  </configuration>
+  <configuration name="display_args" type="delimited" values="many">
+    <value>0:name</value>
+  
+    </configuration>
+  <configuration name="sort_fields" type="delimited" values="many">
+    <value>0:name</value>
+   
+    </configuration>
+</configurationGroup>
+<configurationGroup name="fields">
+  <displayName>The fields defined for this form</displayName>
+  <configurationGroup name="name">
+    <displayName>The field 'name'</displayName>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+      <value>STRING_LINE</value>
+    </configuration>
+    <configuration name="headers" type="delimited" locale="en_US">
+      <displayName>The headers for this field.</displayName>
+      <value>default:Name</value>
+    </configuration>
+    <configuration name="required" type="boolean">
+      <displayName>This field is required to be set</displayName>
+      <value>true</value>
+    </configuration>
+    <configuration name="unique" type="boolean">
+      <displayName>This field is required to be unique</displayName>
+      <value>true</value>
+    </configuration>
+  </configurationGroup>
+</configurationGroup>
+</configurationGroup>
+<!-- iHRIS_Directorate -->
+
+<configurationGroup name="iHRIS_Department" path="/modules/forms/formClasses/iHRIS_Department" >
+    <version>4.3.3.6</version>
+<configurationGroup name="meta" path="meta/list/default">
+  <configuration name="display_string">
+    <value>%s, %s</value>
+  </configuration>
+  <configuration name="display_args" type="delimited" values="many">
+    <value>0:name</value>
+    <value>1:directorate</value>
+  </configuration>
+  <configuration name="sort_fields" type="delimited" values="many">
+    <value>0:directorate</value>
+    <value>1:name</value>
+  </configuration>
+</configurationGroup>
+<configurationGroup name="fields">
+    <version>4.3.3.6</version>
+  <displayName>The fields defined for this form</displayName>
+   <configurationGroup name="name">
+    <version>4.3.3.6</version>
+    <configuration name="required" type="boolean">
+      <displayName>This field is required to be set</displayName>
+      <value>true</value>
+    </configuration>
+    <configuration name="unique" type="boolean">
+      <displayName>This field is required to be unique</displayName>
+      <value>true</value>
+    </configuration>
+    <configuration name="unique_field">
+      <displayName>This field is required to be unique</displayName>
+      <value>directorate</value>
+    </configuration>
+</configurationGroup>
+    <configurationGroup name="directorate">
+    <version>4.3.3.6</version>
+    <displayName>The field 'directorate'</displayName>
+    <configurationGroup name="meta">
+      <configurationGroup name="display">
+        <configurationGroup name="default">
+          <configuration name="fields">
+            <value>directorate</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configuration name="formfield">
+      <displayName>The form field type</displayName>
+      <value>MAP</value>
+    </configuration>
+    <configuration name="headers" type="delimited" locale="en_US">
+      <displayName>The headers for this field.</displayName>
+      <value>default:Directorate</value>
+    </configuration>
+    <configuration name="required" type="boolean">
+      <displayName>This field is required to be set</displayName>
+      <value>true</value>
+    </configuration>
+  </configurationGroup>
+ </configurationGroup>
+ </configurationGroup>
+
+<configurationGroup name="auto_list" path="/modules/Lists/auto_list">
+    <version>4.3.3.6</version>
+       <configurationGroup name="facility_office">
+    <version>4.3.3.6</version>
+      <configuration name="form">
+        <value>facility_office</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_department</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Organization Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Facility - Office/Division/Department</value>
+      </configuration>
+    </configurationGroup>
+      <configurationGroup name="directorate">
+    <version>4.3.3.6</version>
+      <configuration name="form">
+        <value>directorate</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_department</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Organization Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Directotate</value>
+      </configuration>
+    </configurationGroup>
+
+      <configurationGroup name="division">
+    <version>4.3.3.6</version>
+        <configuration name="form">
+          <value>division</value>
+        </configuration>
+        <configuration name="task">
+          <value>can_edit_database_list_division</value>
+        </configuration>
+        <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Organization Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Division</value>
+      </configuration>
+      </configurationGroup>
+
+      <configurationGroup name="section">
+    <version>4.3.3.6</version>
+        <configuration name="form">
+          <value>section</value>
+        </configuration>
+        <configuration name="task">
+          <value>can_edit_database_list_section</value>
+        </configuration>
+        <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Organization Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Section</value>
+      </configuration>
+      </configurationGroup>
+
+      <configurationGroup name="unit">
+    <version>4.3.3.6</version>
+        <configuration name="form">
+          <value>unit</value>
+        </configuration>
+        <configuration name="task">
+          <value>can_edit_database_list_unit</value>
+        </configuration>
+        <configuration name="category" locale="en_US">
+        <value>Administer Other Lists</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Organization Lists</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Unit</value>
+      </configuration>
+      </configurationGroup>
+    </configurationGroup>
+
+   <configurationGroup name="immediate" path="/modules/forms/formClasses/iHRIS_Dependent/fields/immediate">
+    <version>4.3.3.6</version>
+     <displayName>The field 'immediate'</displayName>
+     <configuration name="formfield">
+       <displayName>The form field type</displayName>
+       <value>YESNO</value>
+     </configuration>
+     <configuration name="headers" type="delimited" locale="en_US">
+       <displayName>The headers for this field.</displayName>
+       <value>default:Immediate Family Member</value>
+     </configuration>
+   </configurationGroup>
+
+
+    <configurationGroup name="telephone" path="/modules/forms/formClasses/iHRIS_Dependent/fields/telephone">
+    <version>4.3.3.6</version>
+     <displayName>The field 'telephone'</displayName>
+     <configuration name="formfield">
+       <displayName>The form field type</displayName>
+       <value>INT</value>
+     </configuration>
+     <configuration name="headers" type="delimited" locale="en_US">
+       <displayName>The headers for this field.</displayName>
+       <value>default:Telephone</value>
+     </configuration>
+   </configurationGroup>
+      
+      
+
+    <configurationGroup name="custom_report_pdf_options" path="/modules/CustomReports/displays/PDF/display_options">
+      <displayName>PDF Options</displayName>
+      <configurationGroup name="header">
+        <displayName>Header Options</displayName>
+        <configuration name="text_prefix" locale="en_US">
+          <displayName>Header Text</displayName>
+          <value>Human Resources Information System</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

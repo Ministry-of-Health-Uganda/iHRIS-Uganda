@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEmployment" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEmployment" path="/I2CE" locale="lki">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="lki">
+      <configuration name="person_can_view_child_form_employment" locale="lki"></configuration>
+      <configuration name="person_can_edit_child_form_employment" locale="lki"></configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="employment">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="lki">
+            <value>افزودن/به‌روزرسانی تاریخچهٔ کاری</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="employment">
+          <configuration name="display" values="single" locale="lki">
+            <value>تاریخچهٔ کاری</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Employment">
+          <configurationGroup name="fields">
+            <configurationGroup name="company_name">
+              <configuration name="headers" type="delimited" locale="lki">
+                <value>default:نۆم شرکتی</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="company_address">
+              <configuration name="headers" type="delimited" locale="lki">
+                <value>default:نیشانی شرکت</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="company_phone">
+              <configuration name="headers" type="delimited" locale="lki">
+                <value>default:تلّیفؤن شرکت</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="lki">
+                <value>default:تاریخ شوروع</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_wage">
+              <configuration name="headers" type="delimited" locale="lki">
+                <value>default:دستمزد آغازین</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_position">
+              <configuration name="headers" type="delimited" locale="lki">
+                <value>default:سِمَت آغازین</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="lki">
+                <value>default:تاریخ پایان (اگر هنوز کار می‌کند، خالی بگذارید)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_wage">
+              <configuration name="headers" type="delimited" locale="lki">
+                <value>default:دستمزد پایانی</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_position">
+              <configuration name="headers" type="delimited" locale="lki">
+                <value>default:سِمَت پایانی</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="supervisor">
+              <configuration name="headers" type="delimited" locale="lki">
+                <value>default:سرپرست</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="contact_ok">
+              <configuration name="headers" type="delimited" locale="lki">
+                <value>default:مؤشگلئ ئۀرا تماس نیۀ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="responsibilities">
+              <configuration name="headers" type="delimited" locale="lki">
+                <value>default:مسئولیت‌های شغل</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reason_for_leaving">
+              <configuration name="headers" type="delimited" locale="lki">
+                <value>default:دلیل ترک</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

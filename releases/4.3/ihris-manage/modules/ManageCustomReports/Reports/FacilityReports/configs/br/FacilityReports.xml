@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-facility-reports" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-facility-reports" path="/modules/CustomReports" locale="br">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships">
+      <configurationGroup name="facility">
+        <configuration name="display_name" locale="br">
+          <value>Roll an diazezadurioù</value>
+        </configuration>
+        <configuration name="description" locale="br">
+          <value>Titouroù war an diazezadurioù</value>
+        </configuration>
+        <configurationGroup name="joins">
+          <configurationGroup name="facility_type">
+            <configuration name="description" locale="br">
+              <value>Ar seurt diezezadur evit an diazezadur-mañ.</value>
+            </configuration>
+            <configuration name="display_name" locale="br">
+              <value>Seurt diazezadur</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="facility_contact">
+            <configuration name="description" locale="br">
+              <value>An roadennoù evit an diazezadur.</value>
+            </configuration>
+            <configuration name="display_name" locale="br">
+              <value>Darempred an diazezadur</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="district">
+            <configuration name="description" locale="br">
+              <value>An distrig m'emañ an diazezadur.</value>
+            </configuration>
+            <configuration name="display_name" locale="br">
+              <value>Distrig</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports">
+      <configurationGroup name="facility_list">
+        <configurationGroup name="meta">
+          <configuration name="display_name" locale="br">
+            <value>Roll an diazezadurioù</value>
+          </configuration>
+          <configuration name="description" locale="br">
+            <value>Titouroù war an diazezadur.</value>
+          </configuration>
+          <configuration name="category" locale="br">
+            <value>Danevell war an diazezadur</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms">
+          <configurationGroup name="primary_form">
+            <configurationGroup name="fields">
+              <configurationGroup name="facility_type">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="br">
+                      <value>Seurt diazezadur</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="br">
+                  <value>Seurt ID an diazezadur</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="location">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="br">
+                      <value>Lec'hiadur an diazezadur</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="within">
+                    <configuration name="header" locale="br">
+                      <value>Lec'hiadur an diazezadur</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="br">
+                  <value>ID lec'hiadur an diazezadur</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="name">
+                <configuration name="header" locale="br">
+                  <value>Anv an diazezadur</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="district">
+            <configurationGroup name="fields">
+              <configurationGroup name="name">
+                <configuration name="header" locale="br">
+                  <value>Lec'hiadur</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="facility_contact">
+            <configurationGroup name="fields">
+              <configurationGroup name="address">
+                <configuration name="header" locale="br">
+                  <value>Chomlec'h post</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="telephone">
+                <configuration name="header" locale="br">
+                  <value>Niverenn bellgomz</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="email">
+                <configuration name="header" locale="br">
+                  <value>Chomlec'h postel</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="notes">
+                <configuration name="header" locale="br">
+                  <value>Displegadennoù war an darempredoù</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="facility_type">
+            <configurationGroup name="fields">
+              <configurationGroup name="name">
+                <configuration name="header" locale="br">
+                  <value>Seurt diazezadur</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews">
+      <configurationGroup name="facility_list">
+        <configuration name="description" locale="br">
+          <value>Ur roll eus an holl ziazezadurioù</value>
+        </configuration>
+        <configuration name="display_name" locale="br">
+          <value>Roll an diazezadurioù</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,17 @@
+<div id="siteContent">
+  <h1>Delete All Records by Facility</h1>
+  <p><strong>WARNING:</strong> This will delete all positions and person records assigned to those positions 
+  from the database.  This can only be recovered from backups manually, so make sure your backups are up to date 
+  before performing this action!</p>
+  <form method="POST" id="delete_form" action="delete_by_facility_action">
+    <h2>Selected Facilities</h2>
+    <div id="facility_list">
+    </div>
+    <div id="facility_selection" style="display:none;">
+      <select id="facility_select" name="facilities[]" multiple="multiple">
+      </select>
+    </div>
+    <input type="hidden" name="step" value="choose" />
+    <input type="submit" class="button" value="Continue" />
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<div id="siteContent">
+  <form id="form1" method="post" action="login">
+  <table border="0" cellspacing="0" cellpadding="0" class="loginTable"><tr><td colspan="2"><h2>Por favor inicia sesión</h2>
+        <span style="font-size: 12px;">Introduce tu nombre de usuario y contraseña</span>
+        <hr><span id="error_message" name="error_message"></span></td>
+    </tr><tr><th>Nombre de usuario:</th>
+      <th>Contraseña:</th>
+    </tr><tr><td><input type="text" name="username"></td>
+      <td><input type="password" name="password"></td>
+    </tr><tr><td colspan="2">
+      <input type="submit" value="Login" name="submit" class="button"><span class="forgot"><a href="forgot">¿Olvidaste tu nombre de usuario o contraseña?</a></span></td>
+    </tr></table></form>
+  <span type="module" name="ManageSelfServiceApplication" ifenabled="true">
+    <h2>Puestos actuales</h2>
+    <!--    <span type='module' name='SelfService' if='canSelfRegister()'><a href="SelfService/register">Register</a></span> -->
+    <p></p>
+    <span type="module" name="SelfService" if='canViewReport("open_position")'><a href="SelfService/view/open_position">Ver puestos vacantes</a></span>
+  </span>
+
+</div>
+

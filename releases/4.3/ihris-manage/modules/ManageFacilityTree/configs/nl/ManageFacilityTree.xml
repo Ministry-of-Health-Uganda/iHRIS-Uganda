@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-FacilityTree" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-FacilityTree" path="/modules/CustomReports" locale="nl">
+    <version>4.2.0.2.1</version>
+    <configurationGroup name="facility_tree" path="//modules/CustomReports/relationships/facility_tree">
+      <configuration name="description" locale="nl">
+        <value>Facility report voor gebruik in de opbouw van de boomstructuur voor facility drop-downs.</value>
+      </configuration>
+      <configuration name="display_name" locale="nl">
+        <value>Faciliteitenboom</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="county">
+          <configuration name="description" locale="nl">
+            <value>De county waar deze faciliteit zich bevindt.</value>
+          </configuration>
+          <configuration name="display_name" locale="nl">
+            <value>Departement</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="district">
+          <configuration name="description" locale="nl">
+            <value>Het district waar deze faciliteit zich bevindt.</value>
+          </configuration>
+          <configuration name="display_name" locale="nl"></configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="region">
+              <configuration name="description" locale="nl">
+                <value>De regio waar deze faciliteit zich bevindt.</value>
+              </configuration>
+              <configuration name="display_name" locale="nl">
+                <value>Regio</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="country">
+                  <configuration name="description" locale="nl">
+                    <value>Het land waar deze faciliteit zich bevindt.</value>
+                  </configuration>
+                  <configuration name="display_name" locale="nl">
+                    <value>Land</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="facility_tree" path="//modules/CustomReports/reports/facility_tree">
+      <configurationGroup name="meta">
+        <configuration name="description" locale="nl">
+          <value>Het rapport dat u wilt weergeven faciliteiten als een boomstructuur voor de toegewezen velden.</value>
+        </configuration>
+        <configuration name="display_name" locale="nl">
+          <value>Faciliteitenboom</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="country">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="nl">
+                <value>Land verbergen</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="nl">
+                <value>Land-ID</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="nl">
+                <value>Naam van het land</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="primary">
+              <configuration name="header" locale="nl">
+                <value>Land Primaire</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="county">
+          <configurationGroup name="fields">
+            <configurationGroup name="district">
+              <configuration name="header" locale="nl">
+                <value>County / District</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="nl">
+                <value>County verbergen</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="nl">
+                <value>County-ID</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="nl">
+                <value>Countynaam</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="district">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="nl">
+                <value>District verbergen</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="nl">
+                <value>District-ID</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="nl">
+                <value>Wijknaam</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="region">
+              <configuration name="header" locale="nl">
+                <value>Wijk / Regio</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="nl">
+                <value>Kantoor/Facility Verbergen</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="nl">
+                <value>Kantoor/Facility-Id</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="header" locale="nl">
+                <value>Vestigingsplaats instelling</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="facility_type">
+              <configuration name="header" locale="nl">
+                <value>Faciliteitstype</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="nl">
+                <value>Kantoor/faciliteitsnaam</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="region">
+          <configurationGroup name="fields">
+            <configurationGroup name="country">
+              <configuration name="header" locale="nl">
+                <value>Regio / Land</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="nl">
+                <value>Regio verbergen</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="nl">
+                <value>Regio-ID</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="nl">
+                <value>Regionaam</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

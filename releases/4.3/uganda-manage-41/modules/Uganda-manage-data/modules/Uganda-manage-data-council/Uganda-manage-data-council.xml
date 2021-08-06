@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-manage-data-council">
+  <metadata>
+    <displayName>Uganda Manage data for council</displayName>
+    <description>Data for form: council</description>
+    <version>4.1.0.0</version>
+    <requirement name="ManageRegistration">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <configurationGroup name="Uganda-manage-data-council" path="/I2CE/formsData/forms/council">
+    <displayName>Form data: council</displayName>
+    <configurationGroup name="unmc">
+      <displayName>unmc</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 13:01:14</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Uganda Nurses and Midwives Council</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="umdpc">
+      <displayName>umdpc</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 13:01:14</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Uganda Medical and Dental Practitioners Council</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="ahcp">
+      <displayName>ahcp</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 13:01:14</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Allied Health Professionals Council</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="pharmacy">
+      <displayName>pharmacy</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 13:01:14</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Pharmacy Council</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,36 @@
+<div id="siteInnerWrap">
+  
+  <div id="navBar">
+    <ul id="navBarUL"><li id="menuManage" task="person_can_view"><a href="manage">Administrar as persoas</a></li>
+      <span type="module" name="CustomReports" ifenabled="true">
+	<li id="menuSearch" task="custom_reports_can_access"><a href="search">Procurar rexistros</a></li>
+	<li id="menuCustomReports" task="custom_reports_can_view_reportViews"><a href="CustomReports/view/reportViews">Ver os informes</a></li>
+      </span>
+      
+    <span type="module" name="DHIS-Dashboard" ifenabled="true">
+            <li><a href="http://192.168.0.19:8090/new_dhis/dhis-web-dashboard-integration/index.action">View Dashboard</a></li>
+            <li><a href="index.php/DHISDashboard">Data Export</a></li>
+    </span>
+	<span type="module" name="Dashboard" ifenabled="true">
+	    <li id="menuDashboard" task="can_view_dashboard"><a href="dashboard">Dashboards</a></li>
+	</span>	
+	<span type="module" name="mHero" ifenabled="true">
+	    <li id="menumHero" task="mhero_start_workflow"><a href="mHero">mHero (Personnel)</a></li>
+	</span>       
+	<span type="module" name="mHero-csd-provider" ifenabled="true">
+	    <li id="menumHeroHWR"><a href="mhero_search_provider">mHero (HWR)</a></li>
+	</span>       
+
+      <li id="menuConfigure" task="can_configure_system"><a href="configure">Configurar o sistema</a></li>
+      <li id="menuPassword" task="can_change_own_password"><a href="password">Cambiar o contrasinal</a></li>
+      <span type="module" name="SelfService" ifenabled="true" task="can_view_own_personnel">
+	<span type="module" name="SelfService" if="userHasRecord()">
+	  <li>	  <span type="module" name="SelfService" call="linkToPersonRecord('view?id=')">Ollar o seu rexistro</span></li>
+	</span>
+      </span>
+
+    </ul></div>
+
+  <div id="siteContent"></div>
+
+  <br style="clear: both;"></div><!-- /siteInnerWrap -->

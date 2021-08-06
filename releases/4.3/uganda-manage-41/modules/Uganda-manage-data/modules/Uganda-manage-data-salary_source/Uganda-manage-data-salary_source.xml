@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-manage-data-salary_source">
+  <metadata>
+    <displayName>Uganda Manage data for salary source</displayName>
+    <description>Data for form: salary_source</description>
+    <version>4.1.0.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-manage-Salary">
+      <atLeast version="4.1" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="Uganda-manage-data-salary_source" path="/I2CE/formsData/forms/salary_source">
+    <displayName>Form data: salary_source</displayName>
+    <configurationGroup name="wage">
+      <displayName>wage</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 11:47:20</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Wage bill/Conditional Grant</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="nonwage">
+      <displayName>nonwage</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 11:47:20</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Non- wage bill/Unconditioned Grant</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="local">
+      <displayName>local</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 11:47:20</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Local Revenue</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="project">
+      <displayName>project</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 11:47:20</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Project</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

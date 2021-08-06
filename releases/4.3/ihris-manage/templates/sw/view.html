@@ -1,0 +1,412 @@
+<div id="siteContent">
+  <h1>
+    Angalia Mtu: <span type="form" name="person:surname"></span>,<span type="form" name="person:firstname"></span>
+  </h1>
+  <div id="external_hwr_apps" class="extenral_hwr_apps" style="float:right;display:block;width:100%">
+    <span type="module" name="IL-HWR" ifenabled="true">
+      <span role="admin" style="display:inline-block;float:right;">
+	<span type="form" href="IL-HWR-redirect?id=" name="person:id" target="_ILHWR">
+	  <center style="max-width:8em">
+	    <img text="Interlinked Health Worker Registry" style="margin-top:-3em;max-width:12em;max-height:5em;display-inline" src="file/OpenInfoMan.png"></center>
+	  <center style="max-width:8em">
+	    Interlinked Health Worker Registry
+	  </center>
+	</span>
+      </span>
+    </span>
+    <span type="module" name="mHero" ifenabled="true">
+      <span role="admin" style="display:inline-block;float:right;">
+	<span type="form" href="mHero_person_workflow?id=" name="person:id" target="_mHero">
+	  <center>
+	  <img text="mHero" style="width:12em;max-height:2em;" src="file/mHero.png"></center>
+	  <center>
+	    mHero
+	  </center>
+	</span>
+      </span>
+    </span>
+
+  </div>
+
+  <div class="recordsData">
+    <h3>
+      <a name="jump_individual">Taarifa ya mtu mmoja mmoja</a>
+    </h3>
+    <p class="editRecordsData" id="individual_links">
+      <a href="" class="hide" title="Hide" onclick="return hideDiv('individual', this );">Ficha</a>
+     <span task="person_can_edit_child_form_demographic" type="form" name="person:id" href="demographic?parent=" ifset="!demographic:id">Ongeza Taarifa ya Kitakwimu</span>
+      <span type="module" name="PersonPassportPhoto" ifenabled="true">
+        <span task="person_can_edit_child_form_person_photo_passport" type="form" name="person:id" href="person_photo_passport?parent=">Ongeza Picha Ndogo</span>
+      </span>
+      <span type="module" name="PersonResume" ifenabled="true">
+        <span task="person_can_edit_child_form_person_resume" type="form" name="person:id" href="person_resume?parent=" ifset="!person_resume:id">Ongeza Muhtasari</span>
+      </span>
+      <span type="module" name="PersonID" ifenabled="true">
+        <span task="person_can_edit_child_form_person_id" type="form" name="person:id" href="person_id?parent=">Ongeza Utambulisho</span>
+      </span>
+      <span type="module" name="PrintedForms" ifenabled="true">
+	<span task="printed_forms_can_access">
+	  <span type="module" if="PrintedForms-&gt;hasValidForms('person')">
+	    <span type="form" href="PrintedForms/menu?id=" name="person:id">Herufi Zilizosanifishwa</span>
+	  </span>
+	</span>
+      </span>
+    </p>
+
+    <div id="individual">
+      <div class="editRecord">
+        <p>Hariri Taarifa hii</p>
+        <ul><li task="person_can_edit">
+            <span type="form" name="person:id" href="person?id=">Sasisha Taarifa hii </span>
+          </li>
+          <li>
+            <span type="form" name="person:id" parent="true" href="field_history?field=surname,firstname,othername&amp;template=fullname&amp;type=person&amp;id=">Angalia Historia ya Jina</span>
+          </li>
+        </ul></div>
+       <!-- editRecord -->
+      <div class="dataTable">
+        <table border="0" cellspacing="0" cellpadding="0"><tr><th colspan="2">Jina/Utaifa</th>
+          </tr><span type="form" name="person:surname" showhead="default"></span>
+          <span type="form" name="person:firstname" showhead="default" class="even"></span>
+          <span type="form" name="person:othername" showhead="default"></span>
+          <span type="form" name="person:nationality" showhead="default" class="even"></span>
+          <span type="form" name="person:residence" showhead="location" mline="true">
+          </span>
+        </table></div> <!-- dataTable -->
+
+      <div id="person_photo_passport" class="recordsData"></div>
+      <div id="person_resume" class="recordsData"></div>
+      <div id="person_id" class="recordsData"></div>
+      <div id="demographic" class="recordsData">  </div>
+    </div> <!--end indiviudal-->
+    <br style="clear: both;"></div> <!--end records data-->
+
+
+  <span type="module" name="PersonContact" ifenabled="true">
+    <div class="recordsData" task="person_can_view_child_form_person_contact_work|person_can_view_child_form_person_contact_personal|person_can_view_child_form_person_contact_emergency|person_can_view_child_form_person_contact_other">
+      <h3>
+        <a name="jump_contact">Taarifa ya Mawasiliano</a>
+      </h3>
+      <p class="editRecordsData" id="contact_links">
+        <a href="" class="hide" title="Hide" onclick="return hideDiv('contact', this );">Ficha</a>
+      </p>
+      <span id="contact">
+        <div id="person_contact_work"></div> <!-- work contact -->
+        <div id="person_contact_personal"></div> <!-- personal contact -->
+        <div id="person_contact_emergency"></div> <!-- emefencye contact -->
+        <div id="person_contact_other"></div> <!-- other contact -->
+      </span>
+      <br style="clear: both;"></div>
+     <!-- recordsData -->
+  </span>
+
+  <span type="module" name="dependents" ifenabled="true">
+    <div class="recordsData" task="person_can_view_child_form_dependent">
+      <h3><a name="jump_dependent">Taarifa ya Mtegemezi</a></h3>
+      <p class="editRecordsData">
+        <a href="" class="hide" title="Hide" onclick="return hideDiv('dependent', this );">Ficha</a>
+        <span task="person_can_edit_child_form_dependent" type="form" name="person:id" href="dependent?parent=">Ongeza Mtegemezi</span>
+      </p>
+      <div id="dependent"></div>
+      <br style="clear: both;"></div>
+  </span>
+
+
+  <span type="module" name="nextOfKin" ifenabled="true">
+    <div class="recordsData" task="person_can_view_child_form_nextofkin">
+      <h3><a name="jump_nextofkin">Taarifa za Ndugu wa Karibu</a></h3>
+      <p class="editRecordsData">
+        <a href="" class="hide" title="Hide" onclick="return hideDiv('nextofkin', this );">Ficha</a>
+        <span task="person_can_edit_child_form_nextofkin" type="form" name="person:id" href="nextofkin?parent=">Ongeza Ndugu wa Karibu</span>
+      </p>
+      <div id="nextofkin"></div>
+      <br style="clear: both;"></div>
+  </span>
+
+
+  <div class="recordsData" task="person_can_view_child_form_person_position|person_can_view_child_form_salary|person_can_view_child_form_benefit">
+    <h3>
+      <a name="jump_position">Taarifa ya Nafasi ya kazi</a>
+    </h3>
+    <p class="editRecordsData">
+      <a href="" class="hide" title="Hide" onclick="return hideDiv('position', this );">Ficha</a>
+      <span task="person_can_edit_child_form_person_position" ifset="!person_position:id" type="form" name="person:id" href="make_offer?parent=">Panga Nafasi</span>
+      <span task="person_can_edit_child_form_person_position" ifset="person_position:end_date" ifvalue="!0000-00-00 00:00:00" type="form" name="person:id" href="make_offer?parent=">Panga Nafasi</span>
+       <span task="person_can_edit_child_form_benefit" type="form" name="person:id" href="benefit?parent=">Ongeza Mafao/Malipo maalumu</span>
+       <span type="module" name="ihris-manage-LeaveOfAbsence" ifenabled="true">
+         <span task="person_can_edit_child_form_leave_of_absence" type="form" name="person:id" href="leave_of_absence?parent=">Add Leave of Absence</span>
+       </span>
+    </p>
+
+    <div id="position">
+
+      <div id="person_position" task="person_can_view_child_form_person_position"></div>
+      <br style="clear: both;"><div id="salary" task="person_can_view_child_form_salary"></div>
+      <br style="clear: both;"><div id="benefit" task="person_can_view_child_form_benefit"></div>
+      <span type="module" name="ihris-manage-LeaveOfAbsence" ifenabled="true">
+        <br style="clear: both;"><div id="leave_of_absence" task="person_can_view_child_form_leave_of_absence"></div>
+      </span>
+
+    </div>
+     <!-- position -->
+    <br style="clear: both;"></div>
+   <!-- recordsData -->
+
+   <span type="module" name="leave" ifenabled="true">
+      <div class="recordsData" task="person_can_view_child_form_leave_request">
+        <h3>
+          <a name="jump_leave_request">Leave Request Information</a>
+        </h3>
+        <p class="editRecordsData">
+          <a href="" class="hide" title="Hide" onclick="return hideDiv('person_leave', this );">Ficha</a>
+          <span task="person_can_edit_child_form_person_leave_request" type="form" name="person:id" href="leave_request?parent=">Request Leave</span>
+
+        </p>
+
+
+
+        <div id="leave_request"></div>
+        <br style="clear: both;"></div>
+       <!--  recordsData -->
+   </span>
+
+  <span type="module" name="ihris-manage-confirmation" ifenabled="true">
+    <div class="recordsData" task="person_can_view_child_form_confirmation">
+      <h3>
+        <a name="jump_confirmation">Confirmation Information</a>
+      </h3>
+      <p class="editRecordsData">
+        <a href="" class="hide" title="Hide" onclick="return hideDiv('notes', this );">Ficha</a>
+	<span type="module" call="ihris-manage-confirmation-&gt;addAllowedConfirmations({FORM}$person)"></span>
+
+      </p>
+
+
+
+      <div id="confirmation"></div>
+      <br style="clear: both;"></div>
+     <!--  recordsData -->
+  </span>
+
+
+  <div class="recordsData" task="person_can_view_child_form_registration|person_can_view_child_form_person_language|person_can_view_child_form_person_competency">
+    <h3>
+      <a name="jump_qualification">Sifa</a>
+    </h3>
+    <p class="editRecordsData">
+      <a href="" class="hide" title="Hide" onclick="return hideDiv('qualification', this);">Ficha</a>
+      <span type="module" name="ManageRegistration" ifenbled="true">
+        <span task="person_can_edit_child_form_registration" type="form" name="person:id" href="registration?parent=" ifset="!registration:id">Ongeza Usajili</span>
+      </span>
+      <span type="module" name="PersonLanguage" ifenabled="true">
+        <span task="person_can_edit_child_form_person_language" type="form" name="person:id" href="person_language?parent=">Ongeza Ustadi wa Lugha</span>
+      </span>
+      <span type="module" name="simple-competency" ifenabled="true">
+        <span task="person_can_edit_child_form_person_competency" type="form" name="person:id" href="person_competency?parent=">Ongeza Uwezo</span>
+        <span task="person_competency_can_view_evaluation" type="form" name="person:id" href="person_competency_history?parent=">Tathmini za Uwezo</span>
+      </span>
+    </p>
+
+    <div id="qualification">
+
+      <div id="registration" task="person_can_view_child_form_registration"></div>
+      <div id="person_language" task="person_can_view_child_form_person_language"></div>
+      <div id="person_competency" task="person_can_view_child_form_person_competency"></div>
+
+    </div>
+     <!-- qualification -->
+
+    <br style="clear: both;"></div>
+   <!-- recordsData -->
+
+
+
+  <span type="module" name="training-course" ifenabled="true">
+    <div class="recordsData" task="person_can_view_child_form_person_scheduled_training_course">
+      <h3>
+        <a name="jump_courses">Kozi za Mafunzo</a>
+      </h3>
+      <p class="editRecordsData">
+        <a href="" class="hide" title="Hide" onclick="return hideDiv('course', this );">Ficha</a>
+        <span task="person_can_edit_child_form_person_scheduled_training_course" type="form" name="person:id" href="training-course/schedule-person?parent=">Ongeza Kozi ya Mafunzo</span>
+      </p>
+      <div id="person_scheduled_training_course"></div>
+      <br style="clear: both;"></div>
+  </span>
+  
+  <span type="module" name="PersonAttendance" ifenabled="true">
+    <div class="recordsData" task="person_can_view_child_form_person_attendance">
+      <h3>
+        <a name="jump_person_attendance">Attendance Information</a>
+       </h3>
+      <p class="editRecordsData">
+        <a href="" class="hide" title="Hide" onclick="return hideDiv('person_attendance', this );">Ficha</a>
+        <span task="person_can_edit_child_form_person_attendance" type="form" name="person:id" href="person_attendance?parent=">Add Attendance Details</span>
+        <span task="person_can_edit_child_form_person_attendance" type="form" name="person:id" href="history?form=person_attendance&amp;show_edit=true&amp;order_by=month_year&amp;id=">Historia</span>
+      </p>
+      <div id="person_attendance">
+        <span type="module" call="person_attendance-&gt;showCurrentAttendance()"></span>
+      </div>
+
+      <br style="clear: both;"></div>
+  </span>
+
+  <span type="module" name="disciplinary_action" ifenabled="true">
+    <div class="recordsData" task="person_can_view_child_form_disciplinary_action">
+      <h3>
+        <a name="jump_disciplinary_action">Hatua za Kinidhamu za Sasa hivi</a>
+      </h3>
+      <p class="editRecordsData">
+        <a href="" class="hide" title="Hide" onclick="return hideDiv('disciplinary_actions', this );">Ficha</a>
+        <span task="person_can_edit_child_form_disciplinary_action" type="form" name="person:id" href="disciplinary_action/editAction?parent=">Hatua mpya</span>
+        <span task="person_can_view_child_form_disciplinary_action" type="form" name="person:id" href="history?form=disciplinary_action&amp;show_edit=true&amp;order_by=start_date&amp;id=">Historia</span>
+      </p>
+      <div id="disciplinary_actions">
+        <span type="module" call="disciplinary_action-&gt;showCurrentActions()"></span>
+      </div>
+      <br style="clear: both;"></div>
+  </span>
+
+
+  <span type="module" name="accident" ifenabled="true">
+    <div class="recordsData" task="person_can_view_child_form_accident">
+      <h3>
+        <a name="jump_accident">Ajali sehemu ya Kazi</a>
+      </h3>
+      <p class="editRecordsData">
+        <a href="" class="hide" title="Hide" onclick="return hideDiv('accidents', this );">Ficha</a>
+        <span task="person_can_edit_child_form_accident" type="form" name="person:id" href="accident?parent=">Ripoti ya Ajali</span>
+        <span task="person_can_view_child_form_accident" type="form" name="person:id" href="history?form=accident&amp;show_edit=true&amp;order_by=start_date&amp;id=">Historia</span>
+      </p>
+      <div id="accidents">
+        <span type="module" call="accident-&gt;showCurrentAccidents()"></span>
+      </div>
+
+      <br style="clear: both;"></div>
+  </span>
+
+
+  <span type="module" name="ihris-manage-Application" ifenabled="true">
+    <div class="recordsData" task="person_can_view_child_form_application|person_can_view_child_form_position_interview|person_can_view_child_form_position_decision">
+      <h3>
+        <a name="jump_application">Ombi la Kazi</a>
+      </h3>
+      <p class="editRecordsData">
+        <a href="" class="hide" title="Hide" onclick="return hideDiv('applicant', this );">Ficha</a>
+        <span task="person_can_edit_child_form_application" type="form" ifset="!application:id" name="person:id" href="application?parent=">Ongeza Ombi la Kazi</span>
+        <span task="person_can_edit_child_form_position_interview" type="form" name="person:id" href="position_interview?parent=">Batli ya Maelezo ya kina ya Usaili</span>
+        <span task="person_can_edit_child_form_position_decision" type="form" name="person:id" href="position_decision?parent=" ifset="!position_decision:id">Batli ya Uamuzi wa Kuajiri</span>
+        <span type="module" name="ihris-manage-PersonReference" ifenabled="true">
+          <span task="person_can_edit_child_form_person_reference" type="form" name="person:id" href="person_reference?parent=">Personal Reference</span>
+        </span>
+      </p>
+
+      <div id="applicant">
+
+        <div id="position_interview" task="person_can_view_child_form_position_interview"></div>
+        <div id="position_decision" task="person_can_view_child_form_position_decision"></div>
+        <div id="application" task="person_can_view_child_form_application"></div>
+        <span type="module" name="ihris-manage-PersonReference" ifenabled="true">
+          <div id="person_reference" task="person_can_view_child_form_person_reference"></div>
+        </span>
+
+      </div>
+       <!-- applicant -->
+      <br style="clear: both;"></div>
+     <!-- recordsData -->
+  </span>
+
+
+
+  <span type="module" name="PersonEmployment" ifenabled="true">
+    <div class="recordsData" task="person_can_view_child_form_employment">
+      <h3>
+        <a name="jump_employment">Historia ya Ajira</a>
+      </h3>
+      <p class="editRecordsData">
+        <a href="" class="hide" title="Hide" onclick="return hideDiv('employment', this );">Ficha</a>
+        <span task="person_can_edit_child_form_employment" type="form" name="person:id" href="employment?parent=">Ongeza Ajira</span>
+      </p>
+
+      <div id="employment"></div>
+      <br style="clear: both;"></div>
+     <!-- recordsData -->
+  </span>
+
+  <span type="module" name="PersonEducation" ifenabled="true">
+    <div class="recordsData" task="person_can_view_child_form_education">
+      <h3>
+        <a name="jump_education">Historia ya Elimu</a>
+      </h3>
+      <p class="editRecordsData">
+        <a href="" class="hide" title="Hide" onclick="return hideDiv('education', this );">Ficha</a>
+        <span task="person_can_edit_child_form_education" type="form" name="person:id" href="education?parent=">Ongeza Elimu</span>
+      </p>
+
+      <div id="education"></div>
+      <br style="clear: both;"></div>
+     <!--  recordsData -->
+  </span>
+
+  <span type="module" name="PersonNotes" ifenabled="true">
+    <div class="recordsData" task="person_can_view_child_form_notes">
+      <h3>
+        <a name="jump_notes">Maelezo</a>
+      </h3>
+      <p class="editRecordsData">
+        <a href="" class="hide" title="Hide" onclick="return hideDiv('notes', this );">Ficha</a>
+        <span task="person_can_edit_child_form_notes" type="form" name="person:id" href="notes?parent=">Ongeza Maelezo</span>
+      </p>
+
+      <div id="notes"></div>
+      <br style="clear: both;"></div>
+     <!--  recordsData -->
+  </span>
+
+  <div class="recordsData" task="person_can_view_child_form_person_record_status">
+    <h3><a name="jump_record_status">Record Status</a></h3>
+    <p class="editRecordsData" id="record_status_links">
+      <a href="" class="hide" title="Hide" onclick="return hideDiv('person_record_status', this );">Ficha</a>
+    </p>
+
+    <div id="person_record_status"></div>
+    <br style="clear: both;"></div> <!--  recordsData -->
+
+
+  <span type="module" name="PersonArchivedScan" ifenabled="true">
+    <div class="recordsData" task="person_can_view_child_form_person_archive_scan">
+      <h3>
+        <a name="jump_archived_scans">Rekodi Karatasi Zilizoskaniwa</a>
+      </h3>
+      <p class="editRecordsData">
+        <a href="" class="hide" title="Hide" onclick="return hideDiv('notes', this );">Ficha</a>
+        <span task="person_can_edit_child_form_person_archive_scan" type="form" name="person:id" href="person_archive_scan?parent=">Ongeza Andiko Lililoskaniwa</span>
+      </p>
+
+
+
+      <div id="person_archive_scan"></div>
+      <br style="clear: both;"></div>
+     <!--  recordsData -->
+  </span>
+
+
+
+  <span type="module" name="SelfService" ifenabled="true">
+    <div class="recordsData" task="person_can_view_child_form_user_map">
+      <h3>
+        <a name="jump_self_service">Self Service</a>
+      </h3>
+      <p class="editRecordsData">
+        <a href="" class="hide" title="Hide" onclick="return hideDiv('user_map', this );">Ficha</a>
+	<span type="form" name="person:id" href="SelfService/userAccount?parent=" ifset="!user_map:id">Assign User Account</span>
+      </p>
+
+      <div id="user_map"></div>
+      <br style="clear: both;"></div>
+     <!--  recordsData -->
+  </span>
+
+
+
+</div>

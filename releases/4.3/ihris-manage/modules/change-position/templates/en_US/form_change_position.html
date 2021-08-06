@@ -1,0 +1,40 @@
+<tbody id="person_form">
+  <tr >
+    <th>Current Position</th><th>New Position<input type='hidden' name='parent'/></th>
+  </tr>
+  <tr >
+    <td >
+      <span type="form" name="position:job" class='form:current_position'  display='true' showhead='current' ></span>
+      <span type="form" name="position:title"  class='form:current_position' display='true' showhead='current'></span>  
+      <span type="form" name="position:pos_type"  class='form:current_position'  display='true' showhead='current'></span>
+      <span type="form" name="position:code"  class='form:current_position'  display='true' showhead='current'></span>
+      <span type="form" name="position:status"  class='form:current_position'  showhead='current'></span>  
+      <span type="form" name="position:facility" class='form:current_position'  display='true' showhead='current'></span>
+      <span class="form:current_person_position" type="form" name="person_position:reason"    showhead='current'></span>
+      <span class="form:current_person_position" type="form" name="person_position:start_date"   display='true' showhead='current'></span>
+      <span class="form:current_person_position" type="form" name="person_position:end_date" showhead="current"></span>
+    </td>
+    <td>
+      <span type="form" name="position:job" class='form:new_position'   showhead='new' onchange="if ( document.getElementById('forms[position][0][0][fields][title]').value == '' &amp;&amp; this.selectedIndex != 0 ) document.getElementById('forms[position][0][0][fields][title]').value = this.options[this.selectedIndex].text;"></span>
+      <span type="form" name="position:title"  class='form:new_position' showhead='new'></span>  
+      <span type="form" name="position:pos_type"  class='form:new_position'  showhead="new" ></span>
+      <span type="form" name="position:code"  class='form:new_position'  showhead="new" ></span>
+      <span type="form" name="position:facility" class='form:new_position'   showhead='new'></span>
+    </td>
+  </tr>
+
+  <span task='person_can_edit_child_form_salary'>
+    <tr class='salary'>
+      <th>Current Salary</th><th>New Salary</th>
+    </tr>
+    <tr >
+      <td>
+	      <span type="form" name="salary:salary" class='form:current_salary'  display='true' showhead='current'></span>
+      </td>
+      <td>
+	      <span type="form" name="salary:salary" class='form:new_salary'   showhead='new'></span>
+      </td>
+    </tr>
+
+  </span>
+</tbody>

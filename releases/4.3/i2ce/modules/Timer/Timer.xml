@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Timer">
+  <metadata>
+    <displayName locale="en_US">I2CE Timer</displayName>
+    <className>I2CE_Timer</className>
+    <category locale="en_US">Administration</category>
+    <description locale="en_US">Adds a timer class</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="I2CE">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+</I2CEConfiguration>

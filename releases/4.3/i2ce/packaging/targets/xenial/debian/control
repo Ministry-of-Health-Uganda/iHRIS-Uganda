@@ -1,0 +1,16 @@
+Source: i2ce
+Maintainer: Nobert Mijumbi <nobertmn@gmail.com>
+Section: web
+Priority: optional
+Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 7)
+Homepage: http://launchpad.net/i2ce
+
+
+Package: i2ce
+Architecture: all
+Depends: bash , wget , unzip ,mysql-common, libaprutil1-ldap, libapache2-mod-php7.0, libwrap0, libterm-readkey-perl, mysql-server, php-mysql, tcpd, libhtml-template-perl, php-readline, libdbi-perl, ssl-cert, apache2-bin, php-common, mysql-client-5.7, libapr1, php-json, libmysqlclient20, apache2-data, mysql-server-5.7, libaprutil1-dbd-sqlite3, mysql-client-core-5.7, libaprutil1, apache2, mysql-server-core-5.7, libaio1, libdbd-mysql-perl,  libpcre3-dev , php-memcached , memcached,  php-mdb2-driver-mysql, php-gd, php-tidy, php-intl, php7.0-xsl, xsltproc, php-bcmath, php-mbstring, php-text-password, php-uuid, php-apcu
+Pre-Depends: php-dev, php-pear
+Recommends: 
+Description: I2CE
+ I2CE is the base framework for the iHRIS Platform

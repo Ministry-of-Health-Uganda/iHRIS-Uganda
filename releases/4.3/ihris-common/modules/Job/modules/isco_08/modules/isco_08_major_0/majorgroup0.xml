@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration PUBLIC "SYSTEM"
+"I2CE_Configuration.dtd">
+<I2CEConfiguration name="isco-08-major-00">
+  <metadata>
+    <displayName>ISCO 08 Job Codes</displayName>
+    <description>The ISCO 08 Job Codes</description>
+    <version>4.3.0</version>
+    <requirement name="isco-08">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="formsData" path="/I2CE/formsData/forms">
+    <displayName>Forms Data</displayName>
+    <description>Form data saved in magic data</description>
+    <configurationGroup name="isco_08_major">
+      <configurationGroup name="0">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Armed forces occupations</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_08_sub_major">
+      <configurationGroup name="01">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Commissioned armed forces officers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_major">
+            <value>isco_08_major|0</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="02">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Non-commissioned armed forces officers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_major">
+            <value>isco_08_major|0</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="03">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Armed forces occupations, other ranks</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_major">
+            <value>isco_08_major|0</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

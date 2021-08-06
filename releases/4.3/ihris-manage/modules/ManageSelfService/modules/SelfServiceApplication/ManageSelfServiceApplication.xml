@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ManageSelfServiceApplication">
+  <metadata>
+    <displayName>Self Service Application</displayName>
+    <className>iHRIS_Module_ManageSelfServiceApplication</className>
+    <category>Application Component</category>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <requirement name="ManageSelfService">
+      <atLeast version="4.0" />
+    </requirement>
+    <requirement name="ihris-manage-Application">
+      <atLeast version="4.0" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="ManageSelfService" path="/">
+    <configurationGroup name="SS" path="/modules/SelfService">
+      <configurationGroup name="page">
+        <configurationGroup name="apply">
+          <displayName>Person Page</displayName>
+          <version>4.0.7.19</version>
+          <configuration name="style" values="single">
+            <value>shell</value>
+          </configuration>
+          <configuration name="class" values="single">
+            <displayName>Page Class</displayName>
+            <description>The class responsible for displaying this page</description>
+            <status>required:true</status>
+            <value>iHRIS_Page_SelfService_Apply</value>
+          </configuration>
+          <configurationGroup name="args">
+            <displayName>Page Options</displayName>
+            <description>The options that control the access and display of all pages</description>
+            <configuration name="title" values="single" locale="en_US">
+              <displayName>Page Title</displayName>
+              <description>Page Title</description>
+              <status>required:true</status>
+              <value>Add/Update Person</value>
+            </configuration>
+            <configuration name="access" values="many">
+              <value>all</value>
+            </configuration>
+            <configuration name="defaultHTMLFile" values="many">
+              <displayName>Default HTML File</displayName>
+              <description>The default HTML File for this page</description>
+              <version>4.0.7.20</version>
+              <value>form_self_service_apply.html</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="ss_alternative_task_satisfaction" path="/I2CE/tasks/alt_satisfaction">
+      <version>4.0.7.6</version>
+      <configuration name="person_can_view_child_form_application" values="many">
+        <value>SelfService-&gt;userIsPerson()</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_application" values="many">
+        <value>SelfService-&gt;userIsPerson()</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="SelfServiceReports" path="/modules/SelfService/reports">
+      <version>4.0.7.12</version>
+      <configuration name="open_position">
+        <value>open_position</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="open_position_reports" path="/modules/CustomReports">
+      <version>4.0.7.7</version>
+      <configurationGroup name="relationships">
+        <displayName>Relationships</displayName>
+        <configurationGroup name="open_position" config="CustomReports_Relationship">
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>position</value>
+          </configuration>
+          <configuration name="display_name" locale="en_US">
+            <displayName>Display Name</displayName>
+            <value>Open Positions</value>
+          </configuration>
+          <configuration name="description" locale="en_US">
+            <displayName>Description</displayName>
+            <value>Open Positions</value>
+          </configuration>
+          <configurationGroup name="where">
+            <displayName>Where</displayName>
+            <configuration name="operator">
+              <displayName>Operator</displayName>
+              <value>FIELD_LIMIT</value>
+            </configuration>
+            <configuration name="style">
+              <displayName>Style</displayName>
+              <value>equals</value>
+            </configuration>
+            <configuration name="field">
+              <displayName>Field</displayName>
+              <value>status</value>
+            </configuration>
+            <configurationGroup name="data">
+              <configuration name="value">
+                <value>position_status|open</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of relationhsips-->
+      <configurationGroup name="reports" config="CustomReports_Reports">
+        <displayName>Reports</displayName>
+        <configurationGroup name="open_position_list" config="CustomReports_Report">
+          <displayName>Position List</displayName>
+          <configuration name="relationship">
+            <displayName>Relationship</displayName>
+            <value>open_position</value>
+          </configuration>
+          <configurationGroup name="meta" config="CustomReports_Report_Meta">
+            <displayName>Meta</displayName>
+            <configuration name="display_name" locale="en_US">
+              <displayName>Display Name</displayName>
+              <value>Position List</value>
+            </configuration>
+            <configuration name="description" locale="en_US">
+              <displayName>Description</displayName>
+              <value>Details for all positions.</value>
+            </configuration>
+            <configuration name="category" locale="en_US">
+              <displayName>Category</displayName>
+              <value>Position Reports</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="reporting_forms" config="CustomReports_Report_ReportingForms">
+            <displayName>Reporting Forms</displayName>
+            <configurationGroup name="primary_form" config="CustomReports_Report_ReportingForm">
+              <displayName>Primary Form</displayName>
+              <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+                <displayName>Fields</displayName>
+                <configurationGroup name="code" config="CustomReports_Report_ReportingForm_Field">
+                  <displayName>Code</displayName>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Code</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="link">
+                    <displayName>Link</displayName>
+                    <version>4.0.7.17</version>
+                    <value>SelfService/apply?position=</value>
+                  </configuration>
+                  <configuration name="link_append">
+                    <displayName>Link Append</displayName>
+                    <value>primary_form+id</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="job" config="CustomReports_Report_ReportingForm_Field">
+                  <displayName>Job</displayName>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Position Job</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <version>3.2.2</version>
+                    <value>1</value>
+                  </configuration>
+                  <configurationGroup name="limits">
+                    <displayName>Limits</displayName>
+                    <configurationGroup name="equals">
+                      <displayName>Equals</displayName>
+                      <configuration name="header" locale="en_US">
+                        <displayName>Header</displayName>
+                        <value>Job</value>
+                      </configuration>
+                      <configuration name="enabled">
+                        <displayName>Enabled</displayName>
+                        <value>1</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+                <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                  <displayName>Title</displayName>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Title</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="link">
+                    <displayName>Link</displayName>
+                    <version>4.0.7.17</version>
+                    <value>SelfService/apply?position=</value>
+                  </configuration>
+                  <configuration name="link_append">
+                    <displayName>Link Append</displayName>
+                    <value>primary_form+id</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="facility" config="CustomReports_Report_ReportingForm_Field">
+                  <displayName>Facility</displayName>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Facility ID</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configurationGroup name="limits">
+                    <displayName>Limits</displayName>
+                    <configurationGroup name="equals">
+                      <displayName>Equals</displayName>
+                      <configuration name="header" locale="en_US">
+                        <displayName>Header</displayName>
+                        <value>Facility</value>
+                      </configuration>
+                      <configuration name="enabled">
+                        <displayName>Enabled</displayName>
+                        <value>1</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+                <configurationGroup name="department" config="CustomReports_Report_ReportingForm_Field">
+                  <displayName>Department</displayName>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Department ID</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configurationGroup name="limits">
+                    <displayName>Limits</displayName>
+                    <configurationGroup name="equals">
+                      <displayName>Equals</displayName>
+                      <configuration name="header" locale="en_US">
+                        <displayName>Header</displayName>
+                        <value>Department</value>
+                      </configuration>
+                      <configuration name="enabled">
+                        <displayName>Enabled</displayName>
+                        <value>1</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+                <configurationGroup name="posted_date" config="CustomReports_Report_ReportingForm_Field">
+                  <displayName>Posted Date</displayName>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Posted Date</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of reports-->
+      <configurationGroup name="reportViews" config="CustomReports_ReportViews">
+        <displayName>Report Views</displayName>
+        <configurationGroup name="open_position" config="CustomReports_ReportView">
+          <displayName>Open Positions</displayName>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="primary_form+code">
+              <displayName>Primary Form Code</displayName>
+              <configuration name="aggregate">
+                <displayName>Aggregate</displayName>
+                <value>none</value>
+              </configuration>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="primary_form+title">
+              <displayName>Primary Form Title</displayName>
+              <configuration name="aggregate">
+                <displayName>Aggregate</displayName>
+                <value>none</value>
+              </configuration>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="primary_form+posted_date">
+              <displayName>Primary Form Posted Date</displayName>
+              <configuration name="aggregate">
+                <displayName>Aggregate</displayName>
+                <value>none</value>
+              </configuration>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configuration name="report">
+            <displayName>Report</displayName>
+            <value>open_position_list</value>
+          </configuration>
+          <configuration name="display_name" locale="en_US">
+            <displayName>Display Name</displayName>
+            <value>Open Positions</value>
+          </configuration>
+          <configuration name="description" locale="en_US">
+            <displayName>Description</displayName>
+            <value>The currently open positions</value>
+          </configuration>
+          <configuration name="total">
+            <displayName>Total</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="display_order">
+            <displayName>Display Order</displayName>
+            <value>primary_form+title,primary_form+code,primary_form+facility,primary_form+department,primary_form+posted_date</value>
+          </configuration>
+          <configuration name="default_display">
+            <displayName>Default Display</displayName>
+            <value>Default</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of reportViews-->
+    </configurationGroup>
+    <!-- end of custom reports-->
+  </configurationGroup>
+</I2CEConfiguration>

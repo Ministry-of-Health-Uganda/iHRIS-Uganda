@@ -1,0 +1,114 @@
+<div id="siteContent">
+
+  <h1>Datenbank verwalten</h1>
+
+  <span type="module" ifenabled="true" name="ihris-manage-PersonPosition">
+    <div task="can_edit_position_database_lists">
+      <h2>Stellen verwalten</h2>
+      
+      <div task="can_edit_job_structure_database_lists">
+	<h3>Stellenbeschreibung anlegen</h3>
+	<ul><li task="can_edit_database_list_cadre"><a href="lists?type=cadre">Mitarbeitergruppen</a></li>
+	  <li task="can_edit_database_list_classification"><a href="lists?type=classification">Stellenklassifizierungen</a></li>
+	  <li task="can_edit_database_list_salary_grade"><a href="lists?type=salary_grade">Entgeltstufen</a></li>
+	  <li task="can_edit_database_list_job"><a href="lists?type=job">Stellen</a></li>
+	</ul></div>
+      <div task="can_edit_manage_positions_database_lists">
+	<h3>Stellen verwalten</h3>
+	<ul><li task="can_edit_database_list_salary_source"><a href="lists?type=salary_source">Entgeltträger</a></li>
+	  <li task="can_edit_database_list_position_type"><a href="lists?type=position_type">Stellenarten</a></li>
+	  <li task="can_edit_database_list_position"><a href="lists?type=position&amp;field=facility">Stellen (nach Einrichtung)</a></li>
+	  <li task="can_edit_database_list_position"><a href="lists?type=position&amp;field=status&amp;nosetdefault=1">Stellen (nach Status)</a></li>
+	  <span type="module" ifenabled="true" name="ihris-manage-confirmation">
+	    <li task="can_edit_database_list_confirmation_type"><a href="lists?type=confirmation_type">Bestätigungsarten</a></li>
+	  </span>
+	</ul></div>
+    </div>
+  </span>
+
+  <h2>Andere Listen verwalten</h2>
+
+  <div task="can_edit_organization_database_lists">
+    <h3>Organisationslisten</h3>
+    <ul><li task="can_edit_database_list_facility_type"><a href="lists?type=facility_type">Einrichtungsart</a></li>
+      <li task="can_edit_database_list_facility"><a href="lists?type=facility&amp;field=location">Büro/Einrichtung</a></li>
+      <li task="can_edit_database_list_department"><a href="lists?type=department">Abteilung</a></li>
+      <span type="module" ifenabled="true" name="ManageRegistration">
+	<li task="can_edit_database_list_council"><a href="lists?type=council">Registrierungsbeiräte</a></li>
+      </span>
+    </ul></div>
+  <div task="can_edit_employee_database_lists">
+    <h3>Mitarbeiterlisten</h3>
+    <ul><li task="can_edit_database_list_edu_type"><a href="lists?type=edu_type">Ausbildungsart</a></li>
+      <li task="can_edit_database_list_degree"><a href="lists?type=degree&amp;field=edu_type">Abschluss</a></li>
+      <li task="can_edit_database_list_language"><a href="lists?type=language">Sprache</a></li>
+      <span type="module" ifenabled="true" name="simple-competency">
+	<li task="can_edit_database_list_competency_type"><a href="lists?type=competency_type">Art der Fähigkeit</a></li>
+	<li task="can_edit_database_list_competency"><a href="lists?type=competency&amp;field=competency_type">Fähigkeiten</a></li>
+	<span type="module" ifenabled="true" name="person-simple-competency">
+	  <li task="can_edit_database_list_competency_evaluation"><a href="lists?type=competency_evaluation">Bewertung der Fähigkeiten</a></li>
+	</span>
+      </span>
+      <li task="can_edit_database_list_id_type"><a href="lists?type=id_type">Identifizierungsart</a></li>
+      <span type="module" ifenabled="true" name="leave">
+      	<li task="can_edit_database_list_leave_category"><a href="lists?type=leave_category">Leave Category</a></li>
+      </span>
+      <li task="can_edit_database_list_benefit_type"><a href="lists?type=benefit_type">Art der Zusatzleistung</a></li>
+      <li task="can_edit_database_list_marital_status"><a href="lists?type=marital_status">Familienstand</a></li>
+      <li task="can_edit_database_list_contact_group"><a href="lists?type=contact_group">Kontaktgruppe</a></li>
+      <li task="can_edit_database_list_pos_change_reason"><a href="lists?type=pos_change_reason">Gründe für den Weggang</a></li>
+      <span type="module" ifenabled="true" name="accident">
+	<li task="can_edit_database_list_accident_type"><a href="lists?type=accident_type">Unfallart</a></li>
+      </span>
+      <span type="module" ifenabled="true" name="disciplinary_action">
+	<li task="can_edit_database_list_disciplinary_action_type"><a href="lists?type=disciplinary_action_type">Art der Disziplinarmaßnahme</a></li>
+	<li task="can_edit_database_list_disciplinary_action_reason"><a href="lists?type=disciplinary_action_reason">Grund für die Disziplinarmaßnahme</a></li>
+      </span>
+    </ul></div>
+  <div task="can_edit_geographic_database_lists">
+    <h3>Geografische Informationen</h3>
+    <ul><li task="can_edit_database_list_country"><a href="lists?type=country">Staat</a></li>
+      <li task="can_edit_database_list_region"><a href="lists?type=region&amp;field=country">Region</a></li>
+      <li task="can_edit_database_list_district"><a href="lists?type=district&amp;field=region">Bezirk</a></li>
+      <li task="can_edit_database_list_county"><a href="lists?type=county&amp;field=district">Kreis</a></li>
+      <li task="can_edit_database_list_currency"><a href="lists?type=currency">Währung</a></li>
+    </ul></div>
+  <div task="can_edit_planning_database_lists">
+    <span name="establishment" type="module" ifenabled="true">
+      <h3>Planungsinformationen</h3>
+      <ul><li task="can_edit_database_list_establishment_type"><a href="lists?type=establishment_type">Betriebsstättenart</a></li>
+	<li task="can_edit_database_list_establishment_period"><a href="lists?type=establishment_period&amp;field=establishment_type">Betriebsstättenzeitraum</a></li>
+	<li task="can_edit_database_list_establishment"><a href="lists?type=establishment&amp;field=establishment_period">Betriebsstätten</a></li>
+      </ul></span>
+  </div>
+
+
+  <span name="training-course" type="module" ifenabled="true">
+    <div task="can_edit_training_course_database_lists">
+      <h3>Schulungsinformationen</h3>
+      <ul><li task="can_edit_database_list_training_course"><a href="lists?type=training_course&amp;mapped=scheduled_training_course">Schulungen</a></li>
+	<li task="can_edit_database_list_scheduled_training_course"><a href="lists?type=scheduled_training_course&amp;field=training_course">Geplante Schulungen</a></li>
+	<li task="can_edit_database_list_training_course_status"><a href="lists?type=training_course_status">Status einer Schulung</a></li>
+	<li task="can_edit_database_list_training_course_requestor"><a href="lists?type=training_course_requestor">Antragsteller eines Schulung</a></li>
+	<li task="can_edit_database_list_training_course_evaluation"><a href="lists?type=training_course_evaluation">Bewertung einer Schulung</a></li>
+	<li task="can_edit_database_list_training_course_category"><a href="lists?type=training_course_category">Kategorie einer Schulung</a></li>
+	<span type="module" name="manage-training-institution" ifenabled="true">
+	  <li task="can_edit_database_list_training_institution"><a href="lists?type=training_institution">Schulungseinrichtung</a></li>
+	  <li task="can_edit_database_list_training_funder"><a href="lists?type=training_funder">Kostenträger der Schulung</a></li>
+	</span>
+	<span type="module" name="CEUs" ifenabled="true">
+	  <li task="can_edit_database_list_continuing_education_course"><a href="lists?type=continuing_education_course">Weiterbildungskurs</a></li>
+	</span>
+      </ul></div>
+  </span>
+
+  <span role="admin">
+      <h2>Massenlöschung</h2>
+      <ul><span type="module" name="ihris-manage-MassDeleteFacility" ifenabled="true">
+          <li><a href="delete_by_facility">Nach Einrichtung</a></li>
+        </span>
+        <span type="module" name="ihris-common-MassDeletePerson" ifenabled="true">
+          <li><a href="delete_by_search">Nach Mitarbeiter (Suchseite)</a></li>
+        </span>
+      </ul></span>
+</div>

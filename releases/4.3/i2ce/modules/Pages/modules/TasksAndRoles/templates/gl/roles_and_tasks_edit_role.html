@@ -1,0 +1,31 @@
+<div id="siteContent">
+  <form method="post" action="REPLACEME" name="edit_role_form_action" id="edit_role">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Editar o rol
+	</th>
+      </tr><tr><td>
+	  <label>Nome mostrado do rol:</label> Un nome mostrado do rol que se presenta ao usuario final.
+	</td>
+	<td>
+	  <input type="text" name="role_name" class="validate=[nonempty]"></td>
+      </tr><tr><td>
+	  <label>Herdanza do rol:</label>Os roles que teñen todos os dereitos deste rol. O rol de administrador terá acceso automaticamente a este rol
+	</td>
+	<td>
+	  <input type="hidden" name="role_roles[]" value="admin"><select name="role_roles[]" multiple id="role_roles"></select></td>
+      </tr><tr><td>
+	  <label>Tarefas do rol:</label> As tarefas asignadas a este rol
+	</td>
+	<td>
+	  <select name="role_tasks[]" multiple id="role_tasks" display="checkbox"></select></td>
+      </tr><tr><td>
+	  <label>Páxina de inidio dos roles:</label> Páxina de inicio predeterminada para este rol
+	</td>
+	<td>
+	  <input type="text" name="homepage"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Save"></td>
+      </tr></table></form>
+
+
+</div>

@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-standard-data-edu_type">
+  <metadata>
+    <displayName>Uganda default data for: edu_type</displayName>
+    <description>Data for form: edu_type</description>
+    <version>4.1.6.1</version>
+    <requirement name="PersonEducation">
+	  <atLeast version="4.1" />
+    </requirement>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <erase path="/I2CE/formsData/forms/edu_type">
+    <lessThan version="4.1.6.1" />
+  </erase>
+  <configurationGroup name="Uganda-standard-data-edu_type" path="/I2CE/formsData/forms/edu_type">
+    <displayName>Form data: edu_type</displayName>
+    <configurationGroup name="Certificate">
+      <displayName>Certificate</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 14:30:41</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Certificate</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="Diploma">
+      <displayName>Diploma</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 14:30:41</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Diploma</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="Bachelors">
+      <displayName>Bachelors</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 14:30:41</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Bachelors</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="Masters">
+      <displayName>Masters</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 14:30:41</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Masters</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="PhD">
+      <displayName>PhD</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 14:30:41</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>PhD</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="Other">
+      <displayName>Other</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 14:30:41</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Others</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

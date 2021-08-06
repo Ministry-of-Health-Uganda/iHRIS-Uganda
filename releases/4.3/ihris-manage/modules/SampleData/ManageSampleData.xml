@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-sample-data">
+  <metadata>
+    <displayName>iHRIS Manage Sample Data</displayName>
+    <className>iHRIS_Module_Manage_SampleData</className>
+    <category>Site</category>
+    <description>iHRIS Manage Sample Data</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0.1</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-manage-medical-data">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <enable name="SampleData-facility" />
+    <enable name="SampleData-establishment" />
+    <enable name="SampleData-confirmation_type" />
+    <path name="sql">
+      <value>./sql</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+  <configurationGroup name="ihris-manage-sample-data">
+    <configuration name="TF_name" path="/I2CE/formsData/forms/country/TF/fields/name" locale="en_US">
+      <version>4.3.0.1</version>
+      <value>Taifafeki</value>
+    </configuration>
+  </configurationGroup>
+</I2CEConfiguration>

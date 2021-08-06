@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports">
+  <metadata>
+    <displayName>iHRIS Manage Custom Reports</displayName>
+    <category>Application Option</category>
+    <description>The Manage Reporting System</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0.1</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="CustomReports">
+      <atLeast version="4.2" />
+      <lessThan version="4.5" />
+    </requirement>
+    <enable name="CustomReports_Visualization" />
+    <enable name="CustomReports_Export" />
+    <enable name="CustomReports_PDF" />
+    <enable name="ihris-manage-CustomReports-position-reports" />
+    <enable name="ihris-manage-CustomReports-staff-reports" />
+    <enable name="ihris-manage-CustomReports-facility-reports" />
+    <enable name="ihris-manage-CustomReports-search-people" />
+    <!-- <enable name='ihris-manage-CustomReports-FilledPositions'/> -->
+    <path name="pdf_images">
+      <value>./pdf_images</value>
+    </path>
+    <path name="modules">
+      <value>./Reports</value>
+    </path>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports" path="/modules/CustomReports">
+    <configurationGroup name="pdf_options" path="displays/PDF/display_options">
+      <displayName>PDF Options</displayName>
+      <configurationGroup name="header">
+        <displayName>Header Options</displayName>
+        <configuration name="title_prefix" locale="en_US">
+          <displayName>Header Title</displayName>
+          <value>iHRIS Manage</value>
+        </configuration>
+        <configuration name="text_prefix" locale="en_US">
+          <displayName>Header Text</displayName>
+          <value>iHRIS Manage Site</value>
+        </configuration>
+        <configurationGroup name="logo">
+          <displayName>Logo</displayName>
+          <configuration name="file">
+            <displayName>file</displayName>
+            <value>iHRISManage_logo_whiteBG.png</value>
+          </configuration>
+          <configuration name="width">
+            <displayName>width</displayName>
+            <version>3.2.3</version>
+            <value>0.6</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

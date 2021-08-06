@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="formRelationships">
+  <metadata>
+    <displayName>Form Relationships</displayName>
+    <className>I2CE_Module_FormRelationship</className>
+    <description>Provides Form Relationships for use by a Swiss Factory</description>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="forms">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="form-limits">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms-storage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="swissfactory">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+  </metadata>
+  <configurationGroup name="formRelationships">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>4.2.1.0</version>
+      <configuration name="form_relationship_can_import" locale="en_US">
+        <value>Can import form relationship data</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/modules/formRelationships/text/" locale="en_US">
+      <version>4.1.0.1</version>
+      <configuration name="select_value">
+        <value>Select Value</value>
+      </configuration>
+    </configurationGroup>
+    <version>4.2.0.5</version>
+    <configurationGroup name="relationship_importer" path="/I2CE/command_line/relationship_import">
+      <version>4.2.0.2</version>
+      <configuration name="style">
+        <value>action</value>
+      </configuration>
+      <configuration name="class">
+        <value>I2CE_Page_RelationshipImporter</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="relationship_importer" path="/I2CE/page/form_relationship_import">
+      <version>4.2.1.0</version>
+      <configuration name="style">
+        <value>shell</value>
+      </configuration>
+      <configuration name="class">
+        <value>I2CE_Page_FormRelationship_Import</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="relationship_importer" path="/I2CE/command_line/form_relationship_import">
+      <version>4.2.0.4</version>
+      <configuration name="style">
+        <value>action</value>
+      </configuration>
+      <configuration name="class">
+        <value>I2CE_Page_FormRelationship_Import</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

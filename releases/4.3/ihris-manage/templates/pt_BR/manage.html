@@ -1,0 +1,49 @@
+<div id="siteContent">
+<h1>Gerenciar Pessoas</h1>
+<div task="person_can_edit">
+  <h2><a href="person" class="createRecords">Adicionar Pessoa</a></h2>
+  <p>
+    <span type="module" name="ihris-manage-Application" ifenabled="true">
+      Para procurar uma pessoa no banco de dados, seja um empregado ou um candidato ao emprego, adicione um registro para essa pessoa. Certas informações são necessárias para um novo registro. Uma vez que o registro foi gerado, opções adicionais para adicionar dados sobre a pessoa estarão disponíveis. Um empregado do RH ou um gerente do RH pode adicionar uma pessoa para o sistema.     
+    </span>
+    <span type="module" name="ihris-manage-Application" ifenabled="!true">
+      Para procurar uma pessoa no banco de dados, adicione um registro para essa pessoa. Certas informações são necessárias para um novo registro. Uma vez que o registro foi gerado, opções adicionais para adicionar dados sobre a pessoa estarão disponíveis. Um empregado do RH ou um gerente do RH pode adicionar uma pessoa para o sistema.
+    </span>
+
+  </p>
+
+  <hr></div>
+
+<!--
+<h2><a href="search?search_limit=3" class="searchRecords">Find Employee</a></h2>
+<p>
+  After entering an employee's record into the system and setting a position for that 
+  employee, the record may be reviewed at any time. Click Find Employee to locate 
+  the record. From the record, additional information can be added or existing 
+  information can be updated. 
+</p>
+
+<hr />
+-->
+
+<span type="module" name="ihris-manage-Application" ifenabled="true">
+<span role="hr_staff|exec_manager">
+    <!--
+  <h2><a href="search?search_limit=2" class="searchRecords">Find Applicant</a></h2>
+  <p>
+    After entering an person's record into the system and adding an application for 
+    that person, the record may be reviewed at any time. Click Find Applicant to locate 
+    the record. From the record, additional information can be added or existing 
+    information can be updated.
+  </p>
+
+  <hr />
+  -->
+  <h2><a href="manage?action=review">Rever Candidatos</a></h2>
+  <p>
+    Se uma ou mais aplicações forem gravadas para um cargo aberto, um funcionário, um gerente ou um Gerente Executivo pode revisar as aplicações e gravar notas durante o processo de contratação. Clique em Revisar Candidatos para rever todas as aplicações para um cargo aberto
+  </p>
+</span>
+</span>
+
+</div>

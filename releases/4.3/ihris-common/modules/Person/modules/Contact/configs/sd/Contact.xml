@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonContact" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonContact" path="/I2CE" locale="sd">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_messages" path="/modules/forms/formfield_messages" locale="sd">
+      <configuration name="work" path="work/email/invalid_email">
+        <value>براءِ مهرباني هڪ قابل قبول ايميل جو پتو شامل ڪريو</value>
+      </configuration>
+      <configuration name="personal" path="personal/email/invalid_email">
+        <value>براءِ مهرباني هڪ قابل قبول ايميل جو پتو شامل ڪريو</value>
+      </configuration>
+      <configuration name="other" path="other/email/invalid_email">
+        <value>براءِ مهرباني هڪ قابل قبول ايميل جو پتو شامل ڪريو</value>
+      </configuration>
+      <configuration name="emergency" path="emergency/email/invalid_email">
+        <value>براءِ مهرباني هڪ قابل قبول ايميل جو پتو شامل ڪريو</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="sd">
+      <configuration name="person_can_view_child_form_person_contact_work" locale="sd"></configuration>
+      <configuration name="person_can_edit_child_form_person_contact_work" locale="sd"></configuration>
+      <configuration name="person_can_view_child_form_person_contact_emergency" locale="sd"></configuration>
+      <configuration name="person_can_edit_child_form_person_contact_emergency" locale="sd"></configuration>
+      <configuration name="person_can_view_child_form_person_contact_personal" locale="sd"></configuration>
+      <configuration name="person_can_edit_child_form_person_contact_personal" locale="sd"></configuration>
+      <configuration name="person_can_view_child_form_person_contact_other" locale="sd"></configuration>
+      <configuration name="person_can_edit_child_form_person_contact_other" locale="sd"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_contact_work">
+          <configuration name="display" values="single" locale="sd"></configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_emergency">
+          <configuration name="display" values="single" locale="sd">
+            <value>هنگامي رابطو</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_other">
+          <configuration name="display" values="single" locale="sd">
+            <value>ٻيو رابطو</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_personal">
+          <configuration name="display" values="single" locale="sd">
+            <value>ذاتي رابطو</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="contact">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sd"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

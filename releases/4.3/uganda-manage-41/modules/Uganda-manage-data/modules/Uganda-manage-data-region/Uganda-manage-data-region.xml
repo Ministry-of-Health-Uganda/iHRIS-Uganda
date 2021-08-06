@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-manage-data-region">
+  <metadata>
+    <displayName>Uganda Manage data for region</displayName>
+    <description>Data for form: region</description>
+    <version>4.1.0.0</version>
+    <requirement name="Uganda-manage-data-country">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <configurationGroup name="Uganda-manage-data-region" path="/I2CE/formsData/forms/region">
+    <displayName>Form data: region</displayName>
+    <configurationGroup name="UG-C">
+      <displayName>UG-C</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 14:56:38</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="country">
+          <value>country|UG</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-C</value>
+        </configuration>
+        <configuration name="name">
+          <value>Central</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="UG-E">
+      <displayName>UG-E</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 14:56:38</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="country">
+          <value>country|UG</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-E</value>
+        </configuration>
+        <configuration name="name">
+          <value>Eastern</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="UG-N">
+      <displayName>UG-N</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 14:56:38</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="country">
+          <value>country|UG</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-N</value>
+        </configuration>
+        <configuration name="name">
+          <value>Northern</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="UG-W">
+      <displayName>UG-W</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2011-03-23 14:56:38</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="country">
+          <value>country|UG</value>
+        </configuration>
+        <configuration name="code">
+          <value>UG-W</value>
+        </configuration>
+        <configuration name="name">
+          <value>Western</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

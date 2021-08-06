@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Confirmation" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Confirmation" path="/I2CE" locale="sv">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="sv">
+      <configuration name="person_can_view_child_form_confirmation" locale="sv"></configuration>
+      <configuration name="person_can_edit_child_form_confirmation" locale="sv"></configuration>
+      <configuration name="can_edit_database_list_confirmation_type" locale="sv"></configuration>
+      <configuration name="can_view_database_list_confirmation_type" locale="sv"></configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="confirmation">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sv">
+            <value>Lägg till/uppdatera bekräftelse</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="confirmation">
+          <configuration name="display" values="single" locale="sv">
+            <value>Bekräftelse</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="confirmation_type">
+          <configuration name="display" values="single" locale="sv">
+            <value>Typ av bekräftelse</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_ConfirmationType">
+          <configurationGroup name="fields">
+            <configurationGroup name="probation_period">
+              <configuration name="headers" type="delimited" locale="sv"></configuration>
+            </configurationGroup>
+            <configurationGroup name="job">
+              <configuration name="headers" type="delimited" locale="sv"></configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Namn</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Confirmation">
+          <configurationGroup name="fields">
+            <configurationGroup name="valid">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Giltig</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="confirmation_type">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Typ av bekräftelse</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Datum</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="disciplinary_action" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="disciplinary_action" path="/I2CE" locale="zh_CN">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="zh_CN">
+      <configuration name="disciplinary_date" path="disciplinary_action/end_date/bad_date"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_disciplinary_action" locale="zh_CN">
+        <value>可以编辑工伤和对某个人的纪律处分</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_disciplinary_action" locale="zh_CN">
+        <value>可以查看工伤和对某个人的纪律处分</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_type" locale="zh_CN">
+        <value>编辑工作场所的disciplinary_action类型列表</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_type" locale="zh_CN"></configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_reason" locale="zh_CN"></configuration>
+      <configuration name="can_view_database_list_disciplinary_action_reason" locale="zh_CN"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="disciplinary_action">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>纪律处分</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_type">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>纪律处分类型</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_reason">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>纪律处分原因</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_DisciplinaryAction">
+          <configurationGroup name="fields">
+            <configurationGroup name="action_date">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:讨论日期</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_type">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:所采取的行动</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_reason">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:操作原因</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:适用性的开始</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:适用性的终止</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:笔记</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_present">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:在场者</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="editAction" path="/modules/disciplinary_action/page/editAction">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="zh_CN"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

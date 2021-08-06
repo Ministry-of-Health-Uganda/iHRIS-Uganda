@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Job">
+  <metadata>
+    <displayName>iHRIS Manage Job</displayName>
+    <className>iHRIS_Module_ManageJob</className>
+    <category>Application Component</category>
+    <description>The iHRIS Manage Job</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <requirement name="ihris-common-Job">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="form-limits">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms-storage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <priority>350</priority>
+  </metadata>
+  <configurationGroup name="ihris-manage-Job" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_salary_grade" locale="en_US">
+        <version>3.2.7</version>
+        <value>Edit the salary_grade list</value>
+      </configuration>
+      <configuration name="can_view_database_list_salary_grade" locale="en_US">
+        <version>3.2.7</version>
+        <value>View the salary_grade list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down">
+      <version>3.2.8</version>
+      <configuration name="can_edit_database_list_salary_grade" values="many">
+        <value>can_edit_job_structure_database_lists</value>
+        <value>can_view_database_list_salary_grade</value>
+      </configuration>
+      <configuration name="can_edit_job_structure_database_lists" values="many">
+        <version>3.2.9</version>
+        <value>can_edit_position_database_lists</value>
+        <value>can_view_job_structure_database_lists</value>
+      </configuration>
+      <configuration name="can_view_job_structure_database_lists" values="many">
+        <version>3.2.9</version>
+        <value>can_view_position_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_job_structure_database_lists" values="many">
+        <value>can_edit_database_list_salary_grade</value>
+      </configuration>
+      <configuration name="can_view_all_job_structure_database_lists" values="many">
+        <value>can_view_database_list_salary_grade</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="view_job">
+        <displayName>View_job Page</displayName>
+        <description>The page 'view_job' which has the action of: View Job</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageViewJob</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>View Job</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>view_job.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="job">
+          <displayName>Job</displayName>
+          <description>The Job Form</description>
+          <version>3.2.5</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <version>4.0.6.4</version>
+            <value>iHRIS_ManageJob</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="salary_grade">
+          <displayName>Salary Grade</displayName>
+          <description>The Salary Grade Form</description>
+          <version>3.2.5</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_SalaryGrade</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Salary Grade</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of /modules/forms/forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_SalaryGrade">
+          <displayName>Configuration for the class 'iHRIS_SalaryGrade'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_List</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="name">
+              <displayName>The field 'name'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Name</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique" type="boolean">
+                <displayName>This field is required to be unique</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start">
+              <displayName>The field 'start'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>CURRENCY</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Start</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end">
+              <displayName>The field 'end'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>CURRENCY</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:End</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="midpoint">
+              <displayName>The field 'midpoint'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>CURRENCY</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:MidPoint</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <displayName>The field 'notes'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Notes</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_ManageJob">
+          <displayName>Configuration for the class 'iHRIS_Job'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <version>4.0.6.2</version>
+            <value>iHRIS_Job</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="salary_grade">
+              <displayName>The field 'salary_grade'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Salary Grade</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of /modules/formClasses-->
+    </configurationGroup>
+    <!-- end of /modules/forms-->
+  </configurationGroup>
+</I2CEConfiguration>

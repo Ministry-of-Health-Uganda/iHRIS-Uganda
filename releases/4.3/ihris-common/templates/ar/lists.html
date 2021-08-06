@@ -1,0 +1,37 @@
+<div id="siteContent">
+    <h1 dir="rtl">إدارة قاعدة البيانات</h1>
+
+    <span type="module" ifenabled="true" name="Person">    
+	  <h3 dir="rtl">قوائم الديموغرافية (السكان)</h3>
+	  <ul><li><a href="lists?type=id_type" dir="rtl">نوع الهوية</a></li>
+	    <li><a href="lists?type=marital_status" dir="rtl">الحالة الاجتماعية</a></li>
+	  </ul></span>
+    <span type="module" ifenabled="true" name="Geography">    
+      <h3 dir="rtl">المعلومات الجغرافية</h3>
+      <ul><li><a href="lists?type=country" dir="rtl">بلد</a></li>
+        <li><a href="lists?type=region" dir="rtl">منطقة</a></li>
+        <li><a href="lists?type=district" dir="rtl">حي</a></li>
+        <li><a href="lists?type=county" dir="rtl">مقاطعة</a></li>
+        <span type="module" ifenabled="true" name="Currency">    
+          <li><a href="lists?type=currency" dir="rtl">عملة</a></li>
+        </span>
+      </ul></span>
+    <h3 dir="rtl">معلومات إضافية</h3>
+    <ul><span type="module" ifenabled="true" name="simple-competency">	
+	  <li><a href="lists?type=competency_type" dir="rtl">نوع الكفاءة</a></li>
+	  <li><a href="lists?type=competency&amp;field=competency_type" dir="rtl">الكفاءة</a></li>
+    </span>
+    <span type="module" name="CEUs" ifenabled="true">
+	  <li><a href="lists?type=continuing_education_course" dir="rtl">دورة التعليم المستمر</a></li>
+    </span>
+    <span type="module" name="training-institution" ifenabled="true">
+	  <li><a href="lists?type=training_institution" dir="rtl">مؤسسة التدريب</a></li>
+	  <li><a href="lists?type=training_funder" dir="rtl">ممول تدريب</a></li>
+    </span>
+    </ul><span role="admin">
+      <span type="module" name="ihris-common-MassDeletePerson" ifenabled="true">
+        <h2 dir="rtl">حذف كمي</h2>
+        <ul><li><a href="delete_by_search" dir="rtl">بواسطة الشخص (صفحة البحث)</a></li>
+        </ul></span>
+    </span>
+</div>

@@ -1,0 +1,118 @@
+
+The most up to date information can be found on our wiki:
+ http://open.intrahealth.org/mediawiki/Linux_(Ubuntu)_Installation
+
+= How to Get Started =
+
+This documentation covers setting up iHRIS Manage for the first time
+user.
+
+Before getting started, you'll need to have the following installed:
+
+ * Webserver (we'll use Apache)
+ * MySQL
+ * PHP 5 version at least 5.2
+ * MDB2 from PEAR
+ * MySQL driver from PEAR
+ * APC from PECL
+ * Mod_rewrite for Apache
+ * PHP5-GD
+
+ * I2CE https://launchpad.net/ihris-common
+ * iHRIS Common https://launchpad.net/ihris-common
+ * iHRIS Manager https://launchpad.net/ihris-manage
+ * TextLayout Tools https://launchpad.net/textlayout if you want to print PDF reports
+
+These instructions will cover the installation of I2CE, iHRIS Common,
+and iHRIS Manage.
+
+*** TODO These instructions cover development versions.  They'll be
+    updated to cover the released software when that is available.
+    As a result, an additional requirement at this point is the bzr
+    version control command.  This can be had from
+    http://bazaar-vcs.org/
+
+0. Decide where you're going to install the application.  For purposes
+   of these instructions we'll use “/var/www/ihris” as the
+   installation location.  Also decide the URL that your users will
+   use.  We'll use “http://ihris.example.com/Manage” in these
+   instructions.  It is best to have only I2CE and related modules
+   underneath the directory.  For example, don't put anything else
+   under /var/www/ihris except the directories we give.  Otherwise,
+   I2CE will search those directories for configuration files and slow
+   the system down.
+
+1. Fetch the three modules from Lauchpad.  In the /var/www/ihris
+   directory, type:
+
+    $ bzr branch lp:i2ce/3.0 I2CE
+    $ bzr branch lp:ihris-common/3.0 iHRIS-common
+    $ bzr branch lp:ihris-common/3.0 iHRIS-Manage
+
+2. Configure Apache so that the URL you've selected points to the
+   sites/Demo/pages subdirectory of the iHRIS-Manage check out.  For
+   this example, we want http://ihris.example.com/Manage to point to
+   /var/www/ihris/iHRIS-Manage/sites/Demo/pages/, so we add the
+   following line to the end of our Apache configuration:
+
+    Alias /Manage/ /var/www/ihris/iHRIS-Manage/sites/Demo/pages/
+
+3. Create a Database and Database user.  Load the Database schema from
+   the I2CE checkout using the file I2CE_structure.sql.
+
+    $ mysqladmin -u root -p create ihris-manage
+    $ *** FIXME *** Create user
+    $ mysql -u ihris-user -p ihris-manage < I2CE_structure.sql
+
+4. Configure the application. Copy the
+   sites/Demo/pages/config.values.php to
+   sites/Demo/pages/local/config.values.php and edit it with the
+   values of your system.
+
+5. Move the sites/Demo/pages/htaccess.TEMPLATE file to
+   sites/Demo/pages/.htaccess and make sure the RewriteBase line is
+   set to the correct URL.
+
+   For this example, we want RewriteBase to be changed so that it
+   reads:
+
+    RewriteBase /Manage
+
+6. *** FIXME *** Navigate your browser to the url and tail your apache
+   error log.  You should see set up messages as it goes along.
+   (FIXME: This should really log to the web interface.)
+
+7. Log in with the username "admin" and password "admin".
+
+To run the Demo of iHRIS Manage (which can easily be customized to
+your particular installation) point your webserver to the
+sites/Demo/pages sub-directory
+
+
+= Troubleshooting =
+
+“MDB2: not found”
+
+    install the MDB2 MySQL module
+
+“Fatal error: Call to a member function search() on a non-object in
+I2CE_Config.inc.php”
+
+    Clear APC cache (restart Apache)?  Make sure the MySQL schema is
+    loaded.
+
+"The requested URL /ihris/login was not found on this server."
+
+    Make sure mod_rewrite is enabled ("sudo a2enmod rewrite" on
+    Debian/Ubuntu).  Make sure the .htaccess file can add rewrite
+    rules ("AllowOverride All" under a <Directory> directive in your
+    httpd.conf).
+
+First navigation to the URL takes forever to load
+
+    Make sure that only I2CE, ihris-common, and ihris-manage exist
+    underneath the ihris directory.
+
+    Try clearing the config table:
+
+        mysql> delete from config;

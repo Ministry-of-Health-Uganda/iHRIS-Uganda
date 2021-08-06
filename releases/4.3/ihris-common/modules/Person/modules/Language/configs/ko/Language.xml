@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonLanguage" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonLanguage" path="/I2CE" locale="ko">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="ko">
+      <configuration name="person_can_view_child_form_person_language" locale="ko"></configuration>
+      <configuration name="person_can_edit_child_form_person_language" locale="ko"></configuration>
+      <configuration name="can_edit_database_list_language" locale="ko">
+        <value>언어 데이터베이스 목록을 편집할 수 있습니다</value>
+      </configuration>
+      <configuration name="can_view_database_list_language" locale="ko">
+        <value>언어 데이터베이스 목록을 볼 수 있습니다</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="language_proficiency">
+        <configurationGroup name="elementary">
+          <configuration name="fields" value="many" type="delimited" locale="ko">
+            <value>name:초등학교</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="limited">
+          <configuration name="fields" value="many" type="delimited" locale="ko">
+            <value>name:제한된 직업</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="professional">
+          <configuration name="fields" value="many" type="delimited" locale="ko">
+            <value>name:전문 업무</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="full_professional">
+          <configuration name="fields" value="many" type="delimited" locale="ko"></configuration>
+        </configurationGroup>
+        <configurationGroup name="fluent">
+          <configuration name="fields" value="many" type="delimited" locale="ko">
+            <value>name:유창함</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_language">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ko">
+            <value>언어 추가/업데이트</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="language">
+          <configuration name="display" values="single" locale="ko">
+            <value>언어</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="language_proficiency">
+          <configuration name="display" values="single" locale="ko">
+            <value>언어 능력</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_language">
+          <configuration name="display" values="single" locale="ko">
+            <value>개인 언어 능력</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PersonLanguage">
+          <configurationGroup name="fields">
+            <configurationGroup name="language">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:언어</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="speaking">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:말하기 능력</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reading">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:읽기 능력</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="writing">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:쓰기 능력</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

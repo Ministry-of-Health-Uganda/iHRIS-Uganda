@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SampleData-establishment" path="/">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="SampleData-establishment" path="/" locale="ar">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationship" path="/modules/CustomReports/relationships/staff_norm_2010">
+      <configuration name="description" locale="ar">
+        <value>معيار&#160;التوظيف&#160;لعام 2010</value>
+      </configuration>
+      <configuration name="display_name" locale="ar">
+        <value>معيار&#160;التوظيف&#160;لعام 2010</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="position">
+          <configuration name="description" locale="ar">
+            <value>الوظيفة الذي شغلها هذا الشخص</value>
+          </configuration>
+          <configuration name="display_name" locale="ar">
+            <value>الوظيفة</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="job">
+              <configuration name="description" locale="ar">
+                <value>العمل المرتبط بهذه الوظيفة</value>
+              </configuration>
+              <configuration name="display_name" locale="ar">
+                <value>عمل</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="cadre">
+                  <configuration name="description" locale="ar">
+                    <value>إطار</value>
+                  </configuration>
+                  <configuration name="display_name" locale="ar">
+                    <value>إطار</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="facility">
+              <configuration name="description" locale="ar">
+                <value>المرفق حيث عمل هذه الوظيفة</value>
+              </configuration>
+              <configuration name="display_name" locale="ar">
+                <value>المرفق</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="facility_type">
+                  <configuration name="description" locale="ar">
+                    <value>نوع المرفق</value>
+                  </configuration>
+                  <configuration name="display_name" locale="ar">
+                    <value>نوع مرفق</value>
+                  </configuration>
+                  <configurationGroup name="joins">
+                    <configurationGroup name="establishment">
+                      <configuration name="description" locale="ar">
+                        <value>مؤسسة</value>
+                      </configuration>
+                      <configuration name="display_name" locale="ar">
+                        <value>مؤسسة</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="report" path="/modules/CustomReports/reports/staff_norm_2010">
+      <configurationGroup name="meta">
+        <configuration name="description" locale="ar">
+          <value>معايير&#160;التوظيف&#160;لعام 2010</value>
+        </configuration>
+        <configuration name="display_name" locale="ar">
+          <value>معيار&#160;التوظيف&#160;لعام 2010</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="establishment">
+          <configurationGroup name="fields">
+            <configurationGroup name="amount">
+              <configuration name="header" locale="ar">
+                <value>معيار التوظيف</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility_type">
+              <configuration name="header" locale="ar">
+                <value>نوع مرفق</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="position">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility">
+              <configuration name="header" locale="ar">
+                <value>المرفق</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="job">
+              <configuration name="header" locale="ar">
+                <value>عمل</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="job">
+          <configurationGroup name="fields">
+            <configurationGroup name="cadre">
+              <configuration name="header" locale="ar">
+                <value>إطار</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="id">
+              <configuration name="header" locale="ar">
+                <value>الوظائف التي تم شغلها</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportView" path="/modules/CustomReports/reportViews/staff_norm_2010">
+      <configuration name="description" locale="ar">
+        <value>معايير&#160;التوظيف&#160;لعام 2010</value>
+      </configuration>
+      <configuration name="display_name" locale="ar">
+        <value>معيار&#160;التوظيف&#160;2010</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

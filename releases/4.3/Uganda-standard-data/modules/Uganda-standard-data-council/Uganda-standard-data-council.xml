@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-standard-data-council">
+  <metadata>
+    <displayName>Uganda default data for: council</displayName>
+    <description>Data for form: council</description>
+    <version>4.1.6.1</version>
+    <requirement name="ManageRegistration">
+    </requirement>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <erase path="/I2CE/formsData/forms/council">
+    <lessThan version="4.1.6.1" />
+  </erase>
+  <configurationGroup name="Uganda-standard-data-council" path="/I2CE/formsData/forms/council">
+    <displayName>Form data: council</displayName>
+    <configuration name="read_only" path="/modules/forms/forms/council/read_only" type="boolean">
+      <version>4.1.6.1</version>
+      <value>true</value>
+    </configuration>
+    <configurationGroup name="AHPC">
+      <displayName>AHPC</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 13:25:55</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Allied Health Professionals Council</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="ICAC">
+      <displayName>ICAC</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 13:25:55</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Institute of Certified Accounts Council</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="PHARMACY">
+      <displayName>PHARMACY</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 13:25:55</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Pharmacy Council</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="UERB">
+      <displayName>UERB</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 13:25:55</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Uganda Engineers Registration Board</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="UMDPC">
+      <displayName>UMDPC</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 13:25:55</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Uganda Medical and Dental Practitioners Council</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="UNMC">
+      <displayName>UNMC</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 13:25:55</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Uganda Nurses and Midwives Council</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

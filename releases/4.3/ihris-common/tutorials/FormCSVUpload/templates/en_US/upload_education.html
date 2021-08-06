@@ -1,0 +1,37 @@
+<div id="siteContent">
+  <h1>Upload Education for: <span type="form" name="person:surname"></span>, <span type="form" name="person:firstname"></span></h1>
+  <div id="error"></div>
+  <form method="POST" enctype="multipart/form-data">
+    <span type="form" name="person:id"></span>
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+      <tr><th>Upload Education Details</th></tr>
+      <tr>
+        <td>
+          <p>
+            <span class="field_head required_field">
+              <label for="education">Select CSV file to upload</label>
+              <span class="required_field_notice">*</span>
+            </span>
+            <br />
+            <span class="form_field">
+              <input type="file" id="education" name="education" /><br />
+            </span>
+          </p>
+          <p>
+            <span class="field_head">Has Headers?</span>
+            <br />
+            <span class="form_field">
+              <input type="checkbox" id="has_header:education" name="has_header:education" value="1" checked="checked" />
+              <label for="has_header:education">This file has headers.</label>
+            </span>
+          </p>
+        </td>
+      </tr>
+      <tr class="submitCell">
+        <td>
+          <div id="button"></div>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

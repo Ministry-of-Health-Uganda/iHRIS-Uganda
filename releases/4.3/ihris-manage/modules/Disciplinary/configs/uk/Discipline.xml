@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="disciplinary_action" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="disciplinary_action" path="/I2CE" locale="uk">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="uk">
+      <configuration name="disciplinary_date" path="disciplinary_action/end_date/bad_date">
+        <value>Дата завершення має бути пізнішою за дату початку.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_disciplinary_action" locale="uk">
+        <value>Можна редагувати травми і дисциплінарні заходи на робочому місці, пов'язаного з особою</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_disciplinary_action" locale="uk">
+        <value>Можна переглядати травми і дисциплінарні заходи на робочому місці, пов'язаного з особою</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_type" locale="uk">
+        <value>Редагувати список типів дисциплінарних стягнень на робочому місці</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_type" locale="uk">
+        <value>Переглянути список типів дисциплінарних стягнень на робочому місці</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_reason" locale="uk">
+        <value>Редагувати список типів причин дисциплінарних стягнень на робочому місці</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_reason" locale="uk">
+        <value>Переглянути список типів причин дисциплінарних стягнень на робочому місці</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="disciplinary_action">
+          <configuration name="display" values="single" locale="uk">
+            <value>Дисциплінарний захід</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_type">
+          <configuration name="display" values="single" locale="uk">
+            <value>Тип дисциплінарного заходу</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_reason">
+          <configuration name="display" values="single" locale="uk">
+            <value>Причина дисциплінарного заходу</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_DisciplinaryAction">
+          <configurationGroup name="fields">
+            <configurationGroup name="action_date">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Дата обговорення</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_type">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Вжиті заходи</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_reason">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Причина заходу</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Початок застосовності</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Кінець застосовності</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Примітки</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_present">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Присутні люди</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="editAction" path="/modules/disciplinary_action/page/editAction">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="uk">
+            <value>Додати/оновити дисциплінарні заходи</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

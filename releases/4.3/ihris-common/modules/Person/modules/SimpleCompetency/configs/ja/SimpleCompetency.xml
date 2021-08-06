@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="person-simple-competency" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="person-simple-competency" path="/I2CE" locale="ja">
+    <version>4.2.0.1</version>
+    <configurationGroup name="formsdata" path="/I2CE/formsData/forms">
+      <configurationGroup name="competency_evaluation">
+        <configurationGroup name="not_evaluated">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="ja">
+              <value>未評価</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="competent">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="ja">
+              <value>有資格</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="not_competent">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="ja">
+              <value>無資格</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="person_tasks" path="/I2CE/tasks/task_description" locale="ja">
+      <configuration name="person_can_view_child_form_person_competency" locale="ja">
+        <value>個人資格情報の子フォームを閲覧できる</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_competency" locale="ja">
+        <value>個人資格情報の子フォームを編集できる</value>
+      </configuration>
+      <configuration name="person_competency_can_view_evaluation_history" locale="ja">
+        <value>資格評価履歴を閲覧できる</value>
+      </configuration>
+      <configuration name="person_competency_can_view_evaluation" locale="ja">
+        <value>資格評価履歴を閲覧できる</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_evaluation" locale="ja">
+        <value>資格評価リストの編集</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency_evaluation" locale="ja">
+        <value>資格評価リストの表示</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="competency_evaluation">
+          <configuration name="display" values="single" locale="ja">
+            <value>資格評価</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_competency">
+          <configuration name="display" values="single" locale="ja">
+            <value>個人の資格</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PersonCompetency">
+          <configurationGroup name="fields">
+            <configurationGroup name="evaluation_date">
+              <configuration name="headers" type="delimited" locale="ja">
+                <value>default:最終評価</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency_evaluation">
+              <configuration name="headers" type="delimited" locale="ja">
+                <value>default:評価</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency">
+              <configuration name="headers" type="delimited" locale="ja">
+                <value>default:資格</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_competency_history">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ja">
+            <value>資格評価の履歴</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="person_competency">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ja">
+            <value>資格の追加/更新</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

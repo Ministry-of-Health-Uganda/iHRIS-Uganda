@@ -1,0 +1,45 @@
+<div id="siteContent">
+    <h1>Administer Database</h1>
+
+    <span type='module' ifenabled='true' name='Person'>    
+	  <h3>Demographic Lists</h3>
+	  <ul>
+	    <li><a href="lists?type=id_type">Identification Type</a></li>
+	    <li><a href="lists?type=marital_status">Marital Status</a></li>
+	  </ul>
+	</span>
+    <span type='module' ifenabled='true' name='Geography'>    
+      <h3>Geographic Information</h3>
+      <ul>
+        <li><a href="lists?type=country">Country</a></li>
+        <li><a href="lists?type=region">Region</a></li>
+        <li><a href="lists?type=district">District</a></li>
+        <li><a href="lists?type=county">County</a></li>
+        <span type='module' ifenabled='true' name='Currency'>    
+          <li><a href="lists?type=currency">Currency</a></li>
+        </span>
+      </ul>
+    </span>
+    <h3>Additional Information</h3>
+    <ul>
+    <span type='module' ifenabled='true' name='simple-competency'>	
+	  <li><a href="lists?type=competency_type">Competency Type</a></li>
+	  <li><a href="lists?type=competency&amp;field=competency_type">Competency</a></li>
+    </span>
+    <span type='module' name='CEUs' ifenabled='true'>
+	  <li><a href="lists?type=continuing_education_course">Continuing Education Course</a></li>
+    </span>
+    <span type='module' name='training-institution' ifenabled='true'>
+	  <li><a href="lists?type=training_institution">Training Institution</a></li>
+	  <li><a href="lists?type=training_funder">Training Funder</a></li>
+    </span>
+    </ul>      
+    <span role="admin">
+      <span type="module" name="ihris-common-MassDeletePerson" ifenabled="true">
+        <h2>Mass Delete</h2>
+        <ul>
+          <li><a href="delete_by_search">By Person (Search Page)</a></li>
+        </ul>
+      </span>
+    </span>
+</div>

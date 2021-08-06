@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-FacilityTree" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-FacilityTree" path="/modules/CustomReports" locale="es">
+    <version>4.2.0.2.1</version>
+    <configurationGroup name="facility_tree" path="//modules/CustomReports/relationships/facility_tree">
+      <configuration name="description" locale="es">
+        <value>Informe del trabajo para su uso en la construcción de la vista de árbol para la instalación de los menús desplegables.</value>
+      </configuration>
+      <configuration name="display_name" locale="es">
+        <value>Árbol de trabajo</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="county">
+          <configuration name="description" locale="es">
+            <value>El condado donde se encuentra este trabajo.</value>
+          </configuration>
+          <configuration name="display_name" locale="es">
+            <value>Condado</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="district">
+          <configuration name="description" locale="es">
+            <value>El distrito donde se encuentra este trabajo.</value>
+          </configuration>
+          <configuration name="display_name" locale="es">
+            <value>Distrito</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="region">
+              <configuration name="description" locale="es">
+                <value>La región donde se encuentra este trabajo.</value>
+              </configuration>
+              <configuration name="display_name" locale="es">
+                <value>Región</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="country">
+                  <configuration name="description" locale="es">
+                    <value>El país donde se encuentra este trabajo.</value>
+                  </configuration>
+                  <configuration name="display_name" locale="es">
+                    <value>País</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="facility_tree" path="//modules/CustomReports/reports/facility_tree">
+      <configurationGroup name="meta">
+        <configuration name="description" locale="es">
+          <value>El informe para mostrar los trabajos como una vista de árbol para los campos asignados.</value>
+        </configuration>
+        <configuration name="display_name" locale="es">
+          <value>Árbol de trabajo</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="country">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="es">
+                <value>Ocultar país</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="es">
+                <value>Id de país</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="es">
+                <value>Nombre del país</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="primary">
+              <configuration name="header" locale="es">
+                <value>País principal</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="county">
+          <configurationGroup name="fields">
+            <configurationGroup name="district">
+              <configuration name="header" locale="es">
+                <value>Distrito del condado</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="es">
+                <value>Ocultar condado</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="es">
+                <value>Id de condado</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="es">
+                <value>Nombre del condado</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="district">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="es">
+                <value>Ocultar distrito</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="es">
+                <value>Id del distrito</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="es">
+                <value>Nombre del distrito</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="region">
+              <configuration name="header" locale="es">
+                <value>Región del distrito</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="es">
+                <value>Ocultar oficina/trabajo</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="es">
+                <value>Id de oficina/trabajo</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="header" locale="es">
+                <value>Ubicación del trabajo</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="facility_type">
+              <configuration name="header" locale="es">
+                <value>Tipo de trabajo</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="es">
+                <value>Nombre de oficina/trabajo</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="region">
+          <configurationGroup name="fields">
+            <configurationGroup name="country">
+              <configuration name="header" locale="es">
+                <value>País de la región</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="es">
+                <value>Ocultar región</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="es">
+                <value>Id de la región</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="es">
+                <value>Nombre de la región</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

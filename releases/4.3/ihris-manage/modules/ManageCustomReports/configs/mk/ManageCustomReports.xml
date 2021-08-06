@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports" path="/modules/CustomReports" locale="mk">
+    <version>4.2.0.1</version>
+    <configurationGroup name="pdf_options" path="displays/PDF/display_options">
+      <configurationGroup name="header">
+        <configuration name="title_prefix" locale="mk"></configuration>
+        <configuration name="text_prefix" locale="mk">
+          <value>Мреж. место на iHRIS Manage</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

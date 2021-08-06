@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="person-simple-competency" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="person-simple-competency" path="/I2CE" locale="fr_ML">
+    <version>4.2.0.1</version>
+    <configurationGroup name="formsdata" path="/I2CE/formsData/forms">
+      <configurationGroup name="competency_evaluation">
+        <configurationGroup name="not_evaluated">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="fr_ML">
+              <value>Non évalué</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="competent">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="fr_ML">
+              <value>Compétent</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="not_competent">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="fr_ML">
+              <value>Non compétent</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="person_tasks" path="/I2CE/tasks/task_description" locale="fr_ML">
+      <configuration name="person_can_view_child_form_person_competency" locale="fr_ML">
+        <value>Peut afficher le formulaire enfant de la compétence personnelle d’une personne</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_competency" locale="fr_ML">
+        <value>Peu éditer les formulaires enfant de la compétence personnelle d’une personne</value>
+      </configuration>
+      <configuration name="person_competency_can_view_evaluation_history" locale="fr_ML">
+        <value>Peut afficher l’historique de l’évaluation de la compétence d’une personne</value>
+      </configuration>
+      <configuration name="person_competency_can_view_evaluation" locale="fr_ML">
+        <value>Peut afficher l'évaluation des compétences d'une personne</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_evaluation" locale="fr_ML">
+        <value>Editer la liste d’évaluation de la compétence</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency_evaluation" locale="fr_ML">
+        <value>Afficher la liste d’évaluation de la compétence</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="competency_evaluation">
+          <configuration name="display" values="single" locale="fr_ML">
+            <value>Evaluation de la compétence</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_competency">
+          <configuration name="display" values="single" locale="fr_ML">
+            <value>Compétence personnelle</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PersonCompetency">
+          <configurationGroup name="fields">
+            <configurationGroup name="evaluation_date">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Dernière évaluation</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency_evaluation">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Évaluation</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Compétence</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_competency_history">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr_ML">
+            <value>Historique d’évaluation de la compétence</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="person_competency">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr_ML">
+            <value>Ajouter/Mettre à jour la compétence</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

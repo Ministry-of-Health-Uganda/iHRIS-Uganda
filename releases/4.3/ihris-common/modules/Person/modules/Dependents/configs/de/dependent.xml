@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="dependents" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="dependents" path="/" locale="de">
+    <version>4.3.0.1</version>
+    <configurationGroup name="dep_class" path="/modules/forms/formClasses/iHRIS_Dependent">
+      <configurationGroup name="fields">
+        <configurationGroup name="gender">
+          <configuration name="headers" type="delimited" values="many" locale="de">
+            <value>default:Geschlecht</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="date_of_birth">
+          <configuration name="headers" type="delimited" values="many" locale="de">
+            <value>default:Geburtsdatum</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="name">
+          <configuration name="headers" type="delimited" values="many" locale="de"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="dep_form" path="/modules/forms/forms/dependent">
+      <configuration name="display" locale="de">
+        <value>Angehörige</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="de">
+      <configuration name="person_can_view_child_form_dependent" locale="de">
+        <value>Kann die Angehörigen einer Person betrachten</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_dependent" locale="de">
+        <value>Kann die Angehörigen einer Person bearbeiten</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="dependent_page" path="/I2CE/page/dependent">
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="de">
+          <value>Informationen über Angehörige hinzufügen/aktualisieren</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

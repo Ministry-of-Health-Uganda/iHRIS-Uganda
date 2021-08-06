@@ -1,0 +1,135 @@
+body {
+	text-align: center;
+}
+
+/*Alpha Hacks*/
+#siteHeadWrap {
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='{I2CESITEROOT}file/subpage_fade_bkgd.png', sizingMethod='scale');
+}
+#inlineNavBar {
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='{I2CESITEROOT}file/inlinenav_fade_bkgd.png', sizingMethod='scale');
+}
+#inlineNavBar ul#sysUser {
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='{I2CESITEROOT}file/sysuser_fade_bkgd.png', sizingMethod='scale');
+}
+#inlineNavBar ul#sysUser li a.logout {
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='{I2CESITEROOT}file/lock_open.png', sizingMethod='crop');
+}
+#loginPage #siteHeadWrap {
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='{I2CESITEROOT}file/login/login_fade_bkgd.png', sizingMethod='scale');
+}
+#welcomeIntro img {
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='{I2CESITEROOT}file/photos/loggin_pic_bkgd.png', sizingMethod='scale');
+}
+#inlineNavBar a {
+	position: relative;
+}
+
+/*Box Model Hacks*/
+#siteHeader {
+	width: 780px;
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: 778px;
+}
+html>body #siteHeader {
+	width: 778px;
+}
+
+#siteContent {
+	width: 618px;
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: 590px;
+	height: 250px;
+}
+html>body #siteContent {
+	width: 590px;
+}
+
+#navBar li a {
+	width: 148px;
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: 128px;
+}
+html>body #navBar li a {
+	width: 128px;
+}
+
+#navBar ul ul li a {
+	width: 148px;
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: 126px;
+}
+html>body #navBar ul ul li a {
+	width: 126px;
+}
+
+#loginPage #siteContent {
+	width: 602px;
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: 578px;
+}
+html>body #loginPage #siteContent {
+	width: 578px;
+}
+
+#siteFooter img {
+	margin: 0 50px;
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	margin: 0;
+}
+html>body #siteFooter img {
+	margin: 0;
+}
+
+.editRecord p {
+	width: 144px;
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: 112px;
+}
+html>body .editRecord p {
+	width: 112px;
+}
+.editRecord ul li a,
+.editRecord ul li a:visited {
+	width: 136px;
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: 120px;
+}
+html>body .editRecord ul li a,
+html>body .editRecord ul li a:visited {
+	width: 120px;
+}
+
+.recordsData div.dataTable,
+.recordsData table {
+	width: 446px;
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: 444px;
+}
+html>body .recordsData div.dataTable,
+html>body .recordsData table {
+	width: 444px;
+}
+table.multiFormTable input {
+    width: expression( this.type=="checkbox" || this.type=="radio" ? "auto" : "246px" );
+}
+#report_table {
+	width: 590px;
+	height: expression(this.scrollHeight > 400 ? "400px" : "auto");
+	overflow: auto;
+}

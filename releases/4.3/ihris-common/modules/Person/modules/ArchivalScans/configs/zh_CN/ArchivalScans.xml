@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonArchivedScan" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonArchivedScan" path="/I2CE" locale="zh_CN">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="zh_CN">
+      <configuration name="person_can_view_child_form_person_archive_scan" locale="zh_CN">
+        <value>可以查看存档扫描的人</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_archive_scan" locale="zh_CN">
+        <value>可以编辑存档扫描的人</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Archive">
+          <configurationGroup name="fields">
+            <configurationGroup name="document">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:文档</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_archive_scan">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>扫描的文件记录</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_archive_scan">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="zh_CN">
+            <value>添加更新扫描纸记录</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

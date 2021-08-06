@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonID" path="/I2CE">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="PersonID" path="/I2CE" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="en_US">
+      <configuration name="exp_date" path="person_id/expiration_date/bad_date" locale="en_US">
+        <value>The date of expiration must be after the date of issue.</value>
+      </configuration>
+      <configuration name="wrong_pattern" path="person_id/id_num/wrong_pattern" locale="en_US">
+        <value>This ID doesn't match with ID Type pattern</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_person_id" locale="en_US">
+        <value>Can view person_id child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_id" locale="en_US">
+        <value>Can edit person_id child forms of a person</value>
+      </configuration>
+      <configuration name="can_edit_database_list_id_type" locale="en_US">
+        <value>Can edit the id_type database list</value>
+      </configuration>
+      <configuration name="can_view_database_list_id_type" locale="en_US">
+        <value>Can view the id_type database list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_id">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update Identification</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/forms">
+      <configurationGroup name="id_type">
+        <configuration name="display" values="single" locale="en_US">
+          <value>Identification Type</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="person_id">
+        <configuration name="display" values="single" locale="en_US">
+          <value>Person Identification</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <configuration name="description" locale="en_US">
+            <value>This form holds basic information about an identification for a person</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/formClasses">
+      <configurationGroup name="iHRIS_PersonID">
+        <configurationGroup name="fields">
+          <configurationGroup name="id_type">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Identification Type</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="id_num">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Identification Number</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="issue_date">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Date of Issue</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="expiration_date">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Date of Expiration</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="country">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Country of Issue</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="place">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Place of Issue</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="iHRIS_PersonID_Type">
+        <configurationGroup name="fields">
+          <configurationGroup name="pattern">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Pattern (regular expression)</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

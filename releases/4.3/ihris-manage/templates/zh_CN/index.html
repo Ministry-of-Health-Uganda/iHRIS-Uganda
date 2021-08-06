@@ -1,0 +1,95 @@
+<div id="siteContent">
+  <span task="person_can_view">
+    <h2><a href="manage" class="updateRecords">管理人物</a></h2>
+    <p>
+      添加一个新员工 <span type="module" name="ihris-manage-Application" ifenabled="true">或申请人 </span>record 
+      to the system, and search for and update records that have been entered into the system. 
+      <span type="module" name="ihris-manage-Application" ifenabled="true">
+	Also complete job applications for 
+	open positions, review completed applications and assign a position to the successful 
+      applicant. </span>
+    </p>
+  </span>
+
+  <span type="module" name="CustomReports" ifenabled="true">
+    <div task="custom_reports_can_access">
+      <hr><h2><a href="search" class="searchRecords">搜索记录</a></h2>
+      <p>
+	Locate any employee or position record in the system to review, print or update. 
+      </p>
+    </div>
+  </span>
+    <span type="module" name="ManageDashboard" ifenabled="true">
+    <div task="can_view_dashboard">
+      <hr><h2><a href="dashboard" class="createRecords">查看控制面板</a></h2>
+      <p>
+		  查看系统控制面板
+      </p>
+    </div>
+  </span>    
+  <div task="custom_reports_can_view_reportViews">
+    <hr><h2><a href="CustomReports/view/reportViews" class="createRecords">查看报告</a></h2>
+    <p>
+      Reports enable analysis of human resource data in various ways. Customize, display 
+      and print staff lists, statistical charts and other standard reports. 
+    </p>
+  </div>
+
+	<span type="module" name="DHIS-Dashboard" ifenabled="true">
+		<div>
+			<hr><h2><a href="http://192.168.0.19:8090/new_dhis/dhis-web-dashboard-integration/index.action">查看控制面板</a></h2>
+		<!--        <h2><a href="DHIS-Dashboard/dashboard" >View Dashboard</a></h2>-->
+			<p>
+				查看DHIS界面
+			</p>
+		</div>
+		</span>
+
+		<span type="module" name="DHIS-Dashboard" ifenabled="true">
+		<div>
+			<hr><h2><a href="index.php/DHISDashboard">DHIS导出</a></h2>
+			<p>
+				发送DHIS报告
+			</p>
+		</div>
+	</span>
+
+  <span role="admin" type="module" name="mHero" ifenabled="true">      
+    <h2>
+      <a href="mHero">mHero</a>
+    </h2>
+    <p>
+      <span style="display:inline-block">
+	<span type="form" href="mHero_person_workflow?id=" name="person:id" target="_mHero">
+	  <img text="mHero" style="width:10em;" src="file/mHero.png"></span>
+      </span>
+      mHero intgerated health system communications platform
+
+    </p>
+  </span>
+
+
+  <div task="can_configure_system">
+    <hr><h2><a href="configure" class="adminDatabase">配置系统</a></h2>
+    <p>
+      Configure modules, administer positions, customize drop down menus and create or update user accounts.
+    </p>
+  </div>
+  
+  <span type="module" name="SelfService" ifenabled="true" task="can_view_own_personnel">
+    <span type="module" name="SelfService" if="!userHasRecord()">
+    </span>
+    <span type="module" name="SelfService" if="userHasRecord()">
+      <div>
+	<h2><span type="module" name="SelfService" call="linkToPersonRecord('view?id=')">View Your Personnel Details</span></h2>
+	<p>
+	  View your personnel details.
+	</p>
+      </div>
+    </span>
+  </span>
+
+
+  <hr><h2><a href="password">更改密码</a></h2>
+
+</div>

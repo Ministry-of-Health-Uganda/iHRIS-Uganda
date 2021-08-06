@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Application" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Application" path="/I2CE" locale="mk">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="mk">
+      <configuration name="app_felon" path="application/felony_circumstances/required"></configuration>
+      <configuration name="app_hours" path="application/hours/required"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="mk">
+      <configuration name="person_can_view_child_form_position_decision" locale="mk">
+        <value>Може да се прегледа подобразецот за одлука за раб. место на лице</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_decision" locale="mk">
+        <value>Може да се уреди подобразецот за одлука за раб. место на лице</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_position_interview" locale="mk">
+        <value>Може да се прегледа подобразецот за интервјуто за раб. место на лице</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_interview" locale="mk">
+        <value>Може да се уреди подобразецот за интервјуто за раб. место на лице</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_application" locale="mk"></configuration>
+      <configuration name="person_can_edit_child_form_application" locale="mk"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="application">
+          <configuration name="display" values="single" locale="mk">
+            <value>Кандидат</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_interview">
+          <configuration name="display" values="single" locale="mk">
+            <value>Интервју за раб. место</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_decision">
+          <configuration name="display" values="single" locale="mk">
+            <value>Одлука за раб. место</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Applicant">
+          <configurationGroup name="fields">
+            <configurationGroup name="position">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Раб. место/а</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Дали сте биле осудени за злосторство?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony_circumstance">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Ако сте биле, наведете под кои околности.</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="other_info">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Покрај вашата работна историја, имате ли други способности, квалификации или искуство што треба да ги имаме предвид?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hear">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Како дознавте за ова слободно раб. место?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Кога можете да започнете со работа?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="desired_wage">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Посакувана плата</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="full_time">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Дали барате полно раб. време?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hours">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Ако не, тогаш кои работни часови ви одговараат?</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionInterview">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Датум на интервјуто</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Присутни</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Коментари</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionDecision">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Датум на одлуката</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="offer">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Да направам понуда за работа?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Коментари</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="application">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="mk">
+            <value>Додај/Поднови пријавница</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_decision">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="mk">
+            <value>Додај/Поднови одлука за раб. место</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_interview">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="mk">
+            <value>Додај/Поднови интервју за раб. место</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="FHIR">
+  <metadata>
+    <displayName>FHIR Services</displayName>
+    <description>Holds various FHIR based modules</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@gmail.com</email>
+    <link>https://launchpad.net/ihris-common</link>
+    <version>4.3.3.0</version>
+    <link>https://launchpad.net/ihris-common</link>
+    <requirement name="ihris-common">
+      <atLeast version="4.0" />
+    </requirement>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

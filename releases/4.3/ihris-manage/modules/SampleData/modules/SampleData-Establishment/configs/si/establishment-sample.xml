@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SampleData-establishment" path="/">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="SampleData-establishment" path="/" locale="si">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationship" path="/modules/CustomReports/relationships/staff_norm_2010">
+      <configuration name="description" locale="si">
+        <value>2010 සඳහා කාර්ය මණ්ඩල සංවිධාන සම්මතය</value>
+      </configuration>
+      <configuration name="display_name" locale="si">
+        <value>2010 සඳහා කාර්ය මණ්ඩල සංවිධාන සම්මතය</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="position">
+          <configuration name="description" locale="si">
+            <value>තනතුර දරන ලද්දේ මෙම පුද්ගලයා විසිනි</value>
+          </configuration>
+          <configuration name="display_name" locale="si">
+            <value>තනතුර</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="job">
+              <configuration name="description" locale="si">
+                <value>කාර්යය මෙම තනතුර හා ආශ්‍රිත වේ.</value>
+              </configuration>
+              <configuration name="display_name" locale="si">
+                <value>කාර්යය</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="cadre">
+                  <configuration name="description" locale="si">
+                    <value>සේවක සංඛ්‍යාව</value>
+                  </configuration>
+                  <configuration name="display_name" locale="si">
+                    <value>සේවක සංඛ්‍යාව</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="facility">
+              <configuration name="description" locale="si">
+                <value>මෙම තනතුර ක්‍රියාත්මක වන පහසුකම</value>
+              </configuration>
+              <configuration name="display_name" locale="si">
+                <value>පහසුකම</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="facility_type">
+                  <configuration name="description" locale="si">
+                    <value>පහසුකම් මාදිලිය</value>
+                  </configuration>
+                  <configuration name="display_name" locale="si">
+                    <value>පහසුකම් මාදිලිය</value>
+                  </configuration>
+                  <configurationGroup name="joins">
+                    <configurationGroup name="establishment">
+                      <configuration name="description" locale="si">
+                        <value>සංස්ථාපනය</value>
+                      </configuration>
+                      <configuration name="display_name" locale="si">
+                        <value>සංස්ථාපනය</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="report" path="/modules/CustomReports/reports/staff_norm_2010">
+      <configurationGroup name="meta">
+        <configuration name="description" locale="si">
+          <value>2010 සඳහා කාර්ය මණ්ඩල සංවිධාන සම්මතය</value>
+        </configuration>
+        <configuration name="display_name" locale="si">
+          <value>2010 සඳහා කාර්ය මණ්ඩල සංවිධාන සම්මතය</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="establishment">
+          <configurationGroup name="fields">
+            <configurationGroup name="amount">
+              <configuration name="header" locale="si">
+                <value>කාර්ය මණ්ඩල සංවිධාන සම්මතය</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility_type">
+              <configuration name="header" locale="si">
+                <value>පහසුකම් මාදිලිය</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="position">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility">
+              <configuration name="header" locale="si">
+                <value>පහසුකම</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="job">
+              <configuration name="header" locale="si">
+                <value>කාර්යය</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="job">
+          <configurationGroup name="fields">
+            <configurationGroup name="cadre">
+              <configuration name="header" locale="si">
+                <value>සේවක සංඛ්‍යාව</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="id">
+              <configuration name="header" locale="si">
+                <value>පුරවන ලද තනතුරු</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportView" path="/modules/CustomReports/reportViews/staff_norm_2010">
+      <configuration name="description" locale="si">
+        <value>2010 සඳහා කාර්ය මණ්ඩල සංවිධාන සම්මතය</value>
+      </configuration>
+      <configuration name="display_name" locale="si">
+        <value>2010 සඳහා කාර්ය මණ්ඩල සංවිධාන සම්මතය</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

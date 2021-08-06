@@ -1,0 +1,27 @@
+<tbody id="list_fields">
+	<tr>
+	<td class="formdata">
+	   	<span type="form" name="position:job" showhead="default" 
+	   		onchange="if ( document.getElementById('form[position][0][0][fields][title]').value == '' &amp;&amp; this.selectedIndex != 0 ) document.getElementById('form[position][0][0][fields][title]').value = this.options[this.selectedIndex].text;" 
+	   		addlink="lists?add=1&amp;type=job" addtask='position_can_edit'></span>
+	   	<span type="form" name="position:title" showhead="default"></span>
+	   	<span type="form" name="position:description" showhead="default"></span>
+		<span type='module' name='ihris-manage-Salary' ifenabled='true'>
+	   	  <span type="form" name="position:proposed_salary" showhead="default"></span>
+	   	  <span type="form" name="position:source" showhead="default"></span>
+		</span>
+	   	<span type="form" name="position:posted_date" showhead="default"></span>
+	   	<span type="form" name="position:comments" showhead="default"></span>
+	</td><td class="formdata">
+	   	<span type="form" name="position:code" showhead="default"></span>
+	   	<span type="form" name="position:supervisor" showhead="default" display="reportSelect"></span>
+	   	<span type="form" name="position:facility" showhead="default"></span>
+	   	<span type="form" name="position:department" showhead="default"></span>
+	   	<span type="form" name="position:pos_type" showhead="default"></span>
+	   	<span type="form" name="position:proposed_hiring_date" showhead="default"></span>
+	   	<span type="form" name="position:proposed_end_date" showhead="default"></span>
+	   	<span type="form" name="position:status" showhead="default" noedit="true"></span>
+	   	<span type="form" name="position:interview_comments" showhead="default"></span>
+    </td>
+    </tr>
+</tbody>

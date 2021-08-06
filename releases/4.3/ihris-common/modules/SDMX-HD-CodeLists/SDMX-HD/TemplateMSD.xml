@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xsi:schemaLocation="http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message SDMXMessage.xsd" xmlns:message="http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:structure="http://www.SDMX.org/resources/SDMXML/schemas/v2_0/structure" xmlns:common="http://www.SDMX.org/resources/SDMXML/schemas/v2_0/common">
+    <message:Header>
+        <message:ID>SDMX-HD-MSD</message:ID>
+        <message:Test>false</message:Test>
+        <message:Truncated>false</message:Truncated>
+		<message:Name xml:lang="en">SDMX Health Domain</message:Name>		
+        <message:Prepared>2009-03-20</message:Prepared>
+        <message:Sender id="HSID">
+            <message:Name xml:lang="en">Health Statistics and Informatics Department </message:Name>
+        </message:Sender>
+        <message:Extracted>2009-03-20T13:03:46</message:Extracted>
+        <message:Source xml:lang="en">WHO</message:Source>
+    </message:Header>
+    
+    <message:CodeLists>
+  
+        <!-- Metadata Specific COMMON Code lists not already declared in the DSD -->
+		
+		<!-- PLACEHOLDER FOR CODE LISTS (isFinal=true) -->
+		
+		<structure:CodeList id="CL_CURRENCY"  				agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_CURRENCY" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_CURRENCY+SDMX-HD+1.0.xml"><structure:Name>Currency</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_DISSTAT"  				agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_DISSTAT" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_DISSTAT+SDMX-HD+1.0.xml"><structure:Name>Disease Status</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_FPERIOD"  				agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_FPERIOD" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_FPERIOD+SDMX-HD+1.0.xml"><structure:Name>Followup Period</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_GCODE_COUNTRY"  			agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_GCODE_COUNTRY" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_GCODE_COUNTRY+SDMX-HD+1.0.xml"><structure:Name>Country Code</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_GLEVEL"  				agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_GLEVEL" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_GLEVEL+SDMX-HD+1.0.xml"><structure:Name>Geographic Level</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_HIF1" 	 				agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_HIF1" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_HIF1+SDMX-HD+1.0.xml"><structure:Name>Health Indicator Framework level 1</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_HIF2"  					agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_HIF2" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_HIF2+SDMX-HD+1.0.xml"><structure:Name>Health Indicator Framework level 2</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_METYPE"  				agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_METYPE" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_METYPE+SDMX-HD+1.0.xml"><structure:Name xml:lang="en" >Monitoring and Evaluation Framework</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_PSTATUS" 	 			agencyID="SDMX-HD" version="1.0" isFinal="true" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_PSTATUS" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_PSTATUS+SDMX-HD+1.0.xml"><structure:Name xml:lang="en" >Programme Status</structure:Name></structure:CodeList>
+		
+		<!-- PLACEHOLDER FOR CODE LISTS (isFinal=false) -->
+
+		<structure:CodeList id="CL_ASOURCE"  				agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_ASOURCE" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_ASOURCE+SDMX-HD+1.0.xml"><structure:Name>Administrative Source</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_CSTYPE"  				agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_CSTYPE" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_CSTYPE+SDMX-HD+1.0.xml"><structure:Name>Calculation Syntax Type</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_DISAGG"  				agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_DISAGG" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_DISAGG+SDMX-HD+1.0.xml"><structure:Name>Disaggregation</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_DTYPE" 	 				agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_DTYPE" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_DTYPE+SDMX-HD+1.0.xml"><structure:Name>Datatype</structure:Name></structure:CodeList>		
+		<structure:CodeList id="CL_GBOUNDARY_TYPE"  		agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_GBOUNDARY_TYPE" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_GBOUNDARY_TYPE+SDMX-HD+1.0.xml"><structure:Name>Boundary Type</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_ISET" 		 			agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_ISET" isExternalReference="true" uri="./additional/CL_ISET.xml"><structure:Name xml:lang="en" >Indicator Set</structure:Name></structure:CodeList>	
+		<structure:CodeList id="CL_OTYPE"  					agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_OTYPE" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_OTYPE+SDMX-HD+1.0.xml"><structure:Name xml:lang="en" >Organization Type</structure:Name></structure:CodeList>
+		<structure:CodeList id="CL_PTYPE"  					agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_PTYPE" isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/codelists/CL_PTYPE+SDMX-HD+1.0.xml"><structure:Name xml:lang="en" >Programme Type</structure:Name></structure:CodeList>
+
+        <!-- Metadata Specfic CUSTOM Code lists not already declared in the DSD -->
+        
+    </message:CodeLists>
+    
+    <message:Concepts>
+
+        <!-- COMMON METADATA CONCEPT SCHEME -->
+        
+        <structure:ConceptScheme id="CS_COMMON_MSD" agencyID="SDMX-HD" version="1.0" isFinal="true"
+			isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/conceptschemes/COMMON_MSD+SDMX-HD+1.0.xml" >
+            <structure:Name>SDMX-HD Common Metadata Elements</structure:Name>					
+        </structure:ConceptScheme>        
+        
+        <!-- COMMON GENERIC CONCEPT SCHEME'S   -->
+		
+        <structure:ConceptScheme id="CS_COMMON_GEN" agencyID="SDMX-HD" version="1.0" isFinal="true"
+			isExternalReference="true" uri="./COMMON/SDMX-HD/v1.0/conceptschemes/COMMON_GEN+SDMX-HD+1.0.xml" >
+            <structure:Name>SDMX-HD Common Generic Elements</structure:Name>					
+        </structure:ConceptScheme> 
+		
+        <!-- CUSTOM SPECIFIC CONCEPT SCHEME'S Inline in the file  -->
+        
+    </message:Concepts>
+    
+    <message:MetadataStructureDefinitions>
+        
+        <structure:MetadataStructureDefinition id="MSD" agencyID="SDMX-HD" version="1.0" urn="urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructureDefinition=SDMX-HD:MSD[1.0]" >
+            <structure:Name xml:lang="en">SDMX-HD Metadata Structure Definition</structure:Name>
+            <structure:TargetIdentifiers>
+                <structure:FullTargetIdentifier id="FTI" urn="urn:sdmx:org.sdmx.infomodel.metadatastructure.FullTargetIdentifier=SDMX-HD:MSD[1.0].FTI">
+                    <structure:Name xml:lang="en">SDMX-HD Full Target Identifier</structure:Name>
+                    
+                    <!--identifier components marked as representationScheme=External refer to code list present in the DSD-->
+                    
+                    <structure:IdentifierComponent id="IC_INDICATOR" urn="urn:sdmx:org.sdmx.infomodel.metadatastructure.IdentifierComponent=SDMX-HD:MSD[1.0].FTI.IC_INDICATOR">
+                        <structure:Name xml:lang="en">Identifier Component for Indicators</structure:Name>
+                        <structure:Description xml:lang="en">Reference the INDICATOR concept defined in DSD file</structure:Description>
+                        <structure:TargetObjectClass>Concept</structure:TargetObjectClass>
+                        <structure:RepresentationScheme representationSchemeType="External" representationScheme="CL_INDICATOR" representationSchemeAgency="SDMX-HD"/>
+                    </structure:IdentifierComponent>
+                    
+                    <!-- Add additional Identifier Components as needed -->
+                    
+                </structure:FullTargetIdentifier>
+            </structure:TargetIdentifiers>
+            
+            <structure:ReportStructure id="RS" target="FTI" urn="urn:sdmx:org.sdmx.infomodel.metadatastructure.ReportStructure=SDMX-HD:MSD[1.0].RS">
+                
+                <structure:Name xml:lang="en">Full Metadata Structure</structure:Name>
+                                
+                <!-- Generic metadata concepts-->
+                
+                <structure:MetadataAttribute conceptRef="_CODE" usageStatus="Conditional" conceptSchemeAgency="SDMX-HD" conceptVersion="1.0" conceptSchemeRef="CS_COMMON_GEN">
+                </structure:MetadataAttribute>
+                <structure:MetadataAttribute conceptRef="_DESCRIPTION" usageStatus="Conditional" conceptSchemeAgency="SDMX-HD" conceptVersion="1.0" conceptSchemeRef="CS_COMMON_GEN">
+                </structure:MetadataAttribute>
+                <structure:MetadataAttribute conceptRef="_CREATED_ON" usageStatus="Conditional" conceptSchemeAgency="SDMX-HD" conceptVersion="1.0" conceptSchemeRef="CS_COMMON_GEN">
+                </structure:MetadataAttribute>                
+                <structure:MetadataAttribute conceptRef="_CREATED_BY" usageStatus="Conditional" conceptSchemeAgency="SDMX-HD" conceptVersion="1.0" conceptSchemeRef="CS_COMMON_GEN">
+                </structure:MetadataAttribute>
+                <!--
+                    If you just want to pass the last time a codelist was changed and you do not care if it was a creation or an update then populate the UPDATED_ON with the creation date if it does nolt already have a value
+                    This will avoid sending the CREATED_ON data when not needed and help reduce the data footprint.
+                -->
+                <structure:MetadataAttribute conceptRef="_UPDATED_ON" usageStatus="Conditional" conceptSchemeAgency="SDMX-HD" conceptVersion="1.0" conceptSchemeRef="CS_COMMON_GEN">
+                </structure:MetadataAttribute>                
+                <structure:MetadataAttribute conceptRef="_UPDATED_BY" usageStatus="Conditional" conceptSchemeAgency="SDMX-HD" conceptVersion="1.0" conceptSchemeRef="CS_COMMON_GEN">
+                </structure:MetadataAttribute>                
+                <structure:MetadataAttribute conceptRef="_ORDER_BY" usageStatus="Conditional" conceptSchemeAgency="SDMX-HD" conceptVersion="1.0" conceptSchemeRef="CS_COMMON_GEN">
+                </structure:MetadataAttribute>
+                <structure:MetadataAttribute conceptRef="_IS_ARCHIVED" usageStatus="Conditional" conceptSchemeAgency="SDMX-HD" conceptVersion="1.0" conceptSchemeRef="CS_COMMON_GEN" representationScheme="CL_LOGICAL" representationSchemeAgency="SDMX-HD" >
+                </structure:MetadataAttribute>
+                <structure:MetadataAttribute conceptRef="_IS_READONLY" usageStatus="Conditional" conceptSchemeAgency="SDMX-HD" conceptVersion="1.0" conceptSchemeRef="CS_COMMON_GEN"  representationScheme="CL_LOGICAL" representationSchemeAgency="SDMX-HD" >
+                </structure:MetadataAttribute>				
+                <structure:MetadataAttribute conceptRef="_VERSION" usageStatus="Conditional" conceptSchemeAgency="SDMX-HD" conceptVersion="1.0" conceptSchemeRef="CS_COMMON_GEN">
+                </structure:MetadataAttribute>				
+                <structure:MetadataAttribute conceptRef="_VSTATUS" usageStatus="Conditional" conceptSchemeAgency="SDMX-HD" conceptVersion="1.0" conceptSchemeRef="CS_COMMON_GEN" representationScheme="CL_VSTATUS" representationSchemeAgency="SDMX-HD">
+                </structure:MetadataAttribute>
+				
+                <!-- Specific metadata concepts-->
+				
+                <structure:MetadataAttribute conceptRef="DTYPE" usageStatus="Mandatory" conceptSchemeAgency="SDMX-HD" conceptVersion="1.0" conceptSchemeRef="CS_COMMON_MSD"  representationScheme="CL_DTYPE" representationSchemeAgency="SDMX-HD">
+                    <structure:TextFormat textType="String" />
+                </structure:MetadataAttribute>				
+                
+            </structure:ReportStructure>
+        </structure:MetadataStructureDefinition>
+    </message:MetadataStructureDefinitions>
+</message:Structure>

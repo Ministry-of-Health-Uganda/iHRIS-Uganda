@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="template-data">
+  <metadata>
+    <displayName>Template Data</displayName>
+    <className>I2CE_Module_TemplateData</className>
+    <category>Base System Component</category>
+    <link>https://launchpad.net/i2ce</link>
+    <description>A module that allows you to associate arbitray types of data to any node of the template DOM</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="I2CE">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

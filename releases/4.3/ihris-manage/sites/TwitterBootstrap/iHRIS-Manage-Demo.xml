@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-site-demo">
+  <metadata>
+    <displayName>iHRIS Manage Demo</displayName>
+    <className>iHRIS_Module_ManageSiteDemo</className>
+    <category>Site</category>
+    <description>the iHRIS Manage Demo Site</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.1.1.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-manage">
+      <atLeast version="4.1" />
+      <lessThan version="4.2" />
+    </requirement>
+    <requirement name="UserAccess">
+      <atLeast version="4.1" />
+      <lessThan version="4.2" />
+    </requirement>
+    <enable name="accident" />
+    <enable name="ReportArchiver" />
+    <enable name="dependents" />
+    <enable name="disciplinary_action" />
+    <enable name="default-locales" />
+    <enable name="nextOfKin" />
+    <enable name="ManageSelfService" />
+    <enable name="ManageSelfServiceApplication" />
+    <enable name="formDocumentor" />
+    <enable name="PersonArchivedScan" />
+    <enable name="PersonPassportPhoto" />
+    <enable name="PersonResume" />
+    <enable name="PersonContact" />
+    <enable name="ihris-manage-PersonDemographic" />
+    <enable name="PersonEducation" />
+    <enable name="PersonEmployment" />
+    <enable name="PersonID" />
+    <enable name="PersonLanguage" />
+    <enable name="PersonNotes" />
+    <enable name="person-simple-competency" />
+    <enable name="ihris-manage-sample-data" />
+    <enable name="magicDataBrowser" />
+    <enable name="stub" />
+    <enable name="FileDump" />
+    <enable name="StretchPage" />
+    <enable name="messageBox" />
+    <enable name="messageNotice" />
+    <enable name="manage-auto-page" />
+    <enable name="localeSelector" />
+    <enable name="ihris-manage-Application" />
+    <enable name="ihris-manage-ApplicationAttachment" />
+    <enable name="ihris-manage-confirmation" />
+    <enable name="ihris-manage-ConfirmationAttachment" />
+    <enable name="isco-88" />
+    <enable name="isco-88-major-00" />
+    <enable name="isco-88-major-01" />
+    <enable name="isco-88-major-02" />
+    <enable name="isco-88-major-03" />
+    <enable name="isco-88-major-04" />
+    <enable name="isco-88-major-05" />
+    <enable name="isco-88-major-06" />
+    <enable name="isco-88-major-07" />
+    <enable name="isco-88-major-08" />
+    <enable name="isco-88-major-09" />
+    <enable name="manage-training-course" />
+    <enable name="RecordStatus" />
+    <enable name="training-exam" />
+    <enable name="SDMX-HD-CodeLists" />
+    <enable name="sample-hire-letter" />
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="images">
+      <value>./images</value>
+    </path>
+    <path name="pages">
+      <value>./pages</value>
+    </path>
+    <priority>400</priority>
+  </metadata>
+  <configurationGroup name="ihris-manage-site-demo" path="/I2CE">
+    <displayName>iHRIS Manage Demo Site</displayName>
+    <status>advanced:false</status>
+    <configurationGroup name="feedback">
+      <displayName>Feedback Information</displayName>
+      <status>required:false</status>
+      <configuration name="email" path="to" values="single">
+        <displayName>Email Address</displayName>
+      </configuration>
+      <configuration name="subject" values="single">
+        <displayName>Subject Line</displayName>
+      </configuration>
+    </configurationGroup>
+    <configuration name="file_search_stale_time" path="/I2CE/fileSearch/stale_time">
+      <displayName>Stale Time</displayName>
+      <description>The time in seconds until a file found in the file search utility is considered stale. If stale, it will search for the file, if not stale, it will use the previously found location of the file (it will cache the file location). If negative, then we do not cache the file location.</description>
+      <status>required:true</status>
+      <status>validate:integer,nonempty</status>
+      <value>600</value>
+    </configuration>
+    <configurationGroup name="template">
+      <displayName>Template Information</displayName>
+      <description>Various Default Information About The Templating System</description>
+      <status>advanced:false</status>
+      <status>required:true</status>
+      <configuration name="prefix_title" values="single" locale="en_US">
+        <version>3.2.1</version>
+        <displayName>Page title prefix</displayName>
+        <description>Page titile prefix</description>
+        <value>iHRIS Manage Demo</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pdf_options" path="/modules/report-pdf/PDF/display-options">
+      <displayName>PDF Options</displayName>
+      <status>visible:false</status>
+      <configurationGroup name="header">
+        <displayName>Header Options</displayName>
+        <configuration name="text" locale="en_US">
+          <displayName>Header Text</displayName>
+          <value>iHRIS Manage Demo</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="custom_report_pdf_options" path="/modules/CustomReports/displays/PDF/display_options">
+      <displayName>PDF Options</displayName>
+      <configurationGroup name="header">
+        <displayName>Header Options</displayName>
+        <configuration name="text_prefix" locale="en_US">
+          <displayName>Header Text</displayName>
+          <value>iHRIS Manage Demo</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports_PieChart">
+  <metadata>
+    <displayName>Pie and Chart</displayName>
+    <category>Report Type</category>
+    <description>Configuration options for reports that use Pie and Charts</description>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <link>https://launchpad.net/i2ce</link>
+    <requirement name="CustomReports">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ColorPicker">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="maani-charts">
+      <atLeast version="4.7" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+  </metadata>
+  <configurationGroup name="CustomReports_PieChart" path="/modules/CustomReports/displays/PieChart">
+    <displayName>Pie/Chart Reports</displayName>
+    <configuration name="class" values="single" type="string">
+      <displayName>Display Class</displayName>
+      <description>The class that handles this display</description>
+      <value>I2CE_CustomReport_Display_PieChart</value>
+    </configuration>
+    <configuration name="error_message" locale="en_US" values="single" type="string">
+      <displayName>Error Message</displayName>
+      <description>The error message to display when there is no valid chart data.</description>
+      <version>4.0.4</version>
+      <value>No data has been found for this report. Please make sure the report data has been cached or modify your limits.</value>
+    </configuration>
+    <configurationGroup name="display_options">
+      <displayName>Default Options</displayName>
+      <description>Default display options for Pie and Chart</description>
+      <status>required:false</status>
+      <configuration name="flash_options" values="many" type="delimited" path="./">
+        <displayName>Flash Options</displayName>
+        <status>overwrite:true</status>
+        <value>flash_height:350</value>
+        <value>flash_width:590</value>
+        <value>flash_bgcolor:#efefef</value>
+      </configuration>
+      <configurationGroup name="global_chart_options">
+        <displayName>Global Chart Options</displayName>
+        <description>Chart options that apply to all charts.For a description see http://www.maani.us/charts/index.php?menu=Reference</description>
+        <configuration name="series_color" values="many" type="string">
+          <displayName>Series Color</displayName>
+          <version>4.0.5.0</version>
+          <value>99cc00</value>
+          <value>6666cc</value>
+          <value>339933</value>
+          <value>00cc99</value>
+          <value>ff9900</value>
+          <value>003399</value>
+          <value>999999</value>
+          <value>99ff66</value>
+          <value>cc3366</value>
+          <value>6633cc</value>
+          <value>cc9966</value>
+        </configuration>
+        <configuration name="chart_rect" values="many" type="delimited">
+          <displayName>Chart Rectangle</displayName>
+          <value>positive_color:ffffff</value>
+          <value>positive_alpha:100</value>
+        </configuration>
+        <configuration name="chart_value" values="many" type="delimited">
+          <displayName>Chart Value</displayName>
+          <value>color:ffffff</value>
+          <value>alpha:90</value>
+          <value>font:arial</value>
+          <value>size:10</value>
+          <value>position:inside</value>
+        </configuration>
+        <configuration name="legend_rect" values="many" type="delimited">
+          <displayName>Legend Rectangle</displayName>
+          <value>fill_color:cccccc</value>
+          <value>fill_alpha:100</value>
+        </configuration>
+        <configuration name="legend_label" values="many" type="delimited">
+          <displayName>Legned Label</displayName>
+          <value>bullet:circle</value>
+          <value>size:12</value>
+        </configuration>
+        <configurationGroup name="draw">
+          <displayName>Drawn Elements</displayName>
+          <configuration name="print" values="many" type="delimited">
+            <displayName>Print</displayName>
+            <status>overwrite:true</status>
+            <value>type:text</value>
+            <value>color:000000</value>
+            <value>alpha:35</value>
+            <value>size:15</value>
+            <value>x:545</value>
+            <value>y:0</value>
+            <value>width:50</value>
+            <value>height:25</value>
+            <value>text:Print</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="axis_category" values="many" type="delimited">
+          <displayName>Axis Category</displayName>
+          <value>size:10</value>
+          <value>orientation:diagonal_down</value>
+        </configuration>
+        <configurationGroup name="link">
+          <displayName>Linked Elements</displayName>
+          <status>overwrite:true</status>
+          <configuration name="print" values="many" type="delimited">
+            <displayName>Print Link</displayName>
+            <status>overwrite:true</status>
+            <value>x:545</value>
+            <value>y:0</value>
+            <value>height:25</value>
+            <value>width:50</value>
+            <value>target:print</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="styles">
+        <displayName>Chart Styles</displayName>
+        <configurationGroup name="Pie">
+          <displayName>Simple Pie Chart</displayName>
+          <description>A simple Pie Chart</description>
+          <configuration name="display_name" locale="en_US" values="single" type="string">
+            <displayName>Display</displayName>
+            <description>The name displayed when selecting this view</description>
+            <value>Pie Chart(Simple)</value>
+          </configuration>
+          <configuration name="chart_type_options" values="many" type="string">
+            <displayName>Chart Type</displayName>
+            <description>The types of data this chart can view</description>
+            <value>one_row_numeric</value>
+            <value>one_row_count</value>
+            <value>one_row_total</value>
+          </configuration>
+          <configuration name="collate" values="single" type="string">
+            <displayName>Collate</displayName>
+            <description>If we should collate the values if there are more than the specified number of values. Set to be less than or equal to 1 to not collate. If type is 'one_row_count' and 'one_row_total' charted fields the extra field values are placed in a field labeled 'Other'. Otherwise the field is dropped.</description>
+            <value>10</value>
+          </configuration>
+          <configuration name="sort_values" type="list" values="single">
+            <displayName>Sorting</displayName>
+            <description>If and how we should sort the values.</description>
+            <status>list:none=&gt;none,increasing=&gt;increasing,decreasing=&gt;decreasing</status>
+            <value>decreasing</value>
+          </configuration>
+          <configurationGroup name="chart_options">
+            <displayName>Chart Options for the Pie Chart</displayName>
+            <description>For a description see http://www.maani.us/charts/index.php?menu=Reference</description>
+            <configuration name="chart_type" values="single" type="string">
+              <displayName>Chart Type</displayName>
+              <status>required:true</status>
+              <value>pie</value>
+            </configuration>
+            <configurationGroup name="chart_value">
+              <configuration name="position" values="single" type="string">
+                <version>4.1.0.1</version>
+                <value>inside</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="Bar">
+          <displayName>Simple Bar Chart</displayName>
+          <description>A simple Bar Chart</description>
+          <configuration name="display_name" locale="en_US" values="single" type="string">
+            <displayName>Display</displayName>
+            <description>The name displayed when selecting this view</description>
+            <value>Bar Chart(Simple)</value>
+          </configuration>
+          <configuration name="chart_type_options" values="many" type="string">
+            <displayName>Chart Type</displayName>
+            <description>The types of data this chart can view</description>
+            <value>one_row_numeric</value>
+            <value>one_row_count</value>
+            <value>one_row_total</value>
+            <value>multi_row_numeric</value>
+            <value>multi_row_count</value>
+            <value>multi_row_total</value>
+          </configuration>
+          <configurationGroup name="chart_options">
+            <displayName>Chart Options for the Bar Chart</displayName>
+            <description>For a description see http://www.maani.us/charts/index.php?menu=Reference</description>
+            <configuration name="chart_type" values="single" type="string">
+              <displayName>Chart Type</displayName>
+              <status>required:true</status>
+              <value>bar</value>
+            </configuration>
+            <configurationGroup name="chart_value">
+              <configuration name="position" values="single" type="string">
+                <version>4.1.0.1</version>
+                <value>center</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="Column">
+          <displayName>Column Chart</displayName>
+          <description>A simple Vertical Bar Chart</description>
+          <configuration name="display_name" locale="en_US" values="single" type="string">
+            <displayName>Display</displayName>
+            <description>The name displayed when selecting this view</description>
+            <value>Column Chart(Simple)</value>
+          </configuration>
+          <configuration name="chart_type_options" values="many" type="string">
+            <displayName>Chart Type</displayName>
+            <description>The types of data this chart can view</description>
+            <value>one_row_numeric</value>
+            <value>one_row_count</value>
+            <value>one_row_total</value>
+            <value>multi_row_numeric</value>
+            <value>multi_row_count</value>
+            <value>multi_row_total</value>
+          </configuration>
+          <configurationGroup name="chart_options">
+            <displayName>Chart Options for the Bar Chart</displayName>
+            <description>For a description see http://www.maani.us/charts/index.php?menu=Reference</description>
+            <configuration name="chart_type" values="single" type="string">
+              <displayName>Chart Type</displayName>
+              <status>required:true</status>
+              <value>column</value>
+            </configuration>
+            <configurationGroup name="chart_value">
+              <configuration name="position" values="single" type="string">
+                <version>4.1.0.1</version>
+                <value>middle</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="StackedColumn">
+          <displayName>Stacked Column Chart</displayName>
+          <description>A simple Vertical Stacked Bar Chart</description>
+          <configuration name="display_name" locale="en_US" values="single" type="string">
+            <displayName>Display</displayName>
+            <description>The name displayed when selecting this view</description>
+            <value>Stacked Column Chart(Simple)</value>
+          </configuration>
+          <configuration name="chart_type_options" values="many" type="string">
+            <displayName>Chart Type</displayName>
+            <description>The types of data this chart can view</description>
+            <value>multi_row_numeric</value>
+            <value>multi_row_count</value>
+            <value>multi_row_total</value>
+          </configuration>
+          <configurationGroup name="chart_options">
+            <displayName>Chart Options for the Stacked Column Chart</displayName>
+            <description>For a description see http://www.maani.us/charts/index.php?menu=Reference</description>
+            <configuration name="chart_type" values="single" type="string">
+              <displayName>Chart Type</displayName>
+              <status>required:true</status>
+              <value>stacked column</value>
+            </configuration>
+            <configurationGroup name="chart_value">
+              <configuration name="position" values="single" type="string">
+                <version>4.1.0.1</version>
+                <value>center</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="Scatter">
+          <displayName>Scatter Plot</displayName>
+          <description>A Scatter Plot</description>
+          <configuration name="display_name" locale="en_US" values="single" type="string">
+            <displayName>Display</displayName>
+            <description>The name displayed when selecting this view</description>
+            <value>Scatter Plot</value>
+          </configuration>
+          <configuration name="chart_type_options" values="many" type="string">
+            <displayName>Chart Type</displayName>
+            <description>The types of data this chart can view</description>
+            <value>one_row_numeric</value>
+            <value>one_row_count</value>
+            <value>one_row_total</value>
+            <value>multi_row_numeric</value>
+            <value>multi_row_count</value>
+            <value>multi_row_total</value>
+          </configuration>
+          <configurationGroup name="chart_options">
+            <displayName>Chart Options for the Scatter Plot</displayName>
+            <description>For a description see http://www.maani.us/charts/index.php?menu=Reference</description>
+            <configuration name="chart_type" values="single" type="string">
+              <displayName>Chart Type</displayName>
+              <status>required:true</status>
+              <value>scatter</value>
+            </configuration>
+            <configurationGroup name="chart_value">
+              <configuration name="position" values="single" type="string">
+                <version>4.1.0.1</version>
+                <value>center</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

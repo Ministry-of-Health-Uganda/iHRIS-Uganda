@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-common-ProfessionalRegistration" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-common-ProfessionalRegistration" path="/I2CE" locale="es">
+    <version>4.2.0.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="es">
+      <configuration name="person_can_view_child_form_registration" locale="es">
+        <value>Puede ver el formulario de registro secundario de una persona</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_registration" locale="es">
+        <value>Puede editar el formulario de registro secundario de una persona</value>
+      </configuration>
+      <configuration name="can_edit_database_list_council" locale="es">
+        <value>Puede editar la lista de la base de datos del concilio</value>
+      </configuration>
+      <configuration name="can_view_database_list_council" locale="es">
+        <value>Puede ver la lista de la base de datos del concilio</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="registration">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="es">
+            <value>Añadir/Actualizar registro</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="council">
+          <configuration name="display" values="single" locale="es">
+            <value>Concilio</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="registration">
+          <configuration name="display" values="single" locale="es">
+            <value>Registro</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Registration">
+          <configurationGroup name="fields">
+            <configurationGroup name="council">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Consejo de Registro</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="registration_number">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Número de Registro</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="license_number">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Número de licencia</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="registration_date">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Fecha de registro</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="license_expiration">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Fecha de vencimiento de la licencia</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,37 @@
+<div id="siteContent">
+    <h1>Amministra database</h1>
+
+    <span type="module" ifenabled="true" name="Person">    
+	  <h3>Liste demografiche</h3>
+	  <ul><li><a href="lists?type=id_type">Tipo di identificativo</a></li>
+	    <li><a href="lists?type=marital_status">Stato civile</a></li>
+	  </ul></span>
+    <span type="module" ifenabled="true" name="Geography">    
+      <h3>Informazioni geografiche</h3>
+      <ul><li><a href="lists?type=country">Nazione</a></li>
+        <li><a href="lists?type=region">Provincia</a></li>
+        <li><a href="lists?type=district">Distretto (in Italia NON usare)</a></li>
+        <li><a href="lists?type=county">Contea (in Italia NON usare)</a></li>
+        <span type="module" ifenabled="true" name="Currency">    
+          <li><a href="lists?type=currency">Valuta</a></li>
+        </span>
+      </ul></span>
+    <h3>Ulteriori informazioni</h3>
+    <ul><span type="module" ifenabled="true" name="simple-competency">	
+	  <li><a href="lists?type=competency_type">Tipo di competenza</a></li>
+	  <li><a href="lists?type=competency&amp;field=competency_type">Competenza</a></li>
+    </span>
+    <span type="module" name="CEUs" ifenabled="true">
+	  <li><a href="lists?type=continuing_education_course">Corso di formazione permanente</a></li>
+    </span>
+    <span type="module" name="training-institution" ifenabled="true">
+	  <li><a href="lists?type=training_institution">Istituto formativo</a></li>
+	  <li><a href="lists?type=training_funder">Fondi per la formazione</a></li>
+    </span>
+    </ul><span role="admin">
+      <span type="module" name="ihris-common-MassDeletePerson" ifenabled="true">
+        <h2>Cancellazione di massa</h2>
+        <ul><li><a href="delete_by_search">Per persona (pagina di ricerca)</a></li>
+        </ul></span>
+    </span>
+</div>

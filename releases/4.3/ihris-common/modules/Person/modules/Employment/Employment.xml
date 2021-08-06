@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEmployment">
+  <metadata>
+    <displayName>iHRIS Person Employment</displayName>
+    <className>iHRIS_Module_PersonEmployment</className>
+    <category>Application Component</category>
+    <description>A Person's Employment History Details</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.1" />
+    </requirement>
+    <requirement name="Currency">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="PersonEmployment" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_employment" locale="en_US">
+        <value>Can view employment child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_employment" locale="en_US">
+        <value>Can edit employment child forms of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_employment" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_employment" values="many">
+        <value>person_can_view_child_form_employment</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <version>3.2.8</version>
+        <value>person_can_view_child_form_employment</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>3.2.8</version>
+        <value>person_can_edit_child_form_employment</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="employment">
+        <displayName>Employment Page</displayName>
+        <description>The page 'employment' which has the action of: Add/Update Employment History</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Employment History</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>employment</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>employment</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="employment">
+          <displayName>Employment History</displayName>
+          <description>The Employment History Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Employment</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Employment History</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!--end of forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Employment">
+          <displayName>Configuration for the class 'iHRIS_Employment'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="company_name">
+              <displayName>The field 'company_name'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Company Name</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="company_address">
+              <displayName>The field 'company_address'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Company Address</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="company_phone">
+              <displayName>The field 'company_phone'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Company Telephone</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <displayName>The field 'start_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Date Started</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_wage">
+              <displayName>The field 'start_wage'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>CURRENCY</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Starting Wage</value>
+              </configuration>
+              <configurationGroup name="setMap">
+                <displayName>Configuration on mapping the field values</displayName>
+                <configuration name="useMap" type="boolean">
+                  <displayName>Whether or not to use a map</displayName>
+                  <value>true</value>
+                </configuration>
+                <configuration name="form">
+                  <displayName>The form to use</displayName>
+                  <value>currency</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="start_position">
+              <displayName>The field 'start_position'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Starting Position</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <displayName>The field 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Date Ended (leave blank if still employed)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_wage">
+              <displayName>The field 'end_wage'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>CURRENCY</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Ending Wage</value>
+              </configuration>
+              <configurationGroup name="setMap">
+                <displayName>Configuration on mapping the field values</displayName>
+                <configuration name="useMap" type="boolean">
+                  <displayName>Whether or not to use a map</displayName>
+                  <value>true</value>
+                </configuration>
+                <configuration name="form">
+                  <displayName>The form to use</displayName>
+                  <value>currency</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="end_position">
+              <displayName>The field 'end_position'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Ending Position</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="supervisor">
+              <displayName>The field 'supervisor'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Supervisor</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="contact_ok">
+              <displayName>The field 'contact_ok'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>YESNO</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Ok to Contact?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="responsibilities">
+              <displayName>The field 'responsibilities'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Job Responsibilities</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reason_for_leaving">
+              <displayName>The field 'reason_for_leaving'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Reason for Leaving</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

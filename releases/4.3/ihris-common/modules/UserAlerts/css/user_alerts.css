@@ -1,0 +1,59 @@
+table.pending_alert {
+    border: 3px solid #F5F5F5;
+    width: 100%;
+    margin-bottom: 10px;
+}
+table.pending_alert td.message div.buttons {
+    margin-top: 5px;
+    text-align: right;
+}
+table.pending_alert td.message {
+    font-size: 13px;
+}
+table.pending_alert td, table.pending_alert th {
+    border-width: 1px;
+    border-style: solid;
+    padding: 3px 5px;
+    border-color: #FFF #EEE #FFF #EEE;
+}
+.notice table.pending_alert th {
+    background-color: #33aaaa;
+}
+.notice table.pending_alert th.time_sent {
+    border-left: #33aaaa;
+}
+.notice table.pending_alert th.repeated {
+    border-right: #33aaaa;
+}
+.problem table.pending_alert th.time_sent {
+    border-left: #aa3333;
+}
+.problem table.pending_alert th.repeated {
+    border-right: #aa3333;
+}
+.problem table.pending_alert th {
+    background-color: #aa3333;
+    color: white;
+}
+table.pending_alert th.time_sent {
+    text-align: right;
+}
+table.pending_alert th.alert_type {
+    width: 40px;
+}
+table.pending_alert th.repeated {
+    width: 1px;
+    white-space: nowrap;
+}
+
+tr.notice th.alert_type {
+    background-color: #33aaaa;
+    color: black;
+    font-weight: normal;
+    font-size: 11px;
+}
+tr.problem th.alert_type {
+    background-color: #aa3333;
+    color: white;
+    font-size: 11px;
+}

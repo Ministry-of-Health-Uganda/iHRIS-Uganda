@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Currency">
+  <metadata>
+    <displayName>Currency</displayName>
+    <className>iHRIS_Module_Currency</className>
+    <category>Application Component</category>
+    <description>Makes Currency information available to the system</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Geography">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="Currency" path="/I2CE">
+    <displayName>Currency</displayName>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>3.2.5</version>
+      <configuration name="can_edit_database_list_currency" locale="en_US">
+        <value>Can edit currency information</value>
+      </configuration>
+      <configuration name="can_view_database_list_currency" locale="en_US">
+        <value>Can view currency information</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <version>3.2.5</version>
+      <configuration name="can_edit_database_list_currency" values="many">
+        <version>3.2.5</version>
+        <value>can_edit_geographic_database_lists</value>
+        <value>can_view_database_list_currency</value>
+      </configuration>
+      <configuration name="can_edit_all_geographic_database_lists" values="many">
+        <value>can_edit_database_list_currency</value>
+      </configuration>
+      <configuration name="can_view_all_geographic_database_lists" values="many">
+        <value>can_view_database_list_currency</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <displayName>Forms</displayName>
+      <description>Information about the forms made available by iHRIS-Common Currency</description>
+      <configurationGroup name="form_field" path="FORMFIELD">
+        <displayName>Form Fields</displayName>
+        <description>Information about the various classes used to handle fields of a form</description>
+        <status>advanced:true</status>
+        <status>required:true</status>
+        <configuration name="CURRENCY" values="single">
+          <displayName>Currency</displayName>
+          <description>The class for a currency field</description>
+          <value>iHRIS_FormField_CURRENCY</value>
+        </configuration>
+      </configurationGroup>
+      <!-- End /modules/forms/FORMFIELD -->
+      <configurationGroup name="forms">
+        <displayName>Forms available to the form factory</displayName>
+        <status>advanced:true</status>
+        <status>required:true</status>
+        <configurationGroup name="currency">
+          <displayName>Currency</displayName>
+          <description>The Currency Form</description>
+          <version>3.2.3</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Currency</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Currency</value>
+          </configuration>
+          <configuration name="storage">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <!-- currency -->
+      </configurationGroup>
+      <!-- End /modules/forms/forms-->
+      <configurationGroup name="formClasses">
+        <displayName>Form Class Configuration</displayName>
+        <configurationGroup name="iHRIS_Currency">
+          <displayName>Configuration for the class 'iHRIS_Currency'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_List</value>
+          </configuration>
+          <configurationGroup name="meta" path="meta/list/default">
+            <version>4.0.6.1</version>
+            <configuration name="display_string">
+              <value>%s %s</value>
+            </configuration>
+            <configuration name="display_args" type="delimited" values="many">
+              <version>4.0.6.2</version>
+              <value>0:code</value>
+              <value>1:symbol</value>
+            </configuration>
+            <configuration name="sort_fields" type="delimited" values="many">
+              <version>4.1.13</version>
+              <value>0:code</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <version>3.2.3</version>
+            <configurationGroup name="code">
+              <displayName>The field 'code'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.1.12</version>
+                <value>default:Currency Code</value>
+                <value>title:The international currency code (Ex. "USD", "GBP", etc.)</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique" type="boolean">
+                <displayName>This field is required to be unique</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <displayName>The field 'name'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.1.12</version>
+                <value>default:Name</value>
+                <value>title:Ex. "United States Dollar", "British Pound"</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="country">
+              <displayName>The field 'country'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Country</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="symbol">
+              <displayName>The field 'symbol'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.1.12</version>
+                <value>default:Symbol</value>
+                <value>title:Ex. "$"</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_Currency -->
+      </configurationGroup>
+      <!-- End /modules/forms/formClasses -->
+    </configurationGroup>
+    <!-- End /modules/forms -->
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+    </configurationGroup>
+    <!-- page -->
+  </configurationGroup>
+  <!-- Currency -->
+</I2CEConfiguration>

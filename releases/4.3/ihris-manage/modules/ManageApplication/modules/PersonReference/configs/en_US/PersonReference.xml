@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-PersonReference" path="/I2CE">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-PersonReference" path="/I2CE" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_person_reference" locale="en_US">
+        <value>Can view personal reference child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_reference" locale="en_US">
+        <value>Can edit personal reference child forms of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_reference">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Personal Reference</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PersonReference">
+          <configurationGroup name="fields">
+            <configurationGroup name="surname">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Surname</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="firstname">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:First Name</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="phone">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Phone</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="mobile">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Mobile Phone</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="address">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Address</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="how_long">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:How long have you known this person?</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_reference">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update Personal Reference</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,46 @@
+ <div id="siteContent">
+    <h1>View Job: <span type="form" name="job:title" /></h1>
+
+	<div class="recordsData">
+	<h3>Job Information</h3>
+	<p class="editRecordsData"><a href="" class="hide" title="Hide" onclick="return hideDiv('job', this );">Hide</a>
+		</p>
+	
+	<div id="job">
+	
+	<div class="editRecord">
+	<p>Edit This Information</p>
+		<ul>
+			<li task='can_edit_database_list_job'><span type="form" name="job:id" href="lists?type=job&amp;id=" >Update this Information</span></li>
+            <li task='can_view_database_list_job'><a href="lists?type=job">Select another Job</a></li>
+		</ul>
+	</div> <!-- editRecord -->
+	
+	<div class="dataTable">
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<th colspan="2">Job</th>
+		</tr>
+
+	   	<span type="form" name="job:title" showhead="default"></span>
+	   	<span type="form" name="job:code" showhead="default" class="even"></span>
+	   	<span type="form" name="job:description" showhead="default" mline="true"></span>
+	   	<span type="form" name="job:salary_grade" showhead="default" class="even"></span>
+	   	<span type="form" name="job:cadre" showhead="default"></span>
+	   	<span type="form" name="job:classification" showhead="default" class="even"></span>
+        <span type="module" name="isco-88" ifenabled="true">
+            <span type="form" name="job:isco_88_unit" showhead="default"></span>
+        </span>
+		
+
+	</table>
+	</div> <!-- dataTable -->
+	
+	</div> <!-- job -->
+	
+	<br style="clear: both;" />
+	
+	</div> <!-- recordsData -->
+
+    <!--<a href="construction.php">Print</a>-->
+</div>

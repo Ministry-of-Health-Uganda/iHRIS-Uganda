@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ManageSelfService" path="/">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ManageSelfService" path="/" locale="si">
+    <version>4.2.0.1</version>
+    <configurationGroup name="SS" path="/modules/SelfService">
+      <configurationGroup name="page">
+        <configurationGroup name="apply">
+          <configurationGroup name="args">
+            <configuration name="title" values="single" locale="si">
+              <value>පුද්ගලයා එකතු/යාවත්කාල කරන්න</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="open_position_reports" path="/modules/CustomReports">
+      <configurationGroup name="relationships">
+        <configurationGroup name="open_position" config="CustomReports_Relationship">
+          <configuration name="display_name" locale="si">
+            <value>තනතුරු විවෘත කරන්න</value>
+          </configuration>
+          <configuration name="description" locale="si">
+            <value>තනතුරු විවෘත කරන්න</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="reports" config="CustomReports_Reports">
+        <configurationGroup name="open_position_list" config="CustomReports_Report">
+          <configurationGroup name="meta" config="CustomReports_Report_Meta">
+            <configuration name="display_name" locale="si">
+              <value>තනතුරු ලැයිස්තුව</value>
+            </configuration>
+            <configuration name="description" locale="si">
+              <value>සියලු තනතුරු සඳහා තොරතුරු</value>
+            </configuration>
+            <configuration name="category" locale="si">
+              <value>තනතුරු වාර්තා</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="reporting_forms" config="CustomReports_Report_ReportingForms">
+            <configurationGroup name="primary_form" config="CustomReports_Report_ReportingForm">
+              <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+                <configurationGroup name="code" config="CustomReports_Report_ReportingForm_Field">
+                  <configuration name="header" locale="si">
+                    <value>කේතය</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="job" config="CustomReports_Report_ReportingForm_Field">
+                  <configuration name="header" locale="si">
+                    <value>තනතුරු කාර්යය</value>
+                  </configuration>
+                  <configurationGroup name="limits">
+                    <configurationGroup name="equals">
+                      <configuration name="header" locale="si">
+                        <value>කාර්යය</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+                <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                  <configuration name="header" locale="si">
+                    <value>නාමය</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="facility" config="CustomReports_Report_ReportingForm_Field">
+                  <configuration name="header" locale="si">
+                    <value>පහසුකම් හැඳුනුම්පත් අංකය</value>
+                  </configuration>
+                  <configurationGroup name="limits">
+                    <configurationGroup name="equals">
+                      <configuration name="header" locale="si">
+                        <value>පහසුකම</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+                <configurationGroup name="department" config="CustomReports_Report_ReportingForm_Field">
+                  <configuration name="header" locale="si">
+                    <value>දෙපාර්තමේන්තු හැඳුනුම් අංකය</value>
+                  </configuration>
+                  <configurationGroup name="limits">
+                    <configurationGroup name="equals">
+                      <configuration name="header" locale="si">
+                        <value>දෙපාර්තමේන්තුව</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+                <configurationGroup name="posted_date" config="CustomReports_Report_ReportingForm_Field">
+                  <configuration name="header" locale="si">
+                    <value>තැපැල් කළ දිනය</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="reportViews" config="CustomReports_ReportViews">
+        <configurationGroup name="open_position" config="CustomReports_ReportView">
+          <configuration name="display_name" locale="si">
+            <value>තනතුරු විවෘත කරන්න</value>
+          </configuration>
+          <configuration name="description" locale="si">
+            <value>දැනට විවෘතව පවත්නා තනතුරු</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

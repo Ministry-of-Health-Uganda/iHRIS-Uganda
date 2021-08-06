@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Fields">
+  <metadata>
+    <displayName>I2CE Fields</displayName>
+    <className>I2CE_Module_Fields</className>
+    <category>Base System Component</category>
+    <description>Adds a few basic form field types to the system as well as some field container functionality</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <description>Custom Reports</description>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <requirement name="I2CE">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="template-data">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="DisplayData">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="MooTools">
+      <atLeast version="1.4" />
+      <lessThan version="1.5" />
+    </requirement>
+    <enable name="DatePicker" />
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+  <configurationGroup name="Fields" path="/modules/forms">
+    <configurationGroup name="invalid_messages" path="/modules/forms/invalid_field_messages" locale="en_US">
+      <version>4.1.1.2</version>
+      <configuration name="required" values="single" type="string">
+        <value>Required Field.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="defaults">
+      <displayName>Defaults</displayName>
+      <description>Default values for various forms and form fields</description>
+      <configuration name="default_start_year" values="single" type="string">
+        <displayName>Start Year</displayName>
+        <version>4.1.0.5</version>
+        <description>The default start year</description>
+        <value>1930</value>
+      </configuration>
+      <configuration name="default_end_year_increment" values="single" type="string">
+        <displayName>Year Increment</displayName>
+        <description>The default End Year Increment</description>
+        <value>10</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="template_displays">
+      <displayName>Template Information</displayName>
+      <description>Various Default Information About The Templating System for Different Template Displays</description>
+      <configurationGroup name="default">
+        <displayName>Default</displayName>
+        <description>The default display information</description>
+        <configuration name="field_head_class" values="single" type="string">
+          <displayName>Field Head Class</displayName>
+          <description>HTML class used for the field head for form/display field template files.</description>
+          <value>field_head</value>
+        </configuration>
+        <configuration name="form_field_class" values="single" type="string">
+          <displayName>Form Field Class</displayName>
+          <description>HTML class used for form field for form/display template files</description>
+          <value>form_field</value>
+        </configuration>
+        <configurationGroup name="showForm">
+          <displayName>Form</displayName>
+          <description>The templates used to display data in a form</description>
+          <configuration name="field" values="single" type="string">
+            <displayName>Form Field Template</displayName>
+            <description>The template file loaded for any form field as a form</description>
+            <value>form_field.html</value>
+          </configuration>
+          <configuration name="field_root" values="single" type="string">
+            <displayName>Form Field Root</displayName>
+            <description>The HTML node used for a form field</description>
+            <value>p</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="displayed">
+          <displayName>Displayed</displayName>
+          <description>The templates used to display data</description>
+          <configuration name="field" values="single" type="string">
+            <displayName>Display Field Template</displayName>
+            <description>The template file loaded for any displayed form field</description>
+            <value>display_field.html</value>
+          </configuration>
+          <configuration name="field_root" values="single" type="string">
+            <displayName>Display Field Root</displayName>
+            <description>The root of a display field?</description>
+            <value>tr</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="condensed">
+        <displayName>Default</displayName>
+        <description>The 'condensed' display form</description>
+        <version>4.1.0.10</version>
+        <configurationGroup name="showForm">
+          <displayName>Form</displayName>
+          <description>The templates used to display data in a form</description>
+          <configuration name="field" values="single" type="string">
+            <displayName>Form Field Template</displayName>
+            <description>The template file loaded for any form field as a form</description>
+            <value>form_field_condensed.html</value>
+          </configuration>
+          <configuration name="field_root" values="single" type="string">
+            <displayName>Form Field Root</displayName>
+            <description>The HTML node used for a form field</description>
+            <value>p</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="simple">
+        <displayName>Default</displayName>
+        <description>The 'simple' display for a form. We only need to change values that differ from the default</description>
+        <configurationGroup name="displayed">
+          <displayName>Displayed</displayName>
+          <description>The templates used to display data</description>
+          <configuration name="field" values="single" type="string">
+            <displayName>Display Field Template</displayName>
+            <description>The template file loaded for any displayed form field</description>
+            <value>simple_display_field.html</value>
+          </configuration>
+          <configuration name="field_root" values="single" type="string">
+            <displayName>Display Field Root</displayName>
+            <description>The root of a display field?</description>
+            <value>span</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="form_field" path="FORMFIELD">
+      <displayName>Form Fields</displayName>
+      <description>Information about the various classes used to handle fields of a form</description>
+      <configuration name="BOOL" values="single" type="string">
+        <displayName>Boolean</displayName>
+        <description>The class for a Boolean field</description>
+        <value>I2CE_FormField_BOOL</value>
+      </configuration>
+      <configuration name="ASSOC_BOOL" values="single" type="string">
+        <displayName>Boolean</displayName>
+        <description>The class for a Boolean field</description>
+        <version>4.1.1.1</version>
+        <value>I2CE_FormField_ASSOC_BOOL</value>
+      </configuration>
+      <configuration name="ASSOC_LIST" values="single" type="string">
+        <displayName>ASSOC_LIST</displayName>
+        <description>The class for an associative list field</description>
+        <version>4.1.0.2</version>
+        <value>I2CE_FormField_ASSOC_LIST</value>
+      </configuration>
+      <configuration name="ASSOC_PERCENT" values="single" type="string">
+        <displayName>Boolean</displayName>
+        <description>The class for a associative array of percentages field</description>
+        <version>4.1.0.11</version>
+        <value>I2CE_FormField_ASSOC_PERCENT</value>
+      </configuration>
+      <configuration name="ASSOC_INT" values="single" type="string">
+        <displayName>Boolean</displayName>
+        <description>The class for a Boolean field</description>
+        <version>4.1.0.4</version>
+        <value>I2CE_FormField_ASSOC_INT</value>
+      </configuration>
+      <configuration name="ASSOC_FLOAT" values="single" type="string">
+        <displayName>Boolean</displayName>
+        <description>The class for a Boolean field</description>
+        <version>4.1.0.3</version>
+        <value>I2CE_FormField_ASSOC_FLOAT</value>
+      </configuration>
+      <configuration name="DATE_HMS" values="single" type="string">
+        <displayName>Date H:M:S</displayName>
+        <description>The class for a Hour:Minute:Second field</description>
+        <value>I2CE_FormField_DATE_HMS</value>
+      </configuration>
+      <configuration name="DATE_YM" values="single" type="string">
+        <displayName>Date Year Month</displayName>
+        <description>The class for a Year Month field</description>
+        <version>4.1.8.0</version>
+        <value>I2CE_FormField_DATE_YM</value>
+      </configuration>
+      <configuration name="DATE_MD" values="single" type="string">
+        <displayName>Date Month Day</displayName>
+        <description>The class for a Month Day field</description>
+        <value>I2CE_FormField_DATE_MD</value>
+      </configuration>
+      <configuration name="DATE_TIME" values="single" type="string">
+        <displayName>Time</displayName>
+        <description>The class for a time field</description>
+        <value>I2CE_FormField_DATE_TIME</value>
+      </configuration>
+      <configuration name="DATE_YMD" values="single" type="string">
+        <displayName>Date Month Day Year</displayName>
+        <description>The class for a Month Day Year field</description>
+        <value>I2CE_FormField_DATE_YMD</value>
+      </configuration>
+      <configuration name="DATE_Y" values="single" type="string">
+        <displayName>Date Year</displayName>
+        <description>The class for a Year field</description>
+        <value>I2CE_FormField_DATE_Y</value>
+      </configuration>
+      <configuration name="INT_GENERATE" values="single" type="string">
+        <displayName>Int -- Generate</displayName>
+        <description>The class for a Int -- Generate field</description>
+        <value>I2CE_FormField_INT_GENERATE</value>
+      </configuration>
+      <configuration name="INT" values="single" type="string">
+        <displayName>Integer</displayName>
+        <description>The class for a Integer field</description>
+        <value>I2CE_FormField_INT</value>
+      </configuration>
+      <configuration name="INT_LIST" values="single" type="string">
+        <displayName>Integer List</displayName>
+        <description>The class for a field which is a list of integers</description>
+        <value>I2CE_FormField_INT_LIST</value>
+      </configuration>
+      <configuration name="INT_RANGE" values="single" type="string">
+        <displayName>Integer</displayName>
+        <description>The class for a Integer Range</description>
+        <version>4.1.0.1</version>
+        <value>I2CE_FormField_INT_RANGE</value>
+      </configuration>
+      <configuration name="STRING_LINE" values="single" type="string">
+        <displayName>Line of text</displayName>
+        <description>The class for a Line of text field</description>
+        <value>I2CE_FormField_STRING_LINE</value>
+      </configuration>
+      <configuration name="STRING_MLINE" values="single" type="string">
+        <displayName>Multi-line string</displayName>
+        <description>The class for a Multi-line string field</description>
+        <value>I2CE_FormField_STRING_MLINE</value>
+      </configuration>
+      <configuration name="STRING_PASS" values="single" type="string">
+        <displayName>Password string</displayName>
+        <description>The class for a Password string field</description>
+        <value>I2CE_FormField_STRING_PASS</value>
+      </configuration>
+      <configuration name="STRING_TEXT" values="single" type="string">
+        <displayName>Text</displayName>
+        <description>The class for a long text field</description>
+        <value>I2CE_FormField_STRING_TEXT</value>
+      </configuration>
+      <configuration name="YESNO" values="single" type="string">
+        <displayName>Yes/No</displayName>
+        <description>The class for a yes/no field</description>
+        <value>I2CE_FormField_YESNO</value>
+      </configuration>
+      <configuration name="TOGGLE" values="single" type="string">
+        <displayName>Yes/No</displayName>
+        <description>The class for a yes/no field</description>
+        <version>4.1.0.6</version>
+        <value>I2CE_FormField_TOGGLE</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

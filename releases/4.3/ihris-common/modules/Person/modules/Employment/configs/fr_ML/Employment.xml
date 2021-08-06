@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEmployment" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEmployment" path="/I2CE" locale="fr_ML">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="fr_ML">
+      <configuration name="person_can_view_child_form_employment" locale="fr_ML">
+        <value>Peut afficher le formulaire enfant de l’expérience professionnelle d’une personne</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_employment" locale="fr_ML">
+        <value>Peut éditer les formulaires enfants de l’expérience professionnelle d’une personne</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="employment">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr_ML">
+            <value>Ajouter/Mettre à jour l’expérience professionnelle</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="employment">
+          <configuration name="display" values="single" locale="fr_ML">
+            <value>Expérience professionnelle</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Employment">
+          <configurationGroup name="fields">
+            <configurationGroup name="company_name">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Nom de la société</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="company_address">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Adresse de la société</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="company_phone">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Téléphone de la société</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Date de début</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_wage">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Salaire initial</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_position">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Poste initial</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Date de fin (laisser vide si toujours employé)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_wage">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Dernier salaire</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_position">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Dernier poste</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="supervisor">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Supérieur hiérarchique</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="contact_ok">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Peut être contacté?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="responsibilities">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Responsabilités de la fonction</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reason_for_leaving">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Raison du départ</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

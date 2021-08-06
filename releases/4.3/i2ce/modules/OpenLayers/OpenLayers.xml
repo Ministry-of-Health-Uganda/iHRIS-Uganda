@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="OpenLayers">
+  <metadata>
+    <displayName>Open Layers Mapping</displayName>
+    <className>I2CE_Module_OpenLayers</className>
+    <category>Base System Component</category>
+    <description>The OpenLayers library for creating interactive maps.</description>
+    <creator>Luke Duncan</creator>
+    <email>lduncan@intrahealth.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>3.0.0.1</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+  </metadata>
+  <configurationGroup name="OpenLayers" path="/modules/OpenLayers">
+    <configurationGroup name="default">
+      <configurationGroup name="layers">
+        <version>3.0.0.1</version>
+        <configurationGroup name="osm">
+          <configuration name="_display" values="single" locale="en_US">
+            <value>Open Street Maps</value>
+          </configuration>
+          <configuration name="_order" values="single">
+            <value>1</value>
+          </configuration>
+          <configuration name="_class" values="single">
+            <value>Tile</value>
+          </configuration>
+          <configuration name="source" type="delimited">
+            <value>_class:MapQuest</value>
+            <value>layer:osm</value>
+          </configuration>
+        </configurationGroup>
+        <!-- osm -->
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="FileDump" path="/modules/FileDump">
+      <configurationGroup name="defaultCategories">
+        <configuration name="GEO" values="many">
+          <value>json</value>
+          <value>geojson</value>
+          <value>kml</value>
+        </configuration>
+      </configurationGroup>
+      <configuration name="limitToCategories" values="many">
+        <status>uniquemerge:true</status>
+        <value>GEO</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="openlayers_style" path="/I2CE/template/page_styles/openlayers">
+      <configuration name="class" values="single">
+        <value>I2CE_PageOpenLayers</value>
+      </configuration>
+      <configuration name="style" values="single">
+        <value>shell</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configuration name="defaultHTMLFile" values="many">
+          <value>openlayers_base.html</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

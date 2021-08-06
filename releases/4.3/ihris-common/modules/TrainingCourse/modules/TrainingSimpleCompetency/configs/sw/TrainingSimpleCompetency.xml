@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="training-simple-competency" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="training-simple-competency" path="/I2CE" locale="sw">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_scheduled_training_course_can_edit_evaluation" locale="sw">
+        <value>Tathmini kozi ya mafunzo ya mtu aliyopangiwa kwenye ratiba</value>
+      </configuration>
+      <configuration name="person_scheduled_training_course_evaluation_can_view_evaluation" locale="sw">
+        <value>Angalia tathmini ya kozi ya mafunzo ya mtu aliyopangiwa kwenye ratiba</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="training_course_competency_evaluation">
+          <configuration name="display" values="single" locale="sw">
+            <value>Tathmini ya Uwezo wa Kozi ya Mafunzo</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Training_Course_Competency_Evaluation">
+          <configurationGroup name="fields">
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Maelezo</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="evaluation_date">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Tarehe ya Tathmini</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency_evaluation">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Tathmini</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Uwezo</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Training_Course">
+          <configurationGroup name="fields">
+            <configurationGroup name="competency">
+              <configurationGroup name="meta">
+                <configurationGroup name="list">
+                  <configurationGroup name="default">
+                    <configuration name="display_string" locale="sw"></configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Uwezo Uliotolewa</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="evaluate-competencies" path="/modules/training-course/page/evaluate-competencies">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw">
+            <value>Tathmini Uwezo wa Kozi</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

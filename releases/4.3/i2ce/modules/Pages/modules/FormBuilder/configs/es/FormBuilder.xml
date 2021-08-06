@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="form-builder" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="form-builder" path="/" locale="es">
+    <version>4.3.0.1</version>
+    <configurationGroup name="messages" path="/modules/form-builder/messages">
+      <configuration name="cannot_delete" locale="es" values="single" type="string">
+        <value>No tienes acceso para borrar los datos del formulario</value>
+      </configuration>
+      <configuration name="bad_delete_path" locale="es" values="single" type="string">
+        <value>Ruta no válida para el borrado</value>
+      </configuration>
+      <configuration name="delete_header" locale="es" values="single" type="string">
+        <value>Borrar cabecera</value>
+      </configuration>
+    </configurationGroup>
+    <configuration name="tasks" path="/I2CE/tasks/task_description" locale="es" value="many" type="delimited" values="single">
+      <value>form_builder_delete_forms:Puede borrar metadatos del formulario con el creador de formulario</value>
+    </configuration>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="es">
+      <configuration name="can_build_form_classes" locale="es" values="single" type="string">
+        <value>Puede crear o configurar la clase de formulario</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

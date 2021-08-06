@@ -1,0 +1,50 @@
+<div id="list_display" task="can_view_database_list_training_course">
+  <div class="editRecord">
+    <p>Edit This Information</p>
+    <ul>
+      <li task='can_edit_database_list_training_course'><span type="form" name="training_course:id" href="lists?type=training_course&amp;id=" >Update this Information</span></li>
+      <li><a href="lists?mapped=scheduled_training_course&amp;type=training_course">Select another Course</a></li>
+    </ul>
+  </div> <!-- editRecord -->
+  
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+	<th colspan="2">Training Course</th>
+      </tr>     
+      <span type="form" name="training_course:name" showhead="default"></span>
+      <span type="form" name="training_course:training_course_status" showhead="default"></span>
+      <span type="form" name="training_course:training_course_category" showhead="default"></span>
+      <span type="form" name="training_course:topic" showhead="default"></span>
+      <span type="module" name="training-institution" ifenabled="true">
+	<span type="form" name="training_course:training_institution" showhead="default"></span>
+	<span type="form" name="training_course:training_funder" showhead="default"></span>
+      </span>
+      <span type="module" name="training-exam" ifenabled="true">
+	<span type="form" name="training_course:passing_score" showhead="default"></span>
+      </span>
+      <span type="form" name="training_course:has_certification_date" showhead="default"></span>      
+      <span type="form" name="training_course:certificate" showhead="default"></span>      
+      <span type="form" name="training_course:training_course_mod" showhead="default"></span>      
+      <span type="form" name="training_course:notes" showhead="default"></span>
+    </table>
+  </div> <!-- dataTable -->
+
+  <div class="recordsData">
+    <h3>Scheduled Courses</h3>
+    <span task='can_edit_scheduled_training_course' type="form">
+      <p class="editRecordsData" >
+	<a href="" class="hide" title="Hide" onclick="return hideDiv('scheduled_training_course', this );">Hide</a>
+	<span type='form' name="training_course:id" href="lists?add=1&amp;type=scheduled_training_course&amp;field=training_course&amp;forms[scheduled_training_course][0][0][fields][training_course]=">
+	    Schedule a Course
+	</span>
+      </p>	  	
+      
+    </span>
+    
+    <div id="scheduled_training_course" />
+    
+    <br style="clear: both;" />
+
+  </div>
+</div> <!-- list_display -->

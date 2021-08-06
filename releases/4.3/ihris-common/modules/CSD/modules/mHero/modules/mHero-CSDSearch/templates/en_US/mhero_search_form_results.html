@@ -1,0 +1,17 @@
+<div>
+    <ul>
+    <li><span printf="'%s Matches Found in Health Worker Registry',$num_matches"/></li>
+    <li name='has_contacts' ifset='true'><span printf="'%s RapidPro Contacts Found in Health Worker Registry',$total_contacts"/></li>
+  </ul>
+
+  <hr/>
+  <div >
+    <label for='flow'>Workflow </label>
+    <select name='flow'><option>Select a workflow</option></select>
+    <div style='padding-top:1em'>
+      <span   id='Default_kickoff' title="Kickoff"    onclick='I2CE_SubmitButton(this,"action","kickoff");' class="multiformsubmit button">Start Flow</span>
+      
+      <span   id='Default_export_results' title="Kickoff"    onclick='I2CE_SubmitButton(this,"action","export_results");' class="multiformsubmit button">Export Results</span>
+    </div>
+  </div>
+</div>

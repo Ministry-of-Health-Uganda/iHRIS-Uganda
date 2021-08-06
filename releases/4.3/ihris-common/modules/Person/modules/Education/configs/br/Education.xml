@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEducation" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEducation" path="/I2CE" locale="br">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="br">
+      <configuration name="person_can_view_child_form_education" locale="br">
+        <value>A c'hall diskwel furmskrid bugel deskadurezh un den</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_education" locale="br">
+        <value>A c'hall kemmañ furmskridoù bugel deskadurezh un den</value>
+      </configuration>
+      <configuration name="can_edit_database_list_edu_type" locale="br">
+        <value>A c'hall kemmañ rolloù diazoù titouroù war ar seurt deskadurezh</value>
+      </configuration>
+      <configuration name="can_view_database_list_edu_type" locale="br">
+        <value>A c'hall diskwel rolloù an diazoù roadennoù war ar seurt deskadurezh</value>
+      </configuration>
+      <configuration name="can_edit_database_list_degree" locale="br">
+        <value>A c'hall kemmañ rolloù an diazoù roadennoù war ar seurtoù diplomoù</value>
+      </configuration>
+      <configuration name="can_view_database_list_degree" locale="br">
+        <value>A c'hall diskwel ar rolloù diazoù roadennoù war ar seurtoù diplomoù</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="education">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="br">
+            <value>Ouzhpennañ/Hizivaat an diagentoù desavadurel</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="degree">
+          <configuration name="display" values="single" locale="br">
+            <value>Diplom pe testeni</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="edu_type">
+          <configuration name="display" values="single" locale="br">
+            <value>Seurt deskadurezh</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="education">
+          <configuration name="display" values="single" locale="br">
+            <value>Diagentoù deskadurezh</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Degree">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Anv</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="edu_type">
+              <configuration name="headers" type="delimited" values="many" locale="br">
+                <value>default:Seurt deskadurezh</value>
+                <value>select_degree:Dibab ar seurt deskadurezh, hag an diplom da c'houde</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Education">
+          <configurationGroup name="fields">
+            <configurationGroup name="degree">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Diplom pe testeni</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="institution">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Anv an ensavadur</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Lec'hienn an ensavadur</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="year">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Bloavezh an diplom (chom hep kargañ ma vez an den o prientiñ an diplom)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="major">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Danvez pennañ</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,637 @@
+/* Records --------------------------------------------------------------- */
+
+.recordsData {
+	margin-bottom: 0px;
+	width:100%;
+	height:auto;
+        clear: left;
+}
+
+.recordsData h3 {
+	font: bold 15px Arial, Helvetica, sans-serif;
+	border-top: solid 1px #deecfe;
+	color: #333;
+	padding: 0.3em 8px;
+	margin-top:1em;
+	padding-top:1em;
+}
+.recordsData h3 a {
+	text-decoration: none;
+	color: #333;
+}
+
+.recordsData p.editRecordsData {
+	background-color: #f2f7fd;
+	border: 1px solid #d8e9fe;
+	font: bold 10px Arial, Helvetica, sans-serif;
+	padding: 4px 8px;
+	margin-bottom: 3px;
+}
+.recordsData p.editRecordsData a, .recordsData p.editRecordsData span {
+	border-left: 1px solid #036;
+	padding-left: 3px;
+	padding-right: 3px;
+    -webkit-transition: background 0.5s linear;
+        -moz-transition: background 0.5s linear;
+        -ms-transition: background 0.5s linear;
+        -o-transition: background 0.5s linear;
+        transition: background 0.5s linear;
+
+}
+.recordsData p.editRecordsData a:hover, .recordsData p.editRecordsData span:hover {
+    background-color: #B0C4DE;
+    color:black;
+}
+
+
+
+
+.recordsData p.editRecordsData a.hide, .recordsData p.editRecordsData a.expand {
+	padding-left: 5px;
+	font: bold 10px Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	border: none;
+}
+IMG.person_image { 
+      display:block;
+      margin-left:auto;             
+      margin-right:auto;             
+
+}
+a.hide {
+	background: transparent url(arrow_down.gif) no-repeat 0px 4px;
+}
+a.expand {
+	background: transparent url(arrow_sub.gif) no-repeat 0px 4px;
+}
+.editRecord {
+	float: left;
+	width: 20%;
+    min-width: 130px;
+	margin-right: -3px;
+        clear: left;
+}
+
+.editRecord p {
+	background: #515151 url(icon_edit.gif) no-repeat 1px 1px;
+	margin-top: 4px;
+	padding: 0.5em 0px 0.5em 34px;
+	color: #f8f4cc;
+	width: auto;
+	margin-right:6px;
+	font: bold 10px Arial, Helvetica, sans-serif;
+}
+
+.editRecord ul {
+	margin: 6px 0 0;
+	padding: 0;
+}
+
+.editRecord ul li {
+	display: inline;
+}
+
+
+
+.editRecord ul li a,
+.editRecord ul li a:visited {
+	color: #333;
+	display: block;
+	padding-left: 16px;
+	margin-bottom: 0.6em;
+	/*width: 120px;*/
+	background: transparent url(edit_bullet.gif) no-repeat 6px 6px;
+}
+
+.editRecord ul li a:hover {
+	text-decoration: none;
+}
+
+.recordsData div.dataTable {
+	border: 1px solid #e7e7e7;
+	margin-bottom: 1px;
+	/*width: 444px; */
+	width:80%;
+	float: left;
+	min-height:2.5em;
+}
+
+
+
+.recordsData div.dataTable td.mline {
+	white-space: pre;
+}
+.recordsData table {
+	width:100%;
+	/*width: 444px;*/
+	margin: 0;
+	border: 3px solid #f5f5f5;
+}
+
+.recordsData table th {
+	background-color: #515151;
+	padding: 4px 3px 3px;
+	font-size: 13px;
+	color: #fff;
+	vertical-align: middle;
+}
+
+.recordsData div.dataTable th a{
+	color: #ccffcc;
+}
+
+.recordsData div.dataTable th a:hover{
+	text-decoration: none;
+}
+
+
+.recordsData table td {
+	padding: 3px 5px;
+	vertical-align: top;
+	font: 11px Arial, Helvetica, sans-serif;
+	border: 1px solid #fff;
+	border-right-color: #eee;
+	/*width: 50%;*/
+	width: 70%;
+}
+
+.recordsData table td:first-child {
+    width: 30%;
+}
+
+
+.recordsData table tr.even td {
+	background-color: #e5e5e5;
+}
+
+option.blank_opt {
+	color: #6699aa;
+	border-bottom: 1px solid #6699aa;
+}
+
+/* Add New Person --------------------------------------------------------------- */
+
+table.multiFormTable {
+    /*width: 590px;*/
+	width: 90%;
+}
+
+.dataTable table.multiFormTable {
+	width: 100%;
+}
+table.formRelationship {
+    width: auto;
+}
+.recordsData table tr.even td {
+    background-color: #F9F9F9;
+}
+
+
+table.multiFormTable th,
+table.multiFormTable td {
+	border-top: 3px solid #fff;
+	border-right: 3px solid #fff;
+	background-color: #f1f1f1;
+	/*width: 50%;*/
+	/*width: 80%;*/
+	font: 11px Arial, Helvetica, sans-serif;
+	vertical-align: top;
+}
+
+
+
+table.multiFormTable td .field_head {
+	font-weight: bold;
+}
+table.multiFormTable td .required_field {
+    color: #333366;
+}
+table.multiFormTable th {
+	background-color: #515151;
+	padding: 4px 3px 3px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #fff;
+	vertical-align: middle;
+}
+
+table.multiFormTable p {
+	display: block;
+	background-color: #f8f8f8;
+	border: solid 1px #eee;
+	border-top: 0;
+	padding: 4px 9px 6px;
+	font: 11px Arial, Helvetica, sans-serif;
+	/*margin-bottom: 2px;*/
+}
+
+table.multiFormTable input, table.multiFormTable textarea {
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	background-color: #fff;
+	border: solid 2px #ccc;
+	padding: 3px 2px;
+	margin-top: 3px;
+	width: 246px;
+}
+
+table.multiFormTable select {
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	background-color: #fff;
+	border: solid 2px #ccc;
+	padding: 1px;
+	width: 254px;
+	margin-top: 3px;
+}
+table.multiFormTable select.selectable {
+    color: #006600;
+    border-color: #aaccaa;
+}
+table.multiFormTable span.field_selection {
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	background-color: #fff;
+    width: 246px;
+	padding: 3px 2px;
+	margin-top: 3px;
+    border: solid 2px #ccc;
+    display: block;
+}
+table.multiFormTable span.field_selection.error {
+	border: 1px solid #993333;
+    font-size: 1.0em;
+}
+table.multiFormTable input[type="submit"] { 
+       width:90px;                                     
+ }
+
+table.multiFormTable input[type="checkbox"],
+table.multiFormTable input[type="radiobutton"],
+table.multiFormTable input[type="radio"] {
+	width: auto;
+	border: 0;
+}
+
+table.multiFormTable tr.submitCell td {
+	background-color: #fff;
+	text-align: right;
+}
+table.multiFormTable tr.submitCell input, table.multiFormTable tr.submitCell a, div.submitCell input{
+	background: #ccc url(button_bkgd.gif) repeat-x;
+	border: solid 2px #BFBFBF;
+	color: #333;
+	padding: 4px 12px;
+	font: bold 10px Verdana, Arial, Helvetica, sans-serif;
+	width: auto;
+	text-decoration: none;
+}
+table.multiFormTable tr.submitCell a {
+	padding: 5px 12px;
+}
+table.multiFormTable tr.submitCell a#button_return {
+	float:left;
+}
+
+table.multiFormTable select.date_day_error {
+	border: solid 1px #993333;
+	background-color: #993333;
+	color: #FFFFFF;
+}
+table.multiFormTable select.date_month_error {
+	border: solid 1px #993333;
+	background-color: #993333;
+	color: #FFFFFF;
+}
+table.multiFormTable select.date_year_error {
+	border: solid 1px #993333;
+	background-color: #993333;
+	color: #FFFFFF;
+}
+table.multiFormTable select.date_hour_error {
+	border: solid 1px #993333;
+	background-color: #993333;
+	color: #FFFFFF;
+}
+table.multiFormTable select.date_minute_error {
+	border: solid 1px #993333;
+	background-color: #993333;
+	color: #FFFFFF;
+}
+table.multiFormTable select.date_second_error {
+	border: solid 1px #993333;
+	background-color: #993333;
+	color: #FFFFFF;
+}
+table.multiFormTable select.date_day, table.multiFormTable select.date_day_error {
+	width: 65px;
+}
+table.multiFormTable select.date_month, table.multiFormTable select.date_month_error {
+	width: 114px;
+}
+table.multiFormTable select.date_year, table.multiFormTable select.date_year_error {
+	width: 75px;
+}
+table.multiFormTable select.date_hour, table.multiFormTable select.date_hour_error {
+	width: 61px;
+}
+table.multiFormTable select.date_minute, table.multiFormTable select.date_minute_error {
+	width: 62px;
+}
+table.multiFormTable select.date_second, table.multiFormTable select.date_second_error {
+	width: 62px;
+}
+table.multiFormTable select.currency {
+	width: 80px;
+}
+table.multiFormTable input.currency {
+	width: 166px;
+}
+#error {
+	color: #993333;
+	font: 10px Verdana, Arial, Helvetica, sans-serif;
+}
+div.error, span.error {
+	display: block;
+	color: #993333;
+	font: italic 8px Verdana, Arial, Helvetica, sans-serif;
+	padding: 0px 2px 0px 2px;
+	width: 246px;
+	margin: 0px;
+}
+ul.error {
+	color: #993333;
+	font: italic 8px Verdana, Arial, Helvetica, sans-serif;
+}
+table.multiFormTable input.error, table.multiFormTable textarea.error {
+	border: 1px solid #993333;
+}
+table.multiFormTable select.error {
+	border: 1px solid #993333;
+	background-color: #993333;
+	color: #FFFFFF;
+                                    
+}
+/* table forms ------------------------------------------------------------------- */
+
+table.tableForm {
+	width: 500px;
+	font: 10px Verdana, Arial, Helvetica, sans-serif;
+	margin: 1em 0;
+}
+table.tableForm td {
+	padding: 0;
+	padding-bottom: 3px;
+	padding-left: 3px;
+}
+table.tableForm label {
+	display: block;
+	background-color: #f5f5f5;
+	padding: 6px;
+	color: #000;
+	font-weight: bold;
+}
+table.tableForm label.noStyle {
+	display: inline;
+	background-color: transparent;
+	padding: 0;
+	padding-right: 9px;
+}
+table.tableForm input, table.tableForm textarea {
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	background-color: #fff;
+	border: solid 2px #ccc;
+	padding: 3px 2px;
+	width: 300px;
+}
+table.tableForm textarea {
+	width: 490px;
+}
+table.tableForm input#State {
+	width: 1.5em;
+}
+table.tableForm input#Postal_Code {
+	width: 3.2em;
+}
+table.tableForm select {
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	background-color: #fff;
+	border: solid 1px #ccc;
+	padding: 1px;
+	width: 150px;
+}
+table.tableForm hr {
+	border: 0;
+	color: #adc2d6;
+	background-color: #adc2d6;
+	height: 1px;
+	margin-bottom: 0.8em;
+}
+table.tableForm tr.spacer td {
+	padding-top: 10px;
+	border-top: solid 1px #eee;
+}
+table.tableForm input.button {
+	background: #ccc url(button_bkgd.gif) repeat-x;
+	border: 2px solid #BFBFBF;
+	color: #333;
+	padding: 4px 12px;
+	font: bold 10px Verdana, Arial, Helvetica, sans-serif;
+	width: auto;
+}
+table.tableForm input.checkbox, table.tableForm input.radiobutton {
+	width: auto;
+	border: 0;
+}
+input#show_button.disabled_button {
+	color: #CC3333;
+	border: solid 2px #CC3333;
+}
+#search_pager_display {
+	margin-left: 5px;
+    text-align: left;
+    width: auto;
+	padding: 2px 2px 6px 4px;
+}
+dl.instruction dt {
+	font: bold 10px Verdana, Arial, Helvetica, sans-serif;
+}
+dl.instruction dd {
+	font: normal 10px Verdana, Arial, Helvetica, sans-serif;
+    padding-left: 10px;
+}
+
+a.add_new_link {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* table.multiFormTable input.associnput, table.multiFormTable textarea .associnput { */
+table.multiFormTable input.associnput {
+    /* border-left-width:0px; */
+    /* margin-left:-4px; */
+    /* padding-left:1em; */
+    /* margin-right:1em; */
+    width:10em;
+}
+
+.assockey {
+    /* background-color: #FFFFFF; */
+    /* border: 2px solid #CCCCCC; */
+    margin-top: 0px;
+    padding: 0.6em 2px 3px 2px;
+    width:4em;    
+    font-weight: bold;
+    border-right-width:0px;
+    margin-right:0px;
+    margin-left:0em;
+    padding-left:0.5em;
+    padding-right:0px;
+    font-style:italic;
+    font-size:70%;
+    color: #888888 ;
+}
+
+.assoc_container {
+    width:100%;
+    text-align:left;
+    float:right;
+}
+
+table.multiFormTable .assoc_container {
+    text-align:right;
+}
+
+
+.error .assockey{
+    border-color:  #993333;
+    display:inline;
+    font-size:9.633px;
+    line-height:12px;
+    font-family: Arial,Helvetica,sans-serif;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+
+.error .associnput{
+
+    display:inline;
+    border-color:  #993333;
+}
+
+.error.assoc_container {
+    width:100%;
+}
+
+
+
+.assoc_pair_container {
+    float:left;
+    width:19%;
+} 
+
+table.multiFormTable .assoc_pair_container {
+    width:auto;
+}
+
+.assoc_pair_key {
+    width:100%;
+    padding-right:0.5em;
+    font-style:italic;
+    font-size:90%;
+    color: #888888 ;
+}
+.assoc_pair_value {
+    width:100%;
+}
+
+table.multiFormTable input, div.checkboxlist  input, span.checkboxlist input {
+
+    margin-left:0em;
+    margin-right:0.5em;
+
+}
+.multiFormTable div.checkboxlist, .form_field div.checkboxlist {
+    background-color: #FFFFFF;
+    width:30em; 
+
+    margin:0em;
+    padding:0.2em;
+    border: 2px solid #CCCCCC;
+    overflow-y:auto;
+    max-height:9em;
+    min-height:2em;
+}
+.multiFormTable span.checkboxlist, .form_field span.checkboxlist {
+    background-color: #FFFFFF;
+    width:246px;
+    display:block;
+
+    margin:0em;
+    padding:0.2em;
+    border: 2px solid #CCCCCC;
+    overflow-y:auto;
+    max-height:9em;
+    min-height:2em;
+}
+.multiFormTable div.checkboxlist div, .form_field div.checkboxlist div{
+    width:auto;
+    border:0px;
+    padding: 1px;
+    margin: 0px;
+    height:1.2em;
+    margin-left:0.2em;
+}
+.multiFormTable span.checkboxlist span, .form_field span.checkboxlist span{
+    width:auto;
+    border:0px;
+    padding: 1px;
+    margin: 0px;
+    height:1.2em;
+    margin-left:0.2em;
+}
+     
+
+
+.multiFormTable div.checkboxlist .checkboxlistdisplay, .form_field div.checkboxlist .checkboxlistdisplay{
+    padding-left: 0.2em;
+    width:auto;
+}
+
+.hover_highlight:hover {
+    background: #F2F7FD;
+}
+
+.string_mline {
+    max-height:20em;
+    max-width:60em;
+    overflow:scroll;
+    display:block;
+}
+
+
+img.field_image {
+    height:auto; 
+    width:auto; 
+    max-height:300px;    
+    max-height:300px;
+
+}
+
+.field_webcam_snap {
+    display:inline-block;
+    vertical-align:top;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.field_webcam_video{
+    margin:1em;
+}
+
+.field_webcam_capture {
+    border-style:solid; 
+    border-width:1px; 
+    display:inline-flex;
+}
+
+

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEmployment" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEmployment" path="/I2CE" locale="ar">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="ar">
+      <configuration name="person_can_view_child_form_employment" locale="ar">
+        <value>يمكن عرض نموذج فرعي لوظيفة شخص</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_employment" locale="ar">
+        <value>يمكن تعديل نموذج فرعي لوظيفة شخص</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="employment">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ar">
+            <value>إضافة / تحديث&#160;تاريخ سجل وظيفي</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="employment">
+          <configuration name="display" values="single" locale="ar">
+            <value>التايخ المهني</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Employment">
+          <configurationGroup name="fields">
+            <configurationGroup name="company_name">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:اسم&#160;الشركة</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="company_address">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:عنوان الشركة</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="company_phone">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:هاتف الشركة</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:تاريخ البداية</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_wage">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:أجر البداية</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_position">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:وظيفة البداية</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:تاريخ الانتهاء&#160;(تترك&#160;فارغة في حال استمرار الوظيفة)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_wage">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:الأجر النهائي</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_position">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:الوظيفة النهائية</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="supervisor">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:مشرف</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="contact_ok">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:لا مانع من الاتصال؟</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="responsibilities">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:المسؤليات الوظيفية</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reason_for_leaving">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:سبب مغادرة العمل</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

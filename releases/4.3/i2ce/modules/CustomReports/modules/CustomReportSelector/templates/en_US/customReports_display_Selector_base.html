@@ -1,0 +1,42 @@
+<div id="report">
+    <h2><span name="report_view_display_name"></span></h2>
+    <p>
+      <span name='report_view_description' ></span>
+    </p>
+    <p>
+      <span name='report_view_limit_has_description' ifset="true" >
+        Results limited by: 
+      </span>
+      <span name='report_view_limit_description' ></span>
+    </p>
+    <div id='report_results_with_limits'>
+      <div id="limit_form">
+        
+	<span name='show_results' ifset='true'>
+	  <div id="report_results" >
+	    <input type="hidden" name="limit_page"/>
+	    <input type="hidden" name="limit_per_page"/>
+	    <input type="hidden" name="limit_offset"/>
+	    <input type="hidden" name="limit_amount"/>
+	    <input type="hidden" name="sort_order" id='sort_order'/>
+	  </div>
+	</span>
+	<table class="multiFormTable customReportsTable" border="0" cellpadding="0" cellspacing="0" >
+	  <tr>
+	    <th colspan="2">
+	      Choose options to limit results 
+	    </th>
+	  </tr>	
+	</table>
+	<table class="multiFormTable toggable" border="0" cellpadding="0" cellspacing="0" id='report_limits' >
+	</table>
+	<table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+	  <tr class="submitCell">
+	    <td colspan="2">
+	      <div id="report_controls" class='CustomReport_controls' ></div>    
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </div>      
+</div>

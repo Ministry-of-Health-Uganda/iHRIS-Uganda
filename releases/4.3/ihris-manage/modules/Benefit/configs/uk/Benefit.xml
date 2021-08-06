@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Benefit" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Benefit" path="/I2CE" locale="uk">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="uk">
+      <configuration name="benefit_date" path="benefit/end_date/bad_date">
+        <value>Дата завершення має бути пізнішою за дату початку.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="uk">
+      <configuration name="person_can_view_child_form_benefit" locale="uk">
+        <value>Можна переглядати пільги з дочірньої форми особи</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_benefit" locale="uk">
+        <value>Можна редагувати пільги з дочірньої форми особи</value>
+      </configuration>
+      <configuration name="can_edit_database_list_benefit_type" locale="uk">
+        <value>Можна редагувати тип пільг з списку баз даних</value>
+      </configuration>
+      <configuration name="can_view_database_list_benefit_type" locale="uk">
+        <value>Можна переглядати тип пільг з списку баз даних</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="benefit_recurrence">
+        <configurationGroup name="once">
+          <configuration name="fields" value="many" type="delimited" locale="uk">
+            <value>name:Один раз</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="weekly">
+          <configuration name="fields" value="many" type="delimited" locale="uk">
+            <value>name:Щотижня</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="monthly">
+          <configuration name="fields" value="many" type="delimited" locale="uk">
+            <value>name:Щомісячно</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="yearly">
+          <configuration name="fields" value="many" type="delimited" locale="uk">
+            <value>name:Щорічно</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="benefit">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="uk">
+            <value>Додати/оновити пільги</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="benefit">
+          <configuration name="display" values="single" locale="uk">
+            <value>Пільга</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="benefit_type">
+          <configuration name="display" values="single" locale="uk">
+            <value>Тип пільги</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="benefit_recurrence">
+          <configuration name="display" values="single" locale="uk">
+            <value>Повторення пільг</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Benefit">
+          <configurationGroup name="fields">
+            <configurationGroup name="type">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Тип пільги</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="amount">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Сума</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="source">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Джерело</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Дата початку</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Дата закінчення</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="recurrence">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Частота повторення</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SampleData-establishment" path="/">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="SampleData-establishment" path="/" locale="pt">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationship" path="/modules/CustomReports/relationships/staff_norm_2010">
+      <configuration name="description" locale="pt"></configuration>
+      <configuration name="display_name" locale="pt"></configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="position">
+          <configuration name="description" locale="pt">
+            <value>Cargo ocupado por esta pessoa.</value>
+          </configuration>
+          <configuration name="display_name" locale="pt">
+            <value>Posição</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="job">
+              <configuration name="description" locale="pt">
+                <value>A função associada a este cargo.</value>
+              </configuration>
+              <configuration name="display_name" locale="pt">
+                <value>Trabalho</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="cadre">
+                  <configuration name="description" locale="pt">
+                    <value>Escalão</value>
+                  </configuration>
+                  <configuration name="display_name" locale="pt">
+                    <value>Escalão</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="facility">
+              <configuration name="description" locale="pt">
+                <value>A unidade onde a pessoa trabalha.</value>
+              </configuration>
+              <configuration name="display_name" locale="pt">
+                <value>Unidade</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="facility_type">
+                  <configuration name="description" locale="pt">
+                    <value>O Tipo de Unidade</value>
+                  </configuration>
+                  <configuration name="display_name" locale="pt">
+                    <value>Tipo de Unidade</value>
+                  </configuration>
+                  <configurationGroup name="joins">
+                    <configurationGroup name="establishment">
+                      <configuration name="description" locale="pt"></configuration>
+                      <configuration name="display_name" locale="pt"></configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="report" path="/modules/CustomReports/reports/staff_norm_2010">
+      <configurationGroup name="meta">
+        <configuration name="description" locale="pt">
+          <value>Procedimentos dos Funcionários para 2010</value>
+        </configuration>
+        <configuration name="display_name" locale="pt"></configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="establishment">
+          <configurationGroup name="fields">
+            <configurationGroup name="amount">
+              <configuration name="header" locale="pt"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility_type">
+              <configuration name="header" locale="pt">
+                <value>Tipo de Unidade</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="position">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility">
+              <configuration name="header" locale="pt">
+                <value>Unidade</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="job">
+              <configuration name="header" locale="pt">
+                <value>Trabalho</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="job">
+          <configurationGroup name="fields">
+            <configurationGroup name="cadre">
+              <configuration name="header" locale="pt">
+                <value>Escalão</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="id">
+              <configuration name="header" locale="pt"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportView" path="/modules/CustomReports/reportViews/staff_norm_2010">
+      <configuration name="description" locale="pt">
+        <value>Procedimentos dos Funcionários para 2010</value>
+      </configuration>
+      <configuration name="display_name" locale="pt"></configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

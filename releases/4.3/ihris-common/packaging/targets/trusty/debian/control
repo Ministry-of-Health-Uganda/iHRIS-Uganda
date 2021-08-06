@@ -1,0 +1,15 @@
+Source: ihris-common
+Maintainer: Carl Leitner <litlfred@ibiblio.org>
+Section: web
+Priority: optional
+Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 7)
+Homepage: http://launchpad.net/ihris-common
+
+
+Package: ihris-common
+Architecture: all
+Depends: i2ce, uuid, uuid-dev, textlayout, php5-curl
+Recommends: 
+Description: iHRIS Common
+ iHRIS Common base library for iHRIS products

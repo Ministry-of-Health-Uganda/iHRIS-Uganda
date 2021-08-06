@@ -1,0 +1,77 @@
+<li >
+  <span name='browser_magic_data_key'></span> => <i>Not set</i>
+  <form method='POST' name='erase_action'>
+    <input type='hidden' name='caller' />
+     <input type='submit' value='Erase' onclick="if (confirm('Are you sure?')) {return true;} else {return false;}" />
+  </form>
+  <form method='POST' name='scalar_action'>
+    <input type='hidden' name='caller' />
+    <input type='submit' value='Make Scalar' />
+  </form>
+  <form method='POST' name='parent_action'>
+    <input type='hidden' name='caller' />
+    <input type='submit' value='Make Parent' />
+  </form>
+
+  <span class="dropdown">
+    <a href="#"  class="dropdown-toggle"> Import <b class="caret "/> </a>
+    <ul class="dropdown-menu" style='width:40em'>
+      <li>
+	<form method='POST' name='upload_action' enctype="multipart/form-data">
+	  <h4>Set From File:</h4>
+	  <input type='hidden' name='caller' />
+	  Input File:<input type='file' name='upload'/>
+	  <br/>
+	  <input type='submit' value='Upload'  />
+	</form>
+      </li>
+      <li>
+	<form method='POST' name='upload_binary_action' enctype="multipart/form-data">
+	  <h4>Load Binary File:</h4>
+	  <input type='hidden' name='caller' />
+	  Input File:<input type='file' name='upload'/>
+	  <br/>
+	  <input type='submit' value='Upload' />
+	</form>
+      </li>
+      <li >
+	
+	<form method='POST' name='load_action' enctype="multipart/form-data">
+	  <h4>Load From Spreadsheet:</h4>
+	  <input type='hidden' name='caller' />
+	  Input File:<input type='file' name='csv'/>
+	  <br/>
+	  Input URL:<input type='text' name='csv_url'/>
+	  <br/>
+	  Transform File:<input type='file' name='transform'/>
+	  <br/>
+	  Registered Transform:<select name='transform_key'><option value=''>Select A Registered Transformation</option></select>
+	  <br/>
+	  <input type='checkbox' value='1'/>Erase on Load 
+	  <br/>
+	  <input type='submit' value='Upload'  />
+	</form>
+      </li>
+      <li>
+	<form method='POST' name='load_action' enctype="multipart/form-data">
+	  <h4>Load From XML:</h4>
+	  <input type='hidden' name='caller' />
+	  Input File:<input type='file' name='xml'/>
+	  <br/>
+	  Input URL:<input type='text' name='xml_url'/>
+	  <br/>
+	  Transform File:<input type='file' name='transform'/>
+	  <br/>
+	  Registered Transform:<select name='transform_key'><option value=''>Select A Registered Transformation</option></select>
+	  <br/>
+	  <input type='checkbox' value='1'/>Erase on Load 
+	  <br/>
+
+	  <input type='submit' value='Upload'  />
+	</form>
+      </li>
+    </ul>
+  </span>
+
+</li>
+

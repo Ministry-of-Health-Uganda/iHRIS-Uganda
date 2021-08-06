@@ -1,0 +1,23 @@
+#!/bin/bash
+set -x
+
+PECL=/usr/bin/pecl
+SVC=/usr/sbin/service
+LN=/bin/ln
+
+
+USERNAME=ihris
+
+$PECL  install -sf uuid
+
+$LN -sf /etc/php5/mods-available/uuid.ini /etc/php5/apache2/conf.d/20-uuid.ini
+$LN -sf /etc/php5/mods-available/uuid.ini /etc/php5/cli/conf.d/20-uuid.ini
+
+BASEDIR=/var/lib/iHRIS
+
+chown -R $USERNAME:$USERNAME $BASEDIR
+
+
+
+$SVC apache2 restart
+$SVC memcached restart

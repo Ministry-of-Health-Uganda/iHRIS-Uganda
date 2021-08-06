@@ -1,0 +1,25 @@
+Secure SSH, CVS, SCP without Password Prompt
+
+For the old version of this homepage I have used CVS to update the websites. I have done this via SSH, which is pretty secure but has the annoying disadvantage of asking for a password for each operation. If you can trust the security of your client computer, there is a way to get rid of the password altogehter, without loosing security:
+
+   1. Suppose the domain name of your server is server, and your login name loginname.
+   2. On the client, generate a public and private key.
+
+      ssh-keygen -C council@41.202.232.87 -t dsa
+
+      When asked for a password, simply press return. The private key is stored in ~/.ssh/id_dsa, and the public key in ~/.ssh/id_dsa.pub. Never give the private key away!
+   3. Copy the public file to the server with
+
+      scp -P 20020 ~/.ssh/id_dsa.pub council@41.202.232.87:~/
+
+   4. Login on the server with
+
+      ssh -p 20020 council@41.202.232.87
+
+      append the copied file to ~/.ssh/authorized_keys with
+
+      cat ~/id_dsa.pub >>~/.ssh/authorized_keys
+
+   5. If you want to enable this features on other servers, just repeat step 3 on each of the servers.
+
+That’s it! If you have done everything correctly, the next time you login via SSH or use CVS over SSH, you will not need to enter a password yet you have a secure connenction.

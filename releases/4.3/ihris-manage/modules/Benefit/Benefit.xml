@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Benefit">
+  <metadata>
+    <displayName>iHRIS Manage Benefit</displayName>
+    <className>iHRIS_Module_Benefit</className>
+    <category>Application Component</category>
+    <description>The iHRIS Manage Benefit module provides basic benfit related information</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.0" />
+    </requirement>
+    <requirement name="ihris-manage-Salary">
+      <atLeast version="4.0" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>350</priority>
+  </metadata>
+  <configurationGroup name="ihris-manage-Benefit" path="/I2CE">
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="en_US">
+      <version>4.1.0.1</version>
+      <configuration name="benefit_date" path="benefit/end_date/bad_date">
+        <value>The end date must be after the start date.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>3.2.12</version>
+      <configuration name="person_can_view_child_form_benefit" locale="en_US">
+        <version>3.2.7</version>
+        <value>Can view benefit child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_benefit" locale="en_US">
+        <version>3.2.7</version>
+        <value>Can edit benefit child forms of a person</value>
+      </configuration>
+      <configuration name="can_edit_database_list_benefit_type" locale="en_US">
+        <value>Can edit the benefit type database list</value>
+      </configuration>
+      <configuration name="can_view_database_list_benefit_type" locale="en_US">
+        <value>Can view the benefit type database list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <version>3.2.12</version>
+      <configuration name="person_can_view_child_form_benefit" values="many">
+        <version>3.2.7</version>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_benefit" values="many">
+        <version>3.2.7</version>
+        <value>person_can_view_child_form_benefit</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <version>3.2.11</version>
+        <value>person_can_view_child_form_benefit</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>3.2.11</version>
+        <value>person_can_edit_child_form_benefit</value>
+      </configuration>
+      <configuration name="can_edit_database_list_benefit_type" values="many">
+        <version>4.0.4</version>
+        <value>can_edit_employee_database_lists</value>
+        <value>can_view_database_list_benefit_type</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" values="many">
+        <value>can_edit_database_list_benefit_type</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" values="many">
+        <value>can_view_database_list_benefit_type</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <displayName>Forms Data</displayName>
+      <description>Form data saved in magic data</description>
+      <version>3.2.8</version>
+      <configurationGroup name="benefit_recurrence">
+        <displayName>Benefit Recurrence</displayName>
+        <configurationGroup name="once">
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:Once</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="weekly">
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:Weekly</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="monthly">
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:Monthly</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="yearly">
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:Yearly</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="benefit">
+        <displayName>Benefit Page</displayName>
+        <description>The page 'benefit' which has the action of: Add/Update Benefits</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_manage_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Benefits</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>benefit</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <displayName>Child Forms</displayName>
+              <status>uniquemerge:true</status>
+              <value>benefit</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="benefit">
+          <displayName>Benefit</displayName>
+          <description>The Benefit Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Benefit</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Benefit</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="benefit_type">
+          <displayName>Benefit Type</displayName>
+          <description>The Benefit Type Form</description>
+          <version>3.2.8</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Benefit Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="benefit_recurrence">
+          <displayName>Benefit Recurrence</displayName>
+          <description>The Benefit Recurrence Form</description>
+          <version>3.2.8</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Benefit Recurrence</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Benefit">
+          <displayName>Configuration for the class 'iHRIS_Benefit'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <version>3.2.8</version>
+            <configurationGroup name="type">
+              <displayName>The field 'type'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>benefit_type</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Benefit Type</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="amount">
+              <displayName>The field 'amount'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>CURRENCY</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Amount</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="source">
+              <displayName>The field 'source'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>salary_source</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Source</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <displayName>The field 'start_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Start Date</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <displayName>The field 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:End Date</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="recurrence">
+              <displayName>The field 'recurrence'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>benefit_recurrence</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Recurrence Frequency</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

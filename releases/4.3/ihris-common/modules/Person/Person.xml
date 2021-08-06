@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Person">
+  <metadata>
+    <displayName>Person</displayName>
+    <className>iHRIS_Module_Person</className>
+    <category>Application Component</category>
+    <description>Makes Person information available to the system</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Geography">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms">
+      <atLeast version="4.2.0.1" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="Person" path="/I2CE">
+    <displayName>Person</displayName>
+    <configurationGroup name="page_feedback_messages" path="/modules/forms/page_feedback_messages">
+      <version>4.1.2.1</version>
+      <configuration name="person_save" locale="en_US">
+        <value>This record has been saved.</value>
+      </configuration>
+      <configuration name="person_not_save" locale="en_US">
+        <version>4.2.0.1</version>
+        <value>This record has not been saved.</value>
+      </configuration>
+      <configuration name="person_child_save" locale="en_US">
+        <value>This record has been saved.</value>
+      </configuration>
+      <configuration name="person_child_not_save" locale="en_US">
+        <version>4.2.0.1</version>
+        <value>This record has not been saved.</value>
+      </configuration>
+      <configuration name="person_child_delete_success" locale="en_US">
+        <version>4.1.6.1</version>
+        <value>The requested form has been deleted.</value>
+      </configuration>
+      <configuration name="person_child_delete_fail" locale="en_US">
+        <version>4.1.6.1</version>
+        <value>An error occurred deleting this form.</value>
+      </configuration>
+      <configuration name="person_child_delete_not_permitted" locale="en_US">
+        <version>4.1.6.1</version>
+        <value>You do not have permission to delete this form.</value>
+      </configuration>
+      <configuration name="person_child_delete_not_allowed" locale="en_US">
+        <version>4.1.6.1</version>
+        <value>This form can not be deleted.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="en_US">
+      <version>4.1.1.1</version>
+      <configuration name="person_surname" path="person/surname/unique">
+        <value>Duplicate records match this record's name:</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view" locale="en_US">
+        <version>3.2.2</version>
+        <value>Can view the person page</value>
+      </configuration>
+      <configuration name="person_can_edit" locale="en_US">
+        <version>3.2.2</version>
+        <value>Can edit the person page</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" locale="en_US">
+        <version>3.2.2</version>
+        <value>Can view all of the child forms of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" locale="en_US">
+        <version>3.2.2</version>
+        <value>Can edit all of the child forms of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>3.2.2</version>
+        <value>person_can_view_child_forms</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit" values="many">
+        <version>3.2.2</version>
+        <value>person_can_view</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <displayName>Forms</displayName>
+      <description>Information about the forms made available by iHRIS-Common Person</description>
+      <configurationGroup name="forms">
+        <displayName>Forms available to the form factory</displayName>
+        <status>advanced:true</status>
+        <status>required:true</status>
+        <configurationGroup name="person">
+          <displayName>Person</displayName>
+          <description>The Person Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Person</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Person</value>
+          </configuration>
+          <configurationGroup name="meta">
+            <displayName>MetaData on the form</displayName>
+            <configuration name="description" locale="en_US">
+              <displayName>A description of the form</displayName>
+              <value>This form holds basic information about a person such as their names and residence</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- person -->
+      </configurationGroup>
+      <!-- End /modules/forms/forms-->
+      <configurationGroup name="formClasses">
+        <displayName>Form Class Configuration</displayName>
+        <configurationGroup name="iHRIS_Person">
+          <displayName>Configuration for the class 'iHRIS_Person'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <version>3.2.3</version>
+            <configurationGroup name="surname">
+              <displayName>The field 'surname'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Surname</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <displayName>Info</displayName>
+                <description>&gt;Meta information about this field</description>
+                <configuration name="linked_page">
+                  <displayName>Linked Page</displayName>
+                  <description>A page to link to from the field. The id of the form we are looking at is appended onto the link</description>
+                  <value>view?id=</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="firstname">
+              <displayName>The field 'firstname'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:First Name</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <displayName>Info</displayName>
+                <description>&gt;Meta information about this field</description>
+                <configuration name="linked_page">
+                  <displayName>Linked Page</displayName>
+                  <description>A page to link to from the field. The id of the form we are looking at is appended onto the link</description>
+                  <value>view?id=</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="othername">
+              <displayName>The field 'othername'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Other Names</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="nationality">
+              <displayName>The field 'nationality'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <version>3.2.7</version>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <version>3.2.7</version>
+                  <value>country</value>
+                </configuration>
+                <configurationGroup name="display">
+                  <version>3.2.8</version>
+                  <configurationGroup name="default">
+                    <configuration name="fields">
+                      <value>country</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Nationality</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="surname_ignore">
+              <displayName>The field 'surname_ignore'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>BOOL</value>
+              </configuration>
+              <configuration name="in_db" type="boolean">
+                <displayName>Store the field in the database</displayName>
+                <value>false</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="residence">
+              <version>3.2.7</version>
+              <displayName>The field 'residence'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>county</value>
+                  <value>district</value>
+                  <value>region</value>
+                  <value>country</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <version>4.2.1.1</version>
+                  <configurationGroup name="default">
+                    <configurationGroup name="country">
+                      <configuration name="operator">
+                        <value>FIELD_LIMIT</value>
+                      </configuration>
+                      <configuration name="field">
+                        <value>location</value>
+                      </configuration>
+                      <configuration name="style">
+                        <value>yes</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+                <configurationGroup name="display">
+                  <configurationGroup name="default">
+                    <configuration name="fields">
+                      <value>county:district:[region]:country</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" values="many" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Residence</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_Person -->
+      </configurationGroup>
+      <!-- End /modules/forms/formClasses -->
+    </configurationGroup>
+    <!-- End /modules/forms -->
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+      <configurationGroup name="ihris_common_page_form_parent_person" path="/I2CE/template/page_styles/ihris_common_page_form_parent_person">
+        <displayName>Page Form Parent Person</displayName>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageFormParentPerson</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The page style that this style inherits from</description>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Arguements</displayName>
+          <description>Values passed to the pages constructor</description>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default html template file containing the page content</description>
+            <value>form_person_base.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- ihris_common_page_form_parent_person -->
+      <configurationGroup name="person">
+        <displayName>Person Page</displayName>
+        <description>The page 'person' which has the action of: Add/Update Person</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <version>3.2.5</version>
+          <status>required:true</status>
+          <value>iHRIS_PageFormPerson</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Person</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <version>3.2.2</version>
+            <value>person_can_edit</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>form_person.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- person -->
+      <configurationGroup name="view">
+        <displayName>View Page</displayName>
+        <description>The page 'view' which has the action of: View Person</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageView</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>View Person</value>
+          </configuration>
+          <configuration name="primary_form">
+            <version>4.1.4.1</version>
+            <value>person</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>view.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- view -->
+      <configurationGroup name="view_child">
+        <version>4.2.0.3</version>
+        <displayName>View Child Page</displayName>
+        <description>The page 'view_child' which has the action of: View Person Details</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageViewChild</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>View Person Details</value>
+          </configuration>
+          <configuration name="parent_form">
+            <value>person</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>view_child_base.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- view_child -->
+    </configurationGroup>
+    <!-- page -->
+  </configurationGroup>
+  <!-- Person -->
+</I2CEConfiguration>

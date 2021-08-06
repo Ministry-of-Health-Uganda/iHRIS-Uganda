@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Confirmation" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Confirmation" path="/I2CE" locale="mk">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="mk">
+      <configuration name="person_can_view_child_form_confirmation" locale="mk">
+        <value>Може да се прегледува потврдниот подобразец за едно лице</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_confirmation" locale="mk">
+        <value>Може да се уредува потврдниот подобразец за едно лице</value>
+      </configuration>
+      <configuration name="can_edit_database_list_confirmation_type" locale="mk">
+        <value>Може да се уредува список на видови на потврди од базата</value>
+      </configuration>
+      <configuration name="can_view_database_list_confirmation_type" locale="mk">
+        <value>Може да се прегледува списокот на видови на потврди од базата</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="confirmation">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="mk">
+            <value>Додај/поднови потврда</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="confirmation">
+          <configuration name="display" values="single" locale="mk">
+            <value>Потврда</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="confirmation_type">
+          <configuration name="display" values="single" locale="mk">
+            <value>Вид потврда</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_ConfirmationType">
+          <configurationGroup name="fields">
+            <configurationGroup name="probation_period">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Пробен период (месеци)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="job">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Поврзано раб. место</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Име</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Confirmation">
+          <configurationGroup name="fields">
+            <configurationGroup name="valid">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Важи</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="confirmation_type">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Вид потврда</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="mk">
+                <value>default:Датум</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

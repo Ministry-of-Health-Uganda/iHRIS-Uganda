@@ -1,0 +1,21 @@
+<div id="siteContent">
+  <form method="post" action="REPLACEME" name="edit_task_form_action" id="edit_task">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2" dir="rtl">
+	  تعديل المهمة
+	</th>
+      </tr><tr><td dir="rtl">
+	  <label dir="rtl">وصف المهمة:</label> وصف هذه المهمة التي يتم عرضها للمستخدم النهائي.
+	</td>
+	<td>
+	  <input type="text" name="task_description" class="validate=[nonempty]"></td>
+      </tr><tr><td dir="rtl">
+	  <label dir="rtl">مهام المهمة:</label> المهام التي تم تعيينها لهذه المهمة
+	</td>
+	<td>
+	  <select name="task_tasks[]" multiple id="task_tasks" display="checkbox"></select></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Save"></td>
+      </tr></table></form>
+
+
+</div>

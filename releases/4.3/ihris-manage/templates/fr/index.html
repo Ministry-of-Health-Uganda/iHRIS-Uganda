@@ -1,0 +1,106 @@
+<div id="siteContent">
+  <span task="person_can_view">
+    <h2><a href="manage" class="updateRecords">Gestion des personnes</a></h2>
+    <p>
+      Ajouter un nouvel employé <span type="module" name="ihris-manage-Application" ifenabled="true">ou un candidat </span>enregistrer dans le système, et rechercher et mettre à jour les enregistrements ayant été saisis dans le système. 
+      <span type="module" name="ihris-manage-Application" ifenabled="true">
+	Par ailleurs, vous pouvez compléter les candidatures pour les postes à pourvoir, revoir celles qui sont complètes et assigner un poste au meilleur candidat. </span>
+    </p>
+  </span>
+
+  <span type="module" name="CustomReports" ifenabled="true">
+    <div task="custom_reports_can_access">
+      <hr><h2><a href="search" class="searchRecords">Rechercher les enregistrements</a></h2>
+      <p>
+	Retrouver n'importe quel employé ou poste dans le système pour le Revoir, l'Imprimer ou le Mettre à jour. 
+      </p>
+    </div>
+  </span>
+    <span type="module" name="ManageDashboard" ifenabled="true">
+    <div task="can_view_dashboard">
+      <hr><h2><a href="dashboard" class="createRecords">Afficher les tableaux de bord</a></h2>
+      <p>
+		  Afficher les tableaux de bord système
+      </p>
+    </div>
+  </span>    
+  <div task="custom_reports_can_view_reportViews">
+    <hr><h2><a href="CustomReports/view/reportViews" class="createRecords">Visualiser les rapports</a></h2>
+    <p>
+      Les rapports aident l'analyse des données des ressources humaines dans plusieures directions. Personaliser, afficher et imprimer des listes groupées, des graphiques statistiques et autres rapports standards. 
+    </p>
+  </div>
+
+	<span type="module" name="DHIS-Dashboard" ifenabled="true">
+		<div>
+			<hr><h2><a href="http://192.168.0.19:8090/new_dhis/dhis-web-dashboard-integration/index.action">Afficher le tableau de bord</a></h2>
+		<!--        <h2><a href="DHIS-Dashboard/dashboard" >View Dashboard</a></h2>-->
+			<p>
+				Afficher le tableau de bord DHIS
+			</p>
+		</div>
+		</span>
+
+		<span type="module" name="DHIS-Dashboard" ifenabled="true">
+		<div>
+			<hr><h2><a href="index.php/DHISDashboard">Export DHIS</a></h2>
+			<p>
+				Envoyer le rapport DHIS
+			</p>
+		</div>
+	</span>
+
+  <span role="admin" type="module" name="mHero" ifenabled="true">      
+    <h2>
+      <a href="mHero">mHero</a>
+    </h2>
+    <p>
+      <span style="display:inline-block">
+	<a href="mHero_person_workflow" target="_mHero">
+	  <img text="mHero" style="width:10em;" src="file/mHero.png"></a>
+
+      </span>
+      Use the mHero intgerated health system communications platform against personnel records.
+
+    </p>
+  </span>
+  <span role="admin" type="module" name="mHero-csd-provider" ifenabled="true">      
+    <h2>
+      <a href="mHero">mHero</a>
+    </h2>
+    <p>
+      <span style="display:inline-block">
+	<a href="mhero_search_provider" target="_mHero">
+	  <img text="mHero" style="width:10em;" src="file/mHero.png"></a>
+
+      </span>
+      Use the mHero intgerated health system communications platform with the Health Worker Registry.
+
+    </p>
+  </span>
+
+
+  <div task="can_configure_system">
+    <hr><h2><a href="configure" class="adminDatabase">Configurer le système</a></h2>
+    <p>
+      Configurer les modules, administrer les postes, personnaliser les menus déroulants et créer ou mettre à jour les comptes utilisateurs.
+    </p>
+  </div>
+  
+  <span type="module" name="SelfService" ifenabled="true" task="can_view_own_personnel">
+    <span type="module" name="SelfService" if="!userHasRecord()">
+    </span>
+    <span type="module" name="SelfService" if="userHasRecord()">
+      <div>
+	<h2><span type="module" name="SelfService" call="linkToPersonRecord('view?id=')">Visualiser vos détails personnels</span></h2>
+	<p>
+	  Visualiser vos détails personnels.
+	</p>
+      </div>
+    </span>
+  </span>
+
+
+  <hr><h2><a href="password">Changer le mot de passe</a></h2>
+
+</div>

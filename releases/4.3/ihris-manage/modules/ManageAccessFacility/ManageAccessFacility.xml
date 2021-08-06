@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ManageAccessFacility">
+  <metadata>
+    <displayName>Manage Access Facility</displayName>
+    <className>iHRIS_Module_ManageAccessFacility</className>
+    <category>Application Component</category>
+    <description>A module that enables permission based on assigning a facility or the geographic region where a facility is and any positions that belong to that facility.</description>
+    <creator>Luke Duncan</creator>
+    <email>lduncan@intrahealth.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="form-relationship-based-permission">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Geography">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="ManageAccessFacility" path="/I2CE">
+    <configurationGroup name="roles" path="/I2CE/formsData/forms/role">
+      <displayName>Roles</displayName>
+      <description>The list of roles provided</description>
+      <configurationGroup name="facility_staff">
+        <version>4.2.0.1</version>
+        <configuration name="last_modified">
+          <value>2014-02-25 00:00:00</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="en_US">
+            <value>Geographic/Facility Access - Staff</value>
+          </configuration>
+          <configuration name="trickle_up">
+            <value>admin</value>
+          </configuration>
+          <configuration name="assignable">
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="facility_data_entrant">
+        <version>4.2.0.1</version>
+        <configuration name="last_modified">
+          <value>2014-02-25 00:00:00</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="en_US">
+            <value>Geographic/Facility Access - Data Entrant</value>
+          </configuration>
+          <configuration name="trickle_up">
+            <value>admin</value>
+          </configuration>
+          <configuration name="assignable">
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="facility_manager">
+        <configuration name="last_modified">
+          <value>2014-02-25 00:00:00</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <version>4.1.0.9</version>
+          <configuration name="name" values="single" locale="en_US">
+            <version>4.2.0.1</version>
+            <value>Geographic/Facility Access - Manager</value>
+          </configuration>
+          <configuration name="trickle_up">
+            <value>admin</value>
+          </configuration>
+          <configuration name="assignable">
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks">
+      <configurationGroup name="role_trickle_down">
+        <configuration name="facility_manager" values="many">
+          <version>4.2.0.2</version>
+          <value>custom_reports_can_view_reportViews</value>
+          <value>can_change_own_password</value>
+          <value>person_can_view</value>
+          <value>can_configure_system</value>
+          <value>can_view_all_database_lists</value>
+        </configuration>
+        <configuration name="facility_staff" values="many">
+          <version>4.2.0.2</version>
+          <value>custom_reports_can_view_reportViews</value>
+          <value>can_change_own_password</value>
+          <value>person_can_view</value>
+          <value>can_view_all_database_lists</value>
+        </configuration>
+        <configuration name="facility_data_entrant" values="many">
+          <version>4.2.0.2</version>
+          <value>custom_reports_can_view_reportViews</value>
+          <value>can_change_own_password</value>
+          <value>person_can_view</value>
+          <value>can_view_all_database_lists</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="alt_satisfaction">
+        <configuration name="person_can_edit" values="many">
+          <version>4.2.0.1</version>
+          <value>ManageAccessFacility-&gt;userAccessFacility()</value>
+          <value>ManageAccessFacility-&gt;userAccessFacilityStaff()</value>
+          <value>ManageAccessFacility-&gt;userAccessFacilityDataEntrant()</value>
+        </configuration>
+        <configuration name="person_can_view_child_forms" values="many">
+          <version>4.2.0.1</version>
+          <value>ManageAccessFacility-&gt;userAccessFacility()</value>
+          <value>ManageAccessFacility-&gt;userAccessFacilityStaff()</value>
+          <value>ManageAccessFacility-&gt;userAccessFacilityDataEntrant()</value>
+        </configuration>
+        <configuration name="person_can_edit_child_forms" values="many">
+          <version>4.2.0.1</version>
+          <value>ManageAccessFacility-&gt;userAccessFacility()</value>
+          <value>ManageAccessFacility-&gt;userAccessFacilityStaff()</value>
+          <value>ManageAccessFacility-&gt;userAccessFacilityDataEntrant()</value>
+        </configuration>
+        <configuration name="person_can_view_child_form_salary" values="many">
+          <version>4.2.0.1</version>
+          <value>ManageAccessFacility-&gt;userAccessFacility()</value>
+          <value>ManageAccessFacility-&gt;userAccessFacilityStaff()</value>
+        </configuration>
+        <configuration name="person_can_edit_child_form_salary" values="many">
+          <version>4.2.0.1</version>
+          <value>ManageAccessFacility-&gt;userAccessFacility()</value>
+          <value>ManageAccessFacility-&gt;userAccessFacilityStaff()</value>
+        </configuration>
+        <configuration name="person_can_change_child_form_salary" values="many">
+          <version>4.2.0.1</version>
+          <value>ManageAccessFacility-&gt;userAccessFacility()</value>
+          <value>ManageAccessFacility-&gt;userAccessFacilityStaff()</value>
+        </configuration>
+        <configuration name="can_edit_database_list_position" values="many">
+          <version>4.2.0.1</version>
+          <value>ManageAccessFacility-&gt;userAccessFacilityList()</value>
+          <value>ManageAccessFacility-&gt;userAccessFacilityDataEntrant()</value>
+        </configuration>
+        <configuration name="can_view_database_list_position" values="many">
+          <version>4.2.0.1</version>
+          <value>ManageAccessFacility-&gt;userAccessFacilityList()</value>
+          <value>ManageAccessFacility-&gt;userAccessFacilityStaff()</value>
+          <value>ManageAccessFacility-&gt;userAccessFacilityDataEntrant()</value>
+        </configuration>
+        <configuration name="can_edit_database_list_facility" values="many">
+          <version>4.1.0.15</version>
+          <value>ManageAccessFacility-&gt;userAccessFacilityList()</value>
+        </configuration>
+        <configuration name="can_view_database_list_facility" values="many">
+          <version>4.2.0.1</version>
+          <value>ManageAccessFacility-&gt;userAccessFacilityList()</value>
+          <value>ManageAccessFacility-&gt;userAccessFacilityStaff()</value>
+          <value>ManageAccessFacility-&gt;userAccessFacilityDataEntrant()</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+  <configurationGroup name="forms" path="/modules/forms">
+    <configurationGroup name="forms">
+      <configurationGroup name="user">
+        <configuration name="child_forms" values="many" path="meta/child_forms">
+          <version>4.1.0.4</version>
+          <value>access_facility</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="access_facility">
+        <displayName>Access Facility</displayName>
+        <description>The Access Facility form that links a user to a facility (or geographic location) to restrict access.</description>
+        <configuration name="class" values="single">
+          <value>iHRIS_UserAccessFacility</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>User Access Facility</value>
+        </configuration>
+        <configuration name="storage" values="single">
+          <version>4.1.0.7</version>
+          <value>magicdata</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="formClasses">
+      <configuration name="iHRIS_ListByCountry_meta_limit_modules" type="delimited" path="iHRIS_ListByCountry/fields/location/meta/add_limit_module">
+        <version>4.1.1.3</version>
+        <value>ManageAccessFacility:getLimitAdd</value>
+      </configuration>
+      <configurationGroup name="iHRIS_UserAccessFacility">
+        <displayName>Configuration for the class 'iHRIS_UserAccessFacility'</displayName>
+        <configuration name="extends">
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>The fields defined for this form.</displayName>
+          <configurationGroup name="location">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Facility or Geographic Location</value>
+            </configuration>
+            <configuration name="unique" type="boolean">
+              <version>4.1.0.8</version>
+              <value>true</value>
+            </configuration>
+            <configuration name="unique_field" values="single">
+              <version>4.1.0.8</version>
+              <value>parent</value>
+            </configuration>
+            <configurationGroup name="meta">
+              <configuration name="form" values="many">
+                <value>facility</value>
+                <value>county</value>
+                <value>district</value>
+                <value>region</value>
+                <value>country</value>
+              </configuration>
+              <configurationGroup name="display">
+                <configurationGroup name="default">
+                  <configuration name="fields">
+                    <version>4.1.0.6</version>
+                    <value>facility+location:county:district:region:country</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configuration name="style_access" path="/I2CE/template/page_styles/ihris_manage_page_form_parent_person/args/access" values="many">
+      <version>4.2.0.1</version>
+      <value>facility_manager</value>
+      <value>facility_staff</value>
+      <value>facility_data_entrant</value>
+    </configuration>
+    <configurationGroup name="page" path="/I2CE/page">
+      <version>4.1.0.5</version>
+      <configurationGroup name="access_facility">
+        <displayName>Access Facility Page</displayName>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageFormParentUser</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>ihris_common_page_form_parent_user</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update Facility Access</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <value>access_facility</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>users_can_edit</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configuration name="manage_access" path="manage/args/access" values="many">
+        <version>4.2.0.1</version>
+        <value>facility_manager</value>
+        <value>facility_staff</value>
+        <value>facility_data_entrant</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

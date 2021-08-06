@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonID" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonID" path="/I2CE" locale="nl">
+    <version>4.2.1.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="nl">
+      <configuration name="exp_date" path="person_id/expiration_date/bad_date" locale="nl">
+        <value>De vervaldatum moet na de datum van afgifte liggen.</value>
+      </configuration>
+      <configuration name="wrong_pattern" path="person_id/id_num/wrong_pattern" locale="nl">
+        <value>Dit ID komt niet overeen met het ID-typepatroon</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="nl">
+      <configuration name="person_can_view_child_form_person_id" locale="nl">
+        <value>Kan "person_id"-kindformulieren van een persoon bekijken</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_id" locale="nl">
+        <value>Kan "person_id"-kindformulieren van een persoon bewerken</value>
+      </configuration>
+      <configuration name="can_edit_database_list_id_type" locale="nl">
+        <value>Kan de databaselijst id_type bewerken</value>
+      </configuration>
+      <configuration name="can_view_database_list_id_type" locale="nl">
+        <value>Kan de databaselijst id_type bewerken</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_id">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="nl">
+            <value>Identificatie toevoegen of bijwerken</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/forms">
+      <configurationGroup name="id_type">
+        <configuration name="display" values="single" locale="nl">
+          <value>Identificatietype</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="person_id">
+        <configuration name="display" values="single" locale="nl">
+          <value>Persoonsidentificatie</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <configuration name="description" locale="nl">
+            <value>Dit formulier bevat basisgegevens over de identificatie voor een persoon</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/formClasses">
+      <configurationGroup name="iHRIS_PersonID">
+        <configurationGroup name="fields">
+          <configurationGroup name="id_type">
+            <configuration name="headers" type="delimited" locale="nl">
+              <value>default:Identificatietype</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="id_num">
+            <configuration name="headers" type="delimited" locale="nl">
+              <value>default:Identificatienummer</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="issue_date">
+            <configuration name="headers" type="delimited" locale="nl">
+              <value>default:Datum van afgifte</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="expiration_date">
+            <configuration name="headers" type="delimited" locale="nl">
+              <value>default:Vervaldatum</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="country">
+            <configuration name="headers" type="delimited" locale="nl">
+              <value>default:Land van uitgifte</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="place">
+            <configuration name="headers" type="delimited" locale="nl">
+              <value>default:Plaats van afgifte</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="iHRIS_PersonID_Type">
+        <configurationGroup name="fields">
+          <configurationGroup name="pattern">
+            <configuration name="headers" type="delimited" locale="nl">
+              <value>default:Patroon (reguliere expressie)</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

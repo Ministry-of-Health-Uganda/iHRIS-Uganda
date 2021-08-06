@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-PositionTree" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-PositionTree" path="/modules/CustomReports" locale="zh_CN">
+    <version>4.2.0.2.1</version>
+    <configurationGroup name="position_tree" path="//modules/CustomReports/relationships/position_tree">
+      <configuration name="display_name" locale="zh_CN">
+        <value>位置数</value>
+      </configuration>
+      <configuration name="description" locale="zh_CN"></configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="facility">
+          <configuration name="description" locale="zh_CN"></configuration>
+          <configuration name="display_name" locale="zh_CN">
+            <value>设施</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="county">
+              <configuration name="description" locale="zh_CN"></configuration>
+              <configuration name="display_name" locale="zh_CN">
+                <value>县</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="district">
+              <configuration name="description" locale="zh_CN"></configuration>
+              <configuration name="display_name" locale="zh_CN">
+                <value>区</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="region">
+                  <configuration name="description" locale="zh_CN"></configuration>
+                  <configuration name="display_name" locale="zh_CN">
+                    <value>区域</value>
+                  </configuration>
+                  <configurationGroup name="joins">
+                    <configurationGroup name="country">
+                      <configuration name="description" locale="zh_CN"></configuration>
+                      <configuration name="display_name" locale="zh_CN">
+                        <value>国家</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="position_tree" path="//modules/CustomReports/reports/position_tree">
+      <configurationGroup name="meta">
+        <configuration name="display_name" locale="zh_CN">
+          <value>位置数</value>
+        </configuration>
+        <configuration name="description" locale="zh_CN"></configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="zh_CN">
+                <value>位置隐藏</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="code">
+              <configuration name="header" locale="zh_CN">
+                <value>位置所在位置代码</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="facility">
+              <configuration name="header" locale="zh_CN">
+                <value>位置设施</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="status">
+              <configuration name="header" locale="zh_CN">
+                <value>位置状态</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="title">
+              <configuration name="header" locale="zh_CN">
+                <value>位置所在位置标题</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="zh_CN">
+                <value>位置编号</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="zh_CN"></configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="header" locale="zh_CN"></configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="zh_CN"></configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="zh_CN"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="county">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="zh_CN">
+                <value>县隐藏</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="district">
+              <configuration name="header" locale="zh_CN">
+                <value>区县</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="zh_CN">
+                <value>县名</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="zh_CN">
+                <value>县代码</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="district">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="zh_CN">
+                <value>区隐藏</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="zh_CN">
+                <value>区名</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="region">
+              <configuration name="header" locale="zh_CN">
+                <value>区所在地区</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="zh_CN">
+                <value>区代码</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="region">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="zh_CN">
+                <value>地区隐藏</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="country">
+              <configuration name="header" locale="zh_CN">
+                <value>地区国家</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="zh_CN">
+                <value>地区名</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="zh_CN">
+                <value>地区编号</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="country">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="zh_CN">
+                <value>国家隐藏</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="zh_CN">
+                <value>国家名</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="primary">
+              <configuration name="header" locale="zh_CN">
+                <value>国家附属国家</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="zh_CN">
+                <value>国家编号</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

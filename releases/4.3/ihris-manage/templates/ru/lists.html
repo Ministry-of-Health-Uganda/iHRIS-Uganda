@@ -1,0 +1,111 @@
+<div id="siteContent">
+
+  <h1>Администрирование базы данных</h1>
+
+  <span type="module" ifenabled="true" name="ihris-manage-PersonPosition">
+    <div task="can_edit_position_database_lists">
+      <h2>Администрирование должностей</h2>
+      
+      <div task="can_edit_job_structure_database_lists">
+	<h3>Создать рабочую структуру</h3>
+	<ul><li task="can_edit_database_list_cadre"><a href="lists?type=cadre">Кадры</a></li>
+	  <li task="can_edit_database_list_classification"><a href="lists?type=classification">Классификация должностей</a></li>
+	  <li task="can_edit_database_list_salary_grade"><a href="lists?type=salary_grade">Градация зарплат</a></li>
+	  <li task="can_edit_database_list_job"><a href="lists?type=job">Вакансии</a></li>
+	</ul></div>
+      <div task="can_edit_manage_positions_database_lists">
+	<h3>Упарвление должностями</h3>
+	<ul><li task="can_edit_database_list_salary_source"><a href="lists?type=salary_source">Источники зарплат</a></li>
+	  <li task="can_edit_database_list_position_type"><a href="lists?type=position_type">Виды должностей</a></li>
+	  <li task="can_edit_database_list_position"><a href="lists?type=position&amp;field=facility">Positions (by Facility)</a></li>
+	  <li task="can_edit_database_list_position"><a href="lists?type=position&amp;field=status&amp;nosetdefault=1">Позиции (по Статусу)</a></li>
+	  <span type="module" ifenabled="true" name="ihris-manage-confirmation">
+	    <li task="can_edit_database_list_confirmation_type"><a href="lists?type=confirmation_type">Типы подтверждения</a></li>
+	  </span>
+	</ul></div>
+    </div>
+  </span>
+
+  <h2>Администрировать другие списки</h2>
+
+  <div task="can_edit_organization_database_lists">
+    <h3>Organization Lists</h3>
+    <ul><li task="can_edit_database_list_facility_type"><a href="lists?type=facility_type">Тип Кредитования</a></li>
+      <li task="can_edit_database_list_facility"><a href="lists?type=facility&amp;field=location">Office/Facility</a></li>
+      <li task="can_edit_database_list_department"><a href="lists?type=department">Department</a></li>
+      <span type="module" ifenabled="true" name="ManageRegistration">
+	<li task="can_edit_database_list_council"><a href="lists?type=council">Registration Councils</a></li>
+      </span>
+    </ul></div>
+  <div task="can_edit_employee_database_lists">
+    <h3>Списки работодателей</h3>
+    <ul><li task="can_edit_database_list_edu_type"><a href="lists?type=edu_type">Тип образования</a></li>
+      <li task="can_edit_database_list_degree"><a href="lists?type=degree&amp;field=edu_type">Степень</a></li>
+      <li task="can_edit_database_list_language"><a href="lists?type=language">Язык</a></li>
+      <span type="module" ifenabled="true" name="simple-competency">
+	<li task="can_edit_database_list_competency_type"><a href="lists?type=competency_type">Тип квалификации</a></li>
+	<li task="can_edit_database_list_competency"><a href="lists?type=competency&amp;field=competency_type">Компетентность</a></li>
+	<span type="module" ifenabled="true" name="person-simple-competency">
+	  <li task="can_edit_database_list_competency_evaluation"><a href="lists?type=competency_evaluation">Оценка компетентности</a></li>
+	</span>
+      </span>
+      <li task="can_edit_database_list_id_type"><a href="lists?type=id_type">Тип индефикации</a></li>
+      <li task="can_edit_database_list_benefit_type"><a href="lists?type=benefit_type">Тип пенсии</a></li>
+      <li task="can_edit_database_list_marital_status"><a href="lists?type=marital_status">Семейное положение</a></li>
+      <li task="can_edit_database_list_contact_group"><a href="lists?type=contact_group">Contact Group</a></li>
+      <li task="can_edit_database_list_pos_change_reason"><a href="lists?type=pos_change_reason">Причины увольнения</a></li>
+      <span type="module" ifenabled="true" name="accident">
+	<li task="can_edit_database_list_accident_type"><a href="lists?type=accident_type">Тип Аварии</a></li>
+      </span>
+      <span type="module" ifenabled="true" name="disciplinary_action">
+	<li task="can_edit_database_list_disciplinary_action_type"><a href="lists?type=disciplinary_action_type">Тип дисциплинарной меры</a></li>
+	<li task="can_edit_database_list_disciplinary_action_reason"><a href="lists?type=disciplinary_action_reason">Disciplinary Action Reason</a></li>
+      </span>
+    </ul></div>
+  <div task="can_edit_geographic_database_lists">
+    <h3>Географическая информация</h3>
+    <ul><li task="can_edit_database_list_country"><a href="lists?type=country">Страна</a></li>
+      <li task="can_edit_database_list_region"><a href="lists?type=region&amp;field=country">Область\\\\край</a></li>
+      <li task="can_edit_database_list_district"><a href="lists?type=district&amp;field=region">Отдел</a></li>
+      <li task="can_edit_database_list_county"><a href="lists?type=county&amp;field=district">Область, край</a></li>
+      <li task="can_edit_database_list_currency"><a href="lists?type=currency">Валюта</a></li>
+    </ul></div>
+  <div task="can_edit_planning_database_lists">
+    <span name="establishment" type="module" ifenabled="true">
+      <h3>Информация о планировании</h3>
+      <ul><li task="can_edit_database_list_establishment_type"><a href="lists?type=establishment_type">Establishment Type</a></li>
+	<li task="can_edit_database_list_establishment_period"><a href="lists?type=establishment_period&amp;field=establishment_type">Establishment Period</a></li>
+	<li task="can_edit_database_list_establishment"><a href="lists?type=establishment&amp;field=establishment_period">Учреждения</a></li>
+      </ul></span>
+  </div>
+
+
+  <span name="training-course" type="module" ifenabled="true">
+    <div task="can_edit_training_course_database_lists">
+      <h3>Информация об учебных курсах</h3>
+      <ul><li task="can_edit_database_list_training_course"><a href="lists?type=training_course&amp;mapped=scheduled_training_course">Учебные курсы</a></li>
+	<li task="can_edit_database_list_scheduled_training_course"><a href="lists?type=scheduled_training_course&amp;field=training_course">Scheduled Training Courses</a></li>
+	<li task="can_edit_database_list_training_course_status"><a href="lists?type=training_course_status">Состояние учебного курса</a></li>
+	<li task="can_edit_database_list_training_course_requestor"><a href="lists?type=training_course_requestor">Лица, запросившие учебные курсы</a></li>
+	<li task="can_edit_database_list_training_course_evaluation"><a href="lists?type=training_course_evaluation">Оценка учебного курса</a></li>
+	<li task="can_edit_database_list_training_course_category"><a href="lists?type=training_course_category">Категория учебного курса</a></li>
+	<span type="module" name="manage-training-institution" ifenabled="true">
+	  <li task="can_edit_database_list_training_institution"><a href="lists?type=training_institution">Учреждение, проводящее курсы</a></li>
+	  <li task="can_edit_database_list_training_funder"><a href="lists?type=training_funder">Тренинг-спонсор</a></li>
+	</span>
+	<span type="module" name="CEUs" ifenabled="true">
+	  <li task="can_edit_database_list_continuing_education_course"><a href="lists?type=continuing_education_course">Продолжающийся курс обучения</a></li>
+	</span>
+      </ul></div>
+  </span>
+
+  <span role="admin">
+      <h2>Массовое удаление</h2>
+      <ul><span type="module" name="ihris-manage-MassDeleteFacility" ifenabled="true">
+          <li><a href="delete_by_facility">By Facility</a></li>
+        </span>
+        <span type="module" name="ihris-common-MassDeletePerson" ifenabled="true">
+          <li><a href="delete_by_search">By Person (Search Page)</a></li>
+        </span>
+      </ul></span>
+</div>

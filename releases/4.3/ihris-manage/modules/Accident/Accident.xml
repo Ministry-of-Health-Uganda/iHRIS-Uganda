@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="accident">
+  <metadata>
+    <displayName>Workplace Accident</displayName>
+    <className>iHRIS_Module_Accident</className>
+    <category>Application Component</category>
+    <description>A Workplace Accident Tracking Module</description>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>49</priority>
+  </metadata>
+  <erase path="/modules/accident/page/history">
+    <lessThan value="4.0.6.0" />
+  </erase>
+  <configurationGroup name="accident" path="/I2CE">
+    <displayName>Workplace Accident</displayName>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="en_US">
+      <version>4.1.0.1</version>
+      <configuration name="accident_date" path="accident/end_date/bad_date">
+        <value>The end date must be after the start date.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <version>4.0.0</version>
+      <configuration name="person_can_edit_child_form_accident" locale="en_US">
+        <value>Can edit the workplace injuries and accidents assigned to a person</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_accident" locale="en_US">
+        <value>Can view the wokrplace injuries and accidents assigned to a person</value>
+      </configuration>
+      <configuration name="can_edit_database_list_accident_type" locale="en_US">
+        <value>Edit the workplace accident type list</value>
+      </configuration>
+      <configuration name="can_view_database_list_accident_type" locale="en_US">
+        <version>4.0.5.0</version>
+        <value>View the workplace accident type list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <version>4.0.4</version>
+      <configuration name="can_edit_database_list_accident_type" values="many">
+        <value>can_edit_database_lists</value>
+        <value>can_edit_employee_database_lists</value>
+        <value>can_view_database_list_accident_type</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" values="many">
+        <value>can_edit_database_list_accident_type</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" values="many">
+        <value>can_view_database_list_accident_type</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_accident" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_accident" values="many">
+        <value>person_can_view_child_form_person_accident</value>
+        <value>person_can_view</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <displayName>Forms</displayName>
+      <configurationGroup name="forms">
+        <displayName>Forms available to the form factory</displayName>
+        <description>Information about the forms made available by iHRIS-Common</description>
+        <status>advanced:true</status>
+        <status>required:true</status>
+        <configurationGroup name="accident">
+          <displayName>Workplace Accident</displayName>
+          <description>The Accident Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Accident</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Accident</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="accident_type">
+          <displayName>Competency Type</displayName>
+          <description>The Competency Type Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Workplace Accident Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage</displayName>
+            <description>The form storage used by this form</description>
+            <version>4.0.4</version>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person">
+          <displayName>Person</displayName>
+          <description>The Person Form</description>
+          <configurationGroup name="meta">
+            <displayName>MetaData on the form</displayName>
+            <configuration name="child_forms" values="many">
+              <displayName>Child Forms</displayName>
+              <status>uniquemerge:true</status>
+              <value>accident</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- End of /modules/forms/forms -->
+      <configurationGroup name="formClasses">
+        <displayName>Form Class Configuration</displayName>
+        <configurationGroup name="iHRIS_Accident">
+          <displayName>Configuration for the class 'iHRIS_Competency'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="occurence_date">
+              <displayName>The field 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <version>4.0.1</version>
+                <value>I2CE_Date::now()</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Date of Occurence</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="accident_type">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <version>4.0.0</version>
+                <!-- changed from 3.1 where it was an INT, setMap() to a MAP -->
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Accident Type</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required.</displayName>
+                <version>4.0.6.0</version>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <displayName>The field 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <version>4.0.1</version>
+                <value>I2CE_Date::now()</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Start of Applicability</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required.</displayName>
+                <version>4.0.6.0</version>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <displayName>The field 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <version>4.0.1</version>
+                <value>I2CE_Date::now()</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:End of Applicability</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="followup">
+              <displayName>The field 'notes'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Follow-up Required</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_involved">
+              <displayName>The field 'notes'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:People Involved</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- End of /modules/forms/formClasses -->
+    </configurationGroup>
+    <!-- End of /modules/forms-->
+    <configurationGroup name="page">
+      <displayName>Page information</displayName>
+      <configurationGroup name="home" path="/modules/accident/page/home">
+        <displayName>Accident Page</displayName>
+        <description>The page has the action of: Add/Update Accident</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_manage_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Workplace Accident</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>accident</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <!-- End of /I2CE/page-->
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Benefit" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Benefit" path="/I2CE" locale="pt_BR">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="pt_BR">
+      <configuration name="benefit_date" path="benefit/end_date/bad_date">
+        <value>A data final precisa estar após a data inicial.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="pt_BR">
+      <configuration name="person_can_view_child_form_benefit" locale="pt_BR">
+        <value>Pode ver formulários de benefícios de uma pessoa</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_benefit" locale="pt_BR">
+        <value>Pode editar formulários filhos de benefícios de uma pessoa</value>
+      </configuration>
+      <configuration name="can_edit_database_list_benefit_type" locale="pt_BR">
+        <value>Pode editar o banco de dados de tipos de benefício</value>
+      </configuration>
+      <configuration name="can_view_database_list_benefit_type" locale="pt_BR">
+        <value>Pode ver o banco de dados de tipos de benefício</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="benefit_recurrence">
+        <configurationGroup name="once">
+          <configuration name="fields" value="many" type="delimited" locale="pt_BR">
+            <value>name:Uma vez</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="weekly">
+          <configuration name="fields" value="many" type="delimited" locale="pt_BR">
+            <value>name:Semanalmente</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="monthly">
+          <configuration name="fields" value="many" type="delimited" locale="pt_BR">
+            <value>name:Mensalmente</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="yearly">
+          <configuration name="fields" value="many" type="delimited" locale="pt_BR">
+            <value>name:Anualmente</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="benefit">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pt_BR">
+            <value>Adicionar/Atualizar Benefícios</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="benefit">
+          <configuration name="display" values="single" locale="pt_BR">
+            <value>Benefício</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="benefit_type">
+          <configuration name="display" values="single" locale="pt_BR">
+            <value>Tipo de Benefício</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="benefit_recurrence">
+          <configuration name="display" values="single" locale="pt_BR">
+            <value>Recorrência do Benefício</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Benefit">
+          <configurationGroup name="fields">
+            <configurationGroup name="type">
+              <configuration name="headers" type="delimited" locale="pt_BR">
+                <value>default:Tipo de Benefício</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="amount">
+              <configuration name="headers" type="delimited" locale="pt_BR">
+                <value>default:Valor</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="source">
+              <configuration name="headers" type="delimited" locale="pt_BR">
+                <value>default:Fonte</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="pt_BR">
+                <value>default:Data de Início</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="pt_BR">
+                <value>default:Data de Término</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="recurrence">
+              <configuration name="headers" type="delimited" locale="pt_BR">
+                <value>default:Fequência da Recorrência</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

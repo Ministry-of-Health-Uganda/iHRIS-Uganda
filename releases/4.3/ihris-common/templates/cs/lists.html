@@ -1,0 +1,37 @@
+<div id="siteContent">
+    <h1>Spravovat Databázi</h1>
+
+    <span type="module" ifenabled="true" name="Person">    
+	  <h3>Demografické seznamy</h3>
+	  <ul><li><a href="lists?type=id_type">Typ identifikace</a></li>
+	    <li><a href="lists?type=marital_status">Rodinný stav</a></li>
+	  </ul></span>
+    <span type="module" ifenabled="true" name="Geography">    
+      <h3>Geografické informace</h3>
+      <ul><li><a href="lists?type=country">Stát</a></li>
+        <li><a href="lists?type=region">Kraj</a></li>
+        <li><a href="lists?type=district">Čtvrť</a></li>
+        <li><a href="lists?type=county">Obec</a></li>
+        <span type="module" ifenabled="true" name="Currency">    
+          <li><a href="lists?type=currency">Měna</a></li>
+        </span>
+      </ul></span>
+    <h3>Doplňující informace</h3>
+    <ul><span type="module" ifenabled="true" name="simple-competency">	
+	  <li><a href="lists?type=competency_type">Typ kompetence</a></li>
+	  <li><a href="lists?type=competency&amp;field=competency_type">Kompetence</a></li>
+    </span>
+    <span type="module" name="CEUs" ifenabled="true">
+	  <li><a href="lists?type=continuing_education_course">Kurz dalšího vzdělávání</a></li>
+    </span>
+    <span type="module" name="training-institution" ifenabled="true">
+	  <li><a href="lists?type=training_institution">Učiliště</a></li>
+	  <li><a href="lists?type=training_funder">Sponzor školení</a></li>
+    </span>
+    </ul><span role="admin">
+      <span type="module" name="ihris-common-MassDeletePerson" ifenabled="true">
+        <h2>Hromadné mazání</h2>
+        <ul><li><a href="delete_by_search">Osobou (vyhledat stránku)</a></li>
+        </ul></span>
+    </span>
+</div>

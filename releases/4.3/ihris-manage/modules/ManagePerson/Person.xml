@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Person">
+  <metadata>
+    <displayName>iHRIS Manage Person</displayName>
+    <category>Application Component</category>
+    <description>The iHRIS Manage Person</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <requirement name="Person">
+      <atLeast version="4.1" />
+    </requirement>
+    <priority>350</priority>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="ihris-manage-Person" path="/I2CE">
+    <configurationGroup name="template">
+      <displayName>Template Information</displayName>
+      <description>Various Default Information About The Templating System</description>
+      <configurationGroup name="page_styles">
+        <displayName>Page Style</displayName>
+        <description>Various Page styles with their default templates</description>
+        <status>required:false</status>
+        <configurationGroup name="ihris_manage_page_form_parent_person">
+          <!-- deprecated use -->
+          <displayName>Page Form Parent Person</displayName>
+          <configuration name="style" values="single">
+            <displayName>Page Style</displayName>
+            <description>The page style that this style inherits from</description>
+            <value>ihris_common_page_form_parent_person</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person">
+        <displayName>Person Page</displayName>
+        <description>The page 'person' which has the action of: Add/Update Person</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <version>4.0.3</version>
+          <status>required:true</status>
+          <value>iHRIS_PageFormPersonManage</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person">
+          <displayName>Person</displayName>
+          <description>The Person Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_ManagePerson</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of /modules/forms/forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_ManagePerson">
+          <displayName>Configuration for the class 'iHRIS_ManagePerson'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>iHRIS_Person</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="password">
+              <displayName>The field 'password'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_PASS</value>
+              </configuration>
+              <configuration name="in_db" type="boolean">
+                <displayName>Store the field in the database</displayName>
+                <value>false</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of /modules/forms/formClasses-->
+    </configurationGroup>
+    <!-- end of /modules/forms-->
+  </configurationGroup>
+</I2CEConfiguration>

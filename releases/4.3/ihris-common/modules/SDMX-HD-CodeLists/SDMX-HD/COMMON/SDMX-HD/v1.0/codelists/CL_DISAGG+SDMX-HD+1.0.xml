@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="codelist.xsl"?>
+<Structure xmlns="http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message" xmlns:structure="http://www.SDMX.org/resources/SDMXML/schemas/v2_0/structure" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message SDMXMessage.xsd">
+  <Header>
+    <ID>SDMX-HD-DSD</ID>
+    <Test>false</Test>
+    <Truncated>false</Truncated>
+    <Name xml:lang="en">SDMX Health Domain</Name>
+    <Prepared>2009-03-20</Prepared>
+    <Sender id="SDMX-HD">
+      <Name>SDMX-HD Health Domain</Name>
+      <Contact>
+        <Name xml:lang="en">Patrick Whitaker</Name>
+        <Department>Health Care Informatics</Department>
+        <Telephone>+41.22.791.1372</Telephone>
+        <Email>whitakerp@who.int</Email>
+      </Contact>
+    </Sender>
+    <Extracted>2009-03-20T13:03:46</Extracted>
+  </Header>
+  <CodeLists>
+    <structure:CodeList id="CL_DISAGG" agencyID="SDMX-HD" version="1.0" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist=SDMX-HD:CL_DISAGG">
+      <structure:Name xml:lang="en">Disaggregation</structure:Name>
+      <structure:Description xml:lang="en">Disaggregation dimensions.</structure:Description>
+      <structure:Code value="1" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].1">
+        <structure:Description xml:lang="en">Age</structure:Description>
+      </structure:Code>
+      <structure:Code value="2" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].2">
+        <structure:Description xml:lang="en">Pregnant</structure:Description>
+      </structure:Code>
+      <structure:Code value="3" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].3">
+        <structure:Description xml:lang="en">Period</structure:Description>
+      </structure:Code>
+      <structure:Code value="4" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].4">
+        <structure:Description xml:lang="en">Programme</structure:Description>
+      </structure:Code>
+      <structure:Code value="5" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].5">
+        <structure:Description xml:lang="en">Reference Period</structure:Description>
+      </structure:Code>
+      <structure:Code value="6" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].6">
+        <structure:Description xml:lang="en">Services</structure:Description>
+      </structure:Code>
+      <structure:Code value="7" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].7">
+        <structure:Description xml:lang="en">Setting</structure:Description>
+      </structure:Code>
+      <structure:Code value="8" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].8">
+        <structure:Description xml:lang="en">Target</structure:Description>
+      </structure:Code>
+      <structure:Code value="9" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].9">
+        <structure:Description xml:lang="en">Target Population</structure:Description>
+      </structure:Code>
+      <structure:Code value="10" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].10">
+        <structure:Description xml:lang="en">Type of Orphan</structure:Description>
+      </structure:Code>
+      <structure:Code value="11" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].11">
+        <structure:Description xml:lang="en">Unit of Measure</structure:Description>
+      </structure:Code>
+      <structure:Code value="12" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].12">
+        <structure:Description xml:lang="en">Race</structure:Description>
+      </structure:Code>
+      <structure:Code value="13" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].13">
+        <structure:Description xml:lang="en">Vulnerability Status</structure:Description>
+      </structure:Code>
+      <structure:Code value="14" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].14">
+        <structure:Description xml:lang="en">Emphasis Area</structure:Description>
+      </structure:Code>
+      <structure:Code value="15" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].15">
+        <structure:Description xml:lang="en">Funding Mechanism</structure:Description>
+      </structure:Code>
+      <structure:Code value="16" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].16">
+        <structure:Description xml:lang="en">Geographic Location</structure:Description>
+      </structure:Code>
+      <structure:Code value="17" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].17">
+        <structure:Description xml:lang="en">Providing Organization</structure:Description>
+      </structure:Code>
+      <structure:Code value="18" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].18">
+        <structure:Description xml:lang="en">Gender</structure:Description>
+      </structure:Code>
+      <structure:Code value="19" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].19">
+        <structure:Description xml:lang="en">Education</structure:Description>
+      </structure:Code>
+      <structure:Code value="20" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].20">
+        <structure:Description xml:lang="en">Disease Status</structure:Description>
+      </structure:Code>
+      <structure:Code value="21" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].21">
+        <structure:Description xml:lang="en">Sector</structure:Description>
+      </structure:Code>
+      <structure:Code value="22" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].22">
+        <structure:Description xml:lang="en">Cause of Death</structure:Description>
+      </structure:Code>
+      <structure:Code value="23" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISAGG[1.0].23">
+        <structure:Description xml:lang="en">Indicator Category</structure:Description>
+      </structure:Code>
+      <structure:Code value="_NA" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISEASE[1.0]._NA">
+        <structure:Description xml:lang="en">Not Applicable</structure:Description>
+      </structure:Code>
+      <structure:Code value="_UNK" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX-HD:CL_DISEASE[1.0]._UNK">
+        <structure:Description xml:lang="en">Unknown</structure:Description>
+      </structure:Code>
+    </structure:CodeList>
+  </CodeLists>
+</Structure>
+

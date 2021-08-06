@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ManageAccessDepartment">
+  <metadata>
+    <displayName>Manage Access Department</displayName>
+    <className>iHRIS_Module_ManageAccessDepartment</className>
+    <category>Application Component</category>
+    <description>A module that enables permission based on assigning a department and any positions that belong to that department.</description>
+    <creator>Luke Duncan</creator>
+    <email>lduncan@intrahealth.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="form-relationship-based-permission">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ihris-manage-PersonPosition">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="ManageAccessDepartment" path="/I2CE">
+    <configurationGroup name="roles" path="/I2CE/formsData/forms/role">
+      <displayName>Roles</displayName>
+      <description>The list of roles provided</description>
+      <configurationGroup name="department_manager">
+        <configuration name="last_modified">
+          <value>2014-03-17 00:00:00</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="en_US">
+            <value>Department Manager</value>
+          </configuration>
+          <configuration name="trickle_up">
+            <value>admin</value>
+          </configuration>
+          <configuration name="assignable">
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks">
+      <configurationGroup name="role_trickle_down">
+        <configuration name="department_manager" values="many">
+          <value>custom_reports_can_view_reportViews</value>
+          <value>can_change_own_password</value>
+          <value>person_can_view</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="alt_satisfaction">
+        <configuration name="person_can_edit" values="many">
+          <value>ManageAccessDepartment-&gt;userAccessDepartment()</value>
+        </configuration>
+        <configuration name="person_can_view_child_forms" values="many">
+          <value>ManageAccessDepartment-&gt;userAccessDepartment()</value>
+        </configuration>
+        <configuration name="person_can_edit_child_forms" values="many">
+          <value>ManageAccessDepartment-&gt;userAccessDepartment()</value>
+        </configuration>
+        <configuration name="person_can_view_child_form_salary" values="many">
+          <value>ManageAccessDepartment-&gt;userAccessDepartment()</value>
+        </configuration>
+        <configuration name="person_can_edit_child_form_salary" values="many">
+          <value>ManageAccessDepartment-&gt;userAccessDepartment()</value>
+        </configuration>
+        <configuration name="person_can_change_child_form_salary" values="many">
+          <value>ManageAccessDepartment-&gt;userAccessDepartment()</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+  <configurationGroup name="forms" path="/modules/forms">
+    <configurationGroup name="forms">
+      <configurationGroup name="user">
+        <configuration name="child_forms" values="many" path="meta/child_forms">
+          <value>access_department</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="access_department">
+        <displayName>Access Department</displayName>
+        <description>The Access Department form that links a user to a department to restrict access.</description>
+        <configuration name="class" values="single">
+          <value>iHRIS_UserAccessDepartment</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>User Access Department</value>
+        </configuration>
+        <configuration name="storage" values="single">
+          <value>magicdata</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="formClasses">
+      <configurationGroup name="iHRIS_UserAccessDepartment">
+        <displayName>Configuration for the class 'iHRIS_UserAccessDepartment'</displayName>
+        <configuration name="extends">
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>The fields defined for this form.</displayName>
+          <configurationGroup name="department">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Department</value>
+            </configuration>
+            <configuration name="unique" type="boolean">
+              <value>true</value>
+            </configuration>
+            <configuration name="unique_field" values="single">
+              <value>parent</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configuration name="style_access" path="/I2CE/template/page_styles/ihris_manage_page_form_parent_person/args/access" values="many">
+      <value>department_manager</value>
+    </configuration>
+    <configurationGroup name="page" path="/I2CE/page">
+      <configurationGroup name="access_department">
+        <displayName>Access Facility Page</displayName>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageFormParentUser</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>ihris_common_page_form_parent_user</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update Department Access</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <value>access_department</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>users_can_edit</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configuration name="manage_access" path="manage/args/access" values="many">
+        <value>department_manager</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

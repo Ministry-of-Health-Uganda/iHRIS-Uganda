@@ -1,0 +1,186 @@
+<div id="siteContent">
+    <h1>Systeeminstellingen</h1>
+
+  <div task="can_edit_database_lists">
+    <h2><a href="lists" class="adminDatabase">Database beheren</a></h2>
+    <p>
+    <!-- Create and update standard lists of data for selection in system menus. -->
+    Posities beheren en selectielijsten aanmaken en bijwerken.
+    </p>
+      <hr></div>
+
+
+  <span type="module" name="admin" ifenabled="true">
+    <div task="can_configure_modules">
+      <h2><a href="admin/modules" class="adminDatabase">Moduleinstellingen</a></h2>
+      <p>
+	Modules voor het systeem in- en uitschakelen
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" name="page-builder" ifenabled="true">
+    <div task="can_build_pages">
+      <h2><a href="PageBuilder" class="adminDatabase">Paginabouwer</a></h2>
+      <p>
+	Pagina's bouwen en opnieuw instellen
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" name="form-builder" ifenabled="true">
+    <div task="can_build_forms">
+      <h2>Formulierenbouwer</h2>
+      <p>
+	Formulieren bouwen en opnieuw instellen
+      </p>
+      <ul><li><a href="FormBuilder/forms" class="adminDatabase">Formulierenbouwer</a></li>
+	<li><a href="FormBuilder/formClasses" class="adminDatabase">Formulierklassebouwer</a></li>
+      </ul><hr></div>
+  </span>
+
+
+  <span type="module" name="formRelationships" ifenabled="true">
+    <div role="admin">
+      <h2><a href="form_relationship_import" class="searchRecords"> Import Form Relationship Data</a></h2>
+      <p>
+	Import iHRIS data from a form relationship export or from a transform of another data source, such as an Excel file, to the iHRIS form relationship format.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="CustomReports" ifenabled="true">
+    <span task="custom_reports_can_edit_reportViews">
+        <h2><a name="manage_reports" class="adminDatabase">Rapportages beheren</a></h2>
+      <p>
+	Voor gebruikers beschikbare standaard rapportages beheren en nieuwe maatwerkrapportages aanmaken.
+      </p>
+      <ul><li task="custom_reports_can_edit_relationships"><a href="CustomReports/edit/relationships">Formulierrelaties</a>
+          <dl><dd>Instellen hoe formulieren zich verhouden voor gebruik in rapportages.</dd></dl></li>
+          <li task="custom_reports_can_edit_reports"><a href="CustomReports/edit/reports">Rapportages</a>
+          <dl><dd>Bepaal rapport op basis van vooraf gedefinieerde relaties. U kunt kiezen welke velden beschikbaar zijn voor elk rapport en welke velden gebruikt kunnen worden om het rapport te beperken.</dd></dl></li>
+          <li><a href="CustomReports/edit/reportViews">Rapportweergaves</a>
+          <dl><dd>Maak rapportweergaves aan gebaseerd op bestaande rapportages. U kunt kiezen welke velden worden weergegeven en ook een standaardweergave opgeven voor een grafiek of beperkte resultaten als een gebruiker de rapportage raadpleegt.</dd></dl></li>
+      </ul><hr></span>
+  </span>
+
+
+
+  <span type="module" name="magicDataBrowser" ifenabled="true">
+    <div task="can_view_magic_data_browser">
+      <h2><a href="magicDataBrowser/show" class="searchRecords">Magische gegevens verkennen</a></h2>
+      <p>
+	Configuratiegegevens voor het systeem verkennen.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="SVS" ifenabled="true">
+    <div task="SVS_allow_RetreieveValueSet">
+      <h2><a href="SVS/config" class="searchRecords">Verzamelingen met gedeelde waarden</a></h2>
+      <p>
+	Verzamelingen met gedeelde waarden downloaden of configureren voor het uitwisselen van metadata tussen componenten van uw HIS.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="csd_cache" ifenabled="true">
+    <div task="csd_cache_admin">
+      <h2><a href="csd_cache" class="searchRecords">Care Services Discovery</a></h2>
+      <p>
+	Caches voor de Care Services Discovery (CSD) export van gegevens
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="csd-infoman-storage" ifenabled="true">
+    <div role="admin">
+      <h2><a href="remote_directory_selector/edit" class="searchRecords"> Interlinked Health Worker Registry</a></h2>
+      <p>
+	Set connection details for connecting with a Care Services Discovery (CSD) compliant InterLinked Health Worker Registry.
+      </p>
+      <hr></div>
+  </span>
+
+
+
+
+
+  <span type="module" name="tasks-roles" ifenabled="true">
+    <div task="tasks_and_roles_can_access">
+      <h2><a href="tasks-roles" class="adminDatabase">Taken en rollen</a></h2>
+      <p>
+	Taken en rollen in het systeem beheren
+      </p>
+      
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="localeSelector" ifenabled="true">
+    <div task="locales_can_edit_site_locale">
+      <h2><a href="localeSelector/edit" class="adminDatabase">Talen beheren</a></h2>
+      <p>
+	De talen beheren die in het systeem beschikbaar zijn
+      </p>
+      <hr></div>      
+  </span>
+
+
+
+  <span type="module" name="BackgroundProcess" ifenabled="true">
+    <div task="can_view_background_processes">
+      <h2><a href="BackgroundProcess" class="searchRecords">Achtergrondprocessen</a></h2>
+      <p>
+	Achtergrondprocessen die u hebt gestart bekijken
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="formBrowser" ifenabled="true">
+    <div task="can_view_form_browser">
+      <h2><a href="formBrowser/showForm" class="searchRecords">Formulieren bekijken</a></h2>
+      <p>
+	De formulieren die gebruikt worden in het systeem bekijken.
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" ifenabled="true" name="DHIS_Metadata">
+    <div role="admin">
+      <h2><a href="dhis_metadata">DHIS2 metadata beheren</a></h2>
+      <p>
+	Uploaden <a href="http://dhis2.org">DHIS2</a> Metadata zoals  organisatie-eenheden en gegevenselementen.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="CachedForms" ifenabled="true">
+    <div task="cached_forms_can_administer">
+      <h2><a href="CachedForms" class="adminDatabase">Formulieren in de cache</a></h2>
+      <p>
+	Het aanmaken van formulieren in de cache beheren
+      </p>
+      <hr></div>
+  </span>
+  
+  <div task="can_create_or_edit_users">
+
+    <h2><a href="user" class="adminDatabase">Gebruikers beheren</a></h2>
+    <p>
+    Gebruikers aanmaken, bijwerken en uitschakelen om de toegang tot het systeem te bepalen. Alleen systeembeheerders hebben toegang.
+    </p>
+      <hr></div>
+  <span type="module" name="UserStatistics" ifenabled="true">
+	<div task="can_view_user_statistics">
+	  <h2><a href="UserStatistics" class="searchRecords">Gebruikersstatistieken</a></h2>
+      Gegevensinvoerstatistieken voor gebruikers bekijken.
+    </div>
+  </span>
+</div>

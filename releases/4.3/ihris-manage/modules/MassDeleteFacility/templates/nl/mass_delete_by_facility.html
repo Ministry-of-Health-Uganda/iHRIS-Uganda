@@ -1,0 +1,11 @@
+<div id="siteContent">
+  <h1>Alle records van een faciliteit verwijderen</h1>
+  <p><strong>Waarschuwing:</strong> Dit verwijdert alle posities en persoon records die zijn toegewezen aan die posities uit de database. Dit kan alleen worden hersteld vanaf de back-ups handmatig, dus zorg ervoor dat uw back-ups zijn up-to-date voor het uitvoeren van deze actie!</p>
+  <form method="POST" id="delete_form" action="delete_by_facility_action">
+    <h2>Geselecteerde faciliteiten</h2>
+    <div id="facility_list">
+    </div>
+    <div id="facility_selection" style="display:none;">
+      <select id="facility_select" name="facilities[]" multiple></select></div>
+    <input type="hidden" name="step" value="choose"><input type="submit" class="button" value="Continue"></form>
+</div>

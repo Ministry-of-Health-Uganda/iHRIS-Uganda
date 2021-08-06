@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonUniform">
+  <metadata>
+    <displayName>iHRIS Person Uniform</displayName>
+    <className>iHRIS_Module_PersonUniform</className>
+    <category>Application Component</category>
+    <description>A Person's Uniform Information</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.2.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.0" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="PersonUniform" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_uniform" locale="en_US">
+        <value>Can view uniform child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_uniform" locale="en_US">
+        <value>Can edit uniform child forms of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_uniform" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_uniform" values="many">
+        <value>person_can_view_child_form_uniform</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <version>4.2.0</version>
+        <value>person_can_view_child_form_uniform</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>4.2.0</version>
+        <value>person_can_edit_child_form_uniform</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="uniform">
+        <displayName>Uniform Page</displayName>
+        <description>The page 'uniform' which has the action of: Add/Update Uniform Information</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Uniform Information</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>uniform</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- uniform -->
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <version>4.2.0</version>
+        <configurationGroup name="uniform">
+          <displayName>Uniform Information</displayName>
+          <description>The Uniform Information Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of th
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Uniform">
+          <displayName>Configuration for the class 'iHRIS_Uniform'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="coat_size">
+              <displayName>The field 'coat_size'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.2.0</version>
+                <value>default:Coat Size</value>
+              </configuration>
+              
+            </configurationGroup>
+            <configurationGroup name="dress_size">
+              <displayName>The field 'dress_size'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.2.0</version>
+                <value>default:Dress Size</value>
+              </configuration>
+              
+            </configurationGroup>
+           
+            <configurationGroup name="shoe_size">
+              <displayName>The field 'shoe_size'</displayName>
+              <version>4.2.0</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.2.0</version>
+                <value>default:Shoe Size</value>
+              </configuration>              
+             
+            </configurationGroup>
+           
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_Uniform -->
+      </configurationGroup>
+      <!-- end of  formClasses-->
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

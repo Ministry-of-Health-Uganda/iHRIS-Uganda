@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-FacilityTree" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-FacilityTree" path="/modules/CustomReports" locale="br">
+    <version>4.2.0.2.1</version>
+    <configurationGroup name="facility_tree" path="//modules/CustomReports/relationships/facility_tree">
+      <configuration name="description" locale="br"></configuration>
+      <configuration name="display_name" locale="br">
+        <value>Gwezennadur an diazezadurioù</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="county">
+          <configuration name="description" locale="br"></configuration>
+          <configuration name="display_name" locale="br">
+            <value>Kontelezh</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="district">
+          <configuration name="description" locale="br">
+            <value>An distrig m'emañ an diazezadur.</value>
+          </configuration>
+          <configuration name="display_name" locale="br">
+            <value>Distrig</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="region">
+              <configuration name="description" locale="br">
+                <value>Ar rannvro m'emañ an diazezadur.</value>
+              </configuration>
+              <configuration name="display_name" locale="br">
+                <value>Rannvro</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="country">
+                  <configuration name="description" locale="br">
+                    <value>Ar vro m'emañ an diazezadur.</value>
+                  </configuration>
+                  <configuration name="display_name" locale="br">
+                    <value>Bro</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="facility_tree" path="//modules/CustomReports/reports/facility_tree">
+      <configurationGroup name="meta">
+        <configuration name="description" locale="br"></configuration>
+        <configuration name="display_name" locale="br">
+          <value>Gwezennadur an diazezadurioù</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="country">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="br">
+                <value>Anv ar vro</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="primary">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="county">
+          <configurationGroup name="fields">
+            <configurationGroup name="district">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="br">
+                <value>Anv ar gontelezh</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="district">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="br">
+                <value>Anv an distrig</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="region">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="facility_type">
+              <configuration name="header" locale="br">
+                <value>Seurt diazezadur</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="region">
+          <configurationGroup name="fields">
+            <configurationGroup name="country">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="i2ce_hidden">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="id">
+              <configuration name="header" locale="br"></configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="header" locale="br">
+                <value>Anv ar rannvro</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

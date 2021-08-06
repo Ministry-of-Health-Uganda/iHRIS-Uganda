@@ -1,0 +1,11 @@
+<div id="siteContent">
+  <h1>Supprimer tous les enregistrements par établissement</h1>
+  <p><strong>ATTENTION:</strong> Cela supprimera de la base de données toutes les positions et les enregistrements de personne assignées à ces positions. Ils ne pourront être récupérés des sauvegardes que manuellement, donc assurez-vous que vos sauvegardes sont à jour avant d’effectuer cette action !</p>
+  <form method="POST" id="delete_form" action="delete_by_facility_action">
+    <h2>Établissements sélectionnés</h2>
+    <div id="facility_list">
+    </div>
+    <div id="facility_selection" style="display:none;">
+      <select id="facility_select" name="facilities[]" multiple></select></div>
+    <input type="hidden" name="step" value="choose"><input type="submit" class="button" value="Continue"></form>
+</div>

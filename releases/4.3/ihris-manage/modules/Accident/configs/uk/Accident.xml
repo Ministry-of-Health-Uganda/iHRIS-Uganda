@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="accident" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="accident" path="/I2CE" locale="uk">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="uk">
+      <configuration name="accident_date" path="accident/end_date/bad_date">
+        <value>Дата завершення має бути пізнішою за дату початку.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_accident" locale="uk">
+        <value>Можна змінювати робоче місце через травми і аварії, пов'язані з власником</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_accident" locale="uk">
+        <value>Можна переглядати робоче місце через травми і аварії, пов'язані з власником</value>
+      </configuration>
+      <configuration name="can_edit_database_list_accident_type" locale="uk">
+        <value>Редагувати список типів аварій на робочому місці</value>
+      </configuration>
+      <configuration name="can_view_database_list_accident_type" locale="uk">
+        <value>Перегляд список аварій на робочому місці</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="accident">
+          <configuration name="display" values="single" locale="uk">
+            <value>Аварії</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="accident_type">
+          <configuration name="display" values="single" locale="uk">
+            <value>Тип аварії на робочому місці</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Accident">
+          <configurationGroup name="fields">
+            <configurationGroup name="occurence_date">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Дата настання</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="accident_type">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Тип аварії</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Початок застосовності</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Кінець застосовності</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="followup">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Необхідні наступні заходи</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_involved">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Залучені люди</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="home" path="/modules/accident/page/home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="uk">
+            <value>Додати/Оновити аварії на робочому місці</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

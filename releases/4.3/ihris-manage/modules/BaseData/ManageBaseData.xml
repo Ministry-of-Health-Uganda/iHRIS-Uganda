@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-base-data">
+  <metadata>
+    <displayName>iHRIS Manage Base Data</displayName>
+    <category>Site</category>
+    <description>iHRIS Manage Base Data</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <requirement name="BackgroundProcess">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ihris-manage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="SampleData-Common">
+      <atLeast version="4.0" />
+    </requirement>
+    <enable name="SampleData-benefit_type" />
+    <enable name="SampleData-language" />
+    <enable name="SampleData-marital_status" />
+    <enable name="SampleData-pos_change_reason" />
+    <enable name="SampleData-id_type" />
+    <enable name="SampleData-accident_type" />
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

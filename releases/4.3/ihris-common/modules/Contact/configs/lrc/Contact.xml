@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Contact" path="/I2CE">
+  <metadata>
+    <version>4.2.1.2.1</version>
+  </metadata>
+  <configurationGroup name="Contact" path="/I2CE" locale="lrc">
+    <version>4.2.1.2.1</version>
+    <configurationGroup name="/modules/forms/forms/contact_group">
+      <configuration name="display" values="single" locale="lrc"></configuration>
+      <configurationGroup name="meta">
+        <configuration name="description" locale="lrc"></configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="/modules/forms/formClasses/iHRIS_Contact/fields/contact_group">
+      <configuration name="headers" type="delimited" locale="lrc"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Contact">
+          <configurationGroup name="fields">
+            <configurationGroup name="address">
+              <configuration name="headers" type="delimited" locale="lrc">
+                <value>default:نشونی ایمیل کردن</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="telephone">
+              <configuration name="headers" type="delimited" locale="lrc">
+                <value>default:شماره تیلیفون</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="mobile_phone">
+              <configuration name="headers" type="delimited" locale="lrc">
+                <value>default:شماره موبایل</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="alt_telephone">
+              <configuration name="headers" type="delimited" locale="lrc">
+                <value>default:شماره تیلیفون جاگزین</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="fax">
+              <configuration name="headers" type="delimited" locale="lrc">
+                <value>default:شماره دیرنگار</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="email">
+              <configuration name="headers" type="delimited" locale="lrc">
+                <value>default:نشونی ايميل</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" values="many" locale="lrc">
+                <value>default:نيسنيا</value>
+                <value>contact_person:نسینیا(اولین کسی که پیوند میگره)</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_NamedContact">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="lrc">
+                <value>default:نوم</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

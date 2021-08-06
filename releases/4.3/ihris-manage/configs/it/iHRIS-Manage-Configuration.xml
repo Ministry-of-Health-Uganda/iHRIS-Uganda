@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage" path="/I2CE">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage" path="/I2CE" locale="it">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_planning_database_lists" locale="it" values="single" type="string">
+        <value>Può modificare alcune liste di database di pianificazione</value>
+      </configuration>
+      <configuration name="can_view_planning_database_lists" locale="it" values="single" type="string">
+        <value>Può visualizzare alcune liste di database di pianificazione</value>
+      </configuration>
+      <configuration name="can_edit_all_planning_database_lists" locale="it" values="single" type="string">
+        <value>Può modificare tutte le liste di database di pianificazione</value>
+      </configuration>
+      <configuration name="can_view_all_planning_database_lists" locale="it" values="single" type="string">
+        <value>Può visualizzare tutte le liste di database di pianificazione</value>
+      </configuration>
+      <configuration name="can_edit_organization_database_lists" locale="it" values="single" type="string">
+        <value>Modifica alcuni elenchi del database organizzativo</value>
+      </configuration>
+      <configuration name="can_view_organization_database_lists" locale="it" values="single" type="string">
+        <value>Visualizza alcuni elenchi del database organizzativo</value>
+      </configuration>
+      <configuration name="can_edit_all_organization_database_lists" locale="it" values="single" type="string">
+        <value>Modifica tutti gli elenchi del database organizzativo</value>
+      </configuration>
+      <configuration name="can_view_all_organization_database_lists" locale="it" values="single" type="string">
+        <value>Visualizza tutti gli elenchi del database organizzativo</value>
+      </configuration>
+      <configuration name="can_edit_employee_database_lists" locale="it" values="single" type="string">
+        <value>Modifica alcuni impiegati negli elenchi del database</value>
+      </configuration>
+      <configuration name="can_view_employee_database_lists" locale="it" values="single" type="string">
+        <value>Visualizza alcuni impiegati negli elenchi del database</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" locale="it" values="single" type="string">
+        <value>Modifica tutti gli elenchi nel database degli impiegati</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" locale="it" values="single" type="string">
+        <value>Visualizza tutti gli elenchi nel database degli impiegati</value>
+      </configuration>
+      <configuration name="can_edit_position_database_lists" locale="it" values="single" type="string">
+        <value>Modifica alcuni elenchi nel database dei ruoli</value>
+      </configuration>
+      <configuration name="can_view_position_database_lists" locale="it" values="single" type="string">
+        <value>Visualizza alcuni elenchi nel database dei ruoli</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="roles" path="/I2CE/formsData/forms/role">
+      <configurationGroup name="hr_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="it" type="string"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="hr_staff">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="it" type="string"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="exec_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="it" type="string"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="training_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="it" type="string"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="feedback">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="it" type="string">
+            <value>Invia feedback</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="manage">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="it" type="string">
+            <value>Gestisci le persone</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="search_reports" path="/modules/CustomReports/search_reports">
+      <configuration name="search_people" values="many" type="delimited" locale="it">
+        <value>name:Cerca persona</value>
+        <value>description:Cerca persona da esaminare, stampare o aggiornare.</value>
+      </configuration>
+      <configuration name="position_list" values="many" type="delimited" locale="it">
+        <value>name:Cerca ruolo</value>
+        <value>description:Cerca ruolo da esaminare, stampare o aggiornare.</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

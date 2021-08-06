@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="simple-competency" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="simple-competency" path="/I2CE" locale="tl">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_lists_competency" locale="tl">
+        <value>Baguhin ang lahat ng talang may kaugnayan sa kakayahan sa pagganap</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency" locale="tl">
+        <value>Baguhin ang tala ng kakayahan sa pagganap</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_type" locale="tl">
+        <value>Baguhin ang tala ng uri ng kakayahan sa pagganap</value>
+      </configuration>
+      <configuration name="can_view_database_lists_competency" locale="tl">
+        <value>Tingnan ang lahat ng talang may kaugnayan sa kakayahan sa pagganap</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency" locale="tl">
+        <value>Tingnan ang tala ng kakayahan sa pagganap</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency_type" locale="tl">
+        <value>Tingnan ang lata ng uri ng kakayahan sa pagganap</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="competency">
+          <configuration name="display" values="single" locale="tl">
+            <value>Kakayahan sa Pagganap</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="competency_type">
+          <configuration name="display" values="single" locale="tl">
+            <value>Uri ng Kakayahan sa Pagganap</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Competency">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Pangalan</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency_type">
+              <configuration name="headers" type="delimited" values="many" locale="tl">
+                <value>default:Uri ng Kakayahan sa Pagganap</value>
+                <value>select_competency_type:Piliin ang Uri ng Kakayan sa Pagganap at pagkaraan ay ang Kakayahan sa Pagganap</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Mga tala</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

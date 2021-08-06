@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Application" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Application" path="/I2CE" locale="tl">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="tl">
+      <configuration name="app_felon" path="application/felony_circumstances/required">
+        <value>Pinili mo na ikaw ay nahatulan dahil sa isang katampalasanan subalit hindi naglarawan ng mga kalagayan ng pangyayari.</value>
+      </configuration>
+      <configuration name="app_hours" path="application/hours/required">
+        <value>Pinili mo ang hindi sa lahat ng panahon, subalit hindi mo ibinigay kung anong mga oras ka pupuwede.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="tl">
+      <configuration name="person_can_view_child_form_position_decision" locale="tl">
+        <value>Matitingnan ang anyo ng pasya sa posisyon ng bata ng isang tao</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_decision" locale="tl">
+        <value>Mababago ang mga uri ng pasya sa posisyon ng bata ng isang tao</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_position_interview" locale="tl">
+        <value>Matitingnan ang anyo ng panayam na pangposisyon ng batas ng isang tao</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_interview" locale="tl">
+        <value>Mababago ang mga pormularyo ng panayam na pangposisyon ng bata ng isang tao</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_application" locale="tl">
+        <value>Matitingnan ang pormularyo ng aplikasyon ng bata ng isang tao</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_application" locale="tl">
+        <value>Mababago ang mga pormularyo ng aplikasyon ng bata ng isang tao</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="application">
+          <configuration name="display" values="single" locale="tl">
+            <value>Aplikante</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_interview">
+          <configuration name="display" values="single" locale="tl">
+            <value>Panayam sa Posisyon</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_decision">
+          <configuration name="display" values="single" locale="tl">
+            <value>Pasya sa Posisyon</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Applicant">
+          <configurationGroup name="fields">
+            <configurationGroup name="position">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:(Mga) posisyon</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Dati ka bang nahatulan dahil sa isang krimen?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony_circumstance">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Kung oo, ibigay ang mga pangyayari.</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="other_info">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Bilang karagdagan sa iyong kasaysayan ng hanapbuhay, mayroon bang ibang mga kasanayan, kuwalipikasyon o karanasan na dapat naming isaalang-alang?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hear">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Paano mo nalaman na bakante ito?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Kailan ka makapagsisimula?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="desired_wage">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Nais na Sahod</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="full_time">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Naghahanap ka ba ng permanenteng hanapbuhay?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hours">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Kung hindi, anong mga oras ka maaari?</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionInterview">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Petsa ng Panayam</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Dumadalong mga Tao</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Mga puna</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionDecision">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Petsa ng Pasya</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="offer">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Gumawa ng isang Alok na Hanapbuhay?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Mga puna</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="application">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="tl">
+            <value>Magdagdag/Magsapanahon ng Aplikasyon</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_decision">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="tl">
+            <value>Magdagdag/Magsapanahon ng Pasya sa Posisyon</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_interview">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="tl">
+            <value>Magdagdag/Magsapanahon ng Panayam sa Posisyon</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

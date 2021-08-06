@@ -1,0 +1,106 @@
+<div id="siteContent">
+  <span task="person_can_view">
+    <h2><a href="manage" class="updateRecords">Керувати людьми</a></h2>
+    <p>
+      Додати нового співробітника <span type="module" name="ihris-manage-Application" ifenabled="true">або заявника </span>записати до системи і шукати та оновлювати записи, які були введені в систему. 
+      <span type="module" name="ihris-manage-Application" ifenabled="true">
+	Також завершити заявки на роботу для вакансій, перевірити закриті заявки і призначити посаду для успішного заявника. </span>
+    </p>
+  </span>
+
+  <span type="module" name="CustomReports" ifenabled="true">
+    <div task="custom_reports_can_access">
+      <hr><h2><a href="search" class="searchRecords">Пошук записів</a></h2>
+      <p>
+	Виявити які-небудь записи співробітника чи посади в системі для перегляду, друку або оновлення. 
+      </p>
+    </div>
+  </span>
+    <span type="module" name="ManageDashboard" ifenabled="true">
+    <div task="can_view_dashboard">
+      <hr><h2><a href="dashboard" class="createRecords">View Dashboards</a></h2>
+      <p>
+		  View system dashboards
+      </p>
+    </div>
+  </span>    
+  <div task="custom_reports_can_view_reportViews">
+    <hr><h2><a href="CustomReports/view/reportViews" class="createRecords">Перегляд звітів</a></h2>
+    <p>
+      Звіти вмикають аналіз даних людських ресурсів різними способами. Налаштування, відображення і друк списків співробітників, статистичних діаграм і інших стандартних звітів. 
+    </p>
+  </div>
+
+	<span type="module" name="DHIS-Dashboard" ifenabled="true">
+		<div>
+			<hr><h2><a href="http://192.168.0.19:8090/new_dhis/dhis-web-dashboard-integration/index.action">View Dashboard</a></h2>
+		<!--        <h2><a href="DHIS-Dashboard/dashboard" >View Dashboard</a></h2>-->
+			<p>
+				View DHIS Dashboard
+			</p>
+		</div>
+		</span>
+
+		<span type="module" name="DHIS-Dashboard" ifenabled="true">
+		<div>
+			<hr><h2><a href="index.php/DHISDashboard">DHIS Export</a></h2>
+			<p>
+				Send DHIS Report
+			</p>
+		</div>
+	</span>
+
+  <span role="admin" type="module" name="mHero" ifenabled="true">      
+    <h2>
+      <a href="mHero">mHero</a>
+    </h2>
+    <p>
+      <span style="display:inline-block">
+	<a href="mHero_person_workflow" target="_mHero">
+	  <img text="mHero" style="width:10em;" src="file/mHero.png"></a>
+
+      </span>
+      Use the mHero intgerated health system communications platform against personnel records.
+
+    </p>
+  </span>
+  <span role="admin" type="module" name="mHero-csd-provider" ifenabled="true">      
+    <h2>
+      <a href="mHero">mHero</a>
+    </h2>
+    <p>
+      <span style="display:inline-block">
+	<a href="mhero_search_provider" target="_mHero">
+	  <img text="mHero" style="width:10em;" src="file/mHero.png"></a>
+
+      </span>
+      Use the mHero intgerated health system communications platform with the Health Worker Registry.
+
+    </p>
+  </span>
+
+
+  <div task="can_configure_system">
+    <hr><h2><a href="configure" class="adminDatabase">Налаштування системи</a></h2>
+    <p>
+      Управління модулями, адміністрування посад, редагування випадного меню та створення або оновлення облікових записів.
+    </p>
+  </div>
+  
+  <span type="module" name="SelfService" ifenabled="true" task="can_view_own_personnel">
+    <span type="module" name="SelfService" if="!userHasRecord()">
+    </span>
+    <span type="module" name="SelfService" if="userHasRecord()">
+      <div>
+	<h2><span type="module" name="SelfService" call="linkToPersonRecord('view?id=')">Переглянути деталі вашого персоналу</span></h2>
+	<p>
+	  Переглянути деталі вашого персоналу.
+	</p>
+      </div>
+    </span>
+  </span>
+
+
+  <hr><h2><a href="password">Змінити пароль</a></h2>
+
+</div>

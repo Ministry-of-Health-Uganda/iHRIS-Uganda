@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEducation" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEducation" path="/I2CE" locale="sk">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="sk">
+      <configuration name="person_can_view_child_form_education" locale="sk">
+        <value>Možno zobraziť vzdelanie z osobného formulára dieťaťa</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_education" locale="sk">
+        <value>Možno upraviť vzdelanie v osobnom formulári dieťaťa</value>
+      </configuration>
+      <configuration name="can_edit_database_list_edu_type" locale="sk">
+        <value>Možno upraviť databázu zoznamu typov vzdelania</value>
+      </configuration>
+      <configuration name="can_view_database_list_edu_type" locale="sk">
+        <value>Možno zobraziť databázu zoznamu typov vzdelania</value>
+      </configuration>
+      <configuration name="can_edit_database_list_degree" locale="sk">
+        <value>Možno upraviť databázu zoznamu typov titulov</value>
+      </configuration>
+      <configuration name="can_view_database_list_degree" locale="sk">
+        <value>Možno zobraziť databázu zoznamu typov titulov</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="education">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sk">
+            <value>Pridaj/Zmeň históriu vzdelania</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="degree">
+          <configuration name="display" values="single" locale="sk">
+            <value>Titul</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="edu_type">
+          <configuration name="display" values="single" locale="sk">
+            <value>Druh vzdelania</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="education">
+          <configuration name="display" values="single" locale="sk">
+            <value>História vzdelania</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Degree">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="sk">
+                <value>default:Meno</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="edu_type">
+              <configuration name="headers" type="delimited" values="many" locale="sk">
+                <value>default:Druh vzdelania</value>
+                <value>select_degree:Vyber typ vzdelania potom titul</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Education">
+          <configurationGroup name="fields">
+            <configurationGroup name="degree">
+              <configuration name="headers" type="delimited" locale="sk">
+                <value>default:Titul</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="institution">
+              <configuration name="headers" type="delimited" locale="sk">
+                <value>default:Názov inštitúcie</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="headers" type="delimited" locale="sk">
+                <value>default:Adresa inštitúcie</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="year">
+              <configuration name="headers" type="delimited" locale="sk">
+                <value>default:Rok udelenia titulu ( opusti prázdne ak prebieha proces)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="major">
+              <configuration name="headers" type="delimited" locale="sk">
+                <value>default:vyššie</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

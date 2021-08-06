@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-standard-data-id_type">
+  <metadata>
+    <displayName>Uganda default data for: id_type</displayName>
+    <description>Data for form: id_type</description>
+    <version>4.1.6.2</version>
+    <requirement name="PersonID">
+    </requirement>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <erase path="/I2CE/formsData/forms/id_type">
+    <lessThan version="4.1.6.1" />
+  </erase>
+  <configurationGroup name="Uganda-standard-data-id_type" path="/I2CE/formsData/forms/id_type">
+    <displayName>Form data: id_type</displayName>
+    
+    <configurationGroup name="file">
+      <displayName>file</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 15:25:38</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>File Number</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tin">
+      <displayName>tin</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 15:25:38</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Tax Identification Number (TIN)</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+   
+    <configurationGroup name="passport">
+      <displayName>passport</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 15:25:38</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Passport number</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="id">
+      <displayName>id</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 15:25:38</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>ST Number</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+   
+ <configurationGroup name="national">
+      <displayName>national</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 15:25:38</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>National ID</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+ <configurationGroup name="driving">
+      <displayName>driving</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-07-09 15:25:38</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Driving Permit Number</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+ 
+  </configurationGroup>
+</I2CEConfiguration>

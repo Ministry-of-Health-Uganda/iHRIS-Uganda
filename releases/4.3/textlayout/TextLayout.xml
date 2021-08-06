@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="textlayout">
+  <metadata>
+    <displayName>Text Layout</displayName>
+    <category>External Software</category>
+    <description>I2CE Text Layout Tool</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.3.0</version>
+    <requirement name="I2CE">
+      <atLeast version="4" />
+      <lessThan version="5" />
+    </requirement>
+    <requirement name="tcpdf">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+      <value>./tcpdf</value>
+    </path>
+    <path name="afm_path">
+      <value>./CoreFonts</value>
+    </path>
+    <path name="pdf_core">
+      <value>./CoreFonts</value>
+    </path>
+    <path name="ttf_path">
+      <value>/usr/share/fonts/truetype/**</value>
+      <value>/usr/local/share/fonts/truetype/**</value>
+    </path>
+    <path name="hyphen_path">
+      <value>./dicts</value>
+      <value>/usr/share/myspell/dicts</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

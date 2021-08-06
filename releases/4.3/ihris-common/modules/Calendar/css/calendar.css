@@ -1,0 +1,106 @@
+#calendar table.calendar {
+    width: 100%;
+    margin: 0;
+    border: 1px solid #333333;
+}
+#calendar div.date_select {
+    text-align: right;
+    padding-bottom: 5px;
+}
+#calendar table.calendar th.month_name {
+    font-weight: bold;
+    background-color: #cccccc;
+    text-align: center;
+    border: 1px solid #333333;
+}
+#calendar table.calendar th.month_name h1 {
+    font-size: 24px;
+    padding-bottom: 3px;
+    margin-bottom: 0px;
+    color: #1e5483;
+}
+#calendar table.calendar th.month_name h1 a {
+    text-decoration: none;
+    color: #1e5483;
+}
+#calendar table.calendar th.month_name h2 {
+    font-size: 20px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+    color: #c30;
+}
+#calendar table.calendar th.month_name h2 a {
+    background: none;
+    padding: 0px;
+    text-decoration: none;
+    color: #c30;
+}
+#calendar table.calendar th.day_name {
+    font-weight: bold;
+    background-color: #dddddd;
+    text-align: center;
+    width: 14%;
+    border: 1px solid #333333;
+}
+#calendar table.calendar th.day_name h3 {
+    font-size: 12px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+}
+#calendar table.calendar td.calendar_blank {
+    background-color: #bbbbbb;
+    border: 1px solid #333333;
+}
+#calendar table.calendar td.calendar_block {
+    border: 1px solid #333333;
+}
+#calendar table.calendar td.calendar_block div.calendar_date {
+    text-align: right;
+    font-weight: bold;
+    font: 16px Arial, Helvetica, sans-serif;
+    vertical-align: top;
+    height: min-height;
+    border-bottom: 1px solid #eeeeee;
+    padding-right: 10px;
+}
+#calendar table.calendar td.calendar_block div.calendar_text {
+    vertical-align: top;
+    min-height: 100px;
+    padding: 5px;
+    font: 11px Arial, Helvetica, sans-serif;
+}
+#calendar table.calendar td.calendar_block div.calendar_text p {
+    padding: 2px;
+    background-color: #bbbbac;
+}
+#calendar table.calendar td.calendar_block div.calendar_text p a {
+    color: white;
+}
+#calendar .date_select form select {
+    border: solid 2px #BFBFBF;
+    color: #333;
+    padding: 1px 0px 4px;
+    width: auto;
+    margin: 2px;
+}
+#calendar #view_tabs {
+    text-align: right;
+    padding-bottom: 5px;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+#calendar table.calendar td#calendar_list {
+    border: 1px solid #333333;
+    padding: 10px;
+    font-size: 1.4em;
+}
+#calendar table.calendar td#calendar_list p a>span {
+    font-weight: bold;
+}
+#calendar table.calendar td#calendar_list span[name=date_range] {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 0.8em;
+}

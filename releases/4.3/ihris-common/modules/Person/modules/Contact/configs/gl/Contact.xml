@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonContact" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonContact" path="/I2CE" locale="gl">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_messages" path="/modules/forms/formfield_messages" locale="gl">
+      <configuration name="work" path="work/email/invalid_email">
+        <value>Por favor, escriba un enderezo de correo electrónico válido</value>
+      </configuration>
+      <configuration name="personal" path="personal/email/invalid_email">
+        <value>Por favor, escriba un enderezo de correo electrónico válido</value>
+      </configuration>
+      <configuration name="other" path="other/email/invalid_email">
+        <value>Por favor, escriba un enderezo de correo electrónico válido</value>
+      </configuration>
+      <configuration name="emergency" path="emergency/email/invalid_email">
+        <value>Por favor, escriba un enderezo de correo electrónico válido</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="gl">
+      <configuration name="person_can_view_child_form_person_contact_work" locale="gl">
+        <value>Pode ollar a ficha de contacto no traballo dunha persoa</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_work" locale="gl">
+        <value>Pode editar a ficha de contacto no traballo dunha persoa</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_emergency" locale="gl">
+        <value>Pode ollar a ficha de contacto de emerxencia dunha persoa</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_emergency" locale="gl">
+        <value>Pode editar a ficha de contacto de emerxencia dunha persoa</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_personal" locale="gl">
+        <value>Pode ollar a ficha de contacto persoal dunha persoa</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_personal" locale="gl">
+        <value>Pode editar a ficha de contacto persoal dunha persoa</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_other" locale="gl">
+        <value>Pode ollar a ficha doutra información de contacto dunha persoa</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_other" locale="gl">
+        <value>Pode editar a ficha doutra información de contacto dunha persoa</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_contact_work">
+          <configuration name="display" values="single" locale="gl">
+            <value>Contacto no traballo</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_emergency">
+          <configuration name="display" values="single" locale="gl">
+            <value>Contacto de emerxencia</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_other">
+          <configuration name="display" values="single" locale="gl">
+            <value>Outra información de contacto</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_personal">
+          <configuration name="display" values="single" locale="gl">
+            <value>Contacto persoal</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="contact">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="gl">
+            <value>Engadir/Actualizar a información de contacto</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

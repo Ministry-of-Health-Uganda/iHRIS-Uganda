@@ -1,0 +1,37 @@
+<div id="siteContent">
+    <h1>数据库管理</h1>
+
+    <span type="module" ifenabled="true" name="Person">    
+	  <h3>人口统计列表</h3>
+	  <ul><li><a href="lists?type=id_type">识别类型</a></li>
+	    <li><a href="lists?type=marital_status">婚姻状况</a></li>
+	  </ul></span>
+    <span type="module" ifenabled="true" name="Geography">    
+      <h3>地理信息</h3>
+      <ul><li><a href="lists?type=country">国家</a></li>
+        <li><a href="lists?type=region">区域</a></li>
+        <li><a href="lists?type=district">区</a></li>
+        <li><a href="lists?type=county">县</a></li>
+        <span type="module" ifenabled="true" name="Currency">    
+          <li><a href="lists?type=currency">货币</a></li>
+        </span>
+      </ul></span>
+    <h3>其他信息</h3>
+    <ul><span type="module" ifenabled="true" name="simple-competency">	
+	  <li><a href="lists?type=competency_type">合格的类型</a></li>
+	  <li><a href="lists?type=competency&amp;field=competency_type">能力</a></li>
+    </span>
+    <span type="module" name="CEUs" ifenabled="true">
+	  <li><a href="lists?type=continuing_education_course">继续教育课程</a></li>
+    </span>
+    <span type="module" name="training-institution" ifenabled="true">
+	  <li><a href="lists?type=training_institution">培训机构</a></li>
+	  <li><a href="lists?type=training_funder">培训资金</a></li>
+    </span>
+    </ul><span role="admin">
+      <span type="module" name="ihris-common-MassDeletePerson" ifenabled="true">
+        <h2>大量删除</h2>
+        <ul><li><a href="delete_by_search">按人物（搜寻页）</a></li>
+        </ul></span>
+    </span>
+</div>

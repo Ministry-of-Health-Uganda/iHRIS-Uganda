@@ -1,0 +1,37 @@
+<div id="siteContent">
+    <h1>Database beheren</h1>
+
+    <span type="module" ifenabled="true" name="Person">    
+	  <h3>Demografische lijsten</h3>
+	  <ul><li><a href="lists?type=id_type">Identificatietype</a></li>
+	    <li><a href="lists?type=marital_status">Burgerlijke staat</a></li>
+	  </ul></span>
+    <span type="module" ifenabled="true" name="Geography">    
+      <h3>Geografische gegevens</h3>
+      <ul><li><a href="lists?type=country">Land</a></li>
+        <li><a href="lists?type=region">Regio</a></li>
+        <li><a href="lists?type=district">District</a></li>
+        <li><a href="lists?type=county">Departement</a></li>
+        <span type="module" ifenabled="true" name="Currency">    
+          <li><a href="lists?type=currency">Munteenheid</a></li>
+        </span>
+      </ul></span>
+    <h3>Extra gegevens</h3>
+    <ul><span type="module" ifenabled="true" name="simple-competency">	
+	  <li><a href="lists?type=competency_type">Competentietype</a></li>
+	  <li><a href="lists?type=competency&amp;field=competency_type">Competentie</a></li>
+    </span>
+    <span type="module" name="CEUs" ifenabled="true">
+	  <li><a href="lists?type=continuing_education_course">Opleiding voor permanente vorming</a></li>
+    </span>
+    <span type="module" name="training-institution" ifenabled="true">
+	  <li><a href="lists?type=training_institution">Trainingsinstituut</a></li>
+	  <li><a href="lists?type=training_funder">Bekostiging cursus</a></li>
+    </span>
+    </ul><span role="admin">
+      <span type="module" name="ihris-common-MassDeletePerson" ifenabled="true">
+        <h2>Massaal verwijderen</h2>
+        <ul><li><a href="delete_by_search">Op persoon (zoekpagina)</a></li>
+        </ul></span>
+    </span>
+</div>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Job" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Job" path="/I2CE" locale="ky">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_salary_grade" locale="ky"></configuration>
+      <configuration name="can_view_database_list_salary_grade" locale="ky"></configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="view_job">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ky">
+            <value>Жумушту кароо</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="salary_grade">
+          <configuration name="display" values="single" locale="ky"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_SalaryGrade">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="ky">
+                <value>default:Аталышы</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start">
+              <configuration name="headers" type="delimited" locale="ky">
+                <value>default:Баштоо</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end">
+              <configuration name="headers" type="delimited" locale="ky">
+                <value>default:Аяктоо</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="midpoint">
+              <configuration name="headers" type="delimited" locale="ky"></configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="ky">
+                <value>default:Эскертүүлөр</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_ManageJob">
+          <configurationGroup name="fields">
+            <configurationGroup name="salary_grade">
+              <configuration name="headers" type="delimited" locale="ky"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports-Selector">
+  <metadata>
+    <displayName>Report Selector</displayName>
+    <className>I2CE_Module_ReportSelector</className>
+    <category>Report Type</category>
+    <description>Enables Ajax which to select a entry in a report</description>
+    <link>http://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="CustomReports">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+  </metadata>
+  <configurationGroup name="CustomReports-Selector" path="/modules/CustomReports/displays/Selector">
+    <version>4.0.11.3</version>
+    <configuration name="class" values="single" type="string">
+      <displayName>Class</displayName>
+      <value>I2CE_CustomReport_Display_Selector</value>
+    </configuration>
+    <configuration name="hide_with_default" values="single" type="string">
+      <displayName>Hide with Default</displayName>
+      <description>Hide the display controls unless specifically called.</description>
+      <version>4.1.5.0</version>
+      <value>1</value>
+    </configuration>
+    <configurationGroup name="display_options">
+      <displayName>Display Options</displayName>
+      <configuration name="select_value" locale="en_US" values="single" type="string">
+        <version>4.1.0.0</version>
+        <value>Select Value</value>
+      </configuration>
+      <configuration name="limit_paginated" values="single" type="string">
+        <displayName>Paginated</displayName>
+        <description>Make the default display paginated</description>
+        <value>1</value>
+      </configuration>
+      <configuration name="limit_per_page" values="single" type="string">
+        <displayName>Per Page</displayName>
+        <description>The default number of rows in a paginated result</description>
+        <value>20</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

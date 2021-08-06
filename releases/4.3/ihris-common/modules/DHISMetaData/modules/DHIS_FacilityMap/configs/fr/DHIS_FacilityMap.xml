@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="DHIS_FacilityMap" path="/">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="DHIS_FacilityMap" path="/" locale="fr">
+    <version>4.2.0.1</version>
+    <configurationGroup name="orgunit_field" path="/modules/forms/formClasses/iHRIS_Facility/fields/dhis_orgunit">
+      <configuration name="headers" type="delimited" locale="fr">
+        <value>default:Unité d’organisation DHIS</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

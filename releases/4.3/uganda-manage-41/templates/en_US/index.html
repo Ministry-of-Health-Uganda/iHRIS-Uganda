@@ -1,0 +1,75 @@
+<div id="siteContent">
+  <span task='person_can_view'>
+    <h2><a href="manage" class="updateRecords">Manage People</a></h2>
+    <p>
+      Add a new employee <span type='module' name='ihris-manage-Application' ifenabled='true'>or applicant </span>record 
+      to the system, and search for and update records that have been entered into the system. 
+      <span type='module' name='ihris-manage-Application' ifenabled='true'>
+	Also complete job applications for 
+	open positions, review completed applications and assign a position to the successful 
+      applicant. </span>
+    </p>
+  </span>
+
+  <span type='module' name='CustomReports' ifenabled='true'>
+    <div task='custom_reports_can_access'>
+      <hr />
+      
+      <h2><a href="search" class="searchRecords">Search Records</a></h2>
+      <p>
+	Locate any employee or position record in the system to review, print or update. 
+      </p>
+    </div>
+
+    
+  <div task='custom_reports_can_view_reportViews'>
+    <hr />
+    
+    <h2><a href="CustomReports/view/reportViews" class="createRecords">View Reports</a></h2>
+    <p>
+      Reports enable analysis of human resource data in various ways. Customize, display 
+      and print staff lists, statistical charts and other standard reports. 
+    </p>
+  </div>
+
+  <span type="module" name="Uganda-AuditPage" ifenabled="true">
+    <div task='custom_reports_can_access'>
+      <hr />
+      
+      <h2><a href="audit_report" class="searchRecords">Audit Reports</a></h2>
+      <p>
+      View the Audit Report for a district.
+      </p>
+    </div>
+  </span>
+
+</span>
+
+
+  <div task='can_configure_system'>
+    <hr />
+    
+    <h2><a href="configure" class="adminDatabase">Configure System</a></h2>
+    <p>
+      Configure modules, administer positions, customize drop down menus and create or update user accounts.
+    </p>
+  </div>
+  
+  <span type='module' name='SelfService' ifenabled='true' task='can_view_own_personnel'>
+    <span type='module' name="SelfService" if="!userHasRecord()">
+    </span>
+    <span type='module' name="SelfService" if="userHasRecord()">
+      <div>
+	<h2><span type='module' name="SelfService" call="linkToPersonRecord('view?id=')">View Your Personnel Details</span></h2>
+	<p>
+	  View your personnel details.
+	</p>
+      </div>
+    </span>
+  </span>
+
+
+  <hr />
+  <h2><a href="password">Change Password</a></h2>
+
+</div>

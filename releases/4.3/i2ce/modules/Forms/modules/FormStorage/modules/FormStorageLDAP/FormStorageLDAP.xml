@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="forms-storage-LDAP">
+  <metadata>
+    <displayName>Form Storage - LDAP</displayName>
+    <category>Base System Component</category>
+    <description>A module that enables reading storage of Forms from a LDAP server</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="forms-storage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="php_5_3" external="1">
+      <eval>version_compare(PHP_VERSION,'5.3', '&gt;=')</eval>
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

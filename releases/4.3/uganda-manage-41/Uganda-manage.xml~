@@ -1,0 +1,453 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-manage">
+  <metadata>
+    <displayName>iHRIS Manage Uganda</displayName>
+    <category>Site</category>
+    <description>The iHRIS Manage customizations for Uganda</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+     <version>4.1.8</version>
+    <path name="confgs">
+      <value>./configs</value>
+    </path>
+    <erase path="/modules/forms/formClasses/iHRIS_Position/fields/supervisor/">
+     </erase>
+    <requirement name="i2ce-site">
+      <atLeast version="4.1" />
+      <lessThan version="4.2" />
+    </requirement>
+    <requirement name="ihris-manage">
+      <atLeast version="4.1" />
+      <lessThan version="4.2" />
+    </requirement>
+    <requirement name="UserAccess">
+      <atLeast version="4.1" />
+      <lessThan version="4.2" />
+    </requirement>
+    <enable name="accident" />
+    <enable name="ReportArchiver" />
+    <enable name="dependents" />
+    <enable name="disciplinary_action" />
+    <enable name="nextOfKin" />
+    <enable name="formDocumentor" />
+    <enable name="PersonArchivedScan" />
+    <enable name="PersonPassportPhoto" />
+    <enable name="PersonResume" />
+    <enable name="PersonContact" />
+    <enable name="ihris-manage-PersonDemographic" />
+    <enable name="PersonEducation" />
+    <enable name="PersonEmployment" />
+    <enable name="PersonID" />
+    <enable name="PersonLanguage" />
+    <enable name="PersonNotes" />
+    <!--<enable name="person-simple-competency" />-->
+    <enable name="magicDataBrowser" />
+    <enable name="stub" />
+    <enable name="FileDump" />
+    <enable name="StretchPage" />
+    <enable name="messageBox" />
+    <enable name="messageNotice" />
+    <enable name="isco-08" />
+    <enable name="isco-08-major-00" />
+    <enable name="isco-08-major-01" />
+    <enable name="isco-08-major-02" />
+    <enable name="isco-08-major-03" />
+    <enable name="isco-08-major-04" />
+    <enable name="isco-08-major-05" />
+    <enable name="isco-08-major-06" />
+    <enable name="isco-08-major-07" />
+    <enable name="isco-08-major-08" />
+    <enable name="isco-08-major-09" />
+    <enable name="ihris-manage-MassDeleteFacility" />
+    <enable name="ihris-common-MassDeletePerson" />
+    <enable name="ihris-manage-MultiPosition" />
+    <enable name="ihris-manage-FacilityTree" />
+    <enable name="ihris-manage-PositionTree" />
+    <enable name="RecordStatus" />
+    <enable name="establishment" />
+    <enable name="ihris-manage-AutoList" />
+    <enable name="ManageSelfService" />
+    <enable name="PersonAccomodation" />
+    <enable name="PersonAppraisal" />
+    <enable name="PersonFileTrack" />
+    <enable name="Training" />
+    <enable name="Mentorship" />
+    <enable name="PersonLeave" />
+    <enable name="uganda-manage-staff-reports" />
+    <enable name="CustomReports-full-search_people" />
+    <enable name="CustomReports-full-leave" />
+    <enable name="CustomReports-full-facility" />
+    <enable name="CustomReports_CrossTab" />
+    <enable name="uganda-manage-staffing-norm-report" />
+    <enable name="CustomReports-full-former_staff" />
+    <enable name="CustomReports-full-staff-album" />
+    <enable name="Uganda-training-person_mentorship" />
+    <enable name="Uganda-training-person_training" />
+    <enable name="Uganda-training-recent_training" />
+    <enable name="Uganda-training-training_institution_totals" />
+    <enable name="Uganda-training-training_type" />
+    <enable name="Uganda-AuditPage" />
+    <enable name="uganda-manage-gender-reports" />
+    <!--<enable name="Uganda-standard-data" />-->
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="images">
+      <value>./images</value>
+    </path>
+    <priority>375</priority>
+  </metadata>
+  <configurationGroup name="Uganda-manage" path="/I2CE">
+    <displayName>iHRIS Manage Uganda</displayName>
+    <status>advanced:false</status>
+
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>4.0.12.4</version>
+      <configuration name="can_edit_database_list_employment_terms" locale="en_US">
+        <value>Can edit the employment terms database list.</value>
+      </configuration>
+      <configuration name="can_view_database_list_employment_terms" locale="en_US">
+        <value>Can view the employment terms database list.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down">
+      <version>4.0.12.4</version>
+      <configuration name="can_edit_database_list_employment_terms" values="many">
+        <value>can_view_database_list_employment_terms</value>
+        <value>can_edit_employee_database_lists</value>
+        <value>can_view_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" values="many">
+        <value>can_edit_database_list_employment_terms</value>
+        <value>can_view_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" values="many">
+        <value>can_view_database_list_employment_terms</value>
+      </configuration>
+    </configurationGroup>
+	
+    <configurationGroup name="employment_terms" path="/modules/forms/forms/employment_terms">
+      <version>4.0.12.5</version>
+      <configuration name="class" values="single">
+        <value>I2CE_SimpleList</value>
+      </configuration>
+      <configuration name="display" values="single" locale="en_US">
+        <value>Terms of Employment</value>
+      </configuration>
+      <configuration name="storage" values="single">
+        <value>magicdata</value>
+      </configuration>
+    </configurationGroup>
+
+    <configurationGroup name="auto_list" path="/modules/Lists/auto_list">
+      <version>4.1.6.20</version>
+      <configurationGroup name="position">
+	    <version>4.1.6.20</version>
+      <configuration name="field">
+        <value>facility</value>
+      </configuration>
+      <configuration name="form">
+        <value>position</value>
+      </configuration>
+      <configuration name="task">
+        <value>can_edit_database_list_position</value>
+      </configuration>
+      <configuration name="category" locale="en_US">
+        <value>Administer Positions</value>
+      </configuration>
+      <configuration name="subcategory" locale="en_US">
+        <value>Manage Positions</value>
+      </configuration>
+      <configuration name="mods">
+        <value>ihris-manage-PersonPosition</value>
+      </configuration>
+      <configuration name="text" locale="en_US">
+        <value>Positions (by Facility)</value>
+      </configuration>
+    </configurationGroup>
+      <configurationGroup name="employment_terms">
+        <configuration name="form">
+          <value>employment_terms</value>
+        </configuration>
+        <configuration name="task">
+          <value>can_edit_database_list_employment_terms</value>
+        </configuration>
+        <configuration name="category" locale="en_US">
+          <value>Administer Other Lists</value>
+        </configuration>
+        <configuration name="subcategory" locale="en_US">
+          <value>Employee Lists</value>
+        </configuration>
+      </configurationGroup>
+      
+      <configurationGroup name="training_institution">
+		  <version>4.1.6.19</version>
+        <configuration name="form">
+          <value>training_institution</value>
+        </configuration>
+        <configuration name="task">
+          <value>can_edit_database_list_training_institution</value>
+        </configuration>
+        <configuration name="category" locale="en_US">
+          <value>Administer Other Lists</value>
+        </configuration>
+        <configuration name="subcategory" locale="en_US">
+          <value>Training Course Information</value>
+        </configuration>
+      </configurationGroup>
+
+      <configurationGroup name='isco_08_major'>
+        <configuration name='form'>
+          <value>isco_08_major</value>
+        </configuration>
+        <configuration name='task'>
+          <value>can_view_database_list_isco_08_major</value>
+        </configuration>
+        <configuration name='category' locale='en_US'>
+          <value>ISCO</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name='isco_08_minor'>
+        <configuration name='form'>
+          <value>isco_08_minor</value>
+        </configuration>
+        <configuration name='task'>
+          <value>can_view_database_list_isco_08_minor</value>
+        </configuration>
+        <configuration name='category' locale='en_US'>
+          <value>ISCO</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name='isco_08_sub_major'>
+        <configuration name='form'>
+          <value>isco_08_sub_major</value>
+        </configuration>
+        <configuration name='task'>
+          <value>can_view_database_list_isco_08_sub_major</value>
+        </configuration>
+        <configuration name='category' locale='en_US'>
+          <value>ISCO</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name='isco_08_unit'>
+        <configuration name='form'>
+          <value>isco_08_unit</value>
+        </configuration>
+        <configuration name='task'>
+          <value>can_view_database_list_isco_08_unit</value>
+        </configuration>
+        <configuration name='category' locale='en_US'>
+          <value>ISCO</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="training_type">
+		  <version>4.1.6.14</version>
+        <configuration name="form">
+          <value>training_type</value>
+        </configuration>
+        <configuration name="task">
+          <value>can_edit_database_list_training_type</value>
+        </configuration>
+        <configuration name="category" locale="en_US">
+          <value>Administer Other Lists</value>
+        </configuration>
+        <configuration name="subcategory" locale="en_US">
+          <value>Training Course Information</value>
+        </configuration>
+      </configurationGroup>
+
+    </configurationGroup>
+	
+	<configurationGroup name="facility_meta_tree" path="/modules/forms/formClasses/iHRIS_Position/fields/facility/meta/display_report/default">
+		<version>4.1.0.5</version>
+      <configuration name="report" values="single">
+        <value>facility_tree</value>
+      </configuration>
+      <configuration name="map" type="delimited" values="many">
+        <value>facility+location:primary_form</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="facility_meta_orders" path="/modules/forms/formClasses/iHRIS_Position/fields/facility/meta/display/orders/default">
+		<version>4.1.0.5</version>
+      <configuration name="district" type="delimited">
+        <value>0:name</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="position_meta_tree" path="/modules/forms/formClasses/iHRIS_Position/fields/supervisor/meta/display_report/default">
+		<version>4.1.0.5</version>
+      <configuration name="report" values="single">
+        <value>position_tree</value>
+      </configuration>
+      <configuration name="map" type="delimited" values="many">
+        <value>position:primary_form</value>
+        <value>facility+location:facility</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="position_meta_orders" path="/modules/forms/formClasses/iHRIS_Position/fields/supervisor/meta/display/orders/default">
+		<version>4.1.0.5</version>
+      <configuration name="district" type="delimited">
+        <value>0:name</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pers_pos_terms" path="/modules/forms/formClasses/iHRIS_PersonPosition/fields/employment_terms">
+      <version>4.0.12.16</version>
+      <configuration name="formfield">
+        <value>MAP</value>
+      </configuration>
+      <configuration name="headers" type="delimited" locale="en_US">
+        <value>default:Terms of Employment</value>
+      </configuration>
+     </configurationGroup>
+	<configurationGroup name="minute" path="/modules/forms/formClasses/iHRIS_PersonPosition/fields/minute">
+	   <version>4.0.12.16</version>
+	    <configuration name="formfield">
+		<value>STRING_LINE</value>
+	    </configuration>
+	  <configuration name="headers" type="delimited" locale="en_US">
+	   <value>default:HSC/PSC Minute</value>
+          </configuration>
+       </configurationGroup>   
+ <configurationGroup name="dofa_date" path="/modules/forms/formClasses/iHRIS_PersonPosition/fields/dofa_date">
+    <version>4.0.12.16</version>
+     <configuration name="formfield">
+ 	<value>DATE_YMD</value>
+     </configuration>
+     <configuration name="headers" type="delimited" locale="en_US">
+	<value>default:Date of First Appointment</value>
+     </configuration>
+    </configurationGroup>   
+ <configuration name="county_display" path="/modules/forms/forms/county/display" values="single" locale="en_US">
+      <version>4.0.12.2</version>
+      <value>Sub-County</value>
+    </configuration>
+
+    <configurationGroup name="position_salary_scale" path="/modules/forms/formClasses/iHRIS_Position/fields/salary_grade">
+      <version>4.0.12.3</version>
+      <configuration name="formfield">
+        <value>MAP</value>
+      </configuration>
+      <configuration name="headers" type="delimited" locale="en_US">
+        <value>default:Salary Scale</value>
+      </configuration>
+    </configurationGroup>
+
+    <configurationGroup name="facility_display" path="/modules/forms/formClasses/iHRIS_Facility/meta/list/default">
+      <version>4.0.12.7</version>
+      <configuration name="display_string">
+        <value>%s - %s</value>
+      </configuration>
+      <configuration name="display_args" type="delimited" values="many">
+        <value>0:name</value>
+        <value>1:facility_type</value>
+      </configuration>
+      <configuration name="sort_fields" type="delimited" values="many">
+        <value>0:name</value>
+        <value>1:facility_type</value>
+      </configuration>
+    </configurationGroup>
+    
+    <configurationGroup name="image" path="/modules/forms/formClasses/iHRIS_Photo/fields/image">
+      <version>4.1.6.6</version>
+     <configurationGroup name="meta">
+		 <version>4.1.6.6</version>
+       <configuration name="max_height">
+         <value>128</value>
+       </configuration>
+       <configuration name="max_width">
+         <value>136</value>
+       </configuration>
+     </configurationGroup>
+     <displayName>The field 'image'</displayName>
+     <configuration name="formfield">
+		 <version>4.1.6.5</version>
+       <displayName>The form field type</displayName>
+       <value>PASSPORT</value>
+     </configuration>
+     <configuration name="headers" type="delimited" locale="en_US">
+		 <version>4.1.6.5</version>
+       <displayName>The headers for this field.</displayName>
+       <value>default:Passport</value>
+     </configuration>
+   </configurationGroup>  
+   
+   <configurationGroup name="physical_status" path="/modules/forms/forms/physical_status">
+      <version>4.1.6.18</version>
+      <configuration name="class" values="single">
+        <value>I2CE_SimpleList</value>
+      </configuration>
+      <configuration name="display" values="single" locale="en_US">
+        <value>Physical Status</value>
+      </configuration>
+      <configuration name="storage" values="single">
+        <value>magicdata</value>
+      </configuration>
+    </configurationGroup>
+    
+    <configurationGroup name="formsData" path="/I2CE/formsData/forms">
+      <version>4.1.6.17</version>
+      <configurationGroup name="physical_status">
+        <displayName>Physical Status</displayName>
+        <description>The physical_status form data</description>
+        <configurationGroup name="able">
+          <configuration name="last_modified">
+            <value>2013-06-12 00:00:00</value>
+          </configuration>
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:Able Bodied</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="less_able">
+          <configuration name="last_modified">
+            <value>2013-06-12 00:00:00</value>
+          </configuration>
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:Less Able</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    
+   <configurationGroup name="physical_status" path="/modules/forms/formClasses/iHRIS_Demographic/fields/physical_status">
+      <version>4.1.6.17</version>
+     <displayName>The field 'physical_status'</displayName>
+     <configuration name="formfield">
+		 <version>4.1.6.17</version>
+       <displayName>The form field type</displayName>
+       <value>MAP</value>
+     </configuration>
+     <configuration name="headers" type="delimited" locale="en_US">
+		 <version>4.1.6.17</version>
+       <displayName>The headers for this field.</displayName>
+       <value>default:Physical Status</value>
+     </configuration>
+   </configurationGroup>  
+
+    <configuration name="file_search_stale_time" path="/I2CE/fileSearch/stale_time">
+      <displayName>Stale Time</displayName>
+      <description>The time in seconds until a file found in the file search utility is considered stale. If stale, it will search for the file, if not stale, it will use the previously found location of the file (it will cache the file location). If negative, then we do not cache the file location.</description>
+      <status>required:true</status>
+      <status>validate:integer,nonempty</status>
+      <value>600</value>
+    </configuration>
+
+    <configurationGroup name='maani-charts'>
+      <displayName>Chart Configuration</displayName>
+      <description>configuration options for charts using the maani flash charts.</description>
+      <configuration name='license' values='single' path='/modules/maani-charts/license'>
+        <displayName>Maani License</displayName>
+        <description>Enter a license to enable full charting capability</description>
+        <status>overwrite:true</status>
+        <value>G1XHF6MC7ZL.HSK5T4Q79KLYCK07EK</value>
+      </configuration>
+    </configurationGroup>
+
+  </configurationGroup>
+</I2CEConfiguration>

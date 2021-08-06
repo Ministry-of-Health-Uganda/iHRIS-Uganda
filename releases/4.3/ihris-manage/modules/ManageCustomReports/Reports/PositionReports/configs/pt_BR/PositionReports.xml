@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-position-reports" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-position-reports" path="/modules/CustomReports" locale="pt_BR">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships" config="CustomReports_Relationships">
+      <configurationGroup name="position" config="CustomReports_Relationship">
+        <configurationGroup name="joins">
+          <configurationGroup name="job">
+            <configurationGroup name="joins">
+              <configurationGroup name="cadre">
+                <configuration name="display_name" locale="pt_BR">
+                  <value>Quadros</value>
+                </configuration>
+                <configuration name="description" locale="pt_BR">
+                  <value>O quadro associado com esse emprego.</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="classification">
+                <configuration name="display_name" locale="pt_BR">
+                  <value>Classificação</value>
+                </configuration>
+                <configuration name="description" locale="pt_BR">
+                  <value>A classificação associado com esse emprego.</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+            <configuration name="display_name" locale="pt_BR">
+              <value>Emprego</value>
+            </configuration>
+            <configuration name="description" locale="pt_BR">
+              <value>O emprego associado com esse cargo.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="facility">
+            <configuration name="display_name" locale="pt_BR">
+              <value>Facilidade</value>
+            </configuration>
+            <configuration name="description" locale="pt_BR">
+              <value>A facilidade onde esse cargo está.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="department">
+            <configuration name="display_name" locale="pt_BR">
+              <value>Departamento</value>
+            </configuration>
+            <configuration name="description" locale="pt_BR">
+              <value>O departamento onde esse cargo pertence.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="last">
+            <configuration name="display_name" locale="pt_BR">
+              <value>Último Cargo</value>
+            </configuration>
+            <configuration name="description" locale="pt_BR">
+              <value>A última pessoa que preencheu esse cargo.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="current">
+            <configuration name="display_name" locale="pt_BR">
+              <value>Cargo Atual</value>
+            </configuration>
+            <configuration name="description" locale="pt_BR">
+              <value>A pessoa que atualmente preenche esse cargo.</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="reporting_functions">
+          <configurationGroup name="days_open">
+            <configuration name="description" locale="pt_BR">
+              <value>O número de dias que essa posição ficou aberta antes de ser preenchida.</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configuration name="display_name" locale="pt_BR">
+          <value>Cargos</value>
+        </configuration>
+        <configuration name="description" locale="pt_BR">
+          <value>Todas as informações relacionadas com um cargo.</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports" config="CustomReports_Reports">
+      <configurationGroup name="position_list" config="CustomReports_Report">
+        <configurationGroup name="meta" config="CustomReports_Report_Meta">
+          <configuration name="display_name" locale="pt_BR">
+            <value>Lista de Cargos</value>
+          </configuration>
+          <configuration name="description" locale="pt_BR">
+            <value>Detalhes de todos os cargos.</value>
+          </configuration>
+          <configuration name="category" locale="pt_BR">
+            <value>Denúncias do Cargo</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms" config="CustomReports_Report_ReportingForms">
+          <configurationGroup name="primary_form" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="code" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Código</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="job" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Cargo de Emprego</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="pt_BR">
+                      <value>Emprego</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Título</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="facility" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Identificação da Facilidade</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="pt_BR">
+                      <value>Facilidade</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="department" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Identificação do Departamento</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="pt_BR">
+                      <value>Departamento</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="posted_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Data de Postagem</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="status" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR"></configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="pt_BR"></configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="job" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Função</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="cadre" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Identificação do Quadro</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="pt_BR">
+                      <value>Quadros</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="classification" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Identificação da Classificação</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="pt_BR">
+                      <value>Classificação</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="cadre" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="name" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Quadros</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="classification" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="name" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Classificação</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="facility" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="name" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Facilidade</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="department" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="name" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Departamento</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="end_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Data de Abertura</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="current" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="start_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="pt_BR">
+                  <value>Data de Preenchimento</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="reporting_functions" config="CustomReports_Report_ReportingFunctions">
+          <configurationGroup name="days_open" config="CustomReports_Report_ReportingFunction">
+            <configuration name="header" locale="pt_BR">
+              <value>Dias Aberto</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews" config="CustomReports_ReportViews">
+      <configurationGroup name="position_list" config="CustomReports_ReportView">
+        <configuration name="display_name" locale="pt_BR">
+          <value>Lista de Cargos</value>
+        </configuration>
+        <configuration name="description" locale="pt_BR">
+          <value>Uma lista de todos os cargos</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="position_open_duration" config="CustomReports_ReportView">
+        <configuration name="display_name" locale="pt_BR">
+          <value>Duração do Cargo em Aberto</value>
+        </configuration>
+        <configuration name="description" locale="pt_BR">
+          <value>A duração em dias que cada cargo fica aberto antes de ser preenchido.</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,14 @@
+<div id="facility_content">
+  <p><strong>WARNING:</strong> This will delete all position records for the given facility as well as all person
+  records that are currently assigned to those positions.  This data can not be automatically recovered and you must be
+  sure to back up your data before doing this.</p>
+  <h2>Facility List</h2>
+  <div id="delete_message"></div>
+  <form method="POST">
+    <input type="hidden" name="step" value="confirm" />
+    <ul id="facility_list">
+    </ul>
+    <div id="additional_form"></div>
+    <input type="submit" value="Continue" class="button" />
+  </form>
+</div>

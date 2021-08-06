@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="exportReport">
+  <metadata>
+    <displayName>Report Export</displayName>
+    <category>Administration</category>
+    <description>Report Export</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="admin">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="CustomReports">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="magicDataExport">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="I2CE">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="exportReport" path="/">
+    <configurationGroup name="page" path="/modules/admin/command_line/exportReport">
+      <version>4.0.11.0</version>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_Page_ExportReport</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configuration name="access" values="many" type="string">
+          <displayName>Page Access</displayName>
+          <description>All of the roles that have access to this page</description>
+          <status>required:false</status>
+          <value>admin</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

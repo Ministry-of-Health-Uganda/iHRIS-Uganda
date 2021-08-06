@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-site" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-site" path="/I2CE" locale="sw">
+    <version>4.3.0.1</version>
+    <configurationGroup name="feedback">
+      <configuration name="subject" values="single" locale="sw">
+        <value>Mfumo Usimamizi iHRIS</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="template">
+      <configuration name="prefix_title" values="single" locale="sw">
+        <value>Mfumo Usimamizi iHRIS</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pdf_options" path="/modules/report-pdf/PDF/display-options">
+      <configurationGroup name="header">
+        <configuration name="text" locale="sw">
+          <value>Mfumo Usimamizi iHRIS</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

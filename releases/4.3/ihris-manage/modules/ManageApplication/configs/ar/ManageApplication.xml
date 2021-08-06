@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Application" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Application" path="/I2CE" locale="ar">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="ar">
+      <configuration name="app_felon" path="application/felony_circumstances/required"></configuration>
+      <configuration name="app_hours" path="application/hours/required"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="ar">
+      <configuration name="person_can_view_child_form_position_decision" locale="ar">
+        <value>يمكن&#160;عرض النماذج الفرعية للقرار الوظيفي لشخص</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_decision" locale="ar">
+        <value>يمكن تعديل&#160;النماذج الفرعية للقرار الوظيفي لشخص</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_position_interview" locale="ar">
+        <value>يمكن&#160;عرض&#160;النماذج الفرعية لمقابلة الوظيفة لشخص</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_interview" locale="ar">
+        <value>يمكن تعديل النماذج الفرعية لمقابلة الوظيفة لشخص</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_application" locale="ar">
+        <value>يمكن عرض نموذج طلب الطفل لشخص</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_application" locale="ar">
+        <value>يمكن تعديل استمارات طلب الطفل لشخص</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="application">
+          <configuration name="display" values="single" locale="ar">
+            <value>مقدم طلب</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_interview">
+          <configuration name="display" values="single" locale="ar">
+            <value>مقابلة الوظيفة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_decision">
+          <configuration name="display" values="single" locale="ar">
+            <value>قرار الوظيفة</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Applicant">
+          <configurationGroup name="fields">
+            <configurationGroup name="position">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:وظيفة&#160;/ وظائف</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:هل سبق لك أن&#160;تمت إدانتك&#160;بارتكاب جناية؟</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony_circumstance">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:إذا كانت الإجابة بنعم، الرجاء إعطاء الظروف.</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="other_info">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:بالإضافة إلى&#160;تاريخ&#160;العمل الخاص بك، هل هناك&#160;غيرها من المهارات، المؤهلات&#160;أو الخبرة&#160;التي يمكن أخذها يعين الإعتبار؟</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hear">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:كيف سمعت&#160;عن هذه الوظيفة؟</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:متي يمكنك البدء ؟</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="desired_wage">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:الأجر المرغوب فيه</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="full_time">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:هل تبحث عن&#160;عمل بدوام كامل؟</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hours">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:إذا كان لديك مانع، ما هي الساعات المتاحة بالنسبة لك؟</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionInterview">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:تاريخ المقابلة</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:الحضور</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:تعليقات</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionDecision">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:تاريخ القرار</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="offer">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:تقديم&#160;عرض العمل؟</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:تعليقات</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="application">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ar">
+            <value>إضافة / تحديث&#160;التطبيق</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_decision">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ar">
+            <value>إضافة / تحديث&#160;الوظيفة&#160;القرار</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_interview">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ar">
+            <value>إضافة / تحديث&#160;مقابلة&#160;الوظيفة</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

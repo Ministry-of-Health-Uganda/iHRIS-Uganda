@@ -1,0 +1,27 @@
+<div title="Limit this field to be the maximum for all forms that have the same value for the given field.">
+  <table border="0" cellpadding="0" cellspacing="0"><tr><td>
+        <span name="limit_description" ifset="true">
+          Limita questo campo in modo che sia il massimo per tutti i moduli che hanno lo stesso valore per quel dato campo
+        </span>
+      </td>
+      <td>
+        <select name="linked_field"></select></td>
+    </tr><tr><td>
+        Scostamento per il massimo (inserisci 0 per il massimo): 
+      </td>
+      <td>
+        <input type="text" name="offset" value="0"></td>
+    </tr><tr><td>
+        Permetti valori vuoti(nulli): 
+      </td>
+      <td>
+        <select name="allow_null"><option value="0">Sì</option><option value="1">No</option></select></td>
+    </tr><tr><td>
+        Return all (non-distinct) matches:<br>
+        When the selected field is 'parent' you may want to allow all matches<br>
+        when linking to child forms to get the order based on the limited field.<br>
+        For other fields you probably only want distinct values returned.
+      </td>
+      <td>
+        <select name="allow_all"><option value="0">No</option><option value="1">Sì</option></select></td>
+    </tr></table></div>

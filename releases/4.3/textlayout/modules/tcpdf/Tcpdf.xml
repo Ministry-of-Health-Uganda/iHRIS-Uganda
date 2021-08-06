@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="tcpdf">
+  <metadata>
+    <displayName>tcpdf</displayName>
+    <category>External Software</category>
+    <description>This is a wrapper for the tcpdf PDF generation utility</description>
+    <creator>Nicola Asuni</creator>
+    <email>nicolaasuni@users.sourceforge.net</email>
+    <link>http://sourceforge.net/projects/tcpdf/</link>
+    <version>4.3.0</version>
+    <requirement name="I2CE">
+      <atLeast version="4" />
+      <lessThan version="5" />
+    </requirement>
+    <path name="classes">
+      <value>./tcpdf</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

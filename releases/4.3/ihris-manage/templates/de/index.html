@@ -1,0 +1,106 @@
+<div id="siteContent">
+  <span task="person_can_view">
+    <h2><a href="manage" class="updateRecords">Mitarbeiter verwalten</a></h2>
+    <p>
+      Neuen Mitarbeiter <span type="module" name="ihris-manage-Application" ifenabled="true">oder Bewerber </span>ins System aufnehmen sowie Unterlagen zur Aktualisierung suchen, die in das System aufgenommen wurden. 
+      <span type="module" name="ihris-manage-Application" ifenabled="true">
+	Bewerbungen für offene Stellen abschließen, abgeschlossene Bewerbungen durchsehen und die Stelle an den erfolgreichen Bewerber vergeben. </span>
+    </p>
+  </span>
+
+  <span type="module" name="CustomReports" ifenabled="true">
+    <div task="custom_reports_can_access">
+      <hr><h2><a href="search" class="searchRecords">Unterlagen durchsuchen</a></h2>
+      <p>
+	Personal- oder Stellenunterlagen zum Durchsehen, Drucken oder Aktualisieren ausfindig machen. 
+      </p>
+    </div>
+  </span>
+    <span type="module" name="ManageDashboard" ifenabled="true">
+    <div task="can_view_dashboard">
+      <hr><h2><a href="dashboard" class="createRecords">Übersichtsseiten anzeigen</a></h2>
+      <p>
+		  Systemübersichtsseiten anzeigen
+      </p>
+    </div>
+  </span>    
+  <div task="custom_reports_can_view_reportViews">
+    <hr><h2><a href="CustomReports/view/reportViews" class="createRecords">Berichte ansehen</a></h2>
+    <p>
+      Berichte ermöglichen die Analyse der Personaldaten auf verschiedene Weise. Mitarbeiterlisten, statistische Diagramme und andere Standardberichte können angepasst, angezeigt und gedruckt werden. 
+    </p>
+  </div>
+
+	<span type="module" name="DHIS-Dashboard" ifenabled="true">
+		<div>
+			<hr><h2><a href="http://192.168.0.19:8090/new_dhis/dhis-web-dashboard-integration/index.action">Dashboard ansehen</a></h2>
+		<!--        <h2><a href="DHIS-Dashboard/dashboard" >View Dashboard</a></h2>-->
+			<p>
+				DHIS-Dashboard ansehen
+			</p>
+		</div>
+		</span>
+
+		<span type="module" name="DHIS-Dashboard" ifenabled="true">
+		<div>
+			<hr><h2><a href="index.php/DHISDashboard">DHIS-Export</a></h2>
+			<p>
+				DHIS-Bericht senden
+			</p>
+		</div>
+	</span>
+
+  <span role="admin" type="module" name="mHero" ifenabled="true">      
+    <h2>
+      <a href="mHero">mHero</a>
+    </h2>
+    <p>
+      <span style="display:inline-block">
+	<a href="mHero_person_workflow" target="_mHero">
+	  <img text="mHero" style="width:10em;" src="file/mHero.png"></a>
+
+      </span>
+      Use the mHero intgerated health system communications platform against personnel records.
+
+    </p>
+  </span>
+  <span role="admin" type="module" name="mHero-csd-provider" ifenabled="true">      
+    <h2>
+      <a href="mHero">mHero</a>
+    </h2>
+    <p>
+      <span style="display:inline-block">
+	<a href="mhero_search_provider" target="_mHero">
+	  <img text="mHero" style="width:10em;" src="file/mHero.png"></a>
+
+      </span>
+      Use the mHero intgerated health system communications platform with the Health Worker Registry.
+
+    </p>
+  </span>
+
+
+  <div task="can_configure_system">
+    <hr><h2><a href="configure" class="adminDatabase">System einrichten</a></h2>
+    <p>
+      Module konfigurieren, Stellen verwalten, Dropdown-Menüs anpassen sowie Nutzerkonten erstellen oder aktualisieren.
+    </p>
+  </div>
+  
+  <span type="module" name="SelfService" ifenabled="true" task="can_view_own_personnel">
+    <span type="module" name="SelfService" if="!userHasRecord()">
+    </span>
+    <span type="module" name="SelfService" if="userHasRecord()">
+      <div>
+	<h2><span type="module" name="SelfService" call="linkToPersonRecord('view?id=')">Ihre Personalinformationen anzeigen</span></h2>
+	<p>
+	  Ihre Personalinformationen anzeigen.
+	</p>
+      </div>
+    </span>
+  </span>
+
+
+  <hr><h2><a href="password">Passwort ändern</a></h2>
+
+</div>

@@ -1,0 +1,33 @@
+<div id="siteContent">
+    <h1 class="header">Add/Update Person</h1>
+    <div id="error" />
+    <form  method="post" action="person">
+        <span type="form" name="person:id"></span>
+<div id="form">
+     
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <th colspan="2">Personal Information</th>
+    </tr>
+	<tr id="list_fields">
+		<td>
+		  <span type="form" name="person:surname" showhead="default"></span>
+		  <span type="form" name="person:surname_ignore" ifset="surname_ignore"></span>
+		  <span type="form" name="person:firstname" showhead="default"></span>
+		  <span type="form" name="person:othername" showhead="default"></span>
+		</td>
+		<td>
+		  <span type="form" name="person:nationality" showhead="default"></span>
+		  <span type="form" name="person:residence" showhead="location"></span>
+		</td>
+	</tr>
+    <tr class="submitCell">
+        <td colspan="2">
+            <div id="button" />
+        </td>
+    </tr>
+	</table>
+    
+</div>
+    </form>
+</div>

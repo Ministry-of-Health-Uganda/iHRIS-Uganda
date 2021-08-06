@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CEUs" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="CEUs" path="/I2CE" locale="ta">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_continuing_education_course" locale="ta">
+        <value>படித்துக் கொண்டிருக்கும் கல்விப் பிரிவைத் தொகுக்கவும்</value>
+      </configuration>
+      <configuration name="can_view_database_list_continuing_education_course" locale="ta">
+        <value>படித்துக் கொண்டிருக்கும் கல்விப் பிரிவுப் பட்டியலைப் பார்க்கவும்</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="continuing_education">
+          <configuration name="display" values="single" locale="ta">
+            <value>படித்துக் கொண்டிருக்கும் கல்வி</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="continuing_education_course">
+          <configuration name="display" values="single" locale="ta">
+            <value>படித்துக் கொண்டிருக்கும் கல்விப் பிரிவு</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_ContinuingEducationCourse">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="ta">
+                <value>default:பெயர்</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="credit_hours">
+              <configuration name="headers" type="delimited" locale="ta"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_ContinuingEducation">
+          <configurationGroup name="fields">
+            <configurationGroup name="continuing_education_course">
+              <configuration name="headers" type="delimited" locale="ta">
+                <value>default:படித்துக் கொண்டிருக்கும் கல்விப் பிரிவு</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="credit_hours">
+              <configuration name="headers" type="delimited" locale="ta"></configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="ta">
+                <value>default:தொடக்க தேதி</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="ta">
+                <value>default:முடிவு தேதி</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

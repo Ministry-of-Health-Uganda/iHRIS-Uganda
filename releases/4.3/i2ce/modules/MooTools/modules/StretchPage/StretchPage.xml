@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="StretchPage">
+  <metadata>
+    <displayName>Page Stretcher</displayName>
+    <className>I2CE_Module_StretchPage</className>
+    <category>Base System Component</category>
+    <description>Makes sure that the page is at least as high as the browser window. Use bad adding a div with id='StretchPage' to the containing element that you want stretched.</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="MooTools">
+      <atLeast version="1.4" />
+      <lessThan version="1.5" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <priority>49</priority>
+  </metadata>
+</I2CEConfiguration>

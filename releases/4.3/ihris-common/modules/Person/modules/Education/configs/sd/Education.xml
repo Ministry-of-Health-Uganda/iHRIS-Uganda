@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEducation" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEducation" path="/I2CE" locale="sd">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="sd">
+      <configuration name="person_can_view_child_form_education" locale="sd"></configuration>
+      <configuration name="person_can_edit_child_form_education" locale="sd"></configuration>
+      <configuration name="can_edit_database_list_edu_type" locale="sd"></configuration>
+      <configuration name="can_view_database_list_edu_type" locale="sd"></configuration>
+      <configuration name="can_edit_database_list_degree" locale="sd"></configuration>
+      <configuration name="can_view_database_list_degree" locale="sd"></configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="education">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sd"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="degree">
+          <configuration name="display" values="single" locale="sd">
+            <value>ڊگري</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="edu_type">
+          <configuration name="display" values="single" locale="sd"></configuration>
+        </configurationGroup>
+        <configurationGroup name="education">
+          <configuration name="display" values="single" locale="sd">
+            <value>تعليم جي.سوانح</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Degree">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="sd">
+                <value>default:نالو</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="edu_type">
+              <configuration name="headers" type="delimited" values="many" locale="sd"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Education">
+          <configurationGroup name="fields">
+            <configurationGroup name="degree">
+              <configuration name="headers" type="delimited" locale="sd">
+                <value>default:ڊگري</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="institution">
+              <configuration name="headers" type="delimited" locale="sd">
+                <value>default:اداري جو نالو</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="headers" type="delimited" locale="sd">
+                <value>default:اداري جي مڪانيت</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="year">
+              <configuration name="headers" type="delimited" locale="sd"></configuration>
+            </configurationGroup>
+            <configurationGroup name="major">
+              <configuration name="headers" type="delimited" locale="sd"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

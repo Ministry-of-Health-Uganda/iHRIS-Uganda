@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="accident" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="accident" path="/I2CE" locale="si">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="si">
+      <configuration name="accident_date" path="accident/end_date/bad_date">
+        <value>අවසන් වන දිනය, ආරම්භක දිනයට පසු දිනයක් විය යුතුය.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_accident" locale="si">
+        <value>සේවාස්ථානයේදී යම් පුද්ගලයෙකුට වූ අබාධ සහ හදිසි අනතුරු සංස්කරණය කළ හැක</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_accident" locale="si">
+        <value>සේවාස්ථානයේදී යම් පුද්ගලයෙකුට වූ අබාධ සහ හදිසි අනතුරු පරීක්ෂා කර බැලීමට හැක.</value>
+      </configuration>
+      <configuration name="can_edit_database_list_accident_type" locale="si">
+        <value>සේවාස්ථනයේදී සිදුවූ හදිසි අනතුරු වර්ග ලැයිස්තුව සංස්කරණය කරන්න</value>
+      </configuration>
+      <configuration name="can_view_database_list_accident_type" locale="si">
+        <value>සේවාස්ථාන හදිසි අනතුරු වර්ග ලැයිස්තුව නරඹන්න</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="accident">
+          <configuration name="display" values="single" locale="si">
+            <value>හදිසි අනතුර</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="accident_type">
+          <configuration name="display" values="single" locale="si">
+            <value>සේවාස්ථනයේදී සිදුවූ හදිසි අනතුරු වර්ගය</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Accident">
+          <configurationGroup name="fields">
+            <configurationGroup name="occurence_date">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:සිදුවූ දිනය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="accident_type">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:හදිසි අනතුරු වර්ගය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:උපයෝගීතාවය ආරම්භය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:උපයෝගීතාවය අවසානය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="followup">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:දායකවීම අවශ්‍යයයි</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_involved">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:සම්බන්ධවූ පුද්ගලයන්</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="home" path="/modules/accident/page/home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="si">
+            <value>එකතු/යාවත්කාල කරන්න (සේවාස්ථාන හදිසි අනතුරු)</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

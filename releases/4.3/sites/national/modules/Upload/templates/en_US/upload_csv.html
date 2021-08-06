@@ -1,0 +1,36 @@
+<div id="siteContent">
+  <h1>Upload Csv
+  <div id="error"></div>
+  <form method="POST" enctype="multipart/form-data">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+      <tr><th>Upload Csv Details</th></tr>
+      <tr>
+        <td>
+          <p> 
+            <span class="field_head required_field">
+              <label for="upload_csv">Select CSV file to upload</label>
+              <span class="required_field_notice">*</span>
+            </span>
+            <br />
+            <span class="form_field">
+              <input type="file" id="upload_csv" name="upload_csv" /><br />
+            </span>
+          </p>
+          <p> 
+            <span class="field_head">Has Headers?</span>
+            <br />
+            <span class="form_field">
+              <input type="checkbox" id="has_header:upload_csv" name="has_header:upload_csv" value="1" checked="checked" />
+              <label for="has_header:upload_csv">This file has headers.</label>
+            </span>
+          </p>
+        </td>
+      </tr>
+      <tr class="submitCell">
+        <td>
+          <div id="button"></div>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

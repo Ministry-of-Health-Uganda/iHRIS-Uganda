@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="disciplinary_action" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="disciplinary_action" path="/I2CE" locale="nl">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="nl">
+      <configuration name="disciplinary_date" path="disciplinary_action/end_date/bad_date">
+        <value>De einddatum moet na de begindatum liggen.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_disciplinary_action" locale="nl">
+        <value>Kan de arbeidsongevallen en disciplinaire maatregelen voor een persoon bewerken</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_disciplinary_action" locale="nl">
+        <value>Kan de arbeidsongevallen en disciplinaire maatregelen voor een persoon bekijken</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_type" locale="nl">
+        <value>De lijst met typen disciplinaire maatregelen bewerken</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_type" locale="nl">
+        <value>De lijst met typen disciplinaire maatregelen bekijken</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_reason" locale="nl">
+        <value>De lijst met typen disciplinaire maatregelen voor de werkvloer bewerken</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_reason" locale="nl">
+        <value>De lijst met typen disciplinaire maatregelen voor de werkvloer bekijken</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="disciplinary_action">
+          <configuration name="display" values="single" locale="nl">
+            <value>Disciplinaire maatregel</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_type">
+          <configuration name="display" values="single" locale="nl">
+            <value>Type disciplinaire maatregel</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_reason">
+          <configuration name="display" values="single" locale="nl">
+            <value>Reden disciplinaire maatregel</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_DisciplinaryAction">
+          <configurationGroup name="fields">
+            <configurationGroup name="action_date">
+              <configuration name="headers" type="delimited" locale="nl">
+                <value>default:Besprekingsdatum</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_type">
+              <configuration name="headers" type="delimited" locale="nl">
+                <value>default:Genomen maatregel</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_reason">
+              <configuration name="headers" type="delimited" locale="nl">
+                <value>default:Reden voor actie</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="nl">
+                <value>default:Van toepassing vanaf</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="nl">
+                <value>default:Van toepassing tot</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="nl">
+                <value>default:Opmerkingen</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_present">
+              <configuration name="headers" type="delimited" locale="nl">
+                <value>default:Aanwezigen</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="editAction" path="/modules/disciplinary_action/page/editAction">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="nl">
+            <value>Disciplinaire maatregel toevoegen of bijwerken</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

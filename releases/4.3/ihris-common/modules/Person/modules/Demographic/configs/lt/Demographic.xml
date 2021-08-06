@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonDemographic" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonDemographic" path="/I2CE" locale="lt">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="lt">
+      <configuration name="person_can_view_child_form_demographic" locale="lt"></configuration>
+      <configuration name="person_can_edit_child_form_demographic" locale="lt"></configuration>
+      <configuration name="can_edit_database_list_marital_status" locale="lt"></configuration>
+      <configuration name="can_view_database_list_marital_status" locale="lt"></configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="gender">
+        <configurationGroup name="F">
+          <configuration name="fields" value="many" type="delimited" locale="lt">
+            <value>name:Moteris</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="M">
+          <configuration name="fields" value="many" type="delimited" locale="lt">
+            <value>name:Vyras</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="demographic">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="lt">
+            <value>Pridėti/atnaujinti demografinę informaciją</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="demographic">
+          <configuration name="display" values="single" locale="lt">
+            <value>Demografinė informacija</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="marital_status">
+          <configuration name="display" values="single" locale="lt">
+            <value>Šeimyninė Padėtis</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="gender">
+          <configuration name="display" values="single" locale="lt">
+            <value>Lytis</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Demographic">
+          <configurationGroup name="fields">
+            <configurationGroup name="birth_date">
+              <configuration name="headers" type="delimited" locale="lt">
+                <value>default:Gimimo data</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="gender">
+              <configuration name="headers" type="delimited" locale="lt">
+                <value>default:Lytis</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="marital_status">
+              <configuration name="headers" type="delimited" locale="lt">
+                <value>default:Šeimyninė Padėtis</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

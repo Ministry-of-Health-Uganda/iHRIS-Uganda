@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage" path="/I2CE">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage" path="/I2CE" locale="sw">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_planning_database_lists" locale="sw" values="single" type="string">
+        <value>Anaweza kuhariri baadhi ya orodha za hifdhidata za mipango</value>
+      </configuration>
+      <configuration name="can_view_planning_database_lists" locale="sw" values="single" type="string">
+        <value>Anaweza kuangalia baadhi ya orodha za hifdhidata za mipango</value>
+      </configuration>
+      <configuration name="can_edit_all_planning_database_lists" locale="sw" values="single" type="string">
+        <value>Anaweza kuhariri orodha zote za hifdhidata za mipango</value>
+      </configuration>
+      <configuration name="can_view_all_planning_database_lists" locale="sw" values="single" type="string">
+        <value>Anaweza kuangalia orodha zote za hifdhidata za mipango</value>
+      </configuration>
+      <configuration name="can_edit_organization_database_lists" locale="sw" values="single" type="string">
+        <value>Weza kuhariri baadhi ya orodha za hazinadata za shirika</value>
+      </configuration>
+      <configuration name="can_view_organization_database_lists" locale="sw" values="single" type="string">
+        <value>Weza kuangalia baadhi ya orodha za hazinadata za shirika</value>
+      </configuration>
+      <configuration name="can_edit_all_organization_database_lists" locale="sw" values="single" type="string">
+        <value>Weza kuhariri orodha zote za hazinadata za shirika</value>
+      </configuration>
+      <configuration name="can_view_all_organization_database_lists" locale="sw" values="single" type="string">
+        <value>Weza kuangalia orodha zote za hazinadata za shirika</value>
+      </configuration>
+      <configuration name="can_edit_employee_database_lists" locale="sw" values="single" type="string">
+        <value>Weza kuhariri baadhi ya orodha za hazinadata za mwajiriwa</value>
+      </configuration>
+      <configuration name="can_view_employee_database_lists" locale="sw" values="single" type="string">
+        <value>Weza kuangalia baadhi ya orodha za hazinadata za mwajiriwa</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" locale="sw" values="single" type="string">
+        <value>Weza kuhariri orodha zote za hazinadata za mwajiriwa</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" locale="sw" values="single" type="string">
+        <value>Weza kuangalia orodha zote za hazinadata za mwajiriwa</value>
+      </configuration>
+      <configuration name="can_edit_position_database_lists" locale="sw" values="single" type="string">
+        <value>Weza kuhariri orodha za hazinadata za baadhi ya nafasi</value>
+      </configuration>
+      <configuration name="can_view_position_database_lists" locale="sw" values="single" type="string">
+        <value>Weza kuangalia orodha za hazinadata za baadhi ya nafasi</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="roles" path="/I2CE/formsData/forms/role">
+      <configurationGroup name="hr_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="sw" type="string">
+            <value>Meneja Rasilimali Watu</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="hr_staff">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="sw" type="string">
+            <value>Afisa Rasilimali Watu</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="exec_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="sw" type="string">
+            <value>Meneja Mtendaji</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="training_manager">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="sw" type="string">
+            <value>Meneja Mafunzo</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="feedback">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw" type="string">
+            <value>Tuma Mrejezo</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="manage">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw" type="string">
+            <value>Ongoza Watu</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="search_reports" path="/modules/CustomReports/search_reports">
+      <configuration name="search_people" values="many" type="delimited" locale="sw">
+        <value>name:Sachi Watu</value>
+        <value>description:Elekeza kumukumbu yoyote kwenye mfumo ili kupitia upya, kuchapa au kusasisha.</value>
+      </configuration>
+      <configuration name="position_list" values="many" type="delimited" locale="sw">
+        <value>name:Sachi Nafasi</value>
+        <value>description:Elekeza nafasi yoyote kwenye mfumo ili kupitia upya, kuchapa au kusasisha</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,34 @@
+<div>
+  <h2 id='add_childform_link' class='add_childform_options_toggle'><a>Add a new child form</a></h2>
+  <div id='add_childform_options_menu' class='optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true' >
+    <div class='optionsMenuTitle window_drag'>Add A New Child Form </div>
+    <table class='multiFormTable' cellpadding="0" cellspacing="0" border="0">
+	  <tr></tr>
+	  <tr>
+	    <td style="width: 58em;">
+	      <h3>Display Name:</h3>The name of the child form that is displayed to the end user.
+	    </td>
+	    <td>
+	      <input name='childform_displayname' id='childform_displayname' type='text' value='' class='validate=[nonempty]'/>
+	    </td>
+      </tr>
+      <tr>
+	    <td>
+	      <h3>Child Form Type:</h3>Select the child form type. Only one of each type can exist for a page.
+	    </td>
+	    <td>
+	      <select name='form_which' id='add_childform_type_selector'></select>
+	    </td>
+      </tr>
+      <tr>
+	    <td colspan='2'>
+	      <div/>
+	      <span class='add_childform_options_hide button optionsMenuButton window_hide'>Close</span>
+	      <input type='submit' class='button only_options_menu' value='Add' id='add_childform' />
+	      <div/>
+	      <br/>
+	    </td>
+      </tr>
+    </table>    
+  </div>
+</div>

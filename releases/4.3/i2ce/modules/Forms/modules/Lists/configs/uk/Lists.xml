@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Lists" path="/I2CE/">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="Lists" path="/I2CE/" locale="uk">
+    <version>4.3.0.1</version>
+    <configurationGroup name="auto_list" path="/I2CE/page/auto_list">
+      <configuration name="title" locale="uk" values="single" type="string">
+        <value>Адміністрування списків баз даних</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="Lists" path="/modules/Lists">
+      <configuration name="messages" type="delimited" values="many" locale="uk">
+        <value>other_lists:Інші списки</value>
+        <value>title:Переглянути %s</value>
+        <value>edit_title:Додати/оновити %s</value>
+        <value>edit_text:Оновити цю інформацію</value>
+        <value>add_text:Додати новий %s</value>
+        <value>add_new:Додати нову</value>
+        <value>select_text:Виберіть інший %s</value>
+        <value>menu_title:Адміністрування списків баз даних</value>
+        <value>remap_field_text:Перепризначити поле %1$s в %2$s (%3$s збігів)</value>
+        <value>remap_text:Задати перерозподіл даних</value>
+        <value>view_remap_text:Переглянути перерозподіл даних</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="invalid_messages" path="/modules/forms/invalid_field_messages" locale="uk">
+      <configuration name="unique_fields" values="single" type="string">
+        <value>Це має бути унікальним і інший запис має це значення для заданого значення полів:</value>
+      </configuration>
+      <configuration name="unique_field" values="single" type="string">
+        <value>Це має бути унікальним і інший запис має це значення для заданого значення поля:</value>
+      </configuration>
+      <configuration name="unique" values="single" type="string">
+        <value>Це має бути унікальним і інший запис має це значення.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="template_text" path="/modules/forms/template_text">
+      <configuration name="blank" values="single" locale="uk" type="string">
+        <value>Виберіть один</value>
+      </configuration>
+      <configuration name="loading" values="single" locale="uk" type="string"></configuration>
+      <configuration name="no_results" values="single" locale="uk" type="string"></configuration>
+      <configuration name="default_display" values="single" locale="uk" type="string"></configuration>
+      <configuration name="clear_display" values="single" locale="uk" type="string"></configuration>
+    </configurationGroup>
+    <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+      <configurationGroup name="I2CE_List">
+        <configurationGroup name="fields">
+          <configurationGroup name="remap">
+            <configuration name="headers" type="delimited" locale="uk" values="single">
+              <value>default:Перерозподілене значення</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="i2ce_hidden">
+            <configuration name="headers" type="delimited" locale="uk" values="single">
+              <value>default:Приховати</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="I2CE_SimpleList">
+        <configurationGroup name="fields">
+          <configurationGroup name="name">
+            <configuration name="headers" type="delimited" locale="uk" values="single">
+              <value>default:Ім'я</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="I2CE_SimpleCodedList">
+        <configurationGroup name="fields">
+          <configurationGroup name="code">
+            <configuration name="headers" type="delimited" locale="uk" values="single">
+              <value>default:Код</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="uk">
+      <configuration name="can_hide_list_members" values="single" type="string">
+        <value>Можна приховати список членів</value>
+      </configuration>
+      <configuration name="can_edit_database_lists" values="single" type="string">
+        <value>Можна змінити деякі списки, збережені в базі даних</value>
+      </configuration>
+      <configuration name="can_edit_all_database_lists" values="single" type="string">
+        <value>Можна редагувати всі списки, які зберігаються в базі даних</value>
+      </configuration>
+      <configuration name="can_view_database_lists" values="single" type="string">
+        <value>Можна переглянути деякі списки, які зберігаються в базі даних</value>
+      </configuration>
+      <configuration name="can_view_all_database_lists" values="single" type="string">
+        <value>Можна переглянути всі списки, які зберігаються в базі даних</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <configurationGroup name="view_list">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="uk" type="string">
+            <value>Перегляд списку</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

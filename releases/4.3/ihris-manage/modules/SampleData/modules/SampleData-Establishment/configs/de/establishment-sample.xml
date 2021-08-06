@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SampleData-establishment" path="/">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="SampleData-establishment" path="/" locale="de">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationship" path="/modules/CustomReports/relationships/staff_norm_2010">
+      <configuration name="description" locale="de">
+        <value>Besetzungsnorm für 2010</value>
+      </configuration>
+      <configuration name="display_name" locale="de">
+        <value>Besetzungsnorm für 2010</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="position">
+          <configuration name="description" locale="de">
+            <value>Die von diesem Mitarbeiter besetze Stelle.</value>
+          </configuration>
+          <configuration name="display_name" locale="de">
+            <value>Stelle</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="job">
+              <configuration name="description" locale="de">
+                <value>Die dieser Stelle zugeordnete Tätigkeit.</value>
+              </configuration>
+              <configuration name="display_name" locale="de">
+                <value>Tätigkeit</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="cadre">
+                  <configuration name="description" locale="de">
+                    <value>Kader</value>
+                  </configuration>
+                  <configuration name="display_name" locale="de">
+                    <value>Kader</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="facility">
+              <configuration name="description" locale="de">
+                <value>Die Einrichtung, der diese Stelle zugeordnet ist.</value>
+              </configuration>
+              <configuration name="display_name" locale="de">
+                <value>Einrichtung</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="facility_type">
+                  <configuration name="description" locale="de">
+                    <value>Einrichtungsart</value>
+                  </configuration>
+                  <configuration name="display_name" locale="de">
+                    <value>Einrichtungsart</value>
+                  </configuration>
+                  <configurationGroup name="joins">
+                    <configurationGroup name="establishment">
+                      <configuration name="description" locale="de">
+                        <value>Betriebsstätte</value>
+                      </configuration>
+                      <configuration name="display_name" locale="de">
+                        <value>Betriebsstätte</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="report" path="/modules/CustomReports/reports/staff_norm_2010">
+      <configurationGroup name="meta">
+        <configuration name="description" locale="de">
+          <value>Besetzungsnormen für 2010</value>
+        </configuration>
+        <configuration name="display_name" locale="de">
+          <value>Besetzungsnorm für 2010</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="establishment">
+          <configurationGroup name="fields">
+            <configurationGroup name="amount">
+              <configuration name="header" locale="de">
+                <value>Besetzungsnorm</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility_type">
+              <configuration name="header" locale="de">
+                <value>Einrichtungsart</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="position">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility">
+              <configuration name="header" locale="de">
+                <value>Einrichtung</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="job">
+              <configuration name="header" locale="de">
+                <value>Tätigkeit</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="job">
+          <configurationGroup name="fields">
+            <configurationGroup name="cadre">
+              <configuration name="header" locale="de">
+                <value>Kader</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="id">
+              <configuration name="header" locale="de">
+                <value>Besetzte Stellen</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportView" path="/modules/CustomReports/reportViews/staff_norm_2010">
+      <configuration name="description" locale="de">
+        <value>Besetzungsnormen für 2010</value>
+      </configuration>
+      <configuration name="display_name" locale="de">
+        <value>Besetzungsnorm 2010</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

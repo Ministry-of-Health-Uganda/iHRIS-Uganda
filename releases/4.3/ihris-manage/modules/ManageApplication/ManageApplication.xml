@@ -1,0 +1,524 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Application">
+  <metadata>
+    <displayName>iHRIS Manage Application</displayName>
+    <className>iHRIS_Module_Application</className>
+    <category>Application</category>
+    <description>The iHRIS Manage Application Module.</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-manage-PersonPosition">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Person">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>225</priority>
+  </metadata>
+  <configurationGroup name="ihris-manage-Application" path="/I2CE">
+    <displayName>iHRIS Manage Application</displayName>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="en_US">
+      <version>4.1.0.1</version>
+      <configuration name="app_felon" path="application/felony_circumstances/required">
+        <value>You selected you were convicted of a felony but didn't describe the circumstances.</value>
+      </configuration>
+      <configuration name="app_hours" path="application/hours/required">
+        <value>You selected not full time, but you didn't give what hours you are available.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_position_decision" locale="en_US">
+        <version>3.2.3</version>
+        <value>Can view position decision child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_decision" locale="en_US">
+        <version>3.2.3</version>
+        <value>Can edit position decision child forms of a person</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_position_interview" locale="en_US">
+        <version>3.2.3</version>
+        <value>Can view position interview child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_interview" locale="en_US">
+        <version>3.2.3</version>
+        <value>Can edit position interview child forms of a person</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_application" locale="en_US">
+        <version>4.1.2.1</version>
+        <value>Can view application child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_application" locale="en_US">
+        <version>4.1.2.1</version>
+        <value>Can edit application child forms of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_position_decision" values="many">
+        <version>3.2.3</version>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_decision" values="many">
+        <version>3.2.3</version>
+        <value>person_can_view_child_form_position_decision</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_position_interview" values="many">
+        <version>3.2.3</version>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_interview" values="many">
+        <version>3.2.3</version>
+        <value>person_can_view_child_form_position_interview</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_application" values="many">
+        <version>3.2.3</version>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_application" values="many">
+        <version>3.2.3</version>
+        <value>person_can_view_child_form_application</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <version>3.2.9</version>
+        <value>person_can_view_child_form_application</value>
+        <value>person_can_view_child_form_position_interview</value>
+        <value>person_can_view_child_form_position_decision</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>3.2.10</version>
+        <value>person_can_edit_child_form_application</value>
+        <value>person_can_edit_child_form_position_interview</value>
+        <value>person_can_edit_child_form_position_decision</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <displayName>Forms</displayName>
+      <configurationGroup name="forms">
+        <displayName>Forms available to the form factory</displayName>
+        <description>Information about the forms made available by iHRIS-Common</description>
+        <status>advanced:true</status>
+        <status>required:true</status>
+        <configurationGroup name="application">
+          <displayName>Applicant</displayName>
+          <description>The Applicant Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Applicant</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Applicant</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_interview">
+          <displayName>Position Interview</displayName>
+          <description>The Position Interview Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_PositionInterview</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Position Interview</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_decision">
+          <displayName>Position Decision</displayName>
+          <description>The Position Decision Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_PositionDecision</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Position Decision</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_meta" path="/modules/forms/forms/person/meta">
+          <displayName>MetaData on the form</displayName>
+          <configuration name="child_forms" values="many">
+            <status>uniquemerge:true</status>
+            <displayName>Child Forms</displayName>
+            <value>application</value>
+            <value>position_interview</value>
+            <value>position_decision</value>
+          </configuration>
+        </configurationGroup>
+        <!-- person_meta -->
+      </configurationGroup>
+      <!-- end of /modules/forms/forms-->
+      <configurationGroup name="formClasses">
+        <displayName>Form Class Configuration</displayName>
+        <configurationGroup name="iHRIS_Applicant">
+          <displayName>Configuration for the class 'iHRIS_Applicant'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="position">
+              <displayName>The field 'position'</displayName>
+              <version>3.2.4</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP_MULT</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="limits">
+                  <version>3.2.8</version>
+                  <configurationGroup name="default">
+                    <configurationGroup name="position">
+                      <configuration name="operator">
+                        <value>FIELD_LIMIT</value>
+                      </configuration>
+                      <configuration name="field">
+                        <value>status</value>
+                      </configuration>
+                      <configuration name="style">
+                        <value>equals</value>
+                      </configuration>
+                      <configuration name="data" values="many" type="delimited">
+                        <value>value:position_status|open</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+                <configurationGroup name="display">
+                  <configurationGroup name="default">
+                    <configuration name="fields">
+                      <version>3.2.5</version>
+                      <value>position</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Position(s)</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony">
+              <displayName>The field 'felony'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>YESNO</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Have you ever been convicted of a felony?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony_circumstance">
+              <displayName>The field 'felony_circumstance'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:If yes, give the circumstances.</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="other_info">
+              <displayName>The field 'other_info'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:In addition to your work history, are there other skills, qualifications or experience we should consider?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hear">
+              <displayName>The field 'hear'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:How did you hear of this opening?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <displayName>The field 'start_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:When can you start?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="desired_wage">
+              <displayName>The field 'desired_wage'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>CURRENCY</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Desired Wage</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="full_time">
+              <displayName>The field 'full_time'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>YESNO</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Are you looking for full-time employment?</value>
+              </configuration>
+              <configuration name="default_value">
+                <displayName>The default Value</displayName>
+                <value>1</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hours">
+              <displayName>The field 'hours'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:If no, what hours are you available?</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionInterview">
+          <displayName>Configuration for the class 'iHRIS_PositionInterview'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="date">
+              <displayName>The field 'date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Date of Interview</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person">
+              <displayName>The field 'person'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:People Attending</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <displayName>The field 'comments'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Comments</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionDecision">
+          <displayName>Configuration for the class 'iHRIS_PositionDecision'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="date">
+              <displayName>The field 'date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Date of Decision</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="offer">
+              <displayName>The field 'offer'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>YESNO</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Make a Job Offer?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <displayName>The field 'comments'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Comments</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- End of form /modules/forms/formsClasses-->
+    </configurationGroup>
+    <!-- end of /modules/forms-->
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+      <configurationGroup name="application">
+        <displayName>Application Page</displayName>
+        <description>The page 'application' which has the action of: Add/Update Application</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_manage_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Application</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <version>4.0.7.1</version>
+            <value>person_can_edit_child_form_application</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>application</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_decision">
+        <displayName>Position_decision Page</displayName>
+        <description>The page 'position_decision' which has the action of: Add/Update Position Decision</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_manage_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Position Decision</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <version>4.0.7.1</version>
+            <value>person_can_edit_child_form_position_decision</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>position_decision</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_interview">
+        <displayName>Position_interview Page</displayName>
+        <description>The page 'position_interview' which has the action of: Add/Update Position Interview</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_manage_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="tasks" values="many">
+            <version>4.0.7.1</version>
+            <value>person_can_edit_child_form_position_interview</value>
+          </configuration>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Position Interview</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>position_interview</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

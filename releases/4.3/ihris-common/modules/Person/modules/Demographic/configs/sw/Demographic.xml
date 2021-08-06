@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonDemographic" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonDemographic" path="/I2CE" locale="sw">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="sw">
+      <configuration name="person_can_view_child_form_demographic" locale="sw">
+        <value>Weza kuangalia fomu ya takwimu ya mtoto wa mtu</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_demographic" locale="sw">
+        <value>Weza kuhariri fomu za takwimu za mtoto wa mtu</value>
+      </configuration>
+      <configuration name="can_edit_database_list_marital_status" locale="sw">
+        <value>Weza kuhariri orodha ya idara ya hali ya ndoa.</value>
+      </configuration>
+      <configuration name="can_view_database_list_marital_status" locale="sw">
+        <value>Weza kuangalia orodha ya idara ya hali ya ndoa</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="gender">
+        <configurationGroup name="F">
+          <configuration name="fields" value="many" type="delimited" locale="sw">
+            <value>name:Mke</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="M">
+          <configuration name="fields" value="many" type="delimited" locale="sw">
+            <value>name:Mume</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="demographic">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw">
+            <value>Ongeza/Sasisha Taarifa ya Kitakwimu</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="demographic">
+          <configuration name="display" values="single" locale="sw">
+            <value>Taarifa ya Takwimu</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="marital_status">
+          <configuration name="display" values="single" locale="sw">
+            <value>Hali ya Ndoa</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="gender">
+          <configuration name="display" values="single" locale="sw">
+            <value>Jinsia</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Demographic">
+          <configurationGroup name="fields">
+            <configurationGroup name="birth_date">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Tarehe ya Kuzaliwa</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="gender">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Jinsia</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="marital_status">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Hali ya Ndoa</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

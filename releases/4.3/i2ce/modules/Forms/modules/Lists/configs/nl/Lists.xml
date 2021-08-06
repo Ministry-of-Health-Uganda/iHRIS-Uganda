@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Lists" path="/I2CE/">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="Lists" path="/I2CE/" locale="nl">
+    <version>4.3.0.1</version>
+    <configurationGroup name="auto_list" path="/I2CE/page/auto_list">
+      <configuration name="title" locale="nl" values="single" type="string">
+        <value>Databaselijsten beheren</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="Lists" path="/modules/Lists">
+      <configuration name="messages" type="delimited" values="many" locale="nl">
+        <value>other_lists:Andere lijsten</value>
+        <value>title:Weergave %s</value>
+        <value>edit_title:%s weergeven of bijwerken</value>
+        <value>edit_text:Gegevens bijwerken</value>
+        <value>add_text:Nieuwe %s toevoegen</value>
+        <value>add_new:Nieuwe toevoegen</value>
+        <value>select_text:Andere %s selecteren</value>
+        <value>menu_title:Databaselijsten beheren</value>
+        <value>remap_field_text:Veld %1$s in %2$s herkoppelen (%3$s resulaten)</value>
+        <value>remap_text:Herkoppelingsgegevens instellen</value>
+        <value>view_remap_text:Herkoppelingsgegevens bekijken</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="invalid_messages" path="/modules/forms/invalid_field_messages" locale="nl">
+      <configuration name="unique_fields" values="single" type="string">
+        <value>Deze moet uniek zijn en een ander record heeft deze waarde voor de gegeven waarden van de velden:</value>
+      </configuration>
+      <configuration name="unique_field" values="single" type="string">
+        <value>DIT moet uniek zijn en een ander record heeft deze waarde voor de gegeven waarde van het veld:</value>
+      </configuration>
+      <configuration name="unique" values="single" type="string">
+        <value>Dit moet uniek zijn en een ander record heeft deze waarde.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="template_text" path="/modules/forms/template_text">
+      <configuration name="blank" values="single" locale="nl" type="string">
+        <value>Maak een keuze</value>
+      </configuration>
+      <configuration name="loading" values="single" locale="nl" type="string">
+        <value>Bezig met laden...</value>
+      </configuration>
+      <configuration name="no_results" values="single" locale="nl" type="string">
+        <value>Geen resultaten</value>
+      </configuration>
+      <configuration name="default_display" values="single" locale="nl" type="string">
+        <value>Selecteer hieronder</value>
+      </configuration>
+      <configuration name="clear_display" values="single" locale="nl" type="string">
+        <value>Opnieuw instellen</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+      <configurationGroup name="I2CE_List">
+        <configurationGroup name="fields">
+          <configurationGroup name="remap">
+            <configuration name="headers" type="delimited" locale="nl" values="single">
+              <value>default:Herkoppelde waarde</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="i2ce_hidden">
+            <configuration name="headers" type="delimited" locale="nl" values="single">
+              <value>default:Verbergen</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="I2CE_SimpleList">
+        <configurationGroup name="fields">
+          <configurationGroup name="name">
+            <configuration name="headers" type="delimited" locale="nl" values="single">
+              <value>default:Naam</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="I2CE_SimpleCodedList">
+        <configurationGroup name="fields">
+          <configurationGroup name="code">
+            <configuration name="headers" type="delimited" locale="nl" values="single"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="nl">
+      <configuration name="can_hide_list_members" values="single" type="string">
+        <value>Kan lijstleden verbergen</value>
+      </configuration>
+      <configuration name="can_edit_database_lists" values="single" type="string">
+        <value>Kan een aantal van de in de database opgeslagen lijsten bewerken</value>
+      </configuration>
+      <configuration name="can_edit_all_database_lists" values="single" type="string">
+        <value>Kan alle in de database opgeslagen lijsten bewerken</value>
+      </configuration>
+      <configuration name="can_view_database_lists" values="single" type="string">
+        <value>Kan een aantal van de in de database opgeslagen lijsten bekijken</value>
+      </configuration>
+      <configuration name="can_view_all_database_lists" values="single" type="string">
+        <value>Kan alle in de database opgeslagen lijsten bekijken</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <configurationGroup name="view_list">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="nl" type="string">
+            <value>Lijst bekijken</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

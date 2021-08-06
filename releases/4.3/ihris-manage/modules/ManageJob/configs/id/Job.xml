@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Job" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Job" path="/I2CE" locale="id">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_salary_grade" locale="id">
+        <value>Sunting daftar salary_grade</value>
+      </configuration>
+      <configuration name="can_view_database_list_salary_grade" locale="id">
+        <value>Lihat daftar salary_grade</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="view_job">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="id">
+            <value>Lihat Pekerjaan</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="salary_grade">
+          <configuration name="display" values="single" locale="id">
+            <value>Tingkat Gaji</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_SalaryGrade">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="id">
+                <value>default:Nama</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start">
+              <configuration name="headers" type="delimited" locale="id">
+                <value>default:Mulai</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end">
+              <configuration name="headers" type="delimited" locale="id">
+                <value>default:Selesai</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="midpoint">
+              <configuration name="headers" type="delimited" locale="id">
+                <value>default:Titik Tengah</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="id">
+                <value>default:Catatan</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_ManageJob">
+          <configurationGroup name="fields">
+            <configurationGroup name="salary_grade">
+              <configuration name="headers" type="delimited" locale="id">
+                <value>default:Tingkat Gaji</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

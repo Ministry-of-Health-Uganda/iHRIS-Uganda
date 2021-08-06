@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name='YAML_spyc'>     
+  <metadata>
+    <displayName>YAML </displayName>   
+    <className>I2CE_Module_YAML</className>
+    <category>External Software</category>
+    <description>YAML parser provided by spyc.  Also enabled processing of .YAML config files</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>0.3.0</version>
+    <path name='classes'>
+      <value>./lib</value>
+    </path>
+    <path name='xml'>
+      <value>./xml</value> 
+    </path>
+  </metadata>
+    <configurationGroup name='YAML_spyc' path='/'>
+    <displayName>YAML Configuration</displayName>
+
+    <configuration name='yaml_config_extension' path='/config/additional_configuration_extensions/yaml'>
+      <description>registers yaml as an additional config file extension to be handled by this module</description>
+      <status>visible:false</status>
+      <value>YAML_spyc</value>
+    </configuration>
+
+    <configuration name='yml_config_extension' path='/config/additional_configuration_extensions/yml'>
+      <description>registers yml as an additional config file extension to be handled by this module</description>
+      <status>visible:false</status>
+      <value>YAML_spyc</value>
+    </configuration>
+
+  </configurationGroup>
+</I2CEConfiguration>

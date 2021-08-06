@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Uganda-standard-data-marital_status">
+  <metadata>
+    <displayName>Uganda default data for: marital_status</displayName>
+    <description>Data for form: marital_status</description>
+    <version>4.1.6.1</version>
+    <requirement name="PersonDemographic">
+    </requirement>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <erase path="/I2CE/formsData/forms/marital_status">
+    <lessThan version="4.1.6.0" />
+  </erase>
+  <configurationGroup name="Uganda-standard-data-marital_status" path="/I2CE/formsData/forms/marital_status">
+    <displayName>Form data: marital_status</displayName>
+    <configuration name="read_only" path="/modules/forms/forms/marital_status/read_only" type="boolean">
+      <version>4.1.6.1</version>
+      <value>true</value>
+    </configuration>
+    <configurationGroup name="MT01">
+      <displayName>MT01</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-05-31 07:31:54</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>0</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Single</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="MT02">
+      <displayName>MT02</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-05-31 07:31:54</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>0</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Cohabiting</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="MT03">
+      <displayName>MT03</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-05-31 07:31:54</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>0</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Married</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="MT04">
+      <displayName>MT04</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-05-31 07:31:54</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>0</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Separated</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="MT05">
+      <displayName>MT05</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-05-31 07:31:54</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>0</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Divorced</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="MT06">
+      <displayName>MT06</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2013-05-31 07:31:54</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>0</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="name">
+          <value>Widowed</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

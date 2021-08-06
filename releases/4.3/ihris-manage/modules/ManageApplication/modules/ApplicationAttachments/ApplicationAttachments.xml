@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-ApplicationAttachment">
+  <metadata>
+    <displayName>iHRIS Manage Application Attachments</displayName>
+    <category>Application Component</category>
+    <description>Allows attachments to Position Decisions and Position Interview forms</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-manage-Application">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="BinField">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <priority>235</priority>
+  </metadata>
+  <configurationGroup name="ihris-manage-ApplicationAttachment" path="/I2CE">
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PositionInterview">
+          <displayName>Configuration for the class 'iHRIS_PositionInterview'</displayName>
+          <configurationGroup name="fields">
+            <configurationGroup name="record">
+              <displayName>The field 'record'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DOCUMENT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Interview Record</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionDecision">
+          <displayName>Configuration for the class 'iHRIS_PositionDecision'</displayName>
+          <configurationGroup name="fields">
+            <configurationGroup name="record">
+              <displayName>The field 'record'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DOCUMENT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Record of Decision</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!--end of formclassess-->
+    </configurationGroup>
+    <!-- end of moudles/forms-->
+  </configurationGroup>
+</I2CEConfiguration>

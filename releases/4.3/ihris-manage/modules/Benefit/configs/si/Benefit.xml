@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Benefit" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Benefit" path="/I2CE" locale="si">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="si">
+      <configuration name="benefit_date" path="benefit/end_date/bad_date">
+        <value>අවසන් වන දිනය, ආරම්භක දිනයට පසු දිනයක් විය යුතුය.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="si">
+      <configuration name="person_can_view_child_form_benefit" locale="si">
+        <value>පුද්ගල ප්‍රතිලාභ උප ආකෘති පත්‍රය බලන්න</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_benefit" locale="si">
+        <value>පුද්ගල ප්‍රතිලාභ උප ආකෘති පත්‍රය සකසන්න</value>
+      </configuration>
+      <configuration name="can_edit_database_list_benefit_type" locale="si">
+        <value>දත්ත සමුදාය ලැයිස්තුවේ ප්‍රතිලාභ වර්ගය සකසන්න</value>
+      </configuration>
+      <configuration name="can_view_database_list_benefit_type" locale="si">
+        <value>දත්ත සමුදාය ලැයිස්තුවේ ප්‍රතිලාභ වර්ගය බලන්න</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="benefit_recurrence">
+        <configurationGroup name="once">
+          <configuration name="fields" value="many" type="delimited" locale="si">
+            <value>name:එක් වරක්</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="weekly">
+          <configuration name="fields" value="many" type="delimited" locale="si">
+            <value>name:සතිපතා</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="monthly">
+          <configuration name="fields" value="many" type="delimited" locale="si">
+            <value>name:මාසිකව</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="yearly">
+          <configuration name="fields" value="many" type="delimited" locale="si">
+            <value>name:වාර්ෂිකව</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="benefit">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="si">
+            <value>ප්‍රතිලාභ එක් කරන්න/යාවත්කාලීන කරන්න</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="benefit">
+          <configuration name="display" values="single" locale="si">
+            <value>ප්‍රතිලාභ</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="benefit_type">
+          <configuration name="display" values="single" locale="si">
+            <value>ප්‍රතිලාභ වර්ගය</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="benefit_recurrence">
+          <configuration name="display" values="single" locale="si">
+            <value>ප්‍රතිලාභ ප්‍රතිවර්තනය</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Benefit">
+          <configurationGroup name="fields">
+            <configurationGroup name="type">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:ප්‍රතිලාභ වර්ගය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="amount">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:ප්‍රමාණය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="source">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:මූලාශ්‍රය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:ආරම්භක දිනය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:අවසන් දිනය</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="recurrence">
+              <configuration name="headers" type="delimited" locale="si">
+                <value>default:ප්‍රතිවර්තන වාර ගණන</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

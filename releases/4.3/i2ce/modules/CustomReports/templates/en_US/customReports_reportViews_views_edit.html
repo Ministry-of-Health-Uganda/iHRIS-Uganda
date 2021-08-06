@@ -1,0 +1,19 @@
+<li>
+  <h3><span name='reportView_report_display_name'></span></h3>
+  <span name='reportView_report_description' ifset='true'>
+    --   <span name='reportView_report_description' > </span>
+  </span>
+  <div name='report_views' ifset='true'  class='existing_views'>
+    <h4 role='admin'>Existing Report Views</h4>
+    <ul id='report_view_existing_reportViews'>
+    </ul>
+  </div>
+  <span task='custom_reports_can_edit_reportViews'>
+    <br/>
+    <form action='CustomReports/edit/reportViews' method='post'>
+      <input type='hidden' name='reportView_report'/>
+      Add a new view: <input type='submit'   class='button' method='post' value='Add'/>    
+    </form>
+  </span>
+
+</li>

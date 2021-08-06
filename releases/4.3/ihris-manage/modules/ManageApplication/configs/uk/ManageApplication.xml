@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Application" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Application" path="/I2CE" locale="uk">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="uk">
+      <configuration name="app_felon" path="application/felony_circumstances/required">
+        <value>Ви вибрали, що були визнані винними в кримінальному злочині, але не описали обставини.</value>
+      </configuration>
+      <configuration name="app_hours" path="application/hours/required">
+        <value>Ви вибрали не повний робочий день, але не вказали, в які години ви готові працювати.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="uk">
+      <configuration name="person_can_view_child_form_position_decision" locale="uk">
+        <value>Можна переглядати дочірню форму особи щодо прийняття на посаду</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_decision" locale="uk">
+        <value>Можна редагувати дочірню форму особи щодо прийняття на посаду</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_position_interview" locale="uk">
+        <value>Можна переглядати співбесіду щодо посади з дочірньої форми особи</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_interview" locale="uk">
+        <value>Можна редагувати співбесіду щодо посади з дочірньої форми особи</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_application" locale="uk">
+        <value>Можна переглядати заявки з дочірніх форм особи</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_application" locale="uk">
+        <value>Можна редагувати заявки з дочірніх форм особи</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="application">
+          <configuration name="display" values="single" locale="uk">
+            <value>Заявник</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_interview">
+          <configuration name="display" values="single" locale="uk">
+            <value>Співбесіда на посаду</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_decision">
+          <configuration name="display" values="single" locale="uk">
+            <value>Рішення щодо посади</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Applicant">
+          <configurationGroup name="fields">
+            <configurationGroup name="position">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Посада(и)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Ви коли-небудь були визнані винними в кримінальному злочині?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony_circumstance">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Якщо так, то подайте обставини.</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="other_info">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:На додаток до вашої історії роботи, чи існують інші навички, кваліфікації та досвіду, які ми повинні враховувати?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hear">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Звідки ви дізналися про цю вакантну посаду?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Коли ви можете почати?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="desired_wage">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Бажана зарплата</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="full_time">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Ви шукаєте роботу з повною зайнятістю?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hours">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Якщо ні, то які години роботи вас влаштовують?</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionInterview">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Дата співбесіди</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Присутні люди</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Коментарі</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionDecision">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Дата рішення</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="offer">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Зробити пропозицію про працевлаштування?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Коментарі</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="application">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="uk">
+            <value>Додати/оновити заявки</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_decision">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="uk">
+            <value>Додати/оновити рішення щодо посади</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_interview">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="uk">
+            <value>Додати/оновити співбесіду на посаду</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

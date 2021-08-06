@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-FilledPositions" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-FilledPositions" path="/modules/CustomReports" locale="br">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships" config="CustomReports_Relationships">
+      <configurationGroup name="filled_positions" config="CustomReports_Relationship">
+        <configuration name="display_name" locale="br"></configuration>
+        <configuration name="description" locale="br"></configuration>
+        <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+          <configurationGroup name="first_salary" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="br">
+              <value>Gopr kentañ</value>
+            </configuration>
+            <configuration name="description" locale="br">
+              <value>Ar gopr kentañ evit ar post-mañ hag an den-mañ</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="last_salary" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="br">
+              <value>Gopr diwezhañ</value>
+            </configuration>
+            <configuration name="description" locale="br">
+              <value>Ar gopr diwezhañ evit ar post-mañ hag an den-mañ</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="person" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="br">
+              <value>Den</value>
+            </configuration>
+            <configuration name="description" locale="br"></configuration>
+          </configurationGroup>
+          <configurationGroup name="employee_position" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="br">
+              <value>Post an implijad</value>
+            </configuration>
+            <configuration name="description" locale="br">
+              <value>Resisadennoù war ar post-mañ.</value>
+            </configuration>
+            <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+              <configurationGroup name="supervisor" config="CustomReports_Relationship_Join">
+                <configuration name="display_name" locale="br"></configuration>
+                <configuration name="description" locale="br"></configuration>
+                <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+                  <configurationGroup name="supervisor_person_position" config="CustomReports_Relationship_Join">
+                    <configuration name="display_name" locale="br"></configuration>
+                    <configuration name="description" locale="br"></configuration>
+                    <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+                      <configurationGroup name="supervisor_person" config="CustomReports_Relationship_Join">
+                        <configuration name="display_name" locale="br"></configuration>
+                        <configuration name="description" locale="br"></configuration>
+                      </configurationGroup>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports" config="CustomReports_Reports">
+      <configurationGroup name="filled_positions" config="CustomReports_Report">
+        <configurationGroup name="meta" config="CustomReports_Report_Meta">
+          <configuration name="display_name" locale="br"></configuration>
+          <configuration name="description" locale="br"></configuration>
+          <configuration name="category" locale="br"></configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms" config="CustomReports_Report_ReportingForms">
+          <configurationGroup name="primary_form" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="start_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Deiziad deroù evit an den</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="greaterthan">
+                    <configuration name="header" locale="br">
+                      <value>Deiziad deroù Goude</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="lessthan">
+                    <configuration name="header" locale="br">
+                      <value>Deiziad deroù A-raok</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="end_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Deiziad dibenn evit an den</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="greaterthan">
+                    <configuration name="header" locale="br">
+                      <value>Deiziad dibenn Goude</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="lessthan">
+                    <configuration name="header" locale="br">
+                      <value>Deiziad dibenn A-raok</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="first_salary" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="salary" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Gopr kentañ</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last_salary" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="salary" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Gopr diwezhañ</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="surname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Anv</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="firstname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Anv-bihan</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="employee_position" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="job" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Anv ar post</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Anv ar post</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="facility" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Diazezadur</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="department" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Departamant</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="status" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Statud ar post</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Titl ar gourseller</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor_person_position" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="start_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Deziad derou evit ar Gourseller</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor_person" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="surname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Anv familh ar Gourseller</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="firstname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="br">
+                  <value>Anv-bihan ar Gourseller</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews" config="CustomReports_ReportViews">
+      <configurationGroup name="filled_positions" config="CustomReports_ReportView">
+        <configuration name="display_name" locale="br"></configuration>
+        <configuration name="description" locale="br"></configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

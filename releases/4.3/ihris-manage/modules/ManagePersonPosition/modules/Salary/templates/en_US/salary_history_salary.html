@@ -1,0 +1,31 @@
+<div> <!--begin salary-->
+  <div class="editRecord">
+    <p>Edit This Information</p>
+    <ul>
+      <span role="hr_manager">
+	<li><span role="hr_manager" type="form" name="salary:id" href="salary?return_page=salary_history&amp;id="  parent="true">Correct this Information</span></li>
+    <!--
+	<li><span role="hr_manager" type="form" name="salary:id" href="salary_history?delete&amp;id="  parent="true" id='delete_salary'>Delete this Salary</span></li>
+    -->
+      </span>
+
+      <span role="hr_staff" ifset='!true' name="salary:end_date">
+	<li><span role="hr_staff"  type="form" history='false' name="salary:id" href="salary?return_page=salary_history?&amp;last="  parent="true"  ifset="!salary:end_date">Salary Change</span></li>
+      </span>
+    </ul>
+  </div> <!-- editRecord -->
+	
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+	<th colspan="2">Salary</th>
+      </tr>
+      <span type="form" name="salary:salary" noedit="true" showhead="default"></span>
+      <span type="form" name="salary_grade:name" noedit="true"  showhead="default"  class="even"></span>
+      <tr><td><span class="field_head">Percent of Market Rate</span></td><td><b><span class="form_field"  name="percent_salary"></span></b></td></tr>
+      <span type="form" name="salary:start_date" showhead="default" class="even" ></span>
+      <span type="form" name="salary:end_date" showhead="default" ></span>
+      <div class="salary_notes"><span type="form" name="salary:notes" showhead="default" class="even" ></span></div>
+    </table>
+  </div> <!-- dataTable -->
+</div> <!--end salary-->

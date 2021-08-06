@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="disciplinary_action" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="disciplinary_action" path="/I2CE" locale="pt_BR">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="pt_BR">
+      <configuration name="disciplinary_date" path="disciplinary_action/end_date/bad_date">
+        <value>A data final precisa estar após a data inicial.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_disciplinary_action" locale="pt_BR">
+        <value>Pode editar as injúrias e os procedimentos disciplin_ares relacionados à uma pessoa</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_disciplinary_action" locale="pt_BR">
+        <value>Pode ver as injúrias e os procedimentos disciplin_ares relacionados à uma pessoa</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_type" locale="pt_BR">
+        <value>Editar a lista com os tipos de procedimentos disciplin_ares de trabalho</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_type" locale="pt_BR">
+        <value>Ver a lista de tipos de procedimentos disciplin_ares de trabalho</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_reason" locale="pt_BR">
+        <value>Editar a lista de motivos de ações disciplinares no local de trabalho</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_reason" locale="pt_BR">
+        <value>Verificar a lista de motivos de ações disciplinares no local de trabalho</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="disciplinary_action">
+          <configuration name="display" values="single" locale="pt_BR">
+            <value>Procedimento Disciplinar</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_type">
+          <configuration name="display" values="single" locale="pt_BR">
+            <value>Tipo de Procedimento Disciplinar</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_reason">
+          <configuration name="display" values="single" locale="pt_BR">
+            <value>Motivos da Ação Disciplinar</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_DisciplinaryAction">
+          <configurationGroup name="fields">
+            <configurationGroup name="action_date">
+              <configuration name="headers" type="delimited" locale="pt_BR">
+                <value>default:Dia da Discussão</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_type">
+              <configuration name="headers" type="delimited" locale="pt_BR">
+                <value>default:Ação Tomada</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_reason">
+              <configuration name="headers" type="delimited" locale="pt_BR">
+                <value>default:Motivo para ação</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="pt_BR">
+                <value>default:Início da Aplicabilidade</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="pt_BR">
+                <value>default:Fim da Aplicabilidade</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="pt_BR">
+                <value>default:Anotações</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_present">
+              <configuration name="headers" type="delimited" locale="pt_BR">
+                <value>default:Pessoas Presentes</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="editAction" path="/modules/disciplinary_action/page/editAction">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pt_BR">
+            <value>Adicionar/Atualizar Procedimento Disciplinar</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

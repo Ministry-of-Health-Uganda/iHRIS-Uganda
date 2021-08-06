@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="training-simple-competency" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="training-simple-competency" path="/I2CE" locale="tl">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_scheduled_training_course_can_edit_evaluation" locale="tl">
+        <value>Suriin ang nakatakdang kurso ng pagsasanay ng isang tao</value>
+      </configuration>
+      <configuration name="person_scheduled_training_course_evaluation_can_view_evaluation" locale="tl">
+        <value>Tingnan ang pagsusuri sa nakatakdang kurso ng pagsasanay ng isang tao</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="training_course_competency_evaluation">
+          <configuration name="display" values="single" locale="tl">
+            <value>Pagsusuri sa Kakayahan sa Pagganap ng Kurso ng Pagsasanay</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Training_Course_Competency_Evaluation">
+          <configurationGroup name="fields">
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Mga tala</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="evaluation_date">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Petsa ng Pagsusuri</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency_evaluation">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Pagsusuri</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Kakayahan sa Pagganap</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Training_Course">
+          <configurationGroup name="fields">
+            <configurationGroup name="competency">
+              <configurationGroup name="meta">
+                <configurationGroup name="list">
+                  <configurationGroup name="default">
+                    <configuration name="display_string" locale="tl"></configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Ibinigay ang mga Kakayahan sa Pagganap</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="evaluate-competencies" path="/modules/training-course/page/evaluate-competencies">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="tl">
+            <value>Surrin ang mga Kakayahan sa Pagganap na Pangkurso</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

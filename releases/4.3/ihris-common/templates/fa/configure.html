@@ -1,0 +1,186 @@
+<div id="siteContent">
+    <h1 dir="rtl">پیکربندی سامانه</h1>
+
+  <div task="can_edit_database_lists">
+    <h2><a href="lists" class="adminDatabase" dir="rtl">ادارهٔ پایگاه داده</a></h2>
+    <p dir="rtl">
+    <!-- Create and update standard lists of data for selection in system menus. -->
+    ادارهٔ جایگاه‌ها و ایجاد و به‌روزرسانی منوهای کشویی.
+    </p>
+      <hr></div>
+
+
+  <span type="module" name="admin" ifenabled="true">
+    <div task="can_configure_modules">
+      <h2><a href="admin/modules" class="adminDatabase" dir="rtl">پیکربندی ماژول‌ها</a></h2>
+      <p dir="rtl">
+	فعال‌سازی و غیرفعال‌سازی ماژول‌های مختلف برای سامانه.
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" name="page-builder" ifenabled="true">
+    <div task="can_build_pages">
+      <h2><a href="PageBuilder" class="adminDatabase">Page Builder</a></h2>
+      <p>
+	Build and Reconfigure pages
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" name="form-builder" ifenabled="true">
+    <div task="can_build_forms">
+      <h2>Forms Builder</h2>
+      <p>
+	Build and Reconfigure Forms
+      </p>
+      <ul><li><a href="FormBuilder/forms" class="adminDatabase">Form Builder</a></li>
+	<li><a href="FormBuilder/formClasses" class="adminDatabase">Form Class Builder</a></li>
+      </ul><hr></div>
+  </span>
+
+
+  <span type="module" name="formRelationships" ifenabled="true">
+    <div role="admin">
+      <h2><a href="form_relationship_import" class="searchRecords"> Import Form Relationship Data</a></h2>
+      <p>
+	Import iHRIS data from a form relationship export or from a transform of another data source, such as an Excel file, to the iHRIS form relationship format.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="CustomReports" ifenabled="true">
+    <span task="custom_reports_can_edit_reportViews">
+        <h2><a name="manage_reports" class="adminDatabase" dir="rtl">مدیریت گزارش‌ها</a></h2>
+      <p dir="rtl">
+	مدیریت گزارش‌های استاندارد موجود و ایجاد گزارش‌های سفارشی جدید.
+      </p>
+      <ul><li task="custom_reports_can_edit_relationships"><a href="CustomReports/edit/relationships" dir="rtl">شکل‌دهی به روابط</a>
+          <dl><dd dir="rtl">تعریف اینکه چطور فرم‌ها برای استفاده در گزارش‌ها ارتباط داده می‌شوند.</dd></dl></li>
+          <li task="custom_reports_can_edit_reports"><a href="CustomReports/edit/reports" dir="rtl">گزارش‌ها</a>
+          <dl><dd dir="rtl">گزارش‌ها را بر اساس روابط تعریف‌شدهٔ پیشین تعریف کن. شما می‌توانید انتخاب کنید که کدام فیلدها برای هر گزارش موجود هستند و از کدام فیلدها برای محدودسازی گزارش می‌توان استفاده کرد.</dd></dl></li>
+          <li><a href="CustomReports/edit/reportViews">Report Views</a>
+          <dl><dd dir="rtl">گزارش‌ها را بر اساس روابط تعریف‌شدهٔ پیشین تعریف کن. شما می‌توانید انتخاب کنید که کدام فیلدها برای هر گزارش موجود هستند و از کدام فیلدها برای محدودسازی گزارش می‌توان استفاده کرد.</dd></dl></li>
+      </ul><hr></span>
+  </span>
+
+
+
+  <span type="module" name="magicDataBrowser" ifenabled="true">
+    <div task="can_view_magic_data_browser">
+      <h2><a href="magicDataBrowser/show" class="searchRecords" dir="rtl">مرور داده‌های جادویی</a></h2>
+      <p dir="rtl">
+	مرور و پیکربندی داده‌های مورد استفاده توسط سامانه.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="SVS" ifenabled="true">
+    <div task="SVS_allow_RetreieveValueSet">
+      <h2><a href="SVS/config" class="searchRecords">Shared Value Sets</a></h2>
+      <p>
+	Download or configure Shared Value Sets for exchanging meta-data between components of your health information system.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="csd_cache" ifenabled="true">
+    <div task="csd_cache_admin">
+      <h2><a href="csd_cache" class="searchRecords">Care Services Discovery</a></h2>
+      <p>
+	Adminster Caches for Care Services Discovery (CSD) export of data
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="csd-infoman-storage" ifenabled="true">
+    <div role="admin">
+      <h2><a href="remote_directory_selector/edit" class="searchRecords"> InterLinked Health Worker Registry</a></h2>
+      <p>
+	Set connection details for connecting with a Care Services Discovery (CSD) compliant InterLinked Health Worker Registry.
+      </p>
+      <hr></div>
+  </span>
+
+
+
+
+
+  <span type="module" name="tasks-roles" ifenabled="true">
+    <div task="tasks_and_roles_can_access">
+      <h2><a href="tasks-roles" class="adminDatabase" dir="rtl">وظایف و نقش‌ها</a></h2>
+      <p dir="rtl">
+	ادارهٔ وظایف و نقش‌ها برای سامانه
+      </p>
+      
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="localeSelector" ifenabled="true">
+    <div task="locales_can_edit_site_locale">
+      <h2><a href="localeSelector/edit" class="adminDatabase" dir="rtl">مدیریت محل‌ها</a></h2>
+      <p dir="rtl">
+	مدیریت محل‌های در دسترس قرار گرفته توسط سامانه
+      </p>
+      <hr></div>      
+  </span>
+
+
+
+  <span type="module" name="BackgroundProcess" ifenabled="true">
+    <div task="can_view_background_processes">
+      <h2><a href="BackgroundProcess" class="searchRecords" dir="rtl">پردازش‌های پس‌زمینه</a></h2>
+      <p dir="rtl">
+	پردازش‌های زمینه را که آغاز کرده‌اید بیازمایید
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="formBrowser" ifenabled="true">
+    <div task="can_view_form_browser">
+      <h2><a href="formBrowser/showForm" class="searchRecords" dir="rtl">مرور فرم‌ها</a></h2>
+      <p dir="rtl">
+	مرور فرم‌های مورد استفاده توسط سامانه.
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" ifenabled="true" name="DHIS_Metadata">
+    <div role="admin">
+      <h2><a href="dhis_metadata">Manage DHIS2 MetaData</a></h2>
+      <p dir="rtl">
+	بارگذاری <a href="http://dhis2.org">DHIS2</a> MetaData such as organizational units and data elements.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="CachedForms" ifenabled="true">
+    <div task="cached_forms_can_administer">
+      <h2><a href="CachedForms" class="adminDatabase" dir="rtl">فرم‌های ذخیره‌شده</a></h2>
+      <p dir="rtl">
+	کنترل بر ایجاد فرم‌های ذخیره‌شده
+      </p>
+      <hr></div>
+  </span>
+  
+  <div task="can_create_or_edit_users">
+
+    <h2><a href="user" class="adminDatabase" dir="rtl">کاربران اداره‌کننده</a></h2>
+    <p dir="rtl">
+    ایجاد، به‌روزرسانی و غیر فعال‌سازی حساب‌های کاربری برای عملی‌ساختن دسترسی امن به سامانه. دسترسی به مدیر سیستم محدود است.
+    </p>
+      <hr></div>
+  <span type="module" name="UserStatistics" ifenabled="true">
+	<div task="can_view_user_statistics">
+	  <h2><a href="UserStatistics" class="searchRecords">User Statistics</a></h2>
+      View data entry statistics for users.
+    </div>
+  </span>
+</div>

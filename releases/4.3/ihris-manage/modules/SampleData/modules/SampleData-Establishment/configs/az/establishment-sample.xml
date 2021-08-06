@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SampleData-establishment" path="/">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="SampleData-establishment" path="/" locale="az">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationship" path="/modules/CustomReports/relationships/staff_norm_2010">
+      <configuration name="description" locale="az">
+        <value>2010 üçün Heyət Normaları</value>
+      </configuration>
+      <configuration name="display_name" locale="az">
+        <value>2010 üçün Heyət Normaları</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="position">
+          <configuration name="description" locale="az">
+            <value>Bu vəzifə bu şəxs tərəfindən tutulub.</value>
+          </configuration>
+          <configuration name="display_name" locale="az">
+            <value>Mövqe</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="job">
+              <configuration name="description" locale="az">
+                <value>Bu iş bu şəxslə əlaqələndirilib</value>
+              </configuration>
+              <configuration name="display_name" locale="az">
+                <value>İş</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="cadre">
+                  <configuration name="description" locale="az">
+                    <value>Kadr</value>
+                  </configuration>
+                  <configuration name="display_name" locale="az">
+                    <value>Kadr</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="facility">
+              <configuration name="description" locale="az"></configuration>
+              <configuration name="display_name" locale="az"></configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="facility_type">
+                  <configuration name="description" locale="az"></configuration>
+                  <configuration name="display_name" locale="az"></configuration>
+                  <configurationGroup name="joins">
+                    <configurationGroup name="establishment">
+                      <configuration name="description" locale="az">
+                        <value>Qurum</value>
+                      </configuration>
+                      <configuration name="display_name" locale="az">
+                        <value>Qurum</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="report" path="/modules/CustomReports/reports/staff_norm_2010">
+      <configurationGroup name="meta">
+        <configuration name="description" locale="az">
+          <value>2010 üçün heyət normativləri</value>
+        </configuration>
+        <configuration name="display_name" locale="az">
+          <value>2010 üçün Heyət Normaları</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="establishment">
+          <configurationGroup name="fields">
+            <configurationGroup name="amount">
+              <configuration name="header" locale="az">
+                <value>Vəzifə normativləri</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility_type">
+              <configuration name="header" locale="az"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="position">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility">
+              <configuration name="header" locale="az"></configuration>
+            </configurationGroup>
+            <configurationGroup name="job">
+              <configuration name="header" locale="az">
+                <value>İş</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="job">
+          <configurationGroup name="fields">
+            <configurationGroup name="cadre">
+              <configuration name="header" locale="az">
+                <value>Kadr</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="id">
+              <configuration name="header" locale="az">
+                <value>Doldurulmuş vəzifələr</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportView" path="/modules/CustomReports/reportViews/staff_norm_2010">
+      <configuration name="description" locale="az">
+        <value>2010 üçün heyət normativləri</value>
+      </configuration>
+      <configuration name="display_name" locale="az">
+        <value>2010 vəzifə normativləri</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonContact" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonContact" path="/I2CE" locale="ko">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_messages" path="/modules/forms/formfield_messages" locale="ko">
+      <configuration name="work" path="work/email/invalid_email">
+        <value>존재하는 형식의 이메일을 입력해 주십시오</value>
+      </configuration>
+      <configuration name="personal" path="personal/email/invalid_email">
+        <value>존재하는 형식의 이메일을 입력해 주십시오</value>
+      </configuration>
+      <configuration name="other" path="other/email/invalid_email">
+        <value>존재하는 형식의 이메일을 입력해 주십시오</value>
+      </configuration>
+      <configuration name="emergency" path="emergency/email/invalid_email">
+        <value>존재하는 형식의 이메일을 입력해 주십시오</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="ko">
+      <configuration name="person_can_view_child_form_person_contact_work" locale="ko"></configuration>
+      <configuration name="person_can_edit_child_form_person_contact_work" locale="ko"></configuration>
+      <configuration name="person_can_view_child_form_person_contact_emergency" locale="ko"></configuration>
+      <configuration name="person_can_edit_child_form_person_contact_emergency" locale="ko"></configuration>
+      <configuration name="person_can_view_child_form_person_contact_personal" locale="ko"></configuration>
+      <configuration name="person_can_edit_child_form_person_contact_personal" locale="ko"></configuration>
+      <configuration name="person_can_view_child_form_person_contact_other" locale="ko"></configuration>
+      <configuration name="person_can_edit_child_form_person_contact_other" locale="ko"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_contact_work">
+          <configuration name="display" values="single" locale="ko">
+            <value>직장 연락처</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_emergency">
+          <configuration name="display" values="single" locale="ko">
+            <value>비상 연락처</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_other">
+          <configuration name="display" values="single" locale="ko">
+            <value>다른 연락처</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_personal">
+          <configuration name="display" values="single" locale="ko">
+            <value>개인 연락처</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="contact">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ko">
+            <value>연락처 정보 추가/업데이트</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

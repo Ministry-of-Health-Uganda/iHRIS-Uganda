@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-PersonDemographic">
+  <metadata>
+    <displayName>iHRIS Manage Person Demographic</displayName>
+    <category>Application Component</category>
+    <description>The iHRIS Manage Person Demographic</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.0" />
+    </requirement>
+    <requirement name="PersonDemographic">
+      <atLeast version="4.0" />
+    </requirement>
+    <priority>350</priority>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+  </metadata>
+  <configurationGroup name="ihris-manage-PersonDemographic" path="/I2CE">
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="demographic">
+          <displayName>Demographic Information</displayName>
+          <description>The Demographic Information Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_ManageDemographic</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of /modules/forms/forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_ManageDemographic">
+          <displayName>Configuration for the class 'iHRIS_ManageDemographic'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>iHRIS_Demographic</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="dependents">
+              <displayName>The field 'dependents'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Number of Dependents</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of /modules/forms/formClasses-->
+    </configurationGroup>
+    <!-- end of /modules/forms-->
+  </configurationGroup>
+</I2CEConfiguration>

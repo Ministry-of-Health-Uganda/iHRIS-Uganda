@@ -1,0 +1,186 @@
+<div id="siteContent">
+    <h1>システム設定</h1>
+
+  <div task="can_edit_database_lists">
+    <h2><a href="lists" class="adminDatabase">データベースを管理</a></h2>
+    <p>
+    <!-- Create and update standard lists of data for selection in system menus. -->
+    位置を管理してドロップダウン メニューを作成/更新
+    </p>
+      <hr></div>
+
+
+  <span type="module" name="admin" ifenabled="true">
+    <div task="can_configure_modules">
+      <h2><a href="admin/modules" class="adminDatabase">モジュール設定</a></h2>
+      <p>
+	システムのさまざまなモジュールの有効/無効を切り替え
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" name="page-builder" ifenabled="true">
+    <div task="can_build_pages">
+      <h2><a href="PageBuilder" class="adminDatabase">Page Builder</a></h2>
+      <p>
+	Build and Reconfigure pages
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" name="form-builder" ifenabled="true">
+    <div task="can_build_forms">
+      <h2>Forms Builder</h2>
+      <p>
+	Build and Reconfigure Forms
+      </p>
+      <ul><li><a href="FormBuilder/forms" class="adminDatabase">Form Builder</a></li>
+	<li><a href="FormBuilder/formClasses" class="adminDatabase">Form Class Builder</a></li>
+      </ul><hr></div>
+  </span>
+
+
+  <span type="module" name="formRelationships" ifenabled="true">
+    <div role="admin">
+      <h2><a href="form_relationship_import" class="searchRecords"> Import Form Relationship Data</a></h2>
+      <p>
+	Import iHRIS data from a form relationship export or from a transform of another data source, such as an Excel file, to the iHRIS form relationship format.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="CustomReports" ifenabled="true">
+    <span task="custom_reports_can_edit_reportViews">
+        <h2><a name="manage_reports" class="adminDatabase">報告を管理</a></h2>
+      <p>
+	ユーザーが利用できる標準レポートの管理および新規カスタムレポートの作成
+      </p>
+      <ul><li task="custom_reports_can_edit_relationships"><a href="CustomReports/edit/relationships">フォームの関連付け</a>
+          <dl><dd>フォーム、レポートで使用する関連を定義します。</dd></dl></li>
+          <li task="custom_reports_can_edit_reports"><a href="CustomReports/edit/reports">報告</a>
+          <dl><dd>あらかじめ定義された関連性に基づいてレポートを定義します。使用可能なフィールド、レポートの制限ができるフィールドを選択可能です。</dd></dl></li>
+          <li><a href="CustomReports/edit/reportViews">レポートの閲覧</a>
+          <dl><dd>既に定義済みのレポートに基づいたレポートビューの定義。表示フィールドの選択や、レポートビューを開いたときに表示させたいチャート・指定結果を初期ビューとして定義可能。</dd></dl></li>
+      </ul><hr></span>
+  </span>
+
+
+
+  <span type="module" name="magicDataBrowser" ifenabled="true">
+    <div task="can_view_magic_data_browser">
+      <h2><a href="magicDataBrowser/show" class="searchRecords">マジックデータの参照</a></h2>
+      <p>
+	システムで使用するコンフィギュレーションデータの参照
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="SVS" ifenabled="true">
+    <div task="SVS_allow_RetreieveValueSet">
+      <h2><a href="SVS/config" class="searchRecords">Shared Value Sets</a></h2>
+      <p>
+	Download or configure Shared Value Sets for exchanging meta-data between components of your health information system.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="csd_cache" ifenabled="true">
+    <div task="csd_cache_admin">
+      <h2><a href="csd_cache" class="searchRecords">Care Services Discovery</a></h2>
+      <p>
+	Adminster Caches for Care Services Discovery (CSD) export of data
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="csd-infoman-storage" ifenabled="true">
+    <div role="admin">
+      <h2><a href="remote_directory_selector/edit" class="searchRecords"> 相互リンクされたヘルスワーカー・レジストリ</a></h2>
+      <p>
+	ケアサービス・ディスカバリー(CSD) 準拠の相互リンクされた保健ワーカーレジストリに接続するための接続の詳細を設定します。
+      </p>
+      <hr></div>
+  </span>
+
+
+
+
+
+  <span type="module" name="tasks-roles" ifenabled="true">
+    <div task="tasks_and_roles_can_access">
+      <h2><a href="tasks-roles" class="adminDatabase">タスクとロール</a></h2>
+      <p>
+	タスクとロールの管理
+      </p>
+      
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="localeSelector" ifenabled="true">
+    <div task="locales_can_edit_site_locale">
+      <h2><a href="localeSelector/edit" class="adminDatabase">ロケールを管理</a></h2>
+      <p>
+	使用可能なロケールの管理
+      </p>
+      <hr></div>      
+  </span>
+
+
+
+  <span type="module" name="BackgroundProcess" ifenabled="true">
+    <div task="can_view_background_processes">
+      <h2><a href="BackgroundProcess" class="searchRecords">バックグラウンド プロセス</a></h2>
+      <p>
+	実行済バックグラウンドプロセスの診断
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="formBrowser" ifenabled="true">
+    <div task="can_view_form_browser">
+      <h2><a href="formBrowser/showForm" class="searchRecords">フォームの参照</a></h2>
+      <p>
+	システムで使用されたフォームの参照
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" ifenabled="true" name="DHIS_Metadata">
+    <div role="admin">
+      <h2><a href="dhis_metadata">Manage DHIS2 MetaData</a></h2>
+      <p>
+	アップロード <a href="http://dhis2.org">DHIS2</a> MetaData such as organizational units and data elements.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="CachedForms" ifenabled="true">
+    <div task="cached_forms_can_administer">
+      <h2><a href="CachedForms" class="adminDatabase">キャッシュされたフォーム</a></h2>
+      <p>
+	キャッシュされたフォームの生成管理
+      </p>
+      <hr></div>
+  </span>
+  
+  <div task="can_create_or_edit_users">
+
+    <h2><a href="user" class="adminDatabase">ユーザを管理</a></h2>
+    <p>
+    システムへのアクセス許可を実施するユーザーアカウントの作成、更新、無効化。アクセスはシステム管理者に限定される。
+    </p>
+      <hr></div>
+  <span type="module" name="UserStatistics" ifenabled="true">
+	<div task="can_view_user_statistics">
+	  <h2><a href="UserStatistics" class="searchRecords">ユーザの統計</a></h2>
+      ユーザーのデータエントリ統計を閲覧する。
+    </div>
+  </span>
+</div>

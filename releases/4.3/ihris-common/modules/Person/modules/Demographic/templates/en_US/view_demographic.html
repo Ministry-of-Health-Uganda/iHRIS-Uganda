@@ -1,0 +1,25 @@
+<div task='person_can_view_child_form_demographic'>
+  <div class="editRecord">
+    <p>Edit This Information</p>
+    <ul>
+      <li task='person_can_edit_child_form_demographic'>
+	<span type="form" ifset="demographic:id" name="demographic:id" href="demographic?id=" parent="true">
+	  Update this Information
+	</span>
+      </li>
+    </ul>
+  </div> <!-- editRecord -->
+  
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tbody>
+	<tr>
+	  <th colspan="2">Demographic Information</th>
+	</tr>
+	<span type="form" name="demographic:birth_date" showhead="default"></span>
+	<span type="form" name="demographic:gender" showhead="default" class="even"></span>
+	<span type="form" name="demographic:marital_status" showhead="default"></span>
+      </tbody>
+    </table>
+  </div> <!-- dataTable -->
+</div>

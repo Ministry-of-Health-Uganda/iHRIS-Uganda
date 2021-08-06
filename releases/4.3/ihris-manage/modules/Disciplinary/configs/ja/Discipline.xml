@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="disciplinary_action" path="/I2CE">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="disciplinary_action" path="/I2CE" locale="ja">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="ja">
+      <configuration name="disciplinary_date" path="disciplinary_action/end_date/bad_date">
+        <value>終了日は開始日より後にする必要があります。</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_disciplinary_action" locale="ja">
+        <value>職場負傷・懲戒処分に指定された人を編集できます。</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_disciplinary_action" locale="ja">
+        <value>職場負傷・懲戒処分に指定された人を表示できます。</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_type" locale="ja">
+        <value>職場懲戒処分のタイプ一覧を編集します。</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_type" locale="ja">
+        <value>職場懲戒処分のタイプ一覧を表示します。</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_reason" locale="ja">
+        <value>職場の懲戒理由のタイプ一覧を編集します。</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_reason" locale="ja">
+        <value>職場の懲戒理由の一覧を表示します。</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="disciplinary_action">
+          <configuration name="display" values="single" locale="ja">
+            <value>懲戒処分</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_type">
+          <configuration name="display" values="single" locale="ja">
+            <value>懲戒処分タイプ</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_reason">
+          <configuration name="display" values="single" locale="ja">
+            <value>懲戒理由</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_DisciplinaryAction">
+          <configurationGroup name="fields">
+            <configurationGroup name="action_date">
+              <configuration name="headers" type="delimited" locale="ja">
+                <value>default:ディスカッションの日付</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_type">
+              <configuration name="headers" type="delimited" locale="ja">
+                <value>default:適用されたアクション</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_reason">
+              <configuration name="headers" type="delimited" locale="ja">
+                <value>default:処分理由</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="ja">
+                <value>default:適用の開始</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="ja">
+                <value>default:適用の終了</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="ja">
+                <value>default:注釈</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_present">
+              <configuration name="headers" type="delimited" locale="ja">
+                <value>default:出席者</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="editAction" path="/modules/disciplinary_action/page/editAction">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ja">
+            <value>懲戒処分を追加/更新</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

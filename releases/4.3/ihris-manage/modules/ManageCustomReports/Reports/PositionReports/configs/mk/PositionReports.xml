@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-position-reports" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-position-reports" path="/modules/CustomReports" locale="mk">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships" config="CustomReports_Relationships">
+      <configurationGroup name="position" config="CustomReports_Relationship">
+        <configurationGroup name="joins">
+          <configurationGroup name="job">
+            <configurationGroup name="joins">
+              <configurationGroup name="cadre">
+                <configuration name="display_name" locale="mk">
+                  <value>Кадар</value>
+                </configuration>
+                <configuration name="description" locale="mk">
+                  <value>Кадарот поврзан со оваа работа.</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="classification">
+                <configuration name="display_name" locale="mk">
+                  <value>Класификација</value>
+                </configuration>
+                <configuration name="description" locale="mk">
+                  <value>Класификацијата поврзана со оваа работа.</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+            <configuration name="display_name" locale="mk">
+              <value>Работа</value>
+            </configuration>
+            <configuration name="description" locale="mk">
+              <value>Работата поврзана со ова раб. место.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="facility">
+            <configuration name="display_name" locale="mk">
+              <value>Установа</value>
+            </configuration>
+            <configuration name="description" locale="mk">
+              <value>Установата кадешто работи лицето на ова раб. место</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="department">
+            <configuration name="display_name" locale="mk">
+              <value>Оддел</value>
+            </configuration>
+            <configuration name="description" locale="mk">
+              <value>Одделот кадешто припаѓа лицето на ова раб. место.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="last">
+            <configuration name="display_name" locale="mk">
+              <value>Претходно раб. место</value>
+            </configuration>
+            <configuration name="description" locale="mk">
+              <value>Претходното лице на ова раб. место.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="current">
+            <configuration name="display_name" locale="mk">
+              <value>Тековно раб. место</value>
+            </configuration>
+            <configuration name="description" locale="mk">
+              <value>Лицето моментално на ова раб. место.</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="reporting_functions">
+          <configurationGroup name="days_open">
+            <configuration name="description" locale="mk">
+              <value>Колку дена работното место било отворено пред да се пополни.</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configuration name="display_name" locale="mk">
+          <value>Работни места</value>
+        </configuration>
+        <configuration name="description" locale="mk">
+          <value>Сите информации поврзани со раб. место.</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports" config="CustomReports_Reports">
+      <configurationGroup name="position_list" config="CustomReports_Report">
+        <configurationGroup name="meta" config="CustomReports_Report_Meta">
+          <configuration name="display_name" locale="mk">
+            <value>Список на раб. места</value>
+          </configuration>
+          <configuration name="description" locale="mk">
+            <value>Податоци за сите раб. места</value>
+          </configuration>
+          <configuration name="category" locale="mk">
+            <value>Извештаи за раб. места</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms" config="CustomReports_Report_ReportingForms">
+          <configurationGroup name="primary_form" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="code" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>Код</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="job" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>Работа на раб. место</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="mk">
+                      <value>Работа</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>Звање</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="facility" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>ID на установата</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="mk">
+                      <value>Установа</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="department" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>ID на оддел</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="mk">
+                      <value>Оддел</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="posted_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>Дартум на објавување</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="status" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>Статус</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="mk">
+                      <value>Статус</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="job" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>Звање</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="cadre" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>ID на кадарот</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="mk">
+                      <value>Кадар</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="classification" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>ID на класификацијата</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="mk">
+                      <value>Класификација</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="cadre" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="name" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>Кадар</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="classification" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="name" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>Класификација</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="facility" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="name" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>Установа</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="department" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="name" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>Оддел</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="end_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>Датгум на ослободување</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="current" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="start_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="mk">
+                  <value>Датум на пополнување</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="reporting_functions" config="CustomReports_Report_ReportingFunctions">
+          <configurationGroup name="days_open" config="CustomReports_Report_ReportingFunction">
+            <configuration name="header" locale="mk">
+              <value>Колку дена било слободно</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews" config="CustomReports_ReportViews">
+      <configurationGroup name="position_list" config="CustomReports_ReportView">
+        <configuration name="display_name" locale="mk">
+          <value>Список на раб. места</value>
+        </configuration>
+        <configuration name="description" locale="mk">
+          <value>Список на сите раб. места.</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="position_open_duration" config="CustomReports_ReportView">
+        <configuration name="display_name" locale="mk">
+          <value>Времетраење на непополнетоста</value>
+        </configuration>
+        <configuration name="description" locale="mk">
+          <value>Колку дена секое раб. место било слободно пред да се пополни.</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

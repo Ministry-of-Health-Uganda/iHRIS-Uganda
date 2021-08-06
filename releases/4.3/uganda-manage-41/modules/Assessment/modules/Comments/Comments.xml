@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Comments">
+  <metadata>
+    <displayName>iHRIS Person Comments</displayName>
+    <className>iHRIS_Module_Comments</className>
+    <category>Application Component</category>
+    <description>A Person's Comments</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.2.0.5</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Assessment">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="Comments" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_assessment" locale="en_US">
+        <value>Can view comments child form of a assessment</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_assessment" locale="en_US">
+        <value>Can edit comments child forms of a assessment</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_assessment" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_assessment" values="many">
+        <value>person_can_view_child_form_comments</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <version>3.2.8</version>
+        <value>person_can_view_child_form_comments</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>3.2.8</version>
+        <value>person_can_edit_child_form_comments</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="comments">
+        <displayName>Comments Page</displayName>
+        <description>The page 'comments' which has the action of: Add/Update Comments and Recommendations (If Any)</description>
+        <configuration name="style">
+          <value>parent_assessment</value>
+        </configuration>
+        <configurationGroup name="args">
+         <version>4.1.10.13</version>
+          <configuration name="title" locale="en_US">
+            <value>Add/Update Comments and Recommendations (If Any)</value>
+          </configuration>
+          <configuration name="primary_form">
+            <value>comments</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_can_edit_child_form_assessment</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>comments</value>
+            </configuration>
+        </configurationGroup>
+    </configurationGroup>
+      <!-- comments -->
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+       <configurationGroup name="assessment">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>comments</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- assessment -->
+        <configurationGroup name="comments">
+          <displayName>Assesment Section B</displayName>
+          <version>4.2.0.5</version>
+          <configuration name="class" values="single">
+            <value>iHRIS_Comments</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Comments and Recommendations (If Any)</value>
+          </configuration>
+        </configurationGroup> <!-- action_plan -->
+      </configurationGroup>
+      <!-- end of  forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Comments">
+          <displayName>Configuration for the class 'iHRIS_Comments'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="appraisee_date">
+              <displayName>The field 'appraisee_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Appraisee Date</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default value for this field as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            </configurationGroup>
+            <configurationGroup name="appraiser_date">
+              <displayName>The field 'appraiser_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Appraiser Date</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default value for this field as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            </configurationGroup>
+            <configurationGroup name="supervisor_date">
+              <displayName>The field 'supervisor_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Supervisor Date</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default value for this field as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            </configurationGroup>
+            <configurationGroup name="responsible_officer_date">
+              <displayName>The field 'responsible_officer_date</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Responsible Officer Date</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default value for this field as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            </configurationGroup>
+            <configurationGroup name="appraisee_comment">
+              <displayName>The field 'appraisee_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Comments Of The Appraisee </value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="appraiser_comment">
+              <displayName>The field 'appraiser_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Comments Of The Appraiser</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="supervisor_comment">
+              <displayName>The field 'supervisor_comment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Comments Of The Countersigning Officer/Supervisor Of Appraiser</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="responsible_officer_comment">
+              <displayName>The field 'responsible_officer_comment</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Comments Of The Responsible Officer</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_Comments -->
+      </configurationGroup>
+      <!-- end of  formClasses-->
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="LoginPage">
+  <metadata>
+    <displayName>Login Page</displayName>
+    <className>I2CE_Module_Login</className>
+    <category>Base System Page</category>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <description>The login Page</description>
+    <link>http://launchpad.net/i2ce</link>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <requirement name="Mailer">
+      <atLeast version="1.2" />
+      <lessThan version="1.3" />
+    </requirement>
+    <requirement external="1" name="PEAR:Text_Password">
+      <atLeast version="0" />
+    </requirement>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <priority>50</priority>
+  </metadata>
+  <configurationGroup name="page" path="/I2CE/page">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_change_own_password" values="single" type="string">
+        <version>3.2.1</version>
+        <value>Can change their own password</value>
+      </configuration>
+    </configurationGroup>
+    <displayName>Pages</displayName>
+    <description>Information about various pages made available by the system</description>
+    <status>required:true</status>
+    <configurationGroup name="login">
+      <displayName>Login Page</displayName>
+      <description>The page 'login' which has the action of: Login</description>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_PageLogin</value>
+      </configuration>
+      <configuration name="style" values="single" type="string">
+        <displayName>Page Style</displayName>
+        <description>The Page Style</description>
+        <value>main</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Page Options</displayName>
+        <description>The options that control the access and display of all pages</description>
+        <configuration name="title" values="single" locale="en_US" type="string">
+          <displayName>Title</displayName>
+          <description>Page Title</description>
+          <status>required:true</status>
+          <value>Login</value>
+        </configuration>
+        <configuration name="defaultHTMLFile" values="many" type="string">
+          <displayName>Default HTML File</displayName>
+          <description>The default HTML File for this page</description>
+          <status>required:true</status>
+          <value>login.html</value>
+          <value>intro.html</value>
+        </configuration>
+        <configuration name="access" values="many" type="string">
+          <displayName>Page Access</displayName>
+          <description>All of the roles that have access to this page</description>
+          <status>required:false</status>
+          <value>all</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="logout">
+      <displayName>Logout Page</displayName>
+      <description>The page 'logout' which has the action of: Logout</description>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_PageLogout</value>
+      </configuration>
+      <configuration name="style" values="single" type="string">
+        <displayName>Page Style</displayName>
+        <description>The Page Style</description>
+        <value>empty</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Page Options</displayName>
+        <description>The options that control the access and display of all pages</description>
+        <configuration name="title" values="single" locale="en_US" type="string">
+          <displayName>Title</displayName>
+          <description>Page Title</description>
+          <value>Logout</value>
+        </configuration>
+        <configuration name="access" values="many" type="string">
+          <displayName>Page Access</displayName>
+          <description>All of the roles that have access to this page</description>
+          <status>required:false</status>
+          <value>all</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forgot">
+      <displayName>Forgot Page</displayName>
+      <description>The page 'forgot' which has the action of: Forgotten Password</description>
+      <configuration name="style" values="single" type="string">
+        <displayName>Page Style</displayName>
+        <description>The Page Style</description>
+        <value>main</value>
+      </configuration>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_PageForgot</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Page Options</displayName>
+        <description>The options that control the access and display of all pages</description>
+        <configuration name="title" values="single" locale="en_US" type="string">
+          <displayName>Page Title</displayName>
+          <description>Page Title</description>
+          <status>required:true</status>
+          <value>Forgotten Password</value>
+        </configuration>
+        <configuration name="tasks" values="many" type="string">
+          <version>3.2.1</version>
+          <value>can_change_own_password</value>
+        </configuration>
+        <configuration name="defaultHTMLFile" values="many" type="string">
+          <displayName>Default HTML File</displayName>
+          <description>The default HTML File for this page</description>
+          <status>required:true</status>
+          <value>forgot.html</value>
+        </configuration>
+        <configuration name="access" values="many" type="string">
+          <displayName>Page Access</displayName>
+          <description>All of the roles that have access to this page</description>
+          <status>required:false</status>
+          <value>all</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="password">
+      <displayName>Password Page</displayName>
+      <description>The page 'password' which has the action of: Change Password</description>
+      <configuration name="style" values="single" type="string">
+        <displayName>Page Style</displayName>
+        <description>The Page Style</description>
+        <value>shell</value>
+      </configuration>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_PagePassword</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Page Options</displayName>
+        <description>The options that control the access and display of all pages</description>
+        <configuration name="title" values="single" locale="en_US" type="string">
+          <displayName>Page Title</displayName>
+          <description>Page Title</description>
+          <status>required:true</status>
+          <value>Change Password</value>
+        </configuration>
+        <configuration name="tasks" values="many" type="string">
+          <version>3.2.1</version>
+          <value>can_change_own_password</value>
+        </configuration>
+        <configuration name="defaultHTMLFile" values="many" type="string">
+          <displayName>Default HTML File</displayName>
+          <description>The default HTML File for this page</description>
+          <status>required:true</status>
+          <value>password.html</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="feedback">
+      <displayName>Feedback Page</displayName>
+      <description>The page 'feedback' which has the action of: Send Feedback</description>
+      <configuration name="style" values="single" type="string">
+        <displayName>Page Style</displayName>
+        <description>The Page Style</description>
+        <value>shell</value>
+      </configuration>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_PageFeedback</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Page Options</displayName>
+        <description>The options that control the access and display of all pages</description>
+        <configuration name="title" values="single" type="string">
+          <displayName>Page Title</displayName>
+          <description>Page Title</description>
+          <status>required:true</status>
+          <value>Send Feedback</value>
+        </configuration>
+        <configuration name="defaultHTMLFile" values="many" type="string">
+          <displayName>Default HTML File</displayName>
+          <description>The default HTML File for this page</description>
+          <status>required:false</status>
+          <value>feedback.html</value>
+        </configuration>
+        <configuration name="access" values="many" type="string">
+          <displayName>Page Access</displayName>
+          <description>All of the roles that have access to this page</description>
+          <status>required:false</status>
+          <value>any</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

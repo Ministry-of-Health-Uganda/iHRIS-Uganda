@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="field-limits">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="field-limits" locale="cs">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/modules/field-limits/text/" locale="cs">
+      <configuration name="select_value" values="single" type="string">
+        <value>Vyberte Hodnotu</value>
+      </configuration>
+      <configurationGroup name="description">
+        <configurationGroup name="default">
+          <configuration name="text" locale="cs" values="single" type="string"></configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:hodnota</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="max_parent">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Maximální hodnota pro %s, odchylka %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>1:odchylka</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="min_parent">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Minimální hodnota pro %s, odchylka %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>1:odchylka</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="not_null">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Nenulové</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="null">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Nulové</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="true">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Pravda</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="false">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Nepravda</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="yes">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Ano</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="no">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Ne</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="lessthan">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Méně než %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:hodnota</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="lessthan_equals">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Méně nebo rovno %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:hodnota</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="greaterthan">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Větší než %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:hodnota</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="greaterthan_equals">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Větší nebo rovno %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:hodnota</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="between">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Mezi %s a %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single"></configuration>
+        </configurationGroup>
+        <configurationGroup name="max_parent_form">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Maximální hodnota pro nadřazené.</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="min_parent_form">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Minimální hodnota pro nadřazené.</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="greaterthan_now">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Větší než nyní.</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="lessthan_now">
+          <configuration name="text" locale="cs" values="single" type="string">
+            <value>Menší než nyní.</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

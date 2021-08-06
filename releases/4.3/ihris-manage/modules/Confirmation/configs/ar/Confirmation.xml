@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Confirmation" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Confirmation" path="/I2CE" locale="ar">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="ar">
+      <configuration name="person_can_view_child_form_confirmation" locale="ar">
+        <value>يمكن&#160;عرض نموذج التأكيد الفرعي&#160;لشخص</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_confirmation" locale="ar">
+        <value>يمكن تعديل&#160; نموذج التأكيد الفرعي&#160;لشخص</value>
+      </configuration>
+      <configuration name="can_edit_database_list_confirmation_type" locale="ar">
+        <value>يمكن&#160;تعديل قوائم قاعدة البيانات&#160;لأنواع&#160;التأكيد</value>
+      </configuration>
+      <configuration name="can_view_database_list_confirmation_type" locale="ar">
+        <value>يمكن&#160;عرض&#160;قائمة قاعدة البيانات&#160;لأنواع&#160;التأكيد</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="confirmation">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ar">
+            <value>إضافة / تحديث&#160;تأكيد</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="confirmation">
+          <configuration name="display" values="single" locale="ar">
+            <value>تأكيد</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="confirmation_type">
+          <configuration name="display" values="single" locale="ar">
+            <value>نوع التأكيد</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_ConfirmationType">
+          <configurationGroup name="fields">
+            <configurationGroup name="probation_period">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:فترة الاختبار&#160;(أشهر)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="job">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:الوظيفة ذات الارتباط</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:اسم</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Confirmation">
+          <configurationGroup name="fields">
+            <configurationGroup name="valid">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:صالح</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="confirmation_type">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:نوع التأكيد</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:تاريخ</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

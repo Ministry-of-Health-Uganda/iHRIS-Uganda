@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CEUs" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="CEUs" path="/I2CE" locale="sw">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_continuing_education_course" locale="sw">
+        <value>Hariri orodha ya elimu inayoendelea</value>
+      </configuration>
+      <configuration name="can_view_database_list_continuing_education_course" locale="sw">
+        <value>Angalia orodha ya elimu inayoendelea</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="continuing_education">
+          <configuration name="display" values="single" locale="sw">
+            <value>Elimu inayoendelea</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="continuing_education_course">
+          <configuration name="display" values="single" locale="sw">
+            <value>Kozi za Elimu zinazoendelea</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_ContinuingEducationCourse">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Jina</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="credit_hours">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Muda wa mapumziko</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_ContinuingEducation">
+          <configurationGroup name="fields">
+            <configurationGroup name="continuing_education_course">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Kozi za Elimu zinazoendelea</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="credit_hours">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Muda wa mapumziko</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Tarehe ya Kuanza</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Tarehe ya Kumaliza</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

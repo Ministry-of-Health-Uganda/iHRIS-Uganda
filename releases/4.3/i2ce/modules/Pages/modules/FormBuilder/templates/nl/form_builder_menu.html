@@ -1,0 +1,28 @@
+<div>
+  
+  <div id="container">
+
+    <h2>Nieuw formulier aanmaken</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Formuliernaam</h3>Een interne sleutel die wordt gebruikt om de formulierklasse te identificeren. Deze mag niet dezelfde zijn als de sleutel voor enige bestaande formulieren.
+	</td>
+	<td>
+	  <input name="name" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+      </tr><tr><td>
+	  <h3>Weergavenaam</h3>The displayed name of this form.  This is what is presented to the end user.
+	</td>
+	<td>
+	  <input name="display" type="text" value="" class="validate=[nonempty]"></td>
+      </tr><tr><td>
+	  <h3>Klasse:</h3>The form class that implements this form.
+	</td>
+	<td>
+	  <select name="class"><option value="">Selecteer een klasse</option></select></td>
+      </tr><tr><td>
+	  <h3>Opslag:</h3>De opslagmethode voor dit formulier
+	</td>
+	<td>
+	  <select name="storage"></select></td>
+      </tr></table><h2>Bestaand formulier bewerken</h2>
+    <ul id="forms"></ul></div>
+</div>

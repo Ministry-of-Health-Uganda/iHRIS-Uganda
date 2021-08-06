@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-common-Job">
+  <metadata>
+    <displayName>iHRIS Common Job</displayName>
+    <category>Application Component</category>
+    <description>The iHRIS Common Job</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-common</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <priority>250</priority>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <requirement name="ihris-common-Cadre">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="form-limits">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms-storage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="ihris-common-Job" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_classification" locale="en_US">
+        <value>Edit the classification list</value>
+      </configuration>
+      <configuration name="can_view_database_list_classification" locale="en_US">
+        <value>View the classification list</value>
+      </configuration>
+      <configuration name="can_edit_database_list_job" locale="en_US">
+        <value>Edit the job list</value>
+      </configuration>
+      <configuration name="can_view_database_list_job" locale="en_US">
+        <value>View the job list</value>
+      </configuration>
+      <configuration name="can_edit_job_structure_database_lists" locale="en_US">
+        <value>Can edit some job structure database lists</value>
+      </configuration>
+      <configuration name="can_view_job_structure_database_lists" locale="en_US">
+        <value>Can view some job structure database lists</value>
+      </configuration>
+      <configuration name="can_edit_all_job_structure_database_lists" locale="en_US">
+        <value>Can edit all job structure database lists</value>
+      </configuration>
+      <configuration name="can_view_all_job_structure_database_lists" locale="en_US">
+        <value>Can view all job structure database lists</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down">
+      <configuration name="can_edit_database_list_classification" values="many">
+        <value>can_edit_job_structure_database_lists</value>
+        <value>can_view_database_list_classification</value>
+      </configuration>
+      <configuration name="can_edit_database_list_job" values="many">
+        <value>can_edit_job_structure_database_lists</value>
+        <value>can_view_database_list_job</value>
+      </configuration>
+      <configuration name="can_edit_job_structure_database_lists" values="many">
+        <value>can_edit_position_database_lists</value>
+        <value>can_view_job_structure_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_job_structure_database_lists" values="many">
+        <value>can_view_all_job_structure_database_lists</value>
+        <value>can_edit_database_list_cadre</value>
+        <value>can_edit_database_list_classification</value>
+        <value>can_edit_database_list_job</value>
+      </configuration>
+      <configuration name="can_view_all_job_structure_database_lists" values="many">
+        <value>can_view_database_list_cadre</value>
+        <value>can_view_database_list_classification</value>
+        <value>can_view_database_list_job</value>
+      </configuration>
+      <configuration name="can_edit_all_database_lists" values="many">
+        <value>can_edit_all_job_structure_database_lists</value>
+      </configuration>
+      <configuration name="can_view_all_database_lists" values="many">
+        <value>can_view_all_job_structure_database_lists</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="job">
+          <displayName>Job</displayName>
+          <description>The Job Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Job</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Job</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="classification">
+          <displayName>Classification</displayName>
+          <description>The Classification Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Classification</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Classification</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of /modules/forms/forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Classification">
+          <displayName>Configuration for the class 'iHRIS_Classification'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_List</value>
+          </configuration>
+          <configurationGroup name="meta" path="meta/list/code">
+            <version>4.2.0.2</version>
+            <configuration name="display_string">
+              <value>%s</value>
+            </configuration>
+            <configuration name="display_args" type="delimited" values="many">
+              <value>0:code</value>
+            </configuration>
+            <configuration name="sort_fields" type="delimited" values="many">
+              <value>0:code</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="name">
+              <displayName>The field 'name'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Name</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique" type="boolean">
+                <displayName>This field is required to be unique</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="description">
+              <version>4.0.6.5</version>
+              <displayName>The field 'description'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Description</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="code">
+              <displayName>The field 'code'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Code</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_SalaryGrade">
+          <displayName>Configuration for the class 'iHRIS_SalaryGrade'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_List</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="name">
+              <displayName>The field 'name'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Name</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique" type="boolean">
+                <displayName>This field is required to be unique</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start">
+              <displayName>The field 'start'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>CURRENCY</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Start</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end">
+              <displayName>The field 'end'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>CURRENCY</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:End</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="midpoint">
+              <displayName>The field 'midpoint'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>CURRENCY</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:MidPoint</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <displayName>The field 'notes'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Notes</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Job">
+          <displayName>Configuration for the class 'iHRIS_Job'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_List</value>
+          </configuration>
+          <configurationGroup name="meta" path="meta/list/default">
+            <configuration name="display_string">
+              <value>%s</value>
+            </configuration>
+            <configuration name="display_args" type="delimited" values="many">
+              <value>0:title</value>
+            </configuration>
+            <configuration name="sort_fields" type="delimited" values="many">
+              <value>0:title</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="meta" path="meta/list/code">
+            <version>4.2.0.1</version>
+            <configuration name="display_string">
+              <value>%s</value>
+            </configuration>
+            <configuration name="display_args" type="delimited" values="many">
+              <value>0:code</value>
+            </configuration>
+            <configuration name="sort_fields" type="delimited" values="many">
+              <value>0:code</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="title">
+              <displayName>The field 'title'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Title</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique" type="boolean">
+                <displayName>This field is required to be unique</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="cadre">
+              <version>4.0.6.7</version>
+              <displayName>The field 'cadre'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Cadre (Health Professionals Only)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="code">
+              <displayName>The field 'code'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Code</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="description">
+              <displayName>The field 'description'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Description</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="classification">
+              <displayName>The field 'classification'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Classification</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of /modules/formClasses-->
+    </configurationGroup>
+    <!-- end of /modules/forms-->
+  </configurationGroup>
+</I2CEConfiguration>

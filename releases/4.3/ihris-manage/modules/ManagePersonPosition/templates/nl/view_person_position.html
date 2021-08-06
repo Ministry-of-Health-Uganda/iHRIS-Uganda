@@ -1,0 +1,29 @@
+<div>
+  <div class="editRecord">
+    <p>Gegevens bewerken</p>
+    <ul><li task="person_can_change_child_form_person_position"><span type="form" name="person_position:id" href="person_position?id=" parent="true">Gegevens corrigeren</span></li>
+      <span type="form" name="person_position:end_date" ifset="dateblank">
+          <li task="person_can_edit_child_form_person_position"><span type="form" name="person_position:id" href="departure?id=" parent="true">Vertrek registreren</span></li>
+      </span>
+      <span type="form" name="person_position:end_date" ifset="dateblank">
+          <li task="person_can_edit_child_form_person_position"><span type="form" name="person:id" href="make_offer?parent=">Positie wijzigen</span></li>
+      </span>
+      <li><span type="form" history="false" name="person:id" href="history?form=person_position&amp;show_edit&amp;order_by:person_position:-start_date&amp;id=" ifset="person_position:id">Positiegeschiedenis bekijken</span></li>
+      <span type="module" name="PrintedForms" ifenabled="true" task="printed_forms_can_access">
+	<span type="module" if="PrintedForms-&gt;hasValidForms('person_position')">
+	  <li>
+	    <span type="form" href="PrintedForms/menu?id=" name="person_position:id">Gestandaardiseerde positiebrieven</span>
+	  </li>
+	</span>
+      </span>
+      
+    </ul></div> <!-- editRecord -->
+
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0"><tr><th colspan="2">Positie</th>
+      </tr><span type="form" name="person_position:position" showhead="default"></span>
+      <span type="form" name="person_position:start_date" showhead="default" class="even"></span>
+      <span type="form" name="person_position:end_date" showhead="default"></span>
+      <span type="form" name="person_position:reason" showhead="default" ifset="true" class="even"></span>
+    </table></div> <!-- dataTable -->
+</div>

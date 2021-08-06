@@ -1,0 +1,1815 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration PUBLIC "SYSTEM"
+"I2CE_Configuration.dtd">
+<I2CEConfiguration name="isco-08-major-03">
+  <metadata>
+    <displayName>ISCO 08 Job Codes</displayName>
+    <description>The ISCO 08 Job Codes</description>
+    <version>4.3.0</version>
+    <requirement name="isco-08">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="formsData" path="/I2CE/formsData/forms">
+    <displayName>Forms Data</displayName>
+    <description>Form data saved in magic data</description>
+    <configurationGroup name="isco_08_major">
+      <configurationGroup name="3">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Technicians and associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_08_sub_major">
+      <configurationGroup name="31">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Science and engineering associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_major">
+            <value>isco_08_major|3</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="32">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Health associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_major">
+            <value>isco_08_major|3</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="33">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Business and administration associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_major">
+            <value>isco_08_major|3</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="34">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Legal, social, cultural and related associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_major">
+            <value>isco_08_major|3</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="35">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Information and communications technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_major">
+            <value>isco_08_major|3</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_08_minor">
+      <configurationGroup name="311">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Physical and engineering science technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|31</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="312">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Mining, manufacturing and construction supervisors</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|31</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="313">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Process control technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|31</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="314">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Life science technicians and related associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|31</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="315">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Ship and aircraft controllers and technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|31</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="321">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Medical and pharmaceutical technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|32</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="322">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Nursing and midwifery associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|32</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="323">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Traditional and complementary medicine associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|32</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="324">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Veterinary technicians and assistants</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|32</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="325">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Other health associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|32</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="331">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Financial and mathematical associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|33</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="332">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Sales and purchasing agents and brokers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|33</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="333">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Business services agents</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|33</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="334">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Administrative and specialised secretaries</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|33</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="335">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Regulatory government associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|33</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="341">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Legal, social and religious associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|34</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="342">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Sports and fitness workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|34</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="343">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Artistic, cultural and culinary associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|34</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="351">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Information and communications technology operations and user support technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|35</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="352">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Telecommunications and broadcasting technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|35</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="031">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Armed forces occupations, other ranks</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|03</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_08_unit">
+      <configurationGroup name="3111">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Chemical and physical science technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|311</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3112">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Civil engineering technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|311</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3113">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Electrical engineering technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|311</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3114">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Electronics engineering technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|311</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3115">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Mechanical engineering technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|311</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3116">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Chemical engineering technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|311</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3117">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Mining and metallurgical technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|311</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3118">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Draughtspersons</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|311</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3119">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Physical and engineering science technicians not elsewhere classified</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|311</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3121">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Mining supervisors</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|312</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3122">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Manufacturing supervisors</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|312</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3123">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Construction supervisors</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|312</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3131">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Power production plant operators</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|313</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3132">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Incinerator and water treatment plant operators</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|313</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3133">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Chemical processing plant controllers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|313</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3134">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Petroleum and natural gas refining plant operators</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|313</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3135">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Metal production process controllers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|313</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3139">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Process control technicians not elsewhere classified</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|313</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3141">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Life science technicians (excluding medical)</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|314</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3142">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Agricultural technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|314</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3143">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Forestry technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|314</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3151">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Ships' engineers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|315</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3152">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Ships' deck officers and pilots</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|315</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3153">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Aircraft pilots and related associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|315</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3154">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Air traffic controllers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|315</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3155">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Air traffic safety electronics technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|315</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3211">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Medical imaging and therapeutic equipment technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|321</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3212">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Medical and pathology laboratory technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|321</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3213">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Pharmaceutical technicians and assistants</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|321</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3214">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Medical and dental prosthetic technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|321</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3221">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Nursing associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|322</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3222">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Midwifery associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|322</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3230">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Traditional and complementary medicine associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|323</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3240">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Veterinary technicians and assistants</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|324</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3251">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Dental assistants and therapists</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|325</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3252">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Medical records and health information technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|325</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3253">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Community health workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|325</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3254">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Dispensing opticians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|325</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3255">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Physiotherapy technicians and assistants</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|325</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3256">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Medical assistants</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|325</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3257">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Environmental and occupational health inspectors and associates</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|325</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3258">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Ambulance workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|325</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3259">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Health associate professionals not elsewhere classified</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|325</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3311">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Securities and finance dealers and brokers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|331</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3312">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Credit and loans officers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|331</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3313">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Accounting associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|331</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3314">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Statistical, mathematical and related associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|331</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3315">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Valuers and loss assessors</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|331</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3321">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Insurance representatives</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|332</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3322">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Commercial sales representatives</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|332</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3323">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Buyers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|332</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3324">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Trade brokers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|332</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3331">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Clearing and forwarding agents</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|333</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3332">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Conference and event planners</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|333</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3333">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Employment agents and contractors</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|333</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3334">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Real estate agents and property managers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|333</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3339">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Business services agents not elsewhere classified</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|333</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3341">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Office supervisors</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|334</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3342">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Legal secretaries</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|334</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3343">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Administrative and executive secretaries</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|334</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3344">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Medical secretaries</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|334</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3351">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Customs and border inspectors</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|335</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3352">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Government tax and excise officials</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|335</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3353">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Government social benefits officials</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|335</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3354">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Government licensing officials</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|335</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3355">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Police inspectors and detectives</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|335</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3359">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Regulatory government associate professionals not elsewhere classified</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|335</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3411">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Police inspectors and detectives</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|341</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3412">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Social work associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|341</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3413">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Religious associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|341</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3421">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Athletes and sports players</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|342</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3422">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Sports coaches, instructors and officials</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|342</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3423">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Fitness and recreation instructors and program leaders</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|342</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3431">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Photographers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|343</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3432">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Interior designers and decorators</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|343</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3433">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Gallery, museum and library technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|343</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3434">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Chefs</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|343</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3435">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Other artistic and cultural associate professionals</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|343</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3511">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Information and communications technology operations technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|351</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3512">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Information and communications technology user support technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|351</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3513">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Computer network and systems technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|351</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3514">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Web technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|351</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3521">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Broadcasting and audio-visual technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|352</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="3522">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Telecommunications engineering technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|352</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="0310">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Armed forces occupations, other ranks</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|031</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

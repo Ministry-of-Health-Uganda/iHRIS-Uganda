@@ -1,0 +1,186 @@
+<div id="siteContent">
+    <h1>Налаштування системи</h1>
+
+  <div task="can_edit_database_lists">
+    <h2><a href="lists" class="adminDatabase">Адміністрування бази даних</a></h2>
+    <p>
+    <!-- Create and update standard lists of data for selection in system menus. -->
+    Адміністрування позицій та створення і оновлення випадаючого меню.
+    </p>
+      <hr></div>
+
+
+  <span type="module" name="admin" ifenabled="true">
+    <div task="can_configure_modules">
+      <h2><a href="admin/modules" class="adminDatabase">Налаштування модулів</a></h2>
+      <p>
+	Увімкнути та вимкнути різні модулі для системи.
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" name="page-builder" ifenabled="true">
+    <div task="can_build_pages">
+      <h2><a href="PageBuilder" class="adminDatabase">Сторінка будівельника</a></h2>
+      <p>
+	Побудувати і змінити конфігурацію сторінки
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" name="form-builder" ifenabled="true">
+    <div task="can_build_forms">
+      <h2>Конструктор форм</h2>
+      <p>
+	Побудувати і переналаштувати форми
+      </p>
+      <ul><li><a href="FormBuilder/forms" class="adminDatabase">Конструктор форм</a></li>
+	<li><a href="FormBuilder/formClasses" class="adminDatabase">Конструктор класу форм</a></li>
+      </ul><hr></div>
+  </span>
+
+
+  <span type="module" name="formRelationships" ifenabled="true">
+    <div role="admin">
+      <h2><a href="form_relationship_import" class="searchRecords"> Import Form Relationship Data</a></h2>
+      <p>
+	Import iHRIS data from a form relationship export or from a transform of another data source, such as an Excel file, to the iHRIS form relationship format.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="CustomReports" ifenabled="true">
+    <span task="custom_reports_can_edit_reportViews">
+        <h2><a name="manage_reports" class="adminDatabase">Управління звітами</a></h2>
+      <p>
+	Управління стандартними звітами, доступними для користувачів і створення нових користувацьких звітів.
+      </p>
+      <ul><li task="custom_reports_can_edit_relationships"><a href="CustomReports/edit/relationships">Форма відносин</a>
+          <dl><dd>Визначте, як форми пов'язані для використання у звітах.</dd></dl></li>
+          <li task="custom_reports_can_edit_reports"><a href="CustomReports/edit/reports">Звіти</a>
+          <dl><dd>Визначте звіти на основі раніше визначених відносин. Ви можете вибрати, які поля доступні для кожного звіту і які поля можуть використовуватися для обмеження звіту.</dd></dl></li>
+          <li><a href="CustomReports/edit/reportViews">Перегляди звітів</a>
+          <dl><dd>Визначте подання звітів на основі раніше створених звітів. Ви можете вибрати, які поля відображати, а також встановити типовий перегляд, який відображатиме діаграму або обмежені результати, коли користувач матиме доступ  до подання звіту.</dd></dl></li>
+      </ul><hr></span>
+  </span>
+
+
+
+  <span type="module" name="magicDataBrowser" ifenabled="true">
+    <div task="can_view_magic_data_browser">
+      <h2><a href="magicDataBrowser/show" class="searchRecords">Переглянути чарівні дані</a></h2>
+      <p>
+	Огляд даних конфігурації, що використовуються у системі.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="SVS" ifenabled="true">
+    <div task="SVS_allow_RetreieveValueSet">
+      <h2><a href="SVS/config" class="searchRecords">Спільні набори значень</a></h2>
+      <p>
+	Завантажте або налаштуйте Спільні набори значень для обміну метаданими між компонентами Вашої інформаційної системи охорони здоров'я.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="csd_cache" ifenabled="true">
+    <div task="csd_cache_admin">
+      <h2><a href="csd_cache" class="searchRecords">Відкриття послуг із догляду</a></h2>
+      <p>
+	Адміністрування кешу для експорту даних Відкриття послуг із догляду (CSD)
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="csd-infoman-storage" ifenabled="true">
+    <div role="admin">
+      <h2><a href="remote_directory_selector/edit" class="searchRecords"> InterLinked Health Worker Registry</a></h2>
+      <p>
+	Set connection details for connecting with a Care Services Discovery (CSD) compliant InterLinked Health Worker Registry.
+      </p>
+      <hr></div>
+  </span>
+
+
+
+
+
+  <span type="module" name="tasks-roles" ifenabled="true">
+    <div task="tasks_and_roles_can_access">
+      <h2><a href="tasks-roles" class="adminDatabase">Завдання і ролі</a></h2>
+      <p>
+	Адміністрування завдань і функцій для системи
+      </p>
+      
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="localeSelector" ifenabled="true">
+    <div task="locales_can_edit_site_locale">
+      <h2><a href="localeSelector/edit" class="adminDatabase">Управління локалями</a></h2>
+      <p>
+	Управління локалями, доступними у системі
+      </p>
+      <hr></div>      
+  </span>
+
+
+
+  <span type="module" name="BackgroundProcess" ifenabled="true">
+    <div task="can_view_background_processes">
+      <h2><a href="BackgroundProcess" class="searchRecords">Фонові процеси</a></h2>
+      <p>
+	Дослідити процеси у фоновому режимі, які ви почали
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="formBrowser" ifenabled="true">
+    <div task="can_view_form_browser">
+      <h2><a href="formBrowser/showForm" class="searchRecords">Перегляд форм</a></h2>
+      <p>
+	Огляд форм, що використовуються в системі.
+      </p>
+      <hr></div>
+  </span>
+
+  <span type="module" ifenabled="true" name="DHIS_Metadata">
+    <div role="admin">
+      <h2><a href="dhis_metadata">Управління DHIS2 Метаданими</a></h2>
+      <p>
+	Вивантажити <a href="http://dhis2.org">DHIS2</a> Метадані, такі як організаційні одиниці і елементи даних.
+      </p>
+      <hr></div>
+  </span>
+
+
+  <span type="module" name="CachedForms" ifenabled="true">
+    <div task="cached_forms_can_administer">
+      <h2><a href="CachedForms" class="adminDatabase">Кешовані форми</a></h2>
+      <p>
+	Контролювати створення кешованих форм
+      </p>
+      <hr></div>
+  </span>
+  
+  <div task="can_create_or_edit_users">
+
+    <h2><a href="user" class="adminDatabase">Адміністрування користувачів</a></h2>
+    <p>
+    Створення, оновлення і вимкнення облікових записів користувачів для забезпечення безпечного доступу до системи. Доступ відкритий системному адміністратору.
+    </p>
+      <hr></div>
+  <span type="module" name="UserStatistics" ifenabled="true">
+	<div task="can_view_user_statistics">
+	  <h2><a href="UserStatistics" class="searchRecords">Статистика користувача</a></h2>
+      Переглянути статистику введення даних користувачів.
+    </div>
+  </span>
+</div>

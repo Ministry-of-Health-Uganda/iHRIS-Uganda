@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="DHIS_Metadata" path="/">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="DHIS_Metadata" path="/" locale="te">
+    <version>4.2.0.1</version>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <configurationGroup name="dhis_submit">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="te">
+            <value>డిహెచ్ఐఎస్ కు సమర్పించు</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="dhis_metadata">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="te"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="te">
+      <configuration name="can_edit_database_list_dhis_orgunit" locale="te">
+        <value>డిహెచ్ఐఎస్ సంస్థాగత విభాగం జాబితాను మార్చగలరు</value>
+      </configuration>
+      <configuration name="can_view_database_list_dhis_orgunit" locale="te">
+        <value>డిహెచ్ఐఎస్ సంస్థాగత విభాగం జాబితాను చూడగలరు</value>
+      </configuration>
+      <configuration name="can_edit_database_list_dhis_data_element" locale="te"></configuration>
+      <configuration name="can_view_database_list_dhis_data_element" locale="te"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="dhis_data_element">
+          <configuration name="display" values="single" locale="te"></configuration>
+        </configurationGroup>
+        <configurationGroup name="dhis_orgunit">
+          <configuration name="display" values="single" locale="te">
+            <value>డిహెచ్ఐఎస్ సంస్థాగత విభాగం</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_DHIS_CodedList">
+          <configurationGroup name="fields">
+            <configurationGroup name="dhis_uid">
+              <configuration name="headers" type="delimited" locale="te">
+                <value>default:డిహెచ్ఐఎస్ యూఐడి</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

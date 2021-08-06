@@ -1,0 +1,1399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration PUBLIC "SYSTEM"
+"I2CE_Configuration.dtd">
+<I2CEConfiguration name="isco-08-major-07">
+  <metadata>
+    <displayName>ISCO 08 Job Codes</displayName>
+    <description>The ISCO 08 Job Codes</description>
+    <version>4.3.0</version>
+    <requirement name="isco-08">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="formsData" path="/I2CE/formsData/forms">
+    <displayName>Forms Data</displayName>
+    <description>Form data saved in magic data</description>
+    <configurationGroup name="isco_08_major">
+      <configurationGroup name="7">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Craft and related trades workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_08_sub_major">
+      <configurationGroup name="71">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Building and related trades workers, excluding electricians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_major">
+            <value>isco_08_major|7</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="72">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Metal, machinery and related trades workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_major">
+            <value>isco_08_major|7</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="73">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Handicraft and printing workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_major">
+            <value>isco_08_major|7</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="74">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Electrical and electronic trades workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_major">
+            <value>isco_08_major|7</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="75">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Food processing, wood working, garment and other craft and related trades workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_major">
+            <value>isco_08_major|7</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_08_minor">
+      <configurationGroup name="711">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Building frame and related trades workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|71</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="712">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Building finishers and related trades workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|71</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="713">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Painters, building structure cleaners and related trades workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|71</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="721">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Sheet and structural metal workers, moulders and welders, and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|72</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="722">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Blacksmiths, toolmakers and related trades workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|72</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="723">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Machinery mechanics and repairers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|72</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="731">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Handicraft workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|73</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="732">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Printing trades workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|73</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="741">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Electrical equipment installers and repairers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|74</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="742">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Electronics and telecommunications installers and repairers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|74</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="751">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Food processing and related trades workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|75</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="752">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Wood treaters, cabinet-makers and related trades workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|75</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="753">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Garment and related trades workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|75</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="754">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Other craft and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_sub_major">
+            <value>isco_08_sub_major|75</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_08_unit">
+      <configurationGroup name="7111">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>House builders</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|711</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7112">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Bricklayers and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|711</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7113">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Stonemasons, stone cutters, splitters and carvers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|711</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7114">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Concrete placers, concrete finishers and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|711</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7115">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Carpenters and joiners</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|711</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7119">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Building frame and related trades workers not elsewhere classified</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|711</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7121">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Roofers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|712</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7122">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Floor layers and tile setters</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|712</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7123">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Plasterers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|712</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7124">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Insulation workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|712</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7125">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Glaziers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|712</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7126">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Plumbers and pipe fitters</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|712</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7127">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Air conditioning and refrigeration mechanics</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|712</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7131">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Painters and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|713</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7132">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Spray painters and varnishers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|713</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7133">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Building structure cleaners</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|713</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7211">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Metal moulders and coremakers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|721</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7212">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Welders and flamecutters</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|721</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7213">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Sheet-metal workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|721</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7214">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Structural-metal preparers and erectors</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|721</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7215">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Riggers and cable splicers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|721</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7221">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Blacksmiths, hammersmiths and forging press workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|722</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7222">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Toolmakers and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|722</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7223">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Metal working machine tool setters and operators</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|722</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7224">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Metal polishers, wheel grinders and tool sharpeners</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|722</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7231">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Motor vehicle mechanics and repairers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|723</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7232">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Aircraft engine mechanics and repairers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|723</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7233">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Agricultural and industrial machinery mechanics and repairers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|723</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7234">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Bicycle and related repairers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|723</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7311">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Precision-instrument makers and repairers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|731</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7312">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Musical instrument makers and tuners</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|731</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7313">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Jewellery and precious-metal workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|731</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7314">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Potters and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|731</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7315">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Glass makers, cutters, grinders and finishers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|731</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7316">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Sign writers, decorative painters, engravers and etchers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|731</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7317">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Handicraft workers in wood, basketry and related materials</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|731</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7318">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Handicraft workers in textile, leather and related materials</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|731</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7319">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Handicraft workers not elsewhere classified</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|731</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7321">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Pre-press technicians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|732</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7322">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Printers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|732</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7323">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Print finishing and binding workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|732</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7411">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Building and related electricians</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|741</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7412">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Electrical mechanics and fitters</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|741</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7413">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Electrical line installers and repairers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|741</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7421">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Electronics mechanics and servicers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|742</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7422">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Information and communications technology installers and servicers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|742</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7511">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Butchers, fishmongers and related food preparers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|751</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7512">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Bakers, pastry-cooks and confectionery makers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|751</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7513">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Dairy-products makers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|751</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7514">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Fruit, vegetable and related preservers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|751</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7515">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Food and beverage tasters and graders</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|751</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7516">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Tobacco preparers and tobacco products makers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|751</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7521">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Wood treaters</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|752</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7522">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Cabinet-makers and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|752</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7523">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Woodworking-machine tool setters and operators</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|752</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7531">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Tailors, dressmakers, furriers and hatters</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|753</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7532">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Garment and related pattern-makers and cutters</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|753</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7533">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Sewing, embroidery and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|753</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7534">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Upholsterers and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|753</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7535">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Pelt dressers, tanners and fellmongers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|753</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7536">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Shoemakers and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|753</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7541">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Underwater divers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|754</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7542">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Shotfirers and blasters</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|754</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7543">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Product graders and testers (excluding foods and beverages)</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|754</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7544">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Fumigators and other pest and weed controllers</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|754</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="7549">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Craft and related workers not elsewhere classified</value>
+          </configuration>
+          <configuration name="description">
+            <value />
+          </configuration>
+          <configuration name="isco_08_minor">
+            <value>isco_08_minor|754</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="change-position">
+  <metadata>
+    <displayName>Change Position</displayName>
+    <category>Application Component</category>
+    <description>Add simple page to create and change to a new position.</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-manage-PersonPosition">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>350</priority>
+  </metadata>
+  <configurationGroup name="change-position" path="/I2CE">
+    <configuration name="new_pos_type" path="/modules/forms/formClasses/iHRIS_Position/fields/pos_type/headers/new">
+      <version>4.1.6.0</version>
+      <value>New Position Type</value>
+    </configuration>
+    <configuration name="current_pos_type" path="/modules/forms/formClasses/iHRIS_Position/fields/pos_type/headers/current">
+      <version>4.1.6.1</version>
+      <value>Current Position Type</value>
+    </configuration>
+    <configuration name="new_position_title" path="/modules/forms/formClasses/iHRIS_Position/fields/title/headers/new">
+      <version>4.0.21.5</version>
+      <value>New Position Title</value>
+    </configuration>
+    <configuration name="current_position_status" path="/modules/forms/formClasses/iHRIS_Position/fields/status/headers/current">
+      <version>4.1.0.1</version>
+      <value>Current Position Status</value>
+    </configuration>
+    <configuration name="current_position_title" path="/modules/forms/formClasses/iHRIS_Position/fields/title/headers/current">
+      <version>4.0.21.5</version>
+      <value>Current Position Title</value>
+    </configuration>
+    <configuration name="new_position_code" path="/modules/forms/formClasses/iHRIS_Position/fields/code/headers/new">
+      <version>4.0.21.6</version>
+      <value>New Position Code</value>
+    </configuration>
+    <configuration name="current_position_code" path="/modules/forms/formClasses/iHRIS_Position/fields/code/headers/current">
+      <version>4.0.21.6</version>
+      <value>Current Position Code</value>
+    </configuration>
+    <configuration name="current_position_facility" path="/modules/forms/formClasses/iHRIS_Position/fields/facility/headers/new">
+      <version>4.0.21.6</version>
+      <value>New Facility</value>
+    </configuration>
+    <configuration name="new_position_facility" path="/modules/forms/formClasses/iHRIS_Position/fields/facility/headers/current">
+      <version>4.0.21.6</version>
+      <value>Current Facility</value>
+    </configuration>
+    <configuration name="new_position_job" path="/modules/forms/formClasses/iHRIS_Position/fields/job/headers/new">
+      <version>4.0.21.6</version>
+      <value>New Job</value>
+    </configuration>
+    <configuration name="current_position_job" path="/modules/forms/formClasses/iHRIS_Position/fields/job/headers/current">
+      <version>4.0.21.6</version>
+      <value>Current Job</value>
+    </configuration>
+    <configuration name="new_person_position_start_date" path="/modules/forms/formClasses/iHRIS_PersonPosition/fields/start_date/headers/new">
+      <version>4.0.21.6</version>
+      <value>Start Date For New Position</value>
+    </configuration>
+    <configuration name="current_person_position_start_date" path="/modules/forms/formClasses/iHRIS_PersonPosition/fields/start_date/headers/current">
+      <version>4.0.21.6</version>
+      <value>Start Date For Current Position</value>
+    </configuration>
+    <configuration name="new_person_position_end_date" path="/modules/forms/formClasses/iHRIS_PersonPosition/fields/end_date/headers/new">
+      <version>4.0.21.6</version>
+      <value>End Date For New Position</value>
+    </configuration>
+    <configuration name="current_person_position_end_date" path="/modules/forms/formClasses/iHRIS_PersonPosition/fields/end_date/headers/current">
+      <version>4.0.21.6</version>
+      <value>End Date For Current Position</value>
+    </configuration>
+    <configuration name="new_person_position_start_date" path="/modules/forms/formClasses/iHRIS_Salary/fields/start_date/headers/new">
+      <version>4.0.21.6</version>
+      <value>Start Date For New Salary</value>
+    </configuration>
+    <configuration name="current_person_position_start_date" path="/modules/forms/formClasses/iHRIS_Salary/fields/start_date/headers/current">
+      <version>4.0.21.6</version>
+      <value>Start Date For Current Salary</value>
+    </configuration>
+    <configuration name="new_person_position_end_date" path="/modules/forms/formClasses/iHRIS_Salary/fields/end_date/headers/new">
+      <version>4.0.21.6</version>
+      <value>End Date For New Salary</value>
+    </configuration>
+    <configuration name="current_person_position_end_date" path="/modules/forms/formClasses/iHRIS_Salary/fields/end_date/headers/current">
+      <version>4.0.21.6</version>
+      <value>End Date For Current Salary</value>
+    </configuration>
+    <configuration name="new_person_position_salary" path="/modules/forms/formClasses/iHRIS_Salary/fields/salary/headers/new">
+      <version>4.0.21.6</version>
+      <value>Amount Of New Salary</value>
+    </configuration>
+    <configuration name="current_person_position_salary" path="/modules/forms/formClasses/iHRIS_Salary/fields/salary/headers/current">
+      <version>4.0.21.6</version>
+      <value>Amount Of Current Salary</value>
+    </configuration>
+    <configurationGroup name="page">
+      <configurationGroup name="change_position">
+        <configuration name="style" values="single">
+          <value>ihris_manage_page_form_parent_person</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageFormChangePosition</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Change Position</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <version>4.0.21.8</version>
+            <value>change_position</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <!-- end of /modules/forms-->
+  </configurationGroup>
+</I2CEConfiguration>

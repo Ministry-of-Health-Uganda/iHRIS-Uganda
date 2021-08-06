@@ -1,0 +1,45 @@
+<tbody id="list_fields">
+  <tr>
+    <td class="formdata">
+      <input type='hidden' name='redirect_byid' value='view_list?type=training_course&amp;mapped=scheduled_training_course&amp;id='/>      
+      <span type="form" name="training_course:name" showhead="default"></span>
+      <span type="form" name="training_course:training_course_category" showhead="default"></span>
+      <span type="form" name="training_course:topic" showhead="default"></span>
+    </td>
+    <td class="formdata">
+      <span type="form" name="training_course:training_course_status" showhead="default"></span>	    
+      <span type="form" name="training_course:notes" showhead="default"></span>
+    </td>
+  </tr>
+  <tr type="module" name="training-institution" ifenabled="true">
+    <td>
+      <span type="form" name="training_course:training_institution" showhead="default"></span>
+      <span type="module" name="training-exam" ifenabled="true">
+        <span type="form" name="training_course:passing_score" showhead="default"></span>
+      </span>
+
+    </td>
+    <td>
+      <span type="form" name="training_course:training_funder" display='checkbox'  showhead="default"></span>
+      <span type="form" name="training_course:has_certification_date" showhead="default"></span>      
+      <span type="form" name="training_course:certificate" showhead="default"></span>
+      <span type="form" name="training_course:training_course_mod" display='checkbox'  showhead="default"></span>      
+    </td>
+  </tr>
+  <tr>
+    <td  class="formdata">
+      <span type="module" name="CEUs" ifenabled="true">
+	<span type="form" name="training_course:continuing_education_course" showhead="default"></span>
+      </span>
+
+    </td>
+      
+    <td class="formdata">
+      <span type="module" name="training-simple-competency" ifenabled="true">	
+	<span type="form" name="training_course:competency" showhead="default" >
+	</span>
+      </span>
+    </td>
+  </tr>
+</tbody>
+

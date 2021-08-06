@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="simple-competency" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="simple-competency" path="/I2CE" locale="fr">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_lists_competency" locale="fr">
+        <value>Modifier toutes les autres listes associées à la compétence</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency" locale="fr">
+        <value>Modifier la liste des compétences</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_type" locale="fr">
+        <value>Modifier la liste des types de compétence</value>
+      </configuration>
+      <configuration name="can_view_database_lists_competency" locale="fr">
+        <value>Afficher toutes les listes associées à la compétence</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency" locale="fr">
+        <value>Afficher la liste des competences</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency_type" locale="fr">
+        <value>Afficher la liste des types de compétences</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="competency">
+          <configuration name="display" values="single" locale="fr">
+            <value>Compétence</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="competency_type">
+          <configuration name="display" values="single" locale="fr">
+            <value>Type de compétences</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Competency">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="fr">
+                <value>default:Nom</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency_type">
+              <configuration name="headers" type="delimited" values="many" locale="fr">
+                <value>default:Type de compétences</value>
+                <value>select_competency_type:Sélectionner type de compétence puis compétence</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="fr"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

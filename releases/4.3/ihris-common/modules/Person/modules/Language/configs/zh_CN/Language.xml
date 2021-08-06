@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonLanguage" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonLanguage" path="/I2CE" locale="zh_CN">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="zh_CN">
+      <configuration name="person_can_view_child_form_person_language" locale="zh_CN">
+        <value>可以查看该人的个人语言子窗体</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_language" locale="zh_CN">
+        <value>可以编辑该人的个人语言子窗体</value>
+      </configuration>
+      <configuration name="can_edit_database_list_language" locale="zh_CN">
+        <value>可以编辑语言数据库列表</value>
+      </configuration>
+      <configuration name="can_view_database_list_language" locale="zh_CN">
+        <value>可以查看语言数据库列表</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="language_proficiency">
+        <configurationGroup name="elementary">
+          <configuration name="fields" value="many" type="delimited" locale="zh_CN">
+            <value>name:小学</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="limited">
+          <configuration name="fields" value="many" type="delimited" locale="zh_CN">
+            <value>name:有限的工作</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="professional">
+          <configuration name="fields" value="many" type="delimited" locale="zh_CN">
+            <value>name:专业工作</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="full_professional">
+          <configuration name="fields" value="many" type="delimited" locale="zh_CN">
+            <value>name:完整的专业</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="fluent">
+          <configuration name="fields" value="many" type="delimited" locale="zh_CN">
+            <value>name:流利</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_language">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="zh_CN">
+            <value>添加/更新语言</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="language">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>语言</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="language_proficiency">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>语文能力</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_language">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>人的语文能力</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PersonLanguage">
+          <configurationGroup name="fields">
+            <configurationGroup name="language">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:语言</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="speaking">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:口语能力</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reading">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:培养阅读能力</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="writing">
+              <configuration name="headers" type="delimited" locale="zh_CN">
+                <value>default:写作能力的培养</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,52 @@
+<div>
+  
+
+  <h2>Arguments de la page</h2>
+  <div id="args_container">
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Titre:</h3>Le nom d'affichage pour le formulaire principal
+	</td>
+	<td>
+	  <input name="title"></td>
+      </tr><tr><td>
+	  <h3>Tâches:</h3>Tâche, en option, pour limiter l'accès à cette page.
+	</td>
+	<td>
+	  <select name="task"><option value="">Aucune tâche sélectionnée</option></select></td>
+      </tr></table><h2>Options de relation</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Relations:</h3>Relation sur laquelle cette page est basée
+	</td>
+	<td>
+	  <select name="relationship"><option value="">Aucune relation sélectionnée</option></select><br><span name="has_relationship" ifset="true"><a name="relationship_link">Modifier la relation</a></span>
+	</td>
+      </tr><tr><td>
+	  <h3>Exporter tous les champs:</h3>Exporter tous les champs dans la relation
+	</td>
+	<td>
+	  <select name="get_all_fields"><option value="1">Oui</option><option value="0">Non</option></select></td>
+      </tr><tr><td>
+	  <h3>Utiliser le cache:</h3>Utiliser les caches dans les tables hippo lors de l’export de données dans la relation
+	</td>
+	<td>
+	  <select name="use_cache"><option value="1">Oui</option><option value="0">Non</option></select></td>
+      </tr></table><h2>Options de transformation XSL</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Transformation XSL:</h3>Sélectionner une transformation XSL ou importer une transformation pour un traitement ultérieur de l’export.
+	</td>
+	<td>
+	  <input name="do_upload" value="1" type="checkbox">Télécharger un fichier <input name="upload" type="file"><span name="has_download" ifset="true"><a name="download_link">Télécharger</a></span>
+	  <hr><input name="do_select" value="1" type="checkbox">Sélectionner une transformation existante <select name="select"></select><br><span name="has_transform" ifset="true"><a name="transform_link">Télécharger une transformation</a></span>
+	  <hr><input name="do_erase" value="1" type="checkbox">Aucune transformation
+	</td>
+      </tr></table><span id="fields">
+      <h2><a id="fields_link" href="">Champs sélectionnés</a></h2>
+      Sélectionner des champs individuellement dans le relation à exporter
+      <div class="indented" id="fields_ajax">
+      </div>
+    </span>
+    
+  </div>
+
+
+</div>

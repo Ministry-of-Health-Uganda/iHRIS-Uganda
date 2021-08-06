@@ -1,0 +1,34 @@
+#!/bin/bash
+set -x
+
+USERNAME=ihris
+PHP=/usr/bin/php
+
+BASEDIR=/var/lib/iHRIS
+chown -R $USERNAME:$USERNAME $BASEDIR
+
+
+. /usr/share/debconf/confmodule
+. /usr/share/dbconfig-common/dpkg/postinst 
+. /usr/share/dbconfig-common/dpkg/postinst.mysql
+
+dbc_generate_include_owner="root:www-data"
+dbc_generate_include_perms="0640"
+dbc_generate_include=php:/etc/ihris/ihris-manage-site-demo.config-db.php
+
+if ! dbc_go ihris-manage-site-demo $@ ; then
+        echo 'Automatic configuration of ihris-manage-site-demo using dbconfig-common failed!'
+fi
+
+
+
+service apache2 restart || true
+service memcached restart || true
+
+cd $BASEDIR/sites/ihris-manage-site-demo/pages
+$PHP index.php --update=1 --force-restart=1
+
+service apache2 restart || true
+service memcached restart || true
+
+db_stop

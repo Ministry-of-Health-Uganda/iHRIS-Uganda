@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Calendar">
+  <metadata>
+    <displayName>Calendar</displayName>
+    <category>Application Component</category>
+    <description>An abstract page for displaying a calendar</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="DatePicker">
+      <atLeast version="1.17.5" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="Currency" path="/I2CE">
+    <displayName>Currency</displayName>
+  </configurationGroup>
+  <!-- Calendar -->
+</I2CEConfiguration>

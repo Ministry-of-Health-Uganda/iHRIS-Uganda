@@ -1,0 +1,24 @@
+<div  task='person_can_view_child_form_salary'>
+  <div class="editRecord">
+    <p>Edit This Information</p>
+    <ul>
+      <li  task='person_can_change_child_form_salary'><span type="form" name="salary:id" href="salary?id="  parent="true">Correct this Information</span></li>
+      <span type="form" name="salary:end_date" ifset="dateblank">
+        <li  task='person_can_edit_child_form_salary'><span  type="form" name="salary:id" href="salary?last="  parent="true">Salary Change</span></li>
+      </span>
+      <li><span type="form" name="person:id" href="salary_history?id=" ifset="salary:id">View Salary History</span></li>
+    </ul>
+  </div> <!-- editRecord -->
+  
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+	<th colspan="2">Salary</th>
+      </tr>
+      <span type="form" name="salary:salary" noedit="true" showhead="default"></span>
+      <span type="form" name="salary:start_date" showhead="default" class="even"></span>
+      <span type="form" name="salary:end_date" showhead="default"></span>
+      <div class='salary_notes'><span type="form" name="salary:notes" showhead="default" class="even"></span></div>
+    </table>
+  </div> <!-- dataTable -->
+</div>

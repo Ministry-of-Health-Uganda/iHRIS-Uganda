@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration PUBLIC "SYSTEM"
+"I2CE_Configuration.dtd">
+<I2CEConfiguration name="isco-88-major-09">
+  <metadata>
+    <displayName>ISCO 88 Job Codes</displayName>
+    <description>The ISCO 88 Job Codes</description>
+    <version>4.3.0</version>
+    <requirement name="isco-88">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="formsData" path="/I2CE/formsData/forms">
+    <displayName>Forms Data</displayName>
+    <description>Form data saved in magic data</description>
+    <configurationGroup name="isco_88_major">
+      <configurationGroup name="9">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>ELEMENTARY OCCUPATIONS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Elementary occupations consist of simple and routine tasks which mainly require the use of hand-held tools and often some physical effort. Most occupations in this major group require skills at the first ISCO skill level. Tasks performed by workers in elementary occupations usually include: selling goods in streets and public places, or from door to door; providing various street services; cleaning, washing, pressing; taking care of apartment houses, hotels, offices and other buildings; washing windows and other glass surfaces of buildings; delivering messages or goods; carrying luggage; doorkeeping and property watching; stocking vending machines or reading and emptying meters; collecting garbage; sweeping streets and similar places; performing various simple farming, fishing, hunting or trapping tasks performing simple tasks connected with mining, construction and manufacturing including product-sorting and simple hand-assembling of components; packing by hand; freight handling; pedalling or hand-guiding vehicles to transport passengers and goods; driving animal-drawn vehicles or machinery. Supervision of other workers may be included.</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_sub_major">
+      <configurationGroup name="91">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>SALES AND SERVICES ELEMENTARY OCCUPATIONS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Sales and services elementary occupations mainly consist of tasks connected with street or door-to-door sales or services, or cleaning, property watching and caretaking, delivering goods and messages or carrying luggage. Tasks performed by workers in this sub-major group usually include: selling goods in streets and public places, or from door to door; providing various street services ; cleaning, washing, pressing, sweeping or garbage collecting ; doorkeeping, property watching and building caretaking; washing windows or other glass surfaces; ushering; delivering messages or goods; stocking vending machines or reading and emptying meters; carrying luggage. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_major">
+            <value>isco_88_major|9</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="92">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>AGRICULTURAL, FISHERY AND RELATED LABOURERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Agricultural, fishery and related labourers mainly perform simple and routine farming, forestry, fishing, hunting or trapping tasks, requiring the use of simple hand-held tools and very often considerable physical effort. Tasks performed by labourers in this sub-major group usually include: digging, shovelling, loading, unloading, stacking, raking, pitching; spreading manure or fertilizers; watering and weeding; picking fruit, vegetables and various plants; feeding animals ; cleaning animal quarters and farm ground: clearing forest ground and undergrowth: cleaning sea-bed and performing other simple tasks connected with aquatic cultivation; gathering seaweed, clams and other mollusca; performing simple tasks connected with hunting and trapping. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_major">
+            <value>isco_88_major|9</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="93">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>LABOURERS IN MINING, CONSTRUCTION, MANUFACTURING AND</value>
+          </configuration>
+          <configuration name="description">
+            <value>Labourers in mining, construction, manufacturing and transport mainly perform simple and routine tasks in connection with mining, construction, manufacturing and transport, requiring the use of simple hand-held tools and very often considerable physical effort. Tasks performed by labourers in this sub-major group usually include: digging, shovelling, lifting, moving, carrying, clearing, loading, unloading; cleaning disused workings in mines and quarries; spreading gravel, carrying bricks, and performing similar tasks in the construction of roads, dams, or buildings; working on demolition sites ; carrying out simple tasks in manufacturing, including product-sorting and simple hand- assembling of components, where it is not necessary to follow strictly laid-down rules; packing by hand ; freight handling: pedalling or hand-guiding vehicles to transport passengers and goods. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_major">
+            <value>isco_88_major|9</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_minor">
+      <configurationGroup name="911">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>STREET VENDORS AND RELATED WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Street vendors and related workers sell food and other goods in streets and public places, or from door to door, or by telephone. Tasks performed usually include: preparing and selling, or selling previously prepared, foodstuffs, drinks or other goods, \'in streets and other public places; selling goods for establishments by going from door to door, or by telephone. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|91</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="912">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>SHOE CLEANING AND OTHER STREET SERVICES OCCUPATIONS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Shoe cleaning and other street services elementary occupations consist of providing various on-the-spot street services such as cleaning shoes, washing car windows, or running errands. Tasks performed usually include: cleaning shoes in the street and other public places;washing car windows in the street; running errands. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|91</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="913">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>DOMESTIC AND RELATED HELPERS, CLEANERS AND</value>
+          </configuration>
+          <configuration name="description">
+            <value>Domestic and related helpers, cleaners and launderers perform various tasks in private households, hotels, offices, hospitals and other establishments, as well as in aircraft, trains, coaches, trams, and similar vehicles, in order to keep the interiors and fixtures clean, or they do hand-laundering and pressing. Tasks performed usually include sweeping or vacuum-cleaning, taking care of linen, washing and polishing floors , furniture and other objects, or bed-making helping with various kitchen work or, in private households, cooking and serving meals ; performing the tasks of hand-launderers and pressers. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|91</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="914">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>BUILDING CARETAKERS, WINDOW AND RELATED CLEANERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Building caretakers, window and related cleaners take care of apartment houses, hotels, offices, churches and other buildings and maintain them in a clean and orderly condition. Tasks performed usually include: looking after, and participating in the cleaning, simple repair and maintenance of apartment houses, hotels, offices, churches and other buildings; regulating conduct of tenants and other users of the buildings in such matters as noise abatement or misuse of property; providing small services to absent tenants, such as accepting deliveries on their behalf or providing requested information to callers; cleaning windows, showcases and other glass surfaces of buildings, or vehicles. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|91</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="915">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>MESSENGERS, PORTERS, DOORKEEPERS AND RELATED WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Messengers, porters, doorkeepers and related workers deliver messages or goods, carry luggage, attend parking places and watch private and public properties to prevent illegal entry, theft or fire, perform ushering duties, or collect vending- machine money, or read electricity, gas or water meters. Tasks performed usually include: delivering messages, packages and other items within an establishment or between establishments, to households or other places; carrying luggage especially at hotels, stations or airports; doorkeeping or watching properties; performing ushering duties; stocking vending machines and collecting money from them or from parking meters and other coin boxes ; reading electricity, gas or water meters. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|91</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="916">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>GARBAGE COLLECTORS AND RELATED LABOURERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Garbage collectors and related labourers collect garbage from buildings, yards, streets and other public places, or keep streets and other public places clean, or perform odd jobs for private households or establishments. Tasks performed usually include: collecting, loading and unloading garbage; sweeping streets, parks and other public places; unloading coal or wood and putting it into the cellars of households or establishments; chopping firewood; carrying water; beating dust out of carpets, and performing other odd-job tasks. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|91</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="921">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>AGRICULTURAL, FISHERY AND RELATED LABOURERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Agricultural, fishery and related labourers mainly perform simple and routine farming, forestry, fishing, hunting or trapping tasks, requiring the use of simple hand-held tools and very often considerable physical effort. Tasks performed usually include: digging, shovelling, loading, unloading, stacking, raking, pitching; spreading manure or fertilizers; watering and weeding; picking fruit, vegetables and various plants feeding animals; cleaning animal quarters and farm yards; clearing undergrowth in forest stands; cleaning sea- bed and performing other simple tasks connected with aquatic cultivation; gathering seaweed, sea mosses, clams and other mollusca; digging holes, keeping watch and performing other simple tasks connected with hunting and trapping. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|92</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="931">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>MINING AND CONSTRUCTION LABOURERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Mining and construction labourers perform simple and routine tasks connected with mining or construction, requiring the use of simple hand-held tools and very often considerable physical effort. Tasks performed usually include: digging, shovelling, lifting, moving, carrying, clearing, loading and unloading; clearing disused workings in mines and quarries; digging out chalk, clay, gravel or sand from open pits; working on demolition sites; spreading gravel, carrying bricks or performing similar tasks in the construction of roads, dams, or buildings. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|93</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="932">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>MANUFACTURING LABOURERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Manufacturing labourers perform simple and routine tasks connected with manufacturing which require the use of simple hand-held tools and very often considerable physical effort, or they undertake product-sorting and simple hand-assembling of components. Tasks performed usually include: simple hand-assembling of components; lifting, carrying, loading, unloading or washing raw materials or products in manufacturing establishments; packing by hand. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|93</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="933">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>TRANSPORT LABOURERS AND FREIGHT HANDLERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Transport labourers and freight handlers propel cycles and similar vehicles, drive animal-drawn vehicles, farm or other machinery, and carry out freight handling by hand. Tasks performed usually include: propelling cycles and similar vehicles or driving animal-drawn vehicles to transport passengers and goods; driving animal-drawn machinery; freight- handling. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|93</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_unit">
+      <configurationGroup name="9111">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Street food vendors</value>
+          </configuration>
+          <configuration name="description">
+            <value>Street food vendors prepare and sell, or sell previously prepared, hot or cold foods, vegetables, fruit, ice-cream and various drinks, in streets and public places such as stations, cinemas, or theatres. Tasks include - (a) obtaining food and drinks for sale; (b) preparing, either beforehand or on the spot, food and drinks for sale; (c) loading and unloading push-cart or truck, to bring food and drinks to the desired place in the street, or to public places such as stations or cinemas; (d) displaying food and drinks; (e) receiving payment on the spot; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|911</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9112">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Street vendors, non-food products</value>
+          </configuration>
+          <configuration name="description">
+            <value>Street vendors, non-food products sell various goods in streets and public places such as stations, cinemas or theatres. Tasks include - (a) buying or making various items for sale (b) loading and unloading push-cart, bicycle, truck or other vehicle, to transport goods to the streets or public places such as stations or cinemas; (c) displaying goods ; (d) approaching customer and selling newspapers or similar goods; (e) receiving payment on the spot; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|911</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9113">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Door-to-door and telephone salespersons</value>
+          </configuration>
+          <configuration name="description">
+            <value>Door-to-door and telephone salespersons solicit business for an establishment, particularly from households, by going from door to door or by telephoning. Tasks include - (a) giving details of various goods or services and of the firm\'s terms of sale either by going from door to door or by telephoning; (b) demonstrating goods by pointing to their main characteristics or showing how they work; (c) taking notes of orders received and forwarding them to the firm; (d) distributing advertising literature or leaving samples; (e) collecting payment of instalments, if necessary; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|911</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9120">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Shoe cleaning and other street services occupations</value>
+          </configuration>
+          <configuration name="description">
+            <value>Shoe cleaning and other street services elementary occupations usually include cleaning shoes, washing car windows, running errands and providing other on-the-spot street services. (a) obtaining the materials necessary to perform cleaning services; (b) cleaning and polishing shoes; (c) cleaning and polishing car windows; (d) running errands; (e) receiving immediate payment; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|912</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9131">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Domestic helpers and cleaners</value>
+          </configuration>
+          <configuration name="description">
+            <value>Domestic helpers and cleaners sweep, vacuum clean, wash and polish, take care of household linen, purchase household supplies, prepare food, serve meals and perform various other domestic duties. Tasks include - (a) sweeping, vacuum-cleaning, polishing and washing floors and furniture, or washing windows and other fixtures; (b) washing, ironing and mending linen and other textiles; (c) washing dishes; (d) preparing, cooking and serving meals and refreshments; (e) purchasing food and various other household supplies; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|913</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9132">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Helpers and cleaners in offices, hotels other establishments</value>
+          </configuration>
+          <configuration name="description">
+            <value>Helpers and cleaners in offices, hotels and other establishments perform various cleaning tasks in order to keep clean and tidy the interiors and fixtures of hotels, offices and other establishments, as well as of aircraft, trains, buses and similar vehicles. Tasks include - (a) sweeping or vacuum-cleaning, washing and polishing floors, furniture and other fixtures in buildings, coaches, buses, trams, trains and aircraft; (b) making beds, cleaning bathrooms, supplying towels, soap and related items; (c) cleaning kitchens and generally helping with kitchen work, including dishwashing ; (d) performing related tasks; (e) supervising other worker\'s.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|913</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9133">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Hand-launderers and pressers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Hand-launderers and pressers launder, press or dry-clean linen and other textiles by hand. Tasks include - (a) laundering and pressing linen, clothing, fabrics and similar articles by hand in a laundry or other establishment; (b) cleaning, by hand and with chemical solutions, clothing, fabrics, leather goods and similar articles, in a dry- cleaning or other establishment; (c) performing related tasks; (d) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|913</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9141">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Building caretakers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Building caretakers take care of apartment houses, hotels, offices, churches and other buildings and maintain them in a clean and orderly condition. Tasks include - (a) participating in cleaning, simple repairs and maintenance of building interiors; (b) tending furnaces and boilers to ensure provision of heat and hot water; (c) regulating conduct of tenants and visitors in such matters as noise abatement or misuse of property; (d) providing small services to absent tenants such as accepting deliveries on their behalf or providing requested information to callers; (e) performing related tasks; (f) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|914</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9142">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Vehicle, window and related cleaners</value>
+          </configuration>
+          <configuration name="description">
+            <value>Vehicle, window and related cleaners clean windows, showcases or other glass surfaces of buildings, or vehicles. Tasks include - (a) cleaning, washing and polishing cars and other vehicles, by hand or machine; (b) washing windows or other glass surfaces with water or various solutions, drying and polishing them; (c) performing related tasks; (d) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|914</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9151">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Messengers, package and luggage porters and</value>
+          </configuration>
+          <configuration name="description">
+            <value>Messengers, package and luggage porters and deliverers carry and deliver messages, packages and other items within an establishment or between establishments, to households and elsewhere, or carry luggage especially at hotels, stations and airports. Tasks include - (a) delivering messages, packages and other items within an establishment or between establishments, or elsewhere; (b) performing the duties of a post-runner; (c) delivering various goods to and from enterprises, shops, households and other places; (d) carrying and delivering luggage at hotels, stations, airports, and elsewhere; (e) performing related tasks; (f) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|915</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9152">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Doorkeepers, watchpersons and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Doorkeepers, watchpersons and related workers undertake doorkeeping duties in apartment houses and other buildings, attend parking places, watch houses and other properties to prevent illegal entry or theft and detect fire or other hazards, collect tickets, or perform ushering duties. Tasks include - (a) doorkeeping in hotels and helping guests, especially on their arrival and departure, with luggage, keys, or information about directions, etc. ; (b) doorkeeping in apartment houses and other buildings, checking the right-of-entry of callers and giving them requested information; (c) watching houses and other properties to prevent illegal entry or theft, fire or other hazards; (d) ushering people into courtrooms, sporting places and similar establishments; (e) collecting tickets in cinemas, theatres, circuses and related places; (f) taking charge of cloakrooms or lavatories in public places; (g) attending parking places; (h) performing related tasks; (i) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|915</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9153">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Vending-machine money collectors, meter readers and workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Vending-machine money collectors, meter readers and related workers stock vending machines and collect money from them or from parking meters and other coin-boxes, or read electricity, gas or water meters. Tasks include - (a) filling storage areas of vending machines and collecting money from their containers; (b) collecting money from parking meters and similar coin-boxes; (c) reading electricity, gas or water meters and recording consumption; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|915</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9161">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Garbage collectors</value>
+          </configuration>
+          <configuration name="description">
+            <value>Garbage collectors collect and remove garbage from buildings, yards, streets and other public places. Tasks include - (a) collecting garbage by putting it into bigger containers; (b) collecting garbage and loading it onto a vehicle; (c) performing related tasks; (d) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|916</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9162">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Sweepers and related laborers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Sweepers and related labourers sweep and clean streets, parks, airports, stations and other public places or perform odd jobs. Tasks include - (a) sweeping streets, parks, airports, stations and similar public places; (b) unloading coal or wood and putting it into cellars of private households or establishments; (c) chopping and stacking wood (d) carrying water; (e) shovelling snow; (f) beating dust out of carpets by using a carpet-beater; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|916</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9211">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Farm-hands and laborers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Farm-hands and labourers help with farm work by performing a variety of simple farming tasks. Tasks include - (a) digging and shovelling to clear ditches or for other purposes; (b) loading, unloading various crops and other materials; (c) raking, pitching and stacking hay; (d) watering and weeding; (e) picking fruit, vegetables and various plants; (f) helping with planting, harvesting and general farmwork; (g) feeding, watering, and cleaning animals and keeping their quarters clean; (h) performing related tasks; (i) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|921</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9212">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Forestry laborers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Forestry labourers help with work in natural forests or in forestry plantations by performing a variety of simple forestry tasks. Tasks include - (a) digging holes for tree planting (b) stacking logs and timber; (c) clearing undergrowth in forest stands; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|921</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9213">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Fishery, hunting and trapping laborers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Fishery, hunting and trapping labourers, by performing a variety of simple tasks, help with work connected with fish and seafood cultivation, or with hunting and trapping. Tasks include - (a) cleaning the sea-bed and feeding fish and mollusca that are being cultivated; (b) gathering seaweed, sea mosses, clams and other mollusca; (c) digging pits and holes, setting traps, keeping watch and performing other simple tasks connected with hunting and trapping; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|921</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9311">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Mining and quarrying laborers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Mining and quarrying labourers perform simple and routine tasks in connection with mining or quarrying. Tasks include - (a) removing wood and steel supports from disused workings in mines and quarries; (b) digging out chalk, clay, gravel or sand from open pits; (c) clearing various obstructions as instructed; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|931</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9312">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Construction and maintenance laborers: roads, dams similar constructions</value>
+          </configuration>
+          <configuration name="description">
+            <value>Construction and maintenance labourers perform simple and routine tasks in connection with the building and maintenance of roads, dams and similar constructions. Tasks include - (a) digging and filling holes and trenches, spreading gravel and related materials and performing other tasks related to the building and maintenance of railway tracks and roads; (b) carrying bricks and mortar to bricklayer or helping in other ways in the building of dams and similar constructions; (c) performing related tasks; (d) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|931</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9313">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Building construction laborers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Building construction labourers perform simple and routine tasks in connection with various aspects of building construction Tasks include - (a) cleaning used building bricks and doing other simple work on demolition sites; (b) clearing various obstructions as instructed; (c) carrying bricks and mortar to bricklayer on construction site; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|931</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9321">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Assembling laborers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Assembling labourers undertake product-sorting or simple hand-assembling of components. Tasks include - (a) carrying out manual sorting of products or components; (b) carrying out simple assembling of components; (c) performing related tasks; (d) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|932</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9322">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Hand packers and other manufacturing laborers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Hand packers and other manufacturing labourers pack materials or products by hand and perform a variety of simple routine tasks connected with manufacturing. Tasks include - (a) packing materials or products by hand in boxes, bags, cartons, crates, kegs and other containers for shipment or storage; (b) moving, lifting, carrying, loading, unloading or washing raw materials or products, in various manufacturing industries or repair and maintenance establishments; (c) performing related tasks; (d) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|932</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9331">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Hand or pedal vehicle drivers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Hand or pedal vehicle drivers propel cycles and similar vehicles to transport passengers or goods. Tasks include - (a) loading or unloading goods, or assisting passengers in getting on or off a vehicle; (b) moving vehicle in the desired direction with due regard to other traffic and traffic regulations; (c) making minor repairs and keeping vehicle in good order; (d) collecting fares or charges; (e) performing related tasks; (f) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|933</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9332">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Drivers of animal-drawn vehicles and machinery</value>
+          </configuration>
+          <configuration name="description">
+            <value>Drivers of animal-drawn vehicles and machinery drive animal- drawn vehicles to transport passengers or goods, as well as animal-drawn machinery usually in connection with farming. Tasks include - (a) harnessing animals and hitching them to vehicles or machinery; (b) loading or unloading goods, or assisting passengers in getting on or off a vehicle; (c) driving animals in the desired direction with due regard to other traffic and traffic regulations; (d) collecting fares or charges; (e) driving animals to haul wagons in mines or quarries; (f) driving animals hitched to farm or other machinery; (g) driving working elephants; (h) making minor repairs and keeping vehicles in good order; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|933</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="9333">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Freight handlers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Freight handlers carry out tasks such as packing, carrying, loading and unloading furniture and other household items, or loading and unloading ship and aircraft cargoes and other freight, or carrying and stacking goods in various warehouses. Tasks include - (a) packing office or household furniture, machines, appliances and related goods to be transported from one place to another; (b) carrying goods to be loaded on or unloaded from vans, trucks, wagons, ships, or aircraft; (c) loading and unloading grain, coal, sand and similar goods by placing them on conveyor-belts, pipes, etc. ; (d) connecting hoses between main shore installation pipes and tanks of barges, tankers and other ships to load and unload petroleum, liquefied gases and other liquids; (e) carrying and stacking goods in warehouses and similar establishments; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|933</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

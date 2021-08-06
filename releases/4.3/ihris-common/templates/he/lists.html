@@ -1,0 +1,37 @@
+<div id="siteContent">
+    <h1 dir="rtl">נהל את מסד הנתונים</h1>
+
+    <span type="module" ifenabled="true" name="Person">    
+	  <h3 dir="rtl">רשימות דמוגראפיות</h3>
+	  <ul><li><a href="lists?type=id_type" dir="rtl">סוג הזיהוי</a></li>
+	    <li><a href="lists?type=marital_status" dir="rtl">מצב משפחתי</a></li>
+	  </ul></span>
+    <span type="module" ifenabled="true" name="Geography">    
+      <h3 dir="rtl">נתונים גאוגרפיים</h3>
+      <ul><li><a href="lists?type=country" dir="rtl">ארץ</a></li>
+        <li><a href="lists?type=region" dir="rtl">אזור</a></li>
+        <li><a href="lists?type=district" dir="rtl">אזור</a></li>
+        <li><a href="lists?type=county" dir="rtl">מחוז</a></li>
+        <span type="module" ifenabled="true" name="Currency">    
+          <li><a href="lists?type=currency" dir="rtl">כסף</a></li>
+        </span>
+      </ul></span>
+    <h3 dir="rtl">מידע נוסף</h3>
+    <ul><span type="module" ifenabled="true" name="simple-competency">	
+	  <li><a href="lists?type=competency_type" dir="rtl">סוג הסמכות</a></li>
+	  <li><a href="lists?type=competency&amp;field=competency_type" dir="rtl">סמכות</a></li>
+    </span>
+    <span type="module" name="CEUs" ifenabled="true">
+	  <li><a href="lists?type=continuing_education_course" dir="rtl">ממשיך בקורס חינוכי</a></li>
+    </span>
+    <span type="module" name="training-institution" ifenabled="true">
+	  <li><a href="lists?type=training_institution" dir="rtl">אימון מסודר</a></li>
+	  <li><a href="lists?type=training_funder" dir="rtl">יצירת אימון</a></li>
+    </span>
+    </ul><span role="admin">
+      <span type="module" name="ihris-common-MassDeletePerson" ifenabled="true">
+        <h2>Mass Delete</h2>
+        <ul><li><a href="delete_by_search">By Person (Search Page)</a></li>
+        </ul></span>
+    </span>
+</div>

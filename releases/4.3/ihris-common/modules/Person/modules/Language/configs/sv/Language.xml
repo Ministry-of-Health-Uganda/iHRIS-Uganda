@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonLanguage" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonLanguage" path="/I2CE" locale="sv">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="sv">
+      <configuration name="person_can_view_child_form_person_language" locale="sv"></configuration>
+      <configuration name="person_can_edit_child_form_person_language" locale="sv"></configuration>
+      <configuration name="can_edit_database_list_language" locale="sv">
+        <value>Kan redigera språkdatabas-listan</value>
+      </configuration>
+      <configuration name="can_view_database_list_language" locale="sv">
+        <value>Kan titta på språkdatabas-listan</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="language_proficiency">
+        <configurationGroup name="elementary">
+          <configuration name="fields" value="many" type="delimited" locale="sv">
+            <value>name:Elementär</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="limited">
+          <configuration name="fields" value="many" type="delimited" locale="sv"></configuration>
+        </configurationGroup>
+        <configurationGroup name="professional">
+          <configuration name="fields" value="many" type="delimited" locale="sv"></configuration>
+        </configurationGroup>
+        <configurationGroup name="full_professional">
+          <configuration name="fields" value="many" type="delimited" locale="sv">
+            <value>name:Fullständigt professionell</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="fluent">
+          <configuration name="fields" value="many" type="delimited" locale="sv">
+            <value>name:Flytande</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_language">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sv">
+            <value>Lägg till/uppdatera språk</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="language">
+          <configuration name="display" values="single" locale="sv">
+            <value>Språk</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="language_proficiency">
+          <configuration name="display" values="single" locale="sv">
+            <value>Språkkunskaper</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_language">
+          <configuration name="display" values="single" locale="sv"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PersonLanguage">
+          <configurationGroup name="fields">
+            <configurationGroup name="language">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Språk</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="speaking">
+              <configuration name="headers" type="delimited" locale="sv"></configuration>
+            </configurationGroup>
+            <configurationGroup name="reading">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Läsfärdighet</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="writing">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Skrivfärdighet</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

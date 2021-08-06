@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ReportArchiver">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="ReportArchiver" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="custom_reports_archiver_can_view" locale="en_US" values="single" type="string">
+        <value>Allows viewing of archvied Custom Reports</value>
+      </configuration>
+      <configuration name="custom_reports_archiver_can_archive" locale="en_US" values="single" type="string">
+        <value>Allows archiving of custom reports</value>
+      </configuration>
+      <configuration name="custom_reports_archiver_can_delete" locale="en_US" values="single" type="string">
+        <value>Allows deleting of archivhed custom reports</value>
+      </configuration>
+      <configuration name="custom_reports_archiver_admin" locale="en_US" values="single" type="string">
+        <value>Allows full access to custom reports archiving system</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="archived_report">
+          <configuration name="display" values="single" locale="en_US" type="string">
+            <value>Archived Report</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="I2CE_ArchivedReport">
+          <configurationGroup name="meta" path="meta/list/default">
+            <configuration name="display_string" locale="en_US" values="single" type="string">
+              <value>%s generated on %s</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="fields">
+            <configurationGroup name="report">
+              <configuration name="headers" type="delimited" locale="en_US" values="single">
+                <value>default:Report</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="en_US" values="single">
+                <value>default:Generation Date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="report_view">
+              <configuration name="headers" type="delimited" values="many" locale="en_US">
+                <value>default:Report View</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" values="many" locale="en_US">
+                <value>default:Title</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="CLI_archive_page" path="/modules/CustomReports/command_line/archive">
+      <configurationGroup name="args">
+        <configuration name="title" locale="en_US" values="single" type="string">
+          <value>Archive Report</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="archive_page" path="/modules/CustomReports/page/archive">
+      <configurationGroup name="args">
+        <configuration name="title" locale="en_US" values="single" type="string">
+          <value>Archive Report</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="view_archives_page" path="/modules/CustomReports/page/viewArchives">
+      <configurationGroup name="args">
+        <configuration name="title" locale="en_US" values="single" type="string">
+          <value>View Archived Reports</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

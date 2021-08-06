@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="field-limits">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="field-limits" locale="ar">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/modules/field-limits/text/" locale="ar">
+      <configuration name="select_value" values="single" type="string">
+        <value>حدد قيمة</value>
+      </configuration>
+      <configurationGroup name="description">
+        <configurationGroup name="default">
+          <configuration name="text" locale="ar" values="single" type="string"></configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:قيمة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="max_parent">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>أقصى قيمة ل %s، تعديل %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:الحقل الموصول</value>
+            <value>1:تعديل</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="min_parent">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>قيمة الحد الأدنى ل %s، تعديل %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:الحقل الموصول</value>
+            <value>1:تعديل</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="not_null">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>غير فارغة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="null">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>فارغة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="true">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>صحيح</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="false">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>خطأ</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="yes">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>نعم</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="no">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>لا</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="lessthan">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>أقل من %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:قيمة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="lessthan_equals">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>أقل من أو يساوي %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:قيمة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="greaterthan">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>أكبر من %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:قيمة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="greaterthan_equals">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>أكبر من أو يساوي %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:قيمة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="between">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>بين %s و %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:أدني</value>
+            <value>1:أقصي</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="max_parent_form">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>القيمة القصوى للإصل</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="min_parent_form">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>القيمة الدنيا للأصل</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="greaterthan_now">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>أكبر مما هي عليه الآن.</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="lessthan_now">
+          <configuration name="text" locale="ar" values="single" type="string">
+            <value>أقل مما هو عليه الآن.</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

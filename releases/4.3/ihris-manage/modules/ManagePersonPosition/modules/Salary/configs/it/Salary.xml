@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Salary" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Salary" path="/I2CE" locale="it">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="it">
+      <configuration name="sal_bad_date" path="salary/start_date/bad_date"></configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="salary">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="it"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="salary_history">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="it"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_salary" locale="it"></configuration>
+      <configuration name="person_can_delete_child_form_salary" locale="it"></configuration>
+      <configuration name="person_can_change_child_form_salary" locale="it"></configuration>
+      <configuration name="person_can_view_child_form_salary" locale="it"></configuration>
+      <configuration name="can_edit_database_list_salary_source" locale="it">
+        <value>Modifica l'elenco delle fonti di reddito</value>
+      </configuration>
+      <configuration name="can_view_database_list_salary_source" locale="it">
+        <value>Visualizza l'elenco delle fonti di reddito</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="salary">
+          <configuration name="display" values="single" locale="it">
+            <value>Salario</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="salary_source">
+          <configuration name="display" values="single" locale="it">
+            <value>Fonte di reddito</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Position">
+          <configurationGroup name="fields">
+            <configurationGroup name="proposed_salary">
+              <configuration name="headers" type="delimited" locale="it"></configuration>
+            </configurationGroup>
+            <configurationGroup name="source">
+              <configuration name="headers" type="delimited" locale="it"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Salary">
+          <configurationGroup name="fields">
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="it">
+                <value>default:Data di inizio</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="salary">
+              <configuration name="headers" type="delimited" locale="it">
+                <value>default:Salario</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="it">
+                <value>default:Data di fine</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="it">
+                <value>default:Note</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-common" path="/I2CE">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-common" path="/I2CE" locale="cs">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_configure_system" locale="cs">
+        <value>Má přístup k menu obecného nastavení systému</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs">
+            <value>Domů</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="history">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs">
+            <value>Zobrazit historii</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="field_history">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs">
+            <value>Zobrazit historii pole</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="noaccess">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs">
+            <value>Přístup odepřen</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="configure">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs">
+            <value>Nastavit systém</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

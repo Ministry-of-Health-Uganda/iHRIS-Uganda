@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="swissfactory">
+  <metadata>
+    <displayName>Swiss Factory</displayName>
+    <className>I2CE_Module_SwissFactory</className>
+    <category>Administration</category>
+    <description>The Swiss Factory Magic Data Editing System</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="FormWorm">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="menu_select">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+</I2CEConfiguration>

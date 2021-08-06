@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="DHIS_Metadata" path="/">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="DHIS_Metadata" path="/" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <configurationGroup name="dhis_submit">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Submit to DHIS</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="dhis_metadata">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>DHIS Metadata Upload</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="can_edit_database_list_dhis_orgunit" locale="en_US">
+        <value>Can edit DHIS Organizational unit list</value>
+      </configuration>
+      <configuration name="can_view_database_list_dhis_orgunit" locale="en_US">
+        <value>Can view DHIS Organizational unit list</value>
+      </configuration>
+      <configuration name="can_edit_database_list_dhis_data_element" locale="en_US">
+        <value>Can edit DHIS data element list</value>
+      </configuration>
+      <configuration name="can_view_database_list_dhis_data_element" locale="en_US">
+        <value>Can view DHIS data element list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="dhis_data_element">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Data Element</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="dhis_orgunit">
+          <configuration name="display" values="single" locale="en_US">
+            <value>DHIS Organizational Unit</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_DHIS_CodedList">
+          <configurationGroup name="fields">
+            <configurationGroup name="dhis_uid">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:DHIS UID</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

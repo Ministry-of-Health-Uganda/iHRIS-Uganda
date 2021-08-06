@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Facility" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="Facility" path="/I2CE" locale="pt">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_facility" locale="pt">
+        <value>Editar a lista de unidades</value>
+      </configuration>
+      <configuration name="can_view_database_list_facility" locale="pt">
+        <value>Visualizar a lista de unidade</value>
+      </configuration>
+      <configuration name="can_edit_database_list_facility_type" locale="pt">
+        <value>Editar a lista de tipo de unidade</value>
+      </configuration>
+      <configuration name="can_view_database_list_facility_type" locale="pt">
+        <value>Visualizar a lista de tipo de unidade</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="facility">
+          <configurationGroup name="meta">
+            <configuration name="description" locale="pt">
+              <value>Esta ficha é usada para descrever informação básica sobre uma unidade</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility_type">
+          <configuration name="display" values="single" locale="pt">
+            <value>Tipo de Unidade</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility_type">
+              <configuration name="headers" type="delimited" locale="pt">
+                <value>default:Tipo de Unidade</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="code">
+              <configuration name="headers" type="delimited" locale="pt"></configuration>
+            </configurationGroup>
+            <configurationGroup name="latitude">
+              <configuration name="headers" type="delimited" locale="pt"></configuration>
+            </configurationGroup>
+            <configurationGroup name="longitude">
+              <configuration name="headers" type="delimited" locale="pt"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

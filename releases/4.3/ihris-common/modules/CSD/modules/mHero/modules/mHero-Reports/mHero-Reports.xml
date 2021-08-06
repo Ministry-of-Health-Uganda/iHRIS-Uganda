@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="mHero-Reports">
+  <metadata>
+    <displayName>mHero </displayName>
+    <category>Application Component</category>
+    <description>Provides CSD Interface for RapidPro</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-common</link>
+    <version>4.3.0.0</version>
+    <requirement name="CustomReports-full-Person_Flow_Response">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="CustomReports-full-person_flow_summary">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="CustomReports-full-workflows_run_results">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="CustomReports-full-person_flow_response_all">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ContactGroupsReport">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+</I2CEConfiguration>

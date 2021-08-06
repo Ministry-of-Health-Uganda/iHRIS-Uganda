@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonContact" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonContact" path="/I2CE" locale="tl">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_messages" path="/modules/forms/formfield_messages" locale="tl">
+      <configuration name="work" path="work/email/invalid_email">
+        <value>Paki magpasok ng isang katanggap-tanggap na tirahan ng e-liham</value>
+      </configuration>
+      <configuration name="personal" path="personal/email/invalid_email">
+        <value>Paki magpasok ng isang katanggap-tanggap na tirahan ng e-liham</value>
+      </configuration>
+      <configuration name="other" path="other/email/invalid_email">
+        <value>Paki magpasok ng isang katanggap-tanggap na tirahan ng e-liham</value>
+      </configuration>
+      <configuration name="emergency" path="emergency/email/invalid_email">
+        <value>Paki magpasok ng isang katanggap-tanggap na tirahan ng e-liham</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="tl">
+      <configuration name="person_can_view_child_form_person_contact_work" locale="tl">
+        <value>Makikita ang pormularyong pambata na pangpakikipag-ugnayan sa hanapbuhay ng isang tao</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_work" locale="tl">
+        <value>Mababago ang pormularyo ng ugnayang pangtrabaho ng bata ng isang tao</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_emergency" locale="tl">
+        <value>Matitingnan ang pormularyo ng pangpakikipag-ugnayang pangsakuna ng bata ng isang tao</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_emergency" locale="tl">
+        <value>Mababago ang pormularyo ng pakikipag-ugnayang pangsakuna ng bata ng isang tao</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_personal" locale="tl">
+        <value>Matitingnan ang pormularyo ng pangpakikipag-ugnayang pansarili ng bata ng isang tao</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_personal" locale="tl">
+        <value>Mababago ang mga pormularyong pangpakikipag-ugnayang pansarili ng bata ng isang tao</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_other" locale="tl">
+        <value>Matitingnan ang iba pang pormularyo sa pakikipag-ugnayan sa bata ng isang tao</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_other" locale="tl">
+        <value>Mababago ang iba pang mga pormularyo ng pakikipag-ugnayan sa bata ng isang tao</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_contact_work">
+          <configuration name="display" values="single" locale="tl">
+            <value>Kaugnayan sa Hanapbuhay</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_emergency">
+          <configuration name="display" values="single" locale="tl">
+            <value>Kaugnayan kung may Sakuna</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_other">
+          <configuration name="display" values="single" locale="tl">
+            <value>Iba pang Makakaugnayan</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_personal">
+          <configuration name="display" values="single" locale="tl">
+            <value>Pansariling Kaugnayan</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="contact">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="tl">
+            <value>Magdagdag/Magsapanahon ng Kabatirang Pangpakikipag-ugnayan</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

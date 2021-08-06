@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-LeaveOfAbsence">
+  <metadata>
+    <displayName>iHRIS Manage Leave Of Absence</displayName>
+    <className>iHRIS_Module_LeaveOfAbsence</className>
+    <category>Application</category>
+    <description>The iHRIS Manage Leave Of Absence Module.</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-manage-PersonPosition">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Person">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="fields-enum">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>225</priority>
+  </metadata>
+  <configurationGroup name="ihris-manage-LeaveOfAbsence" path="/I2CE">
+    <displayName>iHRIS Manage Leave Of Absence</displayName>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages/leave_of_absence">
+      <configuration name="start_date_overlap" path="start_date/date_overlap" locale="en_US">
+        <value>The start date overlaps with an existing leave of absence.</value>
+      </configuration>
+      <configuration name="end_date_overlap" path="end_date/date_overlap" locale="en_US">
+        <value>The end date overlaps with an existing leave of absence.</value>
+      </configuration>
+      <configuration name="end_date_before" path="end_date/before_start" locale="en_US">
+        <version>4.2.3.3</version>
+        <value>The end date must be after the start date.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_leave_of_absence" locale="en_US">
+        <value>Can view Leave Of Absence child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_leave_of_absence" locale="en_US">
+        <value>Can edit Leave Of Absence child forms of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_leave_of_absence" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_leave_of_absence" values="many">
+        <value>person_can_view_child_form_leave_of_absence</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <value>person_can_view_child_form_leave_of_absence</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <value>person_can_edit_child_form_leave_of_absence</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <displayName>Forms</displayName>
+      <configurationGroup name="forms">
+        <displayName>Forms available to the form factory</displayName>
+        <description>Information about the forms made available by iHRIS-Common</description>
+        <status>advanced:true</status>
+        <status>required:true</status>
+        <configurationGroup name="leave_of_absence">
+          <displayName>Leave Of Absence</displayName>
+          <description>The Leave Of Absence Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_LeaveOfAbsence</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Leave Of Absence</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_meta" path="/modules/forms/forms/person/meta">
+          <displayName>MetaData on the form</displayName>
+          <configuration name="child_forms" values="many">
+            <status>uniquemerge:true</status>
+            <displayName>Child Forms</displayName>
+            <value>leave_of_absence</value>
+          </configuration>
+        </configurationGroup>
+        <!-- person_meta -->
+      </configurationGroup>
+      <!-- end of /modules/forms/forms-->
+      <configurationGroup name="formClasses">
+        <displayName>Form Class Configuration</displayName>
+        <configurationGroup name="iHRIS_LeaveOfAbsence">
+          <displayName>Configuration for the class 'iHRIS_LeaveOfAbsence'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="type">
+              <displayName>The field 'type'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Absence Type</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <version>4.2.3.1</version>
+                  <configuration name="data" type="delimited">
+                    <value>health:Health</value>
+                    <value>education:Education</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <displayName>The field 'start_date'</displayName>
+              <version>4.2.3.2</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Start Date</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <displayName>The field 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:End Date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="paid">
+              <displayName>The field 'paid'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>YESNO</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Paid?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="incomplete">
+              <displayName>The field 'incomplete'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>YESNO</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Training incomplete? (for education)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="cause">
+              <displayName>The field 'cause'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_TEXT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Cause / Diagnosis (for health)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <displayName>The field 'notes'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_TEXT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Notes</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_LeaveOfAbsence -->
+      </configurationGroup>
+      <!-- End of form /modules/forms/formsClasses-->
+    </configurationGroup>
+    <!-- end of /modules/forms-->
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+      <configurationGroup name="leave_of_absence">
+        <displayName>Leave Of Absence Page</displayName>
+        <description>The page 'leave_of_absence' which has the action of: Add/Update Leave of Absence</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_manage_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Leave Of Absence</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_can_edit_child_form_leave_of_absence</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>leave_of_absence</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

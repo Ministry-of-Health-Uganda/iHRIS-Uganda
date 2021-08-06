@@ -1,0 +1,20 @@
+<div id="siteContent">
+  <h1 class="header">Applie fer ae Poseetion</h1>
+  <div id="error"></div>
+  <form method="post" action="SelfService/apply">
+    <span type="form" name="person:id"></span>
+    <div id="form">
+      
+      <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">Personal Information</th>
+	</tr><tbody id="person_fields"></tbody><span type="module" name="SelfService" if="canSelfRegister()">
+	  <tr><th colspan="2">Uiser Details</th>
+	  </tr><tr id="create_user_fields"><td id="user_fields">
+	    </td>
+	  </tr></span>
+
+	<tbody id="user"></tbody><tbody id="application"></tbody><tr class="submitCell"><td colspan="2">
+            <div id="button"></div>
+	  </td>
+	</tr></table></div>
+  </form>
+</div>

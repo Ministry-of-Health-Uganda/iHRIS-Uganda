@@ -1,0 +1,689 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-csd-qus">
+  <metadata>
+    <displayName>CSD Query For Updated Services</displayName>
+    <className>iHRIS_Module_ManageCSD</className>
+    <category>Application Component</category>
+    <description>CSD Query For Updated Services</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="XSLTS">
+      <value>./xslts</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <requirement name="ihris-manage-Job">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Person-CSD">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ihris-manage-PersonPosition">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="csd_cache">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="csd_geography_default">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="csd_facility_default">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="ihris-manage-csd-qus" path="/">
+    <configurationGroup name="qus_page" path="/modules/csd_cache/csd_manage_default">
+      <version>4.2.0.17</version>
+      <configurationGroup name="args">
+        <configuration name="directory">
+          <value>provider</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_uuid_person" path="/modules/forms/formClasses/iHRIS_Person/fields/csd_uuid">
+      <version>4.2.0.18</version>
+      <configuration name="formfield">
+        <value>STRING_LINE</value>
+      </configuration>
+      <configuration name="headers" type="delimited" locale="en_US">
+        <value>default:CSD Entity ID</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_query_updated_services_manage_default" path="/modules/CustomReports/relationships/csd_manage_default">
+      <version>4.2.0.9</version>
+      <configuration name="form">
+        <displayName>Form</displayName>
+        <value>person</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <displayName>Joins</displayName>
+        <configurationGroup name="demographic">
+          <displayName>Demographic</displayName>
+          <configuration name="display_name">
+            <displayName>Display Name</displayName>
+            <value>demographic</value>
+          </configuration>
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>demographic</value>
+          </configuration>
+          <configuration name="join_style">
+            <displayName>Join Style</displayName>
+            <value>child</value>
+          </configuration>
+          <configuration name="limit_one">
+            <displayName>Limit One</displayName>
+            <value>0</value>
+          </configuration>
+          <configurationGroup name="ancestral_conditions">
+            <displayName>Ancestral Conditions</displayName>
+          </configurationGroup>
+          <configurationGroup name="where">
+            <displayName>Where</displayName>
+          </configurationGroup>
+          <configurationGroup name="joins">
+            <displayName>Joins</displayName>
+          </configurationGroup>
+          <configurationGroup name="join_data">
+            <displayName>Join Data</displayName>
+            <configuration name="displaystyle">
+              <displayName>Displaystyle</displayName>
+              <value>default</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_personal">
+          <displayName>Person Contact Personal</displayName>
+          <configuration name="display_name">
+            <displayName>Display Name</displayName>
+            <value>person_contact_personal</value>
+          </configuration>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>person_contact_personal</value>
+          </configuration>
+          <configurationGroup name="join_data">
+            <displayName>Join Data</displayName>
+            <configuration name="displaystyle">
+              <displayName>Displaystyle</displayName>
+              <value>default</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="join_style">
+            <displayName>Join Style</displayName>
+            <value>child</value>
+          </configuration>
+          <configuration name="limit_one">
+            <displayName>Limit One</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_work">
+          <displayName>Person Contact Work</displayName>
+          <configuration name="display_name">
+            <displayName>Display Name</displayName>
+            <value>person_contact_work</value>
+          </configuration>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>person_contact_work</value>
+          </configuration>
+          <configurationGroup name="join_data">
+            <displayName>Join Data</displayName>
+            <configuration name="displaystyle">
+              <displayName>Displaystyle</displayName>
+              <value>default</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="join_style">
+            <displayName>Join Style</displayName>
+            <value>child</value>
+          </configuration>
+          <configuration name="limit_one">
+            <displayName>Limit One</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_id">
+          <displayName>Person Id</displayName>
+          <configuration name="display_name">
+            <displayName>Display Name</displayName>
+            <value>Identification</value>
+          </configuration>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>person_id</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <displayName>Joins</displayName>
+            <configurationGroup name="id_type">
+              <displayName>Id Type</displayName>
+              <configuration name="display_name">
+                <displayName>Display Name</displayName>
+                <value>ID Type</value>
+              </configuration>
+              <configuration name="form">
+                <displayName>Form</displayName>
+                <value>id_type</value>
+              </configuration>
+              <configurationGroup name="join_data">
+                <displayName>Join Data</displayName>
+                <configuration name="field">
+                  <displayName>Field</displayName>
+                  <value>id_type</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="join_style">
+                <displayName>Join Style</displayName>
+                <value>parent_field</value>
+              </configuration>
+              <configuration name="limit_one">
+                <displayName>Limit One</displayName>
+                <value>1</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="join_data">
+            <displayName>Join Data</displayName>
+            <configuration name="displaystyle">
+              <displayName>Displaystyle</displayName>
+              <value>default</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="join_style">
+            <displayName>Join Style</displayName>
+            <value>child</value>
+          </configuration>
+          <configuration name="limit_one">
+            <displayName>Limit One</displayName>
+            <value>0</value>
+          </configuration>
+          <configurationGroup name="ancestral_conditions">
+            <displayName>Ancestral Conditions</displayName>
+          </configurationGroup>
+          <configurationGroup name="where">
+            <displayName>Where</displayName>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="person_language">
+          <displayName>Person Language</displayName>
+          <configuration name="display_name">
+            <displayName>Display Name</displayName>
+            <value>person_language</value>
+          </configuration>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>person_language</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <displayName>Joins</displayName>
+            <configurationGroup name="language">
+              <displayName>Language</displayName>
+              <configuration name="display_name">
+                <displayName>Display Name</displayName>
+                <value>language</value>
+              </configuration>
+              <configuration name="form">
+                <displayName>Form</displayName>
+                <value>language</value>
+              </configuration>
+              <configurationGroup name="join_data">
+                <displayName>Join Data</displayName>
+                <configuration name="field">
+                  <displayName>Field</displayName>
+                  <value>language</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="join_style">
+                <displayName>Join Style</displayName>
+                <value>parent_field</value>
+              </configuration>
+              <configuration name="limit_one">
+                <displayName>Limit One</displayName>
+                <value>1</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="join_data">
+            <displayName>Join Data</displayName>
+            <configuration name="displaystyle">
+              <displayName>Displaystyle</displayName>
+              <value>default</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="join_style">
+            <displayName>Join Style</displayName>
+            <value>child</value>
+          </configuration>
+          <configuration name="limit_one">
+            <displayName>Limit One</displayName>
+            <value>0</value>
+          </configuration>
+          <configurationGroup name="ancestral_conditions">
+            <displayName>Ancestral Conditions</displayName>
+          </configurationGroup>
+          <configurationGroup name="where">
+            <displayName>Where</displayName>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="person_position">
+          <displayName>Person Position</displayName>
+          <configuration name="display_name">
+            <displayName>Display Name</displayName>
+            <value>person_position</value>
+          </configuration>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>person_position</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <displayName>Joins</displayName>
+            <configurationGroup name="position">
+              <displayName>Position</displayName>
+              <configuration name="display_name">
+                <displayName>Display Name</displayName>
+                <value>Position</value>
+              </configuration>
+              <configuration name="form">
+                <displayName>Form</displayName>
+                <value>position</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <displayName>Joins</displayName>
+                <configurationGroup name="facility">
+                  <displayName>Facility</displayName>
+                  <configuration name="display_name">
+                    <displayName>Display Name</displayName>
+                    <value>Facility/Posting</value>
+                  </configuration>
+                  <configuration name="form">
+                    <displayName>Form</displayName>
+                    <value>facility</value>
+                  </configuration>
+                  <configurationGroup name="join_data">
+                    <displayName>Join Data</displayName>
+                    <configuration name="field">
+                      <displayName>Field</displayName>
+                      <value>facility</value>
+                    </configuration>
+                    <configuration name="displaystyle">
+                      <displayName>Displaystyle</displayName>
+                      <value>default</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configuration name="join_style">
+                    <displayName>Join Style</displayName>
+                    <value>parent_field</value>
+                  </configuration>
+                  <configuration name="limit_one">
+                    <displayName>Limit One</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configurationGroup name="ancestral_conditions">
+                    <displayName>Ancestral Conditions</displayName>
+                  </configurationGroup>
+                  <configurationGroup name="where">
+                    <displayName>Where</displayName>
+                  </configurationGroup>
+                  <configurationGroup name="joins">
+                    <displayName>Joins</displayName>
+                  </configurationGroup>
+                  <configuration name="drop_empty">
+                    <displayName>Drop Empty</displayName>
+                    <value>0</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="job">
+                  <displayName>Job</displayName>
+                  <configuration name="display_name">
+                    <displayName>Display Name</displayName>
+                    <value>job</value>
+                  </configuration>
+                  <configuration name="form">
+                    <displayName>Form</displayName>
+                    <value>job</value>
+                  </configuration>
+                  <configurationGroup name="joins">
+                    <displayName>Joins</displayName>
+                    <configurationGroup name="cadre">
+                      <displayName>Cadre</displayName>
+                      <configuration name="display_name">
+                        <displayName>Display Name</displayName>
+                        <value>cadre</value>
+                      </configuration>
+                      <configuration name="form">
+                        <displayName>Form</displayName>
+                        <value>cadre</value>
+                      </configuration>
+                      <configurationGroup name="join_data">
+                        <displayName>Join Data</displayName>
+                        <configuration name="field">
+                          <displayName>Field</displayName>
+                          <value>cadre</value>
+                        </configuration>
+                      </configurationGroup>
+                      <configuration name="join_style">
+                        <displayName>Join Style</displayName>
+                        <value>parent_field</value>
+                      </configuration>
+                      <configuration name="limit_one">
+                        <displayName>Limit One</displayName>
+                        <value>1</value>
+                      </configuration>
+                    </configurationGroup>
+                    <configurationGroup name="classification">
+                      <displayName>Classification</displayName>
+                      <configuration name="display_name">
+                        <displayName>Display Name</displayName>
+                        <value>classification</value>
+                      </configuration>
+                      <configuration name="form">
+                        <displayName>Form</displayName>
+                        <value>classification</value>
+                      </configuration>
+                      <configurationGroup name="join_data">
+                        <displayName>Join Data</displayName>
+                        <configuration name="field">
+                          <displayName>Field</displayName>
+                          <value>classification</value>
+                        </configuration>
+                      </configurationGroup>
+                      <configuration name="join_style">
+                        <displayName>Join Style</displayName>
+                        <value>parent_field</value>
+                      </configuration>
+                      <configuration name="limit_one">
+                        <displayName>Limit One</displayName>
+                        <value>1</value>
+                      </configuration>
+                    </configurationGroup>
+                    <configurationGroup name="isco_08">
+                      <displayName>Isco 08</displayName>
+                      <configuration name="display_name">
+                        <displayName>Display Name</displayName>
+                        <value>ISCO 08</value>
+                      </configuration>
+                      <configuration name="form">
+                        <displayName>Form</displayName>
+                        <value>isco_08_unit</value>
+                      </configuration>
+                      <configurationGroup name="join_data">
+                        <displayName>Join Data</displayName>
+                        <configuration name="field">
+                          <displayName>Field</displayName>
+                          <value>isco_08_unit</value>
+                        </configuration>
+                      </configurationGroup>
+                      <configuration name="join_style">
+                        <displayName>Join Style</displayName>
+                        <value>parent_field</value>
+                      </configuration>
+                      <configuration name="limit_one">
+                        <displayName>Limit One</displayName>
+                        <value>1</value>
+                      </configuration>
+                    </configurationGroup>
+                    <configurationGroup name="isco_88">
+                      <displayName>Isco 88</displayName>
+                      <configuration name="display_name">
+                        <displayName>Display Name</displayName>
+                        <value>isco_88</value>
+                      </configuration>
+                      <configuration name="form">
+                        <displayName>Form</displayName>
+                        <value>isco_88_unit</value>
+                      </configuration>
+                      <configurationGroup name="join_data">
+                        <displayName>Join Data</displayName>
+                        <configuration name="field">
+                          <displayName>Field</displayName>
+                          <value>isco_88_unit</value>
+                        </configuration>
+                      </configurationGroup>
+                      <configuration name="join_style">
+                        <displayName>Join Style</displayName>
+                        <value>parent_field</value>
+                      </configuration>
+                      <configuration name="limit_one">
+                        <displayName>Limit One</displayName>
+                        <value>1</value>
+                      </configuration>
+                    </configurationGroup>
+                    <configurationGroup name="who_cadre">
+                      <displayName>Who Cadre</displayName>
+                      <configuration name="display_name">
+                        <displayName>Display Name</displayName>
+                        <value>who_cadre</value>
+                      </configuration>
+                      <configuration name="form">
+                        <displayName>Form</displayName>
+                        <value>who_cadre</value>
+                      </configuration>
+                      <configurationGroup name="join_data">
+                        <displayName>Join Data</displayName>
+                        <configuration name="field">
+                          <displayName>Field</displayName>
+                          <value>who_cadre</value>
+                        </configuration>
+                      </configurationGroup>
+                      <configuration name="join_style">
+                        <displayName>Join Style</displayName>
+                        <value>parent_field</value>
+                      </configuration>
+                      <configuration name="limit_one">
+                        <displayName>Limit One</displayName>
+                        <value>1</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                  <configurationGroup name="join_data">
+                    <displayName>Join Data</displayName>
+                    <configuration name="field">
+                      <displayName>Field</displayName>
+                      <value>job</value>
+                    </configuration>
+                    <configuration name="displaystyle">
+                      <displayName>Displaystyle</displayName>
+                      <value>default</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configuration name="join_style">
+                    <displayName>Join Style</displayName>
+                    <value>parent_field</value>
+                  </configuration>
+                  <configuration name="limit_one">
+                    <displayName>Limit One</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configurationGroup name="ancestral_conditions">
+                    <displayName>Ancestral Conditions</displayName>
+                  </configurationGroup>
+                  <configurationGroup name="where">
+                    <displayName>Where</displayName>
+                  </configurationGroup>
+                  <configuration name="drop_empty">
+                    <displayName>Drop Empty</displayName>
+                    <value>0</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="join_data">
+                <displayName>Join Data</displayName>
+                <configuration name="field">
+                  <displayName>Field</displayName>
+                  <value>position</value>
+                </configuration>
+                <configuration name="displaystyle">
+                  <displayName>Displaystyle</displayName>
+                  <value>default</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="join_style">
+                <displayName>Join Style</displayName>
+                <value>parent_field</value>
+              </configuration>
+              <configuration name="limit_one">
+                <displayName>Limit One</displayName>
+                <value>1</value>
+              </configuration>
+              <configurationGroup name="ancestral_conditions">
+                <displayName>Ancestral Conditions</displayName>
+              </configurationGroup>
+              <configurationGroup name="where">
+                <displayName>Where</displayName>
+              </configurationGroup>
+              <configuration name="drop_empty">
+                <displayName>Drop Empty</displayName>
+                <value>0</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="join_data">
+            <displayName>Join Data</displayName>
+            <configuration name="displaystyle">
+              <displayName>Displaystyle</displayName>
+              <value>default</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="join_style">
+            <displayName>Join Style</displayName>
+            <value>child</value>
+          </configuration>
+          <configuration name="limit_one">
+            <displayName>Limit One</displayName>
+            <value>1</value>
+          </configuration>
+          <configurationGroup name="ancestral_conditions">
+            <displayName>Ancestral Conditions</displayName>
+          </configurationGroup>
+          <configurationGroup name="where">
+            <displayName>Where</displayName>
+            <configuration name="operator">
+              <displayName>Operator</displayName>
+              <value>FIELD_LIMIT</value>
+            </configuration>
+            <configuration name="style">
+              <displayName>Style</displayName>
+              <value>max_parent_form</value>
+            </configuration>
+            <configuration name="field">
+              <displayName>Field</displayName>
+              <value>start_date</value>
+            </configuration>
+            <configurationGroup name="data">
+              <displayName>Data</displayName>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="registration">
+          <displayName>Registration</displayName>
+          <configuration name="display_name">
+            <displayName>Display Name</displayName>
+            <value>registration</value>
+          </configuration>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>registration</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <displayName>Joins</displayName>
+            <configurationGroup name="council">
+              <displayName>Council</displayName>
+              <configuration name="display_name">
+                <displayName>Display Name</displayName>
+                <value>Council</value>
+              </configuration>
+              <configuration name="form">
+                <displayName>Form</displayName>
+                <value>council</value>
+              </configuration>
+              <configurationGroup name="join_data">
+                <displayName>Join Data</displayName>
+                <configuration name="field">
+                  <displayName>Field</displayName>
+                  <value>council</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="join_style">
+                <displayName>Join Style</displayName>
+                <value>parent_field</value>
+              </configuration>
+              <configuration name="limit_one">
+                <displayName>Limit One</displayName>
+                <value>1</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="join_data">
+            <displayName>Join Data</displayName>
+            <configuration name="displaystyle">
+              <displayName>Displaystyle</displayName>
+              <value>default</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="join_style">
+            <displayName>Join Style</displayName>
+            <value>child</value>
+          </configuration>
+          <configuration name="limit_one">
+            <displayName>Limit One</displayName>
+            <value>0</value>
+          </configuration>
+          <configurationGroup name="ancestral_conditions">
+            <displayName>Ancestral Conditions</displayName>
+          </configurationGroup>
+          <configurationGroup name="where">
+            <displayName>Where</displayName>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="reporting_functions">
+        <displayName>Reporting Functions</displayName>
+      </configurationGroup>
+      <configurationGroup name="where">
+        <displayName>Where</displayName>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports-full-person_flow_summary" path="/modules/CustomReports">
+  <metadata>
+    <version>4.3.0.0</version>
+  </metadata>
+  <configurationGroup name="CustomReports-full-person_flow_summary" path="/modules/CustomReports" locale="en_US">
+    <version>4.3.0.0</version>
+    <configurationGroup name="person_flow_summary" path="//modules/CustomReports/relationships/person_flow_summary">
+      <configuration name="display_name" locale="en_US">
+        <value>Person Flow Summary</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="person">
+          <configuration name="display_name" locale="en_US">
+            <value>person</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="demographic">
+              <configuration name="display_name" locale="en_US">
+                <value>Demographic</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person_position">
+              <configuration name="display_name" locale="en_US">
+                <value>Person Position</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="position">
+                  <configuration name="display_name" locale="en_US">
+                    <value>Position</value>
+                  </configuration>
+                  <configurationGroup name="joins">
+                    <configurationGroup name="facility">
+                      <configuration name="display_name" locale="en_US">
+                        <value>Facility</value>
+                      </configuration>
+                    </configurationGroup>
+                    <configurationGroup name="job">
+                      <configuration name="display_name" locale="en_US">
+                        <value>Job</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="person_flow_summary" path="//modules/CustomReports/reports/person_flow_summary">
+      <configurationGroup name="meta">
+        <configuration name="display_name" locale="en_US">
+          <value>Person Flow Summary</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="demographic">
+          <configurationGroup name="fields">
+            <configurationGroup name="gender">
+              <configuration name="header" locale="en_US">
+                <value>Gender</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Gender</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="location">
+              <configuration name="header" locale="en_US">
+                <value>County</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>County</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="job">
+          <configurationGroup name="fields">
+            <configurationGroup name="cadre">
+              <configuration name="header" locale="en_US">
+                <value>Job Cadre (Health Professionals Only)</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Job Cadre (Health Professionals Only)</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="person">
+          <configurationGroup name="fields">
+            <configurationGroup name="firstname">
+              <configuration name="header" locale="en_US">
+                <value>First Name</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>First Name</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="othername">
+              <configuration name="header" locale="en_US">
+                <value>Middle Name</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="surname">
+              <configuration name="header" locale="en_US">
+                <value>Surname</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Surname</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="position">
+          <configurationGroup name="fields">
+            <configurationGroup name="department">
+              <configuration name="header" locale="en_US">
+                <value>Department</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Department</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="facility">
+              <configuration name="header" locale="en_US">
+                <value>Facility</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Facility</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="job">
+              <configuration name="header" locale="en_US">
+                <value>Job</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Job</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="completed">
+              <configuration name="header" locale="en_US">
+                <value>Completed</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="yesno">
+                  <configuration name="header" locale="en_US">
+                    <value>Completed</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="responded">
+              <configuration name="header" locale="en_US">
+                <value>Responded</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="yesno">
+                  <configuration name="header" locale="en_US">
+                    <value>Responded</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="session_number">
+              <configuration name="header" locale="en_US">
+                <value>Session Number</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Session Number</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="header" locale="en_US">
+                <value>Start Date</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="between">
+                  <configuration name="header" locale="en_US">
+                    <value>Between Flow Start Date</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Equals Flow Start Date</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="workflows">
+              <configuration name="header" locale="en_US">
+                <value>Workflow</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Workflow</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="person_flow_summary" path="//modules/CustomReports/reportViews/person_flow_summary">
+      <configuration name="description" locale="en_US">
+        <value>This Report Shows Summary Of All Workflows Started To Health Workers</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <value>Workflow Overview Report</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

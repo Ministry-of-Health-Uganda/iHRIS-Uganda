@@ -1,0 +1,111 @@
+<div id="siteContent">
+
+  <h1>管理数据库</h1>
+
+  <span type="module" ifenabled="true" name="ihris-manage-PersonPosition">
+    <div task="can_edit_position_database_lists">
+      <h2>管理职位</h2>
+      
+      <div task="can_edit_job_structure_database_lists">
+	<h3>创建作业结构</h3>
+	<ul><li task="can_edit_database_list_cadre"><a href="lists?type=cadre">干部</a></li>
+	  <li task="can_edit_database_list_classification"><a href="lists?type=classification">职业分类</a></li>
+	  <li task="can_edit_database_list_salary_grade"><a href="lists?type=salary_grade">薪水等级</a></li>
+	  <li task="can_edit_database_list_job"><a href="lists?type=job">工作</a></li>
+	</ul></div>
+      <div task="can_edit_manage_positions_database_lists">
+	<h3>管理职位</h3>
+	<ul><li task="can_edit_database_list_salary_source"><a href="lists?type=salary_source">薪水来源</a></li>
+	  <li task="can_edit_database_list_position_type"><a href="lists?type=position_type">职位类型</a></li>
+	  <li task="can_edit_database_list_position"><a href="lists?type=position&amp;field=facility">职位（按设备）</a></li>
+	  <li task="can_edit_database_list_position"><a href="lists?type=position&amp;field=status&amp;nosetdefault=1">职位（按状态）</a></li>
+	  <span type="module" ifenabled="true" name="ihris-manage-confirmation">
+	    <li task="can_edit_database_list_confirmation_type"><a href="lists?type=confirmation_type">确认类型</a></li>
+	  </span>
+	</ul></div>
+    </div>
+  </span>
+
+  <h2>管理其他列表</h2>
+
+  <div task="can_edit_organization_database_lists">
+    <h3>组织列表</h3>
+    <ul><li task="can_edit_database_list_facility_type"><a href="lists?type=facility_type">设备类型</a></li>
+      <li task="can_edit_database_list_facility"><a href="lists?type=facility&amp;field=location">办公室/设备</a></li>
+      <li task="can_edit_database_list_department"><a href="lists?type=department">部门</a></li>
+      <span type="module" ifenabled="true" name="ManageRegistration">
+	<li task="can_edit_database_list_council"><a href="lists?type=council">注册局</a></li>
+      </span>
+    </ul></div>
+  <div task="can_edit_employee_database_lists">
+    <h3>员工列表</h3>
+    <ul><li task="can_edit_database_list_edu_type"><a href="lists?type=edu_type">教育类型</a></li>
+      <li task="can_edit_database_list_degree"><a href="lists?type=degree&amp;field=edu_type">学位</a></li>
+      <li task="can_edit_database_list_language"><a href="lists?type=language">语言</a></li>
+      <span type="module" ifenabled="true" name="simple-competency">
+	<li task="can_edit_database_list_competency_type"><a href="lists?type=competency_type">能力类型</a></li>
+	<li task="can_edit_database_list_competency"><a href="lists?type=competency&amp;field=competency_type">能力</a></li>
+	<span type="module" ifenabled="true" name="person-simple-competency">
+	  <li task="can_edit_database_list_competency_evaluation"><a href="lists?type=competency_evaluation">能力评价</a></li>
+	</span>
+      </span>
+      <li task="can_edit_database_list_id_type"><a href="lists?type=id_type">识别类型</a></li>
+      <li task="can_edit_database_list_benefit_type"><a href="lists?type=benefit_type">效益类型</a></li>
+      <li task="can_edit_database_list_marital_status"><a href="lists?type=marital_status">婚姻状况</a></li>
+      <li task="can_edit_database_list_contact_group"><a href="lists?type=contact_group">联络组</a></li>
+      <li task="can_edit_database_list_pos_change_reason"><a href="lists?type=pos_change_reason">离职原因</a></li>
+      <span type="module" ifenabled="true" name="accident">
+	<li task="can_edit_database_list_accident_type"><a href="lists?type=accident_type">事故类型</a></li>
+      </span>
+      <span type="module" ifenabled="true" name="disciplinary_action">
+	<li task="can_edit_database_list_disciplinary_action_type"><a href="lists?type=disciplinary_action_type">Disciplinary Action Type</a></li>
+	<li task="can_edit_database_list_disciplinary_action_reason"><a href="lists?type=disciplinary_action_reason">纪律处分原因</a></li>
+      </span>
+    </ul></div>
+  <div task="can_edit_geographic_database_lists">
+    <h3>地理信息</h3>
+    <ul><li task="can_edit_database_list_country"><a href="lists?type=country">国家</a></li>
+      <li task="can_edit_database_list_region"><a href="lists?type=region&amp;field=country">区域</a></li>
+      <li task="can_edit_database_list_district"><a href="lists?type=district&amp;field=region">区</a></li>
+      <li task="can_edit_database_list_county"><a href="lists?type=county&amp;field=district">县</a></li>
+      <li task="can_edit_database_list_currency"><a href="lists?type=currency">货币</a></li>
+    </ul></div>
+  <div task="can_edit_planning_database_lists">
+    <span name="establishment" type="module" ifenabled="true">
+      <h3>规划资料</h3>
+      <ul><li task="can_edit_database_list_establishment_type"><a href="lists?type=establishment_type">Establishment Type</a></li>
+	<li task="can_edit_database_list_establishment_period"><a href="lists?type=establishment_period&amp;field=establishment_type">Establishment Period</a></li>
+	<li task="can_edit_database_list_establishment"><a href="lists?type=establishment&amp;field=establishment_period">建立</a></li>
+      </ul></span>
+  </div>
+
+
+  <span name="training-course" type="module" ifenabled="true">
+    <div task="can_edit_training_course_database_lists">
+      <h3>培训课程信息</h3>
+      <ul><li task="can_edit_database_list_training_course"><a href="lists?type=training_course&amp;mapped=scheduled_training_course">培训课程</a></li>
+	<li task="can_edit_database_list_scheduled_training_course"><a href="lists?type=scheduled_training_course&amp;field=training_course">Scheduled Training Courses</a></li>
+	<li task="can_edit_database_list_training_course_status"><a href="lists?type=training_course_status">培训课程状态</a></li>
+	<li task="can_edit_database_list_training_course_requestor"><a href="lists?type=training_course_requestor">培训课程申请人</a></li>
+	<li task="can_edit_database_list_training_course_evaluation"><a href="lists?type=training_course_evaluation">培训课程评价</a></li>
+	<li task="can_edit_database_list_training_course_category"><a href="lists?type=training_course_category">培训课程类别</a></li>
+	<span type="module" name="manage-training-institution" ifenabled="true">
+	  <li task="can_edit_database_list_training_institution"><a href="lists?type=training_institution">培训机构</a></li>
+	  <li task="can_edit_database_list_training_funder"><a href="lists?type=training_funder">培训资金人</a></li>
+	</span>
+	<span type="module" name="CEUs" ifenabled="true">
+	  <li task="can_edit_database_list_continuing_education_course"><a href="lists?type=continuing_education_course">进修课程</a></li>
+	</span>
+      </ul></div>
+  </span>
+
+  <span role="admin">
+      <h2>大量删除</h2>
+      <ul><span type="module" name="ihris-manage-MassDeleteFacility" ifenabled="true">
+          <li><a href="delete_by_facility">按设施</a></li>
+        </span>
+        <span type="module" name="ihris-common-MassDeletePerson" ifenabled="true">
+          <li><a href="delete_by_search">按人物（搜寻页）</a></li>
+        </span>
+      </ul></span>
+</div>

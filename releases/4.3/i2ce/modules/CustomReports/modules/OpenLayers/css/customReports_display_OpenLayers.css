@@ -1,0 +1,40 @@
+.openlayers_map {
+    height: 400px;
+    width: 590px;
+}
+.openlayers_feature_display {
+    height: 100px;
+    width: 590px;
+    border: thin solid black;
+    background-color: #99ff99;
+    overflow: auto;
+}
+.openlayers_style {
+    width: 590px;
+}
+.openlayers_style_layer {
+    display: inline-flex;
+}
+.openlayers_layer_style {
+    display: none;
+    padding: 5px;
+    text-align: center;
+}
+.openlayers_layer_style select, .openlayers_layer_style input {
+    font-size: 1.1em;
+}
+.openlayers_layer_style input.layer_threshold_red {
+    border: thin solid red;
+    width: 50px;
+}
+.openlayers_layer_style input.layer_threshold_green {
+    border: thin solid green;
+    width: 50px;
+}
+table.openlayers_layer_style_table tr td {
+    padding: 2px;
+}
+.openlayers_style_submit {
+    text-align: center;
+    padding-bottom: 2px;
+}

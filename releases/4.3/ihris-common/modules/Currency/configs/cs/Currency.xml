@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Currency" path="/I2CE">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="Currency" path="/I2CE" locale="cs">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="cs">
+      <configuration name="can_edit_database_list_currency" locale="cs">
+        <value>Může upravit informaci o měně</value>
+      </configuration>
+      <configuration name="can_view_database_list_currency" locale="cs">
+        <value>Může zobrazit informaci o měně</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="currency">
+          <configuration name="display" values="single" locale="cs">
+            <value>Měna</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Currency">
+          <configurationGroup name="fields">
+            <configurationGroup name="code">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Kód měny</value>
+                <value>title:Mezinárodní kód měny (např. "USD", "GBP", atd.)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Název</value>
+                <value>title:Např.. "United States Dollar", "British Pound"</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="country">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Země</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="symbol">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>title:Někdejší "$"</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

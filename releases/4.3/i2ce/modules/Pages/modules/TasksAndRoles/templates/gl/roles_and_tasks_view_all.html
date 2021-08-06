@@ -1,0 +1,21 @@
+<div id="siteContent">
+  <h1>Administrar os roles</h1>
+  <h2>Roles existentes</h2>
+  <ul id="role_list"></ul><form method="post" action="tasks-roles/roles">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Engadir un novo rol
+	</th>
+      </tr><tr><td>
+	   <label>Nome breve do rol:</label> Un nome breve composto por letras e números, -, . e _ usado para referirse ao rol nas páxinas e nos modelos.
+	 </td>
+	 <td>
+	   <input type="text" id="role_short_name" name="role_short_name" class="validate=[notinlist]"></td>
+	 <td>
+	   <label>Nome mostrado do rol:</label> Un nome mostrado do rol que se presenta ao usuario final
+	 </td>
+	 <td>
+	   <input type="text" name="role_name"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Create"></td>
+      </tr></table></form>
+</div>

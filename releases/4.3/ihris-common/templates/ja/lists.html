@@ -1,0 +1,37 @@
+<div id="siteContent">
+    <h1>データベースを管理</h1>
+
+    <span type="module" ifenabled="true" name="Person">    
+	  <h3>人口動態リスト</h3>
+	  <ul><li><a href="lists?type=id_type">識別型</a></li>
+	    <li><a href="lists?type=marital_status">配偶者の有無</a></li>
+	  </ul></span>
+    <span type="module" ifenabled="true" name="Geography">    
+      <h3>地理情報</h3>
+      <ul><li><a href="lists?type=country">国</a></li>
+        <li><a href="lists?type=region">地域</a></li>
+        <li><a href="lists?type=district">地域</a></li>
+        <li><a href="lists?type=county">郡</a></li>
+        <span type="module" ifenabled="true" name="Currency">    
+          <li><a href="lists?type=currency">通貨</a></li>
+        </span>
+      </ul></span>
+    <h3>追加情報</h3>
+    <ul><span type="module" ifenabled="true" name="simple-competency">	
+	  <li><a href="lists?type=competency_type">能力タイプ</a></li>
+	  <li><a href="lists?type=competency&amp;field=competency_type">能力</a></li>
+    </span>
+    <span type="module" name="CEUs" ifenabled="true">
+	  <li><a href="lists?type=continuing_education_course">続行中の教育コース</a></li>
+    </span>
+    <span type="module" name="training-institution" ifenabled="true">
+	  <li><a href="lists?type=training_institution">研修機関</a></li>
+	  <li><a href="lists?type=training_funder">研修出資者</a></li>
+    </span>
+    </ul><span role="admin">
+      <span type="module" name="ihris-common-MassDeletePerson" ifenabled="true">
+        <h2>一括削除</h2>
+        <ul><li><a href="delete_by_search">人　（検索ページ）</a></li>
+        </ul></span>
+    </span>
+</div>

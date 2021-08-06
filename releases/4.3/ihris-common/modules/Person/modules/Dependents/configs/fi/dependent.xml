@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="dependents" path="/">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="dependents" path="/" locale="fi">
+    <version>4.2.0.1</version>
+    <configurationGroup name="dep_class" path="/modules/forms/formClasses/iHRIS_Dependent">
+      <configurationGroup name="fields">
+        <configurationGroup name="gender">
+          <configuration name="headers" type="delimited" values="many" locale="fi">
+            <value>default:Sukupuoli</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="date_of_birth">
+          <configuration name="headers" type="delimited" values="many" locale="fi">
+            <value>default:Syntymäaika</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="name">
+          <configuration name="headers" type="delimited" values="many" locale="fi">
+            <value>default:Nimi</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="dep_form" path="/modules/forms/forms/dependent">
+      <configuration name="display" locale="fi">
+        <value>Riippuvainen</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="fi">
+      <configuration name="person_can_view_child_form_dependent" locale="fi">
+        <value>Voit tarkastella henkilön omaisia</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_dependent" locale="fi">
+        <value>Voit muokata henkilön omaisia</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="dependent_page" path="/I2CE/page/dependent">
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="fi">
+          <value>Lisää/Päivitä omaistietoja</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

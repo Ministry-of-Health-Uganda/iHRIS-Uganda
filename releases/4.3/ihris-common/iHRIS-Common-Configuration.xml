@@ -1,0 +1,503 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-common">
+  <metadata>
+    <displayName>iHRIS Common</displayName>
+    <className>iHRIS_Module</className>
+    <category>Base System Component</category>
+    <description>Commmon elements used by the iHRIS Suite</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="I2CE">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="UserAccess">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Dashboard">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="page-formautoview-builder">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="form-gizmos">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms-storage-entry">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="form-limits">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="UserForm">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Lists">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Tags">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Options">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="template-data">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="DisplayData">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="admin">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="FileDump">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="LoginPage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="formRelationship-viewer">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="images">
+      <value>./images</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <priority>100</priority>
+  </metadata>
+  <configurationGroup name="ihris-common" path="/I2CE">
+    <displayName>iHRIS Common</displayName>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_configure_system" locale="en_US">
+        <version>3.2.3</version>
+        <value>Can access the general configure system menu</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="template">
+      <displayName>Template Information</displayName>
+      <description>Various Default Information About The Templating System</description>
+      <status>advanced:false</status>
+      <status>required:true</status>
+      <configurationGroup name="page_styles">
+        <displayName>Page Style</displayName>
+        <description>Various Page style with their default templates</description>
+        <status>required:false</status>
+        <configurationGroup name="shell" path="shell/args">
+          <displayName>Shell</displayName>
+          <description>Values passed to the pages' constructor for pages whose default style uses a shell</description>
+          <configuration name="templates" values="many">
+            <displayName>Template</displayName>
+            <description>The templates loaded for pages containing a shell</description>
+            <value>main.html</value>
+            <value>shell.html</value>
+          </configuration>
+          <configuration name="attributes" values="many">
+            <displayName>Attributes</displayName>
+            <description>Body attributes for pages that use the shell</description>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default html template file containing the page content</description>
+          </configuration>
+          <configuration name="access" values="many">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <value>any</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="action" path="action/args">
+          <displayName>Action</displayName>
+          <version>4.1.3.1</version>
+          <description>Values passed to the pages' constructor for pages whose default style uses an action</description>
+          <configuration name="templates" values="many">
+            <value>action.html</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="ihris_common_page_form_parent_user">
+          <version>4.1.0.2</version>
+          <displayName>Page Form Parent User Style</displayName>
+          <configuration name="class" values="single">
+            <value>iHRIS_PageFormParentUser</value>
+          </configuration>
+          <configuration name="style" values="single">
+            <value>shell</value>
+          </configuration>
+          <configurationGroup name="args">
+            <configuration name="defaultHTMLFile" values="many">
+              <value>user_form_base.html</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <version>4.2.1.1</version>
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+      <configurationGroup name="i2ce_pages" path="/modules">
+        <displayName>I2CE Pages</displayName>
+        <description>Change details provided by pages obtained from I2CE modules</description>
+        <configuration name="style_formBrowser" path="formBrowser/page/showForm/style">
+          <displayName>Page Style</displayName>
+          <description>The page style for formBrowser/showForm</description>
+          <value>shell</value>
+        </configuration>
+        <configuration name="style_cachedForms" path="CachedForms/page/createCache/style">
+          <displayName>Page Style</displayName>
+          <description>The page style for formBrowser/showForm</description>
+          <value>shell</value>
+        </configuration>
+        <configuration name="style_admin_update" path="admin/page/update/style">
+          <displayName>Page Style</displayName>
+          <description>The page style for admin/update</description>
+          <value>shell</value>
+        </configuration>
+        <configuration name="style_admin_modules" path="admin/page/modules/style">
+          <displayName>Page Style</displayName>
+          <description>The page style for admin/modules</description>
+          <value>shell</value>
+        </configuration>
+        <configuration name="style_admin_enable" path="admin/page/enable/style">
+          <displayName>Page Style</displayName>
+          <description>The page style for admin/enable</description>
+          <value>shell</value>
+        </configuration>
+        <configuration name="style_admin_config" path="admin/page/config/style">
+          <displayName>Page Style</displayName>
+          <description>The page style for admin/config</description>
+          <value>shell</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="user">
+        <displayName>User Page</displayName>
+        <description>The page 'user' which has the action of: Manage Users/Access</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageFormUser</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="view_user">
+        <displayName>View User Page</displayName>
+        <description>The page 'view_user' which has the action of: Manage Users/Access</description>
+        <version>4.1.0.1</version>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageViewUser</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="dashboard">
+        <displayName>Dashboard Page</displayName>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <version>4.2.0.1</version>
+          <status>required:true</status>
+          <value>iHRIS_PageDashboard</value>
+        </configuration>
+        <configuration name="tasks" values="many">
+          <value>can_view_dashboard</value>
+        </configuration>
+        <configuration name="access" values="many">
+          <displayName>Page Access</displayName>
+          <description>All of the roles that have access to this page</description>
+          <status>required:false</status>
+          <value>admin</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="lists">
+        <displayName>Lists Page</displayName>
+        <description>The page 'lists' which has the action of: Manage Lists</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <version>4.1.8.1</version>
+          <status>required:true</status>
+          <value>I2CE_PageFormLists</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <configuration name="lists_with_contact" values="many">
+            <displayName>Forms that have contact information</displayName>
+            <status>required:false</status>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="home">
+        <version>4.2.1.1</version>
+        <displayName>Home Page</displayName>
+        <description>The page 'home' which has the action of: Home</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageIndex</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>main</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Home</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>index.html</value>
+            <value>welcome.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="history">
+        <displayName>History Page</displayName>
+        <description>The page 'history' which has the action of: View History</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageHistory</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>View History</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>history.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="field_history">
+        <displayName>Field_history Page</displayName>
+        <description>The page 'field_history' which has the action of: View Field History</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageFieldHistory</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>View Field History</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page's content</description>
+            <status>required:true</status>
+            <value>field_history.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="noaccess">
+        <displayName>Noaccess Page</displayName>
+        <description>The page 'noaccess' which has the action of: Access Denied</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>main</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Access Denied</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>noaccess.html</value>
+          </configuration>
+          <configuration name="access" values="many">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <value>all</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="configure">
+        <displayName>Configure Page</displayName>
+        <description>The page 'configure' which has the action of: Configure System</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageConfigure</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Configure System</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <version>3.2.3</version>
+            <value>can_configure_system</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>configure.html</value>
+          </configuration>
+          <configuration name="access" values="many">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <value>admin</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="view_list">
+        <displayName>View_list Page</displayName>
+        <description>The page 'view_list' which has the action of: View List</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageViewList</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Arguments</displayName>
+          <configurationGroup name="types">
+            <displayName>Type Information</displayName>
+            <description>Information about the types</description>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="manage_form_documentor_scheme" path="/modules/formDocumentor/schemes/dot">
+      <displayName>Form Docuemntor Scheme</displayName>
+      <version>4.0.0.1</version>
+      <configuration name="colors" values="many" type="delimited">
+        <displayName>Form Colors</displayName>
+        <description>forms are colorized according to the list below.</description>
+        <value>currency:lemonchiffon</value>
+        <value>training:cadetblue1</value>
+        <value>facility:lightpink</value>
+        <value>competency:palegreen</value>
+        <value>continuing_education:lavender</value>
+        <value>registration:palegoldenrod</value>
+        <value>council:palegoldenrod</value>
+        <value>country:plum2</value>
+        <value>region:plum2</value>
+        <value>zone:plum2</value>
+        <value>district:plum2</value>
+        <value>county:plum2</value>
+        <value>village:plum2</value>
+        <value>shehia:plum2</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

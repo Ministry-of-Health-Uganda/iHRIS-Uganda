@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-MultiPosition" path="/I2CE">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-MultiPosition" path="/I2CE" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="en_US">
+      <configuration name="code_req" path="position/code_start/required">
+        <value>If you are adding multiple position you must enter a number for the code to start with.</value>
+      </configuration>
+      <configuration name="code_req" path="position/code_format/unique">
+        <value>A position code already exists for one of the positions you're trying to add. Please select another code format or start with a higher number.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_MultiPosition">
+          <configurationGroup name="fields">
+            <configurationGroup name="count">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Number of Positions to Create</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="code_start">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Number to Start With for Position Code</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="code_format">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Code Format to use with the Number</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

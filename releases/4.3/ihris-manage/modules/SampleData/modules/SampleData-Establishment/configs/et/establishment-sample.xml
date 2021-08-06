@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SampleData-establishment" path="/">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="SampleData-establishment" path="/" locale="et">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationship" path="/modules/CustomReports/relationships/staff_norm_2010">
+      <configuration name="description" locale="et">
+        <value>Personali miinimum 2010 aastaks</value>
+      </configuration>
+      <configuration name="display_name" locale="et">
+        <value>Personali miinimum 2010 aastaks</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="position">
+          <configuration name="description" locale="et">
+            <value>Selle isiku positsioon (amet)</value>
+          </configuration>
+          <configuration name="display_name" locale="et">
+            <value>Positsioon</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="job">
+              <configuration name="description" locale="et">
+                <value>Selle positsiooniga seotud töö</value>
+              </configuration>
+              <configuration name="display_name" locale="et">
+                <value>Töö</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="cadre">
+                  <configuration name="description" locale="et"></configuration>
+                  <configuration name="display_name" locale="et"></configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="facility">
+              <configuration name="description" locale="et">
+                <value>Jaoskond, kus see positsioon töötab</value>
+              </configuration>
+              <configuration name="display_name" locale="et">
+                <value>Jaoskond</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="facility_type">
+                  <configuration name="description" locale="et">
+                    <value>Jaoskonna tüüp</value>
+                  </configuration>
+                  <configuration name="display_name" locale="et">
+                    <value>Jaoskonna tüüp</value>
+                  </configuration>
+                  <configurationGroup name="joins">
+                    <configurationGroup name="establishment">
+                      <configuration name="description" locale="et">
+                        <value>Asutus</value>
+                      </configuration>
+                      <configuration name="display_name" locale="et">
+                        <value>Asutus</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="report" path="/modules/CustomReports/reports/staff_norm_2010">
+      <configurationGroup name="meta">
+        <configuration name="description" locale="et">
+          <value>Personali miinimum 2010 aastaks</value>
+        </configuration>
+        <configuration name="display_name" locale="et">
+          <value>Personali miinimum 2010 aastaks</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="establishment">
+          <configurationGroup name="fields">
+            <configurationGroup name="amount">
+              <configuration name="header" locale="et">
+                <value>Personali miinimum</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility_type">
+              <configuration name="header" locale="et">
+                <value>Jaoskonna tüüp</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="position">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility">
+              <configuration name="header" locale="et">
+                <value>Jaoskond</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="job">
+              <configuration name="header" locale="et">
+                <value>Töö</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="job">
+          <configurationGroup name="fields">
+            <configurationGroup name="cadre">
+              <configuration name="header" locale="et"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="id">
+              <configuration name="header" locale="et">
+                <value>Täidetud positsioonid</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportView" path="/modules/CustomReports/reportViews/staff_norm_2010">
+      <configuration name="description" locale="et">
+        <value>Personali miinimum 2010 aastaks</value>
+      </configuration>
+      <configuration name="display_name" locale="et">
+        <value>Personali miinimum 2010</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

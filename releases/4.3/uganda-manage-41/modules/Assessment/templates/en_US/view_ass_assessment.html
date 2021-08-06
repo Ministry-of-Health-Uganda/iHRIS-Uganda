@@ -1,0 +1,57 @@
+<div id="siteContent">
+
+  <h1>STAFF PERFORMANCE APPRAISAL</h1>
+   <h2>View Appraisal: <span type="form" name="person:surname" />, <span type="form" name="person:firstname" /></h2>
+   <p><span type="form" name="person:id" href="view?id=">Return to Main Record</span></p>  
+  <div class="recordsData">
+    <h3>Assessment Details</h3>
+    <p class="editRecordsData" id="assessment_links"><a href="" class="hide" title="Hide" onclick="return hideDiv('assessment',true);">Hide</a>
+      <span type="form" name="assessment:id" ifset="!agreed_performance:id" href="agreed_performance?parent=">Add Agreed Key Outputs, Performance Indicators and Targets</span>
+      <span type="form" name="assessment:id" ifset="!core_competencies:id" href="core_competencies?parent=">Add Assessment of Core Competencies</span>
+      <span type="form" name="assessment:id" ifset="!action_plan:id" href="action_plan?parent=">Add Action Plan To Improve Perfomance</span>
+      <span type="form" name="assessment:id" ifset="!comments:id" href="comments?parent=">Add Comments, Recommendations (If Any)</span>
+    </p>
+
+<p><h3>SECTION A: ASSESSMENT INFORMATION</h3></p>    
+<div task='person_can_view_child_form_assessment'>
+  <div class="editRecord">
+    <p>Edit This Information</p>
+    <ul>
+      <li task='person_can_edit_child_form_assessment'>
+	<span type="form" ifset="assessment:id" name="assessment:id" href="assessment?id=" parent="true">
+	  Update this Information
+	</span>
+      </li>
+    </ul>
+  </div> <!-- editRecord -->
+  
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tbody>
+	<tr>
+	  <th colspan="2">Assessment Information</th>
+	</tr>
+	<span type="form" name="assessment:start_date" showhead="default"></span>
+      <span type="form" name="assessment:end_date" showhead="default" class="even" ></span>
+      <span type="form" name="assessment:appraiser" showhead="default"></span>
+      </tbody>
+    </table>
+  </div> <!-- dataTable -->
+</div>
+</div>
+<p>
+<h3>SECTION B: ASSESSMENT OF THE LEVEL OF ACHIEVEMENT</h3>
+ </p> 
+  <div id="agreed_performance"></div>
+<p>  
+<h3>SECTION C: ASSESSMENT OF CORE COMPETENCIES</h3>
+ </p> 
+  <div id="core_competencies"></div>
+<p>   
+<h3>SECTION D: ACTION PLAN TO IMPROVE PERFORMANCE</h3>
+ </p> 
+  <div id="action_plan"></div>
+<p>  
+<h3>SECTION E: COMMENTS, RECOMMENDATIONS (IF ANY)</h3>
+ </p> 
+  <div id="comments"></div>

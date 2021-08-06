@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Application" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Application" path="/I2CE" locale="de">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="de">
+      <configuration name="app_felon" path="application/felony_circumstances/required">
+        <value>Sie gaben an, wegen eines Verbrechens verurteilt worden zu sein. Sie haben allerdings nicht den Sachverhalt beschrieben.</value>
+      </configuration>
+      <configuration name="app_hours" path="application/hours/required">
+        <value>Sie wählten Teilzeit aus, haben jedoch nicht angegeben, wie viele Stunden Sie zur Verfügung stehen.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="de">
+      <configuration name="person_can_view_child_form_position_decision" locale="de">
+        <value>Kann das zu einer Anstellungsentscheidung einer Person gehörende Datenblatt einsehen</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_decision" locale="de">
+        <value>Kann das zu einer Anstellungsentscheidung einer Person gehörende Datenblatt bearbeiten</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_position_interview" locale="de">
+        <value>Kann das zu einem Bewerbungsgespräch einer Person gehörende Datenblatt einsehen</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_interview" locale="de">
+        <value>Kann das zu einem Bewerbungsgespräch einer Person gehörende Datenblatt bearbeiten</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_application" locale="de">
+        <value>Kann das zur Bewerbung einer Person gehörende Datenblatt einsehen</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_application" locale="de">
+        <value>Kann das zur Bewerbung einer Person gehörende Datenblatt bearbeiten</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="application">
+          <configuration name="display" values="single" locale="de">
+            <value>Bewerber</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_interview">
+          <configuration name="display" values="single" locale="de">
+            <value>Bewerbungsgespräch</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_decision">
+          <configuration name="display" values="single" locale="de">
+            <value>Entscheidung zur Stelle</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Applicant">
+          <configurationGroup name="fields">
+            <configurationGroup name="position">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Stelle(n)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Wurden Sie jemals wegen einer Straftat verurteilt?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony_circumstance">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Sofern zutreffend, bitte die Umstände mitteilen.</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="other_info">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Gibt es zusätzlich zu Ihrem beruflichen Werdegang noch weitere Fähigkeiten, Qualifikationen oder Erfahrungen, die wir berücksichtigten sollten?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hear">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Wie haben Sie von dieser freien Stelle erfahren?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Wann können Sie anfangen?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="desired_wage">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Gewünschtes Entgelt</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="full_time">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Suchen Sie eine Vollzeitbeschäftigung?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hours">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Sofern nicht, bitte die Stundenanzahl angeben, die Sie zur Verfügung stehen?</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionInterview">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Datum des Bewerbungsgesprächs</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Anwesende Personen</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Kommentare</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionDecision">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Datum der Entscheidung</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="offer">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Ein Arbeitsangebot abgeben?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Kommentare</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="application">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="de">
+            <value>Bewerbung hinzufügen oder aktualisieren</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_decision">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="de">
+            <value>Anstellungsentscheidung hinzufügen oder aktualisieren</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_interview">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="de">
+            <value>Bewerbungsgespräch hinzufügen oder aktualisieren</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,21 @@
+<div id="siteContent">
+  <h1>Aufgaben verwalten</h1>
+  <h2>Vorhandene Aufgaben</h2>
+  <ul id="task_list"></ul><form method="post" action="tasks-roles/tasks" id="add_user_task">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Eine neue Aufgabe hinzufügen
+	</th>
+      </tr><tr><td>
+	  <label>Kurzbezeichnung der Aufgabe:</label> Eine aus Buchstaben, Nummern, -, . und _ bestehende Kurzbezeichnung, die genutzt werden soll, um auf Seiten und Vorlagen auf die Aufgabe zu verweisen.
+	</td>
+	<td>
+	  <input type="text" id="task_short_name" name="task_short_name" class="validate=[notinlist,nonempty,magicdatakey]"></td>
+      </tr><tr><td>
+	  <label>Aufgabenbeschreibung:</label> Eine kurze Beschreibung dieser Aufgabe.
+	</td>
+	<td>
+	  <input type="text" name="task_description" class="validate=[nonempty]"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Create"></td>
+      </tr></table></form>
+</div>

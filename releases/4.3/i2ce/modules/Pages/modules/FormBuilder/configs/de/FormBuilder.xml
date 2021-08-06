@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="form-builder" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="form-builder" path="/" locale="de">
+    <version>4.3.0.1</version>
+    <configurationGroup name="messages" path="/modules/form-builder/messages">
+      <configuration name="cannot_delete" locale="de" values="single" type="string">
+        <value>Sie haben nicht die erforderliche Berechtigung, Formulardaten löschen zu können</value>
+      </configuration>
+      <configuration name="bad_delete_path" locale="de" values="single" type="string">
+        <value>Ungültiger Pfad für die Löschung</value>
+      </configuration>
+      <configuration name="delete_header" locale="de" values="single" type="string">
+        <value>Kopfdaten löschen</value>
+      </configuration>
+    </configurationGroup>
+    <configuration name="tasks" path="/I2CE/tasks/task_description" locale="de" value="many" type="delimited" values="single">
+      <value>form_builder_delete_forms:Kann Formular-Metadaten mit Hilfe des Formularerzeugers löschen</value>
+    </configuration>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="de">
+      <configuration name="can_build_form_classes" locale="de" values="single" type="string">
+        <value>Darf eine Formularklasse erstellen oder einrichten</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,28 @@
+<div task='person_can_view_child_form_accomodation'>
+  <div class="editRecord">
+    <p>Edit This Information</p>
+    <ul>
+      <li task='person_can_edit_child_form_accomodation'>
+	<span type="form" ifset="accomodation:id" name="accomodation:id" href="accomodation?id=" parent="true">
+	  Update this Information
+	</span>
+      </li>
+       <li>
+            <span type="form" name="accomodation:id" parent="true" href="field_history?field=house,start_date,end_date&amp;template=fullname&amp;type=person&amp;id=" >View Name History</span>
+          </li>
+    </ul>
+  </div> <!-- editRecord -->
+  
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tbody>
+	<tr>
+	  <th colspan="2">Accomodation Information</th>
+	</tr>
+	<span type="form" name="accomodation:house" showhead="default"></span>
+	<span type="form" name="accomodation:start_date" showhead="default" class="even"></span>
+	<span type="form" name="accomodation:end_date" showhead="default"></span>
+      </tbody>
+    </table>
+  </div> <!-- dataTable -->
+</div>

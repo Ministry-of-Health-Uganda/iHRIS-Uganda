@@ -1,0 +1,55 @@
+ <div id="siteContent">
+    <h1>View Position: <span type="form" name="position:code" /> - <span type="form" name="position:title" /></h1>
+
+	<div class="recordsData">
+	<h3>Position Information</h3>
+	<p class="editRecordsData"><a href="" class="hide" title="Hide" onclick="return hideDiv('position', this );">Hide</a>
+		</p>
+	
+	<div id="position">
+	
+	<div class="editRecord">
+	<p>Edit This Information</p>
+		<ul id="edit_links">
+            <li task='can_edit_database_list_position'><span type="form" name="position:id" href="lists?type=position&amp;id=" >Update this Information</span></li>
+            <li task='can_edit_database_list_position'><span type="form" name="position:facility" href="lists?type=position&amp;field=facility&amp;forms[position][0][0][fields][facility]=" >Select another Position</span></li>
+		</ul>
+	</div> <!-- editRecord -->
+	
+	<div class="dataTable">
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<th colspan="2">Position</th>
+		</tr>
+		
+	   	<span type="form" name="position:job" showhead="default"></span>
+	   	<span type="form" name="position:title" showhead="default" class="even"></span>
+	   	<span type="form" name="position:description" showhead="default" mline="true"></span>
+		<span type='module' name='ihris-manage-Salary' ifenabled='true'>
+	   	  <span type="form" name="position:proposed_salary" showhead="default" class="even"></span>
+	   	  <span type="form" name="position:source" showhead="default"></span>
+		</span>
+	   	<span type="form" name="position:code" showhead="default" class="even"></span>
+	   	<span type="form" name="position:supervisor" showhead="default"></span>
+	   	<span type="form" name="position:facility" showhead="default" class="even"></span>
+	   	<span type="form" name="position:department" showhead="default"></span>
+	   	<span type="form" name="position:pos_type" showhead="default" class="even"></span>
+	   	<span type="form" name="position:proposed_hiring_date" showhead="default"></span>
+	   	<span type="form" name="position:proposed_end_date" showhead="default" class="even"></span>
+	   	<span type="form" name="position:status" showhead="default" noedit="true"></span>
+	   	<span type="form" name="position:posted_date" showhead="default" noedit="true" class="even"></span>
+	   	<span type="form" name="position:comments" showhead="default"></span>
+	   	<span type="form" name="position:interview_comments" showhead="default" class="even"></span>
+
+	</table>
+	</div> <!-- dataTable -->
+	
+	</div> <!-- position -->
+	
+	<br style="clear: both;" />
+	
+	
+	</div> <!-- recordsData -->
+
+    <!--<a href="construction.php">Print</a>-->
+</div>

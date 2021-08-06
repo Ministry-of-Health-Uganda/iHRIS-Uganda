@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEducation" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEducation" path="/I2CE" locale="cs">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="cs">
+      <configuration name="person_can_view_child_form_education" locale="cs">
+        <value>Může zobrazit podřazený formulář vzdělání osoby</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_education" locale="cs">
+        <value>Může upravit podřazený formulář vzdělání osoby</value>
+      </configuration>
+      <configuration name="can_edit_database_list_edu_type" locale="cs">
+        <value>Může upravit databázové seznamy vzdělání osoby</value>
+      </configuration>
+      <configuration name="can_view_database_list_edu_type" locale="cs">
+        <value>Může zobrazit databázové seznamy vzdělání osoby</value>
+      </configuration>
+      <configuration name="can_edit_database_list_degree" locale="cs">
+        <value>Může upravit databázové seznamy titulů</value>
+      </configuration>
+      <configuration name="can_view_database_list_degree" locale="cs">
+        <value>Může upravit databázové seznamy titulů</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="education">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs">
+            <value>Přidat/Aktualizovat historii vzdělání</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="degree">
+          <configuration name="display" values="single" locale="cs">
+            <value>Titul</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="edu_type">
+          <configuration name="display" values="single" locale="cs">
+            <value>Typ vzdělání</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="education">
+          <configuration name="display" values="single" locale="cs">
+            <value>Historie vzdělání</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Degree">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Název</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="edu_type">
+              <configuration name="headers" type="delimited" values="many" locale="cs">
+                <value>default:Typ vzdělání</value>
+                <value>select_degree:Vyberte typ vzdělání pak titul</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Education">
+          <configurationGroup name="fields">
+            <configurationGroup name="degree">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Titul</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="institution">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Název instituce</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Umístění instituce</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="year">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Rok ukončení studia (nechejte prázdné, pokud stále probíhá)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="major">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Obor</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

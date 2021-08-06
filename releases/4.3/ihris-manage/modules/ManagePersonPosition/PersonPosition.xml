@@ -1,0 +1,1015 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-PersonPosition">
+  <metadata>
+    <displayName>iHRIS Manage Person Position</displayName>
+    <className>iHRIS_Module_PersonPosition</className>
+    <category>Application Component</category>
+    <description>The iHRIS Manage Position. Adds a position which is linked to a person and is defined by a job,</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <requirement name="ihris-manage-Job">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <enable name="ihris-manage-Salary" />
+    <requirement name="Person">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Facility">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="form-limits">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms-storage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <enable name="ihris-manage-Benefit" />
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>350</priority>
+  </metadata>
+  <configurationGroup name="ihris-manage-PersonPosition" path="/I2CE">
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="en_US">
+      <version>4.1.1.10</version>
+      <configuration name="pp_bad_date" path="person_position/start_date/bad_date">
+        <value>Please enter a start date after the previous position's start date.</value>
+      </configuration>
+      <configuration name="pp_end_date" path="person_position/end_date/bad_date">
+        <value>The end date must be after the start date.</value>
+      </configuration>
+      <configuration name="pp_end_date" path="person_position/end_date/required">
+        <value>Required Field.</value>
+      </configuration>
+      <configuration name="pp_reason" path="person_position/reason/required">
+        <value>Required Field.</value>
+      </configuration>
+      <configuration name="p_status" path="position/status/required">
+        <value>Please enter a new status.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_department" locale="en_US">
+        <version>3.2.7</version>
+        <value>Edit the department list</value>
+      </configuration>
+      <configuration name="can_view_database_list_department" locale="en_US">
+        <version>3.2.7</version>
+        <value>View the department list</value>
+      </configuration>
+      <configuration name="can_edit_database_list_position_type" locale="en_US">
+        <version>3.2.23</version>
+        <value>Edit the position_type list</value>
+      </configuration>
+      <configuration name="can_view_database_list_position_type" locale="en_US">
+        <version>3.2.23</version>
+        <value>View the position_type list</value>
+      </configuration>
+      <configuration name="can_edit_database_list_position" locale="en_US">
+        <version>3.2.23</version>
+        <value>Edit the position list</value>
+      </configuration>
+      <configuration name="can_view_database_list_position" locale="en_US">
+        <version>3.2.23</version>
+        <value>View the position list</value>
+      </configuration>
+      <configuration name="can_edit_database_list_pos_change_reason" locale="en_US">
+        <version>3.2.29</version>
+        <value>Edit the pos_change_reason list</value>
+      </configuration>
+      <configuration name="can_view_database_list_pos_change_reason" locale="en_US">
+        <version>3.2.29</version>
+        <value>View the pos_change_reason list</value>
+      </configuration>
+      <configuration name="can_edit_manage_positions_database_lists" locale="en_US">
+        <version>3.2.27</version>
+        <value>Can edit some information about positions</value>
+      </configuration>
+      <configuration name="can_view_manage_positions_database_lists" locale="en_US">
+        <version>3.2.27</version>
+        <value>Can view some information about positions</value>
+      </configuration>
+      <configuration name="can_edit_all_manage_positions_database_lists" locale="en_US">
+        <version>3.2.27</version>
+        <value>Can edit all information about positions</value>
+      </configuration>
+      <configuration name="can_view_all_manage_positions_database_lists" locale="en_US">
+        <version>3.2.27</version>
+        <value>Can view all information about positions</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_position" locale="en_US">
+        <version>3.2.7</version>
+        <value>Can edit the position of a person</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_position" locale="en_US">
+        <version>3.2.7</version>
+        <value>Can view the position of a person</value>
+      </configuration>
+      <configuration name="person_can_change_child_form_person_position" locale="en_US">
+        <version>3.2.7</version>
+        <value>Can change the existing position of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="can_edit_database_list_department" values="many">
+        <version>3.2.27</version>
+        <value>can_edit_organization_database_lists</value>
+        <value>can_view_database_list_department</value>
+      </configuration>
+      <configuration name="can_view_database_list_department" values="many">
+        <version>3.2.29</version>
+        <value>can_view_organization_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_database_list_position_type" values="many">
+        <version>3.2.27</version>
+        <value>can_edit_manage_positions_database_lists</value>
+        <value>can_view_database_list_position_type</value>
+      </configuration>
+      <configuration name="can_view_database_list_position_type" values="many">
+        <version>3.2.29</version>
+        <value>can_view_manage_positions_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_database_list_position" values="many">
+        <version>3.2.27</version>
+        <value>can_edit_manage_positions_database_lists</value>
+        <value>can_view_database_list_position</value>
+      </configuration>
+      <configuration name="can_view_database_list_position" values="many">
+        <version>3.2.29</version>
+        <value>can_view_manage_positions_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_database_list_pos_change_reason" values="many">
+        <version>3.2.29</version>
+        <value>can_edit_employee_database_lists</value>
+        <value>can_view_database_list_pos_change_reason</value>
+      </configuration>
+      <configuration name="can_view_database_list_pos_change_reason" values="many">
+        <version>3.2.29</version>
+        <value>can_view_employee_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_manage_positions_database_lists" values="many">
+        <version>3.2.28</version>
+        <value>can_view_manage_positions_database_lists</value>
+        <value>can_edit_position_database_lists</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_position" values="many">
+        <version>3.2.7</version>
+        <value>person_can_view_child_form_person_position</value>
+      </configuration>
+      <configuration name="person_can_change_child_form_person_position" values="many">
+        <version>3.2.7</version>
+        <value>person_can_edit_child_form_person_position</value>
+        <value>person_can_view_child_form_person_position</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <version>3.2.30</version>
+        <value>person_can_view_child_form_person_position</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>3.2.25</version>
+        <value>person_can_edit_child_form_person_position</value>
+      </configuration>
+      <configuration name="can_view_manage_positions_database_lists" values="many">
+        <version>3.2.28</version>
+        <value>can_view_position_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_manage_positions_database_lists" values="many">
+        <version>3.2.31</version>
+        <value>can_view_all_manage_positions_database_lists</value>
+        <value>can_edit_database_list_position_type</value>
+        <value>can_edit_database_list_position</value>
+        <value>can_edit_manage_positions_database_lists</value>
+      </configuration>
+      <configuration name="can_view_all_manage_positions_database_lists" values="many">
+        <version>3.2.31</version>
+        <value>can_view_manage_positions_database_lists</value>
+        <value>can_view_database_list_position_type</value>
+        <value>can_view_database_list_position</value>
+      </configuration>
+      <configuration name="can_edit_all_organization_database_lists" values="many">
+        <version>3.2.27</version>
+        <value>can_edit_database_list_department</value>
+      </configuration>
+      <configuration name="can_view_all_organization_database_lists" values="many">
+        <version>3.2.27</version>
+        <value>can_view_database_list_department</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" values="many">
+        <version>3.2.29</version>
+        <value>can_edit_database_list_pos_change_reason</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" values="many">
+        <version>3.2.29</version>
+        <value>can_view_database_list_pos_change_reason</value>
+      </configuration>
+      <configuration name="can_edit_all_database_lists" values="many">
+        <version>3.2.27</version>
+        <value>can_edit_all_manage_positions_database_lists</value>
+      </configuration>
+      <configuration name="can_view_all_database_lists" values="many">
+        <version>3.2.27</version>
+        <value>can_view_all_manage_positions_database_lists</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <displayName>Forms Data</displayName>
+      <description>Form data saved in magic data</description>
+      <version>3.2.10</version>
+      <configurationGroup name="position_status">
+        <displayName>Position Status</displayName>
+        <description>The position status form data</description>
+        <configurationGroup name="open">
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:Open</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="closed">
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:Closed</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="discontinued">
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:Discontinued</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="departure">
+        <displayName>Departure Page</displayName>
+        <description>The page 'departure' which has the action of: Record a Departure</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_manage_page_form_parent_person</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageFormDeparture</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Record a Departure</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>departure</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="make_offer">
+        <displayName>Make Offer Page</displayName>
+        <description>The page 'make_offer' which has the action of: Make a Job Offer</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageFormMakeOffer</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_manage_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Make a Job Offer</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>make_offer</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="person_position">
+        <displayName>Person_position Page</displayName>
+        <description>The page 'person_position' which has the action of: Edit Position</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_manage_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Edit Position</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>person_position</value>
+          </configuration>
+          <configuration name="access" values="many">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <value>hr_manager</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="view_position">
+        <displayName>View_position Page</displayName>
+        <description>The page 'view_position' which has the action of: View Position</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageViewPosition</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>View Position</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>view_position.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person">
+          <displayName>Person</displayName>
+          <configurationGroup name="meta">
+            <displayName>MetaData on the form</displayName>
+            <configuration name="child_forms" values="many">
+              <displayName>Child Forms</displayName>
+              <status>uniquemerge:true</status>
+              <version>3.2.9</version>
+              <value>person_position</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="person_position">
+          <displayName>Position</displayName>
+          <description>The Position Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_PersonPosition</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <version>4.0.3.0</version>
+            <value>Person Position</value>
+          </configuration>
+          <configurationGroup name="meta">
+            <displayName>Meta information aboout this form</displayName>
+            <configuration name="description" locale="en_US">
+              <displayName>A description of the form</displayName>
+              <value>This form is used to link a person to a pariticular position residence</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="pos_change_reason">
+          <displayName>Reasons for Departure</displayName>
+          <description>The Reasons for Departure Form</description>
+          <version>3.2.10</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Reasons for Departure</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_status">
+          <displayName>Position Status</displayName>
+          <description>The Position Status Form</description>
+          <version>3.2.10</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Position Status</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position">
+          <displayName>Position</displayName>
+          <description>The Position Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Position</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Position</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_type">
+          <displayName>Position Type</displayName>
+          <description>The Position Type Form</description>
+          <version>3.2.10</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Position Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="department">
+          <displayName>Department</displayName>
+          <description>The Department Form</description>
+          <version>3.2.10</version>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Department</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Department</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of /modules/forms/forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Department">
+          <displayName>Configuration for the class 'iHRIS_Department'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_List</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="name">
+              <displayName>The field 'name'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Name</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique" type="boolean">
+                <displayName>This field is required to be unique</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PersonPosition">
+          <displayName>Configuration for the class 'iHRIS_PersonPosition'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <version>3.2.10</version>
+            <configurationGroup name="position">
+              <displayName>The field 'position'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="limits">
+                  <version>3.2.16</version>
+                  <configurationGroup name="default">
+                    <configurationGroup name="position">
+                      <configuration name="operator">
+                        <value>FIELD_LIMIT</value>
+                      </configuration>
+                      <configuration name="field">
+                        <value>status</value>
+                      </configuration>
+                      <configuration name="style">
+                        <value>equals</value>
+                      </configuration>
+                      <configuration name="data" values="many" type="delimited">
+                        <value>value:position_status|open</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+                <configurationGroup name="display">
+                  <configurationGroup name="default">
+                    <configuration name="fields">
+                      <version>4.0.1</version>
+                      <value>position:facility</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Position</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <displayName>The field 'start_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Start Date</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <version>4.0.6.2</version>
+                <value>I2CE_Date::now()</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <displayName>The field 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:End Date</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <version>4.0.6.2</version>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reason">
+              <displayName>The field 'reason'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>pos_change_reason</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Reason for Departure</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Position">
+          <displayName>Configuration for the class 'iHRIS_Position'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_List</value>
+          </configuration>
+          <configurationGroup name="meta" path="meta/list/default">
+            <version>4.1.1</version>
+            <configuration name="display_string">
+              <value>%s: %s (%s, %s)</value>
+            </configuration>
+            <configuration name="display_args" type="delimited" values="many">
+              <version>4.1.1.3</version>
+              <value>0:code</value>
+              <value>1:title</value>
+              <value>2:facility</value>
+              <value>3:department</value>
+            </configuration>
+            <configuration name="sort_fields" type="delimited" values="many">
+              <value>0:code</value>
+              <value>1:title</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <version>3.2.10</version>
+            <configurationGroup name="code">
+              <displayName>The field 'code'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Position Code</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <version>4.1.1.1</version>
+                <value>false</value>
+              </configuration>
+              <configuration name="unique" type="boolean">
+                <displayName>This field is required to be unique</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="job">
+              <displayName>The field 'job'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Job</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="title">
+              <displayName>The field 'title'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Position Title</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="description">
+              <displayName>The field 'description'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Position Description</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="supervisor">
+              <displayName>The field 'supervisor'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>position</value>
+                </configuration>
+                <configurationGroup name="display">
+                  <configurationGroup name="default">
+                    <version>4.2.0.1</version>
+                    <configuration name="fields">
+                      <value>position:facility+location:county:district:[region]:country</value>
+                    </configuration>
+                    <configurationGroup name="printf">
+                      <configuration name="position">
+                        <value>%s: %s (%s, %s)</value>
+                      </configuration>
+                    </configurationGroup>
+                    <configurationGroup name="printf_args">
+                      <configuration name="position" type="delimited" values="many">
+                        <value>0:code</value>
+                        <value>1:title</value>
+                        <value>2:facility</value>
+                        <value>3:department</value>
+                      </configuration>
+                    </configurationGroup>
+                    <configurationGroup name="reportSelect">
+                      <configuration name="reportView">
+                        <value>position_list</value>
+                      </configuration>
+                      <configuration name="enabled" type="boolean">
+                        <value>true</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="add_limit_module" type="delimited">
+                  <version>4.2.0.2</version>
+                  <value>ManageAccessFacility:getLimitAdd</value>
+                  <value>ManageAccessDepartment:getLimitAdd</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Supervisor</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="facility">
+              <displayName>The field 'facility'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Facility</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <version>4.1.1.7</version>
+                <configuration name="form" values="many">
+                  <value>facility</value>
+                </configuration>
+                <configurationGroup name="display">
+                  <configurationGroup name="default">
+                    <configuration name="fields">
+                      <value>facility+location:county:district:[region]:country</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="add_limit_module" type="delimited">
+                  <version>4.1.1.9</version>
+                  <value>ManageAccessFacility:getLimitAdd</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="department">
+              <displayName>The field 'department'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Department</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="pos_type">
+              <displayName>The field 'pos_type'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>position_type</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Position Type</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="proposed_end_date">
+              <displayName>The field 'proposed_end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Proposed End Date</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="proposed_hiring_date">
+              <displayName>The field 'proposed_hiring_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Proposed Hiring Date</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <value>I2CE_Date::now()</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="posted_date">
+              <displayName>The field 'posted_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Date Posted</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <value>I2CE_Date::now()</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="status">
+              <displayName>The field 'status'</displayName>
+              <version>3.2.10</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>position_status</value>
+                </configuration>
+                <configurationGroup name="display">
+                  <version>3.2.14</version>
+                  <configurationGroup name="default">
+                    <configuration name="fields">
+                      <value>position_status</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configurationGroup name="limits">
+                  <version>3.2.21</version>
+                  <configurationGroup name="all">
+                    <version>4.0.1.2</version>
+                    <configurationGroup name="position_status">
+                      <configuration name="operator">
+                        <value>FIELD_LIMIT</value>
+                      </configuration>
+                      <configuration name="field">
+                        <value>id</value>
+                      </configuration>
+                      <configuration name="style">
+                        <value>not_null</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                  <configurationGroup name="default">
+                    <configurationGroup name="position_status">
+                      <configuration name="operator">
+                        <value>NOT</value>
+                      </configuration>
+                      <configurationGroup name="operand">
+                        <configurationGroup name="0">
+                          <configuration name="operator">
+                            <value>FIELD_LIMIT</value>
+                          </configuration>
+                          <configuration name="field">
+                            <value>id</value>
+                          </configuration>
+                          <configuration name="style">
+                            <value>equals</value>
+                          </configuration>
+                          <configuration name="data" values="many" type="delimited">
+                            <value>value:closed</value>
+                          </configuration>
+                        </configurationGroup>
+                      </configurationGroup>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Status</value>
+              </configuration>
+              <configuration name="default_value">
+                <displayName>The default Value as an eval string</displayName>
+                <value>position_status|open</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <displayName>The field 'comments'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_TEXT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Position Comments</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="interview_comments">
+              <displayName>The field 'interview_comments'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_TEXT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.4</version>
+                <value>default:Interview Comments</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of /modules/formsClasses-->
+    </configurationGroup>
+    <!-- end of /modules/forms-->
+  </configurationGroup>
+</I2CEConfiguration>

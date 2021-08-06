@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-Application" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-Application" path="/I2CE" locale="sw">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="sw">
+      <configuration name="app_felon" path="application/felony_circumstances/required"></configuration>
+      <configuration name="app_hours" path="application/hours/required"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="sw">
+      <configuration name="person_can_view_child_form_position_decision" locale="sw">
+        <value>Weza kuangalia nafasi ya Uamuzi wa fomu ya mtoto wa mtu</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_decision" locale="sw">
+        <value>Weza kuhariri nafasi ya Uamuzi wa fomu za mtoto wa mtu</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_position_interview" locale="sw">
+        <value>Weza kuangalia nafasi ya usaili wa fomu ya mtoto wa mtu</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_position_interview" locale="sw">
+        <value>Weza kuhariri nafasi ya usaili wa fomu za mtoto wa mtu</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_application" locale="sw"></configuration>
+      <configuration name="person_can_edit_child_form_application" locale="sw"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="application">
+          <configuration name="display" values="single" locale="sw">
+            <value>Mwombaji</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_interview">
+          <configuration name="display" values="single" locale="sw">
+            <value>Nafasi ya Kutahiniwa</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="position_decision">
+          <configuration name="display" values="single" locale="sw">
+            <value>Uamuzi wa Nafasi</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Applicant">
+          <configurationGroup name="fields">
+            <configurationGroup name="position">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Nafasi (nyingi)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Umeshawahi kutiwa hatiani kwa kosa la jinai?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="felony_circumstance">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Kama ni ndiyo, toa maelezo.</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="other_info">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Kwa kuongezea kwenye historia ya kazi yako, kuna ujuzi wa aina nyingine, sifa au uzoefu ambao tunaweza kuchukulia kama kigezo</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hear">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Ulipata wapi taarifa kuhusu ufunguzi huu?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Lini unaweza kuanza?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="desired_wage">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Ujira unaopendekeza</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="full_time">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Unatafuta ajira ya muda wote?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="hours">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Kama hapana, unapatikana muda gani?</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionInterview">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Tarehe ya Usaili</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="person">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Watu Wanaohudhuria</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Maoni</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_PositionDecision">
+          <configurationGroup name="fields">
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Tarehe ya Uamuzi</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="offer">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Tangaza Nafasi ya Kazi?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="comments">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Maoni</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="application">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw">
+            <value>Ongeza/Sasisha Ombi</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_decision">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw">
+            <value>Ongeza/Sasisha Nafasi ya Uamuzi</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="position_interview">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw">
+            <value>Ongeza/Sasisha Nafasi ya Usaili</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

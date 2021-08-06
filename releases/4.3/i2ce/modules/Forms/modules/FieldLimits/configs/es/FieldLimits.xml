@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="field-limits">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="field-limits" locale="es">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/modules/field-limits/text/" locale="es">
+      <configuration name="select_value" values="single" type="string">
+        <value>Seleccione un valor</value>
+      </configuration>
+      <configurationGroup name="description">
+        <configurationGroup name="default">
+          <configuration name="text" locale="es" values="single" type="string"></configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:valor</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="max_parent">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Valor máximo para %s, compensación %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:Campo enlazado</value>
+            <value>1:Compensación</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="min_parent">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Valor mínimo para %s, compensación %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:Campo enlazado</value>
+            <value>1:Compensación</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="not_null">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>No nulo</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="null">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Nulo</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="true">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Verdadero</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="false">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Falso</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="yes">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Sí</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="no">
+          <configuration name="text" locale="es" values="single" type="string"></configuration>
+        </configurationGroup>
+        <configurationGroup name="lessthan">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Menos que %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:valor</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="lessthan_equals">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Menos o igual que %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:valor</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="greaterthan">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Mayor que %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:valor</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="greaterthan_equals">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Mayor o igual que %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>0:valor</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="between">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Entre %s y %s</value>
+          </configuration>
+          <configuration name="values" type="delimited" values="single">
+            <value>1:máx</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="max_parent_form">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Valor máximo por padre</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="min_parent_form">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Valor mínimo por padre</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="greaterthan_now">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Mayor que ahora</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="lessthan_now">
+          <configuration name="text" locale="es" values="single" type="string">
+            <value>Menor que ahora</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

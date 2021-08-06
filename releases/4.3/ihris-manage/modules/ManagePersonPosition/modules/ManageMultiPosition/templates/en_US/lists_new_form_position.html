@@ -1,0 +1,42 @@
+<tbody id="list_fields">
+	<tr>
+	<td class="formdata">
+	   	<span type="form" name="position:job" showhead="default" 
+	   		onchange="if ( document.getElementById('forms[position][0][0][fields][title]').value == '' &amp;&amp; this.selectedIndex != 0 ) document.getElementById('forms[position][0][0][fields][title]').value = this.options[this.selectedIndex].text;" 
+	   		addlink="position?add=1&amp;type=job" addtask='position_can_edit'></span>
+	   	<span type="form" name="position:title" showhead="default"></span>
+	   	<span type="form" name="position:description" showhead="default"></span>
+		<span type='module' name='ihris-manage-Salary' ifenabled='true'>
+	   	  <span type="form" name="position:proposed_salary" showhead="default"></span>
+	   	  <span type="form" name="position:source" showhead="default"></span>
+		</span>
+	   	<span type="form" name="position:posted_date" showhead="default"></span>
+	   	<span type="form" name="position:comments" showhead="default"></span>
+	</td><td class="formdata">
+	   	<span type="form" name="position:code" showhead="default"></span>
+	   	<span type="form" name="position:supervisor" showhead="default"></span>
+	   	<span type="form" name="position:facility" showhead="default"></span>
+	   	<span type="form" name="position:department" showhead="default"></span>
+	   	<span type="form" name="position:pos_type" showhead="default"></span>
+	   	<span type="form" name="position:proposed_hiring_date" showhead="default"></span>
+	   	<span type="form" name="position:proposed_end_date" showhead="default"></span>
+	   	<span type="form" name="position:status" showhead="default" noedit="true"></span>
+	   	<span type="form" name="position:interview_comments" showhead="default"></span>
+    </td>
+  </tr>
+  <span type="module" name="ihris-manage-MultiPosition" ifenabled="true">
+    <tr><th colspan="2">Create Multiple Positions</th></tr>
+    <tr><td colspan="2">Enter the number of positions you wish to create and the code number to start with.
+        The code number will be appended to the code given above for the position.  If the position code has %d then
+        that will be replaced with the number.
+    </td></tr>
+    <tr>
+      <td>
+	   	<span type="form" name="position:count" showhead="default"></span>
+      </td><td>
+	   	<span type="form" name="position:code_start" showhead="default"></span>
+	   	<span type="form" name="position:code_format" showhead="default"></span>
+      </td>
+    </tr>
+  </span>
+</tbody>

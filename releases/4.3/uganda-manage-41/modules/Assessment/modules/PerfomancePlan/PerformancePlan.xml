@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonPerformancePlan">
+  <metadata>
+    <displayName>iHRIS Person PerformancePlan</displayName>
+    <className>iHRIS_Module_PersonPerformancePlan</className>
+    <category>Application Component</category>
+    <description>A Person's PerformancePlan</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.2.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.0" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="PersonPerformancePlan" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_performance_plan" locale="en_US">
+        <value>Can view performance_plan child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_performance_plan" locale="en_US">
+        <value>Can edit performance_plan child forms of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_performance_plan" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_performance_plan" values="many">
+        <value>person_can_view_child_form_performance_plan</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <version>3.2.8</version>
+        <value>person_can_view_child_form_performance_plan</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>3.2.8</version>
+        <value>person_can_edit_child_form_performance_plan</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="performance_plan">
+        <displayName>PerformancePlan Page</displayName>
+        <description>The page 'performance_plan' which has the action of: Add/Update Performance Plan Information</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Performance Plan Information</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>performance_plan</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- performance_plan -->
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <version>3.2.7</version>
+        <configurationGroup name="performance_plan">
+          <displayName>PerformancePlan Information</displayName>
+          <description>The PerformancePlan Information Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_PerformancePlan</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Performance Plan Information</value>
+          </configuration>
+        </configurationGroup>
+        <!-- performance_plan -->
+        <configurationGroup name="person">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>performance_plan</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- person -->
+      </configurationGroup>
+      <!-- end of  forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PerformancePlan">
+          <displayName>Configuration for the class 'iHRIS_PerformancePlan'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="start_date">
+              <displayName>The field 'start_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Assessment start Date</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default value for this field as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <displayName>The field 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Assessment End Date</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default value for this field as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            </configurationGroup>
+            <configurationGroup name="outputs">
+              <displayName>The field 'outputs'</displayName>
+              <version>3.2.5</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Outputs</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            </configurationGroup>
+            <configurationGroup name="perform_ind">
+              <displayName>The field 'perform_ind'</displayName>
+              <version>3.2.5</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Perfomance Indicators</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="perform_terg">
+              <displayName>The field 'perform_terg'</displayName>
+              <version>3.2.5</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>3.2.1</version>
+                <value>default:Perfomance Targets</value>
+              </configuration>
+               <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_PerformancePlan -->
+      </configurationGroup>
+      <!-- end of  formClasses-->
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="UploadAttendanceCli">
+  <metadata>
+    <displayName>Upload Attendance</displayName>
+    <category>Administration</category>
+    <description>Upload Attendance</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.2.1.2</version>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <requirement name="admin">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="UploadAttendanceCli" path="/">
+    <configurationGroup name="page" path="/modules/admin/command_line/UploadAttendanceCli">
+      <version>4.2.1.2</version>
+      <configuration name="class" values="single">
+       <version>4.2.1.2</version>
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>iHRIS_Page_UploadAttendanceCli</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configuration name="access" values="many">
+          <displayName>Page Access</displayName>
+          <description>All of the roles that have access to this page</description>
+          <status>required:false</status>
+          <value>admin</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

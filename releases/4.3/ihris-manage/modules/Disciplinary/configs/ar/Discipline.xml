@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="disciplinary_action" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="disciplinary_action" path="/I2CE" locale="ar">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="ar">
+      <configuration name="disciplinary_date" path="disciplinary_action/end_date/bad_date"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_can_edit_child_form_disciplinary_action" locale="ar">
+        <value>يمكن تعديل&#160;إصابات العمل&#160;والإجراءات التأديبية&#160;المعينه لشخص</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_disciplinary_action" locale="ar">
+        <value>يمكن&#160;الاطلاع علي إصابات العمل&#160;والإجراءات التأديبية&#160;المعينه لشخص</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_type" locale="ar">
+        <value>تعديل قائمة أنواع الإجراءات التأديبية الخاصة بالعمل</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_type" locale="ar">
+        <value>عرض قائمة أنواع الإجراءات التدريبية في العمل</value>
+      </configuration>
+      <configuration name="can_edit_database_list_disciplinary_action_reason" locale="ar">
+        <value>تعديل مكان عمل قائمة نوع سبب الإجراء التأديبي</value>
+      </configuration>
+      <configuration name="can_view_database_list_disciplinary_action_reason" locale="ar">
+        <value>عرض مكان عمل قائمة نوع سبب الإجراء التأديبي</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="disciplinary_action">
+          <configuration name="display" values="single" locale="ar">
+            <value>الإجراءات التأديبية</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_type">
+          <configuration name="display" values="single" locale="ar">
+            <value>نوع الإجراء التأديبي</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="disciplinary_action_reason">
+          <configuration name="display" values="single" locale="ar">
+            <value>سبب الإجراء التأديبي</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_DisciplinaryAction">
+          <configurationGroup name="fields">
+            <configurationGroup name="action_date">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:تاريخ&#160;المناقشة</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_type">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:الإجراء الذي تم اتخاذه</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="disciplinary_action_reason">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:سبب الإجراء</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:بدء التطبيق</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:نهاية&#160;التطبيق</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:ملاحظات</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="persons_present">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:الحاضرون</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="editAction" path="/modules/disciplinary_action/page/editAction">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ar">
+            <value>إضافة / تحديث&#160;إجراء&#160;تأديبي</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

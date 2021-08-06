@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-FilledPositions" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-FilledPositions" path="/modules/CustomReports" locale="ar">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships" config="CustomReports_Relationships">
+      <configurationGroup name="filled_positions" config="CustomReports_Relationship">
+        <configuration name="display_name" locale="ar">
+          <value>الوظائف الشاغلة</value>
+        </configuration>
+        <configuration name="description" locale="ar">
+          <value>القائمة التاريخية لكافة الوظائف المشغولة</value>
+        </configuration>
+        <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+          <configurationGroup name="first_salary" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="ar">
+              <value>أول&#160;راتب</value>
+            </configuration>
+            <configuration name="description" locale="ar">
+              <value>الراتب&#160;الأول لهذه الوظيفة &#160;و لهذا الشخص.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="last_salary" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="ar">
+              <value>آخر&#160;راتب</value>
+            </configuration>
+            <configuration name="description" locale="ar">
+              <value>الراتب&#160;الأخير لهذه الوظيفة&#160;و لهذا الشخص.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="person" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="ar">
+              <value>شخص</value>
+            </configuration>
+            <configuration name="description" locale="ar">
+              <value>الشخص الذي&#160;شغل&#160;هذه الوظيفة.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="employee_position" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="ar">
+              <value>وظيفة الموظف</value>
+            </configuration>
+            <configuration name="description" locale="ar">
+              <value>تفاصيل&#160;الوظيفة</value>
+            </configuration>
+            <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+              <configurationGroup name="supervisor" config="CustomReports_Relationship_Join">
+                <configuration name="display_name" locale="ar">
+                  <value>مشرف الوظيفة</value>
+                </configuration>
+                <configuration name="description" locale="ar">
+                  <value>تفاصيل مشرف الوظيفة</value>
+                </configuration>
+                <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+                  <configurationGroup name="supervisor_person_position" config="CustomReports_Relationship_Join">
+                    <configuration name="display_name" locale="ar">
+                      <value>الشخص المشرف علي الوظيفة</value>
+                    </configuration>
+                    <configuration name="description" locale="ar">
+                      <value>الشخص&#160;الحالي&#160;أو&#160;الأحدث&#160;الذي شغل وظيفة المشرف علي الوظيفة</value>
+                    </configuration>
+                    <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+                      <configurationGroup name="supervisor_person" config="CustomReports_Relationship_Join">
+                        <configuration name="display_name" locale="ar">
+                          <value>الشخص المشرف</value>
+                        </configuration>
+                        <configuration name="description" locale="ar">
+                          <value>الشخص الذي شغل وظيفة المشرف مؤخراً</value>
+                        </configuration>
+                      </configurationGroup>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports" config="CustomReports_Reports">
+      <configurationGroup name="filled_positions" config="CustomReports_Report">
+        <configurationGroup name="meta" config="CustomReports_Report_Meta">
+          <configuration name="display_name" locale="ar">
+            <value>الوظائف الشاغلة</value>
+          </configuration>
+          <configuration name="description" locale="ar">
+            <value>تقرير&#160;تاريخي&#160;عن&#160;جميع&#160;الوظائف&#160;الشاغلة</value>
+          </configuration>
+          <configuration name="category" locale="ar">
+            <value>الوظائف الشاغلة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms" config="CustomReports_Report_ReportingForms">
+          <configurationGroup name="primary_form" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="start_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>تاريخ البدء بالنسبة للشخص</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="greaterthan">
+                    <configuration name="header" locale="ar">
+                      <value>تاريخ البدء&#160;بعد</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="lessthan">
+                    <configuration name="header" locale="ar">
+                      <value>تاريخ البدء&#160;قبل</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="end_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>تاريخ الانتهاء للشخص</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="greaterthan">
+                    <configuration name="header" locale="ar">
+                      <value>تاريخ الانتهاء بعد</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="lessthan">
+                    <configuration name="header" locale="ar">
+                      <value>تاريخ الانتهاء قبل</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="first_salary" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="salary" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>أول&#160;راتب</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last_salary" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="salary" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>آخر&#160;راتب</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="surname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>لقب</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="firstname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>الاسم الأول</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="employee_position" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="job" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>المسمى الوظيفي</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>عنوان الوظيفة</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="facility" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>المرفق</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="department" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>قسم</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="status" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>حالة&#160;الوظيفة</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>وظيفة المشرف</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor_person_position" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="start_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>تاريخ بدء عمل المشرف</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor_person" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="surname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>لقب المشرف</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="firstname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="ar">
+                  <value>الاسم الأول للمشرف</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews" config="CustomReports_ReportViews">
+      <configurationGroup name="filled_positions" config="CustomReports_ReportView">
+        <configuration name="display_name" locale="ar">
+          <value>إصدار الوظائف الشاغلة</value>
+        </configuration>
+        <configuration name="description" locale="ar">
+          <value>قائمة تاريخية بالوظائف الشاغلة للإصدار</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,58 @@
+<div>
+    <h2>Métadonnées</h2>
+  <div id="display_container">
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Champ lien</h3>Liste de formulaires[+champ] séparées par des deux-points pour définir la hiérarchie
+	</td>
+	<td>
+	  <input name="fields"></td>
+      </tr><tr><td>
+	  <h3>Afficher le style</h3>La manière dont ce formulaire est affiché en modification.
+	</td>
+	<td>
+	  <select name="style"></select></td>
+      </tr><tr><td>
+	  <h3>Affichage de rapport</h3>Le rapport utilisé lors du remplissage des données pour les menus déroulants, les arborescences. Vous devriez prendre en compte cette option si le champ de liaison est compliqué.
+	</td>
+	<td>
+	  <select name="display_report"><option value="">Sélectionnez un rapport</option></select></td>
+      </tr></table><span id="orders">
+      <h2><a id="orders_link" href="">Ordres</a></h2>
+      Fixer l’ordre par champs
+      <div class="indented" id="orders_ajax"></div>
+    </span>
+
+    <span id="printf">
+      <h2><a id="printf_link" href="">Printf</a></h2>
+      Définir la chaîne de caractères printf à utiliser pour diverses formes
+      <div class="indented" id="printf_ajax"></div>
+    </span>
+
+    <span id="printf_args">
+      <h2><a id="printf_args_link" href="">Champs de PrintF</a></h2>
+      Définir les champs (arguments) utilisés dans la chaîne printf pour diverses formes
+      <div class="indented" id="printf_args_ajax"></div>
+    </span>
+
+    <span id="printf_arg_styles">
+      <h2><a id="printf_arg_styles_link" href="">Styles des champs de PrintF</a></h2>
+      Définir les styles d'affichage utilisés pour les différents champs
+      <div class="indented" id="printf_arg_styles_ajax"></div>
+    </span>
+
+
+    <span id="reportselect">
+      <h2><a id="reportselect_link" href="">Sélection de la vue de rapport</a></h2>
+      Précise le format d'affichage utilisé pour selectionner les données
+      <div class="indented" id="reportselect_ajax"></div>
+    </span>
+
+    <span id="no_limits">
+      <h2><a id="no_limits_link" href="">Montrer les limites</a></h2>
+      Spécifier s’il faut ou non afficher les limites d’un formulaire dans le sélecteur de vue de rapport
+      <div class="indented" id="no_limits_ajax"></div>
+    </span>
+
+
+</div>
+</div>

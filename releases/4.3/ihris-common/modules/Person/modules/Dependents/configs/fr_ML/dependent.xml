@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="dependents" path="/">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="dependents" path="/" locale="fr_ML">
+    <version>4.2.0.1</version>
+    <configurationGroup name="dep_class" path="/modules/forms/formClasses/iHRIS_Dependent">
+      <configurationGroup name="fields">
+        <configurationGroup name="gender">
+          <configuration name="headers" type="delimited" values="many" locale="fr_ML">
+            <value>default:Sexe</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="date_of_birth">
+          <configuration name="headers" type="delimited" values="many" locale="fr_ML">
+            <value>default:Date de naissance</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="name">
+          <configuration name="headers" type="delimited" values="many" locale="fr_ML">
+            <value>default:Nom</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="dep_form" path="/modules/forms/forms/dependent">
+      <configuration name="display" locale="fr_ML">
+        <value>Personnes à charge</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="fr_ML">
+      <configuration name="person_can_view_child_form_dependent" locale="fr_ML">
+        <value>Peut afficher les personnes à charge de quelqu'un</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_dependent" locale="fr_ML">
+        <value>Peut éditer les personnes à charge de quelqu'un</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="dependent_page" path="/I2CE/page/dependent">
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="fr_ML">
+          <value>Ajouter/ mettre à jour les données sur les personnes à charge</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

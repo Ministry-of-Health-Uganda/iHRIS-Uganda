@@ -1,0 +1,29 @@
+<div task='person_can_view_child_form_appraisal'>
+  <div class="editRecord">
+    <p>Edit This Information</p>
+    <ul>
+      <li task='person_can_edit_child_form_appraisal'>
+	<span type="form" ifset="appraisal:id" name="appraisal:id" href="appraisal?id=" parent="true">
+	  Update this Information
+	</span>
+      </li>
+    </ul>
+  </div> <!-- editRecord -->
+  
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tbody>
+	<tr>
+	  <th colspan="2">Appraisal Information</th>
+	</tr>
+	<span type="form" name="appraisal:start_date" showhead="default"></span>
+      <span type="form" name="appraisal:end_date" showhead="default" class="even" ></span>
+      <span type="form" name="appraisal:perfomance_level" showhead="default"></span>
+      <span type="form" name="appraisal:action_points" showhead="default" class="even" ></span>
+      <span type="form" name="appraisal:appraiser" showhead="default"></span>
+      <span type="form" name="appraisal:appraisal_date" showhead="default" ></span>
+       <span type="form" name="appraisal:note" showhead="default" class="even"></span>
+      </tbody>
+    </table>
+  </div> <!-- dataTable -->
+</div>

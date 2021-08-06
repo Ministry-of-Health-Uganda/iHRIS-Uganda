@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="person-simple-competency" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="person-simple-competency" path="/I2CE" locale="sv">
+    <version>4.2.0.1</version>
+    <configurationGroup name="formsdata" path="/I2CE/formsData/forms">
+      <configurationGroup name="competency_evaluation">
+        <configurationGroup name="not_evaluated">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="sv">
+              <value>Inte utvärderad</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="competent">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="sv">
+              <value>Behörig</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="not_competent">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="sv">
+              <value>Inte behörig</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="person_tasks" path="/I2CE/tasks/task_description" locale="sv">
+      <configuration name="person_can_view_child_form_person_competency" locale="sv"></configuration>
+      <configuration name="person_can_edit_child_form_person_competency" locale="sv"></configuration>
+      <configuration name="person_competency_can_view_evaluation_history" locale="sv"></configuration>
+      <configuration name="person_competency_can_view_evaluation" locale="sv">
+        <value>Kan visa kompetensutvärdering av en person</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_evaluation" locale="sv"></configuration>
+      <configuration name="can_view_database_list_competency_evaluation" locale="sv"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="competency_evaluation">
+          <configuration name="display" values="single" locale="sv">
+            <value>Kompetensutvärdering</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_competency">
+          <configuration name="display" values="single" locale="sv">
+            <value>Personkompetens</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PersonCompetency">
+          <configurationGroup name="fields">
+            <configurationGroup name="evaluation_date">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Senast utvärderad</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency_evaluation">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Utvärdering</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Kompetens</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_competency_history">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sv">
+            <value>Kompetensutvärderingshistorik</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="person_competency">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sv">
+            <value>Lägg till/uppdatera kompetens</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>
