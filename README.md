@@ -299,3 +299,8 @@ The last step is to create a symbolic link in the web root directory for your si
 $ cd /var/www/html
 $ sudo ln -s /var/lib/iHRIS/lib/4.3.3/ihris-manage/sites/Demo/pages manage-demo
 ```
+```shell script
+
+$ sudo apt-get install php-uuid
+
+```
