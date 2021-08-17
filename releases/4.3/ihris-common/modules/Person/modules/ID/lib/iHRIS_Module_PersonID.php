@@ -165,11 +165,11 @@ class iHRIS_Module_PersonID extends I2CE_Module {
      * @param I2CE_Form $form
      */
     public function validate_form_person_id( $form ) {
-        if ( $form->issue_date->isValid() && $form->expiration_date->isValid() ) {
+     /*   if ( $form->issue_date->isValid() && $form->expiration_date->isValid() ) {
             if ( $form->issue_date->compare( $form->expiration_date ) < 1 ) {
                 $form->setInvalidMessage('expiration_date','bad_date');
             }
-        }
+        }*/
         
         /*Validate ID Pattern, this is optional*/
         $id_number = $form->getField('id_num')->getDBValue();
