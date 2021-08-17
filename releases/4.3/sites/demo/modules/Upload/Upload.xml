@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CSVUpload">
+  <metadata>
+    <displayName>CSVUpload</displayName>
+    <category>CSVUpload</category>
+    <description>uploading CSV data into iHRIS .  This module will load clockin details to a person.</description>
+    <creator>IntraHealth Informatics</creator>
+    <email>hris@capacityplus.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.2.0.1</version>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <requirement name="forms">
+      <atLeast version="4.1" />
+    </requirement>
+    <requirement name="Person">
+      <atLeast version="4.1" />
+    </requirement>
+    <priority>200</priority>
+  </metadata>
+  <configurationGroup name="CSVUpload" path="/I2CE">
+    <displayName>CSVUpload</displayName>
+    <configurationGroup name="page">
+      <configurationGroup name="upload_csv">
+        <displayName>Upload page</displayName>
+        <description>The page 'upload_csv' which is used to add clockin details to a person from a CSV file upload.</description>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageFormUpload_Csv</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Upload Csv</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <value>upload_csv.html</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_can_edit_child_form_position</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup> <!-- end of upload_csv page -->
+    </configurationGroup> <!-- end of page -->
+  </configurationGroup>
+</I2CEConfiguration>

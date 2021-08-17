@@ -48,13 +48,13 @@
  * You might need to set this depending on your installation
  *    Default value is  ../../../../I2CE
  */
-$i2ce_site_i2ce_path = "/var/lib/iHRIS/releases/4.3/i2ce";
+$i2ce_site_i2ce_path = "../../../../I2CE";
 
 
 /**
  * the dsn to connect to your databse
  */
-$i2ce_site_dsn = 'mysql://ihris_manage:managi123@172.27.1.109/national_manage';
+//$i2ce_site_dsn = 'mysql://john:pass@localhost/database' ;
 
 
 /**
@@ -68,7 +68,7 @@ $i2ce_site_user_access_init = null;
 /**
  * the configuration xml file for the site module.  You need to set this.
  */
-$i2ce_site_module_config = "/var/lib/iHRIS/releases/4.3/sites/national/Uganda-Manage-MoH.xml";
+//$i2ce_site_module_config = "MY_SITE_MODULE.xml";
 
 
 /*****************************************************************

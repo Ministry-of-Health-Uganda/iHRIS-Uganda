@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Ministry of Health </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="en-us" />
+<meta name="robots" content="all" />
+<meta http-equiv="imagetoolbar" content="false" />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta name="author" content="Development by IntraHealth International, Inc.  http://www.intrahealth.org/  Website graphic design by DesignHammer Media Group LLC, Building Smarter Websites http://www.designhammer.com" />
+<meta name="copyright" content="" />
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<link rel="Shortcut Icon" href="file/favicon.ico" />
+<link rel="stylesheet" href="file/container-print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="file/container-screen.css" type="text/css" media="screen" />
+<!--[if lt IE 7]><link href="file/iehacks.css?newman" rel="stylesheet" type="text/css" media="screen" /><![endif]-->
+<script type="text/javascript"></script>
+</head>
+<body>
+
+<div id="siteHeadWrap"><!-- ie6 redundant tag fix -->
+<div id="siteHeader">
+
+<a name="top"><img src="file/logos/moh_logo.png" alt="" width="78" height="80" id="siteLogo" /></a>
+<p id="siteName">National District Health Staff Records</p>
+<p id="siteTag">Human Resources For Health Information System</p>
+
+<div id="inlineNavWrap"><!-- ie6 redundant tag fix -->
+<div id="inlineNavBar">
+<ul>
+	<li role='any'><a href="home">Home</a></li>
+	<li role='LOGGED_IN' task='custom_reports_can_access'><a href="search" class="searchRecords">Search</a></li>
+	<li role='LOGGED_IN' task='custom_reports_can_access'><a href="CustomReports/view/reportViews" class="createRecords">View Reports</a></li>
+	<span type='module' name='ihris-manage-help' ifenabled='true'>	
+	  <li><a href="file/help/index.html"
+	  target="_help">Help</a></li>
+	</span>
+	<li role="NOT_LOGGED_IN"><a href="http://www.capacityproject.org/hris/contact">Feedback</a></li>
+	<li role='any'><a href="feedback">Feedback</a></li>
+	<li><a href="http://www.capacityproject.org/hris/" target="_new">iHRIS Website</a></li>
+</ul>
+<ul id="sysUser" role='any'>
+	<li><a href="logout" class="logout"><span printf="'Log out as %s',ihris-common->getUserRole()" /></a></li>
+</ul>
+</div><!-- /inlineNavBar -->
+</div><!-- /inlineNavWrap -->
+
+<div id="welcomeIntro" />
+
+</div><!-- /siteHeader -->
+</div><!-- /siteHeadWrap -->
+
+<div id="siteOuterWrap">
+
+<div id="siteInnerWrap">
+
+<div id="siteContent" />
+
+
+	<br style="clear: both;" />
+
+</div><!-- /siteInnerWrap -->
+
+<div id='StretchPage'></div>
+<div id="siteFooter">
+  <p>
+  <!--<a href="http://www.usaid.gov/"><img src="file/logos/usaid_logo.gif" alt="USAID (logo)" width="148" height="46"  id="usaid" /></a>
+  <a href="http://www.capacityplus.org/"><img src="file/logos/capacity_logo.png" alt="CapacityPlus (logo)" width="144" height="46"  id="capacityplus" /></a>-->
+  <a href="http://www.intrahealth.org/"><img src="file/logos/Intrahealth_Logo_RGB.png" alt="IntraHealth (logo)" width="158" height="46" id="intrahealth" /></a>
+  <a href="http://www.health.go.ug/index.htm"><img src="file/logos/moh_logo.png" alt="Ministry of Education and Sports (logo)" width="78" height="80" id="moh" /></a>
+  </p>
+iHRIS Manage Version: <span type='module' call="ihris-common->showModuleVersion('ihris-manage')"/>
+<span type='module' call='localeSelector->showSelectableLocales()'></span>
+</div><!-- /siteFooter -->
+</div><!-- /siteOuterWrap -->
+
+</body>
+</html>

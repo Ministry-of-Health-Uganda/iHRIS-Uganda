@@ -54,7 +54,7 @@ $i2ce_site_i2ce_path = "/var/lib/iHRIS/releases/4.3/i2ce";
 /**
  * the dsn to connect to your databse
  */
-$i2ce_site_dsn = 'mysql://ihris_manage:managi123@172.27.1.109/national_manage';
+$i2ce_site_dsn = 'mysql://ihris_manage:managi123@172.27.1.109/national_demo';
 
 
 /**
@@ -68,7 +68,7 @@ $i2ce_site_user_access_init = null;
 /**
  * the configuration xml file for the site module.  You need to set this.
  */
-$i2ce_site_module_config = "/var/lib/iHRIS/releases/4.3/sites/national/Uganda-Manage-MoH.xml";
+$i2ce_site_module_config = "/var/lib/iHRIS/releases/4.3/sites/demo/Uganda-Manage-MoH.xml";
 
 
 /*****************************************************************
