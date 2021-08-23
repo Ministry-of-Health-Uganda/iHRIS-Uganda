@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '172.27.1.109',
 	'username' => 'ihris_manage',
 	'password' => 'managi123',
 	'database' => 'national_manage',
