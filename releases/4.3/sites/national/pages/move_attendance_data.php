@@ -1,6 +1,6 @@
 <?php 
 									
-	$mysqli = mysqli_connect("localhost","manageatt","manage123","hrhdashboard");
+	$mysqli = mysqli_connect("172.27.1.110","ihris_manage","managi123","hrhdashboard");
         
 //    $month="January";
 //    $year = "2021";

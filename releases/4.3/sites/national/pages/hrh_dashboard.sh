@@ -7,7 +7,7 @@ set -x
 _db="hrhdashboard"
 _db_user="ihris_manage"
 _db_password="managi123"
-_db_host="172.27.1.110"
+_db_host="172.27.1.109"
 _month=`date --date="$(date +%Y-%m-15) -1 month" +%B`
 _year=`date +%Y`
 
