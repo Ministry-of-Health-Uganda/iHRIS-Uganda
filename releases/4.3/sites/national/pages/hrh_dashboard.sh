@@ -13,7 +13,7 @@ _year=`date +%Y`
 
 #STAFF TABLE FACILITY LEVEL
  #define directory containing CSV files
-_csv_directory="/var/lib/iHRIS/releases/4.3/sites/districts/pages"
+_csv_directory="/var/lib/iHRIS/releases/4.3/sites/national/pages"
 
 #  CSV file
 _csv_file="staff.csv"
@@ -37,7 +37,7 @@ echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_
 
 #STAFF TABLE FACILITY
 # define directory containing CSV files
-_csv_directory="/var/lib/iHRIS/releases/4.3/sites/districts/pages"
+_csv_directory="/var/lib/iHRIS/releases/4.3/sites/national/pages"
 
 #  CSV file
 _csv_file="staff.csv"
@@ -58,7 +58,7 @@ echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_
 
 #STAFF TABLE  MOH
 # define directory containing CSV files
-_csv_directory="/var/lib/iHRIS/releases/4.3/sites/districts/pages"
+_csv_directory="/var/lib/iHRIS/releases/4.3/sites/national/pages"
 
 #  CSV file
 _csv_file="staff.csv"
@@ -78,7 +78,7 @@ echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_
 
 #STAFF TABLE  II III
 # define directory containing CSV files
-_csv_directory="/var/lib/iHRIS/releases/4.3/sites/districts/pages"
+_csv_directory="/var/lib/iHRIS/releases/4.3/sites/national/pages"
 
 #  CSV file
 _csv_file="staff.csv"
@@ -97,7 +97,7 @@ mysqlimport --ignore-lines=2 --fields-enclosed-by='"' --fields-terminated-by=','
 echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host -D$_db
 
 #STRUCTURE TABLE 
-�# csv_directory="/var/lib/iHRIS/releases/4.3/sites/districts/pages"
+�# csv_directory="/var/lib/iHRIS/releases/4.3/sites/national/pages"
 
 #  CSV file
  _csv_file="structure.csv"

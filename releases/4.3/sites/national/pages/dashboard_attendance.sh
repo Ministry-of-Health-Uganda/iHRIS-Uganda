@@ -13,7 +13,7 @@ _year=`date +%Y`
 
 #DISTRICT SYSTEM
 # define directory containing CSV files
-_csv_directory="/var/lib/iHRIS/releases/4.3/sites/districts/pages"
+_csv_directory="/var/lib/iHRIS/releases/4.3/sites/national/pages"
 
 #  CSV file
 _csv_file="temp_attendance.csv"

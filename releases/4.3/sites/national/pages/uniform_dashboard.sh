@@ -5,14 +5,15 @@ set -x
 
 # define database connectivity
 _db="hrhdashboard"
-_db_user="qualify"
-_db_password="cencer69"
+_db_user="ihris_manage"
+_db_password="managi123"
+_db_host="172.27.1.109"
 _month=`date --date="$(date +%Y-%m-15) -1 month" +%B`
 _year=`date +%Y`
 
 
 # define directory containing CSV files
-_csv_directory="/var/lib/iHRIS/releases/4.3/sites/districts/pages"
+_csv_directory="/var/lib/iHRIS/releases/4.3/sites/national/pages"
 
 #  CSV file
 _csv_file="uniforms.csv"
@@ -24,12 +25,12 @@ cd $_csv_directory
 php index.php --page=/CustomReports/show/1583302957/Export --post=export_style=CSV > $_csv_file
 
 #truncate old table
-echo "truncate table uniforms" | mysql -u $_db_user -p$_db_password -D$_db
+echo "truncate table uniforms" | mysql -u $_db_user -p$_db_password -h$_db_host -D$_db
 
 # import csv into mysql
-mysqlimport --ignore-lines=2 --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by="\n" --verbose --local  -u $_db_user -p$_db_password $_db $_csv_directory/$_csv_file
+mysqlimport --ignore-lines=2 --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by="\n" --verbose --local  -u $_db_user -p$_db_password -h$_db_host $_db $_csv_directory/$_csv_file
 
 #Delete last row
 
-echo "DELETE FROM uniforms WHERE PersonId='</table>'" | mysql -u $_db_user -p$_db_password -D$_db
+echo "DELETE FROM uniforms WHERE PersonId='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host -D$_db
 
