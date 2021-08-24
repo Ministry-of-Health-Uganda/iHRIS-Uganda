@@ -5,8 +5,8 @@ set -x
 
 # define database connectivity
 _db="hrhdashboard"
-_db_user="manageatt"
-_db_password="manage123"
+_db_user="ihris_manage"
+_db_password="managi123"
 _month=`date --date="$(date +%Y-%m-15) -1 month" +%B`
 _year=`date +%Y`
 
@@ -25,13 +25,13 @@ php index.php --page=/CustomReports/show/1549971701/Export --post=export_style=C
 #php index.php --page=/CustomReports/show/1549971701/Export --post=export_style=CSV > $_csv_file2
 
 #truncate old table
-echo "truncate table temp_attendance" | mysql -u $_db_user -p$_db_password -D$_db
+echo "truncate table temp_attendance" | mysql -u $_db_user -p$_db_password -h$_db_host -D$_db
 
 # import csv into mysql
-mysqlimport --ignore-lines=2 --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by="\n" --verbose --local  -u $_db_user -p$_db_password $_db $_csv_directory/$_csv_file
+mysqlimport --ignore-lines=2 --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by="\n" --verbose --local  -u $_db_user -p$_db_password -h$_db_host $_db $_csv_directory/$_csv_file
 #Delete last row
 
-echo "DELETE FROM temp_attendance WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_password -D$_db
+echo "DELETE FROM temp_attendance WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host -D$_db
 
 
 
