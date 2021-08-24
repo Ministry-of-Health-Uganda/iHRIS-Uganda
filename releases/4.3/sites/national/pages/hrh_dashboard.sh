@@ -29,7 +29,7 @@ echo "truncate table staff" | mysql -u $_db_user -p$_db_password -h$_db_host -D$
 
 # import csv into mysql
 #mysqlimport --ignore-lines=2 --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by="\n" --verbose --local  -u $_db_user -p$_db_password $_db $_csv_directory/$_csv_file
-mysqlimport --ignore-lines=2 --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by="\n" --verbose --local  -u $_db_user -p$_db_password $_db $_csv_directory/$_csv_file
+mysqlimport --ignore-lines=2 --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by="\n" --verbose --local  -u $_db_user -p$_db_password -h$_db_host  $_db $_csv_directory/$_csv_file
 
 #Delete last row
 echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host -D$_db
