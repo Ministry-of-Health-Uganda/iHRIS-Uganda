@@ -170,10 +170,25 @@ class iHRIS_Module_PersonID extends I2CE_Module {
                 $form->setInvalidMessage('expiration_date','bad_date');
             }
         }*/
+       
         
         /*Validate ID Pattern, this is optional*/
         $id_number = $form->getField('id_num')->getDBValue();
         $id_type = $form->getField('id_type')->getDBValue();
+
+        if ($id_type=='id_type|1'){
+            if (!is_numeric($id_number)){
+                $form->setInvalidMessage('id_num', 'Invalid National Card Number');
+            }
+
+        }
+        if ($id_type=='id_type|national_id'){
+            if (is_numeric($id_number)){
+                $form->setInvalidMessage('id_num', 'Invalid National ID Number');
+            }
+
+        }
+
         if ($id_type != ""){
             $formObj = I2CE_FormFactory::instance()->createContainer($id_type);
             if ($formObj instanceof I2CE_Form) {
