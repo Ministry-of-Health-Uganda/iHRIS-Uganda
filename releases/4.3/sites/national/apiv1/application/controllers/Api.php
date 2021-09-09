@@ -30,6 +30,20 @@ Class Api extends REST_Controller
             $response['message'] = 'ihrisdata is not found. Force generate stafflist ';
             $response['error'] = TRUE;
             $this->response($response, 400);
+    }
+    public function allihrisdata_get() 
+    {
+            $results = $this->requestHandler->getallihrisdata();
+            if(!empty($results)){
+  
+            $this->response($results, REST_Controller::HTTP_OK);
+            }
+            else{
+
+            $response['status'] = 'FAILED';
+            $response['message'] = 'ihrisdata is not found. Force generate stafflist ';
+            $response['error'] = TRUE;
+            $this->response($response, 400);
         }
     }
     
