@@ -31,6 +31,7 @@ Class Api extends REST_Controller
             $response['error'] = TRUE;
             $this->response($response, 400);
     }
+  }
     public function allihrisdata_get() 
     {
             $results = $this->requestHandler->getallihrisdata();
