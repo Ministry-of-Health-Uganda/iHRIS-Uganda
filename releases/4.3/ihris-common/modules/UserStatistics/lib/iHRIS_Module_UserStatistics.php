@@ -373,7 +373,7 @@ class iHRIS_Module_UserStatistics extends I2CE_Module {
                 $parent_query = "SELECT id,parent_form,parent_id FROM record WHERE id IN ( " . implode( ',', array_keys($parents) ) . " )";
                 try {
                     $result = self::$db->query( $parent_query );
-                    if ( $result->numRows() == 0 ) {
+                    if ( $result->rowCount() == 0 ) {
                         $parents = array();
                     } else {
                         while ( $row = $result->fetch() ) {
