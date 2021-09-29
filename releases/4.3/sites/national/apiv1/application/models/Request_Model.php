@@ -21,7 +21,7 @@ Class Request_Model extends CI_Model
         `department_structure+name` as department,
         trim(`job+id`) as job_id,
         `job+title` as job,
-        `primary_form+employment_terms` as employment_terms
+        `primary_form+employment_terms` as employment_terms,
         `person+surname` as surname,
         `person+firstname` as firstname,
         `person+othername` as othername,
