@@ -4,7 +4,7 @@
 set -x
 
 # define database connectivity
-_db="hrhdashboard"
+_db="hrh_dashboard"
 _db_user="ihris_manage"
 _db_password="managi123"
 _db_host="172.27.1.109"
