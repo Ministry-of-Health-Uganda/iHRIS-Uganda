@@ -9,7 +9,7 @@
     <creator>Intrahealth Informatics</creator>
     <email>dkibiye@capacityproject.org</email>
     <link>https://launchpad.net/i2ce</link>
-    <version>4.3.4.9</version>
+    <version>4.3.4.11</version>
     <path name="configs">
       <value>./configs</value>
     </path>
@@ -29,7 +29,7 @@
   </metadata>
   <configurationGroup name="PersonAttendance" path="/I2CE">
     <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
-	<version>4.2.0.1</version>
+	<version>4.3.4.11</version>
       <configuration name="person_can_view_child_form_person_attendance" locale="en_US">
         <value>Can view person_attendance child form of a person</value>
       </configuration>
@@ -41,7 +41,7 @@
       </configuration>
     </configurationGroup>
     <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
-	<version>4.2.0.1</version>
+	<version>4.3.4.11</version>
       <configuration name="person_can_view_child_form_person_attendance" values="many">
         <value>person_can_view</value>
       </configuration>
@@ -52,22 +52,22 @@
       </configuration>
 	 
       <configuration name="person_can_view_child_forms" values="many">
-        <version>3.2.8</version>
+        <version>4.3.4.11</version>
         <value>person_can_view_child_form_person_attendance</value>
       </configuration>
       <configuration name="person_can_edit_child_forms" values="many">
-        <version>3.2.8</version>
+        <version>4.3.4.11</version>
         <value>person_can_edit_child_form_person_attendance</value>
       </configuration>
     
     </configurationGroup>
     <configurationGroup name="page">
-    	<version>4.2.0.2</version>
+    	<version>4.3.4.11</version>
       <configurationGroup name="person_attendance">
         <displayName>Attendance Page</displayName>
         <description>The page 'person_attendance' which has the action of: Add/Update Attendance Information</description>
 	 <configuration name='class' values='single'>
-	  <version>4.2.0.2</version>
+	  <version>4.3.4.11</version>
           <displayName>Page Class</displayName>
           <description>The class responsible for displaying this page</description>
           <status>required:true</status>
@@ -100,7 +100,7 @@
       <!-- person_attendance -->
 
      <configurationGroup name="editpersonattendance">
-        <version>4.2.0.1</version>
+        <version>4.3.4.11</version>
         <configuration name="class">
           <value>iHRIS_PagePersonAttendance</value>
         </configuration>
@@ -108,7 +108,7 @@
           <value>shell</value>
         </configuration>
         <configurationGroup name="args">
-          <version>4.1.9.8</version>
+          <version>4.3.4.11</version>
           <displayName>Page Options</displayName>
           <description>The options that control the access and display of all pages</description>
           <configuration name="title" values="single" locale="en_US">
@@ -118,20 +118,20 @@
             <value>Enter Attendance Data</value>
           </configuration>
           <configuration name="defaultHTMLFile" values="many">
-          	<version>4.1.9.8</version>
+          	<version>4.3.4.11</version>
             <displayName>Default HTML File</displayName>
             <description>The default HTML File for this page</description>
             <status>required:true</status>
             <value>edit_person_attendance_base.html</value>
           </configuration>
 	<configuration name="report_view" values="single">
-	  <version>4.2.0.1</version>
+	  <version>4.3.4.11</version>
 	 <value>1442998916</value>
 	  </configuration>
 	  <configuration name="access" values="many">
 		<displayName>Page Access</displayName>
 		<description>All of the roles that have access to this page</description>
-		<version>4.1.9.8</version>
+		<version>4.3.4.11</version>
 		<value>admin</value>
 	  </configuration>
         </configurationGroup>
@@ -141,7 +141,7 @@
 
     <configurationGroup name="forms" path="/modules/forms">
       <configurationGroup name="forms">
-        <version>4.2.0.1</version>
+        <version>4.3.4.11</version>
         <configurationGroup name="person_attendance">
           <displayName>Attendance Information</displayName>
           <description>The Attendance Information Form</description>
@@ -151,7 +151,7 @@
             <value>iHRIS_PersonAttendance</value>
           </configuration>
           <configuration name="display" values="single" locale="en_US">
-          <version>4.1.9</version>
+          <version>4.3.4.11</version>
             <displayName>Display name</displayName>
             <description>The display name for this form</description>
             <value>Attendance Information</value>
@@ -173,7 +173,7 @@
       <configurationGroup name="formClasses">
         <configurationGroup name="iHRIS_PersonAttendance">
           <displayName>Configuration for the class 'iHRIS_Attendance'</displayName>
-          <version>4.2.0.9</version>
+          <version>4.3.4.11</version>
           <configuration name="extends">
             <displayName>The class this form extends</displayName>
             <value>I2CE_Form</value>
@@ -183,7 +183,7 @@
             
              <configurationGroup name="month_year">
               <displayName>The field 'month_year'</displayName>
-              <version>4.2.0.4</version>
+              <version>4.3.4.11</version>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
                 <value>DATE_YM</value>
@@ -200,7 +200,7 @@
             
            <configurationGroup name="days_present">
               <displayName>The fields 'days_present'</displayName>
-              <version>4.2.0.7</version>
+              <version>4.3.4.11</version>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
                 <value>INT</value>
@@ -221,7 +221,7 @@
 
 	 <configurationGroup name="days_or">
               <displayName>The fields 'days_or'</displayName>
-              <version>4.2.0.7</version>
+              <version>4.3.4.11</version>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
                 <value>INT</value>
@@ -238,7 +238,7 @@
 
             <configurationGroup name="days_od">
               <displayName>The fields 'days_od'</displayName>
-              <version>4.2.0.7</version>
+              <version>4.3.4.11</version>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
                 <value>INT</value>
@@ -257,7 +257,7 @@
 
 	   <configurationGroup name="days_leave">
               <displayName>The fields 'days_leave'</displayName>
-              <version>4.2.0.7</version>
+              <version>4.3.4.11</version>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
                 <value>INT</value>
@@ -278,7 +278,7 @@
 
           <configurationGroup name="work_days">
               <displayName>The fields 'work_days'</displayName>
-              <version>4.2.0.13</version>
+              <version>4.3.4.11</version>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
                 <value>INT</value>
@@ -296,7 +296,7 @@
 
 	<configurationGroup name="final_work_days">
               <displayName>The fields 'final_work_days'</displayName>
-              <version>4.3.4.9</version>
+              <version>4.3.4.11</version>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
                 <value>INT</value>
@@ -313,7 +313,7 @@
 
            <configurationGroup name="off_days">
               <displayName>The fields 'off_days'</displayName>
-              <version>4.2.0.13</version>
+              <version>4.3.4.11</version>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
                 <value>INT</value>
@@ -330,7 +330,7 @@
 
 	 <configurationGroup name="leave_days">
               <displayName>The fields 'leave_days'</displayName>
-              <version>4.2.0.13</version>
+              <version>4.3.4.11</version>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
                 <value>INT</value>
@@ -348,7 +348,7 @@
 
 	<configurationGroup name="other_days">
               <displayName>The fields 'other_days'</displayName>
-              <version>4.2.0.15</version>
+              <version>4.3.4.11</version>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
                 <value>INT</value>
@@ -365,7 +365,7 @@
 
 
   	    <configurationGroup name="position">
-		<version>4.2.0.3</version>
+		<version>4.3.4.11</version>
               <displayName>The fields 'person_position'</displayName>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
@@ -375,7 +375,7 @@
                 <configurationGroup name="display">
                   <configurationGroup name="default">
                     <configuration name="fields">
-                      <version>4.2.0.2</version>
+                      <version>4.3.4.11</version>
                       <value>position:facility</value>
                     </configuration>
                   </configurationGroup>
@@ -388,7 +388,7 @@
             </configurationGroup> <!-- person_position -->
             
              <configurationGroup name="days_absent">
-		<version>4.2.0.11</version>
+		<version>4.3.4.11</version>
               <displayName>The fields 'days_absent'</displayName>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
@@ -401,7 +401,7 @@
             </configurationGroup> <!-- days_absent -->
             
             <configurationGroup name="absenteeism_rate">
-	     <version>4.2.0.11</version>
+	     <version>4.3.4.11</version>
               <displayName>The fields 'absenteeism_rate'</displayName>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
@@ -415,7 +415,7 @@
 
 
 	<configurationGroup name="absolute_days_absent">
-		<version>4.2.0.15</version>
+		<version>4.3.4.11</version>
               <displayName>The fields 'absolute_days_absent'</displayName>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
@@ -428,7 +428,7 @@
             </configurationGroup> <!-- absolute_days_absent -->
             
             <configurationGroup name="absolute_absenteeism_rate">
-	     <version>4.2.0.15</version>
+	     <version>4.3.4.11</version>
               <displayName>The fields 'absolute_absenteeism_rate'</displayName>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
@@ -442,7 +442,7 @@
 
 
 	<configurationGroup name="days_not_at_facility">
-		<version>4.2.0.15</version>
+		<version>4.3.4.11</version>
               <displayName>The fields 'days_not_at_facility'</displayName>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
@@ -455,7 +455,7 @@
             </configurationGroup> <!-- days_not_at_facility -->
             
             <configurationGroup name="per_days_not_at_facility">
-	     <version>4.2.0.15</version>
+	     <version>4.3.4.11</version>
               <displayName>The fields 'per_days_not_at_facility'</displayName>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
@@ -468,7 +468,7 @@
             </configurationGroup> <!-- per_days_not_at_facility -->
             
             <configurationGroup name="month_year_day">
-		      <version>4.2.0.11</version>
+		      <version>4.3.4.11</version>
               <displayName>The fields 'month_year_day'</displayName>
               <configuration name="formfield">
                 <displayName>The form field type</displayName>
