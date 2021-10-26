@@ -99,7 +99,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 	   
 
 	  }else{
-        $divide=( $person_attendance->work_days - ($person_attendance->days_or + $person_attendance->days_leave))
+        $divide=($person_attendance->work_days - ($person_attendance->days_or + $person_attendance->days_leave));
          if($divide==0){
           $person_attendance->absenteeism_rate=0;
          }
