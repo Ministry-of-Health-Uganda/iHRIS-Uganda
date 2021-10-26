@@ -104,7 +104,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
           $person_attendance->absenteeism_rate=0;
          }
          else{
-          $person_attendance->absenteeism_rate = ($person_attendance->days_absent /$divide)*100);
+          $person_attendance->absenteeism_rate = ($person_attendance->days_absent/$divide)*100));
          }
           //$month_year_split = explode('-',$form->getField("month_year")->getDBValue());
           //$month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
