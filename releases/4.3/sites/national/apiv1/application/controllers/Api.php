@@ -47,7 +47,7 @@ Class Api extends REST_Controller
             $this->response($response, 400);
         }
     }
-    public function person_attend_get($from,$to) 
+    public function person_attend_get($fro,$t) 
     {
             $from=date("Y-m", strtotime($fro) );
             $to=date("Y-m", strtotime($t) );   
