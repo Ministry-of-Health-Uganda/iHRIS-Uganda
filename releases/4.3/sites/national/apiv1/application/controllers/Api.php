@@ -59,7 +59,7 @@ Class Api extends REST_Controller
             else{
 
             $response['status'] = 'FAILED';
-            $response['message'] = 'ihrisdata is not found. Force generate stafflist ';
+            $response['message'] = 'Attendance Data not Found';
             $response['error'] = TRUE;
             $this->response($response, 400);
         }
