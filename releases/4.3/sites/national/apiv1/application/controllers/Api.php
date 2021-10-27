@@ -51,7 +51,7 @@ Class Api extends REST_Controller
     {
             $from=date("Y-m", strtotime($fro) );
             $to=date("Y-m", strtotime($t) );   
-            $results = $this->requestHandler->getAttendance($from,$to);
+            $results = $this->requestHandler->attendance_data($from,$to);
             if(!empty($results)){
   
             $this->response($results, REST_Controller::HTTP_OK);
