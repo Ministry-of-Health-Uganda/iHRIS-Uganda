@@ -72,7 +72,7 @@ Class Request_Model extends CI_Model
         $query=$this->db->query("SELECT `primary_form+parent` as ihris_pid,`position_attedance+facility`
         as facility_id,`primary_form+days_present` as P,`primary_form+days_od` as O, `primary_form+days_or` as
          R, `primary_form+days_leave` as L,DATE_FORMAT(`primary_form+month_year_day`,'%Y-%m') as duty_date 
-         from zebra_person_attendance_all WHERE  DATE_FORMAT(`primary_form+month_year_day`,'%Y-%m') between '2021-08' AND '2021-08'
+         from zebra_person_attendance_all WHERE  DATE_FORMAT(`primary_form+month_year_day`,'%Y-%m') between '$from' AND '$to'
         ");
     return $query->result();
            
