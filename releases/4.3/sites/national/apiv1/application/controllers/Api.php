@@ -47,6 +47,23 @@ Class Api extends REST_Controller
             $this->response($response, 400);
         }
     }
+    public function person_attend_get($from,$to) 
+    {
+            $from=date("Y-m", strtotime($fro) );
+            $to=date("Y-m", strtotime($t) );   
+            $results = $this->requestHandler->getAttendance($from,$to);
+            if(!empty($results)){
+  
+            $this->response($results, REST_Controller::HTTP_OK);
+            }
+            else{
+
+            $response['status'] = 'FAILED';
+            $response['message'] = 'ihrisdata is not found. Force generate stafflist ';
+            $response['error'] = TRUE;
+            $this->response($response, 400);
+        }
+    }
     
   
 

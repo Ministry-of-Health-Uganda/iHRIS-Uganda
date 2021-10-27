@@ -1,9 +1,5 @@
 <?php
 
-
-
-
-
 $i2ce_site_user_access_init = null;
 $script = array_shift( $argv );
 if (file_exists(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages/local' . DIRECTORY_SEPARATOR . 'config.values.php')) {
@@ -75,18 +71,10 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 	$count++;
 	
            }
-        
-
-	
-        $totalDays = 0;
-	    $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;
-
-	
-	
       
-            	
-            	
-         if(isset($person_attendance->work_days)){
+      $totalDays = 0;
+	    $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;      	
+    if(isset($person_attendance->work_days)){
           $person_attendance->days_absent = ($person_attendance->work_days - ($person_attendance->days_present + $person_attendance->days_or + $person_attendance->days_leave)) ;
 	  if($person_attendance->days_absent < 0){
 		$person_attendance->days_absent = 0;
@@ -96,7 +84,6 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 
 	  if(!isset($person_attendance->work_days)){
            //$person_attendance->absenteeism_rate = NULL;
-	   
 
 	  }else{
         $divide=($person_attendance->work_days - ($person_attendance->days_or + $person_attendance->days_leave));
