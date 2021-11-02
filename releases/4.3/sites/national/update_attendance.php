@@ -51,7 +51,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 		        $person_attendance->populate();
 
             print_r($person_attendance);
-            exit;
+            exit();
 
    
 			    
