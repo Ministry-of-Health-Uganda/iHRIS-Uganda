@@ -50,8 +50,11 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 		        $person_attendance = $form_factory->createContainer( 'person_attendance'.'|'.$id );
 		        $person_attendance->populate();
 
+            print_r($person_attendance);
+            exit;
+
    
-			    echo $person_attendance->month;
+			    
           exit;
        if(isset($person_attendance->days_present)||isset($person_attendance->days_or)||isset($person_attendance->days_od)||isset($person_attendance->days_leave)){
 
