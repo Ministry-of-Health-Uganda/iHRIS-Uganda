@@ -42,7 +42,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
                     'style' => 'null'
                     );
 
-        $person_attendance_id = I2CE_FormStorage::listFields( "person_attendance", array('id'), $find_id );
+    $person_attendance_id = I2CE_FormStorage::listFields( "person_attendance", array('id'), $find_id );
         
      if (!isset($person_attendance_id)){
         echo "No Ids \n";
@@ -52,6 +52,10 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
            
 		        $person_attendance = $form_factory->createContainer( 'person_attendance'.'|'.$id );
 		        $person_attendance->populate();
+
+          echo $person_attendance->month;
+          exit();
+
 
 
 			
