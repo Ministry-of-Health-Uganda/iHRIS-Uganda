@@ -49,7 +49,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
           'field' => 'month_year_day',
           'value' => $month_year_day
 
-          )
+        );
 
      $person_attendance_id = I2CE_FormStorage::listFields( "person_attendance", array('id'), $find_id );
   
