@@ -42,12 +42,12 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
         //             'style' => 'null',
         //             'value' =>
         //             );
-        $month_year_day = "2021-07-01";
+      
         $find_id = array(
           'operator' => 'FIELD_LIMIT',
           'style' => 'equals',
-          'field' => 'month_year_day',
-          'value' => $month_year_day
+          'field' => 'month_year',
+          'value' => '2021-07'
 
         );
 
