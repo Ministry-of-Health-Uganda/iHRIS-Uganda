@@ -36,65 +36,36 @@ $form_factory = I2CE_FormFactory::instance();
 echo "Memory Limit: " . ini_get( "memory_limit" ) . "\n";
 echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 
+        // $find_id = array(
+        //             'operator' => 'FIELD_LIMIT',
+        //             'field' => 'month_year',
+        //             'style' => 'null',
+        //             'value' =>
+        //             );
+        $month_year_day = "2021-07-01";
         $find_id = array(
-                    'operator' => 'FIELD_LIMIT',
-                    'field' => 'position',
-                    'style' => 'null'
-                    );
+          'operator' => 'FIELD_LIMIT',
+          'style' => 'equals',
+          'field' => 'month_year_day',
+          'value' => $month_year_day
 
-       // $person_attendance_id = I2CE_FormStorage::listFields( "person_attendance", array('id'), $find_id );
+          )
+
+     $person_attendance_id = I2CE_FormStorage::listFields( "person_attendance", array('id'), $find_id );
   
-    //  if (!isset($person_attendance_id)){
-    //     echo "No Ids \n";
-    //   }else{
+     if (!isset($person_attendance_id)){
+        echo "No Ids \n";
+      }else{
                 $count = 0;
-    //     foreach ( $person_attendance_id as $id=>$value  ){                //echo 'person_attendance'.'|'.$key ;
-           
-		        $person_attendance = $form_factory->createContainer( 'person_attendance|634025');
+        foreach ( $person_attendance_id as $id=>$value  ){ 
+		        $person_attendance = $form_factory->createContainer( 'person_attendance|'.$id."'");
 		        $person_attendance->populate();
 
-           // print_r($person_attendance->days_leave);
-          // print_r($person_attendance->month_year);
-
-
-			
-    // if(isset($person_attendance->days_present)||isset($person_attendance->days_or)||isset($person_attendance->days_od)||isset($person_attendance->days_leave)){
-
-    //  if ($person_attendance->month_year->isValid() ) {
-
-		//$current_year = date('Y', strtotime('$person_attendance->month_year_day'));
-
-                //$current_month = date('F', strtotime('$person_attendance->month_year_day'));
-      
-	  	$values = explode('-',$person_attendance->getField("month_year")->getDBValue());
-
-		//I2CE::raiseError($current_year."---".$values[0]);
-
-		//I2CE::raiseError($current_month."---".$values[1]);
-
-	   	$no_of_days=cal_days_in_month(CAL_GREGORIAN,$values[1],$values[0]);
-
-	    $count++;
-	
-          // }
-        
-
-	
+        $values = explode('-',$person_attendance->getField("month_year")->getDBValue());
+        $no_of_days=cal_days_in_month(CAL_GREGORIAN,$values[1],$values[0]);
+        $count++;
         $totalDays = 0;
-	    $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;
-
-	
-	
-      
-            	
-            	
-    // if(isset($person_attendance->work_days)){
-    //     $person_attendance->days_absent = ($person_attendance->work_days - ($person_attendance->days_present + $person_attendance->days_or + $person_attendance->days_leave)) ;
-	  // if($person_attendance->days_absent < 0){
-	  //   	$person_attendance->days_absent = 0;
-	  // }
-	  //    $person_attendance->final_work_days = ($person_attendance->work_days - ( $person_attendance->days_or + $person_attendance->days_leave)) ;
-	  // }
+        $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;
 
 	     if(!isset($person_attendance->work_days)){
            $person_attendance->absenteeism_rate = 0;
@@ -103,15 +74,11 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 	        }
        else{
           $person_attendance->absenteeism_rate = ($person_attendance->days_absent /( $person_attendance->work_days - ($person_attendance->days_or + $person_attendance->days_leave))*100);
-          //$month_year_split = explode('-',$form->getField("month_year")->getDBValue());
+          
           }
-	  
 	  ///No of days absolutely absent
           $person_attendance->absolute_days_absent = ($no_of_days - $totalDays) ;
           $person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
-          //$month_year_split = explode('-',$form->getField("month_year")->getDBValue());
-          //$month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
-
 	  ///No of days not at facility
           $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
           $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
@@ -121,26 +88,17 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 	        $person_attendance->getField("month_year_day")->setFromDB( $month_year_day );
           $person_attendance->save( $user );
           $person_attendance->cleanup();
-          
-        
-
           if ($person_attendance){
-  
 	      	$person_attendance->setInvalidMessage('days_present', 'Updated');
-          
           }
 		      else{
-            $person_attendance->setInvalidMessage('days_present', 'Enter a value in atleast one field');
+          $person_attendance->setInvalidMessage('days_present', 'Enter a value in atleast one field');
 
           }
           unset( $person_attendance );
+        }
+      }
 	   
-	       
-
-	
-	    
-	
-
 echo "DONE  ". $count." records have attendance information updated  ";
 
 ?>
