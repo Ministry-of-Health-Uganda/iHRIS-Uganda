@@ -52,6 +52,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
             $form_id ='person_attendance|'.$id;
 		        $person_attendance = $form_factory->createContainer($form_id);
 		        $person_attendance->populate();
+        if ( $person_attendance->month_year->isValid() ) {
 
         $values = explode('-',$person_attendance->getField("month_year")->getDBValue());
        // print_r($values);
@@ -91,7 +92,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
           }
           unset( $person_attendance );
         }
-      }
+      }}
 	   
 echo "DONE  ". $count." records have attendance information updated  ";
 
