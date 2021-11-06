@@ -101,7 +101,8 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
           // count($person_attendance->)
 	   
 
-	  }else{
+	      }
+    else{
           $person_attendance->absenteeism_rate = ($person_attendance->days_absent /( $person_attendance->work_days - ($person_attendance->days_or + $person_attendance->days_leave))*100);
           //$month_year_split = explode('-',$form->getField("month_year")->getDBValue());
           //$month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
@@ -118,11 +119,16 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
           $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
           $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
           //I2CE::raiseError(" date ".$month_year );
-	      $person_attendance->getField("month_year_day")->setFromDB( $month_year_day );
+	        $person_attendance->getField("month_year_day")->setFromDB( $month_year_day );
           }
-          else{
-	      	$person_attendance->setInvalidMessage('days_present', 'Enter a value in atleast one field');
-		      }
+
+          if ($person_attendance){
+  
+	      	$person_attendance->setInvalidMessage('days_present', 'Updated');
+		      else{
+            $person_attendance->setInvalidMessage('days_present', 'Enter a value in atleast one field');
+
+          }
 	   
 	   }
 
