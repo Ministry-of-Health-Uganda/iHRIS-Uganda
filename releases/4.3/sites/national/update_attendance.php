@@ -50,7 +50,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
                 $count = 0;
     //     foreach ( $person_attendance_id as $id=>$value  ){                //echo 'person_attendance'.'|'.$key ;
            
-		        $person_attendance = $form_factory->createContainer( 'person_attendance|634036');
+		        $person_attendance = $form_factory->createContainer( 'person_attendance|634024');
 		        $person_attendance->populate();
 
            // print_r($person_attendance->days_leave);
@@ -120,16 +120,21 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
           $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
           //I2CE::raiseError(" date ".$month_year );
 	        $person_attendance->getField("month_year_day")->setFromDB( $month_year_day );
+          $person_attendance->save( $user );
+          $person_attendance->cleanup();
+          
           }
 
           if ($person_attendance){
   
 	      	$person_attendance->setInvalidMessage('days_present', 'Updated');
+          
           }
 		      else{
             $person_attendance->setInvalidMessage('days_present', 'Enter a value in atleast one field');
 
           }
+          unset( $person_attendance );
 	   
 	   }
 
