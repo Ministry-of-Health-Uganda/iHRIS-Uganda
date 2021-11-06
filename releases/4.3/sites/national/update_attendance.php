@@ -42,37 +42,14 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
         //             'style' => 'null',
         //             'value' =>
         //             );
-      $month_year="2021-12-01";
+      $month_year="2021-12";
        $find_id = array(
                         'operator' => 'FIELD_LIMIT',
                         'style' => 'equals',
-                        'field' => 'month_year_day',
+                        'field' => 'month_year',
                         'value' => $month_year,
        );
        
-    
-// 		$find_pers = array(
-//       'operator' => 'AND',
-//       'operand' => array(
-//                     0 => array(
-//                           'operator' => 'FIELD_LIMIT',
-//                           'style' => 'null',
-//                           'field' => 'position',
-//                           'data' => array(
-//                                           'value' =>"",
-                                          
-//                           ),
-//                     1 => array(
-//                                'operator' => 'FIELD_LIMIT',
-//                                'style' => 'equals',
-//                                'field' => 'month_year_day',
-//                                'data' => array(
-//                                                'value' => $month_year,
-//                                                ),
-//                                ),
-//                       )
-// ));
-
 
      $person_attendance_id = I2CE_FormStorage::listFields( "person_attendance", array('id'), $find_id );
   
@@ -86,7 +63,8 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 		        $person_attendance->populate();
 
         $values = explode('-',$person_attendance->getField("month_year")->getDBValue());
-        print_r($values);
+       // print_r($values);
+        print_r($person_attendance->month_year);
     //     $no_of_days=cal_days_in_month(CAL_GREGORIAN,$values[1],$values[0]);
     //     $count++;
     //     $totalDays = 0;
