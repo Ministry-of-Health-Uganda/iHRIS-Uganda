@@ -36,21 +36,12 @@ $form_factory = I2CE_FormFactory::instance();
 echo "Memory Limit: " . ini_get( "memory_limit" ) . "\n";
 echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
           
-        // $find_id = array(
-        //             'operator' => 'FIELD_LIMIT',
-        //             'field' => 'position',
-        //             'style' => 'null',
-        //             'value' =>
-        //             );
-      $month_year="2021-12";
-       $find_id = array(
-                        'operator' => 'FIELD_LIMIT',
-                        'style' => 'equals',
-                        'field' => 'month_year',
-                        'value' => $month_year,
-       );
-       
-
+        $find_id = array(
+                    'operator' => 'FIELD_LIMIT',
+                    'field' => 'position',
+                    'style' => 'null',
+                    'value' =>
+          );
      $person_attendance_id = I2CE_FormStorage::listFields( "person_attendance", array('id'), $find_id );
   
      if (!isset($person_attendance_id)){
@@ -63,8 +54,8 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 		        $person_attendance->populate();
 
         $values = explode('-',$person_attendance->getField("month_year")->getDBValue());
-       // print_r($values);
-        print_r($person_attendance->month_year);
+        print_r($values);
+      
     //     $no_of_days=cal_days_in_month(CAL_GREGORIAN,$values[1],$values[0]);
     //     $count++;
     //     $totalDays = 0;
