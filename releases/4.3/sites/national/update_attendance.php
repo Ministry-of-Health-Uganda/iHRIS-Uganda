@@ -54,7 +54,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 		        $person_attendance->populate();
 
            // print_r($person_attendance->days_leave);
-           print_r("Month Year".$person_attendance->month_year);
+           echo ("Month Year".$person_attendance->month_year);
 
 
 			
