@@ -42,10 +42,8 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
         //             'style' => 'null',
         //             'value' =>
         //             );
-        $find_id= array(
-          'operator' => 'AND',
-          'operand' => array(
-                        0 => array(
+       
+        $find_id= array('operator' => 'AND', 'operand' => array( 0 => array(
                                       'operator' => 'FIELD_LIMIT',
                                       'field' => 'position',
                                       'style' => 'null',
@@ -55,12 +53,9 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
                                    'operator' => 'FIELD_LIMIT',
                                    'style' => 'equals',
                                    'field' => 'month_year_day',
-                                   'data' => array(
-                                                   'value' => '2021-07-01',
-                                                   ),
-                                   ),
-                          )
-                        );
+                                   'data' => array('value' => '2021-07-01'),
+                                   )
+                                  ));
 
 
      $person_attendance_id = I2CE_FormStorage::listFields( "person_attendance", array('id'), $find_id );
