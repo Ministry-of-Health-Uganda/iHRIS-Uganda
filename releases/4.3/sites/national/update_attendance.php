@@ -43,14 +43,14 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
                     );
 
        // $person_attendance_id = I2CE_FormStorage::listFields( "person_attendance", array('id'), $find_id );
-        $person_attendance_id = array('id'=>'634036');
-     if (!isset($person_attendance_id)){
-        echo "No Ids \n";
-      }else{
-                $count = 0;
-        foreach ( $person_attendance_id as $id=>$value  ){                //echo 'person_attendance'.'|'.$key ;
+  
+    //  if (!isset($person_attendance_id)){
+    //     echo "No Ids \n";
+    //   }else{
+    //             $count = 0;
+    //     foreach ( $person_attendance_id as $id=>$value  ){                //echo 'person_attendance'.'|'.$key ;
            
-		        $person_attendance = $form_factory->createContainer( 'person_attendance'.'|'.$id );
+		        $person_attendance = $form_factory->createContainer( 'person_attendance|634036');
 		        $person_attendance->populate();
 
             print_r($person_attendance->days_leave);
@@ -126,7 +126,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 	// 	if(!isset($person_attendance->work_days)){
 
 	// 		$person_attendance->final_work_days = NULL;
-	 	}
+	 //	}
 	    }
 	    
 	
