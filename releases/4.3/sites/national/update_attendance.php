@@ -40,7 +40,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
                     'operator' => 'FIELD_LIMIT',
                     'field' => 'position',
                     'style' => 'null',
-                    'value' =>
+                    'value' =>,
                     );
        
     	$month_year="2021-07";
