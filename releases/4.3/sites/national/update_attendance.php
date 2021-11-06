@@ -74,7 +74,8 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
       }else{
                 $count = 0;
         foreach ( $person_attendance_id as $id=>$value  ){ 
-		        $person_attendance = $form_factory->createContainer( 'person_attendance|'.$id."'");
+            $form_id ='person_attendance|'.$id;
+		        $person_attendance = $form_factory->createContainer($form_id);
 		        $person_attendance->populate();
 
         $values = explode('-',$person_attendance->getField("month_year")->getDBValue());
