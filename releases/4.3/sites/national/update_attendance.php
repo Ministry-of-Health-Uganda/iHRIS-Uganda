@@ -64,7 +64,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
                                                ),
                                ),
                       )
-);
+));
 
 
      $person_attendance_id = I2CE_FormStorage::listFields( "person_attendance", array('id'), $find_id );
