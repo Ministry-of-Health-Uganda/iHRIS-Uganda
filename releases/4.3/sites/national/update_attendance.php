@@ -66,10 +66,10 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
            $person_attendance->days_absent = 0;
            //save the form here
 	        }
-       else{
-          $person_attendance->absenteeism_rate = ($person_attendance->days_absent /( $person_attendance->work_days - ($person_attendance->days_or + $person_attendance->days_leave))*100);
+      //  else{
+      //     $person_attendance->absenteeism_rate = ($person_attendance->days_absent /( $person_attendance->work_days - ($person_attendance->days_or + $person_attendance->days_leave))*100);
           
-          }
+      //     }
 	  ///No of days absolutely absent
           $person_attendance->absolute_days_absent = ($no_of_days - $totalDays) ;
           $person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
