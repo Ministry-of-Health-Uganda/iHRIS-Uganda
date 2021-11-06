@@ -36,35 +36,35 @@ $form_factory = I2CE_FormFactory::instance();
 echo "Memory Limit: " . ini_get( "memory_limit" ) . "\n";
 echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 
-        // $find_id = array(
-        //             'operator' => 'FIELD_LIMIT',
-        //             'field' => 'position',
-        //             'style' => 'null',
-        //             'value' =>
-        //             );
+        $find_id = array(
+                    'operator' => 'FIELD_LIMIT',
+                    'field' => 'position',
+                    'style' => 'null',
+                    'value' =>
+                    );
        
     	$month_year="2021-07";
-		$find_pers = array(
-      'operator' => 'AND',
-      'operand' => array(
-                    0 => array(
-                          'operator' => 'FIELD_LIMIT',
-                          'style' => 'null',
-                          'field' => 'position',
-                          'data' => array(
-                                          'value' =>"",
+// 		$find_pers = array(
+//       'operator' => 'AND',
+//       'operand' => array(
+//                     0 => array(
+//                           'operator' => 'FIELD_LIMIT',
+//                           'style' => 'null',
+//                           'field' => 'position',
+//                           'data' => array(
+//                                           'value' =>"",
                                           
-                          ),
-                    1 => array(
-                               'operator' => 'FIELD_LIMIT',
-                               'style' => 'equals',
-                               'field' => 'month_year',
-                               'data' => array(
-                                               'value' => $month_year,
-                                               ),
-                               ),
-                      )
-));
+//                           ),
+//                     1 => array(
+//                                'operator' => 'FIELD_LIMIT',
+//                                'style' => 'equals',
+//                                'field' => 'month_year',
+//                                'data' => array(
+//                                                'value' => $month_year,
+//                                                ),
+//                                ),
+//                       )
+// ));
 
 
      $person_attendance_id = I2CE_FormStorage::listFields( "person_attendance", array('id'), $find_id );
