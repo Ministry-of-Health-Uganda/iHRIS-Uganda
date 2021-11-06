@@ -42,16 +42,15 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
         //             'style' => 'null',
         //             'value' =>
         //             );
-
+      $month_year="2021-12-01";
        $find_id = array(
-                                                        'operator' => 'FIELD_LIMIT',
-                                                        'style' => 'equals',
-                                                        'field' => 'month_year_day',
-                                                        'data' => array(
-                                                        'value' => $month_year,
-                                                         )
+                        'operator' => 'FIELD_LIMIT',
+                        'style' => 'equals',
+                        'field' => 'month_year_day',
+                        'value' => $month_year,
+       );
        
-    	$month_year="2021-12-01";
+    
 // 		$find_pers = array(
 //       'operator' => 'AND',
 //       'operand' => array(
