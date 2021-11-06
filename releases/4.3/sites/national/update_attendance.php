@@ -125,6 +125,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
           if ($person_attendance){
   
 	      	$person_attendance->setInvalidMessage('days_present', 'Updated');
+          }
 		      else{
             $person_attendance->setInvalidMessage('days_present', 'Enter a value in atleast one field');
 
