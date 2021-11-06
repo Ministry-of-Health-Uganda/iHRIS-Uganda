@@ -58,9 +58,9 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 
 
 			
-    if(isset($person_attendance->days_present)||isset($person_attendance->days_or)||isset($person_attendance->days_od)||isset($person_attendance->days_leave)){
+    // if(isset($person_attendance->days_present)||isset($person_attendance->days_or)||isset($person_attendance->days_od)||isset($person_attendance->days_leave)){
 
-     if ($person_attendance->month_year->isValid() ) {
+    //  if ($person_attendance->month_year->isValid() ) {
 
 		//$current_year = date('Y', strtotime('$person_attendance->month_year_day'));
 
@@ -96,13 +96,13 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 	  //    $person_attendance->final_work_days = ($person_attendance->work_days - ( $person_attendance->days_or + $person_attendance->days_leave)) ;
 	  // }
 
-	  if(!isset($person_attendance->work_days)){
-           //$person_attendance->absenteeism_rate = NULL;
-          // count($person_attendance->)
+	  // if(!isset($person_attendance->work_days)){
+    //        //$person_attendance->absenteeism_rate = NULL;
+    //       // count($person_attendance->)
 	   
 
-	      }
-    else{
+	  //     }
+    // else{
           $person_attendance->absenteeism_rate = ($person_attendance->days_absent /( $person_attendance->work_days - ($person_attendance->days_or + $person_attendance->days_leave))*100);
           //$month_year_split = explode('-',$form->getField("month_year")->getDBValue());
           //$month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
@@ -123,7 +123,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
           $person_attendance->save( $user );
           $person_attendance->cleanup();
           
-          }
+        //  }
 
           if ($person_attendance){
   
