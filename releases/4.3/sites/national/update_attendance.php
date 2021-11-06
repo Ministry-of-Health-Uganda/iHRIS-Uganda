@@ -56,10 +56,10 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
      if (!isset($person_attendance_id)){
         echo "No Ids \n";
       }else{
-        //         $count = 0;
-        // foreach ( $person_attendance_id as $id=>$value  ){ 
-		    //     $person_attendance = $form_factory->createContainer( 'person_attendance|'.$id."'");
-		    //     $person_attendance->populate();
+                $count = 0;
+           foreach ( $person_attendance_id as $id=>$value  ){ 
+		       $person_attendance = $form_factory->createContainer( 'person_attendance|'.$id."'");
+		       $person_attendance->populate();
 
         $values = explode('-',$person_attendance->getField("month_year")->getDBValue());
         print_r($values);
@@ -67,7 +67,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
         $count++;
         $totalDays = 0;
         $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;
-      }
+      
 // 	     if(!isset($person_attendance->work_days)){
 //            $person_attendance->absenteeism_rate = 0;
 //            $person_attendance->days_absent = 0;
@@ -97,8 +97,8 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 
 //           }
 //           unset( $person_attendance );
-//         }
-//       }
+      }
+     }
 	   
 // echo "DONE  ". $count." records have attendance information updated  ";
 
