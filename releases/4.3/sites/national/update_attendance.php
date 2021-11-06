@@ -43,7 +43,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
                     );
 
        // $person_attendance_id = I2CE_FormStorage::listFields( "person_attendance", array('id'), $find_id );
-        $person_attendance_id = ('1743566');
+        $person_attendance_id = array('1743566');
      if (!isset($person_attendance_id)){
         echo "No Ids \n";
       }else{
