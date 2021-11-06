@@ -43,7 +43,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
         //             'value' =>
         //             );
        
-    $month_year_day="2021-07-01";
+    	$month_year_day="2021-07-01";
 		$find_pers = array(
       'operator' => 'AND',
       'operand' => array(
@@ -51,7 +51,9 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
                           'operator' => 'FIELD_LIMIT',
                           'style' => 'null',
                           'field' => 'position',
-                           'value' =>              
+                          'data' => array(
+                                          'value' => 
+                                          
                           ),
                     1 => array(
                                'operator' => 'FIELD_LIMIT',
