@@ -53,13 +53,14 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 		        $person_attendance = $form_factory->createContainer( 'person_attendance|634036');
 		        $person_attendance->populate();
 
-            print_r($person_attendance->days_leave);
+           // print_r($person_attendance->days_leave);
+           print_r("Month Year".$person_attendance->month_year);
 
 
 			
-  //      if(isset($person_attendance->days_present)||isset($person_attendance->days_or)||isset($person_attendance->days_od)||isset($person_attendance->days_leave)){
+    // if(isset($person_attendance->days_present)||isset($person_attendance->days_or)||isset($person_attendance->days_od)||isset($person_attendance->days_leave)){
 
-  //      if ( $person_attendance->month_year->isValid() ) {
+     //if ( $person_attendance->month_year->isValid() ) {
 
 	// 	//$current_year = date('Y', strtotime('$person_attendance->month_year_day'));
 
