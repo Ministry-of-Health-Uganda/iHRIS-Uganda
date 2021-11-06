@@ -53,6 +53,8 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 		        $person_attendance = $form_factory->createContainer( 'person_attendance'.'|'.$id );
 		        $person_attendance->populate();
 
+            echo $person_attendance->days_leave;
+
 
 			
   //      if(isset($person_attendance->days_present)||isset($person_attendance->days_or)||isset($person_attendance->days_od)||isset($person_attendance->days_leave)){
