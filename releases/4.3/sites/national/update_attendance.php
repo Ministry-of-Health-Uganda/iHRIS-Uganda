@@ -50,7 +50,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
                 $count = 0;
     //     foreach ( $person_attendance_id as $id=>$value  ){                //echo 'person_attendance'.'|'.$key ;
            
-		        $person_attendance = $form_factory->createContainer( 'person_attendance|634024');
+		        $person_attendance = $form_factory->createContainer( 'person_attendance|634025');
 		        $person_attendance->populate();
 
            // print_r($person_attendance->days_leave);
@@ -96,16 +96,15 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 	  //    $person_attendance->final_work_days = ($person_attendance->work_days - ( $person_attendance->days_or + $person_attendance->days_leave)) ;
 	  // }
 
-	  // if(!isset($person_attendance->work_days)){
-    //        //$person_attendance->absenteeism_rate = NULL;
-    //       // count($person_attendance->)
-	   
-
-	  //     }
-    // else{
+	     if(!isset($person_attendance->work_days)){
+           $person_attendance->absenteeism_rate = 0;
+           $person_attendance->days_absent = 0;
+           //save the form here
+	        }
+       else{
           $person_attendance->absenteeism_rate = ($person_attendance->days_absent /( $person_attendance->work_days - ($person_attendance->days_or + $person_attendance->days_leave))*100);
           //$month_year_split = explode('-',$form->getField("month_year")->getDBValue());
-          //$month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
+          }
 	  
 	  ///No of days absolutely absent
           $person_attendance->absolute_days_absent = ($no_of_days - $totalDays) ;
@@ -123,7 +122,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
           $person_attendance->save( $user );
           $person_attendance->cleanup();
           
-        //  }
+        
 
           if ($person_attendance){
   
