@@ -32,6 +32,26 @@ Class Api extends REST_Controller
             $this->response($response, 400);
     }
   }
+  public function hwdata_get(){
+        
+    $result = $this->db->query("SELECT
+    DISTINCT trim(`person+id`) as ihris_pid,
+    trim(`district+id`) as district_id,
+    `district+name` as district,
+    `national_id+id_num` as national_id,
+    `facility+facility_type` as facility_type,
+    trim(`facility+id`) as facility_id,
+    `facility+name` as facility,
+    trim(`job+id`) as job_id, 
+    `job+title` as job,
+    `person+surname` as surname,
+    `person+firstname` as firstname,
+    `person+othername` as othername,
+    `person_contact_personal+mobile_phone` as phone 
+    from  `national_manage`.`zebra_staff_list`
+     ")->result();
+     $this->response($result);
+    } 
     public function allihrisdata_get() 
     {
             $results = $this->requestHandler->getallihrisdata();
