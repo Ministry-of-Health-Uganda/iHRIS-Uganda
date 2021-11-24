@@ -24,7 +24,7 @@ if (file_exists(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages/local' . DIRECT
 	require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages/config.values.php';
 }
 
-$i2ce_site_i2ce_path = "/var/lib/iHRIS/releases/4.2/i2ce";
+$i2ce_site_i2ce_path = "/var/lib/iHRIS/releases/4.3/i2ce";
 
 require_once $i2ce_site_i2ce_path . DIRECTORY_SEPARATOR . 'I2CE_config.inc.php';
 
