@@ -48,14 +48,15 @@ Class Api extends REST_Controller
     `person+firstname` as firstname,
     `person+othername` as othername,
     `person_contact_personal+mobile_phone` as phone,
-    CASE WHEN `demographic+gender` ='gender|M' THEN 'Male'
-    WHEN `demographic+gender` ='gender|F' THEN 'Female' 
-    ELSE 'NULL'
-    END  as gender
+    `demographic+gender` as gender
+  
     from  `national_manage`.`zebra_staff_list`
      ")->result();
      $this->response($result);
     } 
+    // CASE WHEN `demographic+gender` ='gender|M' THEN 'Male'
+    // WHEN `demographic+gender` ='gender|F' THEN 'Female' 
+    // ELSE 'NULL' END  as gender
     public function allihrisdata_get() 
     {
             $results = $this->requestHandler->getallihrisdata();
