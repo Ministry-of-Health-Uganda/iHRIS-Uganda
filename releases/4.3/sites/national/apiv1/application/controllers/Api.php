@@ -48,7 +48,7 @@ Class Api extends REST_Controller
     `person+firstname` as firstname,
     `person+othername` as othername,
     `person_contact_personal+mobile_phone` as phone ,
-    DATE_FORMAT(`demographic+birth_date`,'%Y%m%d') as birth_date,
+    DATE_FORMAT(`demographic+birth_date`,'%Y/%m/%d') as birth_date,
     CASE WHEN `demographic+gender` ='gender|M' THEN 'Male'
     WHEN `demographic+gender` ='gender|F' THEN 'Female' 
     ELSE 'NULL' END  as gender
