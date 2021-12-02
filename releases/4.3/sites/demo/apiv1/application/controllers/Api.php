@@ -47,7 +47,11 @@ Class Api extends REST_Controller
     `person+surname` as surname,
     `person+firstname` as firstname,
     `person+othername` as othername,
-    `person_contact_personal+mobile_phone` as phone 
+    `person_contact_personal+mobile_phone` as phone,
+    CASE WHEN `demographic+gender` ='gender|M' THEN 'Male'
+    WHEN `demographic+gender` ='gender|F' THEN 'Female'
+    ELSE 'NULL'
+    END
     from  `national_manage`.`zebra_staff_list`
      ")->result();
      $this->response($result);
