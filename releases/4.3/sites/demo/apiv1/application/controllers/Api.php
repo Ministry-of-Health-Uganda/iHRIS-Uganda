@@ -49,8 +49,8 @@ Class Api extends REST_Controller
     `person+othername` as othername,
     `person_contact_personal+mobile_phone` as phone,
     CASE WHEN `demographic+gender` ='gender|M' THEN 'Male'
-    WHEN `demographic+gender` ='gender|F' THEN 'Female'
-    ELSE 'NULL'
+    WHEN `demographic+gender` ='gender|F' THEN 'Female' 
+    ELSE 'NULL' as gender
     END
     from  `national_manage`.`zebra_staff_list`
      ")->result();
