@@ -50,8 +50,8 @@ Class Api extends REST_Controller
     `person_contact_personal+mobile_phone` as phone,
     CASE WHEN `demographic+gender` ='gender|M' THEN 'Male'
     WHEN `demographic+gender` ='gender|F' THEN 'Female' 
-    ELSE 'NULL' as gender
-    END
+    ELSE 'NULL'
+    END  as gender
     from  `national_manage`.`zebra_staff_list`
      ")->result();
      $this->response($result);
