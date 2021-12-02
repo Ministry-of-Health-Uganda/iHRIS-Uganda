@@ -48,7 +48,8 @@ Class Api extends REST_Controller
     `person+firstname` as firstname,
     `person+othername` as othername,
     `person_contact_personal+mobile_phone` as phone,
-    `demographic+gender` as gender
+    `job+title` as joboo,
+    
     from  `national_manage`.`zebra_staff_list`
      ")->result();
      $this->response($result);
