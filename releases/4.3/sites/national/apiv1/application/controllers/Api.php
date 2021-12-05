@@ -32,7 +32,13 @@ Class Api extends REST_Controller
             $this->response($response, 400);
     }
   }
-  public function hwdata_get(){
+  public function hwdata_get($district=FALSE){
+      if(!empty($district)){
+          $filter="where  `district+name`='$district'";
+      }
+      else{
+          $filter="";
+      }
         
     $result = $this->db->query("SELECT
     DISTINCT trim(`person+id`) as ihris_pid,
@@ -52,7 +58,7 @@ Class Api extends REST_Controller
     CASE WHEN `demographic+gender` ='gender|M' THEN 'Male'
     WHEN `demographic+gender` ='gender|F' THEN 'Female' 
     ELSE 'NULL' END  as gender
-    from  `national_manage`.`zebra_staff_list`
+    from  `national_manage`.`zebra_staff_list` $filter
      ")->result();
      $this->response($result);
     } 
