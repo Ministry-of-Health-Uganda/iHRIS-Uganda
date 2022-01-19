@@ -1,0 +1,269 @@
+<?php
+
+/**
+ * The best way to run this is:
+ * php importCSV.php 2> convert.log
+ * There's lots of notice messages you probably want to ignore for the most
+ * part.
+ * You'll need to change the include file to find the right config file
+ * as well as the path to I2CE which may not work right using the one
+ * from the config file.
+ * The ID for the User object should be valid in your user table.
+ * The $forms array is an associative array with the value being
+ * an array of forms that are required for the given form to work e.g. 
+ * region needs country first since it uses country as a map for a field.
+ *
+ * 
+ *
+ */
+
+global $dictionary;
+
+
+define( 'iHRIS_person_id', 0);
+//define( 'iHRIS_month',1 );
+define( 'iHRIS_month_year',1 );
+define( 'iHRIS_P',2 );
+define( 'iHRIS_O', 3 );
+define( 'iHRIS_R',4);
+define( 'iHRIS_L', 5 );
+
+
+
+$i2ce_site_user_access_init = null;
+$script = array_shift( $argv );
+if (file_exists(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages/local' . DIRECTORY_SEPARATOR . 'config.values.php')) {
+	require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages/local' . DIRECTORY_SEPARATOR . 'config.values.php');
+} else {
+	require_once( dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages/config.values.php');
+}
+
+$i2ce_site_i2ce_path = "/var/lib/iHRIS/releases/4.3/i2ce";
+
+require_once ($i2ce_site_i2ce_path . DIRECTORY_SEPARATOR . 'I2CE_config.inc.php');
+
+@I2CE::initializeDSN($i2ce_site_dsn,   $i2ce_site_user_access_init,    $i2ce_site_module_config);
+
+unset($i2ce_site_user_access_init);
+unset($i2ce_site_dsn);
+unset($i2ce_site_i2ce_path);
+unset($i2ce_site_module_config);
+
+
+global $user;
+
+$user = new I2CE_User(1, false, false, false);
+//$db = MDB2::singleton();
+$db = I2CE::PDO();
+if ( PEAR::isError( $db ) ) {
+	die( $db->getMessage() );
+}
+$form_factory = I2CE_FormFactory::instance();
+
+echo "Memory Limit: " . ini_get( "memory_limit" ) . "\n";
+echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
+
+
+function dotrim(&$value){
+  $value = trim($value);
+}
+
+
+$fh = fopen( $argv[0], "r" );
+if ( $fh === false ) {
+    die( "Couldn't update file: $argv[0].  Syntax: importCSV.php [erase] file.csv\n" );
+}
+
+$skip_no_post = 0;
+$found = 0;
+$created = 0;
+
+while ( ( $data = fgetcsv( $fh ) ) !== false ) {
+    
+    $month_year_day = $data[iHRIS_month_year];
+
+    $month_year = $data[iHRIS_month_year];
+
+	
+	
+		   if ( !$data[iHRIS_person_id] ) {
+                        I2CE::raiseError("Unable find person.");
+			$skip_no_post++;
+                       continue;
+                    }
+			
+
+	     
+   	    $person = $form_factory->createContainer( $data[iHRIS_person_id] );
+            $person->populate();
+            $person->populateLast( array( "person_position" => "start_date" ));
+            $person_position_form = current( $person->children['person_position'] );
+
+	    
+
+
+	    $find_pers = array(
+                                'operator' => 'AND',
+                                'operand' => array(
+                                              0 => array(
+                                                    'operator' => 'FIELD_LIMIT',
+                                                    'style' => 'equals',
+                                                    'field' => 'parent',
+                                                    'data' => array(
+                                                                    'value' => $data[iHRIS_person_id],
+                                                                    ),
+                                                    ),
+                                              1 => array(
+                                                         'operator' => 'FIELD_LIMIT',
+                                                         'style' => 'equals',
+                                                         'field' => 'month_year_day',
+                                                         'data' => array(
+                                                                         'value' => $month_year_day,
+                                                                         ),
+                                                         ),
+                                                )
+												);
+
+                   $person_attendance_id = I2CE_FormStorage::search( "person_attendance", false, $find_pers, array(), true ); 
+
+		  
+		 
+			
+		  if($person_attendance_id){
+
+			 $person_attendance = $form_factory->createContainer( 'person_attendance|'.$person_attendance_id );
+			 $person_attendance->populate();
+	     
+		    	 $person_attendance->days_present = $data[iHRIS_P];
+			 $person_attendance->days_od = $data[iHRIS_O];
+			 $person_attendance->days_or = $data[iHRIS_R];
+			 $person_attendance->days_leave = $data[iHRIS_L];
+
+			 if ( $person_attendance->month_year->isValid() ) {
+
+			$current_year = date(" Y");
+
+		        $current_month = date(" n");
+	      
+			$values = explode('-',$person_attendance->getField("month_year")->getDBValue());
+
+			I2CE::raiseError($current_year."---".$values[0]);
+
+			I2CE::raiseError($current_month."---".$values[1]);
+
+			$no_of_days=cal_days_in_month(CAL_GREGORIAN,$values[1],$values[0]);
+	
+		        }
+
+			 $totalDays = 0;
+			 $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;
+
+	
+	
+      
+			if( ($totalDays) > ($no_of_days) ){
+				$person_attendance->setInvalidMessage('days_present', 'Total number of days exceeds maximum days of selected month');
+			       
+			    }elseif(($current_month < $values[1]) && ($current_year <= $values[0])){
+
+				 $person_attendance->setInvalidMessage('month_year', 'You cannot upload a month in advance');
+
+
+			}	
+			 
+			  
+			  
+			  
+			  ///No of days absolutely absent
+			  $person_attendance->absolute_days_absent = ($no_of_days - $totalDays) ;
+			  $person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
+			  
+
+			  ///No of days not at facility
+			  $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
+			  $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
+			  $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
+			  $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
+			  //I2CE::raiseError(" date ".$month_year );
+			  
+			 $person_attendance->setParent( $data[iHRIS_person_id] );
+		    	 $person_attendance->save( $user );
+		    	 $person_attendance->cleanup();
+		    	 unset( $person_attendance );
+			 $found++;
+
+		    }else{
+
+                         $person_attendance = $form_factory->createContainer( "person_attendance" );
+			 $person_attendance->position = $person_position_form->position;
+			 $person_attendance->getField('month_year')->setFromDB( $month_year );
+		    	 $person_attendance->days_present = $data[iHRIS_P];
+			 $person_attendance->days_od = $data[iHRIS_O];
+			 $person_attendance->days_or = $data[iHRIS_R];
+			 $person_attendance->days_leave = $data[iHRIS_L];
+			 $person_attendance->getField("month_year_day")->setFromDB( $month_year_day );
+
+			 if ( $person_attendance->month_year->isValid() ) {
+
+			$current_year = date(" Y");
+
+		        $current_month = date(" n");
+	      
+			$values = explode('-',$person_attendance->getField("month_year")->getDBValue());
+
+			I2CE::raiseError($current_year."---".$values[0]);
+
+			I2CE::raiseError($current_month."---".$values[1]);
+
+			$no_of_days=cal_days_in_month(CAL_GREGORIAN,$values[1],$values[0]);
+	
+		        }
+
+			 $totalDays = 0;
+			 $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;
+
+	
+	
+      
+			if( ($totalDays) > ($no_of_days) ){
+				$person_attendance->setInvalidMessage('days_present', 'Total number of days exceeds maximum days of selected month');
+			       
+			    }elseif(($current_month < $values[1]) && ($current_year <= $values[0])){
+
+				 $person_attendance->setInvalidMessage('month_year', 'You cannot upload a month in advance');
+
+
+			}	
+			 
+			  
+			  
+			  
+			  ///No of days absolutely absent
+			  $person_attendance->absolute_days_absent = ($no_of_days - $totalDays) ;
+			  $person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
+			  
+
+			  ///No of days not at facility
+			  $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
+			  $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
+			  $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
+			  $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
+			  //I2CE::raiseError(" date ".$month_year );
+			 $person_attendance->setParent( $data[iHRIS_person_id] );
+		    	 $person_attendance->save( $user );
+			 $person_attendance->cleanup();
+		    	 unset( $person_attendance );
+			 $created++;
+   
+		    	 
+		}
+
+			 
+	
+}
+fclose($fh);
+echo "Skipped $skip_no_post records.\n";
+echo "Found $found records.\n";
+echo "Created $created records.\n";
+
+?>

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-aggregate-data-supplier">
+  <metadata>
+    <displayName>Aggregate Data Supplier Update Supplier</displayName>
+    <category>Application Component</category>
+    <description>Aggregate Data Supplier</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0.11</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <!--<requirement name="FHIR">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ihris-manage-csd-qus">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ihris-manage-csd-PersonPosition">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement> -->
+  </metadata>
+  <configurationGroup name="ihris-manage-aggregate-data-supplier" path="/I2CE">
+
+    <configurationGroup name="page">
+      <version>4.3.0.11</version>
+
+      <configurationGroup name="dhis">
+        <configuration name="class" values="single" type="string">
+          <value>iHRIS_Page_AggregateData</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <value>empty</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="resource" values="single" type="string">
+            <value>dhis</value>
+          </configuration>
+	<configuration name="report" values="single" type="string">
+            <value>staff_norm</value>
+          </configuration>
+	<configuration name="districtDataSetID" values="single" type="string">
+            <value>OyulXV7qilA</value>
+          </configuration>
+	<configuration name="facilityDataSetID" values="single" type="string">
+            <value>HZ4bOjihZJy</value>
+          </configuration>
+          <configuration name="access" values="single" type="string">
+            <value>all</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+
+    </configurationGroup>
+
+  </configurationGroup>
+</I2CEConfiguration>
