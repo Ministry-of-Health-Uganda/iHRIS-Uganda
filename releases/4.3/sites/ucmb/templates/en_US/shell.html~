@@ -1,0 +1,28 @@
+<div id="siteInnerWrap">
+  
+  <div id="navBar">
+    <ul id="navBarUL">
+      <li   id="menuManage"   task='person_can_view'><a href="manage">Manage People</a></li>
+      <span type='module' name='CustomReports' ifenabled='true'>
+	      <li id="menuSearch" task='custom_reports_can_access'><a href="search">Search Records</a></li>
+	      <li id="menuCustomReports" task='custom_reports_can_view_reportViews'><a href="CustomReports/view/reportViews">View Reports</a></li>
+        <span type="module" name="Uganda-AuditPage" ifenabled="true">
+	        <li id="menuAuditPage" task='custom_reports_can_access'><a href="audit_report">Audit Reports</a></li>
+        </span>
+      </span>
+      <li id="menuConfigure" task='can_configure_system'><a href="configure">Configure System</a></li>
+      <li id="menuPassword" task='can_change_own_password'><a href="password">Change Password</a></li>
+      <span type='module' name='SelfService' ifenabled='true' task='can_view_own_personnel'>
+	<span type='module' name="SelfService" if="userHasRecord()">
+	  <li>	  <span type='module' name="SelfService" call="linkToPersonRecord('view?id=')">View Your Record</span></li>
+	</span>
+      </span>
+
+    </ul>
+  </div>
+
+  <div id="siteContent" />
+
+  <br style="clear: both;" />
+
+</div><!-- /siteInnerWrap -->

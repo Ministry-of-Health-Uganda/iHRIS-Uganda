@@ -1,0 +1,283 @@
+<?php
+/**
+* © Copyright 2018-present IntraHealth International, Inc.
+* 
+* This File is part of I2CE 
+* 
+* I2CE is free software; you can redistribute it and/or modify 
+* it under the terms of the GNU General Public License as published by 
+* the Free Software Foundation; either version 3 of the License, or
+* (at your option) any later version.
+* 
+* This program is distributed in the hope that it will be useful, 
+* but WITHOUT ANY WARRANTY; without even the implied warranty of 
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License 
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* @package iHRIS
+* @subpackage Manage
+* @author Luke Duncan <lduncan@intrahealth.org>
+* @version v4.3.0
+* @since v4.3.0
+* @filesource 
+*/ 
+/** 
+* Class iHRIS_Page_FHIR_Resource
+* 
+* @access public
+*/
+
+
+class iHRIS_Page_Districts extends I2CE_Page{
+
+    /**
+     * @var DOMDocument The XML document for the resource.
+     */
+    protected $doc;
+
+    /**
+     * @var string The date to use for queries.
+     */
+    protected $since;
+
+    /**
+     * @var boolean To use JSON or XML
+     */
+    protected $useJSON;
+
+    /**
+     * Handles creating hte I2CE_TemplateMeister templates and loading any default templates
+     * @returns boolean true on success
+ dhis    */
+    protected function initializeTemplate() {
+        //we don't want any templates for this
+	$this->template = new I2CE_Template();
+        $this->template->loadRootText('');
+        return true;
+    }
+
+
+
+    /**
+     * Perform the main action of this page.
+     * @return boolean
+     */
+    protected function displayWeb($supress_output = false) {
+        if ( !array_key_exists( 'resource', $this->args ) || !$this->args['resource'] ) {
+            http_response_code(404);
+            I2CE::raiseError("No resource set for Aggregate Data Resource page.");
+            return true;
+        }
+
+     /*   if ( $this->request('_since') ) {
+            $this->since = date('Y-m-d H:i:s', strtotime( $this->request('_since') ) );
+        } else {
+            $this->since = null;
+        }*/
+
+        $page = array_shift ($this->request_remainder);
+
+        $this->doc = new DOMDocument();
+        $this->useJSON = true;
+
+
+        if ( array_key_exists( 'HTTP_ACCEPT', $_SERVER ) ) {
+            $header = new AcceptHeader( $_SERVER['HTTP_ACCEPT'] );
+            foreach( $header as $accept ) {
+                if ( $accept['type'] == 'xml' ) {
+                    break;
+                } elseif ( $accept['type'] == 'json' ) {
+                    $this->useJSON = true;
+                    break;
+                } elseif( $accept['type'] == 'text' ) {
+                    if ( $accept['subtype'] == 'xml' ) {
+                        break;
+                    }
+                } elseif ( $accept['type'] == 'application' ) {
+                    if ( $accept['subtype'] == 'xml' || $accept['subtype'] == 'fhir+xml' || $accept['subtype'] == 'xml+fhir' ) {
+                        break;
+                    } elseif ( $accept['subtype'] == 'json' || $accept['subtype'] == 'fhir+json' || $accept['subtype'] == 'json+fhir' ) {
+                        $this->useJSON = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if ( $this->get('_format') ) {
+            if ( $this->get('_format') == 'json' ||
+                    $this->get('_format') == 'application/json' ||
+                    $this->get('_format') == 'application/fhir+json' ||
+                    $this->get('_format') == 'application/json+fhir' ) {
+                $this->useJSON = true;
+            }
+        }
+
+        if ( $page == '_history' ) {
+            if ( $this->useJSON  ) {
+                $top = array();
+            } else {
+                $this->doc->loadXML('<dataValueSet xmlns="http://dhis2.org/schema/dxf/2.0"></dataValueSet>');
+                $top = $this->doc->documentElement;
+            }
+            if ( call_user_func_array( array( $this, "getUpdates_" . $this->args['resource'] ), array( &$top ) ) ) {
+                if ( $this->useJSON ) {
+                    echo json_encode( $top, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES );
+                } else {
+                    echo $this->doc->saveXML();
+                }
+                return true;
+            }
+            return false;
+        } else {
+            if ( $this->useJSON ) {
+                $top = array();
+            } else {
+                $this->doc->loadXML('<' . $this->args['resource'] . ' xmlns="http://dhis2.org/schema/dxf/2.0"></' . $this->args['resource'] . '>');
+                $top = $this->doc->documentElement;
+            }
+            if ( call_user_func_array( array( $this, "getUpdates_" . $this->args['resource'] ), array( &$top ) ) ) {
+                if ( $this->useJSON ) {
+                    echo json_encode( $top, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES );
+                 } else {
+                    echo $this->doc->saveXML();
+                }
+                return true;
+            } else {
+                http_response_code(404);
+                I2CE::raiseError("Couldn't find resource (".$this->args['resource'].") for $page.");
+                return true;
+            }
+        }
+
+    }
+
+
+    /**
+     * Return the site base used for the current site.
+     * @return string
+     */
+    protected function getSiteBase() {
+        return I2CE::getProtocol() . '://' . $_SERVER['HTTP_HOST']  . substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], "/")) . '/'; 
+    }
+
+    /**
+     * Create the bundle of practitioners updated since a given time.
+     * @param DOMNode $top
+     * @return boolean
+     */
+    protected function getUpdates_districts( &$top ) {
+        if ( $this->useJSON ) {
+	
+        } else {
+            $type = $this->doc->createElement("type");
+            $type->setAttribute("value", "history");
+            $top->appendChild($type);
+
+            $total = $this->doc->createElement("total");
+            $top->appendChild($total);
+        }
+    /**
+     * Cache Report Forms
+    */
+	
+        $required_forms = array( "district");
+        foreach( $required_forms as $form ) {
+            $cachedForm = new I2CE_CachedForm($form);
+            if ( !$cachedForm->generateCachedTable() ) {
+                http_response_code(500);
+                return false;
+            }
+        }
+	
+       /*
+     	* Generate Report
+    	*
+	*
+        $report = $this->args['report'];
+	if (!I2CE_CustomReport::reportExists($this->args['report'])) {
+                $report = $this->args['report'];
+                I2CE::raiseError("Requested generation of report $report which does not exist");
+                http_response_code(500);
+                return false;
+        } else {
+		if (I2CE::getConfig()->modules->CustomReports->status->$report == 'generated') {
+
+		} else {
+		    try {
+		        $reportObj = new I2CE_CustomReport($this->args['report']);
+			$force = true;
+			if ( !$reportObj->generateCache($force)) {
+				http_response_code(500);
+				return false;
+			 }
+		    }catch (Exception $e){
+		        I2CE::raiseError("Could not instantiate report $report");
+		        http_response_code(500);
+		        return false;
+		    }
+		}
+	}*/
+	
+        
+		
+		$qryDataValues = "SELECT id,name FROM ".$this->args['report']." ORDER BY `name`";
+
+		   $districtData = array();
+		   $data = array();
+		   if ( $this->useJSON ) {
+		        $entry = array();
+		    }
+		  // $period = explode("-", Date("Y-F-j"));
+		  // $year = $period[0]-1;
+		   //$period = "$year"."$period[1]";
+		  // $period = "$year"."July";
+		   $db = MDB2::singleton();
+		   $results = $db->query( $qryDataValues );
+		   if ( !I2CE::pearError( $results, "Failed to Select Report data for Districts from Report." ) ) {
+			while( $rowDataValues = $results->fetchRow(MDB2_FETCHMODE_ASSOC) ) {
+				$districtData['id'] = $rowDataValues['id'];
+				$districtData['name'] = $rowDataValues['name'];
+				$data['dataValues'][] =  $districtData;
+
+			}
+			if ( $this->useJSON ) {
+			    $this->create_district( $data, $entry );
+			    $top = $entry;
+			} 
+		   }
+    }
+
+    
+    protected function create_district( $data, &$top ) {
+
+        if ( $this-> useJSON ) {
+		$top['dataValues'] = array();
+
+		foreach ( $data['dataValues'] as $districtDataValues => $districtDataValue ) {
+			$dataValue = array();
+			$top['dataValues'][] = array( 'id' => $districtDataValue['id'],'name' => $districtDataValue['name'] );
+		}
+            	echo json_encode( $top, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES );	
+         } else{
+
+		I2CE::raiseError("No resource set for Districts Resource page.");
+	  }
+
+    }
+
+
+    
+
+
+
+
+}
+# Local Variables:
+# mode: php
+# c-default-style: "bsd"
+# indent-tabs-mode: nil
+# c-basic-offset: 4
+# End:
