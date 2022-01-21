@@ -185,7 +185,7 @@ foreach ($datas as $data) {
 			  $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
 			  //I2CE::raiseError(" date ".$month_year );
 			  
-			 $person_attendance->setParent( $data[iHRIS_person_id] );
+			 $person_attendance->setParent( $data['ihris_pid'] );
 		    	 $person_attendance->save( $user );
 		    	 $person_attendance->cleanup();
 		    	 unset( $person_attendance );
