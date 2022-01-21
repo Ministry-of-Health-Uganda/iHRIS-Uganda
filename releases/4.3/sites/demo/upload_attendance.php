@@ -79,23 +79,24 @@ $skip_no_post = 0;
 $found = 0;
 $created = 0;
 foreach ($datas as $data) {
-	print_r($data['ihris_pid']);
     
-    // $month_year_day = $data['duty_date'];
+    $month_year_day = $data['duty_date'];
 
-    // $month_year = $data['duty_date'];
+    $month_year = $data['duty_date'];
 
 
-	// 	   if ( !$data['ihris_pid'] ) {
-    //                     I2CE::raiseError("Unable find person.");
-	// 		$skip_no_post++;
-    //                    continue;
-    //         }
+		   if ( !$data['ihris_pid'] ) {
+                        I2CE::raiseError("Unable find person.");
+			$skip_no_post++;
+                       continue;
+            }
 			
-   	//     $person = $form_factory->createContainer( $data['ihris_pid'] );
-    //         $person->populate();
-    //         $person->populateLast( array( "person_position" => "start_date" ));
-    //         $person_position_form = current( $person->children['person_position'] );
+   	    $person = $form_factory->createContainer( $data['ihris_pid'] );
+
+		   print_r($person);
+            // $person->populate();
+            // $person->populateLast( array( "person_position" => "start_date" ));
+            // $person_position_form = current( $person->children['person_position'] );
 
 	    
 
