@@ -1,4 +1,5 @@
 <?php
+//Data for the previous month is pulled on 17th of the month. Attendance for the previous month is supposed to be completed by 17th
 
 /**
  * The best way to run this is:
@@ -38,7 +39,13 @@ unset($i2ce_site_i2ce_path);
 unset($i2ce_site_module_config);
 
 function getAttendance(){
+   $currentMonth = date('M');// if number, then date('m');
+   //Last month
+   $firstday_previous_month = Date("Y-m-01", strtotime("first day of previous month"));
+
+$lastday_previous_month = Date("Y-m-t", strtotime("last day of previous month"));
 	$endpoint ='https://hris2.health.go.ug/attendance/api/person_attend/2021-07-01/2021-10-30';
+	//$endpoint='https://hris2.health.go.ug/attendance/api/person_attend/'.$firstday_previous_month.'/'.$lastday_previous_month;
 	$attdata   = sendRequest($endpoint);
 return $attdata;
 }

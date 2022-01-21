@@ -1,4 +1,5 @@
 <?php
+//Data for the current month is pulled on 5th of the month. Duty roster for the current month is supposed to be completed in the previous month
 
 /**
  * The best way to run this is:
@@ -68,6 +69,10 @@ function dotrim(&$value){
 }
 
 function getRoster(){
+	$firstday_current_month = date('Y-m-01');
+    $lastday_current_month = date('Y-m-t');
+
+    //$endpoint='https://hris2.health.go.ug/attendance/api/person_attend/'.$firstday_current_month.'/'.$lastday_current_month;
 	$endpoint ='https://hris2.health.go.ug/attendance/api/person_roster/2021-07-01/2021-10-30';
 	$attdata   = sendRequest($endpoint);
 return $attdata;

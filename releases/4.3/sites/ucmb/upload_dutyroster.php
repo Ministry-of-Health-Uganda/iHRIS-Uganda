@@ -1,5 +1,5 @@
 <?php
-
+//Data for the current month is pulled on 5th of the month. Duty roster for the current month is supposed to be completed in the previous month
 /**
  * The best way to run this is:
  * php importCSV.php 2> convert.log
