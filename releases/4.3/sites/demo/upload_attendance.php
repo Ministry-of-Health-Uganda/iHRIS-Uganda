@@ -79,7 +79,7 @@ $skip_no_post = 0;
 $found = 0;
 $created = 0;
 foreach ($datas as $data) {
-	print_r($data);
+	print_r($data['ihris_pid']);
     
     // $month_year_day = $data['duty_date'];
 
