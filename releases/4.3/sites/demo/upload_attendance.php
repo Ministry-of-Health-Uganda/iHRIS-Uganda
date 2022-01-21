@@ -39,7 +39,7 @@ unset($i2ce_site_module_config);
 
 function getAttendance(){
 	$endpoint ='https://hris2.health.go.ug/attendance/api/person_attend/2021-06-01/2021-10-31';
-	$attdata   = sendRequest($url);
+	$attdata   = sendRequest($endpoint);
 return $attdata;
 }
 function  sendRequest($url){
