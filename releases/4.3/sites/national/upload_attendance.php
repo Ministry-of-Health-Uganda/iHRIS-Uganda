@@ -91,12 +91,12 @@ foreach ($datas as $data) {
                        continue;
             }
 			
-   	    $person = $form_factory->createContainer('person|'.'117376');
+   	    $person = $form_factory->createContainer($data['ihris_pid']);
 
-		   print_r($person);
-            // $person->populate();
-            // $person->populateLast( array( "person_position" => "start_date" ));
-            // $person_position_form = current( $person->children['person_position'] );
+		
+            $person->populate();
+            $person->populateLast( array( "person_position" => "start_date" ));
+            $person_position_form = current( $person->children['person_position'] );
 
 	    
 
