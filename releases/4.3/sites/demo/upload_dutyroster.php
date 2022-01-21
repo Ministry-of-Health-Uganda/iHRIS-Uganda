@@ -67,32 +67,42 @@ function dotrim(&$value){
   $value = trim($value);
 }
 
-
-
-$fh = fopen( $argv[0], "r" );
-if ( $fh === false ) {
-    die( "Couldn't update file: $argv[0].  Syntax: importCSV.php [erase] file.csv\n" );
+function getRoster(){
+	$endpoint ='https://hris2.health.go.ug/attendance/api/person_roster/2021-07-01/2021-10-30';
+	$attdata   = sendRequest($endpoint);
+return $attdata;
 }
+function  sendRequest($url){
+
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,$url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	$output = curl_exec($ch);
+	curl_close($ch);
+
+	return json_decode($output,true);
+}
+$datas = getRoster();
 
 $skip_no_post = 0;
 $found = 0;
 $created = 0;
 
 
-while ( ( $data = fgetcsv( $fh ) ) !== false ) {
+foreach ($datas as $data) {
 
-    $month_year_day = $data[iHRIS_month_year];
+    $month_year_day = $data['duty_date'];
 
-    $month_year = $data[iHRIS_month_year];
+    $month_year = $data['duty_date'];
 
-    if ( !$data[iHRIS_person_id] ) {
+    if ( !$data['ihris_pid'] ) {
         I2CE::raiseError("Unable find person.");
 	$skip_no_post++;
        continue;
     }
 
 
-    $person = $form_factory->createContainer( $data[iHRIS_person_id] );
+    $person = $form_factory->createContainer( $data['ihris_pid'] );
     $person->populate();
     $person->populateLast( array( "person_position" => "start_date" ));
     $person_position_form = current( $person->children['person_position'] );
@@ -106,7 +116,7 @@ while ( ( $data = fgetcsv( $fh ) ) !== false ) {
                                                     'style' => 'equals',
                                                     'field' => 'parent',
                                                     'data' => array(
-                                                                    'value' => $data[iHRIS_person_id],
+                                                                    'value' => $data['ihris_pid'],
                                                                     ),
                                                     ),
                                               1 => array(
@@ -130,15 +140,15 @@ while ( ( $data = fgetcsv( $fh ) ) !== false ) {
 			 $person_attendance->position = $person_position_form->position;
 			 $person_attendance->getField('month_year')->setFromDB( $month_year );
 	     
-		    	 $person_attendance->work_days = $data[iHRIS_DSD];
-			 $person_attendance->off_days = $data[iHRIS_DSO];
-			 $person_attendance->leave_days = $data[iHRIS_DSL];
-			 $person_attendance->other_days = $data[iHRIS_DSZ];
+		     $person_attendance->work_days = $data['D'];
+			 $person_attendance->off_days = $data['O'];
+			 $person_attendance->leave_days = $data['L'];
+			 $person_attendance->other_days = $data['Z'];
 			 $person_attendance->getField("month_year_day")->setFromDB( $month_year_day );
-			 $person_attendance->final_work_days = $data[iHRIS_DSD];	
+			 $person_attendance->final_work_days = $data['D'];	
 		
 
-			 $person_attendance->setParent( $data[iHRIS_person_id] );
+			 $person_attendance->setParent( $data['ihris_pid'] );
 		    	 $person_attendance->save( $user );
 		    	 $person_attendance->cleanup();
 		    	 unset( $person_attendance ); 
@@ -149,10 +159,10 @@ while ( ( $data = fgetcsv( $fh ) ) !== false ) {
 	         $person_attendance = $form_factory->createContainer( 'person_attendance|'.$person_attendance_id );
 	         $person_attendance->populate();
      
-	    	 $person_attendance->work_days = $data[iHRIS_DSD];
-		 $person_attendance->off_days = $data[iHRIS_DSO];
-		 $person_attendance->leave_days = $data[iHRIS_DSL];
-		 $person_attendance->other_days = $data[iHRIS_DSZ];
+	    	 $person_attendance->work_days = $data['D'];
+		 $person_attendance->off_days = $data['O'];
+		 $person_attendance->leave_days = $data['L'];
+		 $person_attendance->other_days = $data['Z'];
 		 
 
 		if ( $person_attendance->month_year->isValid() ) {
@@ -234,7 +244,7 @@ while ( ( $data = fgetcsv( $fh ) ) !== false ) {
 		  //I2CE::raiseError(" date ".$month_year );
 	      
 		 //$person_attendance->getField("month_year_day")->setFromDB( $month_year_day );
-		 $person_attendance->setParent( $data[iHRIS_person_id] );
+		 $person_attendance->setParent( $data['ihris_pid'] );
 	    	 $person_attendance->save( $user );
 	    	 $person_attendance->cleanup();
 	    	 unset( $person_attendance );

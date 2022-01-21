@@ -38,7 +38,7 @@ unset($i2ce_site_i2ce_path);
 unset($i2ce_site_module_config);
 
 function getAttendance(){
-	$endpoint ='https://hris2.health.go.ug/attendance/api/person_attend/2021-06-01/2021-06-01';
+	$endpoint ='https://hris2.health.go.ug/attendance/api/person_attend/2021-07-01/2021-10-30';
 	$attdata   = sendRequest($endpoint);
 return $attdata;
 }
@@ -91,171 +91,171 @@ foreach ($datas as $data) {
                        continue;
             }
 			
-   	    $person = $form_factory->createContainer('person|'.'117376');
+   	    $person = $form_factory->createContainer($data['ihris_pid']);
 
-		   print_r($person);
-            // $person->populate();
-            // $person->populateLast( array( "person_position" => "start_date" ));
-            // $person_position_form = current( $person->children['person_position'] );
+		
+            $person->populate();
+            $person->populateLast( array( "person_position" => "start_date" ));
+            $person_position_form = current( $person->children['person_position'] );
 
 	    
 
 
-	    // $find_pers = array(
-        //                         'operator' => 'AND',
-        //                         'operand' => array(
-        //                                       0 => array(
-        //                                             'operator' => 'FIELD_LIMIT',
-        //                                             'style' => 'equals',
-        //                                             'field' => 'parent',
-        //                                             'data' => array(
-        //                                                             'value' => $data['ihris_pid'],
-        //                                                             ),
-        //                                             ),
-        //                                       1 => array(
-        //                                                  'operator' => 'FIELD_LIMIT',
-        //                                                  'style' => 'equals',
-        //                                                  'field' => 'month_year_day',
-        //                                                  'data' => array(
-        //                                                                  'value' => $month_year_day,
-        //                                                                  ),
-        //                                                  ),
-        //                                         )
-		// 										);
+	    $find_pers = array(
+                                'operator' => 'AND',
+                                'operand' => array(
+                                              0 => array(
+                                                    'operator' => 'FIELD_LIMIT',
+                                                    'style' => 'equals',
+                                                    'field' => 'parent',
+                                                    'data' => array(
+                                                                    'value' => $data['ihris_pid'],
+                                                                    ),
+                                                    ),
+                                              1 => array(
+                                                         'operator' => 'FIELD_LIMIT',
+                                                         'style' => 'equals',
+                                                         'field' => 'month_year_day',
+                                                         'data' => array(
+                                                                         'value' => $month_year_day,
+                                                                         ),
+                                                         ),
+                                                )
+												);
 
-        //            $person_attendance_id = I2CE_FormStorage::search( "person_attendance", false, $find_pers, array(), true ); 
+        $person_attendance_id = I2CE_FormStorage::search( "person_attendance", false, $find_pers, array(), true ); 
 
 		  
 		 
 			
-		//   if($person_attendance_id){
+		  if($person_attendance_id){
 
-		// 	 $person_attendance = $form_factory->createContainer( 'person_attendance|'.$person_attendance_id );
-		// 	 $person_attendance->populate();
+			 $person_attendance = $form_factory->createContainer( 'person_attendance|'.$person_attendance_id );
+			 $person_attendance->populate();
 	     
-		//     	 $person_attendance->days_present = $data['P'];
-		// 	 $person_attendance->days_od = $data['O'];
-		// 	 $person_attendance->days_or = $data['R'];
-		// 	 $person_attendance->days_leave = $data['L'];
+		    $person_attendance->days_present = $data['P'];
+			 $person_attendance->days_od = $data['O'];
+			 $person_attendance->days_or = $data['R'];
+			 $person_attendance->days_leave = $data['L'];
 
-		// 	 if ( $person_attendance->month_year->isValid() ) {
+			 if ( $person_attendance->month_year->isValid() ) {
 
-		// 	$current_year = date(" Y");
+			$current_year = date(" Y");
 
-		//         $current_month = date(" n");
+		        $current_month = date(" n");
 	      
-		// 	$values = explode('-',$person_attendance->getField("month_year")->getDBValue());
+			$values = explode('-',$person_attendance->getField("month_year")->getDBValue());
 
-		// 	I2CE::raiseError($current_year."---".$values[0]);
+			I2CE::raiseError($current_year."---".$values[0]);
 
-		// 	I2CE::raiseError($current_month."---".$values[1]);
+			I2CE::raiseError($current_month."---".$values[1]);
 
-		// 	$no_of_days=cal_days_in_month(CAL_GREGORIAN,$values[1],$values[0]);
+			$no_of_days=cal_days_in_month(CAL_GREGORIAN,$values[1],$values[0]);
 	
-		//         }
+		        }
 
-		// 	 $totalDays = 0;
-		// 	 $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;
+			 $totalDays = 0;
+			 $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;
 
 	
 	
       
-		// 	if( ($totalDays) > ($no_of_days) ){
-		// 		$person_attendance->setInvalidMessage('days_present', 'Total number of days exceeds maximum days of selected month');
+			if( ($totalDays) > ($no_of_days) ){
+				$person_attendance->setInvalidMessage('days_present', 'Total number of days exceeds maximum days of selected month');
 			       
-		// 	    }elseif(($current_month < $values[1]) && ($current_year <= $values[0])){
+			    }elseif(($current_month < $values[1]) && ($current_year <= $values[0])){
 
-		// 		 $person_attendance->setInvalidMessage('month_year', 'You cannot upload a month in advance');
+				 $person_attendance->setInvalidMessage('month_year', 'You cannot upload a month in advance');
 
 
-		// 	}	
+			}	
 			 
 			  
 			  
 			  
-		// 	  ///No of days absolutely absent
-		// 	  $person_attendance->absolute_days_absent = ($no_of_days - $totalDays) ;
-		// 	  $person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
+			  ///No of days absolutely absent
+			  $person_attendance->absolute_days_absent = ($no_of_days - $totalDays) ;
+			  $person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
 			  
 
-		// 	  ///No of days not at facility
-		// 	  $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
-		// 	  $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
-		// 	  $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
-		// 	  $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
-		// 	  //I2CE::raiseError(" date ".$month_year );
+			  ///No of days not at facility
+			  $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
+			  $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
+			  $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
+			  $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
+			  //I2CE::raiseError(" date ".$month_year );
 			  
-		// 	 $person_attendance->setParent( $data[iHRIS_person_id] );
-		//     	 $person_attendance->save( $user );
-		//     	 $person_attendance->cleanup();
-		//     	 unset( $person_attendance );
-		// 	 $found++;
+			 $person_attendance->setParent( $data['ihris_pid'] );
+		    	 $person_attendance->save( $user );
+		    	 $person_attendance->cleanup();
+		    	 unset( $person_attendance );
+			 $found++;
 
-		//     }else{
+		    }else{
 
-        //                  $person_attendance = $form_factory->createContainer( "person_attendance" );
-		// 	 $person_attendance->position = $person_position_form->position;
-		// 	 $person_attendance->getField('month_year')->setFromDB( $month_year );
-		//     	 $person_attendance->days_present = $data['P'];
-		// 	 $person_attendance->days_od = $data['O'];
-		// 	 $person_attendance->days_or = $data['R'];
-		// 	 $person_attendance->days_leave = $data['L'];
-		// 	 $person_attendance->getField("month_year_day")->setFromDB( $month_year_day );
+                         $person_attendance = $form_factory->createContainer( "person_attendance" );
+			 $person_attendance->position = $person_position_form->position;
+			 $person_attendance->getField('month_year')->setFromDB( $month_year );
+		    	 $person_attendance->days_present = $data['P'];
+			 $person_attendance->days_od = $data['O'];
+			 $person_attendance->days_or = $data['R'];
+			 $person_attendance->days_leave = $data['L'];
+			 $person_attendance->getField("month_year_day")->setFromDB( $month_year_day );
 
-		// 	 if ( $person_attendance->month_year->isValid() ) {
+			 if ( $person_attendance->month_year->isValid() ) {
 
-		// 	$current_year = date(" Y");
+			$current_year = date(" Y");
 
-		//         $current_month = date(" n");
+		        $current_month = date(" n");
 	      
-		// 	$values = explode('-',$person_attendance->getField("month_year")->getDBValue());
+			$values = explode('-',$person_attendance->getField("month_year")->getDBValue());
 
-		// 	I2CE::raiseError($current_year."---".$values[0]);
+			I2CE::raiseError($current_year."---".$values[0]);
 
-		// 	I2CE::raiseError($current_month."---".$values[1]);
+			I2CE::raiseError($current_month."---".$values[1]);
 
-		// 	$no_of_days=cal_days_in_month(CAL_GREGORIAN,$values[1],$values[0]);
+			$no_of_days=cal_days_in_month(CAL_GREGORIAN,$values[1],$values[0]);
 	
-		//         }
+		        }
 
-		// 	 $totalDays = 0;
-		// 	 $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;
+			 $totalDays = 0;
+			 $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;
 
 	
 	
       
-		// 	if( ($totalDays) > ($no_of_days) ){
-		// 		$person_attendance->setInvalidMessage('days_present', 'Total number of days exceeds maximum days of selected month');
+			if( ($totalDays) > ($no_of_days) ){
+				$person_attendance->setInvalidMessage('days_present', 'Total number of days exceeds maximum days of selected month');
 			       
-		// 	    }elseif(($current_month < $values[1]) && ($current_year <= $values[0])){
+			    }elseif(($current_month < $values[1]) && ($current_year <= $values[0])){
 
-		// 		 $person_attendance->setInvalidMessage('month_year', 'You cannot upload a month in advance');
+				 $person_attendance->setInvalidMessage('month_year', 'You cannot upload a month in advance');
 
 
-		// 	}	
+			}	
 			 
 			  
 			  
 			  
-		// 	  ///No of days absolutely absent
-		// 	  $person_attendance->absolute_days_absent = ($no_of_days - $totalDays) ;
-		// 	  $person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
+			  ///No of days absolutely absent
+			  $person_attendance->absolute_days_absent = ($no_of_days - $totalDays) ;
+			  $person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
 			  
 
-		// 	  ///No of days not at facility
-		// 	  $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
-		// 	  $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
-		// 	  $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
-		// 	  $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
-		// 	  //I2CE::raiseError(" date ".$month_year );
-		// 	 $person_attendance->setParent( $data['ihris_pid'] );
-		//     	 $person_attendance->save( $user );
-		// 	 $person_attendance->cleanup();
-		//     	 unset( $person_attendance );
-		// 	 $created++;
+			  ///No of days not at facility
+			  $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
+			  $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
+			  $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
+			  $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
+			  //I2CE::raiseError(" date ".$month_year );
+			 $person_attendance->setParent( $data['ihris_pid'] );
+		    	 $person_attendance->save( $user );
+			 $person_attendance->cleanup();
+		    	 unset( $person_attendance );
+			 $created++;
    
 		    	 
-		// }
+		}
 
 			 
 	
