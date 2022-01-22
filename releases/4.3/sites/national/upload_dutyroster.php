@@ -73,7 +73,7 @@ function getRoster(){
     $lastday_current_month = date('Y-m-t');
 
     //$endpoint='https://hris2.health.go.ug/attendance/api/person_attend/'.$firstday_current_month.'/'.$lastday_current_month;
-	$endpoint ='https://hris2.health.go.ug/attendance/api/person_roster/2021-07-01/2021-10-30';
+	$endpoint ='https://hris2.health.go.ug/attendance/api/person_roster/2021-07-01/2021-07-30';
 	$attdata   = sendRequest($endpoint);
 return $attdata;
 }
