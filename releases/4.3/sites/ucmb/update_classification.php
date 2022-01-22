@@ -34,24 +34,16 @@ $form_factory = I2CE_FormFactory::instance();
 echo "Memory Limit: " . ini_get( "memory_limit" ) . "\n";
 echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 
-        $find_id = array(
-                    'operator' => 'FIELD_LIMIT',
-                    'field' => 'job',
-                    'style' => 'null'
-                    );
+	$cache = array();
+	$cache['job'] = array_flip( rearrange(I2CE_List::listOptions( "job" ) ));
 
-        $job_id = I2CE_FormStorage::listFields( "job", array('id'), $find_id );
         
-     if (!isset($job_id)){
-        echo "No Ids \n";
-      }else{
-                $count = 0;
                 
-        foreach ( $job_id as $id=>$value  ){               //
+        foreach ( $cache as $id=>$value  ){               //
  
            
-		        $job = $form_factory->createContainer( 'job'.'|'.$id );
-		        $job->populate();
+		        // $job = $form_factory->createContainer( 'job'.'|'.$id );
+		        // $job->populate();
 				// $classification_id = 'classification|3';
                 // $job->getField('classification')->setFromDB($classification_id);
 			    // $job->save( $user );
@@ -64,7 +56,7 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
         		$count++;
 
           
-	    }
+	    
 
 			  
 	    
