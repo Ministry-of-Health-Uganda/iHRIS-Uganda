@@ -52,8 +52,8 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
            
 		        $job = $form_factory->createContainer( 'job'.'|'.$id );
 		        $job->populate();
-				$classification_id = 'classification|3';
-                $job->getField('classification')->setFromDB( $classification_id);
+				// $classification_id = 'classification|3';
+                // $job->getField('classification')->setFromDB($classification_id);
 			    // $job->save( $user );
 			    // $job->cleanup();
 				print_r($id);
