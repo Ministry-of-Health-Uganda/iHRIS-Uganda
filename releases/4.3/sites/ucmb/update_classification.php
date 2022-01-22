@@ -33,6 +33,15 @@ $form_factory = I2CE_FormFactory::instance();
 
 echo "Memory Limit: " . ini_get( "memory_limit" ) . "\n";
 echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
+function rearrange($arr1){
+    $arr2 = array();
+    foreach(array_keys($arr1) as $k) {
+        $id = explode( '|', $arr1[$k]['value'], 2 );
+        $id2 = ($id[1]);
+        $arr2[$id2] = &$arr1[$k]['display'];
+    }
+    return $arr2;
+}	
 
 	$cache = array();
 	$cache['job'] = array_flip( rearrange(I2CE_List::listOptions( "job" ) ));
