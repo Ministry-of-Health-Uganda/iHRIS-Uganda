@@ -48,7 +48,7 @@ function rearrange($arr1){
 
       $count =0;
                 
-        foreach ( $cache as $id=>$value  ){               //
+        foreach ($cache as $id=>$value  ){               //
  
            
 		        // $job = $form_factory->createContainer( 'job'.'|'.$id );
@@ -57,10 +57,10 @@ function rearrange($arr1){
                 // $job->getField('classification')->setFromDB($classification_id);
 			    // $job->save( $user );
 			    // $job->cleanup();
-				print_r($cache);
+				print_r($id);
 		    	 
 
-			}
+		}
 			
         		$count++;
 
