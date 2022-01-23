@@ -59,7 +59,7 @@ function rearrange($arr1){
       $count =0;
 	 
                 
-        foreach ($jobs as $key => $value){               //
+        foreach ($jobs as $job){               //
  
            
 		        // $job = $form_factory->createContainer( 'job'.'|'.$id );
@@ -68,7 +68,7 @@ function rearrange($arr1){
                 // $job->getField('classification')->setFromDB($classification_id);
 			    // $job->save( $user );
 			    // $job->cleanup();
-				print_r($jobs);
+				print_r($job);
 		    	 
 
 		}
