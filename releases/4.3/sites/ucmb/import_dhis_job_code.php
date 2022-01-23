@@ -80,7 +80,7 @@ while ( ( $data = fgetcsv( $fh ) ) !== false ) {
                                                          'value' => $data[iHRIS_JOB],
                                       
                                                 )
-                                  );
+                );
                 $job_id = I2CE_FormStorage::search( "job", false, $find_job, array(), true );
 		if($job_id){
 		$job = $form_factory->createContainer( 'job|'. $data[iHRIS_JOB] );
