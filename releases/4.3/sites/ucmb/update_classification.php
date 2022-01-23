@@ -45,13 +45,13 @@ function rearrange($arr1){
 
 
 
- $find_id = array(
+$find_id = array(
 	'operator' => 'FIELD_LIMIT',
-	'field' => 'job',
-	'style' => 'null',
-	'value' =>'',
+	'field' => 'position',
+	'style' => 'null'
 	);
-   $jobs = I2CE_FormStorage::listFields( "job", false, $find_id );
+
+ $position_id = I2CE_FormStorage::listFields( "position", array('id'), $find_id );
 
 	//   $cache = array();
 	//   $cache['job'] = array_flip( rearrange(I2CE_List::listOptions( "job" ) ));
@@ -59,7 +59,7 @@ function rearrange($arr1){
       $count =0;
 	 
                 
-        foreach ($jobs as $job){               //
+        foreach ($position_id as $job){               //
  
            
 		        // $job = $form_factory->createContainer( 'job'.'|'.$id );
@@ -68,7 +68,7 @@ function rearrange($arr1){
                 // $job->getField('classification')->setFromDB($classification_id);
 			    // $job->save( $user );
 			    // $job->cleanup();
-				print_r($job);
+				print_r($position_id);
 		    	 
 
 		}
