@@ -47,10 +47,11 @@ $form_factory = I2CE_FormFactory::instance();
       $count =0;         
         foreach ($jobs as $jobdata){               
 		
-			// if($job_id){
-			// 	$job = $form_factory->createContainer( 'job|'. $data[iHRIS_JOB] );
-			// 			$job->populate();
-			// 			$job->code = $data[iHRIS_DHIS_JOB];
+			 if($jobdata['value']){
+			 	$job = $form_factory->createContainer( $jobdata['value'] );
+				$job->populate();
+				$classification="classification|3";
+				$job->getField('classification')->setFromDB( $classification );
 			// 	$job->save( $user );
 			// 	$job->cleanup();
 			// 			unset( $job );
@@ -67,9 +68,3 @@ $form_factory = I2CE_FormFactory::instance();
 		//echo "Done ".$row++." Records.\n";
 		
 		?>
-
-          
-	    
-
-			  
-	
