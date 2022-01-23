@@ -57,13 +57,10 @@ $form_factory = I2CE_FormFactory::instance();
 			// 			unset( $job );
 		
 			// 	$row++;
-			// 			}else{
-		
-			// 	$not++;
-			// 	}
+			// 	
 
-			print_r($jobdata['value']);
-		}
+			print_r($job);
+		}}
 	
 		//echo "Done ".$row++." Records.\n";
 		
