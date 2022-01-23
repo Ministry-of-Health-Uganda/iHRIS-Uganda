@@ -992,11 +992,10 @@ class I2CE_FormRelationship extends I2CE_Fuzzy {
             I2CE::raiseError("Could not instantiate $formName=>$form");
             return false;
         }
-        //$callback = create_function('$form,$field',"return \"`$formName+\$field`\";");
         if ( $formName == "primary_form" ) {
-            $callback = create_function('$form,$field',"return \"`$form`.`\$field`\";");
+            $callback = function($f,$field) use ($form) { return "`$form`.`$field`"; };
         } else {
-            $callback = create_function('$form,$field',"return \"`$formName`.`\$field`\";");
+            $callback = function($f,$field) use ($formName) { return "`$formName`.`$field`"; };
         }
         $where =  $formObj->generateWhereClause($this->formConfigs[$formName]->where->getAsArray(),$callback, "`" . $this->getParentFormNames($formName) . "+id`" );
         return $where;

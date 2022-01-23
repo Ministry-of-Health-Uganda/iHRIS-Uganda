@@ -1,0 +1,27 @@
+<div title="Limit this field to be the maximum for all forms that have the same value for the given field.">
+  <table border="0" cellpadding="0" cellspacing="0"><tr><td>
+        <span name="limit_description" ifset="true" dir="rtl">
+          تحديد  هذا الحقل ليكون  الأقصى لجميع النماذج التي تحتوي على نفس القيمة للحقل المعين
+        </span>
+      </td>
+      <td>
+        <select name="linked_field"></select></td>
+    </tr><tr><td dir="rtl">
+        قم بالتعديل من الحد الأقصى (أدخل 0 للأقصى): 
+      </td>
+      <td>
+        <input type="text" name="offset" value="0"></td>
+    </tr><tr><td dir="rtl">
+        السماح بقيم (لاشيء) فارغة: 
+      </td>
+      <td>
+        <select name="allow_null"><option value="0" dir="rtl">نعم</option><option value="1" dir="rtl">لا</option></select></td>
+    </tr><tr><td>
+        Return all (non-distinct) matches:<br>
+        When the selected field is 'parent' you may want to allow all matches<br>
+        when linking to child forms to get the order based on the limited field.<br>
+        For other fields you probably only want distinct values returned.
+      </td>
+      <td>
+        <select name="allow_all"><option value="0" dir="rtl">لا</option><option value="1" dir="rtl">نعم</option></select></td>
+    </tr></table></div>

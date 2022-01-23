@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PrintedForms">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="PrintedForms" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="printed_forms_can_access" values="single" type="string">
+        <value>Allows minimal access to the Printed Forms System</value>
+      </configuration>
+      <configuration name="printed_forms_admin" values="single" type="string">
+        <value>Allows full access to the Printed Forms System</value>
+      </configuration>
+      <configuration name="printed_forms_all_generate" values="single" type="string">
+        <value>Allows access to the generating all of the printed forms System</value>
+      </configuration>
+      <configuration name="printed_forms_archive_admin" values="single" type="string">
+        <value>Allows administation of all archived of the printed forms System</value>
+      </configuration>
+      <configuration name="printed_forms_create_all_archives" values="single" type="string">
+        <value>Allows creating of all archived of the printed forms System</value>
+      </configuration>
+      <configuration name="printed_forms_view_all_archives" values="single" type="string">
+        <value>Allows viewing of all archived of the printed forms System</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="generated_doc">
+          <configuration name="display" values="single" locale="en_US" type="string">
+            <value>Generated Document</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="I2CE_GeneratedDoc">
+          <configurationGroup name="fields">
+            <configurationGroup name="document">
+              <configuration name="headers" type="delimited" locale="en_US" values="single">
+                <value>default:Document</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="en_US" values="single">
+                <value>default:Date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="description">
+              <configuration name="headers" type="delimited" values="many" locale="en_US">
+                <value>default:Description</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="primary_form">
+              <configuration name="headers" type="delimited" values="many" locale="en_US">
+                <value>default:Primary Form ID</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

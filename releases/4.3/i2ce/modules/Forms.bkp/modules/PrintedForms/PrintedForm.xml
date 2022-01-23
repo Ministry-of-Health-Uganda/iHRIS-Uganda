@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PrintedForms">
+  <metadata>
+    <displayName>Printed Forms</displayName>
+    <className>I2CE_Module_PrintedForms</className>
+    <category>Reporting</category>
+    <description>Engine used to generated standard printed forms from a form relationship</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="formRelationships">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="textlayout">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <enable name="BinField" />
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="images">
+      <value>./images</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+  <configurationGroup name="PrintedForms">
+    <displayName>Custom Reports</displayName>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="printed_forms_can_access" values="single" type="string">
+        <value>Allows minimal access to the Printed Forms System</value>
+      </configuration>
+      <configuration name="printed_forms_admin" values="single" type="string">
+        <value>Allows full access to the Printed Forms System</value>
+      </configuration>
+      <configuration name="printed_forms_all_generate" values="single" type="string">
+        <value>Allows access to the generating all of the printed forms System</value>
+      </configuration>
+      <configuration name="printed_forms_archive_admin" values="single" type="string">
+        <value>Allows administation of all archived of the printed forms System</value>
+      </configuration>
+      <configuration name="printed_forms_create_all_archives" values="single" type="string">
+        <value>Allows creating of all archived of the printed forms System</value>
+      </configuration>
+      <configuration name="printed_forms_view_all_archives" values="single" type="string">
+        <value>Allows viewing of all archived of the printed forms System</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="printed_forms_admin" values="many" type="string">
+        <value>printed_forms_can_access</value>
+        <value>printed_forms_all_generate</value>
+        <value>printed_forms_archive_admin</value>
+      </configuration>
+      <configuration name="printed_forms_archive_admin" values="many" type="string">
+        <value>printed_forms_view_all_archives</value>
+        <value>printed_forms_create_all_archives</value>
+      </configuration>
+      <configurationGroup name="role_trickle_down" path="/I2CE/tasks/role_trickle_down">
+        <configuration name="admin" values="many" type="string">
+          <value>printed_forms_admin</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <version>4.0.5.2</version>
+      <configurationGroup name="forms">
+        <configurationGroup name="generated_doc">
+          <configuration name="class" values="single" type="string">
+            <value>I2CE_GeneratedDoc</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US" type="string">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Generated Document</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="I2CE_GeneratedDoc">
+          <displayName>Configuration for the class 'I2CE_GeneratedDoc'</displayName>
+          <configuration name="extends" values="single" type="string">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="document">
+              <displayName>The field 'address'</displayName>
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>DOCUMENT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US" values="single">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Document</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="date">
+              <displayName>The field 'start_date'</displayName>
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="default_eval" values="single" type="string">
+                <displayName>The default Value as an eval string</displayName>
+                <value>I2CE_Date::now()</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US" values="single">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Date</value>
+              </configuration>
+              <configuration name="required" type="boolean" values="single">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="description">
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" values="many" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Description</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="primary_form">
+              <version>4.0.5.6</version>
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" values="many" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Primary Form ID</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_Document -->
+      </configurationGroup>
+      <!-- End /modules/forms/formClasses -->
+    </configurationGroup>
+    <!-- End /modules/forms -->
+    <configurationGroup name="page">
+      <displayName>Printed Form Pages</displayName>
+      <description>Information about the printed form pages</description>
+      <configuration name="default_page" path="/modules/PrintedForms/page_default" values="single" type="string">
+        <displayName>Default page</displayName>
+        <value>menu</value>
+      </configuration>
+      <configurationGroup name="menu">
+        <version>4.0.5.1</version>
+        <configuration name="class" values="single" type="string">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>I2CE_Page_PrintedForms</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <displayName>Page Style</displayName>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="defaultHTMLFile" values="single" type="string">
+            <displayName>Template</displayName>
+            <description>The templates loaded for pages containing a shell</description>
+            <value>printed_forms_menu.html</value>
+          </configuration>
+          <configuration name="tasks" values="many" type="string">
+            <value>printed_forms_can_access</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <value>admin</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

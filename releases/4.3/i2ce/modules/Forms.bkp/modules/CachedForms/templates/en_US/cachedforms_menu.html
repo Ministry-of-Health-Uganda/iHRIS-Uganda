@@ -1,0 +1,56 @@
+<div>
+  
+
+
+  <h2>Cache Forms</h2>
+  <span name='has_profiles' ifset='true'>
+    Cache all forms in the selected  profile.
+    <form action="CachedForms/cache" style='margin-left:2em' method='POST'>
+      Select a profile:  <select name='profile'></select>
+      <br/>
+      <input type='submit' value='Cache'/>
+    </form>
+  </span>
+  <br/>
+
+  <div>
+    <a href='CachedForms/cacheAll'>Cache</a> all forms
+    <br/>
+    <a href='CachedForms/cacheAllForce'>Force Caching</a> of all forms if not stale
+    <br/>
+    <a href='CachedForms/dropAll'>Drop</a> caches of all forms
+  </div>
+  <br/>
+
+  <span name='has_profiles' ifset='true'>
+    <h2>Export Cached Forms</h2>
+    Export all cached forms in the selected profile.  If you select a modification date, then only records that
+    have been modified on or after the specified date will be exported.  Otherwise, all records that have been
+    modified for the selected profile will be exported.
+    <form action="CachedForms/export" style='margin-left:2em' method='POST'>
+      Select a profile:  <select name='profile'></select>
+      <br/>
+      Modification Date: <input  class="datepicker_ymd" name="mod_date" type="text" />
+      <br/>
+      <input  type='checkbox' value='1' name="compress" checked='checked'/>Enable bzip2 Compression
+      <br/>
+      <input type='submit' value='Export'/>
+    </form>
+    
+    <br/>
+  </span>
+
+  <h2>Create/Edit Profile</h2>
+  Create a profile or edit an existing profile of forms.
+  <form action="CachedForms/exportProfile" style='margin-left:2em'>
+      Select a profile:  <select  name='profile'><option value=''>Create A New Profile</option></select>
+    <br/>
+    <input type='submit' value='Edit'/>
+  </form>
+  <br/>
+  
+  <h2>Manage Caching of Individual Forms</h2>
+  <ul id='cached_forms_list'>
+  </ul>
+
+</div>

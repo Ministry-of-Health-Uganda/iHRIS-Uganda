@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="forms-storage-services">
+  <metadata>
+    <displayName>Form Storage - Web Services</displayName>
+    <category>Base System Component</category>
+    <description>A module that for web services based form storage mechanisms</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="forms-storage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

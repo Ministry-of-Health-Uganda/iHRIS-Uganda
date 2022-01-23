@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Lists-LinkTo">
+  <metadata>
+    <displayName>List Link to Data</displayName>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <description>Lists that are linked to other data. This module is meant to be extended to defined what type of data this list links to. You can extend the I2CE_ListLink class to add new fields to link to. Alone this class doesn't do much.</description>
+    <link>https://launchpad.net/i2ce</link>
+    <requirement name="Lists">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+  <configurationGroup name="Lists-LinkTo" path="/modules/forms/">
+    <displayName>List Link to List</displayName>
+    <configurationGroup name="formClasses">
+      <displayName>Form Class Configuration</displayName>
+      <configurationGroup name="I2CE_ListLink">
+        <displayName>Configuration for I2CE_ListLink</displayName>
+        <configuration name="extends" values="single" type="string">
+          <displayName>The class this form extends</displayName>
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>Fields for I2CE_ListLink</displayName>
+          <configurationGroup name="list">
+            <displayName>The field 'list'</displayName>
+            <configuration name="formfield" values="single" type="string">
+              <displayName>Form Field</displayName>
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US" values="single">
+              <displayName>The headers for this field.</displayName>
+              <version>3.2.1</version>
+              <value>default:List</value>
+            </configuration>
+            <configuration name="required" type="boolean" values="single">
+              <displayName>Required</displayName>
+              <value>true</value>
+            </configuration>
+            <configurationGroup name="meta">
+              <configuration name="form_any" type="boolean" values="single">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

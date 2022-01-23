@@ -1,0 +1,69 @@
+<div id="siteContent">
+    <h1 class="header"><a href=""  name='auto_list_link'>Administer Database</a>: <span name="text" /></h1>
+
+    <form method='get' action='auto_list'>
+        <table border="0" cellpadding="5" cellspacing="10">
+	  <tr>
+	    <th>
+	      <span printf="'Select %s',$field_name"/>:
+	    </th>
+	    <td style="text-align: right">
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+	      <span printf="'Select the %1$s to limit the displayed values of %2$s.',$field_name,$type_name"/>
+	      <div id="mapped">
+	      </div>
+	    </td>
+	    <td style="vertical-align: text-top;">
+	      <input type='submit' value='view' class='button' style="float: right;"/>
+	    </td>
+	  </tr>
+	</table>
+	<input type='hidden' name='type'/>
+	<input type='hidden' name='form_name'/>
+	<input type='hidden' name='mapped'/>
+	<input type='hidden' name='field'/>
+	<input type='hidden' name='nosetdefault'/>
+	<input type='hidden' name='link'/>
+	<input type='hidden' name='id'/>
+
+	<span name='list_is_writable' ifset='true'>
+	  <a href="" name="add_new_link" class="add_new_link">Add new <span name="text"/></a>
+	</span>
+	<span name='list_hasremap' ifset='true'>
+	  <a name="remap_link" class="add_new_link">Perform Remap</a>
+	</span>
+
+	
+	<div class="recordsData" id='select_list'>
+	  <div id='select_list_results'>
+	    <table border="0" cellpadding="0" cellspacing="0">
+	      <thead>
+		<tr>
+		  <td style="text-align: right;" id="lists_alphabet">
+		  </td>
+		</tr>
+		<tr>
+		  <td colspan='2'>
+		    <div style='float:right' class='pager_display' id='select_list_pager_display'>
+		    </div>	
+		  </td>
+		</tr>
+
+		<tr id="lists_header">
+		</tr>
+	      </thead>
+	      <tbody id="lists_body">		
+	      </tbody>
+	    </table>
+	  </div>
+	</div>
+    </form>
+
+    <br/>
+    
+    <div ><a href="" name="auto_list_link" class="button">return</a></div>
+    
+</div>

@@ -1,0 +1,12 @@
+<div id="siteContent">
+    <h1 class="header"><a href="lists" dir="rtl">إدارة قاعدة البيانات</a>: <span name="type_name"></span></h1>
+
+    <form id="list_form" method="GET" action="lists">
+        <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><td>
+        <span type="form" name="type"></span>
+        <p><span class="field_head"><label for="add_ids"><span printf="'اختر %s للتعديل',$type_name" dir="rtl"></span> </label></span><br><select name="id" id="add_ids" onchange="document.getElementById('submit_button').value = ( this.options[this.selectedIndex].value == '' ? 'add' : 'view' ); document.getElementById( 'list_form' ).action = (this.options[this.selectedIndex].value == '' ? 'lists' : 'view_list')"><option value="" dir="rtl">إضافة جديدة <span name="type_name"></span></option></select></p>
+        </td></tr><tr class="submitCell"><td>
+        <input id="submit_button" type="submit" value="add"></td></tr></table></form>
+    <p><a href="lists" class="button" dir="rtl">رجوع</a></p>
+    
+</div>

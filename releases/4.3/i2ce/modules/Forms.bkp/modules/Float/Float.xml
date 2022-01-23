@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Float">
+  <metadata>
+    <displayName>Float</displayName>
+    <className>I2CE_Module_Float</className>
+    <description>A module that allows the float formfield</description>
+    <version>4.3.0</version>
+    <link>https://launchpad.net/i2ce</link>
+    <requirement name="forms-storage-entry">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="form_field" path="forms/FORMFIELD">
+    <displayName>Form Fields</displayName>
+    <description>Information about the various classes used to handle fields of a form</description>
+    <configuration name="FLOAT" values="single" type="string">
+      <displayName>Float</displayName>
+      <description>The class for a Float field</description>
+      <value>I2CE_FormField_FLOAT</value>
+    </configuration>
+    <configuration name="PERCENT" values="single" type="string">
+      <displayName>Float</displayName>
+      <description>The class for a Float field</description>
+      <version>4.1.0.1</version>
+      <value>I2CE_FormField_PERCENT</value>
+    </configuration>
+  </configurationGroup>
+  <!-- form_field -->
+</I2CEConfiguration>

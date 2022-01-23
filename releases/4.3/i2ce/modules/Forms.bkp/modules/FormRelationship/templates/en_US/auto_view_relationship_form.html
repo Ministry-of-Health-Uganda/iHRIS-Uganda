@@ -1,0 +1,30 @@
+<div class="recordsData" >
+  <h3>
+    <span name='form_title'/>
+  </h3>
+  <p class="editRecordsData" name='form_action_links'>
+    <a href="#" name='hide_data_container' class="hide" title="Hide">Hide</a>
+  </p>
+  <div name='data_container'>
+    <span name='has_edit_links' ifset='true'>
+      <div class="editRecord" >
+	<p>Edit This Information</p>
+	<ul name='form_edit_links'>
+	</ul>
+      </div> <!-- editRecord -->
+    </span>
+    
+    <span name='has_field_data' ifset='true'>
+      <div class="dataTable">
+	<table border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <th colspan="2"><span name='form_display_name'/></th>
+	  </tr>
+	  <tbody name='form_fields'/>
+	</table>
+      </div> <!-- dataTable -->
+    </span>
+    <br style="clear: both;" />
+    <div name='child_forms' class='relationship_child_forms'/>
+  </div>     
+</div>

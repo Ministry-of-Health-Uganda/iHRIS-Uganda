@@ -1,0 +1,32 @@
+<div id='siteContent'>
+  <h2>Standardized Forms</h2>
+
+  <h3>Generate Standardized Forms</h3>
+
+  <span ifset='!true' name='has_valid_forms'>
+    No available standardized forms for this record.
+  </span>
+  <span ifset='true' name='has_valid_forms'>
+    <ul id='printed_forms_list'>
+    </ul>
+  </span>
+
+
+  <span type='module' ifenabled='true' name='BinField'>
+    <span ifset='true' name='show_archive'>
+      <h3>Archived Standardized Forms</h3>
+
+      <span ifset='!true' name='has_archives'>
+	No forms have been archived forms for this record.
+      </span>
+      <span ifset='true' name='has_archives'>
+	<span task='printed_forms_view_all_archives'>
+	  <ul id='printed_forms_archive'>
+	    
+	  </ul>	
+	</span>
+      </span>
+    </span>
+  </span>
+
+</div>
