@@ -52,9 +52,9 @@ $form_factory = I2CE_FormFactory::instance();
 				$job->populate();
 				$classification="classification|3";
 				$job->getField('classification')->setFromDB( $classification );
-			// 	$job->save( $user );
-			// 	$job->cleanup();
-			// 			unset( $job );
+			 	$job->save( $user );
+				$job->cleanup();
+				unset( $job );
 		
 			// 	$row++;
 			// 	
