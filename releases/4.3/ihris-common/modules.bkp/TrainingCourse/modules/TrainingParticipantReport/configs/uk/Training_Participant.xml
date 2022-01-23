@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="training_participation_report" path="/modules/CustomReports">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="training_participation_report" path="/modules/CustomReports" locale="uk">
+    <version>4.3.0.1</version>
+    <configurationGroup name="training_participation" path="//modules/CustomReports/relationships/training_participation">
+      <configuration name="display_name" locale="uk"></configuration>
+      <configuration name="description" locale="uk"></configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="person">
+          <configuration name="display_name" locale="uk">
+            <value>людина</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="person_position">
+              <configuration name="display_name" locale="uk">
+                <value>Нинішня посада</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="position">
+                  <configuration name="display_name" locale="uk">
+                    <value>Посада</value>
+                  </configuration>
+                  <configurationGroup name="joins">
+                    <configurationGroup name="facility">
+                      <configuration name="display_name" locale="uk">
+                        <value>об'єкт</value>
+                      </configuration>
+                      <configurationGroup name="joins">
+                        <configurationGroup name="facility_contact">
+                          <configuration name="display_name" locale="uk">
+                            <value>Контакти об'єкта</value>
+                          </configuration>
+                        </configurationGroup>
+                      </configurationGroup>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="person_contact">
+              <configuration name="display_name" locale="uk">
+                <value>Контактна Особа</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="scheduled_course">
+          <configuration name="display_name" locale="uk">
+            <value>Запланований курс</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="training_course">
+              <configuration name="display_name" locale="uk">
+                <value>Навчальний курс</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="training_participation" path="//modules/CustomReports/reports/training_participation">
+      <configurationGroup name="meta">
+        <configuration name="display_name" locale="uk"></configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="scheduled_training_course">
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="uk"></configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="header" locale="uk"></configuration>
+            </configurationGroup>
+            <configurationGroup name="training_course_evaluation">
+              <configuration name="header" locale="uk">
+                <value>Випробування</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="person">
+          <configurationGroup name="fields">
+            <configurationGroup name="firstname">
+              <configurationGroup name="limits">
+                <configurationGroup name="contains">
+                  <configuration name="header" locale="uk">
+                    <value>Ім'я</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="header" locale="uk">
+                <value>Ім'я</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="surname">
+              <configurationGroup name="limits">
+                <configurationGroup name="contains">
+                  <configuration name="header" locale="uk">
+                    <value>Прізвище</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="header" locale="uk">
+                <value>Прізвище</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="person_contact">
+          <configurationGroup name="fields">
+            <configurationGroup name="address">
+              <configuration name="header" locale="uk">
+                <value>Особиста адреса</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="telephone">
+              <configuration name="header" locale="uk">
+                <value>Особистий Телефон</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="position">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility">
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="uk">
+                    <value>Установа</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="header" locale="uk">
+                <value>Установа</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="title">
+              <configuration name="header" locale="uk">
+                <value>Посада</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="header" locale="uk">
+                <value>Установа</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility_contact">
+          <configurationGroup name="fields">
+            <configurationGroup name="address">
+              <configuration name="header" locale="uk">
+                <value>Адреса об'єкта</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="telephone">
+              <configuration name="header" locale="uk">
+                <value>Телефон об'єкта</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="scheduled_course">
+          <configurationGroup name="fields">
+            <configurationGroup name="end_date">
+              <configuration name="header" locale="uk">
+                <value>Кінцева дата</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configurationGroup name="limits">
+                <configurationGroup name="greaterthan_equals">
+                  <configuration name="header" locale="uk">
+                    <value>Дата початку або після</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="lessthan">
+                  <configuration name="header" locale="uk">
+                    <value>Дата початку До</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="header" locale="uk">
+                <value>Дата початку</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="training_course">
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="uk">
+                    <value>Навчальний курс</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="header" locale="uk">
+                <value>Навчальний курс</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="training_course">
+          <configurationGroup name="fields">
+            <configurationGroup name="training_funder">
+              <configuration name="header" locale="uk">
+                <value>Спонсори навчання</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="training_institution">
+              <configuration name="header" locale="uk">
+                <value>Навчальний заклад</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="training_participants" path="//modules/CustomReports/reportViews/training_participants">
+      <configuration name="description" locale="uk"></configuration>
+      <configuration name="display_name" locale="uk"></configuration>
+      <configurationGroup name="printed_forms">
+        <configurationGroup name="participant_list">
+          <configurationGroup name="template_upload">
+            <configurationGroup name="content">
+              <configuration name="name" locale="uk"></configuration>
+            </configurationGroup>
+            <configuration name="name" locale="uk"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

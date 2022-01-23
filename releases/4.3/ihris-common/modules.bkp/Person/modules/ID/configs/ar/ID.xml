@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonID" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonID" path="/I2CE" locale="ar">
+    <version>4.2.1.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="ar">
+      <configuration name="exp_date" path="person_id/expiration_date/bad_date" locale="ar"></configuration>
+      <configuration name="wrong_pattern" path="person_id/id_num/wrong_pattern" locale="ar"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="ar">
+      <configuration name="person_can_view_child_form_person_id" locale="ar">
+        <value>يمكن عرض&#160;نموذج فرعي لهوية</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_id" locale="ar">
+        <value>يمكن تعديل نموذج فرعي لهوية</value>
+      </configuration>
+      <configuration name="can_edit_database_list_id_type" locale="ar">
+        <value>يمكن&#160;تعديل قائمة&#160;قاعدة بيانات&#160;نوع الهوية</value>
+      </configuration>
+      <configuration name="can_view_database_list_id_type" locale="ar">
+        <value>يمكن&#160;عرض قائمة&#160;قاعدة بيانات&#160;نوع الهوية</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_id">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ar">
+            <value>اضافة/ تحديث&#160;الهوية</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/forms">
+      <configurationGroup name="id_type">
+        <configuration name="display" values="single" locale="ar">
+          <value>نوع الهوية</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="person_id">
+        <configuration name="display" values="single" locale="ar">
+          <value>الهوية الشخصية</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <configuration name="description" locale="ar">
+            <value>هذا النموذج&#160;يحتوي علي&#160;معلومات أساسية حول&#160;تحديد الهوية&#160;للشخص</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/formClasses">
+      <configurationGroup name="iHRIS_PersonID">
+        <configurationGroup name="fields">
+          <configurationGroup name="id_type">
+            <configuration name="headers" type="delimited" locale="ar">
+              <value>default:نوع الهوية</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="id_num">
+            <configuration name="headers" type="delimited" locale="ar">
+              <value>default:رقم الهوية</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="issue_date">
+            <configuration name="headers" type="delimited" locale="ar">
+              <value>default:تاريخ القضية</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="expiration_date">
+            <configuration name="headers" type="delimited" locale="ar">
+              <value>default:تاريخ الانتهاء</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="country">
+            <configuration name="headers" type="delimited" locale="ar">
+              <value>default:بلد القضية</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="place">
+            <configuration name="headers" type="delimited" locale="ar">
+              <value>default:مكان القضية</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="iHRIS_PersonID_Type">
+        <configurationGroup name="fields">
+          <configurationGroup name="pattern">
+            <configuration name="headers" type="delimited" locale="ar"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

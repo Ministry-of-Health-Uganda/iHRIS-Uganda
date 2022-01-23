@@ -1,0 +1,32 @@
+<div id="calendar">
+  <div class="date_select">
+    <form method="GET">
+      <select name="month" id="month_select">
+      </select>
+      <select name="year" id="year_select">
+      </select>
+      <input type="hidden" name="list_view" />
+      <input class="button" type="submit" value="go" />
+      <a href="" name="calendar_current" style="text-decoration:none;"><span class="button">today</span></a>
+    </form>
+  </div>
+  <div id="view_tabs">
+    <a href="" name="calendar_list_view">List View</a>
+    |
+    <a href="" name="calendar_month_view">Calendar View</a>
+  </div>
+  <table class="calendar" border="0" cellpadding="0" cellspacing="0">
+    <thead>
+      <tr>
+        <th colspan="7" class="month_name">
+          <h1><a name="calendar_previous_month" href="">&laquo;</a> <span name="month_name" /> <a name="calendar_next_month" href="">&raquo;</a></h1>
+          <h2><a name="calendar_previous_year" href="">&laquo;</a> <span name="year_name" /> <a name="calendar_next_year" href="">&raquo;</a></h2>
+        </th>
+      </tr>
+      <tr id="day_headers">
+      </tr>
+    </thead>
+    <tbody id="calendar_days">
+    </tbody>
+  </table>
+</div>

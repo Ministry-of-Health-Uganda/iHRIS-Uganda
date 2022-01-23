@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="establishment" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="establishment" path="/I2CE" locale="ar">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="ar">
+      <configuration name="can_edit_database_list_establishment_type" locale="ar">
+        <value>يمكن تعديل قائمة بيانات نوع المؤسسة</value>
+      </configuration>
+      <configuration name="can_view_database_list_establishment_type" locale="ar">
+        <value>يمكن عرض قائمة بيانات نوع المؤسسة</value>
+      </configuration>
+      <configuration name="can_edit_database_list_establishment_period" locale="ar">
+        <value>يمكن تعديل قائمة بيانات مدة المؤسسة</value>
+      </configuration>
+      <configuration name="can_view_database_list_establishment_period" locale="ar">
+        <value>يمكن عرض قائمة بيانات مدة المؤسسة</value>
+      </configuration>
+      <configuration name="can_edit_database_list_establishment" locale="ar">
+        <value>يمكن&#160;تعديل قائمة بيانات المؤسسة</value>
+      </configuration>
+      <configuration name="can_view_database_list_establishment" locale="ar">
+        <value>يمكن&#160;عرض قائمة بيانات المؤسسة</value>
+      </configuration>
+      <configuration name="establishment_can_access" locale="ar">
+        <value>يمكن الوصول إلى معلومات المؤسسة</value>
+      </configuration>
+      <configuration name="establishment_can_edit" locale="ar">
+        <value>يمكن&#160;تعديل معلومات المؤسسة</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="establishment">
+          <configuration name="display" values="single" locale="ar">
+            <value>مؤسسة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="establishment_period">
+          <configuration name="display" values="single" locale="ar">
+            <value>مدة المؤسسة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="establishment_type">
+          <configuration name="display" values="single" locale="ar">
+            <value>نوع المؤسسة</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_EstablishmentPeriod">
+          <configurationGroup name="fields">
+            <configurationGroup name="establishment_type">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:نوع المؤسسة</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="year">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:سنة التطبيق</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Establishment">
+          <configurationGroup name="meta" path="meta/list/default">
+            <configuration name="display_string" locale="ar">
+              <value>%s في %s (%s)</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="fields">
+            <configurationGroup name="establishment_period">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:مدة المؤسسة</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="job_cadre">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:وظيفة&#160;أو&#160;كادر</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:المنشأة أو نوع المنشأة</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="amount">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:عدد العاملين في قطاع الصحة</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

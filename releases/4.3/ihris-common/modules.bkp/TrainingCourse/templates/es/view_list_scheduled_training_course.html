@@ -1,0 +1,68 @@
+<div id="list_display">
+  <div class="editRecord">
+    <p>Editar esta información</p>
+    <ul><li>
+	<a href="lists?type=scheduled_training_course&amp;field=training_course">Seleccionar otro curso</a>
+      </li>
+      <li task="can_edit_scheduled_training_course">
+	<span type="form" name="scheduled_training_course:id" href="lists?type=scheduled_training_course&amp;id=">Actualizar esta información</span>
+      </li>
+      <li task="can_edit_scheduled_training_course">
+	<span type="form" name="scheduled_training_course:id" href="editstudents?id=">Añadir/Quitar estudiantes</span>
+      </li>
+      <span type="module" ifenabled="true" name="training-exam">
+        <li task="can_edit_scheduled_training_course">
+          <span type="form" name="scheduled_training_course:id" href="view_list?type=scheduled_training_course&amp;i2ce_template=participants&amp;id=">Gestionar resultados del examen de estudiante</span>
+        </li>
+        <li task="can_edit_scheduled_training_course">
+          <span type="form" name="scheduled_training_course:id" href="view_list?type=scheduled_training_course&amp;i2ce_template=participants_compact&amp;id=">Gestionar todos los resultados del examen de estudiante</span>
+        </li>
+	<li>
+          <span type="form" name="scheduled_training_course:id" href="view_list?type=scheduled_training_course&amp;i2ce_template=evaluate&amp;id=">Evaluaciones de estudiantes</span>
+	</li>
+	<li>
+          <span type="form" name="scheduled_training_course:id" href="view_list?type=scheduled_training_course&amp;i2ce_template=prepost&amp;id=">Pre/Post resumen de la prueba</span>
+	</li>
+	<li>
+          <span type="form" name="scheduled_training_course:id" href="view_list?type=scheduled_training_course&amp;i2ce_template=mods&amp;id=">Módulos del curso</span>
+	</li>
+
+	<li>
+          <span type="form" name="scheduled_training_course:id" href="studentparticipants?id=">Reporte de participación de estudiante</span>
+	</li>
+	
+	<li>
+          <span type="form" name="scheduled_training_course:id" href="studentcertificates?id=">Certificados de capacitación</span>
+	</li>
+      </span>                                                                                                                                                                         
+    </ul></div> <!-- editRecord -->
+  
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0"><tr><th colspan="2">Curso programado</th>
+      </tr><span type="form" name="scheduled_training_course:training_course" showhead="default"></span>
+      <span type="form" name="scheduled_training_course:name" showhead="default"></span>
+      <span type="module" name="training-instructor" ifenabled="true">
+	<span type="form" name="scheduled_training_course:training_instructor" showhead="default"></span>
+      </span>
+      <span type="form" name="scheduled_training_course:instructors" showhead="default"></span>
+      <span type="form" name="scheduled_training_course:start_date" showhead="default"></span>
+      <span type="form" name="scheduled_training_course:end_date" showhead="default"></span>
+      <span type="form" name="scheduled_training_course:num_students" showhead="default"></span>
+      <span type="form" name="scheduled_training_course:notes" showhead="default" ifset="true"></span>
+      <tr><td>
+	  <span class="field_head"><label for="scheduled_training_course_site">Estudiantes Inscritos</label>:</span>
+	</td>
+	<td>
+	  <b>
+	    <span class="form_field">
+	      <span type="form" name="scheduled_training_course-&gt;numberEnrolledStudents()" showhead="default"></span>
+	    </span>
+	  </b>
+	</td>
+      </tr><tr><td colspan="2">
+	  <p class="editRecordsData">
+	    <span type="form" name="scheduled_training_course-&gt;enrolledStudentsAjax()"></span>
+	  </p>
+	</td>
+      </tr></table></div> <!-- dataTable -->
+</div> <!-- list_display -->

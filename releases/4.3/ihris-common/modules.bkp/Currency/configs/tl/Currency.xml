@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Currency" path="/I2CE">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="Currency" path="/I2CE" locale="tl">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="tl">
+      <configuration name="can_edit_database_list_currency" locale="tl">
+        <value>Makapagbabago ng kabatiran sa salaping umiiral</value>
+      </configuration>
+      <configuration name="can_view_database_list_currency" locale="tl">
+        <value>Makikita ang kabatiran sa salapi</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="currency">
+          <configuration name="display" values="single" locale="tl">
+            <value>Salaping umiiral</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Currency">
+          <configurationGroup name="fields">
+            <configurationGroup name="code">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Kodigo ng Salapi</value>
+                <value>title:Ang kodigo ng pandaigdigang salaping umiiral (Hal. "USD", "GBP", atbp.)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Pangalan</value>
+                <value>title:Hal. "Doyar ng Estados Unidos", "Libra ng Britanya"</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="country">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Bansa</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="symbol">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Simbolo</value>
+                <value>title:Hal. "$"</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

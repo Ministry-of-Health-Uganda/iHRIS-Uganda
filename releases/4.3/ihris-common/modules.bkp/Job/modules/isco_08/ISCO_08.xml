@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="isco-08">
+  <metadata>
+    <displayName>ISCO 08 Job Codes</displayName>
+    <description>The ISCO 08 Job Codes</description>
+    <version>4.3.0</version>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+  <configurationGroup name="isco-08" path="/">
+    <configurationGroup name="isco_08_forms" path="/modules/forms/formClasses">
+      <!--we will add a form class for each of the isco 08 groupings -->
+      <!--each form class will extend the class I2CE_List -->
+      <!--each form class will provide the field 'name' and 'description' of which name is required -->
+      <!--the forms will map to each other in a heirachical relationship as follows:
+         iHRIS_ISCO_08_Sub_Major has a field isco_08_major which will map to the isco_08_major form
+         iHRIS_ISCO_08_Minor has a field isco_08_sub_major which will map to the isco_08_sub_major form
+         iHRIS_ISCO_08_Unit has a field isco_08_minor which will map to the isco_08_minor form
+         -->
+      <!--we will specify a header (or title) for each of the fields we add in the forms -->
+      <!--the corrseponding forms are defined in the block  following this one -->
+      <configurationGroup name="iHRIS_ISCO_08_Major">
+        <configuration name="extends">
+          <!-- This form class extends I2CE_List class  -->
+          <value>I2CE_List</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <!-- The fields defined for this form -->
+          <configurationGroup name="name">
+            <configuration name="formfield">
+              <!-- The field type is string-->
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited">
+              <!-- The headers for this field. -->
+              <value>default:Major Group</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <!--This field is required -->
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="iHRIS_ISCO_08_Sub_Major">
+        <configuration name="extends">
+          <!-- this form class extends I2CE_List -->
+          <value>I2CE_List</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <!-- The fields defined for this form -->
+          <configurationGroup name="name">
+            <configuration name="formfield">
+              <!--The field type is string_line -->
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited">
+              <!-- The headers for this field. -->
+              <value>default:Sub-Major Group</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <!--This field is required -->
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="isco_08_major">
+            <configuration name="formfield">
+              <!--The field  is a mapped  value -->
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited">
+              <!-- The headers for this field. -->
+              <value>default:Major Group</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="iHRIS_ISCO_08_Minor">
+        <configuration name="extends">
+          <!-- this form class extends I2CE_List -->
+          <version>4.0.6</version>
+          <value>I2CE_List</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <!-- The fields defined for this form -->
+          <configurationGroup name="name">
+            <configuration name="formfield">
+              <!--The field type is string -->
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited">
+              <!-- The headers for this field. -->
+              <value>default:Minor Group</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <!--This field is required -->
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="isco_08_sub_major">
+            <configuration name="formfield">
+              <!--The field is a mapped value -->
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited">
+              <!-- The headers for this field. -->
+              <value>default:Sub-Major Group</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="iHRIS_ISCO_08_Unit">
+        <configuration name="extends">
+          <!-- this form class extends I2CE_List -->
+          <version>4.0.6</version>
+          <value>I2CE_List</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <!-- The fields defined for this form-->
+          <configurationGroup name="name">
+            <configuration name="formfield">
+              <!--The field type is string -->
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited">
+              <!-- The headers for this field. -->
+              <value>default:Unit</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <!--This field is required -->
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="isco_08_minor">
+            <configuration name="formfield">
+              <!--The field is a mapped-value -->
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited">
+              <!-- The headers for this field. -->
+              <value>default:Minor Group</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_08_forms" path="/modules/forms/forms">
+      <!--we will add a form for each of the isco 08 groupings -->
+      <configurationGroup name="isco_08_major">
+        <configuration name="class" values="single">
+          <!-- The name of the class providing the form -->
+          <value>iHRIS_ISCO_08_Major</value>
+        </configuration>
+        <configuration name="display" values="single">
+          <!-- The display name for this form -->
+          <value>ISCO 08 Major</value>
+        </configuration>
+        <configuration name="storage" values="single">
+          <!-- The storage mechanism for this form. -->
+          <value>magicdata</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="isco_08_sub_major">
+        <configuration name="class" values="single">
+          <!-- The name of the class providing the form -->
+          <value>iHRIS_ISCO_08_Sub_Major</value>
+        </configuration>
+        <configuration name="display" values="single">
+          <!-- The display name for this form -->
+          <value>ISCO 08 Sub-Major</value>
+        </configuration>
+        <configuration name="storage" values="single">
+          <!-- The storage mechanism for this form. -->
+          <value>magicdata</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="isco_08_minor">
+        <configuration name="class" values="single">
+          <!-- The name of the class providing the form -->
+          <value>iHRIS_ISCO_08_Minor</value>
+        </configuration>
+        <configuration name="display" values="single">
+          <!-- The display name for this form -->
+          <value>ISCO 08 Minor</value>
+        </configuration>
+        <configuration name="storage" values="single">
+          <!-- The storage mechanism for this form. -->
+          <value>magicdata</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="isco_08_unit">
+        <configuration name="class" values="single">
+          <!-- The name of the class providing the form -->
+          <value>iHRIS_ISCO_08_Unit</value>
+        </configuration>
+        <configuration name="display" values="single">
+          <!-- The display name for this form -->
+          <value>ISCO 08 Unit</value>
+        </configuration>
+        <configuration name="storage" values="single">
+          <!-- The storage mechanism for this form. -->
+          <value>magicdata</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_08_field" path="/modules/forms/formClasses/iHRIS_Job/fields/isco_08_unit">
+      <!--Add the isco_08_unit field into iHRIS_Job which will point to the isco_08_units/job codes we have-->
+      <version>4.0.1</version>
+      <configuration name="formfield">
+        <!-- This is a mapped value-->
+        <value>MAP</value>
+      </configuration>
+      <configuration name="headers" type="delimited">
+        <!-- The headers for this field. -->
+        <value>default:ISCO 08 Code</value>
+      </configuration>
+      <configurationGroup name="meta">
+        <configurationGroup name="display">
+          <configurationGroup name="default">
+            <configuration name="fields">
+              <!--This describes the default display and select isco_08_unit field.  We start
+                 in the lowest part of the hierarchy of forms, isco_08_unit and proceed up to the top
+                 part, the isco_08_major. The forms are separated by colons.  
+                 When a value is selected, the full hierarchy is displayed. 
+                 When a value is displayed, we only display the the isco_08_unit data, as the
+                 other forms' display is suppressed by the [ ] -->
+              <value>isco_08_unit:isco_08_minor:isco_08_sub_major:isco_08_major</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

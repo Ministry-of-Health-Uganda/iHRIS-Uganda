@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEducation" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEducation" path="/I2CE" locale="de">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="de">
+      <configuration name="person_can_view_child_form_education" locale="de">
+        <value>Kann das Datenblatt mit den Ausbildungsinformationen zu einer Person einsehen</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_education" locale="de">
+        <value>Kann das Datenblatt mit den Ausbildungsinformationen zu einer Person bearbeiten</value>
+      </configuration>
+      <configuration name="can_edit_database_list_edu_type" locale="de">
+        <value>Kann die Datenbanklisten der Ausbildungsarten bearbeiten</value>
+      </configuration>
+      <configuration name="can_view_database_list_edu_type" locale="de">
+        <value>Kann die Datenbanklisten der Ausbildungsarten einsehen</value>
+      </configuration>
+      <configuration name="can_edit_database_list_degree" locale="de">
+        <value>Kann die Datenbanklisten der Abschlussarten bearbeiten</value>
+      </configuration>
+      <configuration name="can_view_database_list_degree" locale="de">
+        <value>Kann die Datenbanklisten der Abschlussarten einsehen</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="education">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="de">
+            <value>Ausbildungsverlauf hinzufügen/aktualisieren</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="degree">
+          <configuration name="display" values="single" locale="de">
+            <value>Abschluss</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="edu_type">
+          <configuration name="display" values="single" locale="de">
+            <value>Ausbildungsart</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="education">
+          <configuration name="display" values="single" locale="de">
+            <value>Ausbildungsverlauf</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Degree">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="de"></configuration>
+            </configurationGroup>
+            <configurationGroup name="edu_type">
+              <configuration name="headers" type="delimited" values="many" locale="de">
+                <value>default:Ausbildungsart</value>
+                <value>select_degree:Die Ausbildungsart und anschließend den Abschluss auswählen</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Education">
+          <configurationGroup name="fields">
+            <configurationGroup name="degree">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Abschluss</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="institution">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Institutionsname</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Standort der Institution</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="year">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Abschlussjahr (leer lassen, sofern noch nicht abgeschlossen)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="major">
+              <configuration name="headers" type="delimited" locale="de">
+                <value>default:Hauptfach</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

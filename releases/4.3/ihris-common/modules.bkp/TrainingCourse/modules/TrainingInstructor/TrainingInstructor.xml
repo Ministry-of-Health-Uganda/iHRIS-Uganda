@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="training-instructor">
+  <metadata>
+    <displayName>Training Instructor</displayName>
+    <category>Application Component</category>
+    <description>Adds functionality to track training course instructors as individuals registered in the system by training institution</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="training-course">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ReferenceField">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="CustomReports-Selector">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+  </metadata>
+  <configurationGroup name="training-instructor" path="/I2CE">
+    <configurationGroup name="formClass" path="/modules/forms/formClasses/iHRIS_Scheduled_Training_Course">
+      <version>4.0.17.1</version>
+      <configurationGroup name="fields">
+        <configurationGroup name="training_instructor">
+          <configuration name="formfield">
+            <value>REFERENCE</value>
+          </configuration>
+          <configuration name="headers" values="many" type="delimited" locale="en_US">
+            <value>default:Registered Instructor</value>
+          </configuration>
+          <configurationGroup name="meta">
+            <configuration name="form" values="many">
+              <value>person</value>
+            </configuration>
+            <configurationGroup name="display">
+              <version>4.2.0.1</version>
+              <configurationGroup name="default">
+                <configurationGroup name="printf" locale="en_US">
+                  <configuration name="person">
+                    <value>%s, %s</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="printf_args" locale="en_US">
+                  <configuration name="person" values="many" type="delimited">
+                    <value>0:surname</value>
+                    <value>1:firstname</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="reportSelect">
+                  <configuration name="reportView">
+                    <value>search_people</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <!--End of /I2Ce/page -->
+  </configurationGroup>
+</I2CEConfiguration>

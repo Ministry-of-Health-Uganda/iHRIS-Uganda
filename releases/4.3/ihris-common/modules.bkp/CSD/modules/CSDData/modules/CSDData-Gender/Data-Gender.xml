@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="csd-data-gender">
+  <metadata>
+    <displayName>CSD Data Gender</displayName>
+    <category>Application Component</category>
+    <description>CSD Data - Gender</description>
+    <creator>IntraHealth Informatics</creator>
+    <email>litlfred@gmail.com</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <erase path="/I2CE/formsData/forms/csd_gender">
+    <lessThan version="4.2.1.1" />
+  </erase>
+  <configurationGroup name="csd-data-gender" path="/modules/forms">
+    <version>4.2.1.1</version>
+    <configuration name="storage" path="/modules/forms/forms/csd_provider_gender/storage">
+      <version>4.2.1.1</version>
+      <value>magicdata</value>
+    </configuration>
+    <!--REQUIRED VALUES-->
+    <configurationGroup name="csd_provider_gender_values" path="/I2CE/formsData/forms/csd_provider_gender">
+      <version>4.2.1.1</version>
+      <configurationGroup name="M">
+        <configuration name="last_modified">
+          <value>2014-01-16 16:20:00</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" locale="en_US">
+            <value>Male</value>
+          </configuration>
+          <configuration name="code" locale="en_US">
+            <value>M</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="F">
+        <configuration name="last_modified">
+          <value>2014-01-16 16:20:00</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" locale="en_US">
+            <value>Female</value>
+          </configuration>
+          <configuration name="code" locale="en_US">
+            <value>F</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

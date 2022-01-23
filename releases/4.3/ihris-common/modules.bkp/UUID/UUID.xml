@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="UUID_map">
+  <metadata>
+    <displayName>UUID Map</displayName>
+    <className>iHRIS_Module_UUID_Map</className>
+    <category>Application Component</category>
+    <description>Allows administrator to associate a UUID with any form id</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/common</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="forms-storage-flat">
+      <atLeast version="4.2" />
+      <lessThan version="4.5" />
+    </requirement>
+    <!--<requirement name="php5-uuid">
+      <eval>extension_loaded('uuid')</eval>
+    </requirement>-->
+    <requirement name="Lists">
+      <atLeast version="4.2" />
+      <lessThan version="4.5" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="sql">
+      <value>./sql</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="UUID_Map" path="/I2CE">
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <displayName>Forms available to the form factory</displayName>
+        <status>advanced:true</status>
+        <status>required:true</status>
+        <configurationGroup name="uuid">
+          <displayName>UUID Map</displayName>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_UUID_Map</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>UUID Map</value>
+          </configuration>
+          <configuration name="storage">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>flat</value>
+          </configuration>
+          <configurationGroup name="storage_options">
+            <configurationGroup name="flat">
+              <configuration name="writable" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="table">
+                <value>uuid_map</value>
+              </configuration>
+              <configurationGroup name="id">
+                <configuration name="col">
+                  <value>uuid</value>
+                </configuration>
+                <configuration name="form_prepended" type="boolean">
+                  <value>false</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="parent">
+                <version>4.0.3.3</version>
+                <configuration name="enabled">
+                  <value>0</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- uuid_map -->
+      </configurationGroup>
+      <!-- End /modules/forms/forms-->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_UUID_Map">
+          <displayName>Configuration for the class 'iHRIS_UUID_map'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="formid">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Mapped Form</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique" type="boolean">
+                <displayName>This field is required to be unique</displayName>
+                <value>true</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form_any" type="boolean">
+                  <version>4.0.3</version>
+                  <value>true</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_UUID_map -->
+      </configurationGroup>
+      <!-- End /modules/forms/formClasses -->
+    </configurationGroup>
+    <!-- End /modules/forms -->
+  </configurationGroup>
+  <!-- Photo -->
+</I2CEConfiguration>

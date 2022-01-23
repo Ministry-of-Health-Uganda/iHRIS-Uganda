@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="training-exam" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="training-exam" path="/I2CE" locale="cs">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_scheduled_training_course_can_edit_exam" locale="cs">
+        <value>Vyhodnotit naplánovaný výcvikový kurz osoby</value>
+      </configuration>
+      <configuration name="person_scheduled_training_course_can_view_exam" locale="cs">
+        <value>Zobrazit vyhodnocení naplánovaného výcvikového kurzu osoby</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="training_course_exam_type">
+          <configuration name="display" values="single" locale="cs">
+            <value>Typ zkoušky výcvikového kurzu</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="training_course_exam">
+          <configuration name="display" values="single" locale="cs">
+            <value>Zkouška výcvikového kurzu</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Training_Course_Exam">
+          <configurationGroup name="fields">
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Poznámky</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="evaluation_date">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Datum vyhodnocení</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="training_course_exam_type">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Typ zkoušky</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="score">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Hodnocení</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Training_Course">
+          <configurationGroup name="fields">
+            <configurationGroup name="passing_score">
+              <configuration name="headers" type="delimited" locale="cs">
+                <value>default:Hodnocení pro absolvovámí při závěrečné zkoušce</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="exam" path="/modules/training-course/page/exam">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs">
+            <value>Výsledky zkoušky výcvikového kurzu</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

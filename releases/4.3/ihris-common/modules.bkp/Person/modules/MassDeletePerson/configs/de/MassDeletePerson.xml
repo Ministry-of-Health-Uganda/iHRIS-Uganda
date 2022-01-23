@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-common-MassDeletePerson" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-common-MassDeletePerson" path="/I2CE" locale="de">
+    <version>4.2.0.1</version>
+    <configurationGroup name="page">
+      <configurationGroup name="delete_by_search">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="de">
+            <value>Massenlöschung durch Suche</value>
+          </configuration>
+          <configuration name="action_header" values="single" locale="de">
+            <value>Person zur Löschung markieren</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="delete_by_search_action">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="de">
+            <value>Massenlöschung durch Suche</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

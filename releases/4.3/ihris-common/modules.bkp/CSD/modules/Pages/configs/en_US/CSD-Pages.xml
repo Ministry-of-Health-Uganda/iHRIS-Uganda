@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="csd-provider-pages" path="/">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="csd-provider-pages" path="/" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="ihris-manage-AutoList" path="/I2CE/page/auto_list/args/forms">
+      <configurationGroup name="csd_provider">
+        <configurationGroup name="edit_links">
+          <configurationGroup name="view_record">
+            <configuration name="text" locale="en_US">
+              <value>View Full Health Worker Record</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_facility">
+        <configurationGroup name="edit_links">
+          <configurationGroup name="view_record">
+            <configuration name="text" locale="en_US">
+              <value>View Full Facility Record</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_organization">
+        <configurationGroup name="edit_links">
+          <configurationGroup name="view_record">
+            <configuration name="text" locale="en_US">
+              <value>View Full Organization Record</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_service">
+        <configurationGroup name="edit_links">
+          <configurationGroup name="view_record">
+            <configuration name="text" locale="en_US">
+              <value>View Full Service Record</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <configurationGroup name="view_csd_facility">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>View Facility</value>
+          </configuration>
+          <configurationGroup name="otherid" path="auto_template/child_forms">
+            <configurationGroup name="csd_provider_contact_point">
+              <configuration name="title" locale="en_US">
+                <value>Contact Point</value>
+              </configuration>
+              <configuration name="printf" locale="en_US">
+                <value>%s (%s)</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="view_csd_service">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>View Service</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="view_csd_organization">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>View Organization</value>
+          </configuration>
+          <configurationGroup name="child_forms" path="auto_template/child_forms">
+            <configurationGroup name="csd_provider_contact_point">
+              <configuration name="title" locale="en_US">
+                <value>Contact Point</value>
+              </configuration>
+              <configuration name="printf" locale="en_US">
+                <value>%s (%s)</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="view_csd_provider">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>View Health Worker</value>
+          </configuration>
+          <configurationGroup name="auto_template">
+            <configurationGroup name="action_links">
+              <configurationGroup name="view_csd">
+                <configuration name="text" locale="en_US">
+                  <value>View CSD Record</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="child_forms">
+              <configurationGroup name="csd_provider_address">
+                <configuration name="title" locale="en_US">
+                  <value>Address</value>
+                </configuration>
+                <configuration name="printf" locale="en_US">
+                  <value>%s</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="csd_provider_credential">
+                <configuration name="title" locale="en_US">
+                  <value>Credential</value>
+                </configuration>
+                <configuration name="printf" locale="en_US">
+                  <value>%s (%s). Renewed %s</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="csd_provider_facility">
+                <configuration name="title" locale="en_US">
+                  <value>Place of Work</value>
+                </configuration>
+                <configuration name="printf" locale="en_US">
+                  <value>%s</value>
+                </configuration>
+                <configurationGroup name="child_forms">
+                  <configurationGroup name="csd_provider_service">
+                    <configuration name="title" locale="en_US">
+                      <value>Services Offered</value>
+                    </configuration>
+                    <configuration name="printf" locale="en_US">
+                      <value>%s</value>
+                    </configuration>
+                    <configurationGroup name="action_links">
+                      <configurationGroup name="delete">
+                        <configuration name="text" locale="en_US">
+                          <value>Delete Health Worker's Serivce</value>
+                        </configuration>
+                      </configurationGroup>
+                    </configurationGroup>
+                    <configurationGroup name="child_forms">
+                      <configurationGroup name="csd_operating_hours">
+                        <configuration name="title" locale="en_US">
+                          <value>Operating Hours</value>
+                        </configuration>
+                        <configuration name="printf" locale="en_US">
+                          <value>On %s From %s-%s Between The Hours Of %s-%s</value>
+                        </configuration>
+                        <configurationGroup name="action_links">
+                          <configurationGroup name="delete">
+                            <configuration name="text" locale="en_US">
+                              <value>Delete Operating Hours</value>
+                            </configuration>
+                          </configurationGroup>
+                        </configurationGroup>
+                      </configurationGroup>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="csd_provider_organization">
+                <configuration name="title" locale="en_US">
+                  <value>Organizational Affiliation</value>
+                </configuration>
+                <configuration name="printf" locale="en_US">
+                  <value>%s</value>
+                </configuration>
+                <configurationGroup name="child_forms">
+                  <configurationGroup name="csd_provider_organization_address">
+                    <configuration name="title" locale="en_US">
+                      <value>Organizational Address</value>
+                    </configuration>
+                    <configuration name="printf" locale="en_US">
+                      <value>%s</value>
+                    </configuration>
+                    <configurationGroup name="action_links">
+                      <configurationGroup name="delete">
+                        <configuration name="text" locale="en_US">
+                          <value>Delete Organizational Address</value>
+                        </configuration>
+                      </configurationGroup>
+                    </configurationGroup>
+                  </configurationGroup>
+                  <configurationGroup name="csd_provider_organization_contact_point">
+                    <configuration name="title" locale="en_US">
+                      <value>Organizational Contact Point</value>
+                    </configuration>
+                    <configuration name="printf" locale="en_US">
+                      <value>%s (%s)</value>
+                    </configuration>
+                    <configurationGroup name="action_links">
+                      <configurationGroup name="delete">
+                        <configuration name="text" locale="en_US">
+                          <value>Delete Organizational Contact Point</value>
+                        </configuration>
+                      </configurationGroup>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="csd_provider_otherid">
+                <configuration name="title" locale="en_US">
+                  <value>Provider Other Identification</value>
+                </configuration>
+                <configuration name="printf" locale="en_US">
+                  <value>%s (%s)</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="csd_provider_contact_point">
+                <configuration name="title" locale="en_US">
+                  <value>Contact Point</value>
+                </configuration>
+                <configuration name="printf" locale="en_US">
+                  <value>%s (%s)</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="csd_provider_name">
+                <configuration name="title" locale="en_US">
+                  <value>Health Worker's Name</value>
+                </configuration>
+                <configuration name="printf" locale="en_US">
+                  <value>%s %s</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

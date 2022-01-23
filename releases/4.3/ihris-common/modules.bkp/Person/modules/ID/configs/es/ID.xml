@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonID" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonID" path="/I2CE" locale="es">
+    <version>4.2.1.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="es">
+      <configuration name="exp_date" path="person_id/expiration_date/bad_date" locale="es">
+        <value>La fecha de expiración debe ser posterior a la fecha de expedición.</value>
+      </configuration>
+      <configuration name="wrong_pattern" path="person_id/id_num/wrong_pattern" locale="es"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="es">
+      <configuration name="person_can_view_child_form_person_id" locale="es">
+        <value>Puede visualizar el formulario de Identificación del niño de una persona</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_id" locale="es">
+        <value>Puede editar los formularios de Identificación del niño de una persona</value>
+      </configuration>
+      <configuration name="can_edit_database_list_id_type" locale="es">
+        <value>Puede editar la lista de la base de datos del tipo de identificación</value>
+      </configuration>
+      <configuration name="can_view_database_list_id_type" locale="es">
+        <value>Puede visualizar la lista de la base de datos del tipo de identificación</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_id">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="es">
+            <value>Añadir / Actualizar Identificación</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/forms">
+      <configurationGroup name="id_type">
+        <configuration name="display" values="single" locale="es">
+          <value>Tipo de identificación</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="person_id">
+        <configuration name="display" values="single" locale="es">
+          <value>Identificación de persona</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <configuration name="description" locale="es">
+            <value>Este formulario contiene información básica sobre la identificación de una persona</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/formClasses">
+      <configurationGroup name="iHRIS_PersonID">
+        <configurationGroup name="fields">
+          <configurationGroup name="id_type">
+            <configuration name="headers" type="delimited" locale="es">
+              <value>default:Tipo de identificación</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="id_num">
+            <configuration name="headers" type="delimited" locale="es">
+              <value>default:Número de identificación</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="issue_date">
+            <configuration name="headers" type="delimited" locale="es">
+              <value>default:Fecha de expedición</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="expiration_date">
+            <configuration name="headers" type="delimited" locale="es">
+              <value>default:Fecha de expiración</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="country">
+            <configuration name="headers" type="delimited" locale="es">
+              <value>default:País de expedición</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="place">
+            <configuration name="headers" type="delimited" locale="es">
+              <value>default:Lugar de expedición</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="iHRIS_PersonID_Type">
+        <configurationGroup name="fields">
+          <configurationGroup name="pattern">
+            <configuration name="headers" type="delimited" locale="es">
+              <value>default:Patrón (expresión regular)</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

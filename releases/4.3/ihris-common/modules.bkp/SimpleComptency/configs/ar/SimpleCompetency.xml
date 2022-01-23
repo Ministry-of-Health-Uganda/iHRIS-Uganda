@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="simple-competency" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="simple-competency" path="/I2CE" locale="ar">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_lists_competency" locale="ar">
+        <value>تعديل&#160;كل&#160;القوائم&#160;المرتبطة&#160;بالكفاءة</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency" locale="ar">
+        <value>تعديل قائمة&#160;الكفاءة</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_type" locale="ar">
+        <value>تعديل قائمة&#160;نوع&#160;الكفاءة</value>
+      </configuration>
+      <configuration name="can_view_database_lists_competency" locale="ar">
+        <value>عرض&#160;كل&#160;القوائم&#160;المرتبطة&#160;بالكفاءة</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency" locale="ar">
+        <value>عرض قائمة&#160;الكفاءة</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency_type" locale="ar">
+        <value>عرض قائمة&#160;نوع&#160;الكفاءة</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="competency">
+          <configuration name="display" values="single" locale="ar">
+            <value>الكفاءة</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="competency_type">
+          <configuration name="display" values="single" locale="ar">
+            <value>نوع الكفاءة</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Competency">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:اسم</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency_type">
+              <configuration name="headers" type="delimited" values="many" locale="ar">
+                <value>default:نوع الكفاءة</value>
+                <value>select_competency_type:حدد&#160;نوع&#160;الكفاءة&#160;ثم&#160;الكفاءة</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="ar">
+                <value>default:ملحوظات</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

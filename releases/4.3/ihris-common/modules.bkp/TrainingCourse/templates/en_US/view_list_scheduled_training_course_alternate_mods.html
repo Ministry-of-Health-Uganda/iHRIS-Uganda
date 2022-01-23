@@ -1,0 +1,53 @@
+<div id="list_display">
+  <div class="editRecord">
+    <p>Edit This Information</p>
+    <ul>
+      <li>
+	<a href="lists?type=scheduled_training_course&amp;field=training_course">Select Another Course</a>
+      </li>
+      <li task='can_edit_scheduled_training_course'>
+	<span type="form" name="scheduled_training_course:id"  href="lists?type=scheduled_training_course&amp;id=" >Update this Information</span>
+      </li>
+      <li task='can_edit_scheduled_training_course'>
+	<span type="form" name="scheduled_training_course:id"  href="editstudents?id=" >Add/Remove Students</span>
+      </li>
+      <li>
+        <span type="form" name="scheduled_training_course:id"  href="view_list?type=scheduled_training_course&amp;id=">Course Overview</span>
+      </li>
+      <li task='can_edit_scheduled_training_course'>
+        <span type="form" name="scheduled_training_course:id"  href="view_list?type=scheduled_training_course&amp;i2ce_template=participants&amp;id=">Manage Student Exam Results</span>
+      </li>
+      <li task='can_edit_scheduled_training_course'>
+        <span type="form" name="scheduled_training_course:id"  href="view_list?type=scheduled_training_course&amp;i2ce_template=participants_compact&amp;id=">Manage All Student Exam Results</span>
+      </li>
+      <li>
+        <span type="form" name="scheduled_training_course:id"  href="view_list?type=scheduled_training_course&amp;i2ce_template=evaluate&amp;id=">Student Evaluations</span>
+      </li>
+      <li>
+        <span type="form" name="scheduled_training_course:id"  href="view_list?type=scheduled_training_course&amp;i2ce_template=prepost&amp;id=">Pre/Post-Test Summary</span>
+      </li>
+      <li>
+        <span type="form" name="scheduled_training_course:id"  href="studentparticipants?id=">Student Participation Report</span>
+      </li>
+      <li>
+        <span type="form" name="scheduled_training_course:id"  href="studentcertificates?id=">Training Certificates</span>
+      </li>
+    </ul>
+  </div> <!-- editRecord -->
+  
+  <div class="dataTable" >
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+	<th colspan="2">Scheduled Course</th>
+      </tr>
+      <tr>
+	<td colspan='2' >
+	  <span id='participant_list'>
+	    <span type='form' name='scheduled_training_course->studentModules()'/>
+	  </span>
+	</td>	
+      </tr>
+    </table>
+    
+  </div> <!-- dataTable -->
+</div> <!-- list_display -->

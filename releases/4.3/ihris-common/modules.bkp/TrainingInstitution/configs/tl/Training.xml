@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="training-institution" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="training-institution" path="/I2CE" locale="tl">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_training_institution" locale="tl">
+        <value>Baguhin ang tala ng mga institusyon ng pagsasanay</value>
+      </configuration>
+      <configuration name="can_edit_database_list_training_funder" locale="tl">
+        <value>Baguhin ang tala ng tagapagpondo ng pagsasanay</value>
+      </configuration>
+      <configuration name="can_view_database_list_training_institution" locale="tl">
+        <value>Tingnan ang tala ng mga institusyon ng pagsasanay</value>
+      </configuration>
+      <configuration name="can_view_database_list_training_funder" locale="tl">
+        <value>Tingnan ang tala ng tagapagpondo ng pagsasanay</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="training_institution">
+          <configuration name="display" values="single" locale="tl">
+            <value>Institusyon ng Pagsasanay</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="training_funder">
+          <configuration name="display" values="single" locale="tl">
+            <value>Tagapagpondo ng Pagsasanay</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

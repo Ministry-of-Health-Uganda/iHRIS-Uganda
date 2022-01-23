@@ -1,0 +1,68 @@
+<?php
+
+$i2ce_site_user_access_init = null;
+$script = array_shift( $argv );
+if (file_exists(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages/local' . DIRECTORY_SEPARATOR . 'config.values.php')) {
+	require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages/local' . DIRECTORY_SEPARATOR . 'config.values.php');
+} else {
+	require_once( dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages/config.values.php');
+}
+$i2ce_site_i2ce_path = "/var/lib/iHRIS/releases/4.3/i2ce";
+
+require_once ($i2ce_site_i2ce_path . DIRECTORY_SEPARATOR . 'I2CE_config.inc.php');
+
+@I2CE::initializeDSN($i2ce_site_dsn,   $i2ce_site_user_access_init,    $i2ce_site_module_config);
+
+unset($i2ce_site_user_access_init);
+unset($i2ce_site_dsn);
+unset($i2ce_site_i2ce_path);
+unset($i2ce_site_module_config);
+
+
+global $user;
+
+$user = new I2CE_User(1, false, false, false);
+//$db = MDB2::singleton();
+
+$db = I2CE::PDO();
+if (PEAR::isError($db)) {
+	die($db->getMessage());
+}
+
+
+echo "Memory Limit: " . ini_get( "memory_limit" ) . "\n";
+echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
+function rearrange($arr1){
+    $arr2 = array();
+    foreach(array_keys($arr1) as $k) {
+        $id = explode( '|', $arr1[$k]['value'], 2 );
+        $id2 = ($id[1]);
+        $arr2[$id2] = &$arr1[$k]['display'];
+    }
+    return $arr2;
+}	
+$form_factory = I2CE_FormFactory::instance();
+
+   $facs = I2CE_List::listOptions( "facility");
+      $count =0;         
+        foreach ($facs as $facdata){               
+		
+			 if($facdata['value']){
+			 	$fac = $form_factory->createContainer( $facdata['value'] );
+				$fac->populate();
+				$institution_type_id = "institution_type|111596";
+				$fac->getField('institution_type')->setFromDB($institution_type_id);
+			 	$fac->save( $user );
+				$fac->cleanup();
+				unset( $fac );
+		
+				$row++;
+			// 	
+
+			//print_r($facdata);
+		}
+	    }
+	
+		echo "Done ".$row++." Records.\n";
+		
+		?>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="IL-HWR">
+  <metadata>
+    <displayName>Interlinked Health Worker Registry</displayName>
+    <category>Application Component</category>
+    <description>Provides Interface for OpenInfoMan based Health Worker Registry based on CSD</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-common</link>
+    <version>4.3.0</version>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="csd_cache">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="images">
+      <value>./images</value>
+    </path>
+  </metadata>
+  <configurationGroup name="mHero" path="/">
+    <configurationGroup name="page_builder_handler" path="/modules/page-builder/handlers">
+      <version>4.2.0.14</version>
+      <configurationGroup name="CSD_Page_IL_HWR_Redirect">
+        <configuration name="swiss">
+          <value>CSD_IL_HWR_Redirect</value>
+        </configuration>
+        <configuration name="description" local="en_US">
+          <value>CSD Interlinked Health Worker Registry Interface</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page" path="/I2CE/page/IL-HWR-redirect">
+      <version>4.2.0.13</version>
+      <configuration name="style" values="single">
+        <value>action</value>
+      </configuration>
+      <configuration name="class" values="single">
+        <displayName>Page Class</displayName>
+        <value>CSD_Page_IL_HWR_Redirect</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configuration name="il_hwr_host">
+          <value>http://localhost/iHRIS/sites/csd-provider-registry/index.php</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

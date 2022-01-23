@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SVS">
+  <metadata>
+    <displayName>Sharing Value Sets (SVS) Repository</displayName>
+    <category>Data Standards</category>
+    <description>Allows publishing of lists as SVS according to http://www.ihe.net/Technical_Framework/upload/IHE_ITI_Suppl_SVS_Rev2-1_TI_2010-08-10.pdf</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/common</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Lists">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms-storage-xml">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="SVS_Repo" path="/">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>4.2.0.1</version>
+      <configuration name="SVS_allow_RetreieveValueSet" locale="en_US">
+        <value>Can retieve Shared Value Set</value>
+      </configuration>
+      <configuration name="SVS_allow_RetreieveMultipleValueSets" locale="en_US">
+        <value>Can retieve Shared Value Set</value>
+      </configuration>
+      <configuration name="SVS_allow_publish" locale="en_US">
+        <value>Can publish Shared Value Set</value>
+      </configuration>
+      <configuration name="SVS_allow_config" locale="en_US">
+        <value>Can publish Shared Value Set</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+      <configurationGroup name="SVS_CodedList">
+        <version>4.2.0.6</version>
+        <configuration name="extends">
+          <value>I2CE_SimpleList</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="code">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Code</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="codeSystem">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Code System</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configuration name="messages" path="/modules/SVS/messages" locale="en_US" type="delimited" values="many">
+      <version>4.2.0.7</version>
+      <value>retrieve:Retrieve the most recent version</value>
+      <value>publish:Publish a new version</value>
+      <value>edit:Edit %s Configuration</value>
+      <value>other:Other Versions</value>
+      <value>based_on_form_style:Based on the list %s</value>
+    </configuration>
+    <configurationGroup name="retrieve_value_set" path="/I2CE/page/SVS">
+      <configuration name="class" values="single">
+        <value>iHRIS_Page_RetrieveValueSet</value>
+      </configuration>
+      <configuration name="style" values="single">
+        <version>4.2.0.2</version>
+        <value>shell</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

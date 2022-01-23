@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonContact" path="/I2CE">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="PersonContact" path="/I2CE" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="invalid_messages" path="/modules/forms/formfield_messages" locale="en_US">
+      <configuration name="work" path="work/email/invalid_email">
+        <value>Please enter a valid email address</value>
+      </configuration>
+      <configuration name="personal" path="personal/email/invalid_email">
+        <value>Please enter a valid email address</value>
+      </configuration>
+      <configuration name="other" path="other/email/invalid_email">
+        <value>Please enter a valid email address</value>
+      </configuration>
+      <configuration name="emergency" path="emergency/email/invalid_email">
+        <value>Please enter a valid email address</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_person_contact_work" locale="en_US">
+        <value>Can view work contact child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_work" locale="en_US">
+        <value>Can edit work contact child form of a person</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_emergency" locale="en_US">
+        <value>Can view emergnency contact child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_emergency" locale="en_US">
+        <value>Can edit emergency contact child form of a person</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_personal" locale="en_US">
+        <value>Can view personal contact child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_personal" locale="en_US">
+        <value>Can edit personal contact child forms of a person</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_other" locale="en_US">
+        <value>Can view other contact child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_other" locale="en_US">
+        <value>Can edit other contact child forms of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_contact_work">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Work Contact</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_emergency">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Emergency Contact</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_other">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Other Contact</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_personal">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Personal Contact</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="contact_groups">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Populate Contact Groups</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="contact">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update Contact Information</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

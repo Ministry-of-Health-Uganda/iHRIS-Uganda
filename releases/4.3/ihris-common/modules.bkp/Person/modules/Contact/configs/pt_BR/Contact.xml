@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonContact" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonContact" path="/I2CE" locale="pt_BR">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_messages" path="/modules/forms/formfield_messages" locale="pt_BR">
+      <configuration name="work" path="work/email/invalid_email">
+        <value>Por favor, adicione um endereço de email válido</value>
+      </configuration>
+      <configuration name="personal" path="personal/email/invalid_email">
+        <value>Por favor, adicione um endereço de email válido</value>
+      </configuration>
+      <configuration name="other" path="other/email/invalid_email">
+        <value>Por favor, adicione um endereço de email válido</value>
+      </configuration>
+      <configuration name="emergency" path="emergency/email/invalid_email">
+        <value>Por favor, adicione um endereço de email válido</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="pt_BR">
+      <configuration name="person_can_view_child_form_person_contact_work" locale="pt_BR"></configuration>
+      <configuration name="person_can_edit_child_form_person_contact_work" locale="pt_BR"></configuration>
+      <configuration name="person_can_view_child_form_person_contact_emergency" locale="pt_BR"></configuration>
+      <configuration name="person_can_edit_child_form_person_contact_emergency" locale="pt_BR"></configuration>
+      <configuration name="person_can_view_child_form_person_contact_personal" locale="pt_BR"></configuration>
+      <configuration name="person_can_edit_child_form_person_contact_personal" locale="pt_BR"></configuration>
+      <configuration name="person_can_view_child_form_person_contact_other" locale="pt_BR"></configuration>
+      <configuration name="person_can_edit_child_form_person_contact_other" locale="pt_BR"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_contact_work">
+          <configuration name="display" values="single" locale="pt_BR">
+            <value>Contato de Trabalho</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_emergency">
+          <configuration name="display" values="single" locale="pt_BR">
+            <value>Contato de Emergência</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_other">
+          <configuration name="display" values="single" locale="pt_BR">
+            <value>Outro Contato</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_personal">
+          <configuration name="display" values="single" locale="pt_BR">
+            <value>Contato Pessoal</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="contact">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pt_BR">
+            <value>Adicionar/Atualizar Informação de Contato</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

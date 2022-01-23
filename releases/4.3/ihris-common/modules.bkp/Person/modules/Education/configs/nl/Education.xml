@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEducation" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEducation" path="/I2CE" locale="nl">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="nl">
+      <configuration name="person_can_view_child_form_education" locale="nl">
+        <value>Kan opleidingskindformulier van een persoon bekijken</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_education" locale="nl">
+        <value>Kan opleidingskindformulier van een persoon bewerken</value>
+      </configuration>
+      <configuration name="can_edit_database_list_edu_type" locale="nl">
+        <value>Kan opleidingstypedatabaselijsten bewerken</value>
+      </configuration>
+      <configuration name="can_view_database_list_edu_type" locale="nl">
+        <value>Kan opleidingstypedatabaselijsten bekijken</value>
+      </configuration>
+      <configuration name="can_edit_database_list_degree" locale="nl">
+        <value>Kan graadtypendatabaselijsten bewerken</value>
+      </configuration>
+      <configuration name="can_view_database_list_degree" locale="nl">
+        <value>Kan graadtypendatabaselijsten bekijken</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="education">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="nl">
+            <value>Kan opleidingsgeschiedenis toevoegen en bijwerken</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="degree">
+          <configuration name="display" values="single" locale="nl">
+            <value>Graad</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="edu_type">
+          <configuration name="display" values="single" locale="nl">
+            <value>Opleidingstype</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="education">
+          <configuration name="display" values="single" locale="nl">
+            <value>Opleidingsgeschiedenis</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Degree">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="nl">
+                <value>default:Naam</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="edu_type">
+              <configuration name="headers" type="delimited" values="many" locale="nl">
+                <value>default:Opleidingstype</value>
+                <value>select_degree:Selecteer onderwijstype en graad</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Education">
+          <configurationGroup name="fields">
+            <configurationGroup name="degree">
+              <configuration name="headers" type="delimited" locale="nl">
+                <value>default:Graad</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="institution">
+              <configuration name="headers" type="delimited" locale="nl">
+                <value>default:Naam van de instelling</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="headers" type="delimited" locale="nl">
+                <value>default:Locatie instelling</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="year">
+              <configuration name="headers" type="delimited" locale="nl">
+                <value>default:Jaar van afstuderen (laat leeg indien nog niet afgerond)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="major">
+              <configuration name="headers" type="delimited" locale="nl">
+                <value>default:Hoofdvak</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

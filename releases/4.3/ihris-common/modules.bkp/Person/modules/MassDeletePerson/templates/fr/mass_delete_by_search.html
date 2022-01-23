@@ -1,0 +1,11 @@
+<div id="siteContent">
+  <h1>Supprimer tous les enregistrements par établissement</h1>
+  <p><strong>ATTENTION:</strong> Ceci supprimera de la base de données tous les positions et enregistrements de personnes affectées à ces positions. Ils ne pourront être récupérés que manuellement depuis les sauvegardes, donc assurez-vous que vos sauvegardes sont à jour avant d’effectuer cette action !</p>
+  <form method="POST" id="delete_form" action="delete_by_search_action">
+    <h2>Personnes sélectionnées</h2>
+    <div id="search_list">
+    </div>
+    <div id="search_selection" style="display:none;">
+      <select id="search_select" name="people[]" multiple></select></div>
+    <input type="hidden" name="step" value="choose"><input type="submit" class="button" value="Continue"></form>
+</div>

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-common-Search">
+  <metadata>
+    <displayName>Search Page</displayName>
+    <category>Reporting</category>
+    <description>The iHRIS Search page.</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-common</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-common">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="CustomReports">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="ihris-common-Search" path="/I2CE">
+    <displayName>Search Page</displayName>
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+      <configurationGroup name="search">
+        <displayName>Search Page</displayName>
+        <description>The page 'search' which has the action of: Search People</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageSearch</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Search People</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="search_reports" path="/modules/CustomReports/search_reports">
+      <displayName>Search Reports</displayName>
+      <description>A list of all reports that need to be generated for the search page. If the value is true then the report will be generated even if other report generation is turned off by /modules/CustomReports/times/background.</description>
+    </configurationGroup>
+    <configurationGroup name="report_displays" path="/modules/CustomReports/displays/Search">
+      <version>4.1.0.1</version>
+      <configuration name="class">
+        <value>I2CE_CustomReport_Display_Search</value>
+      </configuration>
+      <configuration name="hide_with_default" type="boolean">
+        <value>true</value>
+      </configuration>
+      <configurationGroup name="display_options">
+        <configuration name="limit_paginated">
+          <value>1</value>
+        </configuration>
+        <configuration name="limit_per_page">
+          <value>50</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,28 @@
+<div id="siteContent">
+    <h1 class="header">Add/Update Data Set</h1>
+    <div id="error" />
+    <form  method="post" action="DHIS-Dashboard/dataset">
+        <span type="form" name="dataset:id"></span>
+        <div id="form">
+
+            <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th colspan="2">Data Set Information</th>
+                </tr>
+                <tr id="list_fields">
+                    <td>
+                        <span type="form" name="dataset:name" showhead="default"></span>
+                        <span type="form" name="dataset:shortname" showhead="default"></span>
+                        <span type="form" name="dataset:dataset_code" showhead="default" class="even"></span>
+                    </td>
+                </tr>
+                <tr class="submitCell">
+                    <td colspan="2">
+                        <div id="button" />
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </form>
+</div>

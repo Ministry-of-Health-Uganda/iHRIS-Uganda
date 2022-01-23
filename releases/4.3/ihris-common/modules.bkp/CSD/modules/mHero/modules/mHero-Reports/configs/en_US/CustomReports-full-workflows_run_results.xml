@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports-full-workflows_run_results" path="/modules/CustomReports">
+  <metadata>
+    <version>4.3.0.0</version>
+  </metadata>
+  <configurationGroup name="CustomReports-full-workflows_run_results" path="/modules/CustomReports" locale="en_US">
+    <version>4.3.0.0</version>
+    <configurationGroup name="workflows_run_results" path="//modules/CustomReports/relationships/workflows_run_results">
+      <configuration name="display_name" locale="en_US">
+        <value>Workflows Run Results</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="rapidpro_flow_run">
+          <configuration name="display_name" locale="en_US">
+            <value>Rapidpro Flow Run</value>
+          </configuration>
+          <configurationGroup name="joins">
+            <configurationGroup name="person">
+              <configuration name="display_name" locale="en_US">
+                <value>person</value>
+              </configuration>
+              <configurationGroup name="joins">
+                <configurationGroup name="demographic">
+                  <configuration name="display_name" locale="en_US">
+                    <value>Demographic</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="person_position">
+                  <configuration name="display_name" locale="en_US">
+                    <value>Person Position</value>
+                  </configuration>
+                  <configurationGroup name="joins">
+                    <configurationGroup name="position">
+                      <configuration name="display_name" locale="en_US">
+                        <value>Position</value>
+                      </configuration>
+                      <configurationGroup name="joins">
+                        <configurationGroup name="facility">
+                          <configuration name="display_name" locale="en_US">
+                            <value>Facility</value>
+                          </configuration>
+                        </configurationGroup>
+                      </configurationGroup>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="rapidpro_flow_run_values">
+              <configuration name="display_name" locale="en_US">
+                <value>Rapidpro Flow Run Values</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="workflows_run_results" path="//modules/CustomReports/reports/workflows_run_results">
+      <configurationGroup name="meta">
+        <configuration name="description" locale="en_US">
+          <value>Report That Shows Responses Of Workflows Started To Persons</value>
+        </configuration>
+        <configuration name="display_name" locale="en_US">
+          <value>Workflows Run Results</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="demographic">
+          <configurationGroup name="fields">
+            <configurationGroup name="gender">
+              <configuration name="header" locale="en_US">
+                <value>Gender</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Gender</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="location">
+              <configuration name="header" locale="en_US">
+                <value>County</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>County</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="person">
+          <configurationGroup name="fields">
+            <configurationGroup name="firstname">
+              <configuration name="header" locale="en_US">
+                <value>First Name</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>First Name</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="othername">
+              <configuration name="header" locale="en_US">
+                <value>Middle Name</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="surname">
+              <configuration name="header" locale="en_US">
+                <value>Last Name</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Last Name</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="position">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility">
+              <configuration name="header" locale="en_US">
+                <value>Facility</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Facility</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="arrived_on">
+              <configuration name="header" locale="en_US">
+                <value>Message Arrived On</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="left_on">
+              <configuration name="header" locale="en_US">
+                <value>Message Sent On</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="node">
+              <configuration name="header" locale="en_US">
+                <value>Step Number</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Step Number</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="step_type">
+              <configuration name="header" locale="en_US">
+                <value>Message Type</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Message Type</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="text">
+              <configuration name="header" locale="en_US">
+                <value>Message Text</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Response Text</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="rapidpro_flow_run">
+          <configurationGroup name="fields">
+            <configurationGroup name="completed">
+              <configuration name="header" locale="en_US">
+                <value>Flow Completed</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="yesno">
+                  <configuration name="header" locale="en_US">
+                    <value>Flow Completed</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="phone">
+              <configuration name="header" locale="en_US">
+                <value>Phone</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Phone</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="responded">
+              <configuration name="header" locale="en_US">
+                <value>Responded</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="yesno">
+                  <configuration name="header" locale="en_US">
+                    <value>Responded To A Workflow</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="run">
+              <configuration name="header" locale="en_US">
+                <value>Flow Run</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="session_number">
+              <configuration name="header" locale="en_US">
+                <value>Session Number</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Session Number</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="header" locale="en_US">
+                <value>Flow Start Date</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="between">
+                  <configuration name="header" locale="en_US">
+                    <value>Between Flow Start Date</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Equal Flow Start Date</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="start_time">
+              <configuration name="header" locale="en_US">
+                <value>Flow Start Time</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="workflows">
+              <configuration name="header" locale="en_US">
+                <value>Workflow Name</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Workflow Name</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="workflows_run_results" path="//modules/CustomReports/reportViews/workflows_run_results">
+      <configuration name="description" locale="en_US">
+        <value>Report That Shows Responses Of Workflows Started To Persons</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <value>Workflow Response Data</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

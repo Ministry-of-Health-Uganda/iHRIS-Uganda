@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonID">
+  <metadata>
+    <displayName>iHRIS Person ID</displayName>
+    <className>iHRIS_Module_PersonID</className>
+    <category>Application Component</category>
+    <description>A Person's ID</description>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <requirement name="Person">
+      <atLeast version="4.0" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="PersonID" path="/I2CE">
+    <version>4.1.10.3</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="en_US">
+      <version>4.1.10.3</version>
+      <configuration name="exp_date" path="person_id/expiration_date/bad_date" locale="en_US">
+        <value>The date of expiration must be after the date of issue.</value>
+      </configuration>
+      <configuration name="wrong_pattern" path="person_id/id_num/wrong_pattern" locale="en_US">
+        <value>This ID doesn't match with ID Type pattern</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>3.2.9</version>
+      <configuration name="person_can_view_child_form_person_id" locale="en_US">
+        <value>Can view person_id child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_id" locale="en_US">
+        <value>Can edit person_id child forms of a person</value>
+      </configuration>
+      <configuration name="can_edit_database_list_id_type" locale="en_US">
+        <value>Can edit the id_type database list</value>
+      </configuration>
+      <configuration name="can_view_database_list_id_type" locale="en_US">
+        <value>Can view the id_type database list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <version>3.2.9</version>
+      <configuration name="person_can_view_child_form_person_id" values="many">
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_id" values="many">
+        <value>person_can_view_child_form_person_id</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <version>4.1.1.2</version>
+        <value>person_can_view_child_form_person_id</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>4.1.1.2</version>
+        <value>person_can_edit_child_form_person_id</value>
+      </configuration>
+      <configuration name="can_edit_database_list_id_type" values="many">
+        <value>can_edit_employee_database_lists</value>
+        <value>can_view_database_list_id_type</value>
+      </configuration>
+      <configuration name="can_edit_all_employee_database_lists" values="many">
+        <value>can_edit_database_list_id_type</value>
+      </configuration>
+      <configuration name="can_view_all_employee_database_lists" values="many">
+        <value>can_view_database_list_id_type</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_id">
+        <displayName>Person_id Page</displayName>
+        <description>The page 'person_id' which has the action of: Add/Update Identification</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageFormParentPerson</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Identification</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>person_id</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- person_id -->
+    </configurationGroup>
+    <!--end of page-->
+    <configurationGroup name="forms" path="/modules/forms/forms">
+      <configurationGroup name="id_type">
+        <version>4.1.10.2</version>
+        <displayName>Identification Type</displayName>
+        <description>The Identification Type Form</description>
+        <configuration name="class" values="single">
+          <version>4.1.10.2</version>
+          <displayName>Class Name</displayName>
+          <description>The name of the class providing the form</description>
+          <value>iHRIS_PersonID_Type</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <displayName>Display name</displayName>
+          <description>The display name for this form</description>
+          <value>Identification Type</value>
+        </configuration>
+        <configuration name="storage" values="single">
+          <displayName>Storage Details</displayName>
+          <description>The storage mechanism for this form.</description>
+          <value>magicdata</value>
+        </configuration>
+      </configurationGroup>
+      <!-- id_type -->
+      <configurationGroup name="person">
+        <configurationGroup name="meta">
+          <configuration name="child_forms" values="many">
+            <value>person_id</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- person -->
+      <configurationGroup name="person_id">
+        <displayName>Person Identification</displayName>
+        <description>The Person Identification Form</description>
+        <configuration name="class" values="single">
+          <displayName>Class Name</displayName>
+          <description>The name of the class providing the form</description>
+          <value>iHRIS_PersonID</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <displayName>Display name</displayName>
+          <description>The display name for this form</description>
+          <value>Person Identification</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <displayName>MetaData on the form</displayName>
+          <status>required:false</status>
+          <configuration name="description" locale="en_US">
+            <displayName>A description of the form</displayName>
+            <value>This form holds basic information about an identification for a person</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- person_id -->
+    </configurationGroup>
+    <!--end forms-->
+    <configurationGroup name="forms" path="/modules/forms/formClasses">
+      <configurationGroup name="iHRIS_PersonID">
+        <displayName>Configuration for the class 'iHRIS_PersonID'</displayName>
+        <configuration name="extends">
+          <displayName>The class this form extends</displayName>
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>The fields defined for this form</displayName>
+          <configurationGroup name="id_type">
+            <displayName>The field 'id_type'</displayName>
+            <version>3.2.5</version>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <version>3.2.1</version>
+              <value>default:Identification Type</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            <configuration name="unique" type="boolean">
+              <version>4.1.0.1</version>
+              <value>true</value>
+            </configuration>
+            <configuration name="unique_field">
+              <version>4.1.0.1</version>
+              <value>parent</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="id_num">
+            <displayName>The field 'id_num'</displayName>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <version>3.2.1</version>
+              <value>default:Identification Number</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <displayName>This field is required to be set</displayName>
+              <value>true</value>
+            </configuration>
+            <configuration name="unique" type="boolean">
+              <version>4.1.0.1</version>
+              <value>true</value>
+            </configuration>
+            <configuration name="unique_field">
+              <version>4.1.0.1</version>
+              <value>id_type</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="issue_date">
+            <displayName>The field 'issue_date'</displayName>
+            <version>4.1.0.2</version>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>DATE_YMD</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <value>default:Date of Issue</value>
+            </configuration>
+            <configuration name="default_eval">
+              <version>4.1.0.4</version>
+              <value>I2CE_Date::blank()</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="expiration_date">
+            <displayName>The field 'expiration_date'</displayName>
+            <version>4.1.0.2</version>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>DATE_YMD</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <value>default:Date of Expiration</value>
+            </configuration>
+            <configuration name="default_eval">
+              <version>4.1.0.4</version>
+              <value>I2CE_Date::blank()</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="country">
+            <displayName>The field 'country'</displayName>
+            <version>4.1.0.2</version>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <value>default:Country of Issue</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="place">
+            <displayName>The field 'place'</displayName>
+            <version>4.1.0.5</version>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <value>default:Place of Issue</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- iHRIS_PersonID -->
+      <configurationGroup name="iHRIS_PersonID_Type">
+        <version>4.1.10.4</version>
+        <displayName>Configuration for the class 'iHRIS_PersonID_Type'</displayName>
+        <configuration name="extends">
+          <displayName>The class this form extends</displayName>
+          <value>I2CE_SimpleList</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <displayName>The fields defined for this form</displayName>
+          <configurationGroup name="pattern">
+            <version>4.2.1.0</version>
+            <displayName>The field 'pattern'</displayName>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <version>3.2.1</version>
+              <value>default:Pattern (regular expression)</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- iHRIS_PersonID_Type -->
+    </configurationGroup>
+    <!-- end of formClasses-->
+  </configurationGroup>
+</I2CEConfiguration>

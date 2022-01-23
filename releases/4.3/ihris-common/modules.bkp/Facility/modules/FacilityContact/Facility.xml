@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="FacilityContact">
+  <metadata>
+    <displayName>Facility Contact</displayName>
+    <className>iHRIS_Module_FacilityContact</className>
+    <category>Application Component</category>
+    <description>Adds contact information to a facility</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-common</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Facility">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Contact">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <priority>350</priority>
+  </metadata>
+  <configurationGroup name="FacilityContact" path="/I2CE">
+    <configurationGroup name="forms" path="/modules/forms/forms/">
+      <configurationGroup name="facility_contact">
+        <version>3.2.6</version>
+        <configuration name="class" values="single">
+          <value>iHRIS_Contact</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <displayName>Display name</displayName>
+          <description>The display name for this form.</description>
+          <value>Facility Contact</value>
+        </configuration>
+        <configuration name="storage" values="single">
+          <displayName>Storage Mechanism</displayName>
+          <description>The storage mechanism for this form</description>
+          <value>magicdata</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="facility">
+        <displayName>Facility</displayName>
+        <description>The Facility Form</description>
+        <configurationGroup name="meta">
+          <displayName>Meta information aboout this form</displayName>
+          <configuration name="child_forms" values="many">
+            <displayName>Child Forms</displayName>
+            <value>facility_contact</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

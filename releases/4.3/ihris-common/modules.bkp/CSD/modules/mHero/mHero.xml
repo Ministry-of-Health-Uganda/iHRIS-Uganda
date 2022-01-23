@@ -1,0 +1,705 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="mHero-base">
+  <metadata>
+    <displayName>mHero</displayName>
+    <category>Application Component</category>
+    <description>Provides CSD Interface for RapidPro</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-common</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="images">
+      <value>./images</value>
+    </path>
+    <requirement name="CustomReports">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <erase path="/modules/forms/formClasses/iHRIS_RapidproFlowRun/fields/flow_uuid">
+    <lessThan version="4.2.2.8" />
+  </erase>
+  <erase path="/modules/forms/formClasses/iHRIS_RapidproFlowRun/fields/flow_id">
+    <lessThan version="4.2.2.8" />
+  </erase>
+  <erase path="/modules/forms/formClasses/iHRIS_RapidproFlowRun/fields/flow_name">
+    <lessThan version="4.2.2.8" />
+  </erase>
+  <configurationGroup name="mHero" path="/">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <version>4.2.2.15</version>
+      <configuration name="mhero_start_workflow" locale="en_US">
+        <value>Can start mHero workflows</value>
+      </configuration>
+      <configuration name="mhero_view_results" locale="en_US">
+        <value>Can view mHero workflows results</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="command_line" path="/I2CE/page/pull_workflows_results">
+      <version>4.2.2.20</version>
+      <configuration name="style" values="single">
+        <value>shell</value>
+      </configuration>
+      <configuration name="class" values="single">
+        <displayName>Page Class</displayName>
+        <value>CSD_Page_PullWorkflowsResults</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configuration name="api_token">
+          <value>THIS NEEDS TO BE SITE FOR EACH SITE</value>
+        </configuration>
+        <configuration name="slug">
+          <value>mhero-THIS NEEDS TO BE SITE FOR EACH SITE</value>
+        </configuration>
+        <configuration name="server_host">
+          <value>https://rapidpro.io</value>
+        </configuration>
+        <configuration name="csd_host">
+          <value>https://localhost:8984/CSD/csr/hwr-sample/careServicesRequest</value>
+        </configuration>
+        <configuration name="csd_host_user">
+          <value>username</value>
+        </configuration>
+        <configuration name="csd_host_password">
+          <value>password</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="command_line" path="/modules/admin/command_line/pull_workflows_results">
+      <version>4.2.2.20</version>
+      <configuration name="style" values="single">
+        <value>shell</value>
+      </configuration>
+      <configuration name="class" values="single">
+        <displayName>Page Class</displayName>
+        <value>CSD_Page_PullWorkflowsResults</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configuration name="api_token">
+          <value>THIS NEEDS TO BE SITE FOR EACH SITE</value>
+        </configuration>
+        <configuration name="slug">
+          <value>mhero-THIS NEEDS TO BE SITE FOR EACH SITE</value>
+        </configuration>
+        <configuration name="server_host">
+          <value>https://rapidpro.io</value>
+        </configuration>
+        <configuration name="csd_host">
+          <value>https://localhost:8984/CSD/csr/hwr-sample/careServicesRequest</value>
+        </configuration>
+        <configuration name="csd_host_user">
+          <value>username</value>
+        </configuration>
+        <configuration name="csd_host_password">
+          <value>password</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page_builder_handler" path="/modules/page-builder/handlers">
+      <version>4.2.0.11</version>
+      <configurationGroup name="CSD_Page_RapidPro_Base">
+        <configuration name="swiss">
+          <value>CSD_RapidPro_Base</value>
+        </configuration>
+        <configuration name="description" local="en_US">
+          <value>CSD-RapidPro Interface</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="command_line" path="/I2CE/command_line/mHero">
+      <version>4.2.2.20</version>
+      <configuration name="style" values="single">
+        <value>action</value>
+      </configuration>
+      <configuration name="class" values="single">
+        <displayName>Page Class</displayName>
+        <value>CSD_Page_mHeroCommandLine</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configuration name="api_token">
+          <value>THIS NEEDS TO BE SITE FOR EACH SITE</value>
+        </configuration>
+        <configuration name="slug">
+          <value>mhero-THIS NEEDS TO BE SITE FOR EACH SITE</value>
+        </configuration>
+        <configuration name="server_host">
+          <value>https://rapidpro.io</value>
+        </configuration>
+        <configuration name="csd_host">
+          <value>https://localhost:8984/CSD/csr/hwr-sample/careServicesRequest</value>
+        </configuration>
+        <configuration name="csd_host_user">
+          <value>username</value>
+        </configuration>
+        <configuration name="csd_host_password">
+          <value>password</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="bulk_page" path="/I2CE/page/mHero">
+      <version>4.2.2.20</version>
+      <configuration name="style" values="single">
+        <value>shell</value>
+      </configuration>
+      <configuration name="class" values="single">
+        <displayName>Page Class</displayName>
+        <value>CSD_Page_mHeroBulk</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configuration name="api_token">
+          <value>THIS NEEDS TO BE SITE FOR EACH SITE</value>
+        </configuration>
+        <configuration name="slug">
+          <value>mhero-THIS NEEDS TO BE SITE FOR EACH SITE</value>
+        </configuration>
+        <configuration name="server_host">
+          <value>https://rapidpro.io</value>
+        </configuration>
+        <configuration name="csd_host">
+          <value>https://localhost:8984/CSD/csr/hwr-sample/careServicesRequest</value>
+        </configuration>
+        <configuration name="csd_host_user">
+          <value>username</value>
+        </configuration>
+        <configuration name="csd_host_password">
+          <value>password</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="person_page" path="/I2CE/page/mHero_person_workflow">
+      <version>4.2.2.20</version>
+      <configuration name="style" values="single">
+        <value>shell</value>
+      </configuration>
+      <configuration name="class" values="single">
+        <displayName>Page Class</displayName>
+        <value>CSD_Page_StartWorkflow</value>
+      </configuration>
+      <configurationGroup name="args">
+        <version>4.2.20.20</version>
+        <configuration name="defaultHTMLFile" values="many">
+          <value>csd_start_workflow_select.html</value>
+        </configuration>
+        <configuration name="api_token">
+          <value>THIS NEEDS TO BE SITE FOR EACH SITE</value>
+        </configuration>
+        <configuration name="slug">
+          <value>mhero-THIS NEEDS TO BE SITE FOR EACH SITE</value>
+        </configuration>
+        <configuration name="server_host">
+          <value>https://rapidpro.io</value>
+        </configuration>
+        <configuration name="csd_host">
+          <value>https://localhost:8984/CSD/csr/hwr-sample/careServicesRequest</value>
+        </configuration>
+        <configuration name="csd_host_user">
+          <value>username</value>
+        </configuration>
+        <configuration name="csd_host_password">
+          <value>password</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="roles" path="/I2CE/formsData/forms/role">
+      <displayName>Roles</displayName>
+      <version>4.2.2.15</version>
+      <configurationGroup name="mHero_technician">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single">
+            <value>mHero Technician</value>
+          </configuration>
+          <configuration name="assignable">
+            <value>1</value>
+          </configuration>
+          <configuration name="trickle_up" values="single" type="string">
+            <displayName>Trickle Up</displayName>
+            <description>The short Name of the roles that have privelages to anything with the role 'mHero Technician'</description>
+            <value>admin,hr_staff,hr_manager</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="role_trickle_down" path="/I2CE/tasks/role_trickle_down">
+      <version>4.2.2.18</version>
+      <configuration name="mHero_technician" values="many">
+        <value>person_can_view</value>
+        <value>person_can_view_child_forms</value>
+        <value>custom_reports_can_access</value>
+        <value>custom_reports_can_view_reportViews</value>
+        <value>mhero_start_workflow</value>
+        <value>mhero_view_results</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="/I2CE/formsData/forms">
+      <version>4.2.2.2</version>
+      <displayName>Forms Data</displayName>
+      <description>Form data saved in magic data</description>
+      <configurationGroup name="step_type">
+        <displayName>step_type</displayName>
+        <description>The step_type form data</description>
+        <configurationGroup name="A">
+          <configuration name="last_modified">
+            <value>2015-11-27 18:08:00</value>
+          </configuration>
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:Request</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="R">
+          <configuration name="last_modified">
+            <value>2015-11-27 18:08:00</value>
+          </configuration>
+          <configuration name="fields" value="many" type="delimited" locale="en_US">
+            <value>name:Response</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <version>4.2.2.13</version>
+      <configurationGroup name="forms">
+        <version>4.2.2.6</version>
+        <configurationGroup name="person">
+          <version>4.2.2.2</version>
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>rapidpro_flow_run</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="rapidpro_flow_run">
+          <version>4.2.2.3</version>
+          <displayName>Rapidpro Flow Run</displayName>
+          <description>The Rapidpro Flow Run Information Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_RapidproFlowRun</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Rapidpro Flow Run Information</value>
+          </configuration>
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>rapidpro_flow_run_values</value>
+              <value>rapidpro_flow_run_steps</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- rapidpro_flow_run -->
+        <configurationGroup name="rapidpro_flow_run_values">
+          <version>4.2.2.2</version>
+          <displayName>Rapidpro Flow Run Values</displayName>
+          <description>The Rapidpro Flow Run Values Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_RapidproFlowRunValues</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Rapidpro Flow Run Values</value>
+          </configuration>
+        </configurationGroup>
+        <!-- rapidpro_flow_run_values -->
+        <configurationGroup name="rapidpro_flow_run_steps">
+          <version>4.2.2.2</version>
+          <displayName>Rapidpro Flow Run Steps</displayName>
+          <description>The Rapidpro Flow Run Steps Results Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_RapidproFlowRunSteps</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Rapidpro Flow Steps Results</value>
+          </configuration>
+        </configurationGroup>
+        <!-- rapidpro_flow_run_steps -->
+        <configurationGroup name="workflows">
+          <version>4.2.2.6</version>
+          <displayName>Rapidpro Workflows</displayName>
+          <description>The Rapidpro Workflows Information Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Workflows</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Rapidpro Flow Run Information</value>
+          </configuration>
+        </configurationGroup>
+        <!-- workflows -->
+        <configurationGroup name="step_type">
+          <version>4.2.2.2</version>
+          <displayName>Step Type</displayName>
+          <description>The Step Type Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Step Type</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <version>4.2.2.13</version>
+        <configurationGroup name="iHRIS_RapidproFlowRun">
+          <displayName>Configuration for the class 'iHRIS_RapidproFlowRun'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <version>4.2.2.13</version>
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="workflows">
+              <displayName>The field 'workflows'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Workflows</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <version>4.2.2.10</version>
+              <displayName>The field 'start_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Flow Start Date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_time">
+              <version>4.2.2.10</version>
+              <displayName>The field 'start_time'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_HMS</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Flow Start Time</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="run">
+              <displayName>The field 'run'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Flow Run</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="session_number">
+              <version>4.2.2.13</version>
+              <displayName>The field 'session_number'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Session Number</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="rapidpro_contact_id">
+              <displayName>The field 'rapidpro_contact_id'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Rapidpro Contact ID</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="phone">
+              <displayName>The field 'phone'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Phone</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="completed">
+              <version>4.2.2.12</version>
+              <displayName>The field 'completed'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>YESNO</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Completed</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="responded">
+              <displayName>The field 'responded'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>YESNO</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Responded</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_RapidproFlowRunValues">
+          <displayName>Configuration for the class 'iHRIS_RapidproFlowRunValues'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="category">
+              <displayName>The field 'category'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Category</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="node">
+              <displayName>The field 'category'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Node</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="text">
+              <displayName>The field 'text'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Text</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="rule_value">
+              <displayName>The field 'rule_value'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Rule Value</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="value">
+              <displayName>The field 'value'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Value</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="label">
+              <displayName>The field 'label'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Label</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="time">
+              <displayName>The field 'time'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_TIME</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Time</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_RapidproFlowRunSteps">
+          <displayName>Configuration for the class 'iHRIS_RapidproFlowRunSteps'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="node">
+              <displayName>The field 'node'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Node</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="arrived_on">
+              <displayName>The field 'arrived_on'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_TIME</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Arrived On</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="left_on">
+              <displayName>The field 'left_on'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_TIME</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Left On</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="text">
+              <displayName>The field 'arrived_on'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Text</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="value">
+              <displayName>The field 'value'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Value</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="step_type">
+              <displayName>The field 'step_type'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Step Type</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Workflows">
+          <version>4.2.2.6</version>
+          <displayName>Configuration for the class 'iHRIS_RapidproFlowRun'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="name">
+              <displayName>The field 'name'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Flow Name</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="uuid">
+              <displayName>The field 'uuid'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Flow UUID</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="flow">
+              <displayName>The field 'flow'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Flow ID</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

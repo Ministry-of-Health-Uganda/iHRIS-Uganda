@@ -1,0 +1,11 @@
+<div id="siteContent">
+  <h1>Smazat všechny záznamy podle zařízení</h1>
+  <p><strong>VAROVÁNÍ:</strong> Toto smaže všechny pozice a záznamy osob spojené s těmito pozicemi v databázi. Záznamy lze obnovit pouze pomocí ruční zálohy, takže se ujistěte, že jsou aktuální.</p>
+  <form method="POST" id="delete_form" action="delete_by_search_action">
+    <h2>Selected People</h2>
+    <div id="search_list">
+    </div>
+    <div id="search_selection" style="display:none;">
+      <select id="search_select" name="people[]" multiple></select></div>
+    <input type="hidden" name="step" value="choose"><input type="submit" class="button" value="Continue"></form>
+</div>

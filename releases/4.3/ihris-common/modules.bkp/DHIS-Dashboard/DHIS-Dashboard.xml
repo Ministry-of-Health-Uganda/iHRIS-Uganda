@@ -1,0 +1,372 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="DHIS-Dashboard">
+  <metadata>
+    <displayName>DHIS Dashboard</displayName>
+    <className>iHRIS_Module_DHISDashboard</className>
+    <description>Integrate DHIS Dashboard into iHRIS</description>
+    <creator>Thai Chuong</creator>
+    <email>thaichuong159@gmail.com</email>
+    <link>https://launchpad.net/ihris-common</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <link>https://launchpad.net/ihris-common</link>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ihris-common">
+      <atLeast version="4.0" />
+    </requirement>
+    <requirement name="CustomReports">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="DHIS-Dashboard" path="/I2CE">
+    <version>4.1.6.2</version>
+    <configuration name="urls" values="many" type="delimited" path="/modules/DHIS-Dashboard/credentials">
+      <value>username:admin</value>
+      <value>password:district</value>
+    </configuration>
+    <configuration name="urls" values="many" type="delimited" path="/modules/DHIS-Dashboard/urls">
+      <version>4.1.6.10</version>
+      <value>web_dash:http://localhost:8080/dhis/dhis-web-dashboard-integration/index.action</value>
+      <value>data_sync:http://localhost:8080/dhis/dhis-web-ihrissyncmanager/recordAggDataElementAction.action</value>
+      <value>meta_sync:http://localhost:8080/dhis/dhis-web-ihrissyncmanager/syncIHRISMetaDataAction.action</value>
+      <value>value_sets:http://localhost:8080/dhis/api/dataValueSets</value>
+    </configuration>
+    <configuration name="cookie" values="many" type="delimited" path="/modules/DHIS-Dashboard/cookie">
+      <version>4.1.6.3</version>
+      <value>domain:localhost</value>
+      <value>path:dhis</value>
+    </configuration>
+    <configurationGroup name="forms" path="/modules/forms/forms/dataelement">
+      <configuration name="class" values="single">
+        <displayName>Class Name</displayName>
+        <description>The name of the class providing the form</description>
+        <version>4.1.5</version>
+        <value>iHRIS_DataElement</value>
+      </configuration>
+      <configuration name="display" values="single" locale="en_US">
+        <displayName>Display name</displayName>
+        <description>The display name for this form.</description>
+        <value>Data Element</value>
+      </configuration>
+      <configuration name="storage" values="single">
+        <displayName>Storage Mechanism</displayName>
+        <description>The storage mechanism for this form</description>
+        <value>magicdata</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/forms/dataset">
+      <configuration name="class" values="single">
+        <displayName>Class Name</displayName>
+        <description>The name of the class providing the form</description>
+        <version>4.1.5</version>
+        <value>iHRIS_DataSet</value>
+      </configuration>
+      <configuration name="display" values="single" locale="en_US">
+        <displayName>Display name</displayName>
+        <description>The display name for this form.</description>
+        <value>Data Set</value>
+      </configuration>
+      <configuration name="storage" values="single">
+        <displayName>Storage Mechanism</displayName>
+        <description>The storage mechanism for this form</description>
+        <value>magicdata</value>
+      </configuration>
+    </configurationGroup>
+    <!-- Define form class -->
+    <configurationGroup name="forms" path="/modules/forms/formClasses/">
+      <configurationGroup name="iHRIS_Facility">
+        <configurationGroup name="fields">
+          <configuration name="update_date">
+            <value>I2CE_Date::now()</value>
+          </configuration>
+          <configurationGroup name="facility_code">
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <version>4.1.6</version>
+              <value>default:Facility Code</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="iHRIS_DataElement">
+        <configuration name="class" values="single">
+          <displayName>Class Name</displayName>
+          <version>4.1.5</version>
+          <description>The name of the class providing the form</description>
+          <value>iHRIS_DataElement</value>
+        </configuration>
+        <configuration name="extends">
+          <displayName>The class this form extends</displayName>
+          <version>4.1.6.7</version>
+          <value>I2CE_List</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="name">
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <version>4.1.5</version>
+              <value>default:Name</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="shortname">
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <value>default:Short Name</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="dataelement_code">
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <version>4.1.5</version>
+              <value>default:Code</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="dataset">
+            <displayName>The field 'dataset'</displayName>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <version>4.1.5</version>
+              <value>default:dataset</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="iHRIS_DataSet">
+        <configuration name="class" values="single">
+          <displayName>Class Name</displayName>
+          <version>4.1.5</version>
+          <description>The name of the class providing the form</description>
+          <value>iHRIS_DataSet</value>
+        </configuration>
+        <configuration name="extends">
+          <displayName>The class this form extends</displayName>
+          <version>4.1.6.7</version>
+          <value>I2CE_List</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="name">
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <version>4.1.5</version>
+              <value>default:Name</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="shortname">
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <value>default:Short Name</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="dataset_code">
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <version>4.1.5</version>
+              <value>default:Code</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="can_view_DHISDashboard" locale="en_US">
+        <value>view DHIS Dashboard</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <version>4.1.6</version>
+      <status>required:true</status>
+      <configurationGroup name="DHISDashboard_page" path="/I2CE/page/DHISDashboard">
+        <displayName>DHISDashboard page</displayName>
+        <description>Information about various pages made available by the system</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageViewDHIS</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The page style that this style inherits from</description>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Arguements</displayName>
+          <description>Values passed to the pages constructor</description>
+          <configuration name="tasks" values="many">
+            <version>4.1.5</version>
+            <value>can_view_DHISDashboard</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default html template file containing the page content</description>
+            <value>dhisdashboard_view.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="DHISDashboardExport">
+        <version>4.1.6.13</version>
+        <configuration name="class">
+          <value>iHRIS_Page_ExportDHISDashboard</value>
+        </configuration>
+        <configuration name="style">
+          <value>shell</value>
+        </configuration>
+        <configuration name="execution_parameters" values="many" type="delimited">
+          <value>memory_limit:268435456</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Custom Reports</displayName>
+          <description>Values passed to the pages' constructor</description>
+          <configuration name="tasks" values="many">
+            <value>custom_reports_can_access</value>
+          </configuration>
+          <configuration name="title" locale="en_US">
+            <displayName>The Page Title</displayName>
+            <value>View Reports</value>
+          </configuration>
+          <configuration name="access" values="many">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:true</status>
+            <value>admin</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="dashboard">
+        <displayName>Dashboard Page</displayName>
+        <description>The page 'dashboard' which has the action of: view dashboard</description>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageDashboard</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>View Dashboard</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <value>dashboard.html</value>
+          </configuration>
+          <configuration name="access" values="many">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:true</status>
+            <value>admin</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="dataelement">
+        <displayName>Person Page</displayName>
+        <description>The page 'Data Element' which has the action of: Add/Update Data Element</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <version>4.1.5</version>
+          <status>required:true</status>
+          <value>iHRIS_PageFormDataElement</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Data Element</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>form_dataelement.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="dataset">
+        <displayName>Person Page</displayName>
+        <description>The page 'Data Set' which has the action of: Add/Update Data Set</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <version>4.1.5</version>
+          <status>required:true</status>
+          <value>iHRIS_PageFormDataSet</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Data Set</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>form_dataset.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

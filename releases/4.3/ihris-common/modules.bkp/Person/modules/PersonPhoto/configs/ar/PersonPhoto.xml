@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonPhoto" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonPhoto" path="/I2CE" locale="ar">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="ar">
+      <configuration name="person_can_view_child_form_person_photo_passport" locale="ar">
+        <value>يمكن عرض&#160;صورة شخص&#160;لجواز السفر</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_photo_passport" locale="ar">
+        <value>يمكن تعديل صورة شخص حسب مقاييس&#160;جواز السفر</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_photo_passport">
+          <configuration name="display" values="single" locale="ar">
+            <value>صورة&#160;شخص</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_photo_passport">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ar">
+            <value>اضافة / تحديث&#160;صورة&#160;شخص لجواز السفر</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

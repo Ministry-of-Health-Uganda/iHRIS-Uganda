@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="csd_geography_default">
+  <metadata>
+    <displayName>CSD Geography</displayName>
+    <className>iHRIS_Module_CSDGeography</className>
+    <category>Application Component</category>
+    <description>Export Geography as CSD Organization Directory</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="XSLTS">
+      <value>./xslts</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <requirement name="Geography">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="csd_cache">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <erase path="/modules/csd_cache/country">
+    <lessThan version="4.2.0.04" />
+  </erase>
+  <erase path="/modules/csd_cache/region">
+    <lessThan version="4.2.0.04" />
+  </erase>
+  <erase path="/modules/csd_cache/district">
+    <lessThan version="4.2.0.04" />
+  </erase>
+  <erase path="/modules/csd_cache/county">
+    <lessThan version="4.2.0.04" />
+  </erase>
+  <configurationGroup name="csd_geography_default" path="/">
+    <configurationGroup name="csd_uuid_country" path="/modules/forms/formClasses/iHRIS_Country/fields/csd_uuid">
+      <version>4.2.0.10</version>
+      <configuration name="formfield">
+        <value>STRING_LINE</value>
+      </configuration>
+      <configuration name="headers" type="delimited" locale="en_US">
+        <value>default:CSD Entity ID</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_uuid_county" path="/modules/forms/formClasses/iHRIS_County/fields/csd_uuid">
+      <version>4.2.0.10</version>
+      <configuration name="formfield">
+        <value>STRING_LINE</value>
+      </configuration>
+      <configuration name="headers" type="delimited" locale="en_US">
+        <value>default:CSD Entity ID</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_uuid_region" path="/modules/forms/formClasses/iHRIS_Region/fields/csd_uuid">
+      <version>4.2.0.10</version>
+      <configuration name="formfield">
+        <value>STRING_LINE</value>
+      </configuration>
+      <configuration name="headers" type="delimited" locale="en_US">
+        <value>default:CSD Entity ID</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_uuid_district" path="/modules/forms/formClasses/iHRIS_District/fields/csd_uuid">
+      <version>4.2.0.10</version>
+      <configuration name="formfield">
+        <value>STRING_LINE</value>
+      </configuration>
+      <configuration name="headers" type="delimited" locale="en_US">
+        <value>default:CSD Entity ID</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_caches" path="/modules/csd_cache">
+      <configurationGroup name="csd_county_default">
+        <configurationGroup name="args">
+          <configuration name="directory">
+            <value>organization</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_region_default">
+        <configurationGroup name="args">
+          <configuration name="directory">
+            <value>organization</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_district_default">
+        <configurationGroup name="args">
+          <configuration name="directory">
+            <value>organization</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_country_default">
+        <configurationGroup name="args">
+          <configuration name="directory">
+            <value>organization</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="relationships" path="/modules/CustomReports/relationships">
+      <configurationGroup name="csd_county_default">
+        <configuration name="form">
+          <value>county</value>
+        </configuration>
+        <configuration name="display_name">
+          <value>CSD County Export (Default)</value>
+        </configuration>
+        <configuration name="description">
+          <value>CSD County Export (Default)</value>
+        </configuration>
+        <configurationGroup name="joins">
+          <configurationGroup name="district">
+            <configuration name="limit_one">
+              <value>1</value>
+            </configuration>
+            <configuration name="form">
+              <value>district</value>
+            </configuration>
+            <configuration name="display_name">
+              <value>district</value>
+            </configuration>
+            <configurationGroup name="join_data">
+              <configuration name="field">
+                <value>district</value>
+              </configuration>
+            </configurationGroup>
+            <configuration name="join_style">
+              <value>parent_field</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_country_default">
+        <configuration name="form">
+          <value>country</value>
+        </configuration>
+        <configuration name="display_name">
+          <value>CSD Country Export (Default)</value>
+        </configuration>
+        <configuration name="description">
+          <value>CSD Country Export (Default)</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_region_default">
+        <configuration name="form">
+          <value>region</value>
+        </configuration>
+        <configuration name="display_name">
+          <value>CSD Region Export (Default)</value>
+        </configuration>
+        <configuration name="description">
+          <value>CSD Region Export (Default)</value>
+        </configuration>
+        <configurationGroup name="joins">
+          <configurationGroup name="country">
+            <configuration name="limit_one">
+              <value>1</value>
+            </configuration>
+            <configuration name="form">
+              <value>country</value>
+            </configuration>
+            <configuration name="display_name">
+              <value>country</value>
+            </configuration>
+            <configurationGroup name="join_data">
+              <configuration name="field">
+                <value>country</value>
+              </configuration>
+            </configurationGroup>
+            <configuration name="join_style">
+              <value>parent_field</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_district_default">
+        <configuration name="form">
+          <value>district</value>
+        </configuration>
+        <configuration name="display_name">
+          <value>CSD District Export (Default)</value>
+        </configuration>
+        <configuration name="description">
+          <value>CSD District Export (Default)</value>
+        </configuration>
+        <configurationGroup name="joins">
+          <configurationGroup name="region">
+            <configuration name="limit_one">
+              <value>1</value>
+            </configuration>
+            <configuration name="form">
+              <value>region</value>
+            </configuration>
+            <configuration name="display_name">
+              <value>region</value>
+            </configuration>
+            <configurationGroup name="join_data">
+              <configuration name="field">
+                <value>region</value>
+              </configuration>
+            </configurationGroup>
+            <configuration name="join_style">
+              <value>parent_field</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,1983 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="csd-provider-data-model">
+  <metadata>
+    <displayName>CSD Health Worker Data Model</displayName>
+    <category>Application Component</category>
+    <description>CSD Health Worker Data Model</description>
+    <creator>IntraHealth Informatics</creator>
+    <email>litlfred@gmail.com</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-common">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Float">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="SVS">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <priority>400</priority>
+  </metadata>
+  <erase path="/modules/forms/forms/csd_gender">
+    <lessThan version="4.2.1.10" />
+  </erase>
+  <erase path="/modules/forms/formClasses/CSD_Provider/fields/csd_gender">
+    <lessThan version="4.2.1.10" />
+  </erase>
+  <configurationGroup name="csd-provider-data-model" path="/modules/forms">
+    <configurationGroup name="forms">
+      <version>4.2.1.10</version>
+      <configurationGroup name="csd_provider">
+        <version>4.2.1.10</version>
+        <configuration name="class" values="single">
+          <value>CSD_Provider</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Health Worker</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <configuration name="child_forms" values="many">
+            <version>4.2.1.11</version>
+            <value>csd_provider_otherid</value>
+            <value>csd_provider_name</value>
+            <value>csd_provider_contact_point</value>
+            <value>csd_provider_address</value>
+            <value>csd_provider_organization</value>
+            <value>csd_provider_facility</value>
+            <value>csd_provider_credential</value>
+            <value>rapidpro_flow_run</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_facility">
+        <configuration name="class" values="single">
+          <value>CSD_ProviderFacility</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Health Worker's Facility</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <configuration name="child_forms" values="many">
+            <value>csd_provider_service</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_facility_organization_service">
+        <version>4.2.1.2</version>
+        <configuration name="class" values="single">
+          <value>CSD_FacilityOrganizationService</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <configuration name="child_forms" values="many">
+            <value>csd_operating_hours</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Facility's Organizational Services</value>
+        </configuration>
+        <!-- STILL NEEDS NAME BUT THAT IS ALL MESSED UP -->
+      </configurationGroup>
+      <configurationGroup name="csd_provider_service">
+        <configuration name="class" values="single">
+          <value>CSD_ProviderService</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <version>4.2.1.2</version>
+          <configuration name="child_forms" values="many">
+            <value>csd_operating_hours</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Health Worker's Service</value>
+        </configuration>
+        <!-- STILL NEEDS NAME BUT THAT IS ALL MESSED UP -->
+      </configurationGroup>
+      <configurationGroup name="csd_provider_credential_type">
+        <version>4.1.8.17</version>
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Health Worker Credential Type</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_organization_credential_type">
+        <version>4.2.1.5</version>
+        <configuration name="class" values="single">
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Organization Credential Type</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_address_components">
+        <version>4.2.0.18</version>
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Address Components</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="day_of_week">
+        <version>4.2.0.21.14</version>
+        <configuration name="class" values="single">
+          <value>I2CE_SimpleCodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Day Of Week</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_contact_point_type">
+        <version>4.1.8.10</version>
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Contact Point Type</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_operating_hours">
+        <configuration name="class" values="single">
+          <value>CSD_OperatingHours</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Operating Hours</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_status">
+        <version>4.2.0.21.1</version>
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Health Worker Status</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_facility_status">
+        <version>4.2.0.21.1</version>
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Facility Status</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_organization_status">
+        <version>4.2.0.21.1</version>
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Organization Status</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_service_status">
+        <version>4.2.0.21.1</version>
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Service Status</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_credential">
+        <configuration name="class" values="single">
+          <value>CSD_ProviderCredential</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Health Worker Credential</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_organization_credential">
+        <configuration name="class" values="single">
+          <value>CSD_OrganizationCredential</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Organization Credential</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_otherid">
+        <version>4.2.1.10</version>
+        <configuration name="class" values="single">
+          <value>CSD_ProviderOtherID</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Other Identification</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_facility_otherid">
+        <version>4.2.0.21.1</version>
+        <configuration name="class" values="single">
+          <value>CSD_FacilityOtherID</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Other Facility Identification</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_organzation_otherid">
+        <version>4.2.0.21.1</version>
+        <configuration name="class" values="single">
+          <value>CSD_OrganizationOtherID</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Other Organization Identification</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_gender">
+        <version>4.2.1.10</version>
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Gender</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_organization">
+        <configuration name="class" values="single">
+          <version>4.1.8.21</version>
+          <value>CSD_Organization</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Organization</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <version>4.2.1.2</version>
+          <configuration name="child_forms" values="many">
+            <value>csd_organization_otherid</value>
+            <value>csd_organization_contact_point</value>
+            <value>csd_organization_address</value>
+            <value>csd_organization_credential</value>
+            <!-- following value NOT DONE -->
+            <value>csd_organization_contact</value>
+            <value>csd_organization_other_name</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_facility">
+        <configuration name="class" values="single">
+          <value>CSD_Facility</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Facility</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <version>4.2.1.2</version>
+          <configuration name="child_forms" values="many">
+            <value>csd_facility_otherid</value>
+            <value>csd_facility_address</value>
+            <value>csd_facility_contact_point</value>
+            <!-- following values NOT DONE for InfoManStorage -->
+            <value>csd_facility_organization</value>
+            <value>csd_facility_operating_hours</value>
+            <!-- following values NOT DONE -->
+            <value>csd_facility_contact</value>
+            <value>csd_facility_other_name</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_service">
+        <configuration name="class" values="single">
+          <value>CSD_Service</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Service</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_address_type">
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Address Type</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_type">
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Health Worker Type</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_specialty">
+        <version>4.2.0.13</version>
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Health Worker Specialty</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_service_type">
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Service Type</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_organization_type">
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Organization Type</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_facility_type">
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Facility Type</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_language">
+        <configuration name="class" values="single">
+          <version>4.2.0.21.16</version>
+          <value>SVS_CodedList</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Language</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_facility_organization">
+        <version>4.2.1.2</version>
+        <configuration name="class" values="single">
+          <value>CSD_FacilityOrganization</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Facility Organizational Affiliation</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <configuration name="child_forms" values="many">
+            <version>4.2.1.2</version>
+            <value>csd_facility_organization_service</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_organization">
+        <configuration name="class" values="single">
+          <value>CSD_ProviderOrganization</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <configuration name="child_forms" values="many">
+            <version>4.2.0.21.3</version>
+            <value>csd_provider_organization_address</value>
+            <value>csd_provider_organization_contact_point</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Health Worker's Organization</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_organization_address">
+        <version>4.2.0.21.3</version>
+        <configuration name="class" values="single">
+          <value>CSD_Address</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Health Worker's Organizational Address</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_address">
+        <version>4.2.1.10</version>
+        <configuration name="class" values="single">
+          <value>CSD_Address</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Address</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_organization_address">
+        <version>4.2.1.2</version>
+        <configuration name="class" values="single">
+          <value>CSD_Address</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Address</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_facility_address">
+        <version>4.2.1.2</version>
+        <configuration name="class" values="single">
+          <value>CSD_Address</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Address</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_name">
+        <configuration name="class" values="single">
+          <value>CSD_ProviderName</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Health Worker Name</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_organization_contact_point">
+        <version>4.2.0.21.3</version>
+        <configuration name="class" values="single">
+          <version>4.2.1.2</version>
+          <value>CSD_ContactPoint</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Health Worker's Organizational Contact Point</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_facility_contact_point">
+        <version>4.2.1.2</version>
+        <configuration name="class" values="single">
+          <value>CSD_ContactPoint</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>Facility Contact Point</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_provider_contact_point">
+        <configuration name="class" values="single">
+          <value>CSD_ContactPoint</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <version>4.2.0.21.15</version>
+          <value>Health Worker's Contact Point</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <!-- END OF /I2CE/forms/forms -->
+    <configurationGroup name="formClasses">
+      <version>4.2.1.10</version>
+      <configurationGroup name="CSD_Entity">
+        <configuration name="extends">
+          <value>I2CE_List</value>
+        </configuration>
+        <configurationGroup name="meta" path="meta/list/default">
+          <configuration name="display_string">
+            <value>%s</value>
+          </configuration>
+          <configuration name="display_args" type="delimited" values="many">
+            <version>4.2.0.21.19</version>
+            <value>0:entityID</value>
+          </configuration>
+          <configuration name="sort_fields" type="delimited" values="many">
+            <version>4.2.0.21.19</version>
+            <value>0:entityID</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="fields">
+          <erase path="oid">
+            <lessThan version="4.2.0.21.18" />
+          </erase>
+          <erase path="urn">
+            <lessThan version="4.2.0.21.19" />
+          </erase>
+          <configurationGroup name="entityID">
+            <version>4.2.0.21.19</version>
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Entity ID</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+            <configuration name="unique" type="boolean">
+              <version>4.2.0.21.17</version>
+              <value>false</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="source_directory">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Source Directory</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_Entity -->
+      <configurationGroup name="CSD_Provider">
+        <configuration name="extends">
+          <value>CSD_Entity</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="csd_provider_gender">
+            <version>4.2.1.10</version>
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Gender</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_provider_specialty">
+            <version>4.2.0.13</version>
+            <configuration name="formfield">
+              <value>MAP_MULT</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Specialty</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_provider_type">
+            <version>4.1.8.6</version>
+            <configuration name="formfield">
+              <value>MAP_MULT</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Type/Cadre</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_language">
+            <version>4.1.8.4</version>
+            <configuration name="formfield">
+              <value>MAP_MULT</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Language</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="date_of_birth">
+            <configuration name="formfield">
+              <version>4.1.8.3</version>
+              <value>DATE_YMD</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Date Of Birth</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_provider_status">
+            <configuration name="formfield">
+              <version>4.1.8.1</version>
+              <value>MAP</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <version>4.2.0.21.15</version>
+              <value>default:Health Worker Status</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_Provider -->
+      <configurationGroup name="CSD_NamedEntity">
+        <version>4.1.8.22</version>
+        <configuration name="extends">
+          <value>CSD_Entity</value>
+        </configuration>
+        <configurationGroup name="meta" path="meta/list/default">
+          <configuration name="display_string">
+            <value>%s (%s)</value>
+          </configuration>
+          <configuration name="display_args" type="delimited" values="many">
+            <version>4.2.0.21.19</version>
+            <value>0:primary_name</value>
+            <value>1:entityID</value>
+          </configuration>
+          <configuration name="sort_fields" type="delimited" values="many">
+            <version>4.2.0.21.19</version>
+            <value>0:primary_name</value>
+            <value>1:entityID</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="fields">
+          <configurationGroup name="primary_name">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Name</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <version>4.1.8.27</version>
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_NamedEntity -->
+      <configurationGroup name="CSD_Organization">
+        <configuration name="extends">
+          <value>CSD_NamedEntity</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <version>4.2.0.9</version>
+          <configurationGroup name="csd_parent_organization">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Parent Organization</value>
+            </configuration>
+            <configurationGroup name="meta">
+              <configuration name="form" values="many">
+                <value>csd_organization</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="csd_organization_type">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Organization Type</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <version>4.1.8.26</version>
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_Organization -->
+      <configurationGroup name="CSD_Facility">
+        <version>4.1.8.22</version>
+        <configuration name="extends">
+          <value>CSD_NamedEntity</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="csd_facility_type">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Facility Type</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <version>4.1.8.26</version>
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="longitude">
+            <version>4.2.1.2</version>
+            <configuration name="formfield">
+              <value>FLOAT</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Longitude</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="altitude">
+            <version>4.2.1.2</version>
+            <configuration name="formfield">
+              <value>FLOAT</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Altitude</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="latitude">
+            <version>4.2.1.3</version>
+            <configuration name="formfield">
+              <value>FLOAT</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Latitude</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="geo_coordinate_system">
+            <version>4.2.1.4</version>
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Geo-Coordinate System</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_Facility -->
+      <configurationGroup name="CSD_Service">
+        <version>4.1.8.22</version>
+        <configuration name="extends">
+          <value>CSD_Entity</value>
+        </configuration>
+        <configurationGroup name="meta" path="meta/list/default">
+          <version>4.2.0.4</version>
+          <configuration name="display_string">
+            <value>%s (%s)</value>
+          </configuration>
+          <configuration name="display_args" type="delimited" values="many">
+            <version>4.2.0.21.19</version>
+            <value>0:csd_service_type</value>
+            <value>1:enitityID</value>
+          </configuration>
+          <configuration name="sort_fields" type="delimited" values="many">
+            <version>4.2.0.21.19</version>
+            <value>0:csd_service_type</value>
+            <value>1:entityID</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="fields">
+          <configurationGroup name="csd_service_type">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Service Type</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <version>4.1.8.26</version>
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_Service -->
+      <configurationGroup name="CSD_ProviderOrganization">
+        <configuration name="extends">
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="csd_organization">
+            <configuration name="formfield">
+              <version>4.1.8.24</version>
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Organization</value>
+            </configuration>
+            <configurationGroup name="meta">
+              <configuration name="form" values="many">
+                <value>csd_organization</value>
+              </configuration>
+              <configurationGroup name="display">
+                <version>4.2.1.2</version>
+                <configurationGroup name="default">
+                  <configurationGroup name="reportSelect">
+                    <configuration name="reportView">
+                      <value>csd_facility_list</value>
+                    </configuration>
+                    <configuration name="enabled" type="boolean">
+                      <value>true</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configuration name="unique" type="boolean">
+              <version>4.1.8.100</version>
+              <value>true</value>
+            </configuration>
+            <configuration name="unique_field">
+              <version>4.1.8.100</version>
+              <value>parent</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_ProviderOrganization -->
+      <configurationGroup name="CSD_FacilityOrganization">
+        <version>4.2.1.2</version>
+        <configuration name="extends">
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="csd_organization">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Organization</value>
+            </configuration>
+            <configurationGroup name="meta">
+              <configuration name="form" values="many">
+                <value>csd_organization</value>
+              </configuration>
+              <configurationGroup name="display">
+                <configurationGroup name="default">
+                  <configurationGroup name="reportSelect">
+                    <configuration name="reportView">
+                      <value>csd_organization_list</value>
+                    </configuration>
+                    <configuration name="enabled" type="boolean">
+                      <value>true</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configuration name="unique" type="boolean">
+              <value>true</value>
+            </configuration>
+            <configuration name="unique_field">
+              <value>parent</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_FacilityOrganization -->
+      <configurationGroup name="CSD_ProviderFacility">
+        <configuration name="extends">
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="csd_facility">
+            <configuration name="formfield">
+              <version>4.1.8.24</version>
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Facility</value>
+            </configuration>
+            <configuration name="unique" type="boolean">
+              <version>4.1.8.100</version>
+              <value>true</value>
+            </configuration>
+            <configuration name="unique_field">
+              <version>4.1.8.100</version>
+              <value>parent</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <version>4.2.0.1</version>
+              <value>true</value>
+            </configuration>
+            <configurationGroup name="meta">
+              <version>4.2.1.2</version>
+              <configurationGroup name="display">
+                <configurationGroup name="default">
+                  <configurationGroup name="reportSelect">
+                    <configuration name="reportView">
+                      <value>csd_facility_list</value>
+                    </configuration>
+                    <configuration name="enabled" type="boolean">
+                      <value>true</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_ProviderFacility -->
+      <configurationGroup name="CSD_ProviderService">
+        <configuration name="extends">
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="freeBusyURI">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Free Busy URI</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_language">
+            <version>4.1.8.4</version>
+            <configuration name="formfield">
+              <value>MAP_MULT</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Language</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_service">
+            <configuration name="formfield">
+              <version>4.1.8.24</version>
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Service</value>
+            </configuration>
+            <configuration name="unique" type="boolean">
+              <version>4.1.8.100</version>
+              <value>true</value>
+            </configuration>
+            <configuration name="unique_field">
+              <version>4.2.0.6</version>
+              <value>parent,csd_organization</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <version>4.2.0.2</version>
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_organization">
+            <configuration name="formfield">
+              <version>4.2.0.21.10</version>
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Organization</value>
+            </configuration>
+            <configurationGroup name="meta">
+              <configuration name="form" values="many">
+                <value>csd_organization</value>
+              </configuration>
+              <configurationGroup name="display">
+                <configurationGroup name="csd_organization">
+                  <configurationGroup name="default">
+                    <configuration name="printf" locale="en_US">
+                      <value>%s (%s)</value>
+                    </configuration>
+                    <configuration name="printf_args" values="many" type="delimited">
+                      <version>4.2.0.21.19</version>
+                      <value>0:primary_name</value>
+                      <value>1:entityID</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_ProviderService -->
+      <configurationGroup name="CSD_FacilityOrganizationService">
+        <version>4.2.1.2</version>
+        <configuration name="extends">
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="freeBusyURI">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Free Busy URI</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_language">
+            <configuration name="formfield">
+              <value>MAP_MULT</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Language</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_service">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" values="many" type="delimited" locale="en_US">
+              <value>default:Service</value>
+            </configuration>
+            <configuration name="unique" type="boolean">
+              <value>true</value>
+            </configuration>
+            <configuration name="unique_field">
+              <value>parent</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_FacilityOrganizationService -->
+      <configurationGroup name="CSD_OperatingHours">
+        <configuration name="extends">
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="begin_date">
+            <configuration name="formfield">
+              <value>DATE_YMD</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <version>4.2.0.7</version>
+              <value>default:Begin Date</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <version>4.2.0.7</version>
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="end_date">
+            <configuration name="formfield">
+              <value>DATE_YMD</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:End Date</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="day_of_week">
+            <configuration name="formfield">
+              <version>4.2.0.21.13</version>
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Day of Week</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <version>4.2.0.7</version>
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="begin_time">
+            <configuration name="formfield">
+              <value>DATE_HMS</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Beginning Time</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <version>4.2.0.7</version>
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="end_time">
+            <configuration name="formfield">
+              <value>DATE_HMS</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Ending Time</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <version>4.2.0.7</version>
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="open">
+            <configuration name="formfield">
+              <value>BOOL</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Open</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <version>4.2.0.21.16</version>
+              <value>false</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_OperatingHours -->
+      <configurationGroup name="CSD_ProviderCredential">
+        <configuration name="extends">
+          <version>4.2.1.7</version>
+          <value>CSD_Credential</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="csd_provider_credential_type">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Credential Type</value>
+            </configuration>
+            <configuration name="unique" type="boolean">
+              <value>true</value>
+            </configuration>
+            <configuration name="unique_field">
+              <value>parent</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="CSD_OrganizationCredential">
+        <configuration name="extends">
+          <version>4.2.1.7</version>
+          <value>CSD_Credential</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="csd_organization_credential_type">
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Credential Type</value>
+            </configuration>
+            <configuration name="unique" type="boolean">
+              <value>true</value>
+            </configuration>
+            <configuration name="unique_field">
+              <value>parent</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="CSD_Credential">
+        <version>4.2.1.8</version>
+        <configuration name="extends">
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="number">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Number</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="issuing_authority">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Issuing Authority</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="issue_date">
+            <configuration name="formfield">
+              <value>DATE_YMD</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Issue Date</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="renewal_date">
+            <configuration name="formfield">
+              <value>DATE_YMD</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Renewal Date</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_ProviderService -->
+      <configurationGroup name="CSD_Address">
+        <configuration name="extends">
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="address_line">
+            <version>4.2.0.21.5</version>
+            <configuration name="formfield">
+              <value>ASSOC_MAP</value>
+            </configuration>
+            <configurationGroup name="meta">
+              <configuration name="list">
+                <value>csd_address_components</value>
+              </configuration>
+            </configurationGroup>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Address Lines</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_address_type">
+            <configuration name="formfield">
+              <version>4.1.8.1</version>
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Address Type</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+            <configuration name="unique" type="boolean">
+              <value>true</value>
+            </configuration>
+            <configuration name="unique_field">
+              <version>4.1.8.16</version>
+              <value>parent</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_Address -->
+      <!-- END OF /I2CE/forms/formClasses/CSD_OtherIDType -->
+      <configurationGroup name="CSD_OtherID_Base">
+        <version>4.2.0.21.1</version>
+        <configuration name="extends">
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="assigning_authority">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Assigning Authority</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="number">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Number</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_OtherID_Base -->
+      <configurationGroup name="CSD_ProviderOtherID">
+        <version>4.2.1.10</version>
+        <configuration name="extends">
+          <value>CSD_OtherID_Base</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="csd_otherid_type">
+            <configuration name="formfield">
+              <version>4.2.1.9</version>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Identification Type</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_OtherID -->
+      <configurationGroup name="CSD_OrganizationOtherID">
+        <version>4.2.0.21.2</version>
+        <configuration name="extends">
+          <value>CSD_OtherID_Base</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="csd_organization_otherid_type">
+            <configuration name="formfield">
+              <version>4.2.1.5</version>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Identification Type</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_OrganizationOtherID -->
+      <configurationGroup name="CSD_FacilityOtherID">
+        <version>4.2.0.21.1</version>
+        <configuration name="extends">
+          <value>CSD_OtherID_Base</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="csd_facility_otherid_type">
+            <configuration name="formfield">
+              <version>4.2.1.5</version>
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Identification Type</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_FacilityOtherID -->
+      <configurationGroup name="CSD_ProviderName">
+        <configuration name="extends">
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="common_name">
+            <version>4.2.0.21.7</version>
+            <configuration name="formfield">
+              <value>ASSOC_LIST</value>
+            </configuration>
+            <configurationGroup name="meta">
+              <configuration name="show_key">
+                <version>4.2.0.21.9</version>
+                <value>0</value>
+              </configuration>
+              <configuration name="allow_new">
+                <value>1</value>
+              </configuration>
+              <configuration name="allow_delete">
+                <value>1</value>
+              </configuration>
+            </configurationGroup>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Common Name</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="other_name">
+            <version>4.2.0.21.6</version>
+            <configuration name="formfield">
+              <value>ASSOC_LIST</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Other Names</value>
+            </configuration>
+            <configurationGroup name="meta">
+              <configuration name="show_key">
+                <version>4.2.0.21.9</version>
+                <value>0</value>
+              </configuration>
+              <configuration name="allow_delete">
+                <value>1</value>
+              </configuration>
+              <configuration name="allow_new">
+                <value>1</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="honorific">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <version>4.1.8.5</version>
+              <value>default:Honorific</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="forename">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <version>4.1.8.5</version>
+              <value>default:Forename</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="surname">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <version>4.1.8.5</version>
+              <value>default:Surname</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="suffix">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Suffix</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses/CSD_ProviderName -->
+      <configurationGroup name="CSD_ContactPoint">
+        <configuration name="extends">
+          <version>4.1.8.10</version>
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="value">
+            <version>4.2.1</version>
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Value</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="equipment">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Equipment</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="csd_contact_point_type">
+            <version>4.1.8.10</version>
+            <configuration name="formfield">
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Contact Point Type</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <version>4.1.8.11</version>
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="purpose">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <version>4.1.8.12</version>
+              <value>default:Purpose</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="certificate">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Certificate</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- END OF /I2CE/forms/formClasses/CSD_ContactPoint -->
+      </configurationGroup>
+      <!-- END OF /I2CE/forms/formClasses -->
+    </configurationGroup>
+    <!-- END OF /I2CE/forms -->
+    <configurationGroup name="CustomReports-full-csd_facility_list" path="/modules/CustomReports">
+      <version>4.2.1.2</version>
+      <configurationGroup name="csd_facility_list" path="//modules/CustomReports/relationships/csd_facility_list">
+        <configuration name="form">
+          <value>csd_facility</value>
+        </configuration>
+        <configuration name="display_name" locale="en_US">
+          <value>CSD Facility List</value>
+        </configuration>
+        <configuration name="description" locale="en_US">
+          <value>Used for report selection for a MAP filed named csd_facility</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_facility_list" path="//modules/CustomReports/reports/csd_facility_list">
+        <configuration name="relationship">
+          <value>csd_facility_list</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <configuration name="display_name" locale="en_US">
+            <value>CSD Facility List</value>
+          </configuration>
+          <configuration name="description" locale="en_US">
+            <value>Used for a report selection of a MAP field named csd_facility</value>
+          </configuration>
+          <configuration name="category">
+            <value>CSD</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms">
+          <configurationGroup name="primary_form">
+            <configurationGroup name="fields">
+              <configurationGroup name="entityID">
+                <configuration name="enabled">
+                  <value>1</value>
+                </configuration>
+                <configuration name="header" locale="en_US">
+                  <value>Facility Entity ID</value>
+                </configuration>
+                <configuration name="form_display">
+                  <value>0</value>
+                </configuration>
+                <configuration name="link">
+                  <value>view_csd_facility?id=</value>
+                </configuration>
+                <configuration name="target">
+                  <value>primary_form+entityID</value>
+                </configuration>
+                <configuration name="link_append">
+                  <value>primary_form+entityID</value>
+                </configuration>
+                <configuration name="link_type">
+                  <value>link</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="source_directory">
+                <configuration name="enabled">
+                  <value>1</value>
+                </configuration>
+                <configuration name="header" locale="en_US">
+                  <value>Facility Source Directory</value>
+                </configuration>
+                <configuration name="form_display">
+                  <value>0</value>
+                </configuration>
+                <configuration name="target">
+                  <value>_blank</value>
+                </configuration>
+                <configuration name="link_type">
+                  <value>link</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="primary_name">
+                <configurationGroup name="limits">
+                  <configurationGroup name="startswith">
+                    <configuration name="allow_pivot">
+                      <value>1</value>
+                    </configuration>
+                    <configuration name="enabled">
+                      <value>1</value>
+                    </configuration>
+                    <configuration name="pivot">
+                      <value>0</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="enabled">
+                  <value>1</value>
+                </configuration>
+                <configuration name="header" locale="en_US">
+                  <value>Facility Name</value>
+                </configuration>
+                <configuration name="form_display">
+                  <value>0</value>
+                </configuration>
+                <configuration name="target">
+                  <value>_blank</value>
+                </configuration>
+                <configuration name="link_type">
+                  <value>link</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="csd_facility_type">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="allow_pivot">
+                      <value>1</value>
+                    </configuration>
+                    <configuration name="enabled">
+                      <value>1</value>
+                    </configuration>
+                    <configuration name="pivot">
+                      <value>0</value>
+                    </configuration>
+                    <configuration name="header" locale="en_US">
+                      <value>Facility Type</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="enabled">
+                  <value>1</value>
+                </configuration>
+                <configuration name="header" locale="en_US">
+                  <value>Facility Type</value>
+                </configuration>
+                <configuration name="form_display">
+                  <value>0</value>
+                </configuration>
+                <configuration name="target">
+                  <value>_blank</value>
+                </configuration>
+                <configuration name="link_type">
+                  <value>link</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="last_modified">
+                <configurationGroup name="limits">
+                  <configurationGroup name="greaterthan_equals">
+                    <configuration name="allow_pivot">
+                      <value>1</value>
+                    </configuration>
+                    <configuration name="enabled">
+                      <value>1</value>
+                    </configuration>
+                    <configuration name="pivot">
+                      <value>0</value>
+                    </configuration>
+                    <configuration name="header" locale="en_US">
+                      <value>Facility Last Modified</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="enabled">
+                  <value>1</value>
+                </configuration>
+                <configuration name="header" locale="en_US">
+                  <value>Facility Last Modified</value>
+                </configuration>
+                <configuration name="form_display">
+                  <value>0</value>
+                </configuration>
+                <configuration name="target">
+                  <value>_blank</value>
+                </configuration>
+                <configuration name="link_type">
+                  <value>link</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="created">
+                <configuration name="enabled">
+                  <value>1</value>
+                </configuration>
+                <configuration name="header" locale="en_US">
+                  <value>Facility Created</value>
+                </configuration>
+                <configuration name="form_display">
+                  <value>0</value>
+                </configuration>
+                <configuration name="target">
+                  <value>_blank</value>
+                </configuration>
+                <configuration name="link_type">
+                  <value>link</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_facility_list" path="//modules/CustomReports/reportViews/csd_facility_list">
+        <configuration name="report">
+          <value>csd_facility_list</value>
+        </configuration>
+        <configuration name="description" locale="en_US">
+          <value>Report view of selection used for MAP field named csd_facility</value>
+        </configuration>
+        <configuration name="display_name" locale="en_US">
+          <value>csd_facility_list</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="primary_form+entityID">
+            <configuration name="enabled">
+              <value>1</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="primary_form+source_directory">
+            <configuration name="enabled">
+              <value>1</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="primary_form+primary_name">
+            <configuration name="enabled">
+              <value>1</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="primary_form+csd_facility_type">
+            <configuration name="enabled">
+              <value>1</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="primary_form+last_modified">
+            <configuration name="enabled">
+              <value>1</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="primary_form+created">
+            <configuration name="enabled">
+              <value>1</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configuration name="display_order">
+          <value>primary_form+primary_name,primary_form+csd_facility_type,primary_form+entityID,primary_form+source_directory,primary_form+last_modified,primary_form+created</value>
+        </configuration>
+        <configuration name="total">
+          <value>0</value>
+        </configuration>
+        <configuration name="disable">
+          <value>0</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <!-- END csd_facility_list report -->
+    <!-- BEGIN csd_organization_list report -->
+    <configurationGroup name="CustomReports-full-csd_organization_list" path="/modules/CustomReports">
+      <version>4.2.1.2</version>
+      <configurationGroup name="csd_organization_list" path="//modules/CustomReports/relationships/csd_organization_list">
+        <configuration name="form">
+          <value>csd_organization</value>
+        </configuration>
+        <configuration name="display_name" locale="en_US">
+          <value>CSD Organization List</value>
+        </configuration>
+        <configuration name="description" locale="en_US">
+          <value>Used for report selection for a MAP filed named csd_organization</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="csd_organization_list" path="//modules/CustomReports/reports/csd_organization_list">
+        <configuration name="relationship">
+          <value>csd_organization_list</value>
+        </configuration>
+        <configurationGroup name="meta">
+          <configuration name="display_name" locale="en_US">
+            <value>CSD Organization List</value>
+          </configuration>
+          <configuration name="description" locale="en_US">
+            <value>Used for a report selection of a MAP field named csd_organization</value>
+          </configuration>
+          <configuration name="category">
+            <value>CSD</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms">
+          <configurationGroup name="primary_form">
+            <configurationGroup name="fields">
+              <configurationGroup name="entityID">
+                <configuration name="enabled">
+                  <value>1</value>
+                </configuration>
+                <configuration name="header" locale="en_US">
+                  <value>Organization Entity ID</value>
+                </configuration>
+                <configuration name="form_display">
+                  <value>0</value>
+                </configuration>
+                <configuration name="link">
+                  <value>view_csd_organization?id=</value>
+                </configuration>
+                <configuration name="target">
+                  <value>primary_form+entityID</value>
+                </configuration>
+                <configuration name="link_append">
+                  <value>primary_form+entityID</value>
+                </configuration>
+                <configuration name="link_type">
+                  <value>link</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="source_directory">
+                <configuration name="enabled">
+                  <value>1</value>
+                </configuration>
+                <configuration name="header" locale="en_US">
+                  <value>Organization Source Directory</value>
+                </configuration>
+                <configuration name="form_display">
+                  <value>0</value>
+                </configuration>
+                <configuration name="target">
+                  <value>_blank</value>
+                </configuration>
+                <configuration name="link_type">
+                  <value>link</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="primary_name">
+                <configurationGroup name="limits">
+                  <configurationGroup name="startswith">
+                    <configuration name="allow_pivot">
+                      <value>1</value>
+                    </configuration>
+                    <configuration name="enabled">
+                      <value>1</value>
+                    </configuration>
+                    <configuration name="pivot">
+                      <value>0</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="enabled">
+                  <value>1</value>
+                </configuration>
+                <configuration name="header" locale="en_US">
+                  <value>Organization Name</value>
+                </configuration>
+                <configuration name="form_display">
+                  <value>0</value>
+                </configuration>
+                <configuration name="target">
+                  <value>_blank</value>
+                </configuration>
+                <configuration name="link_type">
+                  <value>link</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="csd_organization_type">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="allow_pivot">
+                      <value>1</value>
+                    </configuration>
+                    <configuration name="enabled">
+                      <value>1</value>
+                    </configuration>
+                    <configuration name="pivot">
+                      <value>0</value>
+                    </configuration>
+                    <configuration name="header" locale="en_US">
+                      <value>Organization Type</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="enabled">
+                  <value>1</value>
+                </configuration>
+                <configuration name="header" locale="en_US">
+                  <value>Organization Organization Type</value>
+                </configuration>
+                <configuration name="form_display">
+                  <value>0</value>
+                </configuration>
+                <configuration name="target">
+                  <value>_blank</value>
+                </configuration>
+                <configuration name="link_type">
+                  <value>link</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="csd_parent_organization">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="allow_pivot">
+                      <value>1</value>
+                    </configuration>
+                    <configuration name="enabled">
+                      <value>1</value>
+                    </configuration>
+                    <configuration name="pivot">
+                      <value>0</value>
+                    </configuration>
+                    <configuration name="header" locale="en_US">
+                      <value>Parent Organization</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="enabled">
+                  <value>1</value>
+                </configuration>
+                <configuration name="header" locale="en_US">
+                  <value>Parent Organization</value>
+                </configuration>
+                <configuration name="form_display">
+                  <value>0</value>
+                </configuration>
+                <configuration name="target">
+                  <value>_blank</value>
+                </configuration>
+                <configuration name="link_type">
+                  <value>link</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="last_modified">
+                <configurationGroup name="limits">
+                  <configurationGroup name="greaterthan_equals">
+                    <configuration name="allow_pivot">
+                      <value>1</value>
+                    </configuration>
+                    <configuration name="enabled">
+                      <value>1</value>
+                    </configuration>
+                    <configuration name="pivot">
+                      <value>0</value>
+                    </configuration>
+                    <configuration name="header" locale="en_US">
+                      <value>Last Modified</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="enabled">
+                  <value>1</value>
+                </configuration>
+                <configuration name="header" locale="en_US">
+                  <value>Organization Last Modified</value>
+                </configuration>
+                <configuration name="form_display">
+                  <value>0</value>
+                </configuration>
+                <configuration name="target">
+                  <value>_blank</value>
+                </configuration>
+                <configuration name="link_type">
+                  <value>link</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="created">
+                <configuration name="enabled">
+                  <value>1</value>
+                </configuration>
+                <configuration name="header" locale="en_US">
+                  <value>Created</value>
+                </configuration>
+                <configuration name="form_display">
+                  <value>0</value>
+                </configuration>
+                <configuration name="target">
+                  <value>_blank</value>
+                </configuration>
+                <configuration name="link_type">
+                  <value>link</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="csd_organization_list" path="//modules/CustomReports/reportViews/csd_organization_list">
+        <configuration name="report">
+          <value>csd_organization_list</value>
+        </configuration>
+        <configuration name="description" locale="en_US">
+          <value>Report view of selection used for MAP field named csd_organization</value>
+        </configuration>
+        <configuration name="display_name" locale="en_US">
+          <value>csd_organization_list</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configurationGroup name="primary_form+entityID">
+            <configuration name="enabled">
+              <value>1</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="primary_form+source_directory">
+            <configuration name="enabled">
+              <value>1</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="primary_form+primary_name">
+            <configuration name="enabled">
+              <value>1</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="primary_form+csd_organization_type">
+            <configuration name="enabled">
+              <value>1</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="primary_form+csd_parent_organization">
+            <configuration name="enabled">
+              <value>1</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="primary_form+last_modified">
+            <configuration name="enabled">
+              <value>1</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="primary_form+created">
+            <configuration name="enabled">
+              <value>1</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configuration name="display_order">
+          <value>primary_form+primary_name,primary_form+csd_organization_type,primary_form+entityID,primary_form+csd_parent_organization,primary_form+source_directory,primary_form+last_modified,primary_form+created</value>
+        </configuration>
+        <configuration name="total">
+          <value>0</value>
+        </configuration>
+        <configuration name="disable">
+          <value>0</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

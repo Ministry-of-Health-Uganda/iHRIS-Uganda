@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonContact" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonContact" path="/I2CE" locale="nl">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_messages" path="/modules/forms/formfield_messages" locale="nl">
+      <configuration name="work" path="work/email/invalid_email">
+        <value>Geef een geldig e-mailadres op</value>
+      </configuration>
+      <configuration name="personal" path="personal/email/invalid_email">
+        <value>Geef een geldig e-mailadres op</value>
+      </configuration>
+      <configuration name="other" path="other/email/invalid_email">
+        <value>Geef een geldig e-mailadres op</value>
+      </configuration>
+      <configuration name="emergency" path="emergency/email/invalid_email">
+        <value>Geef een geldig e-mailadres op</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="nl">
+      <configuration name="person_can_view_child_form_person_contact_work" locale="nl">
+        <value>Kan het bij een persoon behorende werkcontactformulier bekijken</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_work" locale="nl">
+        <value>Kan het bij een persoon behorende werkcontactformulier bewerken</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_emergency" locale="nl">
+        <value>Kan het bij een persoon behorende noodcontactformulier bekijken</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_emergency" locale="nl">
+        <value>Kan het bij een persoon behorende noodcontactformulier bewerken</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_personal" locale="nl">
+        <value>Kan het bij een persoon behorende persoonlijke contactformulier bekijken</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_personal" locale="nl">
+        <value>Kan het bij een persoon behorende persoonlijke contactformulier bewerken</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_other" locale="nl">
+        <value>Kan het bij een persoon behorende andere contactpersoonformulier bekijken</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_other" locale="nl">
+        <value>Kan andere contactkindformulieren van een persoon bewerken</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_contact_work">
+          <configuration name="display" values="single" locale="nl">
+            <value>Contactpersoon werk</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_emergency">
+          <configuration name="display" values="single" locale="nl">
+            <value>Noodcontactpersoon</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_other">
+          <configuration name="display" values="single" locale="nl">
+            <value>Ander contactpersoon</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_personal">
+          <configuration name="display" values="single" locale="nl">
+            <value>Persoonlije contactpersoon</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="contact">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="nl">
+            <value>Contactgegevens toevoegen of bijwerken</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

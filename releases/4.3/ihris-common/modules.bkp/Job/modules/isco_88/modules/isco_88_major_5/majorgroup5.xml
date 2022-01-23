@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration PUBLIC "SYSTEM"
+"I2CE_Configuration.dtd">
+<I2CEConfiguration name="isco-88-major-05">
+  <metadata>
+    <displayName>ISCO 88 Job Codes</displayName>
+    <description>The ISCO 88 Job Codes</description>
+    <version>4.3.0</version>
+    <requirement name="isco-88">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="formsData" path="/I2CE/formsData/forms">
+    <displayName>Forms Data</displayName>
+    <description>Form data saved in magic data</description>
+    <configurationGroup name="isco_88_major">
+      <configurationGroup name="5">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>SERVICE WORKERS AND SHOP AND MARKET WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Travel attendants and related workers provide various personal services in connection with travelling by aircraft, train, ship, bus or other vehicle, and escorting individuals and groups on travel tours, sightseeing visits and excursions. Tasks performed usually include: ensuring the comfort and safety of passengers; serving food and refreshments; providing necessary or requested information and answering various questions in connection with the journey; collecting or issuing tickets on board public transport; accompanying individuals or groups on sightseeing tours or excursions and describing points of interest; providing other guide services. Supervision of other workers may be included.</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_sub_major">
+      <configurationGroup name="51">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>PERSONAL AND PROTECTIVE SERVICES WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Travel attendants and travel stewards render personal services to ensure the comfort and safety of passengers, serve meals and beverages, or plan and coordinate housekeeping and social activities on ships. Tasks include - (a) greeting passengers entering aircraft, conducting them to their seats, ensuring that seat-belts are fastened and -no smoking\" and similar signs are obeyed; (b) explaining the use of safety equipment such as life belts and oxygen masks; (c) distributing reading material, headphones, blankets and similar items, and answering passengers\' inquiries; (d) serving pre-prepared meals as well as beverages; (e) selling duty-free goods; (f) administering minor medical aid to passengers in need; (g) taking appropriate action in case of emergencies or accidents; (h) taking care of passengers at airports; (i) taking care of general needs and comfort of ship\'s passengers, including keeping cabins tidy and serving meals in them, on request; (j) performing related tasks; (k) supervising other workers. "</value>
+          </configuration>
+          <configuration name="isco_88_major">
+            <value>isco_88_major|5</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="52">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>MODELS, SALESPERSONS AND DEMONSTRATORS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Fashion and other models wear and display clothing and other items for sale or pose as models for advertising or for artistic creation. Tasks include - (a) dressing in sample apparel of new or current styles or of type wanted by customer; (b) walking, turning and otherwise demonstrating style and other characteristics to best advantage; (c) posing as model for artistic photography, sculpture or painting; (d) posing as model for photography or films in the field of advertising; (e) performing related tasks; (f) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_major">
+            <value>isco_88_major|5</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_minor">
+      <configurationGroup name="511">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>TRAVEL ATTENDANTS AND RELATED WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Transport conductors collect or issue tickets and take care of safety and comfort on trains, trams, buses and other public transport vehicles. Tasks include - (a) collecting or issuing tickets, passes or fares, or checking the validity of ticket&amp; issued previously; (b) taking care of sleeping-car on a passenger train, including the checking of passengers\' tickets, their safety and information requests: (c) ensuring that safety regulations are respected: (d) giving information to passengers, especially about stops and connections; (e) cooperating with the driver in maintaining time schedules; (f) taking appropriate action in case of emergencies or accidents; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|51</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="512">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>HOUSEKEEPING AND RESTAURANT SERVICES WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Cooks plan, organise, prepare and cook foodstuffs in hotels, restaurants and other public eating places, on board ships, on passenger trains and in private households. Tasks include - (a) planning meals, preparing and cooking foodstuffs; (b) planning, supervising and coordinating work in the kitchen; (c) performing related tasks; (d) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|51</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="513">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>PERSONAL CARE AND RELATED WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Institution-based personal care workers perform simple tasks to assist medical, nursing, midwifery and dental professionals or associate professionals in their duties. Tasks include - (a) preparing patients for examination or treatment; (b) changing bed-linen and helping patients with their toilet; (c) providing hot-water bottles and other comforts for patients; (d) serving and collecting food trays and feeding patients needing help; (e) sterilising surgical and other instruments and equipment; (f) assisting dentists by adjusting lights and passing tools and materials as requested; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|51</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="514">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>OTHER PERSONAL SERVICES WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Companions and valets provide companionship and attend to various personal needs of the employer. Tasks include - (a) providing companionship to employer by accompanying him/her to various places, reading, conversing and participating in activities such as sports; (b) assisting in entertaining visitors in employer\'s home; (c) keeping wardrobe and personal effects of the employer in good order; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|51</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="515">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>ASTROLOGERS, FORTUNE-TELLERS AND RELATED WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Fortune-tellers, palmists and related workers recount past and forecast future events on the basis of the characteristics of clients\' palms, samples of playing cards drawn at random or other factors. Tasks include - (a) interpreting characteristics of clients\' palms, samples of playing cards, position of tea leaves or coffee remnants in a cup, shapes and patterns of bones of dead animals, etc.; (b) forecasting future events on the basis of these interpretations; (c) giving warnings and advice on possible courses of action; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|51</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="516">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>PROTECTIVE SERVICES WORKERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Police officers maintain law and order and enforce laws and regulations. Tasks include - (a) maintaining law and order; (b) protecting persons and property from hazards and unlawful acts; (c) arresting persons for contraventions of the law; (d) directing traffic and assuming authority in the event of accidents; (e) performing related tasks; (f) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|51</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="521">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>FASHION AND OTHER MODELS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Shop salespersons and demonstrators sell goods in wholesale or retail establishments and demonstrate and explain functions and qualities of these goods. Tasks performed usually include: selling goods in wholesale establishments to retailers or large-scale consumers; selling goods to customers of retail establishments; demonstrating and explaining qualities and functions of these goods. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|52</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="522">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>SHOP SALESPERSONS AND DEMONSTRATORS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Stall and market salespersons sell various goods such as leather or textile craft products, wood carvings, embroidery, lace, or newspapers, periodicals, postcards, cigarettes, chocolates and ice-creams, at stalls which are usually placed, by licence, at particular places in streets or other open spaces, or they sell fruit, vegetables and other, mostly perishable, foodstuffs on markets. Tasks performed usually include: buying and then selling the above-mentioned or other similar goods at stalls usually grouped at particular places in streets or other open spaces by permission of the relevant local authorities; selling fruit, vegetables and other, mostly perishable, foodstuffs on markets. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|52</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="523">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>STALL AND MARKET SALESPERSONS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Skilled agricultural and fishery workers grow and harvest field or tree and shrub crops, gather wild fruits and plants, breed, tend or hunt animals, produce a variety of animal husbandry products, cultivate, conserve and exploit forests, breed or catch fish and cultivate or gather other forms of aquatic life in order to provide food, shelter and income for themselves and their households. Most occupations in this major group require skills at the second ISCO skill level. Tasks performed by skilled agricultural and fishery workers usually include: preparing the soil; sowing, planting, spraying, fertilising and harvesting field crops; growing fruit and other tree and shrub crops; growing garden vegetables and horticultural products; gathering wild fruits and plants; breeding, raising, tending or hunting animals mainly to obtain meat, milk, hair, fur, skin, sericultural, apiarian or other products; cultivating, conserving and exploiting forests; breeding or catching fish; cultivating or gathering other forms of aquatic life; storing and carrying out some basic processing of their produce; selling their products to purchasers, marketing organisations or at markets. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|52</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_unit">
+      <configurationGroup name="5111">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Travel attendants and travel stewards</value>
+          </configuration>
+          <configuration name="description">
+            <value>Travel guides accompany individuals or groups on sightseeing tours or excursions, describe points of interest and provide other guide services. Tasks include - (a) escorting tourists and looking after their comfort; (b) accompanying tourists on sightseeing tours and describing points of interest; (c) accompanying tourists to museums and exhibitions and giving information on exhibits; (d) guiding groups through factories and similar establishments and giving relevant information; (e) conducting excursions such as mountain climbing, hunting or fishing; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|511</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5112">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Transport conductors</value>
+          </configuration>
+          <configuration name="description">
+            <value>Housekeeping and restaurant services workers organise, supervise and carry out housekeeping functions in commercial establishments, institutions or private households, or perform various kinds of work related to the preparation and cooking of meals and the serving of food and beverages in various commercial establishments, institutions, private households, ships or passenger trains. Tasks performed usually include: engaging,training and discharging domestic staff; organising and conducting the work of domestic staff; taking care of general welfare and suitable conduct of individuals in institutions; controlling the purchase, storage and issue of supplies; preparing and cooking foodstuffs; serving food and beverages. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|511</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5113">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Travel guides</value>
+          </configuration>
+          <configuration name="description">
+            <value>Housekeepers and related workers organise, supervise and carry out housekeeping functions in hotels, clubs, boarding schools and other enterprises and institutions and in private households. Tasks include - (a) engaging, training, discharging organising and supervising workers employed as domestic staff; (b) purchasing or controlling the purchase of supplies; (c) controlling storage and issue of supplies; (d) supervising general welfare and conduct of individuals in institutions; (e) assisting in cases of minor injury or illness by performing tasks such as taking temperature, giving medicine, putting on bandages; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|511</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5121">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Housekeepers and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Waiters, waitresses and bartenders serve food and beverages in commercially-operated dining and drinking places, clubs, institutions and canteens, on board ships and on passenger trains. Tasks include - (a) serving food and beverages; (b) advising on the choice of wines and serving them; (c) serving alcoholic and non-alcoholic drinks at a bar; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|512</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5122">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Cooks</value>
+          </configuration>
+          <configuration name="description">
+            <value>Personal care and related workers provide child care and help in looking after schoolchildren, perform various tasks in order to assist medical and nursing professionals and associate professionals in their duties at hospitals and other institutions, provide home-based personal care, or help veterinary, pharmaceutical or other professionals in their tasks. Tasks performed usually include: taking care of employers\' children and helping teachers by taking care of children at lunch or other school breaks or outings; providing rudimentary nursing and related care in hospitals and similar institutions, or to patients at home; helping veterinary and pharmaceutical professionals in their duties. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|512</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5123">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Waiters, waitresses and bartenders</value>
+          </configuration>
+          <configuration name="description">
+            <value>Child-care workers take care of employers\' children and oversee their daily activities, or engage in helping teachers to look after schoolchildren. Tasks include - (a) assisting children to bath, dress and feed themselves; (b) taking children to and from school or outdoors for recreation; (c) playing games with children, or entertaining children by reading or storytelling; (d) maintaining order in children\'s bedrooms and playrooms; (e) taking care of schoolchildren at lunch or other school breaks; (f) taking care of schoolchildren on excursions, museum visits and similar outings; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|512</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5131">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Child-care workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Home-based personal care workers attend to various personal needs and in general provide personal care for persons in need of such care at their own homes because of physical or mental illness or disability or because of impairment due to old age. Tasks include - (a) assisting persons in getting into and out of bed and making the appropriate change in dress; (b) changing bed-linen and helping persons with their bath and toilet; (c) serving food - prepared by them or others - and feeding persons needing help; (d) giving or ensuring that persons take the necessary medicaments; (e) watching for any sign of deterioration in the person\'s health and informing the relevant medical doctor or social services; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|513</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5132">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Institution-based personal care workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>This unit group covers personal care and related workers not classified elsewhere in Minor group 513, Personal care and related workers. For instance, here should be classified those who are engaged in helping veterinary or pharmaceutical professionals or associate professionals in performing their tasks. In such cases tasks would include - (a) bathing and feeding animals; (b) leading or carrying animals to treatment room and holding them during treatment; (c) cleaning and sterilising veterinary surgical instruments; (d) labelling drugs, chemicals and other pharmaceutical preparations and replenishing stock on shelves; (e) sterilising bottles, beakers and other equipment; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|513</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5133">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Home-based personal care workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Other personal services workers perform various tasks in order to improve the appearance of individuals, provide companionship or look after the wardrobe and other personal effects of employers, or provide embalming and funeral services. Tasks performed usually include: cutting and dressing hair; shaving and trimming beards; giving beauty treatment and applying cosmetics and make-up; shaping and polishing finger- and toe-nails and treating minor ailments of the human foot; attending to clients taking baths and administering elementary massage; providing services as companions or valets; providing embalming and funeral services. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|513</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5139">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Personal care and related workers not classified</value>
+          </configuration>
+          <configuration name="description">
+            <value>Hairdressers, barbers, beauticians and related workers cut and dress hair, shave and trim beards, give beauty treatment, apply cosmetics and make-up and give other kinds of treatment to individuals in order to improve their appearance. Tasks include - (a) cutting, washing, tinting and waving hair; (b) cutting and washing hair and shaving or trimming beards; (c) giving scalp treatment; (d) fitting wigs according to customers\' requirements; (e) cleaning and applying creams, lotions and related products to face and parts of body; (f) giving facial and body massage; (g) applying make-up to clients of a beauty parlour; (h) applying make-up to actors and other performers; (i) cleaning, shaping and polishing finger and toe-nails and treating minor ailments of the human foot such as corns, calluses or deformed toe-nails; (j) attending to clients taking baths and administering elementary massage; (k) performing related tasks; (l) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|513</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5141">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Hairdressers, barbers, beauticians and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Undertakers and embalmers perform various tasks in the disposal of dead human bodies. Tasks include - (a) making arrangements for, and conducting, funerals, cremations and burials; (b) embalming human bodies to retard or arrest the process of decay; (c) performing related tasks; (d) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|514</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5142">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Companions and valets</value>
+          </configuration>
+          <configuration name="description">
+            <value>This unit group covers personal services workers not classified elsewhere in Minor group 514, Other personal services workers. For instance, here should be classified those who undertake to be dancing partners or social escorts, or perform duties of club or night-club hostesses or hosts. In such cases tasks would include - (a) accompanying clients to restaurants and other outings; (b) acting as a dancing partner; (c) welcoming clients to a night-club and ensuring that they are entertained well; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|514</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5143">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Undertakers and embalmers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Astrologers, fortune-tellers and related workers predict future events in persons\' lives by practising astrology or by other techniques and give warnings and advice on possible courses of action. Tasks performed usually include: making forecasts of future events based on the position of stars and planets at specified times or on characteristics of clients\' palms, samples of playing cards drawn at random, position of tea leaves or coffee remnants in a cup and similar techniques.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|514</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5149">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Other personal services workers not elsewhere</value>
+          </configuration>
+          <configuration name="description">
+            <value>Astrologers and related workers predict future events in persons\' lives by practising astrology or related techniques and give warnings and advice on possible courses of action. Tasks include - (a) casting horoscopes of individuals at birth or later to recount past and forecast future events and conditions of their lives; (b) determining auspicious times for various human activities such as inaugurations, marriages, journeys and religious and other ceremonies; (c) studying the influence of the constellation of stars and of other phenomena on a person\'s life and situation; (d) advising individuals on precautions to be taken to avoid evil influences; (e) performing related tasks; (f) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|514</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5151">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Astrologers and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Protective services workers protect individuals and property against fire and other hazards, maintain law and order and enforce laws and regulations. Tasks performed usually include: preventing, fighting and extinguishing fires, rescuing persons and salvaging property and goods during and after fires and major accidents; maintaining law and order, protecting persons and property from hazards and unlawful acts and arresting persons for contraventions of the law; directing traffic and assuming authority in the event of accidents; watching over and maintaining discipline among inmates of prisons, reformatories or penitentiaries. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|515</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5152">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Fortune-tellers, palmists and related workers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Fire-fighters prevent, fight and try to extinguish fires, rescue persons and salvage property and goods during and after fires and major accidents. Tasks include - (a) preventing, fighting and extinguishing fires; (b) fighting special types of fires and using special equipment in industrial establishments; (c) preventing and extinguishing fires in crashed or damaged aircraft and rescuing crew and passengers; (d) rescuing persons and salvaging property and goods during and after fires and major accidents; (e) preventing or limiting the spread of dangerous substances in case of fires or accidents; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|515</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5161">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Fire-fighters</value>
+          </configuration>
+          <configuration name="description">
+            <value>Prison guards watch over and maintain discipline among inmates of prisons, reformatories or penitentiaries. Tasks include - (a) searching arriving prisoners, putting their valuables in safekeeping, escorting prisoners to cells and locking them in; (b) making periodic inspection tours of cells; (c) supervising prisoners at work, meals, or during walks and patrolling prison areas to prevent escape; (d) performing related tasks; (e) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|516</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5162">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Police officers</value>
+          </configuration>
+          <configuration name="description">
+            <value>This unit group covers protective services workers not classified elsewhere in Minor group 516, Protective services workers. For instance, here should be classified those who patrol buildings and areas to prevent illegal entry, theft, violence and other unlawful acts, and who, if necessary, use force to prevent such acts and apprehend perpetrators, as well as those who act as bodyguards, life-guards or game-wardens. In such cases tasks would include - (a) patrolling buildings and areas to prevent theft, violence, infractions of rules or other irregularities; (b) if necessary, exercising the right to use force and to apprehend.perpetrators; (c) performing the duties of a bodyguard; (d) patrolling beaches and swimming pools to prevent accidents and to rescue bathers from drowning; (e) patrolling natural reserves, game parks, forest areas and enclosures to prevent theft and killing of game; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|516</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5163">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Prison guards</value>
+          </configuration>
+          <configuration name="description">
+            <value>Models, salespersons and demonstrators pose as models for artistic creation and display, or demonstrate and sell goods in wholesale or retail shops and similar establishments, as well as at stalls and on markets. Tasks performed by workers in this sub-major group usually n owing: posing as models for advertising, artistic creation and display of goods; selling goods in wholesale or retail establishments, or at stalls usually placed at particular places and on markets; demonstrating goods to potential customers. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|516</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5169">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Protective services workers not elsewhere classified</value>
+          </configuration>
+          <configuration name="description">
+            <value>Fashion and other models wear and display clothing and other items for sale or pose as models for advertising or for artistic creation. Tasks performed usually include: putting on clothes and various accessories to display them for customers in showrooms of manufacturers, wholesalers, retailers or at special fashion- shows; posing as models for artistic photography, sculpture or painting; posing as models for photography or films in the field of advertising. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|516</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5210">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Fashion and other models</value>
+          </configuration>
+          <configuration name="description">
+            <value>Shop salespersons and demonstrators demonstrate and sell goods in wholesale establishments to retailers and large-scale consumers or to customers in retail establishments. Tasks include - (a) moving goods to be sold from storage area to sales area and placing them on display; (b) ascertaining nature and quality of the product desired by the customer; (c) assisting customer in making a choice; (d) quoting prices, credit terms and discounts; (e) packing and arranging delivery of goods, if necessary; (f) writing bill, invoice, docket or receipt; (g) verifying cashier\'s receipt, if necessary; (h) giving demonstrations of articles on sale in order to inform customers about their characteristics and mode of use, as well as to stimulate buying interest; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|521</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5220">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Shop salespersons and demonstrators</value>
+          </configuration>
+          <configuration name="description">
+            <value>Stall and market salespersons sell various goods such as leather or textile craft products, wood carvings, embroidery, lace, or newspapers, periodicals, postcards, cigarettes, chocolates and ice-creams, at stalls usually grouped at particular places in streets or other open spaces by permission of the relevant local authorities, or they sell fruit, vegetables and other, mostly perishable, foodstuffs on markets. Tasks include - (a) obtaining, from the local authorities, permission to set up a stand at a particular place in streets or other open spaces; (b) buying or contracting a regular supply of various goods to be sold such as leather or textile craft products, wood carvings, embroidery or lace, displaying them on stands and selling them; (c) buying or contracting a regular supply of newspapers, periodicals, postcards, cigarettes, chocolates and ice- creams and selling them at kiosks; (d) buying from wholesale markets, or directly from farmers, fresh fruit and vegetables or other, mostly perishable, foodstuffs and selling them on markets; (e) loading and unloading goods for sale; receiving payment; (g) keeping accounts; (h) performing related tasks; (i) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|522</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="5230">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Stall and market salespersons</value>
+          </configuration>
+          <configuration name="description">
+            <value>Market-oriented skilled agricultural and fishery workers plan and carry out the necessary operations to grow and harvest field or tree and shrub crops, gather wild fruits and plants, breed, tend or hunt animals, produce a variety of animal husbandry products, cultivate, conserve and exploit forests, breed or catch fish and cultivate or gather other forms of aquatic life, for sale or delivery on a regular basis to wholesale buyers, marketing organisations or at markets. Tasks performed by workers in this sub-major group usually include: preparing the soil; sowing, planting, spraying, fertilising and harvesting field crops, growing fruit and other tree and shrub crops; growing garden vegetables and horticultural products; growing or gathering wild fruits, medicinal and other plants; raising, breeding, tending or hunting animals mainly to obtain meat, milk, hair, fur, skin, sericultural, apiarian or other products; cultivating, conserving and exploiting forests; breeding and raising fish or catching them; cultivating or gathering other forms of aquatic life; storing and carrying out some basic processing of their produce; selling their products to purchasers, marketing organisations or at markets. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|523</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

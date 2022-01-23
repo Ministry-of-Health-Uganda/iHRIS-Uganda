@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Person-CSD" path="/">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="Person-CSD" path="/" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="csd_uuid_person" path="/modules/forms/formClasses/iHRIS_Person/fields/csd_uuid">
+      <configuration name="headers" type="delimited" locale="en_US">
+        <value>default:CSD Entity ID</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

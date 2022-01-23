@@ -1,0 +1,46 @@
+<div id="siteContent">
+  <h1 class='header'>Add/Update a Scheduled Training Course</h1>
+
+
+  <span name='has_enrolled_students' ifset='true'>
+    <h2>Enrolled Students</h2>
+    <ul id='list_students'>
+    </ul>
+    <hr/>
+
+  </span>
+  <h2><span type="form" name="training_course:name" noedit='true'></span></h2>  
+  <div id="error" />
+  <form method="post" action="training-course/schedule">
+    <span type='form' name='scheduled_training_course:training_course' />
+    <span type='form' name='scheduled_training_course:id' />
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+	<th colspan="2">Course: <span type='form' noedit='true' name="training_course:name" /></th>
+      </tr>
+      <tr>
+	<td>
+	  <span type="form" name="scheduled_training_course:training_course" showhead="default"></span>
+	  <span type="form" name="scheduled_training_course:num_students" showhead="default"></span>
+	  <span type="form" name="scheduled_training_course:start_date" showhead="default"></span>
+	  <span type="form" name="scheduled_training_course:end_date" showhead="default"></span>
+	  <span type="form" name="scheduled_training_course:notes" showhead="default"></span>
+	</td>
+	<td>
+	  <span type="form" name="scheduled_training_course:name" showhead="default"></span>
+	  <span type='module' ifenabled='true' name='training-instructor'>
+	    <span type="form" name="scheduled_training_course:training_instructor" showhead="default"></span>
+	  </span>
+	  <span type="form" name="scheduled_training_course:instructors" showhead="default"></span>
+	  <span type="form" name="scheduled_training_course:location" showhead="default"></span>
+	</td>
+      </tr>
+
+      <tr class="submitCell">
+	<td colspan="2">
+	  <div id="button" />
+	</td>
+      </tr>
+    </table>
+  </form>
+</div>

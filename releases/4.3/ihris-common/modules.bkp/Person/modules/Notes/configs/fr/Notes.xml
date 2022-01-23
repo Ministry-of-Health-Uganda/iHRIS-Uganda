@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonNotes" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonNotes" path="/I2CE" locale="fr">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="fr">
+      <configuration name="person_can_view_child_form_notes" locale="fr">
+        <value>Peut afficher les notes du formulaire-enfant d’une personne</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_notes" locale="fr">
+        <value>Peut éditer les commentaires du formulaire-enfant d’une personne</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="notes">
+          <configuration name="display" values="single" locale="fr">
+            <value>Commentaires</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Notes">
+          <configurationGroup name="fields">
+            <configurationGroup name="note">
+              <configuration name="headers" type="delimited" locale="fr"></configuration>
+            </configurationGroup>
+            <configurationGroup name="date_added">
+              <configuration name="headers" type="delimited" locale="fr">
+                <value>default:Date d’ajout</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="notes">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr">
+            <value>Ajouter/Actualiser des commentaires</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

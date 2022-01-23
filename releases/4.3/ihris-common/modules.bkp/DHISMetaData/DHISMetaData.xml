@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="DHIS_Metadata">
+  <metadata>
+    <displayName>DHIS Metadata</displayName>
+    <category>Application Component</category>
+    <description>Makes DHIS Meta Data such as organizational Units information available to the system</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="forms-storage-xml">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <!-- <path name="XML_DATA"> -->
+    <!--   <value>path to directory containg DHIS's Export.xml</value> -->
+    <!-- </path> -->
+    <priority>100</priority>
+  </metadata>
+  <configurationGroup name="DHIS_Metadata" path="/">
+    <configuration name="export" path="/modules/DHIS_Metadata/export.xml" binary="1">
+      <!-- to be uploaded by end users-->
+      <value />
+    </configuration>
+    <configuration name="cache_profile" path="modules/CachedForms/export/profiles/dhis_metadata" type="delimited">
+      <version>4.1.6.3</version>
+      <value>dhis_orgunit:1</value>
+      <value>dhis_data_element:1</value>
+    </configuration>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <version>4.1.6.1</version>
+      <configurationGroup name="dhis_submit">
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configuration name="class">
+          <value>iHRIS_DHIS_DashboardSubmit</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Submit to DHIS</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="dhis_metadata">
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configuration name="class">
+          <value>iHRIS_DHIS_MetadataUpload</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>DHIS Metadata Upload</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="can_edit_database_list_dhis_orgunit" locale="en_US">
+        <value>Can edit DHIS Organizational unit list</value>
+      </configuration>
+      <configuration name="can_view_database_list_dhis_orgunit" locale="en_US">
+        <value>Can view DHIS Organizational unit list</value>
+      </configuration>
+      <configuration name="can_edit_database_list_dhis_data_element" locale="en_US">
+        <value>Can edit DHIS data element list</value>
+      </configuration>
+      <configuration name="can_view_database_list_dhis_data_element" locale="en_US">
+        <value>Can view DHIS data element list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="can_edit_database_list_dhis_data_element" values="many">
+        <value>can_view_database_list_dhis_data_element</value>
+      </configuration>
+      <configuration name="can_edit_database_list_dhis_orgunit" values="many">
+        <value>can_view_database_list_dhis_orgunit</value>
+      </configuration>
+      <configuration name="can_edit_all_database_lists" values="many">
+        <value>can_edit_database_list_dhis_orgunit</value>
+        <value>can_edit_database_list_dhis_data_element</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <displayName>Forms available to the form factory</displayName>
+        <status>advanced:true</status>
+        <status>required:true</status>
+        <configurationGroup name="dhis_data_element">
+          <configuration name="class" values="single">
+            <value>iHRIS_DHIS_CodedList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Data Element</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>XML</value>
+          </configuration>
+          <configurationGroup name="storage_options">
+            <configurationGroup name="XML">
+              <configuration name="search">
+                <value>XML_DATA</value>
+              </configuration>
+              <configuration name="file">
+                <value>mdn://modules/DHIS_Metadata/export.xml</value>
+              </configuration>
+              <configurationGroup name="namespaces">
+                <configuration name="dxf">
+                  <value>http://dhis2.org/schema/dxf/1.0</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="basequery">
+                <value>/dxf:dxf/dxf:dataElements</value>
+              </configuration>
+              <configuration name="dataquery">
+                <value>dxf:dataElement</value>
+              </configuration>
+              <configurationGroup name="id">
+                <configuration name="query">
+                  <value>dxf:id</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="fields">
+                <configurationGroup name="name">
+                  <configuration name="query">
+                    <value>dxf:name</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="code">
+                  <configuration name="query">
+                    <value>dxf:code</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="dhis_uid">
+                  <configuration name="query">
+                    <value>dxf:uid</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="dhis_orgunit">
+          <configuration name="class" values="single">
+            <value>iHRIS_DHIS_CodedList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>DHIS Organizational Unit</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>XML</value>
+          </configuration>
+          <configurationGroup name="storage_options">
+            <configurationGroup name="XML">
+              <configuration name="search">
+                <value>XML_DATA</value>
+              </configuration>
+              <configuration name="file">
+                <value>mdn://modules/DHIS_Metadata/export.xml</value>
+              </configuration>
+              <configurationGroup name="namespaces">
+                <configuration name="dxf">
+                  <value>http://dhis2.org/schema/dxf/1.0</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="basequery">
+                <value>/dxf:dxf/dxf:organisationUnits</value>
+              </configuration>
+              <configuration name="dataquery">
+                <value>dxf:organisationUnit</value>
+              </configuration>
+              <configurationGroup name="id">
+                <configuration name="query">
+                  <value>dxf:id</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="fields">
+                <configurationGroup name="code">
+                  <configuration name="query">
+                    <value>dxf:code</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="name">
+                  <configuration name="query">
+                    <value>dxf:name</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="dhis_uid">
+                  <configuration name="query">
+                    <value>./dxf:uid</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- unit -->
+      </configurationGroup>
+      <!-- End /modules/forms/forms-->
+      <configurationGroup name="formClasses">
+        <displayName>Form Class Configuration</displayName>
+        <configurationGroup name="iHRIS_DHIS_CodedList">
+          <configurationGroup name="meta" path="meta/list/default">
+            <configuration name="display_string">
+              <value>%s (%s/%s)</value>
+            </configuration>
+            <configuration name="display_args" type="delimited" values="many">
+              <value>0:name</value>
+              <value>1:code</value>
+              <value>2:dhis_uid</value>
+            </configuration>
+            <configuration name="sort_fields" type="delimited" values="many">
+              <value>0:name</value>
+              <value>1:code</value>
+            </configuration>
+          </configurationGroup>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_SimpleCodedList</value>
+          </configuration>
+          <configurationGroup name="meta" path="meta/list/default">
+            <configuration name="sort_fields" type="delimited" values="many">
+              <value>0:name</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="fields">
+            <configurationGroup name="dhis_uid">
+              <configuration name="formfield">
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:DHIS UID</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_Unit -->
+      </configurationGroup>
+      <!-- End /modules/forms/formClasses -->
+    </configurationGroup>
+    <!-- End /modules/forms -->
+  </configurationGroup>
+  <!-- OrgUnits -->
+</I2CEConfiguration>

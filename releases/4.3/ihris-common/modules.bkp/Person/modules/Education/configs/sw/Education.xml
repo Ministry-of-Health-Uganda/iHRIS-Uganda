@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEducation" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEducation" path="/I2CE" locale="sw">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="sw">
+      <configuration name="person_can_view_child_form_education" locale="sw">
+        <value>Weza kuangalia fomu ya elimu ya mtoto wa mtu</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_education" locale="sw">
+        <value>Weza kuhariri fomu za elimu za mtoto wa mtu</value>
+      </configuration>
+      <configuration name="can_edit_database_list_edu_type" locale="sw">
+        <value>Weza kuhariri orodha za hazinadata za aina ya elimu</value>
+      </configuration>
+      <configuration name="can_view_database_list_edu_type" locale="sw">
+        <value>Weza kuangalia orodha za hazinadata za aina ya elimu</value>
+      </configuration>
+      <configuration name="can_edit_database_list_degree" locale="sw">
+        <value>Weza kuhariri orodha za hazinadata za aina ya shahada</value>
+      </configuration>
+      <configuration name="can_view_database_list_degree" locale="sw">
+        <value>Weza kuangalia orodha za hazinadata za aina ya shahada</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="education">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw">
+            <value>Ongeza/Sasisha Historia ya Elimu</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="degree">
+          <configuration name="display" values="single" locale="sw">
+            <value>Shahada</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="edu_type">
+          <configuration name="display" values="single" locale="sw">
+            <value>Aina ya Elimu</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="education">
+          <configuration name="display" values="single" locale="sw">
+            <value>Historia ya Elimu</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Degree">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Jina</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="edu_type">
+              <configuration name="headers" type="delimited" values="many" locale="sw">
+                <value>default:Aina ya Elimu</value>
+                <value>select_degree:Chagua Aina ya Elimu halafu Shahada</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Education">
+          <configurationGroup name="fields">
+            <configurationGroup name="degree">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Shahada</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="institution">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Jina la Taasisi</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Mahali ilipo Taasisi</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="year">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Mwaka wa Kuhitimu (usijaze kama bado unaendelelea)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="major">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Kozi ya Lazima</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="training-exam">
+  <metadata>
+    <displayName>Training Course Exam</displayName>
+    <className>iHRIS_Module_Training_Exam</className>
+    <category>Application Component</category>
+    <description>Makes exam result tracking available to training course module</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="training-course">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+  </metadata>
+  <configurationGroup name="training-exam" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="person_scheduled_training_course_can_edit_exam" locale="en_US">
+        <value>Evaluate a perons's cheduled training course</value>
+      </configuration>
+      <configuration name="person_scheduled_training_course_can_view_exam" locale="en_US">
+        <value>View a perons's cheduled training course evaluation</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_scheduled_training_course_can_edit_exam" values="many">
+        <value>person_scheduled_training_course_can_edit_exam</value>
+        <value>person_can_view</value>
+        <value>person_can_view_child_form_person_scheduled_training_course</value>
+      </configuration>
+      <configuration name="person_scheduled_training_course_can_view_exam" values="many">
+        <value>person_can_view</value>
+        <value>person_can_view_child_form_person_scheduled_training_course</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="exam_type_data" path="/I2CE/formsData/forms/training_course_exam_type">
+      <configurationGroup name="final">
+        <configuration name="last_modified">
+          <value>2010-10-28 09:22:37</value>
+        </configuration>
+        <configuration name="who">
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Final</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="incourse">
+        <configuration name="last_modified">
+          <value>2010-10-28 09:22:37</value>
+        </configuration>
+        <configuration name="who">
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>In Course Exam</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="pretest">
+        <configuration name="last_modified">
+          <value>2010-10-28 09:22:37</value>
+        </configuration>
+        <configuration name="who">
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>PreTest</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="training_course_exam_type">
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Training Course Exam Type</value>
+          </configuration>
+          <configuration name="storage">
+            <version>4.0.12.2</version>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="training_course_exam">
+          <configuration name="class" values="single">
+            <value>iHRIS_Training_Course_Exam</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Training Course Exam</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_scheduled_training_course">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <value>training_course_exam</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- End of forms -->
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Training_Course_Exam">
+          <!--almost the same as a person competency, except there is a notes and a few of the fields are required -->
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <configurationGroup name="notes">
+              <displayName>The field 'notes'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Notes</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="evaluation_date">
+              <displayName>The field 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Evaluation Date</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="training_course_exam_type">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Exam Type</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="score">
+              <displayName>The field 'competency'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Score</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Training_Course">
+          <configurationGroup name="fields">
+            <configurationGroup name="passing_score">
+              <configuration name="formfield">
+                <value>INT</value>
+              </configuration>
+              <configuration name="default_value">
+                <value>90</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Passing Score For Final Exam</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- End of formsClasse -->
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="exam" path="/modules/training-course/page/exam">
+        <configuration name="class" values="single">
+          <value>iHRIS_Page_FormExam</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="defaultHTMLFile" values="many">
+            <value>form_exams.html</value>
+          </configuration>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Training Course Exam Results</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <value>person_scheduled_training_course</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_scheduled_training_course_can_edit_exam</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <!--End of /I2Ce/page -->
+  </configurationGroup>
+</I2CEConfiguration>

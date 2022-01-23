@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SampleData-Common">
+  <metadata>
+    <displayName>iHRIS Common Sample Data</displayName>
+    <description>Sample Data for iHRIS Common forms.</description>
+    <version>4.3.0</version>
+    <link>https://launchpad.net/ihris-common</link>
+    <requirement name="ihris-common">
+      <atLeast version="4.0" />
+    </requirement>
+    <enable name="SampleData-Geography" />
+    <enable name="SampleData-currency" />
+    <enable name="SampleData-degree" />
+    <enable name="SampleData-marital_status" />
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

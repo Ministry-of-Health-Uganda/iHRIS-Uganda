@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="csd-data-address-type">
+  <metadata>
+    <displayName>CSD Data Address Type</displayName>
+    <category>Application Component</category>
+    <description>CSD Data - Address Type</description>
+    <creator>IntraHealth Informatics</creator>
+    <email>litlfred@gmail.com</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+  </metadata>
+  <configurationGroup name="csd-data-address-type" path="/modules/forms">
+    <configuration name="storage" path="/modules/forms/forms/csd_address_type/storage">
+      <version>4.2.0.10</version>
+      <value>magicdata</value>
+    </configuration>
+    <!--REQUIRED VALUES-->
+    <configurationGroup name="csd_provider_address_type_values" path="/I2CE/formsData/forms/csd_address_type">
+      <version>4.2.0.8</version>
+      <configurationGroup name="Billing">
+        <configuration name="last_modified">
+          <value>2014-01-16 16:20:00</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" locale="en_US">
+            <value>Billing</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="Practice">
+        <configuration name="last_modified">
+          <value>2014-01-16 16:20:00</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" locale="en_US">
+            <value>Practice</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="Mailing">
+        <configuration name="last_modified">
+          <value>2014-01-16 16:20:00</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" locale="en_US">
+            <value>Mailing</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,11 @@
+<div id="siteContent">
+  <h1>Alle records van een faciliteit verwijderen</h1>
+  <p><strong>Waarschuwing:</strong> Hierdoor worden alle posities en persoonrecords die zijn toegewezen aan die posities uit de database verwijderd. Dit kan alleen handmatig worden hersteld via de back-ups, dus zorg ervoor dat uw back-ups up-to-date zijn voordat u deze handeling uitvoert.</p>
+  <form method="POST" id="delete_form" action="delete_by_search_action">
+    <h2>Geselecteerde mensen</h2>
+    <div id="search_list">
+    </div>
+    <div id="search_selection" style="display:none;">
+      <select id="search_select" name="people[]" multiple></select></div>
+    <input type="hidden" name="step" value="choose"><input type="submit" class="button" value="Continue"></form>
+</div>

@@ -1,0 +1,41 @@
+<div>
+	 <div style='float:right;display:inline-block'>
+      <img text='mHero' style='width:12em' src='file/mHero.png'  />
+    </div>
+  <li>
+  <div>
+  <h1>Generate Wofkflows Results</h1>
+  <form action='pull_workflows_results' method='GET'>
+    <label for='flow'>Select Workflow To Generate <select name='flow'><option value='all'>All Workflows</option></select>
+    <input type='submit' value='Generate Results'/>
+  </form>
+  </div>
+  <hr />
+  </li>
+  <li>
+  <div >
+    <h1 style='display:inline-block'>mHero: Bulk Workflows</h1>
+  </div>
+  <hr/>
+  <div id='error'/>
+
+  <h2>Start Workflow or Export Results of a Workflow on Multiple Participants</h2>
+  Select a report to use to search for participants to kick off a workflow.
+  <div>
+    <form action='mHero/redirect'>
+      <select name='view'><option value=''>Select a report</option></select>
+      <input type='submit' value='Select Participants'/>
+    </form>
+  </div>
+  
+
+  <hr/>
+  <h2>View Summary Results Of Workflow</h2>
+  <form action='mHero' method='GET'>
+    <label for='flow'>Workflow <select name='flow'><option>Select a workflow</option></select>
+    <input type='submit' value='View Results'/>
+  </form>
+  <div id='kickoff_results'/>
+  <div id='detailed_results'/>
+  </li>
+</div>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="simple-competency" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="simple-competency" path="/I2CE" locale="uk">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_lists_competency" locale="uk">
+        <value>Редагувати всі списки пов'язані з кваліфікацією</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency" locale="uk">
+        <value>Редагувати список кваліфікацій</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_type" locale="uk">
+        <value>Редагувати список типів кваліфікацій</value>
+      </configuration>
+      <configuration name="can_view_database_lists_competency" locale="uk">
+        <value>Переглянути увесь список пов'язаний з кваліфікацією</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency" locale="uk">
+        <value>Переглянути список кваліфікацій</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency_type" locale="uk">
+        <value>Переглянути список типів кваліфікації</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="competency">
+          <configuration name="display" values="single" locale="uk">
+            <value>Кваліфікація</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="competency_type">
+          <configuration name="display" values="single" locale="uk">
+            <value>Тип кваліфікації</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Competency">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Назва</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency_type">
+              <configuration name="headers" type="delimited" values="many" locale="uk">
+                <value>default:Тип кваліфікації</value>
+                <value>select_competency_type:Виберіть тип кваліфікації, потім кваліфікацію</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" locale="uk">
+                <value>default:Примітки</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

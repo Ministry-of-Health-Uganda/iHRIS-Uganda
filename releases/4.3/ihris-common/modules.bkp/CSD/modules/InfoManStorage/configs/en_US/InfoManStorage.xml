@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="csd-infoman-storage" path="/">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="csd-infoman-storage" path="/" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="can_edit_remote_directory" locale="en_US">
+        <value>Can edit remote directory</value>
+      </configuration>
+      <configuration name="can_view_remote_directory" locale="en_US">
+        <value>Can view remote directory</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/forms">
+      <configurationGroup name="csd_info_manager">
+        <configuration name="display" values="single" locale="en_US">
+          <value>CSD InfoManager</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+      <configurationGroup name="CSD_InfoManager">
+        <configurationGroup name="fields">
+          <configurationGroup name="ssl_version">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:SSL Version</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="user">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Info Manager User (Basic Auth)</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="password">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Info Manager Password (Basic Auth)</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="url">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:CSD Info Manager URL</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="url_updating">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:CSD Info Manager URL (Updates)</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="is_provider">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Contains Health Worker Directory Information</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="is_service">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Contains Service Directory Information</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="is_facility">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Contains Facility Directory Information</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="is_organization">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Contains Organization Directory Information</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="name">
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:CSD Info Manager Name</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

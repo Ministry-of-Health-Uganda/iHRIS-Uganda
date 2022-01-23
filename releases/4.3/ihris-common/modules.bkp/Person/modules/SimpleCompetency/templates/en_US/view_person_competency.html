@@ -1,0 +1,20 @@
+<div >
+	<div class="editRecord" >
+	<p>Edit This Information</p>
+		<ul>
+			<li task='person_can_edit_child_form_person_competency'><span type="form" name="person_competency:id" href="person_competency?id=" parent="true" >Update this Information</span></li>
+			<li task='person_competency_can_view_evaluation_history'><span type="form" name="person_competency:id" href="person_competency_history?id=" parent="true" >View Evaluation History</span></li>
+		</ul>
+	</div> <!-- editRecord -->
+	
+	<div class="dataTable" task='person_can_view_child_form_person_competency'>
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<th colspan="2">Competency</th>
+		</tr>
+		<span type="form" name="person_competency:competency" showhead="default"></span>
+		<span type='form' name="person_competency:competency_evaluation" showhead="default" ifset="true" class="even"></span>
+		<span type='form' name="person_competency:evaluation_date" showhead="default" ifset="true"></span>
+	</table>
+	</div> <!-- dataTable -->
+</div>

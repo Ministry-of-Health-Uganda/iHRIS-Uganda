@@ -2,10 +2,10 @@
 <!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
 <I2CEConfiguration name="PersonID" path="/I2CE">
   <metadata>
-    <version>4.2.1.0.1</version>
+    <version>4.3.0.1</version>
   </metadata>
   <configurationGroup name="PersonID" path="/I2CE" locale="fr">
-    <version>4.2.1.0.1</version>
+    <version>4.3.0.1</version>
     <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="fr">
       <configuration name="exp_date" path="person_id/expiration_date/bad_date" locale="fr">
         <value>La date d'expiration doit être postérieure à la date d'émission.</value>
@@ -93,7 +93,7 @@
         <configurationGroup name="fields">
           <configurationGroup name="pattern">
             <configuration name="headers" type="delimited" locale="fr">
-              <value>default:Motif (expression régulière)</value>
+              <value>default:Motif (expression rationnelle)</value>
             </configuration>
           </configurationGroup>
         </configurationGroup>

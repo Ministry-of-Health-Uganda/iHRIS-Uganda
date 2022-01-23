@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Person-CSD">
+  <metadata>
+    <displayName>CSD Person</displayName>
+    <category>Application Component</category>
+    <description>Person form references CSD Provider</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="Person-CSD" path="/">
+    <configurationGroup name="csd_uuid_person" path="/modules/forms/formClasses/iHRIS_Person/fields/csd_uuid">
+      <version>4.2.0.18</version>
+      <configuration name="formfield">
+        <value>STRING_LINE</value>
+      </configuration>
+      <configuration name="headers" type="delimited" locale="en_US">
+        <value>default:CSD Entity ID</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

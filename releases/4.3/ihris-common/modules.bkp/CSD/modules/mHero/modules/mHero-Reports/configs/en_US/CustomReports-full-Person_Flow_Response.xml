@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports-full-Person_Flow_Response" path="/modules/CustomReports">
+  <metadata>
+    <version>4.3.0.0</version>
+  </metadata>
+  <configurationGroup name="CustomReports-full-Person_Flow_Response" path="/modules/CustomReports" locale="en_US">
+    <version>4.3.0.0</version>
+    <configurationGroup name="Person_Flow_Response" path="//modules/CustomReports/relationships/Person_Flow_Response">
+      <configuration name="display_name" locale="en_US">
+        <value>Person Flow Response</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <configurationGroup name="demographic">
+          <configuration name="display_name" locale="en_US">
+            <value>Demographic</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="flow_run">
+          <configuration name="display_name" locale="en_US">
+            <value>Flow Run</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="Person_Flow_Response" path="//modules/CustomReports/reports/Person_Flow_Response">
+      <configurationGroup name="meta">
+        <configuration name="display_name" locale="en_US">
+          <value>Person Flow Response</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="reporting_forms">
+        <configurationGroup name="demographic">
+          <configurationGroup name="fields">
+            <configurationGroup name="gender">
+              <configuration name="header" locale="en_US">
+                <value>Gender</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Gender</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="location">
+              <configuration name="header" locale="en_US">
+                <value>County</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>County</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="flow_run">
+          <configurationGroup name="fields">
+            <configurationGroup name="responded">
+              <configuration name="header" locale="en_US">
+                <value>Responded</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="session_number">
+              <configuration name="header" locale="en_US">
+                <value>Session Number</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Session Number</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="header" locale="en_US">
+                <value>Flow Start Date</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="between">
+                  <configuration name="header" locale="en_US">
+                    <value>Between Start Date</value>
+                  </configuration>
+                </configurationGroup>
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Equals Start Date</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="workflows">
+              <configuration name="header" locale="en_US">
+                <value>Workflows</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Workflows</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="primary_form">
+          <configurationGroup name="fields">
+            <configurationGroup name="firstname">
+              <configuration name="header" locale="en_US">
+                <value>First Name</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>First Name</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="othername">
+              <configuration name="header" locale="en_US">
+                <value>Middle Name</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="surname">
+              <configuration name="header" locale="en_US">
+                <value>Surname</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <configurationGroup name="equals">
+                  <configuration name="header" locale="en_US">
+                    <value>Surname</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="Person_Flow_Response" path="//modules/CustomReports/reportViews/Person_Flow_Response">
+      <configuration name="description" locale="en_US">
+        <value>List of Health Workers Responded To Any Workflow In A Specified Time Or Flow</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <value>Health Worker Initial Response</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

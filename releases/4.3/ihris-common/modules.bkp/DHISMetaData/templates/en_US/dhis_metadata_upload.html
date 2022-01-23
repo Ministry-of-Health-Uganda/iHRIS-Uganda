@@ -1,0 +1,17 @@
+<div>
+  <h2>Current DHIS Metadata Export<h2>  
+  <ul>
+    <li>File size: <span name='dhis_export_filesize'/></li>
+    <li><a href="lists?type=dhis_orgunit">Organizational Units</a></li>
+    <li><a href="lists?type=dhis_data_element">Data Elements</a></li>
+  </ul>
+  
+  <h2>Upload DHIS Metadata Export</h2>
+  <div id='error_messages'/>
+  <form method="POST"  enctype="multipart/form-data">
+    <label for="dhisexport">DHIS Metadata Export:</label>
+    <input type="file" name="dhisexport"/>
+    <input type='submit' value='Upload'/>
+  </form>
+  
+</div>

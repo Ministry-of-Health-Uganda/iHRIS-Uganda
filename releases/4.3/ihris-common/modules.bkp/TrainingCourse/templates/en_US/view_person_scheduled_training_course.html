@@ -1,0 +1,84 @@
+<div task='can_view_person_scheduled_training_course'>
+  <div class="editRecord">
+    <p>Edit This Information</p>
+    <ul>
+      <span >
+	<li  task='peson_can_edit_child_form_person_scheduled_training_course'>
+	  <span  type="form" 
+		 name="person_scheduled_training_course:id" 
+		 href="training-course/schedule-person?id=" 
+		 parent='true'>Correct this Information
+	  </span>
+	</li>
+	<span type='module' name='training-simple-competency' ifenabled='true'>
+	  <li  task='person_scheduled_training_course_can_edit_evaluation'>
+	    <span  type="form" name="person_scheduled_training_course:id" 
+		   href="training-course/evaluate-competencies?id="  		   
+		    >
+	      Course Competency Evaluations
+	    </span>
+	  </li>
+	</span>
+	<span type='module' name='training-exam' ifenabled='true'>
+	  <li  task='person_scheduled_training_course_can_edit_exam'>
+	    <span  type="form" name="person_scheduled_training_course:id" 
+		   href="training-course/exam?parent="  		   
+		   >
+	      Record An Exam Result
+	    </span>
+	  </li>
+	</span>
+	<span name='training_course:certificate' ifset='true'>
+	  <li  >
+	    <span  type="form" name="person_scheduled_training_course:id" 
+		   href="studentcertificates?student_id=">  		   
+	      Download Training Certificate
+	    </span>
+	  </li>
+	</span>
+      </span>
+    </ul>
+  </div> <!-- editRecord -->
+
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+	<th colspan="2">Course</th>
+      </tr>
+      <tr name='training_course:id' ifset='true' class="even">
+	<td>
+	  <span class="field_head"><label>Course Name</label>:</span>
+	</td>
+	<td>
+	  <span type='form' href='view_list?type=scheduled_training_course&amp;&amp;id='  name='scheduled_training_course:id'>
+	    <span type="form" name="training_course:name"  ></span>
+	  </span>
+	</td>
+      </tr>
+      <span type="form" name="scheduled_training_course:start_date" showhead="default" ></span>
+      <span type="form" name="scheduled_training_course:end_date" class="even" showhead="default"></span>
+      <span type="form" name="person_scheduled_training_course:request_date" showhead="default" ></span>
+      <span type="form" name="person_scheduled_training_course:duty_commencement_date" showhead="default" ></span>
+      <span type="form" name="person_scheduled_training_course:completed" showhead="default" class="even"></span>
+      <span type="form" name="person_scheduled_training_course:average" showhead="default" ></span>
+      <span type="form" name="person_scheduled_training_course:requestor" showhead="default" class='even' ></span>
+      <span type="form" name="person_scheduled_training_course:is_retraining" showhead="default" ></span>
+      <span type="form" name="person_scheduled_training_course:certification_date" showhead="default" class='even' ></span>
+      <span type="form" name="person_scheduled_training_course:training_course_mod" showhead="default" class='even' ></span>
+      <span task='person_scheduled_training_course_can_view_evaluation' >
+	<span type="form" name="person_scheduled_training_course:training_course_evaluation" showhead="default "></span>
+      </span>
+      <span type="form" name="person_scheduled_training_course:notes_date" showhead="default" class='even'></span>
+    </table>
+    <span type='module' name='training-exam' ifenabled='true'>      
+      <span task='person_scheduled_training_course_can_view_exam'>
+	<span ifset='true' name='has_exam_results'>
+	  <table border="0" cellspacing="0" cellpadding="0" id='exam_results'>
+	  </table>
+	</span>
+      </span>
+    </span>
+  </div> <!-- dataTable -->
+  
+  
+</div>

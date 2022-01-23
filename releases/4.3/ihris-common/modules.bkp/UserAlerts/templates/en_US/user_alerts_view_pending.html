@@ -1,0 +1,21 @@
+<div>
+  <table border="0" cellpadding="0" cellspacing="0" class="pending_alert">
+    <tr>
+      <th class="alert_type"><span type="form" name="user_alert:alert_type"></span></th>
+      <th class="repeated">
+        <span type="form" name="user_alert:repeated" ifvalue="!0">Repeated:</span>
+      </th>
+      <th class="time_sent"><span type="form" name="user_alert:time_sent"></span></th>
+    </tr>
+    <tr>
+      <td class="message" colspan="3">
+        <span type="form" name="user_alert:link" target="_new" href="" ifset="true"><span type="form" name="user_alert:link_text"></span><br /></span>
+        <span type="form" name="user_alert:message"></span>
+        <br />
+        <div class="buttons">
+          <span class="button" type="form" name="user_alert:id" href="ack_alert?id=">Acknowledge this Alert</span>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>

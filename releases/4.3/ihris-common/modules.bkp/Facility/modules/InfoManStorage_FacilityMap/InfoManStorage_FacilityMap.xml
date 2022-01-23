@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="InfoManStorage_FacilityMap">
+  <metadata>
+    <displayName>CSD InterLinked Registry Facility Map</displayName>
+    <category>Application Component</category>
+    <description>Adds field to Facility form to map to CSD Compliant InterLinked or Facility Registry</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="csd-infoman-storage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="csd-provider-pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <priority>100</priority>
+  </metadata>
+  <configurationGroup name="InfoManStorate_FacilityMap" path="/">
+    <configuration name="cache_times" path="/modulesCachedForms/times/stale_time_by_form" values="many" type="delimited">
+      <version>4.2.1.4</version>
+      <value>csd_facility:-1</value>
+      <value>csd_organization:-1</value>
+    </configuration>
+    <configurationGroup name="csd_faciliy_field" path="/modules/forms/formClasses/iHRIS_Facility/fields/csd_facility">
+      <configuration name="formfield">
+        <value>MAP</value>
+      </configuration>
+      <configuration name="headers" type="delimited" locale="en_US">
+        <value>default:CSD Facility</value>
+      </configuration>
+      <configurationGroup name="meta">
+        <version>4.2.1.8</version>
+        <configurationGroup name="display">
+          <configurationGroup name="default">
+            <configurationGroup name="printf">
+              <configuration name="csd_facility">
+                <value>%s (%s)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="printf_args">
+              <configuration name="csd_facility" type="delimited" values="many">
+                <value>0:primary_name</value>
+                <value>1:entityID</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reportSelect">
+              <configuration name="reportView">
+                <value>csd_facility_list</value>
+              </configuration>
+              <configuration name="enabled" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,44 @@
+<div id="siteContent">
+  <h1 class='header'>Schedule a Person for a Training Course</h1>
+  <h2><span type='form' name='person:surname' noedit="true"/>,<span type='form' name='person:firstname' noedit="true"/></h2>
+
+  <div id="error" />
+  <form method="post" action="training-course/schedule-person">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+    <span type='form' name='person:id' alt_name='parent'/>
+    <span type='form' name='person_scheduled_training_course:id' />
+      <tr>
+	<th colspan="2"><span name="type_name">Add/Update Training Course Scheduling</span></th>
+      </tr>
+      <tbody id="list_fields">
+	<tr>
+	  <td>
+	    <span type='form' name='person_scheduled_training_course:scheduled_training_course' showhead='default' show='open_any_date'/> 
+	    <span type='form' name='person_scheduled_training_course:request_date' showhead='default'/>
+	    <span type='form' name='person_scheduled_training_course:duty_commencement_date' showhead='default'/>
+	    <span type='form' name='person_scheduled_training_course:training_course_requestor' showhead='default'/>
+	    <span type='form' name='person_scheduled_training_course:certification_date' showhead='default'/>
+	    <span type='form' name='person_scheduled_training_course:training_course_mod' showhead='default'/>
+	  </td>
+	  <td>
+	    <span type='form' name='person_scheduled_training_course:is_retraining' showhead='default'/>
+	    <span type='form' name='person_scheduled_training_course:completed' showhead='default'/>
+	    <span type='form' name='person_scheduled_training_course:training_course_evaluation' showhead='default'/>
+	  </td>
+	</tr>
+	<tr>
+	  <td colspan='2'>
+	    <span type='form' name='person_scheduled_training_course:notes' showhead='default'/>
+	  </td>
+	</tr>
+	<tr class="submitCell">
+	  <td colspan="2">
+	    <div id="button" />
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+  </form>
+
+
+</div>

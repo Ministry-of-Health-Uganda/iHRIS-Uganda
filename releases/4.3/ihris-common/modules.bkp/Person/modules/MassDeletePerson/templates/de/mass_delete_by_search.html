@@ -1,0 +1,11 @@
+<div id="siteContent">
+  <h1>Alle Einträge nach Einrichtung löschen</h1>
+  <p><strong>WARNUNG:</strong> Die wird alle Stellen und Personen-Datensätze die den Stellen aus der Datenbank zugeordnet sind löschen.</p>
+  <form method="POST" id="delete_form" action="delete_by_search_action">
+    <h2>Ausgewählte Personen</h2>
+    <div id="search_list">
+    </div>
+    <div id="search_selection" style="display:none;">
+      <select id="search_select" name="people[]" multiple></select></div>
+    <input type="hidden" name="step" value="choose"><input type="submit" class="button" value="Continue"></form>
+</div>

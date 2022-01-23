@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonContact" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonContact" path="/I2CE" locale="uk">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_messages" path="/modules/forms/formfield_messages" locale="uk">
+      <configuration name="work" path="work/email/invalid_email">
+        <value>Будь ласка, введіть правильну адресу електронної пошти</value>
+      </configuration>
+      <configuration name="personal" path="personal/email/invalid_email">
+        <value>Будь ласка, введіть правильну адресу електронної пошти</value>
+      </configuration>
+      <configuration name="other" path="other/email/invalid_email">
+        <value>Будь ласка, введіть правильну адресу електронної пошти</value>
+      </configuration>
+      <configuration name="emergency" path="emergency/email/invalid_email">
+        <value>Будь ласка, введіть правильну адресу електронної пошти</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="uk">
+      <configuration name="person_can_view_child_form_person_contact_work" locale="uk">
+        <value>Можна переглядати робочі контакти дочірньої форми особи</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_work" locale="uk">
+        <value>Можна редагувати робочі контакти дочірньої форми особи</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_emergency" locale="uk">
+        <value>Можна переглядати екстрені контакти дочірньої форми особи</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_emergency" locale="uk">
+        <value>Можна редагувати екстрені контакти дочірньої форми особи</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_personal" locale="uk">
+        <value>Можна переглядати особисті контакти дочірньої форми особи</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_personal" locale="uk">
+        <value>Можна редагувати особисті контакти дочірньої форми особи</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_other" locale="uk">
+        <value>Можна переглядати інші контакти дочірньої форми особи</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_other" locale="uk">
+        <value>Можна редагувати інші контакти дочірньої форми особи</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_contact_work">
+          <configuration name="display" values="single" locale="uk">
+            <value>Робочий контакт</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_emergency">
+          <configuration name="display" values="single" locale="uk">
+            <value>Екстрений контакт</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_other">
+          <configuration name="display" values="single" locale="uk">
+            <value>Інші контакти</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_personal">
+          <configuration name="display" values="single" locale="uk">
+            <value>Особистий контакт</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="contact">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="uk">
+            <value>Додати/оновити контактну інформацію</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

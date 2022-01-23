@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonContact">
+  <metadata>
+    <displayName>iHRIS Person Contact</displayName>
+    <className>iHRIS_Module_PersonContact</className>
+    <category>Application Component</category>
+    <description>A Person's Contact</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.1" />
+    </requirement>
+    <requirement name="Contact">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="PersonContact" path="/I2CE">
+    <configurationGroup name="invalid_messages" path="/modules/forms/formfield_messages" locale="en_US">
+      <version>4.1.0.2</version>
+      <configuration name="work" path="work/email/invalid_email">
+        <value>Please enter a valid email address</value>
+      </configuration>
+      <configuration name="personal" path="personal/email/invalid_email">
+        <value>Please enter a valid email address</value>
+      </configuration>
+      <configuration name="other" path="other/email/invalid_email">
+        <value>Please enter a valid email address</value>
+      </configuration>
+      <configuration name="emergency" path="emergency/email/invalid_email">
+        <value>Please enter a valid email address</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="person_can_view_child_form_person_contact_work" locale="en_US">
+        <version>3.2.6</version>
+        <value>Can view work contact child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_work" locale="en_US">
+        <version>3.2.6</version>
+        <value>Can edit work contact child form of a person</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_emergency" locale="en_US">
+        <version>3.2.6</version>
+        <value>Can view emergnency contact child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_emergency" locale="en_US">
+        <version>3.2.6</version>
+        <value>Can edit emergency contact child form of a person</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_personal" locale="en_US">
+        <version>3.2.6</version>
+        <value>Can view personal contact child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_personal" locale="en_US">
+        <version>3.2.6</version>
+        <value>Can edit personal contact child forms of a person</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_other" locale="en_US">
+        <version>3.2.6</version>
+        <value>Can view other contact child form of a person</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_other" locale="en_US">
+        <version>3.2.6</version>
+        <value>Can edit other contact child forms of a person</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="person_can_view_child_form_person_contact_work" values="many">
+        <version>3.2.6</version>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_emergency" values="many">
+        <version>3.2.6</version>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_personal" values="many">
+        <version>3.2.6</version>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_other" values="many">
+        <version>3.2.6</version>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_other" values="many">
+        <version>3.2.6</version>
+        <value>person_can_view_child_form_person_contact_other</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_work" values="many">
+        <version>3.2.6</version>
+        <value>person_can_view_child_form_person_contact_work</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_personal" values="many">
+        <version>3.2.6</version>
+        <value>person_can_view_child_form_person_contact_personal</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_emergency" values="many">
+        <version>3.2.6</version>
+        <value>person_can_view_child_form_person_contact_emergency</value>
+        <value>person_can_view</value>
+      </configuration>
+      <configuration name="person_can_view_child_forms" values="many">
+        <version>3.2.14</version>
+        <value>person_can_view_child_form_person_contact_work</value>
+        <value>person_can_view_child_form_person_contact_personal</value>
+        <value>person_can_view_child_form_person_contact_emergency</value>
+        <value>person_can_view_child_form_person_contact_other</value>
+      </configuration>
+      <configuration name="person_can_edit_child_forms" values="many">
+        <version>3.2.14</version>
+        <value>person_can_edit_child_form_person_contact_work</value>
+        <value>person_can_edit_child_form_person_contact_personal</value>
+        <value>person_can_edit_child_form_person_contact_emergency</value>
+        <value>person_can_edit_child_form_person_contact_other</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_contact_work">
+          <version>3.2.6</version>
+          <configuration name="class" values="single">
+            <value>iHRIS_Contact</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Work Contact</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_emergency">
+          <version>3.2.6</version>
+          <configuration name="class" values="single">
+            <version>4.1.0.1</version>
+            <value>iHRIS_NamedContact</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Emergency Contact</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_other">
+          <version>3.2.6</version>
+          <configuration name="class" values="single">
+            <value>iHRIS_Contact</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Other Contact</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_personal">
+          <version>3.2.6</version>
+          <configuration name="class" values="single">
+            <value>iHRIS_Contact</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Personal Contact</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <version>3.2.7</version>
+              <value>person_contact_work</value>
+              <value>person_contact_other</value>
+              <value>person_contact_emergency</value>
+              <value>person_contact_personal</value>
+            </configuration>
+            <configuration name="child_forms_limit" type="delimited">
+              <version>4.2.1.2</version>
+              <value>person_contact_work:1</value>
+              <value>person_contact_other:1</value>
+              <value>person_contact_emergency:1</value>
+              <value>person_contact_personal:1</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <!--end of forms-->
+    </configurationGroup>
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <version>3.2.8</version>
+      <status>required:true</status>
+      <configurationGroup name="contact_groups">
+        <version>4.2.1.3</version>
+        <configuration name="class">
+          <value>iHRIS_PageCreateContactGroups</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Populate Contact Groups</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>contact_group_base.html</value>
+          </configuration>
+          <configuration name="report_view" values="single">
+            <value>1445836866</value>
+          </configuration>
+          <configuration name="access" values="many">
+            <version>4.2.1.3</version>
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <value>admin</value>
+            <value>hr_staff</value>
+            <value>hr_manager</value>
+            <value>mHero_technician</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="contact">
+        <displayName>Contact Page</displayName>
+        <description>The page 'contact' which has the action of: Add/Update Contact Information</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageFormContact</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Contact Information</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- contact -->
+    </configurationGroup>
+    <!-- page -->
+  </configurationGroup>
+</I2CEConfiguration>

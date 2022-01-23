@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CEUs" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="CEUs" path="/I2CE" locale="tl">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_continuing_education_course" locale="tl">
+        <value>Baguhin ang tala ng ipinagpapatuloy na edukasyon</value>
+      </configuration>
+      <configuration name="can_view_database_list_continuing_education_course" locale="tl">
+        <value>Tingnan ang tala ng ipinagpapatuloy na edukasyon</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="continuing_education">
+          <configuration name="display" values="single" locale="tl">
+            <value>Patuloy na Edukasyon</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="continuing_education_course">
+          <configuration name="display" values="single" locale="tl">
+            <value>Kurso ng Ipinagpapatuloy ng Edukasyon</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_ContinuingEducationCourse">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Pangalan</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="credit_hours">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Mga Oras ng Kredito</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_ContinuingEducation">
+          <configurationGroup name="fields">
+            <configurationGroup name="continuing_education_course">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Kurso ng Ipinagpapatuloy ng Edukasyon</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="credit_hours">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Mga Oras ng Kredito</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Petsa ng Simula</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="tl">
+                <value>default:Petsa ng Pagtatapos</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

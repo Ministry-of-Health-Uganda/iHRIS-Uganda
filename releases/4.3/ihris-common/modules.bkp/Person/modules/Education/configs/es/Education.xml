@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEducation" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEducation" path="/I2CE" locale="es">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="es">
+      <configuration name="person_can_view_child_form_education" locale="es">
+        <value>Puede ver el formulario de Educación de una Persona</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_education" locale="es">
+        <value>Puede editar el formulario de Educación de una Persona</value>
+      </configuration>
+      <configuration name="can_edit_database_list_edu_type" locale="es">
+        <value>Puede editar las listas de Bases de Datos de Tipos de Educación</value>
+      </configuration>
+      <configuration name="can_view_database_list_edu_type" locale="es">
+        <value>Puede ver las listas de Bases de Datos de Tipos de Educación</value>
+      </configuration>
+      <configuration name="can_edit_database_list_degree" locale="es">
+        <value>Puede editar las listas de Bases de Datos de Tipos de Grado</value>
+      </configuration>
+      <configuration name="can_view_database_list_degree" locale="es">
+        <value>Puede ver las listas de Bases de Datos de Tipos de Grado</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="education">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="es">
+            <value>Añadir/Actualizar Historial Educativo</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="degree">
+          <configuration name="display" values="single" locale="es">
+            <value>Grado</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="edu_type">
+          <configuration name="display" values="single" locale="es">
+            <value>Tipo de educación</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="education">
+          <configuration name="display" values="single" locale="es">
+            <value>Historial Educativo</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Degree">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Nombre</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="edu_type">
+              <configuration name="headers" type="delimited" values="many" locale="es">
+                <value>default:Tipo de educación</value>
+                <value>select_degree:Seleccione Tipo de Educación y luego el Grado</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Education">
+          <configurationGroup name="fields">
+            <configurationGroup name="degree">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Grado</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="institution">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Nombre de la institución</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Ubicación de la institución</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="year">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Año de graduación (dejar en blanco si aún no te gradúas)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="major">
+              <configuration name="headers" type="delimited" locale="es">
+                <value>default:Especialidad</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

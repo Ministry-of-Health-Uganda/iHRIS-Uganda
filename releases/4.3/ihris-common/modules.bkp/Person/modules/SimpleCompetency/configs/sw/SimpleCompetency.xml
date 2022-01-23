@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="person-simple-competency" path="/I2CE">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="person-simple-competency" path="/I2CE" locale="sw">
+    <version>4.3.0.1</version>
+    <configurationGroup name="formsdata" path="/I2CE/formsData/forms">
+      <configurationGroup name="competency_evaluation">
+        <configurationGroup name="not_evaluated">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="sw">
+              <value>Bado Haijafanyiwa Tathmini</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="competent">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="sw">
+              <value>Ina Uwezo</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="not_competent">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="sw">
+              <value>Haina Uwezo</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="person_tasks" path="/I2CE/tasks/task_description" locale="sw">
+      <configuration name="person_can_view_child_form_person_competency" locale="sw">
+        <value>Weza kuangalia fomu ya uwezo_ ya mtoto wa mtu</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_competency" locale="sw">
+        <value>Weza kuhariri fomu za uwezo_ za mtoto wa mtu</value>
+      </configuration>
+      <configuration name="person_competency_can_view_evaluation_history" locale="sw">
+        <value>Weza kuangalia historia ya tathmini ya uwezo wa mtu</value>
+      </configuration>
+      <configuration name="person_competency_can_view_evaluation" locale="sw">
+        <value>Anaweza kuangalia uwezo wa kutathmini wa mtu</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_evaluation" locale="sw">
+        <value>Hariri orodha ya tathmini ya uwezo</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency_evaluation" locale="sw">
+        <value>Angalia orodha ya tathmini ya uwezo</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="competency_evaluation">
+          <configuration name="display" values="single" locale="sw">
+            <value>Tathmini ya Uwezo</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_competency">
+          <configuration name="display" values="single" locale="sw">
+            <value>Uwezo wa Mtu</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PersonCompetency">
+          <configurationGroup name="fields">
+            <configurationGroup name="evaluation_date">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Mara ya mwisho kufanyiwa Tathmini</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency_evaluation">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Tathmini</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency">
+              <configuration name="headers" type="delimited" locale="sw">
+                <value>default:Uwezo</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_competency_history">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw">
+            <value>Historia ya Tathmini ya Uwezo</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="person_competency">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw">
+            <value>Ongeza/Sasisha Uwezo</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

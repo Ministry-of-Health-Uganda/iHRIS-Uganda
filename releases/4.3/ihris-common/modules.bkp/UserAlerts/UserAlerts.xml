@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="UserAlerts">
+  <metadata>
+    <displayName>User Alerts</displayName>
+    <className>iHRIS_Module_UserAlerts</className>
+    <category>Application Component</category>
+    <description>A module that enables assigning an alert to a user to be seen on an alert page.</description>
+    <creator>Luke Duncan</creator>
+    <email>lduncan@intrahealth.org</email>
+    <link>https://launchpad.net/ihris-common</link>
+    <version>4.3.0</version>
+    <requirement name="fields-enum" />
+    <requirement name="jumper" />
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="UserAlerts" path="/I2CE">
+    <configurationGroup name="alert_settings" path="/modules/UserAlerts/display">
+      <configuration name="append_id">
+        <value>sysUser</value>
+      </configuration>
+      <configuration name="append_tag">
+        <value>li</value>
+      </configuration>
+      <configuration name="append_file">
+        <value>user_alert_link.html</value>
+      </configuration>
+      <configuration name="append_before" type="boolean">
+        <value>false</value>
+      </configuration>
+      <configuration name="pending_style">
+        <value>alerts_pending</value>
+      </configuration>
+      <configuration name="default_style">
+        <value>alerts_seen</value>
+      </configuration>
+    </configurationGroup>
+    <configuration name="Triggers" path="/modules/UserTriggers/handlers/alert" type="delimited">
+      <version>4.2.0.3</version>
+      <value>UserAlerts:triggerAlert</value>
+    </configuration>
+    <configurationGroup name="tasks">
+      <configurationGroup name="task_description" locale="en_US">
+        <configuration name="user_alerts_view_all">
+          <value>Can view all users alerts.</value>
+        </configuration>
+        <configuration name="user_alerts_edit_all">
+          <value>Can edit and acknowledge all users alerts.</value>
+        </configuration>
+        <configuration name="user_alerts_send_all">
+          <value>Can create new user alerts for any users.</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="user">
+          <configuration name="child_forms" values="many" path="meta/child_forms">
+            <value>user_alert</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="user_alert">
+          <displayName>User Alert</displayName>
+          <description>The User Alert form that adds an alert to a user.</description>
+          <configuration name="class" values="single">
+            <value>iHRIS_UserAlert</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>User Alert</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_UserAlert">
+          <displayName>Configuration for the class 'iHRIS_UserAlert'</displayName>
+          <configuration name="extends">
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form.</displayName>
+            <configurationGroup name="alert_type">
+              <configuration name="formfield">
+                <value>ENUM</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Alert Type</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configurationGroup name="enum">
+                  <configuration name="data" type="delimited">
+                    <value>notice:Notice</value>
+                    <value>problem:Problem</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+            <!-- end alert_type -->
+            <configurationGroup name="message">
+              <configuration name="formfield">
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Message</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <!-- end message -->
+            <configurationGroup name="time_sent">
+              <configuration name="formfield">
+                <value>DATE_TIME</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Time Sent</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="default_eval">
+                <value>I2CE_Date::now()</value>
+              </configuration>
+            </configurationGroup>
+            <!-- end time_sent -->
+            <configurationGroup name="time_ack">
+              <configuration name="formfield">
+                <value>DATE_TIME</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Time Acknowledged</value>
+              </configuration>
+              <configuration name="default_eval">
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+            </configurationGroup>
+            <!-- end message -->
+            <configurationGroup name="repeated">
+              <version>4.2.0.1</version>
+              <configuration name="formfield">
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Repeated</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="default_value">
+                <version>4.2.0.2</version>
+                <value>0</value>
+              </configuration>
+            </configurationGroup>
+            <!-- end repeated -->
+            <configurationGroup name="link">
+              <version>4.2.0.1</version>
+              <configuration name="formfield">
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Link (URL)</value>
+              </configuration>
+            </configurationGroup>
+            <!-- end link -->
+            <configurationGroup name="link_text">
+              <version>4.2.0.1</version>
+              <configuration name="formfield">
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Link Text</value>
+              </configuration>
+            </configurationGroup>
+            <!-- end link_text -->
+          </configurationGroup>
+          <!-- end fields -->
+        </configurationGroup>
+        <!-- end iHRIS_UserAlert -->
+      </configurationGroup>
+      <!-- end formClasses -->
+    </configurationGroup>
+    <!-- end forms -->
+    <configurationGroup name="page" path="/I2CE/page">
+      <configurationGroup name="user_alert">
+        <displayName>User Alert Page</displayName>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageFormParentUser</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>ihris_common_page_form_parent_user</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <configuration name="title" values="single" locale="en_US">
+            <value>Add/Update User Alert</value>
+          </configuration>
+          <configuration name="page_form" values="single">
+            <value>user_alert</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>user_alerts_edit_all</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end user_alert -->
+      <configurationGroup name="view_alerts">
+        <displayName>View Alerts Page</displayName>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageViewUserAlerts</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <configuration name="defaultHTMLFile">
+            <value>user_alerts_view.html</value>
+          </configuration>
+          <configuration name="title" values="single" locale="en_US">
+            <value>View User Alerts</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>any</value>
+          </configuration>
+          <configuration name="page_size" values="single">
+            <value>50</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end view_alerts -->
+      <configurationGroup name="ack_alert">
+        <displayName>Acknowledge Alerts Page</displayName>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageAckUserAlerts</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <configuration name="defaultHTMLFile">
+            <value>user_alerts_acknowledge.html</value>
+          </configuration>
+          <configuration name="title" values="single" locale="en_US">
+            <value>Acknowledge Alerts</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>any</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end ack_alert -->
+    </configurationGroup>
+    <!-- end page -->
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="SampleData-currency">
+  <metadata>
+    <displayName>Currency</displayName>
+    <description>Sample Data for form: currency</description>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Currency">
+      <atLeast version="4.0" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="SampleData-currency" path="//I2CE/formsData/forms/currency">
+    <displayName>Export</displayName>
+    <version>3.2.0</version>
+    <configurationGroup name="1">
+      <displayName>1</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2009-06-23 09:50:44</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="code">
+          <displayName>Code</displayName>
+          <value>TF</value>
+        </configuration>
+        <configuration name="name">
+          <displayName>Name</displayName>
+          <value>Taifeki</value>
+        </configuration>
+        <configuration name="country">
+          <displayName>Country</displayName>
+          <value>country|TF</value>
+        </configuration>
+        <configuration name="symbol">
+          <displayName>Symbol</displayName>
+          <value>¤</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="2">
+      <displayName>2</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2009-06-23 09:50:45</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="code">
+          <displayName>Code</displayName>
+          <value>EU</value>
+        </configuration>
+        <configuration name="name" locale="en_US">
+          <displayName>Name</displayName>
+          <value>Euro</value>
+        </configuration>
+        <configuration name="country">
+          <displayName>Country</displayName>
+          <value>country|FR</value>
+        </configuration>
+        <configuration name="symbol">
+          <displayName>Symbol</displayName>
+          <value>€</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="3">
+      <displayName>3</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2009-06-23 09:50:45</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="code">
+          <displayName>Code</displayName>
+          <value>USD</value>
+        </configuration>
+        <configuration name="name" locale="en_US">
+          <displayName>Name</displayName>
+          <value>US Dollar</value>
+        </configuration>
+        <configuration name="country">
+          <displayName>Country</displayName>
+          <value>country|US</value>
+        </configuration>
+        <configuration name="symbol">
+          <displayName>Symbol</displayName>
+          <value>$</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="4">
+      <displayName>4</displayName>
+      <configuration name="last_modified">
+        <displayName>Last Modified</displayName>
+        <value>2009-06-23 09:50:45</value>
+      </configuration>
+      <configuration name="who">
+        <displayName>Who</displayName>
+        <value>1</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configuration name="code">
+          <displayName>Code</displayName>
+          <value>GBP</value>
+        </configuration>
+        <configuration name="name" locale="en_US">
+          <displayName>Name</displayName>
+          <value>British Pound</value>
+        </configuration>
+        <configuration name="country">
+          <displayName>Country</displayName>
+          <value>|</value>
+        </configuration>
+        <configuration name="symbol">
+          <displayName>Symbol</displayName>
+          <value>£</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

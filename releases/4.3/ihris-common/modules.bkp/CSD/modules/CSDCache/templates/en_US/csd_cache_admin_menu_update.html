@@ -1,0 +1,128 @@
+<div>
+  <div style="font:150% Arial,Helvetica,sans-serif;">
+    <script type="text/javascript">
+var moved = false;
+var current_msg = 0;
+var messages = new Array();  
+messages[0] = "Beginning to update CSD cache";
+var message = false;
+var slider = false;
+var content = false;
+function addMessage(msg) {
+  console.log(msg);
+  var count = messages.length;
+  messages[messages.length] = msg;
+  if (!slider) {
+    slider = document.getElementById("slider");
+  }
+  if (!slider) {return; }
+  slider.innerHTML = "" + count;
+  if (moved) {return;}
+  current_msg = messages.length-1;
+  showMessage();
+}
+function addContent(html) {
+  if (!content) {
+    content = document.getElementById("siteContent");
+  }
+  if (!content) {return; }
+  content.adopt(Elements.from(html));
+}
+function setCount(count) {
+  var counter= document.getElementById('count');
+  if (counter) {
+    counter.set('html',count);
+  }
+}
+function firstMessage() {
+  current_msg = 0;
+  moved = true;
+  showMessage();
+}
+function lastMessage() {
+  current_msg = messages.length -1;
+  moved = true;
+  showMessage();
+}
+function prevMessage() {
+  if (current_msg == 0) {
+    return;
+  }
+  current_msg--;
+  moved = true;
+  showMessage();
+}
+function nextMessage() {
+  if (messages.length -1  == current_msg) {
+    return;
+  }
+  moved = true;
+  current_msg++;
+  showMessage();
+}
+function playMessages() {
+  lastMessage();
+  moved = false;
+}
+function showMessage() {
+  if (!message) {
+    message = document.getElementById("message");
+  }
+  if (!message) {return;}
+  message.empty();
+  message.set('html', messages[current_msg]);
+}
+
+    </script>
+    <center >
+      <div id="header">
+	<h2 style="color:#993300">
+	  CSD Cache: <span name='cache_name'/>
+	</h2>
+      </div>
+      <div id="message"
+	   style="text-align:left;width:75%;min-height:5em;
+		  overflow:auto;margin-top:0;
+		  background-color:#ffffcc;border:dashed;border-width:3px;border-color:#ffcc99;opacity:0.8;">
+      </div>
+      <div style="width:75%;height:1.5em;padding-top:0.2em;padding-bottom:0.2em;">
+	<div style="padding-right:2em;float:right;font-weight:bold;color:#ffcc99;text-align:right;"><span id='slider'>0</span> of <span id="count"/></div>
+      </div>
+      <div style="width:75%">
+	<span 
+	   style="float:left;color:#ff9966;text-decoration:none;width:4em;" 
+	   onmouseover="this.style.textDecoration='underline'; this.style.cursor='pointer';" 
+	   onmouseout="this.style.textDecoration='none'; this.style.cursor='default';"
+	   onClick="firstMessage();" >First
+	</span>
+	<span 
+	   style="float:left;color:#ff9966;text-decoration:none;width:4em;" 
+	   onmouseover="this.style.textDecoration='underline'; this.style.cursor='pointer';" 
+	   onmouseout="this.style.textDecoration='none'; this.style.cursor='default';"
+	   onClick="prevMessage();" >Previous
+	</span>
+	<span style="float:right;color:#ff9966;text-decoration:none;width:4em" 
+	      onmouseover="this.style.textDecoration='underline'; this.style.cursor='pointer';" 
+	      onmouseout="this.style.textDecoration='none'; this.style.cursor='default';"
+	      onClick="lastMessage();">Last
+	</span>
+	<span style="float:right;color:#ff9966;text-decoration:none;width:4em;" 
+	      onmouseover="this.style.textDecoration='underline'; this.style.cursor='pointer';" 
+	      onmouseout="this.style.textDecoration='none'; this.style.cursor='default';"
+	      onClick="nextMessage();">Next
+	</span>
+	<center ><span 
+		    style="color:#ff9966;text-decoration:none;width:100%;" 
+		    onmouseover="this.style.textDecoration='underline'; this.style.cursor='pointer';" 
+		    onmouseout="this.style.textDecoration='none'; this.style.cursor='default';"
+		    onClick="playMessages();" >Play
+	</span></center>
+      </div>
+    </center>
+  </div>
+
+
+  <a name='return'>return</a>
+
+  
+</div>

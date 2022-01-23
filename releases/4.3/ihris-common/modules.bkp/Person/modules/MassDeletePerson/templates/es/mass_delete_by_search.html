@@ -1,0 +1,11 @@
+<div id="siteContent">
+  <h1>Eliminar todos los registros por ubicación</h1>
+  <p><strong>ADVERTENCIA:</strong> Esto eliminará todos los registros de posiciones y personas asignados a estas posiciones desde la base de datos. Esto puede solamente recuperarse manualmente de las copias de seguridad, así que asegúrese de que sus copias de seguridad estén actualizadas antes de realizar esta acción.</p>
+  <form method="POST" id="delete_form" action="delete_by_search_action">
+    <h2>Personas seleccionadas</h2>
+    <div id="search_list">
+    </div>
+    <div id="search_selection" style="display:none;">
+      <select id="search_select" name="people[]" multiple></select></div>
+    <input type="hidden" name="step" value="choose"><input type="submit" class="button" value="Continue"></form>
+</div>

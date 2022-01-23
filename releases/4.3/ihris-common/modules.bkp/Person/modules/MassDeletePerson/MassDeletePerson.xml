@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-common-MassDeletePerson">
+  <metadata>
+    <displayName>Mass Delete by Person</displayName>
+    <category>Site</category>
+    <description>Search report to list by people and pages to do mass deletion of records by person.</description>
+    <creator>Luke Duncan</creator>
+    <email>lduncan@intrahealth.org</email>
+    <link>https://launchpad.net/ihris-manage</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <priority>250</priority>
+  </metadata>
+  <configurationGroup name="ihris-common-MassDeletePerson" path="/I2CE">
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <configurationGroup name="delete_by_search">
+        <displayName>Delete By Search</displayName>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageMassDeleteSearchList</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Mass Delete By Search</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <value>mass_delete_by_search.html</value>
+          </configuration>
+          <configuration name="access" values="many">
+            <value>admin</value>
+          </configuration>
+          <configuration name="report_view" values="single">
+            <value>search_people</value>
+          </configuration>
+          <configuration name="action_fields" type="delimited" values="many">
+            <value>0:primary_form+id</value>
+            <value>1:primary_form+surname</value>
+            <value>2:primary_form+firstname</value>
+          </configuration>
+          <configuration name="action_header" values="single" locale="en_US">
+            <version>4.1.4.1</version>
+            <value>Mark Person for Deletion</value>
+          </configuration>
+          <configuration name="action_method" values="single">
+            <version>4.1.4.2</version>
+            <value>togglePerson</value>
+          </configuration>
+          <configuration name="action_script" values="single">
+            <value>massdelete_person.js</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="delete_by_search_action">
+        <displayName>Delete By Search Action page</displayName>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageMassDeleteSearchAction</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Mass Delete By Search</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <value>mass_delete_by_search_action.html</value>
+          </configuration>
+          <configuration name="access" values="many">
+            <value>admin</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

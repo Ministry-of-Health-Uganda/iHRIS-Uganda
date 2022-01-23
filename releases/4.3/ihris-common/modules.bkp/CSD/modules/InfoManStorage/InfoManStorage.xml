@@ -1,0 +1,916 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="csd-infoman-storage">
+  <metadata>
+    <displayName>CSD Health Worker InfoManager Storage</displayName>
+    <category>Application Component</category>
+    <description>CSD Health Worker Form Storage Against Info Manager</description>
+    <creator>IntraHealth Informatics</creator>
+    <email>litlfred@gmail.com</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="csd-provider-data-model">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms-storage-services">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="xslts">
+      <value>./xslts</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>400</priority>
+  </metadata>
+  <erase path="/modules/forms/forms/csd_contact_point">
+    <lessThan version="4.2.1.10" />
+  </erase>
+  <configurationGroup name="csd-infoman-storage" path="/">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>4.2.1.12</version>
+      <configuration name="can_edit_remote_directory" locale="en_US">
+        <value>Can edit remote directory</value>
+      </configuration>
+      <configuration name="can_view_remote_directory" locale="en_US">
+        <value>Can view remote directory</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <version>4.2.1.12</version>
+      <configuration name="can_edit_all_database_lists" values="many">
+        <value>can_edit_remote_directory</value>
+        <value>can_view_remote_directory</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="remote_directory_selector" path="/I2CE/page/remote_directory_selector">
+      <version>4.2.0.20.20.16</version>
+      <configuration name="class">
+        <value>I2CE_Page_SelectServiceDirectory</value>
+      </configuration>
+      <configuration name="style" values="single">
+        <value>shell</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/forms">
+      <version>4.2.0.20.20.13</version>
+      <configurationGroup name="csd_info_manager">
+        <configuration name="class" values="single">
+          <value>CSD_InfoManager</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US">
+          <value>CSD InfoManager</value>
+        </configuration>
+        <configuration name="storage">
+          <value>magicdata</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+      <configurationGroup name="CSD_InfoManager">
+        <version>4.2.0.20.20.13</version>
+        <configuration name="extends">
+          <value>I2CE_List</value>
+        </configuration>
+        <configurationGroup name="meta" path="meta/list/default">
+          <configuration name="display_string">
+            <value>%s</value>
+          </configuration>
+          <configuration name="display_args" type="delimited" values="many">
+            <value>0:name</value>
+          </configuration>
+          <configuration name="sort_fields" type="delimited" values="many">
+            <value>0:name</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="fields">
+          <configurationGroup name="ssl_version">
+            <version>4.2.0.20.20.20.9</version>
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:SSL Version</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="user">
+            <version>4.2.0.20.20.20.8</version>
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Info Manager User (Basic Auth)</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>false</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="password">
+            <version>4.2.0.20.20.20.8</version>
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Info Manager Password (Basic Auth)</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>false</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="url">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:CSD Info Manager URL</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="url_updating">
+            <version>4.2.0.20.20.17</version>
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:CSD Info Manager URL (Updates)</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="is_provider">
+            <configuration name="formfield">
+              <value>BOOL</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <version>4.2.0.20.20.20.11</version>
+              <value>default:Contains Health Worker Directory Information</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="is_service">
+            <configuration name="formfield">
+              <value>BOOL</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Contains Service Directory Information</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="is_facility">
+            <configuration name="formfield">
+              <value>BOOL</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Contains Facility Directory Information</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="is_organization">
+            <configuration name="formfield">
+              <value>BOOL</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:Contains Organization Directory Information</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="name">
+            <configuration name="formfield">
+              <value>STRING_LINE</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <value>default:CSD Info Manager Name</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="svs_global_options" path="/modules/forms/storage_options/SVS">
+      <version>4.2.0.20.8</version>
+      <configuration name="cache_time">
+        <value>60</value>
+      </configuration>
+      <configuration name="url">
+        <value>http://localhost:8984/CSD/SVS/RetrieveValueSet</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_global_options" path="/modules/forms/storage_options/CSD">
+      <version>4.2.0.20.20.20.10</version>
+      <configuration name="cache_time">
+        <value>10</value>
+      </configuration>
+      <configurationGroup name="remote_services">
+        <configuration name="facility">
+          <value>csd_info_manager|facility_connectathon</value>
+        </configuration>
+        <configuration name="organization">
+          <value>csd_info_manager|organization_connectathon</value>
+        </configuration>
+        <configuration name="provider">
+          <value>csd_info_manager|provider_connectathon</value>
+        </configuration>
+        <configuration name="service">
+          <value>csd_info_manager|service_connectathon</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="info_managers" path="/I2CE/formsData/forms/csd_info_manager">
+      <version>4.2.0.20.20.20.10</version>
+      <configurationGroup name="organization_connectathon">
+        <configurationGroup name="fields">
+          <configuration name="is_facility">
+            <value>0</value>
+          </configuration>
+          <configuration name="is_organization">
+            <value>1</value>
+          </configuration>
+          <configuration name="is_provider">
+            <value>0</value>
+          </configuration>
+          <configuration name="is_service">
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>localhost connect-a-thon organizations</value>
+          </configuration>
+          <configuration name="url">
+            <version>4.2.1.4</version>
+            <value>http://localhost:8984/CSD/csr/CSD-Organizations-Connectathon-20150120/careServicesRequest</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="last_modified">
+          <value>2014-01-26 08:41:03</value>
+        </configuration>
+        <configuration name="who">
+          <value>0</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="facility_connectathon">
+        <configurationGroup name="fields">
+          <configuration name="is_facility">
+            <value>1</value>
+          </configuration>
+          <configuration name="is_organization">
+            <value>0</value>
+          </configuration>
+          <configuration name="is_provider">
+            <value>0</value>
+          </configuration>
+          <configuration name="is_service">
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>localhost connect-a-thon facilities</value>
+          </configuration>
+          <configuration name="url">
+            <version>4.2.1.4</version>
+            <value>http://localhost:8984/CSD/csr/CSD-Facilities-Connectathon-20150120/careServicesRequest</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="last_modified">
+          <value>2014-01-26 08:41:03</value>
+        </configuration>
+        <configuration name="who">
+          <value>0</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="service_connectathon">
+        <configurationGroup name="fields">
+          <configuration name="is_facility">
+            <value>0</value>
+          </configuration>
+          <configuration name="is_organization">
+            <value>0</value>
+          </configuration>
+          <configuration name="is_provider">
+            <value>0</value>
+          </configuration>
+          <configuration name="is_service">
+            <value>1</value>
+          </configuration>
+          <configuration name="name">
+            <value>localhost connect-a-thon services</value>
+          </configuration>
+          <configuration name="url">
+            <version>4.2.1.4</version>
+            <value>http://localhost:8984/CSD/csr/CSD-Services-Connectathon-20150120/careServicesRequest</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="last_modified">
+          <value>2014-01-26 08:41:03</value>
+        </configuration>
+        <configuration name="who">
+          <value>0</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="provider_connectathon">
+        <configurationGroup name="fields">
+          <configuration name="is_facility">
+            <value>0</value>
+          </configuration>
+          <configuration name="is_organization">
+            <value>0</value>
+          </configuration>
+          <configuration name="is_provider">
+            <value>1</value>
+          </configuration>
+          <configuration name="is_service">
+            <value>0</value>
+          </configuration>
+          <configuration name="name">
+            <value>localhost connect-a-thon providers</value>
+          </configuration>
+          <configuration name="url">
+            <version>4.2.1.4</version>
+            <value>http://localhost:8984/CSD/csr/CSD-Providers-Connectathon-20150120/careServicesRequest</value>
+          </configuration>
+          <configuration name="url_updating">
+            <version>4.2.1.4</version>
+            <value>http://localhost:8984/CSD/csr/CSD-Providers-Connectathon-20150120/careServicesRequest/update</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="last_modified">
+          <value>2014-01-26 08:41:03</value>
+        </configuration>
+        <configuration name="who">
+          <value>0</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_provider" path="/modules/forms/forms/csd_provider">
+      <version>4.2.0.20.1</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <version>4.2.0.20.13</version>
+        <configuration name="csd_directory">
+          <version>4.2.0.20.20.14</version>
+          <value>provider</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="create">
+            <version>4.2.0.20.20.10</version>
+            <configuration name="results">
+              <version>4.2.0.20.20.20.14</version>
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/@enityID</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="subSelect">
+            <configuration name="dataElement">
+              <version>4.2.1.3</version>
+              <value>provider</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <version>4.2.0.20.20.20.14</version>
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/@entityID</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_organization" path="/modules/forms/forms/csd_organization">
+      <version>4.2.0.20.14</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <configuration name="csd_directory">
+          <version>4.2.0.20.20.14</version>
+          <value>organization</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <version>4.2.0.20.20.20.14</version>
+              <value>/csd:CSD/csd:organizationDirectory/csd:organization/@entityID</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_service" path="/modules/forms/forms/csd_service">
+      <version>4.2.0.20.15</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <version>4.2.0.20.15</version>
+        <configuration name="csd_directory">
+          <version>4.2.0.20.20.20.3</version>
+          <value>service</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <version>4.2.0.20.20.20.14</version>
+              <value>/csd:CSD/csd:serviceDirectory/csd:service/@entityID</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_facility" path="/modules/forms/forms/csd_facility">
+      <version>4.2.0.20.15</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <version>4.2.0.20.15</version>
+        <configuration name="csd_directory">
+          <version>4.2.0.20.20.14</version>
+          <value>facility</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <version>4.2.0.20.20.20.14</version>
+              <value>/csd:CSD/csd:facilityDirectory/csd:facility/@entityID</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_provider_otherid" path="/modules/forms/forms/csd_provider_otherid">
+      <version>4.2.1.8</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <configuration name="csd_directory">
+          <version>4.2.0.20.20.14</version>
+          <value>provider</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="create">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:otherID/@id</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:otherID/@id</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_facility_otherid" path="/modules/forms/forms/csd_facility_otherid">
+      <version>4.2.1.1</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <configuration name="csd_directory">
+          <value>facility</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <value>/csd:CSD/csd:facilityDirectory/csd:facility/csd:otherID/@id</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_operating_hours" path="/modules/forms/forms/csd_operating_hours">
+      <version>4.2.0.20.20.20.5</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <configuration name="csd_directory">
+          <value>provider</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="create">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:operatingHours/@id</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:operatingHours/@id</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_provider_service" path="/modules/forms/forms/csd_provider_service">
+      <version>4.2.0.20.20.20.2</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <configuration name="csd_directory">
+          <value>provider</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="create">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:service/@id</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:service/@id</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_provider_organization_contact_point" path="/modules/forms/forms/csd_provider_organization_contact_point">
+      <version>4.2.0.20.20.19</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <configuration name="csd_directory">
+          <value>provider</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="create">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:contactPoint/@id</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:contactPoint/@id</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_provider_address" path="/modules/forms/forms/csd_provider_address">
+      <version>4.2.1.9</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <configuration name="csd_directory">
+          <value>provider</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="create">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:address/@id</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:address/@id</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_facility_address" path="/modules/forms/forms/csd_facility_address">
+      <version>4.2.1.0</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <configuration name="csd_directory">
+          <value>facility</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <value>/csd:CSD/csd:facilityDirectory/csd:facility/csd:address/@id</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_provider_organization_address" path="/modules/forms/forms/csd_provider_organization_address">
+      <version>4.2.0.20.20.20.1</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <configuration name="csd_directory">
+          <value>provider</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="create">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:address/@id</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:address/@id</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_provider_contact_point" path="/modules/forms/forms/csd_provider_contact_point">
+      <version>4.2.1.10</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <configuration name="csd_directory">
+          <version>4.2.0.20.20.14</version>
+          <value>provider</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="create">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:contactPoint/@id</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:contactPoint/@id</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_facility_contact_point" path="/modules/forms/forms/csd_facility_contact_point">
+      <version>4.2.1.0</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <configuration name="csd_directory">
+          <value>facility</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <value>/csd:CSD/csd:facilityDirectory/csd:facility/csd:contactPoint/@id</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_provider_credential" path="/modules/forms/forms/csd_provider_credential">
+      <version>4.2.0.20.20.4</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <version>4.2.0.20.20.4</version>
+        <configuration name="csd_directory">
+          <version>4.2.0.20.20.14</version>
+          <value>provider</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="create">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:credential/csd:codedType/@id</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:credential/csd:codedType/@id</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_provider_name" path="/modules/forms/forms/csd_provider_name">
+      <version>4.2.0.20.1</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <configuration name="csd_directory">
+          <version>4.2.0.20.20.14</version>
+          <value>provider</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="create">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:demographic/csd:name/@id</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:demographic/csd:name/@id</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <erase path="/modules/forms/forms/csd_common_name">
+      <lessThan version="4.2.0.20.20.20.13" />
+    </erase>
+    <erase path="/modules/forms/forms/csd_other_name">
+      <lessThan version="4.2.0.20.20.20.13" />
+    </erase>
+    <configurationGroup name="csd_provider_organization" path="/modules/forms/forms/csd_provider_organization">
+      <version>4.2.0.20.18</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <configuration name="csd_directory">
+          <version>4.2.0.20.20.18</version>
+          <value>provider</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="create">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:organizations/csd:organization/@id</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:organizations/csd:organization/@id</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_provider_facility" path="/modules/forms/forms/csd_provider_facility">
+      <version>4.2.0.20.19</version>
+      <configuration name="storage">
+        <value>CSD</value>
+      </configuration>
+      <configurationGroup name="options" path="storage_options/CSD">
+        <configuration name="csd_directory">
+          <version>4.2.0.20.20.14</version>
+          <value>provider</value>
+        </configuration>
+        <configurationGroup name="services">
+          <configurationGroup name="create">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:facilities/csd:facility/@id</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="getRecords">
+            <configuration name="results">
+              <value>/csd:CSD/csd:providerDirectory/csd:provider/csd:facilities/csd:facility/@id</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="csd_contact_point_type" path="/modules/forms/forms/csd_address_type">
+      <version>4.2.0.20.20.11</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.1.7</version>
+        <value>2.25.309768652999692686176651983274504471835.999.404</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_contact_point_type" path="/modules/forms/forms/csd_address_components">
+      <version>4.2.0.20.20.11</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.1.7</version>
+        <value>2.25.309768652999692686176651983274504471835.999.402</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_facility_status" path="/modules/forms/forms/csd_facility_status">
+      <version>4.2.0.20.20.12</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.1.7</version>
+        <value>1.3.6.1.4.1.21367.200.104</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_provider_status" path="/modules/forms/forms/csd_provider_status">
+      <version>4.2.0.20.20.12</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.1.7</version>
+        <value>1.3.6.1.4.1.21367.200.106</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_organization_status" path="/modules/forms/forms/csd_organization_status">
+      <version>4.2.0.20.20.12</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.1.7</version>
+        <value>2.25.309768652999692686176651983274504471835.999.405</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_service_status" path="/modules/forms/forms/csd_service_status">
+      <version>4.2.0.20.20.12</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.1.7</version>
+        <value>2.25.309768652999692686176651983274504471835.999.406</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_provider_gender" path="/modules/forms/forms/csd_provider_gender">
+      <version>4.2.1.10</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.1.7</version>
+        <value>2.25.309768652999692686176651983274504471835.999.403</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_contact_point_type" path="/modules/forms/forms/csd_contact_point_type">
+      <version>4.2.0.20.20.1</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.1.7</version>
+        <value>2.25.309768652999692686176651983274504471835.999.400</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_provider_type" path="/modules/forms/forms/csd_provider_type">
+      <version>4.2.0.20.9</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.1.7</version>
+        <value>1.3.6.1.4.1.21367.200.105</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_language" path="/modules/forms/forms/csd_language">
+      <version>4.2.0.20.7</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.1.7</version>
+        <value>1.3.6.1.4.1.21367.200.110</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_provider_credential_type" path="/modules/forms/forms/csd_provider_credential_type">
+      <version>4.2.0.20.7</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.1.7</version>
+        <value>1.3.6.1.4.1.21367.200.108</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_facility_type" path="/modules/forms/forms/csd_facility_type">
+      <version>4.2.0.20.7</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.1.7</version>
+        <value>1.3.6.1.4.1.21367.200.103</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_provider_specialty" path="/modules/forms/forms/csd_provider_specialty">
+      <version>4.2.0.20.20.9</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.1.7</version>
+        <value>1.3.6.1.4.1.21367.200.109</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_service_type" path="/modules/forms/forms/csd_service_type">
+      <version>4.2.0.20.20.9</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.1.7</version>
+        <value>1.3.6.1.4.1.21367.200.102</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="csd_organization_type" path="/modules/forms/forms/csd_organization_type">
+      <version>4.2.0.20.7</version>
+      <configuration name="storage">
+        <value>SVS</value>
+      </configuration>
+      <configuration name="options" path="storage_options/SVS/request_args/ID">
+        <version>4.2.0.20.7</version>
+        <version>4.2.1.7</version>
+        <value>1.3.6.1.4.1.21367.200.101</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>
+<!--End of /I2CE/forms/formClasses -->

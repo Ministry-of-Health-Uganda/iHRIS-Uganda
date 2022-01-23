@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="csd-search" path="/">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="csd-search" path="/" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="page" path="/I2CE/page">
+      <configurationGroup name="mhero" path="view_csd_provider/auto_template/mhero">
+        <configuration name="text" locale="en_US">
+          <value>Start an mHero Workflow</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="mhero_search_provider">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Search Health Workers to Start an mHero Workflow</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/forms">
+      <configurationGroup name="mhero_provider_search">
+        <configuration name="display" values="single" locale="en_US">
+          <value>Search Health Worker To Start Workflow</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

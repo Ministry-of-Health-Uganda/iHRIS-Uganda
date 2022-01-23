@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration PUBLIC "SYSTEM"
+"I2CE_Configuration.dtd">
+<I2CEConfiguration name="isco-88-major-01">
+  <metadata>
+    <displayName>ISCO 88 Job Codes</displayName>
+    <description>The ISCO 88 Job Codes</description>
+    <version>4.3.0</version>
+    <requirement name="isco-88">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="formsData" path="/I2CE/formsData/forms">
+    <displayName>Forms Data</displayName>
+    <description>Form data saved in magic data</description>
+    <configurationGroup name="isco_88_major">
+      <configurationGroup name="1">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>LEGISLATORS, SENIOR OFFICIALS AND MANAGERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Legislators, senior officials and managers determine, formulate, direct or advise on government policies, as well as those of special-interest organizations, formulate laws, public rules and regulations, represent governments and act on their behalf, oversee the interpretation and implementation of government policies and legislation, or plan, direct, and coordinate the policies and activities of enterprises or organizations, or their internal departments or sections. Tasks performed by legislators, senior officials and managers usually include: determining, formulating or advising on policies of national, state, regional or local governments; formulating laws, public rules and regulations; representing governments and acting on their behalf; overseeing the interpretation and implementation of government policies and legislation; performing similar tasks on behalf of political parties, trade unions, and other special-interest organizations; planning, directing and coordinating the policies and activities of enterprises or organizations, or their internal departments or sections. Supervision of other workers may be included.</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_sub_major">
+      <configurationGroup name="11">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>LEGISLATORS AND SENIOR OFFICIALS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Legislators and senior officials determine, formulate or advise on and direct government policies, make, ratify, amend and repeal laws, public rules and regulations, represent governments and act on their behalf, oversee the interpretation and implementation of government policies and legislation, or carry out similar tasks on behalf of special-interest organizations Tasks performed by workers in this sub-major group usually include: determining and formulating, or advising on and directing policies of national, state, regional or local governments: making, ratifying, amending, or repealing laws, public rules and regulations; representing governments and acting on their behalf; overseeing the interpretation and implementation of government policies and legislation by government or intergovernmental departments and agencies: performing similar functions for political parties, trade unions, and other special-interest organizations, including negotiations on behalf of suchlike organizations, their members and clients. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_major">
+            <value>isco_88_major|1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="12">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>CORPORATE MANAGERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Corporate managers determine and formulate policies and plan, direct and coordinate the activities of enterprises and organizations, or their internal departments or sections. Tasks performed by workers in this sub-major group usually include: determining and formulating policies; planning, directing and coordinating the activities of the business enterprise or other organization as a whole, or of their internal departments or sections. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_major">
+            <value>isco_88_major|1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="13">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>GENERAL MANAGERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>General managers head various small business undertakings which they manage on their own behalf, or on behalf of the proprietors, with the assistance of no more than one other manager and some non-managerial help. Tasks performed usually include: planning, formulating and implementing policies: managing daily operations and reviewing results: negotiating with suppliers, customers and other enterprises; planning and controlling the use of resources and the selection of staff; reporting to owners, if any-, supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_major">
+            <value>isco_88_major|1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_minor">
+      <configurationGroup name="111">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>LEGISLATORS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Legislators determine, formulate, and direct policies of national, state, regional or local governments, and make, ratify, amend or repeal laws, public rules and regulations. Tasks performed usually include: presiding over or participating in the proceedings of legislative assemblies and administrative councils of national, state, regional or local governments; determining, formulating, and directing policies of national, state, regional or local governments; making, ratifying, amending or repealing laws, public rules and regulations. Supervision of other workers may be included.1110,Legislators determine, formulate, and direct policies of national, state, regional or local governments, and make, ratify, amend or repeal laws, public rules and regulations. Tasks include - (a) presiding over or participating in the proceedings of legislative bodies and administrative councils of national, state, regional or local governments or legislative assemblies; (b) determining, formulating, and directing policies of national, state, regional or local governments; (c) making, ratifying, amending or repealing laws, public rules and regulations within the framework of a Constitution determining their powers and fields of jurisdiction; (d) serving on government administrative boards or official committees; (e) promoting the interests of the constituencies which they represent; (f) as members of the government, directing senior administrators and officials of government departments and agencies in the interpretation and implementation of government policies; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|11</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="112">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>SENIOR GOVERNMENT OFFICIALS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Senior government officials advise governments on policy matters, oversee the interpretation and implementation of government policies and legislation, represent their country abroad, or carry out similar tasks in intergovernmental organizations Tasks performed usually include: advising national, state, regional or local governments on policy questions; overseeing the interpretation and implementation of government policies and legislation; representing their country abroad; performing similar tasks in intergovernmental organizations Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|11</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="113">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>TRADITIONAL CHIEFS AND HEADS OF VILLAGES</value>
+          </configuration>
+          <configuration name="description">
+            <value>Traditional chiefs and heads of villages perform a variety of legislative, administrative and ceremonial tasks and duties, determined by ancient traditions, as well as by the division of rights and responsibilities between village,chiefs and the local, regional and national authorities. Tasks performed usually include: allocating the use of communal land and other resources among households in the community; collecting and distributing surplus production of the community or village; settling disputes between members of the community or village; disciplining members of the community or village for violation of rules and customs; performing ceremonial duties in connection with births, marriages, deaths, harvests and other traditional feasts; representing the community or village on local or regional councils; being responsible for informing the community or village about government rules and regulations. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|11</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="114">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>SENIOR OFFICIALS OF SPECIAL-INTEREST ORGANISATIONS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Senior officials of special-interest organizations determine, formulate and direct the implementation of policies of special-interest organizations, such as political-party organizations, trade unions, employers\' organizations, trade and industry associations, humanitarian or charity organizations, or sports associations, and represent their organizations and act on their behalf. Tasks performed usually include: determining and formulating the policies, rules and regulations of the organization; negotiating on behalf of the organization, its members and relevant special-interest groups; promoting the interests of the organization, its members and relevant special-interest groups before the legislature, government or general public; planning, organizing and directing sections charged with implementing the organization\'s policies, rules and regulations. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|11</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="121">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>DIRECTORS AND CHIEF EXECUTIVES</value>
+          </configuration>
+          <configuration name="description">
+            <value>Directors and chief executives head enterprises or organizations (except special interest organizations) and, with the help of at least two other managers, determine and formulate policies, plan, direct and coordinate the activities of enterprises or organizations, usually within the guidelines set up by a board of directors or a governing body to whom they are answerable for the operations undertaken and results obtained. Tasks performed usually include: determining and formulating policies, planning, directing and coordinating the general functioning of the enterprise or organization, with the help of at least two other managers and, as a rule, within guidelines set up by a board of directors or a governing body; reviewing the operations and results of the enterprise or organization; reporting on results to the board of directors or to the governing body; representing the enterprise or organization in its dealings with outside bodies, including government and other authorities. Supervision of other workers may be included.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|12</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="122">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>PRODUCTION AND OPERATIONS DEPARTMENT MANAGERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Production and operations department managers in agriculture, hunting, forestry and fishing plan, direct and coordinate those activities of farming and related enterprises which are concerned with the production of goods, under the broad guidance of the directors and chief executives, and in consultation with managers of other departments or sections. Tasks include - (a) planning, directing and coordinating activities concerning the production of goods; (b) ensuring the efficient use of resources and the fulfillment of production quotas; (c) planning and directing daily operations; (d) controlling expenditure; (e) establishing and directing operational and administrative procedures; (f) overseeing the application of work safety and related procedures; (g) overseeing the selection, training and performance of staff; (h) representing the department in its dealings with other parts of the enterprise or with outside bodies; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|12</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="123">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>OTHER DEPARTMENT MANAGERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>Finance and administration department managers plan, direct and coordinate the internal administration or financial operations of the enterprise or organization, under the broad guidance of the directors and chief executives, and in consultation with managers of other departments or sections. Tasks include - (a) planning, directing and coordinating the internal administration or financial operations of the enterprise or organization; (b) assessing the financial situation of the enterprise or organization, preparing budgets and overseeing various financial operations; (c) controlling expenditure and ensuring the efficient use of resources; (d) establishing and directing operational and administrative procedures; (e) planning and directing daily operations; (f) overseeing the selection, training and performance of staff; (g) representing the department in its dealings with other parts of the organization or with outside bodies; (h) performing related tasks; (i) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|12</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="131">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>GENERAL MANAGERS</value>
+          </configuration>
+          <configuration name="description">
+            <value>General managers in agriculture, hunting, forestry and fishing head small agricultural farms or hunting, forestry or fishing businesses and, on their own behalf or on behalf of the proprietor, plan, direct and coordinate the activities of the business, with the assistance of no more than one other manager and some non-managerial help. Tasks include - (a) planning and implementing policies; (b) making budgetary estimates; (c) negotiating with suppliers and customers and with other organisations; (d) planning and controlling the use of resources and hiring workers; (e) managing daily operations; (f) reporting to owners, if any; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_sub_major">
+            <value>isco_88_sub_major|13</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="isco_88_unit">
+      <configurationGroup name="1110">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Legislators</value>
+          </configuration>
+          <configuration name="description">
+            <value>Legislators determine, formulate, and direct policies of national, state, regional or local governments, and make, ratify, amend or repeal laws, public rules and regulations. Tasks include - (a) presiding over or participating in the proceedings of legislative bodies and administrative councils of national, state, regional or local governments or legislative assemblies; (b) determining, formulating, and directing policies of national, state, regional or local governments; (c) making, ratifying, amending or repealing laws, public rules and regulations within the framework of a Constitution determining their powers and fields of jurisdiction; (d) serving on government administrative boards or official committees; (e) promoting the interests of the constituencies which they represent; (f) as members of the government, directing senior administrators and officials of government departments and agencies in the interpretation and implementation of government policies; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|111</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1120">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Senior government officials</value>
+          </configuration>
+          <configuration name="description">
+            <value>Senior government officials advise governments on policy matters, oversee the interpretation and implementation of government policies and legislation by government departments and agencies, represent their country abroad and act on its behalf, or carry out similar tasks in intergovernmental organizations Tasks include - (a) advising national, state, regional or local governments on policy matters; (b) advising on the preparation of government budgets, laws and regulations, including amendments; (c) overseeing the interpretation and implementation of government policies and legislation by government departments and agencies; (d) representing their country abroad; (e) performing similar tasks in intergovernmental organizations; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|112</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1130">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Traditional chiefs and heads of villages</value>
+          </configuration>
+          <configuration name="description">
+            <value>Traditional chiefs and heads of villages perform a variety of legislative, administrative and ceremonial tasks and duties, determined by ancient traditions, as well as by the division of rights and responsibilities between village chiefs and the local, regional and national authorities. Tasks include - (a) allocating the use of communal land and other resources among households in the community or village; (b) collecting and distributing surplus production of the community or village; (c) settling disputes between members of the community or village; (d) disciplining members of the community or village for violation of rules and customs; (e) performing ceremonial duties in connection with births, marriages, deaths, harvests and other traditional feasts; (f) representing the community or village on local or regional councils; (g) being responsible for informing the community or village about government rules and regulations; (h) performing related tasks; (i) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|113</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1141">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Senior officials of political-party organizations</value>
+          </configuration>
+          <configuration name="description">
+            <value>Senior officials of political-party organizations determine and formulate policies, rules and regulations of political-party organizations, direct their application, represent these organizations and act on their behalf. Tasks include - (a) determining and formulating the political-party\'s policies, rules and regulations; (b) negotiating on behalf of the political party and its members; (c) planning and organizing campaigns, on behalf of the political party, for the election of its candidates to political offices; (d) planning and organizing campaigns to recruit and educate political party members; (e) planning, organizing and directing sections charged with implementing the political-party\'s policies, rules and regulations; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|114</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1142">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Senior officials of employers', workers' and economic-interest organizations</value>
+          </configuration>
+          <configuration name="description">
+            <value>Senior officials of employers\', workers\' and other economic-interest organizations determine and formulate policies, rules and regulations of their respective organizations, direct their application, represent these organizations and act on their behalf. Tasks include - (a) deciding and formulating the organization\'s policies, rules and regulations; (b) negotiating on behalf of the organization and its members; (c) promoting the interests of the organization and its members before the legislature, government or general public; (d) planning and organizing campaigns to recruit and educate members; (e) planning, organizing and directing sections charged with implementing the organization\'s policies, rules and regulations; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|114</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1143">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Senior officials of humanitarian and other organizations</value>
+          </configuration>
+          <configuration name="description">
+            <value>Senior officials of humanitarian and other special-interest organizations determine and formulate policies, rules and regulations of humanitarian organizations, sports associations or other special-interest organizations, direct their application, represent these organizations and act on. their behalf. Tasks include - (a) determining and formulating the organization\'s policies, rules and regulations; (b) negotiating on behalf of the organization, its members and relevant special interest groups; (c) promoting the interests of the organization and its members before the legislature, government or general public; (d) planning and organizing campaigns to recruit and educate members; (e) planning, organizing and directing sections charged with implementing the organization\'s policies, rules and regulations; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|114</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1210">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Directors and chief executives</value>
+          </configuration>
+          <configuration name="description">
+            <value>Directors and chief executives head enterprises or organizations (except special interest organizations) and, with the help of at least two other managers, determine and formulate policies and plan, direct and coordinate the general functioning of the enterprise or organization usually within the guidelines set up by a board of directors or a governing body, to whom they are answerable for the operations undertaken and results obtained. Tasks include - (a) determining and formulating policies of the enterprise or organization; (b) planning, directing and coordinating the general functioning of the enterprise or organization; (c) determining and directing a particular policy, through consultation with subordinate managers; (d) reviewing the operations and results of the enterprise, or organization, and reporting to governing bodies; (e) representing the enterprise or organization in its dealings with outside bodies, including government or other authorities; (f) performing related tasks; (g) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|121</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1221">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Production and operations department managers in hunting, forestry and fishing</value>
+          </configuration>
+          <configuration name="description">
+            <value>Production and operations department managers in manufacturing plan, direct and coordinate those activities of the enterprise which are concerned with the production of goods, under the broad guidance of the directors and chief executives, and in consultation with managers of other departments or sections. Tasks include - (a) planning, directing and coordinating activities concerning the manufacture of goods, or extraction of solid minerals from underground and surface mines and quarries, or the production and distribution of electricity, gas and water; (b) ensuring the efficient use of resources and the fulfillment of production quotas; (c) planning and directing daily production operations; (d) controlling expenditure; (e) establishing and directing operational and administrative procedures; (f) overseeing the application of work safety and related procedures; (g) overseeing the selection, training and performance of staff; (h) representing the department in its dealings with other parts of the enterprise or with outside bodies; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|122</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1222">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Production and operations department managers in</value>
+          </configuration>
+          <configuration name="description">
+            <value>Production and operations department managers in construction plan, direct and coordinate those activities of the enterprise which are concerned with construction work, under the broad guidance of the directors and chief executives, and in consultation with managers of other departments or sections. Tasks include - (a) planning, directing and coordinating activities concerning construction work; (b) ensuring the efficient use of resources and the fulfillment of production quotas; (c) planning and directing daily production operations; (d) controlling expenditure; (e) establishing and directing operational and administrative procedures; (f) overseeing the application of work safety and related procedures; (g) overseeing the selection, training and performance of staff; (h) representing the department in its dealings with other parts of the enterprise or with outside bodies; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|122</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1223">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Production and operations department managers in</value>
+          </configuration>
+          <configuration name="description">
+            <value>Production and operations department managers in wholesale and retail trade plan, direct and coordinate those activities of the enterprise which are concerned with trade, under the broad guidance of the directors and chief executives, and in consultation with managers of other departments or sections. Tasks include - (a) planning, directing and coordinating activities concerning trade carried out by the enterprise; (b) ensuring the efficient use of resources and the fulfillment of trade quotas; (c) planning and directing daily trade operations; (d) controlling expenditure; (e) establishing and directing operational and administrative procedures; (f) overseeing the application of work safety and related procedures, (g) overseeing the selection, training and performance of staff; (h) representing the department in its dealings with other parts of the enterprise or with outside bodies; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|122</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1224">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Production and operations department managers in and retail trade</value>
+          </configuration>
+          <configuration name="description">
+            <value>Production and operations department managers in restaurants and hotels plan, direct and coordinate those activities of the enterprise which are concerned with the provision of accommodation, catering and related services, under the broad guidance of the directors and chief executives, and in consultation with managers of other departments or sections. Tasks include - (a) planning, directing and coordinating activities concerning the provision of accommodation, catering and related services; (b) ensuring the efficient use of resources and the fulfillment of schedules; (c) planning and directing daily operations, (d) controlling expenditure; (e) establishing and directing operational and administrative procedures; (f) overseeing the application of work safety and related procedures; (g) overseeing the selection, training and performance of staff; (h) representing the department in its dealings with other parts of the enterprise or with outside bodies; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|122</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1225">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Production and operations department managers in and hotels</value>
+          </configuration>
+          <configuration name="description">
+            <value>Production and operations department managers in transport, storage and communications plan, direct and coordinate those activities of the enterprise which are concerned with providing relevant services, under the broad guidance of the directors and chief executives, and in consultation with managers of other departments or sections. Tasks include - (a) planning, directing and coordinating activities concerning the provision of relevant services; (b) ensuring the efficient use of resources and the fulfillment of service quotas; (c) planning and directing daily service operations; (d) controlling expenditure; (e) establishing and directing operational and administrative procedures; (f) overseeing the application of work safety and related procedures; (g) overseeing the selection, training and performance of staff; (h) representing the department in its dealings with other parts of the enterprise or with outside bodies; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|122</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1226">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Production and operations department managers in storage and communications</value>
+          </configuration>
+          <configuration name="description">
+            <value>Production and operations department managers in business services plan, direct and coordinate those activities of the enterprise which are concerned with providing external business services, under the broad guidance of the directors and chief executives, and in consultation with managers of other departments or sections. Tasks include - (a) planning, directing and coordinating activities concerning the provision of external business services such as banking, insurance, real estate, data processing, market research, accounting, architecture, engineering, building cleaning, technical testing and analysis, advertising or packaging; (b) ensuring the efficient use of resources and the fulfillment of schedules; (c) planning and directing daily operations; (d) controlling expenditure; (e) establishing and directing operational and administrative procedures; (f) overseeing the application of work safety and related procedures; (g) overseeing the selection, training and performance of staff; (h) representing the department in its dealings with other parts of the enterprise or with outside bodies; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|122</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1227">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Production and operations department managers in services</value>
+          </configuration>
+          <configuration name="description">
+            <value>Production and operations department managers in personal care, cleaning, and related services plan, direct and coordinate those activities of the enterprise which are concerned with providing relevant services, under the broad guidance of the directors and chief executives, and in consultation with managers of other departments or sections. Tasks include - (a) planning, directing and coordinating activities concerning the provision of relevant services; (b) ensuring the efficient use of resources and the fulfillment of schedules; (c) planning and directing daily trade operations; (d) controlling expenditure; (e) establishing and directing operational and administrative procedures; (f) overseeing the application of work safety and related procedures; (g) overseeing the selection, training and performance of staff, (h) representing the department in its dealings with other parts of the enterprise or with outside bodies; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|122</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1228">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Production and operations department managers in care, cleaning and related services</value>
+          </configuration>
+          <configuration name="description">
+            <value>This unit group covers department managers not classified elsewhere in Minor group 122, Production and operations department managers. For instance here should be classified those who plan, direct and coordinate activities of the enterprise or organization concerning government administrative and other operations, public or private education services, health and social work services, recreational, cultural, and sporting events and services, and operations of extra-territorial organizations and bodies. In such cases tasks would include - (a) planning, directing and coordinating government operations concerning public service activities, such as control of the money supply or taxation schemes, various government business regulations, as well as civil service administration and related activities; (b) planning, directing and coordinating activities concerning the administration and operation of foreign affairs and public order and safety activities; (c) planning, directing and coordinating activities concerning the administration and operation of government-funded social security schemes; (d) planning, directing and coordinating activities concerning public or private education; (e) planning, directing and coordinating activities concerning health and social services; (f) planning, directing and coordinating activities concerning recreational, cultural and sporting operations and events; (g) planning, directing and coordinating activities concerning the operations of extra-territorial organizations and bodies; (h) performing related tasks; (i) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|122</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1229">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Production and operations department managers not classified</value>
+          </configuration>
+          <configuration name="description">
+            <value>Other department managers of enterprises or organizations requiring a total of three or more managers, plan, direct and coordinate particular activities, under the broad guidance of the directors and chief executives, and in consultation with managers of other departments or sections. Tasks performed usually include: planning, directing and coordinating activities of their department; directing daily operations; overseeing the selection, training, and performance of staff; reviewing the results and reporting them to directors and chief executives, liaising with managers of other departments; representing the department in its dealings with other parts of the organization or with outside bodies.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|122</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1231">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Finance and administration department managers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Tasks include - (a) planning, directing and coordinating policies concerning personnel and the industrial relations activities of the enterprise or organisation; (b) planning and organising procedures for recruitment, training, promotion, determination of wage structures and negotiations about wages, liaison and consultation with workers, and related personnel matters; (c) overseeing safety, health and related programmes and activities, with the participation of all concerned; (d) controlling expenditure and ensuring the efficient use of resources; (e) establishing and directing operational and administrative procedures; (f) planning and directing daily operations; (g) overseeing the selection, training and performance of staff; (h) representing the department in its dealings with other parts of the organisation or with outside bodies; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|123</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1232">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Personnel and industrial relations department managers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Tasks include - (a) planning, directing and coordinating the sales and marketing activities of the enterprise or organisation; (b) planning and organising special sales and marketing programmes based on sales records and market assessments; (c) determining price lists, discount and delivery terms, sales promotion budgets, sales methods, special incentives and special campaigns; (d) controlling expenditure and ensuring the efficient use of resources; (e) establishing and directing operational and administrative procedures; (f) planning and directing daily operations; (g) overseeing the selection, training and performance of staff; (h) representing the department in its dealings with other parts of the organisation or with outside bodies; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|123</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1233">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Sales and marketing department managers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Advertising and public relations department managers plan, direct and coordinate the advertising, public relations and public information activities of the enterprise or organisation, under the broad guidance of the directors and chief executives, and in consultation with managers of other departments or sections. Tasks include - (a) planning, directing and coordinating the advertising and public relations activities of the enterprise or organisation; (b) negotiating advertising contracts with officials of newspapers, radio and television stations, sports and cultural organisations and advertising agencies; (c) planning and managing information programmes to inform legislators, the mass media and the general public about the plans, accomplishments and points of view of the enterprise or organisation; (d) planning and managing fund-raising activities for educational, humanitarian and other non-profit-making organisations; (e) controlling expenditure and ensuring the efficient use of resources; (f) establishing and directing operational and administrative procedures; (g) planning and directing daily operations; (h) overseeing the selection, training and performance of staff; (i) representing the department in its dealings with other parts of the organisation or with outside bodies; (j) performing related tasks; (k) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|123</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1234">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Advertising and public relations department managers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Supply and distribution department managers plan, direct and coordinate the supply and distribution activities of the enterprise or organisation, under the broad guidance of the directors and chief executives, and in consultation with managers of other departments or sections. Tasks include - (a) planning, directing and coordinating the supply, storage and distribution activities of the enterprise or organisation; (b) negotiating purchase contracts, agreeing a suitable price with suppliers and ensuring the quality of the goods purchased; (c) planning and installing systems for inventory control; (d) controlling expenditure and ensuring the efficient use of resources; (e) establishing and directing operational and administrative procedures; (f) planning and directing daily operations; (g) overseeing the selection, training and performance of staff; (h) representing the department in its dealings with other parts of the organisation or with outside bodies; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|123</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1235">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Supply and distribution department managers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Computing services department managers plan, direct and coordinate the computing services of the enterprise or organisation, under the broad guidance of the directors and chief executives, and in consultation with managers of other departments or sections. Tasks include - (a) planning, directing and coordinating the computing services of the enterprise or organisation; (b) directing the selection, installation, use and maintenance of computing equipment and software and the purchase of externally provided computing services; (c) planning the overall data processing policies of the enterprise or organisation and coordinating the search for alternatives; (d) controlling expenditure and ensuring the efficient use of resources; (e) establishing and directing operational and administrative procedures; planning and directing daily operations; (g) overseeing the selection, training and performance of staff; (h) representing the department in its dealings with other parts of the organisation or with outside bodies; (i) performing related tasks; (j) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|123</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1236">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Computing services department managers</value>
+          </configuration>
+          <configuration name="description">
+            <value>Research and development department managers plan, direct and coordinate the research and development activities of the enterprise or organisation, under the broad guidance of the directors and chief executives, and in consultation with managers of other departments or sections. Tasks include - (a) planning, directing and coordinating research and development activities, in-house or commissioned from external research organisations, to develop new or improved technical processes, products or utilisation of materials for the enterprise or organisation; (b) planning the overall research and development programme of the enterprise or organisation, specifying goals and budgetary requirements; (c) controlling expenditure and ensuring the efficient use of resources; (d) establishing and directing operational and administrative procedures; (e) planning and directing daily operations; (f) overseeing the selection, training and performance of staff; (g) representing the department in its dealings with other parts of the organisation or with outside bodies; (h) performing related tasks; (i) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|123</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1237">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Research and development department managers</value>
+          </configuration>
+          <configuration name="description">
+            <value>This unit group covers department managers not classified elsewhere in Minor group 123, Other department managers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|123</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1239">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Other department managers not elsewhere classified</value>
+          </configuration>
+          <configuration name="description">
+            <value>General managers head various small business undertakings which they manage on their own behalf, or on behalf of the proprietors, with the assistance of no more than one other manager and some non-managerial help. Tasks performed by workers in this sub-major group usually include: planning, formulating and implementing policies; managing daily operations and reviewing their results; negotiating with suppliers, customers and other enterprises; planning and controlling the use of resources and the selection of staff; reporting to owners, if any; supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|123</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1311">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>General managers in agriculture, hunting, forestry/ fishing</value>
+          </configuration>
+          <configuration name="description">
+            <value>General managers in manufacturing head small manufacturing businesses and, on their own behalf or on behalf of the proprietor, plan, direct and coordinate the activities of the business, with the assistance of no more than one other manager and some non-managerial help. Tasks include - (a) planning and implementing policies; (b) making budgetary estimates; (c) negotiating with suppliers and customers and with other organisations; (d) planning and controlling the use of resources and hiring workers; (e) managing daily operations; (f) reporting to owners, if any; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|131</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1312">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>General managers in manufacturing</value>
+          </configuration>
+          <configuration name="description">
+            <value>General managers in construction head small construction businesses and, on their own behalf or on behalf of the proprietor, plan, direct and coordinate the activities of the business, with the assistance of no more than one other manager and some non-managerial help. Tasks include - (a) planning and implementing policies; (b) making budgetary estimates; (c) negotiating with suppliers and customers and with other organisations; (d) planning and controlling the use of resources and hiring workers; (e) managing dally operations; (f) reporting to owners, if any; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|131</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1313">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>General managers in construction</value>
+          </configuration>
+          <configuration name="description">
+            <value>General managers in wholesale and retail trade head small wholesale or retail businesses and, on their own behalf or on behalf of the proprietor, plan, direct and coordinate the activities of the business, with the assistance of no more than one other manager and some non-managerial help. Tasks include - (a) planning and implementing policies; (b) making budgetary estimates; (c) negotiating with suppliers and customers and with other organisations; (d) planning and controlling the use of resources and hiring workers; (e) managing daily operations; (f) reporting to owners, if any; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|131</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1314">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>General managers in wholesale and retail</value>
+          </configuration>
+          <configuration name="description">
+            <value>General managers of restaurants and hotels head small restaurant or hotel businesses and, on their own behalf or on behalf of the proprietor, plan, direct and coordinate the activities of the business, with the assistance of no more than one other manager and some non-managerial help. Tasks include - (a) planning and implementing policies; (b) making budgetary estimates; (c) negotiating with suppliers and customers and with other organisations; (d) planning and controlling the use of resources and hiring workers; (e) managing daily operations; (f) reporting to owners, if any; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|131</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1315">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>General managers of restaurants and hotels</value>
+          </configuration>
+          <configuration name="description">
+            <value>General managers in transport, storage and communications head small transport, storage or communications businesses and, on their own behalf or on behalf of the proprietor, plan, direct and coordinate the activities of the business, with the assistance of no more than one other manager and some non- managerial help. Tasks include - (a) planning and implementing policies; (b) making budgetary estimates; (c) negotiating with suppliers and customers and with other organisations; (d) planning and controlling the use of resources and hiring workers; (e) managing daily operations; (f) reporting to owners, if any; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|131</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1316">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>General managers in transport, storage and</value>
+          </configuration>
+          <configuration name="description">
+            <value>General managers of business services head small firms providing various business services and, on their own behalf or on behalf of the proprietor, plan, direct and coordinate the activities of the enterprise with the assistance of no more than one other manager and some non-managerial help. Tasks include - (a) planning and implementing policies; (b) making budgetary estimates; (c) negotiating with suppliers and customers and with other organisations; (d) planning and controlling the use of resources and hiring workers; (e) managing daily operations; (f) reporting to owners, if any; (g) performing related tasks; (h) supervising other workers,</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|131</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1317">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>General managers of business services</value>
+          </configuration>
+          <configuration name="description">
+            <value>General managers in personal care, cleaning and related services head small businesses providing personal care, cleaning and related services and, on their own behalf or on behalf of the proprietor, plan, direct and coordinate the activities of the business, with the assistance of no more than one other manager and some non-managerial help. Tasks include - (a) planning and implementing policies; (b) making budgetary estimates; (c) negotiating with suppliers and customers and with other organisations;. (d) planning and controlling the use of resources and hiring workers; (e) managing daily operations; (f) reporting to owners, if any; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|131</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1318">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>General managers in personal care, cleaning related services</value>
+          </configuration>
+          <configuration name="description">
+            <value>This unit group covers general managers not elsewhere classified in Minor group 131, General managers. For instance, here should be classified those who head small businesses in the fields of education, health, or recreational, cultural or sporting activities and, on their own behalf or on behalf of the proprietor, plan, direct and coordinate the activities of the business, with the assistance of no more than one other manager and some non-managerial help. In such cases tasks would include (a) planning and implementing policies; (b) making budgetary estimates; (c) negotiating with suppliers and customers and with other organisations; (d) planning and controlling the use of resources and hiring workers; (e) managing daily operations; (f) reporting to owners, if any; (g) performing related tasks; (h) supervising other workers.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|131</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="1319">
+        <configuration name="last_modified">
+          <value>2009-07-15 11:07:57</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name">
+            <value>General managers not elsewhere classified</value>
+          </configuration>
+          <configuration name="description">
+            <value>Professionals increase the existing stock of knowledge, apply scientific or artistic concepts and theories, teach about the foregoing in a systematic manner, or engage in any combination of these three activities. Most occupations in this major group require skills at the fourth ISCO skill level. Tasks performed by professionals usually include: conducting analysis and research, and developing concepts, theories and operational methods, and advising on or applying existing knowledge related to physical sciences including mathematics, engineering and technology, and to life sciences including the medical profession, as well as to social sciences and humanities; teaching the theory and practice of one or more disciplines at different educational levels; teaching and educating handicapped persons; providing various business, legal and social services; creating and performing works of art; providing spiritual guidance; preparing scientific papers and reports. Supervision of other workers may be included. It should be noted that, depending on the specific tasks and degree of responsibility in executing them, as well as on the national educational and training requirements, it may be appropriate to classify some of the occupations that are identified here into Major group 3, Technicians and associate professionals. Such like cases are to be found in particular among teaching occupations, nursing occupations and social services occupations.</value>
+          </configuration>
+          <configuration name="isco_88_minor">
+            <value>isco_88_minor|131</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

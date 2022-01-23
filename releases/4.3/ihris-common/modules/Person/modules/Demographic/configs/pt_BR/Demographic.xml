@@ -2,13 +2,17 @@
 <!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
 <I2CEConfiguration name="PersonDemographic" path="/I2CE">
   <metadata>
-    <version>4.2.1.0.1</version>
+    <version>4.3.0.1</version>
   </metadata>
   <configurationGroup name="PersonDemographic" path="/I2CE" locale="pt_BR">
-    <version>4.2.0.1</version>
+    <version>4.3.0.1</version>
     <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="pt_BR">
-      <configuration name="person_can_view_child_form_demographic" locale="pt_BR"></configuration>
-      <configuration name="person_can_edit_child_form_demographic" locale="pt_BR"></configuration>
+      <configuration name="person_can_view_child_form_demographic" locale="pt_BR">
+        <value>Pode visualizar o formulário demográfico infantil de uma pessoa</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_demographic" locale="pt_BR">
+        <value>Pode editar o formulário demográfico infantil de uma pessoa</value>
+      </configuration>
       <configuration name="can_edit_database_list_marital_status" locale="pt_BR">
         <value>Pode editar a lista de estados civis do departamento</value>
       </configuration>
