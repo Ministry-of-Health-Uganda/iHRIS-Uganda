@@ -3,10 +3,10 @@
 
 $i2ce_site_user_access_init = null;
 $script = array_shift( $argv );
-if (file_exists(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'local' . DIRECTORY_SEPARATOR . 'config.values.php')) {
-	require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'local' . DIRECTORY_SEPARATOR . 'config.values.php');
+if (file_exists(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages/local' . DIRECTORY_SEPARATOR . 'config.values.php')) {
+	require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages/local' . DIRECTORY_SEPARATOR . 'config.values.php');
 } else {
-	require_once( dirname(__FILE__) . DIRECTORY_SEPARATOR . 'config.values.php');
+	require_once( dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages/config.values.php');
 }
 $i2ce_site_i2ce_path = "/var/lib/iHRIS/releases/4.3/i2ce";
 
@@ -60,7 +60,7 @@ $form_factory = I2CE_FormFactory::instance();
 			// 	$row++;
 			// 	
 
-			print_r($_SESSION);
+			print_r($facdata);
 		//}
 	}
 	
