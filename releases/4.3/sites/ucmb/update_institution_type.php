@@ -47,7 +47,7 @@ $form_factory = I2CE_FormFactory::instance();
       $count =0;         
         foreach ($facs as $facdata){               
 		
-			 if($jobdata['value']){
+			 if($facdata['value']){
 			 	$fac = $form_factory->createContainer( $facdata['value'] );
 				$fac->populate();
 				$institution_type_id = "institution_type|111596";
