@@ -44,7 +44,7 @@ function rearrange($arr1){
 }	
 
 
-   $jobs = I2CE_List::listOptions( "job");
+   $jobs = array_flip( rearrange(I2CE_List::listOptions( "job" ) ));
       $count =0;         
         foreach ($jobs as $key => $value){               
 		
