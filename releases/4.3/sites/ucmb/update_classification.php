@@ -44,23 +44,10 @@ function rearrange($arr1){
 }	
 
 
-
-$find_id = array(
-	'operator' => 'FIELD_LIMIT',
-	'field' => 'job',
-	'style' => 'null'
-	);
-
- $position_id = I2CE_List::listOptions( "job");
-
-	//   $cache = array();
-	//   $cache['job'] = array_flip( rearrange(I2CE_List::listOptions( "job" ) ));
-
-      $count =0;
-	 
-                
-        foreach ($position_id as $job){               //
- 
+   $jobs = I2CE_List::listOptions( "job");
+      $count =0;         
+        foreach ($jobs as $key => $value){               
+		
            
 		        // $job = $form_factory->createContainer( 'job'.'|'.$id );
 		        // $job->populate();
@@ -68,7 +55,7 @@ $find_id = array(
                 // $job->getField('classification')->setFromDB($classification_id);
 			    // $job->save( $user );
 			    // $job->cleanup();
-				print_r($position_id);
+				print_r($key);
 		    	 
 
 		}
