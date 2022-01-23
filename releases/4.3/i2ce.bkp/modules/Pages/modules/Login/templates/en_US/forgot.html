@@ -1,0 +1,32 @@
+<div id="welcomeIntro">
+  <span name='has_email' ifset='true'>
+    <form id="form1" method="post" action="forgot"  >
+      <table class="loginTable" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+	  <td colspan="3"><h2>Forgot Password</h2>
+	  <hr />
+	  <p id="error_message"></p>
+	  </td>
+	</tr>
+	<tr>
+	  <th class="forgotRow">Reset Password:</th>
+	  <td class="forgotRow">Enter your username to reset your password:<br />
+	  <input type="text" name="username" /></td>
+	  <td class="forgotRow"><input class="button" type="submit" name="submit" value="Reset" /></td>
+	</tr>
+	<tr>
+	  <th class="forgotRow">Display Username:</th>
+	  <td class="forgotRow">Enter your email address to see your username:<br />
+	  <input type="text" name="email" /></td>
+	  <td class="forgotRow"><input class="button" type="submit" name="submit" value="View" /></td>
+	</tr>
+	<tr>
+	  <td class="forgotRow" colspan="3"><a href="login">Return to login page</a></td>
+	</tr>
+      </table>
+    </form>
+  </span>
+  <span name='has_email' ifset='!true'>
+    <p id="error_message">Please contact your system adminstator to reset your password</p>
+  </span>
+</div>

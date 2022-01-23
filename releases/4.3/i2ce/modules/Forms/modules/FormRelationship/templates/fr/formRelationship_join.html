@@ -1,0 +1,31 @@
+<div>
+  <h2 id="join_form_link" class="join_form_options_toggle"><a>Ajouter un nouveau formulaire enfant (sous-formulaire)</a></h2>
+  <div id="join_form_options_menu" class="optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true">
+    <div class="optionsMenuTitle window_drag">Ajouter un nouveau formulaire </div>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  Sélectonner un sous-formulaire à ajouter à ce formulaire:
+	</td>
+	<td>
+	  <select name="form_which" id="join_forms_selector"></select></td>
+      </tr><tr><td>
+	  <h3>Nom abrégé:</h3>"Une clé interne utilisée pour identifier la relation du formulaire. Elle peut ne pas être la même que la clé utilisée pour n’importe lequel des formulaires nommés existant dans cette relation."
+	</td>
+	<td>
+	  <input id="form_name" name="form_name" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+      </tr><tr><td>
+	  <h3>Nom d’affichage:</h3>Le nom du formulaire lié affiché pour l’utilisateur final.
+	</td>
+	<td>
+	  <input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+      </tr><tr><td>
+	  <h3>Description:</h3>Une description du formulaire et son rôle dans la relation qui devrait être compréhensible pour l’utilisateur final.
+	</td>
+	<td>
+	  <textarea name="description" rows="4" cols="53" value=""></textarea></td>
+      </tr><tr><td colspan="2">
+	  <div></div>
+	  <span class="join_form_options_hide button optionsMenuButton window_hide">Fermer</span>
+	  <input type="submit" class="button only_options_menu" value="Add" id="join_form"><div></div>
+	  <br></td>
+      </tr></table></div>
+</div>

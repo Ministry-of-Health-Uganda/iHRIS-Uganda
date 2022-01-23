@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="DatePicker" path="/modules/DatePicker">
+  <metadata>
+    <version>1.17.5</version>
+  </metadata>
+  <configurationGroup name="DatePicker" path="/modules/DatePicker" locale="en_US">
+    <version>1.17.5</version>
+    <configurationGroup name="options_datetime">
+      <configuration name="format" locale="en_US">
+        <value>F d, Y @ H:i:s</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="options">
+      <configuration name="format" locale="en_US">
+        <value>F d, Y</value>
+      </configuration>
+      <configuration name="days" type="delimited" locale="en_US">
+        <value>0:Sunday</value>
+        <value>1:Monday</value>
+        <value>2:Tuesday</value>
+        <value>3:Wednesday</value>
+        <value>4:Thursday</value>
+        <value>5:Friday</value>
+        <value>6:Saturday</value>
+      </configuration>
+      <configuration name="months" type="delimited" locale="en_US">
+        <value>0:January</value>
+        <value>1:February</value>
+        <value>2:March</value>
+        <value>3:April</value>
+        <value>4:May</value>
+        <value>5:June</value>
+        <value>6:July</value>
+        <value>7:August</value>
+        <value>8:September</value>
+        <value>9:October</value>
+        <value>10:November</value>
+        <value>11:December</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

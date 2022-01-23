@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="messageHandler">
+  <metadata>
+    <displayName>Message Handler</displayName>
+    <className>I2CE_MessageHandler</className>
+    <category>Messages</category>
+    <description>A handler for user messages</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>http://www.capacityproject.org</link>
+    <version>4.3.0</version>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <requirement name="I2CE">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+</I2CEConfiguration>

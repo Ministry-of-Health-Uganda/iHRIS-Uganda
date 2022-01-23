@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ReportArchiver">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ReportArchiver" locale="it">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="it">
+      <configuration name="custom_reports_archiver_can_view" locale="it" values="single" type="string">
+        <value>Permetti la visualizzazione dei Rapporti Personalizzati archiviati</value>
+      </configuration>
+      <configuration name="custom_reports_archiver_can_archive" locale="it" values="single" type="string">
+        <value>Permetti l'archiviazione dei rapporti personalizzati</value>
+      </configuration>
+      <configuration name="custom_reports_archiver_can_delete" locale="it" values="single" type="string">
+        <value>Permetti la cancellazione dei Rapporti Personalizzati archiviati</value>
+      </configuration>
+      <configuration name="custom_reports_archiver_admin" locale="it" values="single" type="string">
+        <value>Permetti l'accesso completo al sistema di archiviazione dei rapporti personalizzati</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="archived_report">
+          <configuration name="display" values="single" locale="it" type="string">
+            <value>Rapporto Archiviato</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="I2CE_ArchivedReport">
+          <configurationGroup name="meta" path="meta/list/default">
+            <configuration name="display_string" locale="it" values="single" type="string">
+              <value>%s generato su %s</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="fields">
+            <configurationGroup name="report">
+              <configuration name="headers" type="delimited" locale="it" values="single">
+                <value>default:Rapporto</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="it" values="single">
+                <value>default:Data di generazione</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="report_view">
+              <configuration name="headers" type="delimited" values="many" locale="it">
+                <value>default:Visualizzazione del Rapporto</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" values="many" locale="it">
+                <value>default:Titolo</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="CLI_archive_page" path="/modules/CustomReports/command_line/archive">
+      <configurationGroup name="args">
+        <configuration name="title" locale="it" values="single" type="string">
+          <value>Rapporto Archivio</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="archive_page" path="/modules/CustomReports/page/archive">
+      <configurationGroup name="args">
+        <configuration name="title" locale="it" values="single" type="string">
+          <value>Rapporto Archivio</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="view_archives_page" path="/modules/CustomReports/page/viewArchives">
+      <configurationGroup name="args">
+        <configuration name="title" locale="it" values="single" type="string">
+          <value>Visualizza Rapporti Archiviati</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

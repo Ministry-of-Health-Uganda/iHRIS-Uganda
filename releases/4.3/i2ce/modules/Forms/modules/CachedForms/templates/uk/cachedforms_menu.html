@@ -1,0 +1,31 @@
+<div>
+  
+
+
+  <h2>Кешувати форми</h2>
+  <span name="has_profiles" ifset="true">
+    Кешувати всі форми у вибраному профілі.
+    <form action="CachedForms/cache" style="margin-left:2em" method="POST">
+      Вибір профілю:  <select name="profile"></select><br><input type="submit" value="Cache"></form>
+  </span>
+  <br><div>
+    <a href="CachedForms/cacheAll">Кеш</a> усі форми
+    <br><a href="CachedForms/cacheAllForce">Примусове кешування</a> усіх форм, які не застаріли
+    <br><a href="CachedForms/dropAll">Усунути</a> кеші всіх форм
+  </div>
+  <br><span name="has_profiles" ifset="true">
+    <h2>Експорт кешованих форм</h2>
+    Експортуйте всі кешовані форми обраного профілю. Якщо ви виберете дату зміни, то тільки ті записи, які були змінені протягом або після зазначеної дати, будуть експортуватися. В іншому випадку, всі записи, які були змінені для обраного профілю, будуть експортуватися.
+    <form action="CachedForms/export" style="margin-left:2em" method="POST">
+      Вибір профілю:  <select name="profile"></select><br>
+      Дата змін: <input class="datepicker_ymd" name="mod_date" type="text"><br><input type="checkbox" value="1" name="compress" checked>Увімкнути стиснення bzip2
+      <br><input type="submit" value="Export"></form>
+    
+    <br></span>
+
+  <h2>Створити/змінити профіль</h2>
+  Створіть профіль або відредагуйте існуючий профіль форм.
+  <form action="CachedForms/exportProfile" style="margin-left:2em">
+      Вибір профілю:  <select name="profile"><option value="">Створення нового профілю</option></select><br><input type="submit" value="Edit"></form>
+  <br><h2>Керувати кешуванням окремих форм</h2>
+  <ul id="cached_forms_list"></ul></div>

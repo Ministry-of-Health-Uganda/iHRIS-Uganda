@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<title>Color Picker Example 1</title>
+	<meta name="Generator" content="EditPlus" />
+	<meta name="Author" content="" />
+	<meta name="Keywords" content="" />
+	<meta name="Description" content="" />
+<style type="text/css">
+		.cpDialog {
+			background-color:#aaaaaa !important;
+			border: none 5px #ff0000 !important;
+			color: #000000;
+		}
+		
+		.cpTitleBar{
+		
+		}
+
+		.cpHueBar{
+		
+		}
+
+		.cpSVBox{
+		
+		}
+
+		.cpColorInfoContainer{
+		}
+
+		.cpSelectedColor{
+		}
+
+		.cpPreviewColor{
+		}
+
+		.cpsInput{
+		}
+		
+		.cphInput{
+		}	
+		
+		.cpvInput{
+		}
+		
+		.cprInput{
+		}
+		
+		.cpgInput{
+		}
+		
+		.cpbInput{
+		}
+		
+		.cpokInput{
+		}
+		
+		.cpcancelInput{
+		}
+	</style>
+
+	<script type="text/javascript" src="js/mootools.min.v1.00.js" language="javascript"></script>
+	
+	<script type="text/javascript" src="colorpicker1.0.2_compressed.js" language="javascript"></script>
+	<!--
+	<script type="text/javascript" src="colorpicker1.0.2_compressed.js" language="javascript"></script>
+	<script type="text/javascript" src="colorpicker1.0.2.js" language="javascript"></script>
+	-->
+	
+	<script type="text/javascript" language="JavaScript">
+			myColorPicker = null;
+			function init(){
+				//myColorPicker = new ColorPicker({previewSwatch: true, hueBarWidth: 20, hueBarHeight:360, svBoxWidth:360, svBoxHeight:360});
+				myColorPicker = new ColorPicker({left: "30px", top:"20px", initialState: "Closed", previewSwatch: true, hueBarWidth: 25, hueBarHeight:360, svBoxWidth:360, svBoxHeight:360});
+				//myColorPicker = new ColorPicker();
+				//myColorPicker = new ColorPicker({cancelButton: false, okButton: false, rgbFields: false, hsvFields: false, selectedSwatch: false, previewSwatch: false, hueBarWidth: 20, hueBarHeight:250, svBoxWidth:250, svBoxHeight:250});
+				//myColorPicker.setHueBarDimensions(10, 100);
+				//myColorPicker.setSVBoxDimensions(100, 100);
+				
+			}
+
+			function ChangeDivBorderColor(){
+				$("ColorDiv").setStyle("border-color", myColorPicker.CurColor);
+				myColorPicker.close();
+			}
+
+			function ChangeDivBackground(){
+				$("ColorDiv").setStyle("background-color", myColorPicker.CurColor);
+				myColorPicker.close();
+			}
+
+			function ChangeDivTextColor(){
+				$("ColorDiv").setStyle("color", myColorPicker.CurColor);
+				myColorPicker.close();
+			}
+
+			function ChangeCancel(){
+				myColorPicker.close();
+			}
+
+			function DivBorderColorButtonClick(){
+				myColorPicker.open();
+				myColorPicker.OKCallback = ChangeDivBorderColor;
+				myColorPicker.CancelCallback = ChangeCancel;
+			}
+
+			function DivBackgroundColorButtonClick(){
+				myColorPicker.open();
+				myColorPicker.OKCallback = ChangeDivBackground;
+				myColorPicker.CancelCallback = ChangeCancel;
+			}
+
+			function DivTextColorButtonClick(){
+				myColorPicker.open();
+				myColorPicker.OKCallback = ChangeDivTextColor;
+				myColorPicker.CancelCallback = ChangeCancel;
+			}
+
+	</script>
+
+</head>
+<body onload="init();">
+<input name="setBG" value="Select Background Color" onclick="DivBackgroundColorButtonClick();" type="button" /> <input name="setBG" value="Select Border Color" onclick="DivBorderColorButtonClick();" type="button" /> <input name="setBG" value="Select Text Color" onclick="DivTextColorButtonClick();" type="button" />
+<p id="cp" style="position: absolute; left: 50px; top: 50px; z-index: 10000; display: none">&nbsp;</p>
+<p id="ColorDiv" style="border-style: solid; border-color: #000000; padding: 5px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+</body>
+</html>

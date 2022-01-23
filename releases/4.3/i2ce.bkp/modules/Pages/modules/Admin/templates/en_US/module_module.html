@@ -1,0 +1,45 @@
+<li class='module'>
+  <table class="option check module_list">
+    <tr class="option check">
+      <td class='module_left'>
+	<span name="module_enable"></span>  
+      </td>
+      <td class='module_center'>
+	<h3>
+	<span ifset="true" name="module_link">
+	  <a name="module_link"><span name="module_name"></span></a>
+	</span>
+	<span ifset="!true" name="module_link">
+	  <span name="module_name"></span>
+	</span>
+	</h3>
+	<span name="module_description"></span><br/> 
+	<span ifset="true" name="module_version">Version <span name="module_version"></span>.</span> 
+	<span ifset="true" name="module_email">
+	  <span ifset="true" name="module_creator">
+	    <p>Created by  <a name="module_email"><span name="module_creator"></span></a>.</p>
+	  </span>
+	  <span ifset="!true" name="module_creator">
+	    <p>Contact <a name="module_email_2">author</a>.</p>
+	  </span>
+	</span>
+	<span ifset="!true" name="module_email">
+	  <span ifset="true" name="module_creator">
+	    <p>Created by  <span name="module_creator"></span>.</p>
+	  </span>
+	</span>
+	<span ifset="true" name="module_message">
+	  <p><span name="module_message"></span></p>
+	</span>
+      </td>
+      <td class='module_right'>
+	<span ifset="true" name="module_configure">
+	  <a  name='module_configure'>Configure</a>
+	</span>
+	<span ifset="true" name="module_menu">
+	  <a name="module_menu"  href="" >Sub-Modules</a>
+	</span>
+      </td>
+    </tr>
+  </table>
+</li>

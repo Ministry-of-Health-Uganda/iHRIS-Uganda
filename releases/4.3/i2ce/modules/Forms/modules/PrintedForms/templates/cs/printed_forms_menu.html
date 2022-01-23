@@ -1,0 +1,27 @@
+<div id="siteContent">
+  <h2>Normované Formuláře</h2>
+
+  <h3>Vytvořit Normované Formuláře</h3>
+
+  <span ifset="!true" name="has_valid_forms">
+    Pro tento záznam nejsou dostupné žádné normované formuláře
+  </span>
+  <span ifset="true" name="has_valid_forms">
+    <ul id="printed_forms_list"></ul></span>
+
+
+  <span type="module" ifenabled="true" name="BinField">
+    <span ifset="true" name="show_archive">
+      <h3>Archivované Normované Formuláře</h3>
+
+      <span ifset="!true" name="has_archives">
+	Žádné formuláře nebyly pro tento záznam archivovány
+      </span>
+      <span ifset="true" name="has_archives">
+	<span task="printed_forms_view_all_archives">
+	  <ul id="printed_forms_archive"></ul></span>
+      </span>
+    </span>
+  </span>
+
+</div>

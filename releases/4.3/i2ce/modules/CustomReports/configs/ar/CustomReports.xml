@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="CustomReports" locale="ar">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/modules/CustomReports/text/" locale="ar">
+      <configuration name="Increasing" values="single" type="string">
+        <value>متزايد</value>
+      </configuration>
+      <configuration name="Decreasing" values="single" type="string">
+        <value>تقليل</value>
+      </configuration>
+      <configurationGroup name="user_messages">
+        <configuration name="no_report_view" values="single" type="string">
+          <value>أنت بحاجة لتحديد التقرير لعرض</value>
+        </configuration>
+        <configuration name="invalid_report_view" values="single" type="string">
+          <value>لقد حددت تقريرا غير صالح لعرض</value>
+        </configuration>
+        <configuration name="no_permission_report_view" values="single" type="string">
+          <value>لم يكن لديك تصريح بعرض هذا التقرير</value>
+        </configuration>
+        <configuration name="no_display_report_view" values="single" type="string">
+          <value>لا يمكن العثور على أي عرض صالحة لوجهة النظر هذه تقرير</value>
+        </configuration>
+        <configuration name="reportView_merged_field_display" values="single" type="string">
+          <value>%s من طرف %s</value>
+        </configuration>
+        <configuration name="merge_display" values="single" type="string">
+          <value>%s مرتبط مع %s</value>
+        </configuration>
+        <configurationGroup name="merge_descriptions">
+          <configuration name="parent" values="single" type="string">
+            <value>%s مرتبط مع %s على أنه نموذج أصلي</value>
+          </configuration>
+          <configuration name="child" values="single" type="string">
+            <value>%s مرتبط مع %s على أنه نموذج طفل</value>
+          </configuration>
+          <configuration name="default" values="single" type="string">
+            <value>%s مرتبط مع %s</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="report_no_name" values="single" type="string">
+          <value>لا يوجد اسم مختصر محدد للتقرير</value>
+        </configuration>
+        <configuration name="report_bad_name" values="single" type="string">
+          <value>الاسم المختصر الخاص بالتقرير خاطيء</value>
+        </configuration>
+        <configuration name="report_bad_used" values="single" type="string">
+          <value>الاسم المختصر الخاص بالتقرير قيد الاستخدام بالفعل</value>
+        </configuration>
+        <configuration name="report_no_relationship" values="single" type="string">
+          <value>لا علاقة تقرير المحدد للتقرير</value>
+        </configuration>
+        <configuration name="report_bad_relationship" values="single" type="string">
+          <value>علاقة تقرير معين غير صحيحة</value>
+        </configuration>
+        <configuration name="cannot_delete" values="single" type="string">
+          <value>لا يمكن دخولك لحذف بيانات التقرير</value>
+        </configuration>
+        <configuration name="bad_delete_path" values="single" type="string">
+          <value>مسار غير صالح للحذف</value>
+        </configuration>
+        <configuration name="not_cached" values="single" type="string">
+          <value>غير قادر على إعداد النموذج المخزن</value>
+        </configuration>
+        <configuration name="not_saved" values="single" type="string">
+          <value>لا يمكن حفظ خيارات العرض</value>
+        </configuration>
+        <configuration name="saved" values="single" type="string">
+          <value>خيارات العرض المخزنة</value>
+        </configuration>
+        <configuration name="not_generated" values="single" type="string">
+          <value>غير قادر على إنتاج تقرير</value>
+        </configuration>
+        <configuration name="not_updated" values="single" type="string"></configuration>
+        <configuration name="updated" values="single" type="string"></configuration>
+      </configurationGroup>
+      <configurationGroup name="report_status">
+        <configuration name="does_not_exist" values="single" type="string">
+          <value>غير موجود</value>
+        </configuration>
+        <configuration name="not_generated" values="single" type="string">
+          <value>لم ينتج</value>
+        </configuration>
+        <configuration name="stale" values="single" type="string">
+          <value>قديمة</value>
+        </configuration>
+        <configuration name="failed" values="single" type="string">
+          <value>فشلت</value>
+        </configuration>
+        <configuration name="in_progress" values="single" type="string">
+          <value>في تطور</value>
+        </configuration>
+        <configuration name="generated" values="single" type="string">
+          <value>منتج</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="headers">
+        <configuration name="sum" values="single" type="string">
+          <value>مجموع</value>
+        </configuration>
+        <configuration name="maximum" values="single" type="string">
+          <value>أقصى</value>
+        </configuration>
+        <configuration name="minimum" values="single" type="string">
+          <value>أدني</value>
+        </configuration>
+        <configuration name="average" values="single" type="string">
+          <value>متوسط</value>
+        </configuration>
+        <configuration name="count" values="single" type="string">
+          <value>المجموع</value>
+        </configuration>
+        <configuration name="count_distinct" values="single" type="string">
+          <value>التميز الإجمالي</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="ar">
+      <configuration name="custom_reports_can_access" locale="ar" values="single" type="string"></configuration>
+      <configuration name="custom_reports_delete" locale="ar" values="single" type="string">
+        <value>يتيح حذف البيانات الخاصة بالتقارير المخصصة</value>
+      </configuration>
+      <configuration name="custom_reports_can_access_relationships" locale="ar" values="single" type="string">
+        <value>يسمح بالوصول إلى علاقات تقرير مخصص</value>
+      </configuration>
+      <configuration name="custom_reports_can_edit_relationships" locale="ar" values="single" type="string">
+        <value>يسمح بتعديل علاقات التقرير المخصصة</value>
+      </configuration>
+      <configuration name="custom_reports_can_access_reports" locale="ar" values="single" type="string">
+        <value>يسمح بالوصول إلى تقارير مخصصة</value>
+      </configuration>
+      <configuration name="custom_reports_can_edit_reports" locale="ar" values="single" type="string"></configuration>
+      <configuration name="custom_reports_can_view_reportViews" locale="ar" values="single" type="string">
+        <value>يسمح بعرض تقرير مخصص</value>
+      </configuration>
+      <configuration name="custom_reports_can_edit_reportViews" locale="ar" values="single" type="string">
+        <value>يسمح بتعديل عروض تقرير معين</value>
+      </configuration>
+      <configuration name="custom_reports_admin" locale="ar" values="single" type="string">
+        <value>الإداري المسؤول عن تقارير خصوصية . يستطيع أداء جميع المهام المرتبطة بتقارير خصوصية</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="command_line">
+      <configurationGroup name="show">
+        <configurationGroup name="args">
+          <configuration name="title" locale="ar" values="single" type="string">
+            <value>عرض التقارير</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="page_styles" path="/I2CE/template/page_styles">
+        <configurationGroup name="customreport_config">
+          <configurationGroup name="args">
+            <configuration name="title" locale="ar" values="single" type="string">
+              <value>إنشاء تقارير</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="show">
+        <configurationGroup name="args">
+          <configuration name="title" locale="ar" values="single" type="string">
+            <value>عرض التقارير</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="saveOptions">
+        <configurationGroup name="args">
+          <configuration name="title" locale="ar" values="single" type="string">
+            <value>عرض التقارير</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="nodisplay">
+        <configurationGroup name="args">
+          <configuration name="title" locale="ar" values="single" type="string"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

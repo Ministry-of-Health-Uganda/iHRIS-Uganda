@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ReportArchiver">
+  <metadata>
+    <displayName>Custom Reports Archiver</displayName>
+    <category>Reporting</category>
+    <className>I2CE_Module_ReportArchiver</className>
+    <description>Custom Reports</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="CustomReports">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="CustomReports_Export">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="BinField">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+  </metadata>
+  <configurationGroup name="ReportArchiver">
+    <displayName>Custom Reports</displayName>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="custom_reports_archiver_can_view" locale="en_US" values="single" type="string">
+        <value>Allows viewing of archvied Custom Reports</value>
+      </configuration>
+      <configuration name="custom_reports_archiver_can_archive" locale="en_US" values="single" type="string">
+        <value>Allows archiving of custom reports</value>
+      </configuration>
+      <configuration name="custom_reports_archiver_can_delete" locale="en_US" values="single" type="string">
+        <value>Allows deleting of archivhed custom reports</value>
+      </configuration>
+      <configuration name="custom_reports_archiver_admin" locale="en_US" values="single" type="string">
+        <value>Allows full access to custom reports archiving system</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="custom_reports_archiver_admin" values="many" type="string">
+        <value>custom_reports_archiver_can_delete</value>
+        <value>custom_reports_archiver_can_view</value>
+        <value>custom_reports_archiver_can_archive</value>
+      </configuration>
+      <configuration name="custom_reports_archiver_can_archive" values="many" type="string">
+        <value>custom_reports_archiver_can_view</value>
+      </configuration>
+      <configuration name="custom_reports_archiver_can_delete" values="many" type="string">
+        <value>custom_reports_archiver_can_archive</value>
+        <value>custom_reports_archiver_can_view</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="role_trickle_down" path="/I2CE/tasks/role_trickle_down">
+      <configuration name="admin" values="many" type="string">
+        <status>uniquemerge:true</status>
+        <value>custom_reports_archiver_admin</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="archived_report">
+          <version>4.0.6.1</version>
+          <configuration name="class" values="single" type="string">
+            <value>I2CE_ArchivedReport</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US" type="string">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Archived Report</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="I2CE_ArchivedReport">
+          <displayName>Configuration for the class 'I2CE_GeneratedDoc'</displayName>
+          <configuration name="extends" values="single" type="string">
+            <displayName>The class this form extends</displayName>
+            <version>4.0.6.4</version>
+            <value>I2CE_List</value>
+          </configuration>
+          <configurationGroup name="meta" path="meta/list/default">
+            <version>4.0.6.4</version>
+            <configuration name="display_string" locale="en_US" values="single" type="string">
+              <value>%s generated on %s</value>
+            </configuration>
+            <configuration name="display_args" type="delimited" values="many">
+              <value>0:name</value>
+              <value>1:date</value>
+            </configuration>
+            <configuration name="sort_fields" type="delimited" values="many">
+              <value>0:date</value>
+              <value>0:name</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="report">
+              <displayName>The field 'address'</displayName>
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>DOCUMENT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US" values="single">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Report</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="date">
+              <displayName>The field 'start_date'</displayName>
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="default_eval" values="single" type="string">
+                <displayName>The default Value as an eval string</displayName>
+                <value>I2CE_Date::now()</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US" values="single">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Generation Date</value>
+              </configuration>
+              <configuration name="required" type="boolean" values="single">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="report_view">
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" values="many" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Report View</value>
+              </configuration>
+              <configuration name="unique" type="boolean" values="single">
+                <displayName>This field is required to be unique</displayName>
+                <version>4.0.6.4</version>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique_field" values="single" type="string">
+                <displayName>This field is required to be unique</displayName>
+                <version>4.0.6.4</version>
+                <value>date</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <version>4.0.6.4</version>
+              <configuration name="formfield" values="single" type="string">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" values="many" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Title</value>
+              </configuration>
+              <configuration name="required" type="boolean" values="single">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <!-- iHRIS_Document -->
+      </configurationGroup>
+      <!-- End /modules/forms/formClasses -->
+    </configurationGroup>
+    <!-- End /modules/forms -->
+    <configurationGroup name="CLI_archive_page" path="/modules/CustomReports/command_line/archive">
+      <displayName>Custom Report Style</displayName>
+      <version>4.0.6.5</version>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_Page_ArchiveReport</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Custom Reports</displayName>
+        <description>Values passed to the pages' constructor</description>
+        <configuration name="title" locale="en_US" values="single" type="string">
+          <displayName>The Page Title</displayName>
+          <value>Archive Report</value>
+        </configuration>
+        <configuration name="access" values="many" type="string">
+          <displayName>Page Access</displayName>
+          <description>All of the roles that have access to this page</description>
+          <value>all</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="archive_page" path="/modules/CustomReports/page/archive">
+      <displayName>Custom Report Style</displayName>
+      <version>4.0.6.2</version>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_Page_ArchiveReport</value>
+      </configuration>
+      <configuration name="style" values="single" type="string">
+        <displayName>Style</displayName>
+        <value>shell</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Custom Reports</displayName>
+        <description>Values passed to the pages' constructor</description>
+        <configuration name="tasks" values="many" type="string">
+          <value>custom_reports_archiver_can_archive</value>
+        </configuration>
+        <configuration name="title" locale="en_US" values="single" type="string">
+          <displayName>The Page Title</displayName>
+          <value>Archive Report</value>
+        </configuration>
+        <configuration name="access" values="many" type="string">
+          <displayName>Page Access</displayName>
+          <description>All of the roles that have access to this page</description>
+          <value>admin</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="view_archives_page" path="/modules/CustomReports/page/viewArchives">
+      <displayName>Custom Report Style</displayName>
+      <version>4.0.6.2</version>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_Page_CustomReport_ArchiveMenu</value>
+      </configuration>
+      <configuration name="style" values="single" type="string">
+        <displayName>Style</displayName>
+        <value>shell</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Custom Reports</displayName>
+        <description>Values passed to the pages' constructor</description>
+        <configuration name="tasks" values="many" type="string">
+          <value>custom_reports_archiver_can_view</value>
+        </configuration>
+        <configuration name="title" locale="en_US" values="single" type="string">
+          <displayName>The Page Title</displayName>
+          <value>View Archived Reports</value>
+        </configuration>
+        <configuration name="access" values="many" type="string">
+          <displayName>Page Access</displayName>
+          <description>All of the roles that have access to this page</description>
+          <value>admin</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="form-gizmos">
+  <metadata>
+    <displayName>Form Gizmos</displayName>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <description>For Gizmos and Auto Pages</description>
+    <link>https://launchpad.net/i2ce</link>
+    <requirement name="forms">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Lists">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <enable name="tabbed-pages" />
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+  </metadata>
+  <configurationGroup name="form-gizmos" path="/">
+    <configuration name="messages" path="/modules/form-gizmos/messages" type="delimited" locale="en_US" values="many">
+      <version>4.2.0.1</version>
+      <value>view_parent:View %s</value>
+    </configuration>
+  </configurationGroup>
+</I2CEConfiguration>

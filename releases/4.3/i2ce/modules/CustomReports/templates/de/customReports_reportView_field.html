@@ -1,0 +1,20 @@
+<span>
+  <h2>Feld</h2>
+  <span id="field_content">
+    <span name="name" class="sortme" style="display:none;visibility:hidden"></span>
+    <table class="multiFormTable reportviews" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3><span name="displayName" class="sortablehandle"></span></h3>
+	  <br><input name="enabled_hide" type="hidden" value="1"><input name="enabled" type="checkbox" value="1">
+	  Aktiviert: Auswählen, um dieses Feld in der Berichtsansicht zu aktivieren
+	</td>
+	<td>
+	  Eine Methode zum Sammeln (Aggregieren) dieser Daten auswählen:
+	  <select name="aggregate"><option value="none">Keine</option><option value="count">Gesamtzahl</option><option value="count_distinct">Gesamtunterschied</option></select><div name="merge_additional_container" ifset="true">
+	    Zusätzliche Abgleichwerte auswählen:
+	    <select name="merge_additional" id="merge_additional"><option value="">Keine zusätzlichen Werte</option></select><input type="hidden" name="merge_additional_exists" value="1"></div>
+	</td>
+      </tr><tr name="merge_link_container" ifset="true"><td colspan="2" style="padding-left:2em">
+	  <span id="merges_link" class="button toggle_closed "></span><h2>Einen weiteren Bericht zusammenführen</h2>
+	  <ul id="merges_ajax"></ul></td>
+      </tr></table></span>
+<span></span></span>

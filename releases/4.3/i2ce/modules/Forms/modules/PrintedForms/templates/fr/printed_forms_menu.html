@@ -1,0 +1,27 @@
+<div id="siteContent">
+  <h2>Formulaires standardisés</h2>
+
+  <h3>Formulaires standardisés</h3>
+
+  <span ifset="!true" name="has_valid_forms">
+    Pas de de formulaire standardisé pour cet enregistrement
+  </span>
+  <span ifset="true" name="has_valid_forms">
+    <ul id="printed_forms_list"></ul></span>
+
+
+  <span type="module" ifenabled="true" name="BinField">
+    <span ifset="true" name="show_archive">
+      <h3>Formulaires standardisés archivés</h3>
+
+      <span ifset="!true" name="has_archives">
+	Aucun formulaire n'a été archivé pour cet enregistrement.
+      </span>
+      <span ifset="true" name="has_archives">
+	<span task="printed_forms_view_all_archives">
+	  <ul id="printed_forms_archive"></ul></span>
+      </span>
+    </span>
+  </span>
+
+</div>

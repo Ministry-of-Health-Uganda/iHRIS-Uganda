@@ -1,0 +1,40 @@
+<li>
+  <span name="browser_magic_data_key_label"></span> =&gt; 
+    <form method="POST" name="change_value_action">
+      <input type="hidden" name="caller"><input name="browser_magic_data_value" type="text" size="25"><input name="browser_magic_data_key" type="hidden"></form>
+    <form method="POST" name="erase_action">
+      <input type="hidden" name="caller"><input type="submit" value="Erase" onclick="if (confirm('Are you sure?')) {return true;} else {return false;}"></form>
+    <form method="POST" name="trans_action">
+      <input type="hidden" name="caller"><input type="submit" value="Toggle Translatable"></form>
+    <span class="dropdown">
+      <a href="#" class="dropdown-toggle"> Importar <b class="caret "></b> </a>
+      <ul class="dropdown-menu" style="width:40em"><li>
+	  <form method="POST" name="upload_action" enctype="multipart/form-data">
+	    <h4>Definir a partir do ficheiro:</h4>
+	    <input type="hidden" name="caller">
+	    Ficheiro de entrada:<input type="file" name="upload"><br><input type="submit" value="Upload"></form>
+	</li>
+	<li>
+	  
+	  <form method="POST" name="load_action" enctype="multipart/form-data">
+	    <h4>Cargar desde unha folla de cálculo:</h4>
+	    <input type="hidden" name="caller">
+	    Ficheiro de entrada:<input type="file" name="csv"><br>
+	    URL de entrada:<input type="text" name="csv_url"><br>
+	    Transformar o ficheiro:<input type="file" name="transform"><br>
+	    Transformación rexistrada:<select name="transform_key"><option value="">Seleccionar unha transformación rexistrada</option></select><br><input type="checkbox" value="1">Eliminar ao cargar 
+	    <br><input type="submit" value="Upload"></form>
+	</li>
+	<li>
+	  <form method="POST" name="load_action" enctype="multipart/form-data">
+	    <h4>Cargar desde o XML:</h4>
+	    <input type="hidden" name="caller">
+	    Ficheiro de entrada:<input type="file" name="xml"><br>
+	    URL de entrada:<input type="file" name="xml_url"><br>
+	    Transformar o ficheiro:<input type="file" name="transform"><br>
+	    Transformación rexistrada:<select name="transform_key"><option value="">Seleccionar unha transformación rexistrada</option></select><br><input type="checkbox" value="1">Eliminar ao cargar 
+	    <br><input type="submit" value="Upload"></form>
+	</li>
+      </ul></span>
+</li>
+

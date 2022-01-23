@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="web-services" path="/modules/web-services">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="web-services" path="/modules/web-services" locale="pt_BR">
+    <version>4.3.0.1</version>
+    <configurationGroup name="messages" locale="pt_BR">
+      <configuration name="unknown_error" values="single" type="string">
+        <value>Ocorreu um erro desconhecido.</value>
+      </configuration>
+      <configuration name="noaccess" values="single" type="string">
+        <value>Você não tem acesso a esse serviço. Por favor logue primeiro ou contate o administrador.</value>
+      </configuration>
+      <configuration name="noaccess_page" values="single" type="string">
+        <value>Você não tem acesso ao serviço '%s'.</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

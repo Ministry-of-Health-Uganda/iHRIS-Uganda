@@ -1,0 +1,39 @@
+<div>
+  Here you may  select the locales that you wish to make available for
+  users to select for your site.  The default fallback locale for the
+  site is <span name='locale_default_name'/> (<span name='locale_default'/>).
+  <span id='locales_container'>
+    <ul id='locale_list'>
+    </ul>
+
+
+    <span name='has_def_locale' ifset='true'>
+
+      <h2 id='add_def_locale_link' class='add_def_locale_options_toggle'><a>Select Available Locale</a></h2>
+      <div id='add_def_locale_options_menu' class='optionsMenu optionsMenuWide toggable' >
+	<div class='optionsMenuTitle'>Select Available Locale </div>
+
+	<h3>Available Locales:</h3>
+	Select a locale for your system
+	<select name='def_locale' id='def_locale'>
+	  <option>Select Locale</option>
+	</select>
+	<br/>
+	<span class='add_def_locale_options_hide window_hide button optionsMenuButton'>Close</span>
+	<input type='submit' class='button only_options_menu' value='Select' id='add_def_locale' />
+      </div>
+    </span>
+    
+    <h2 id='add_locale_link' class='add_locale_options_toggle'><a>Add A New Locale</a></h2>
+    <div id='add_locale_options_menu' class='optionsMenu optionsMenuWide toggable' >
+      <div class='optionsMenuTitle'>Add A New Locale </div>
+
+      <h3>Custom Locale:</h3>
+      You may enter a custom locale to be made available to your system.
+      <input id='new_locale' name='new_locale' type='text'   value='' class='validate=[magicdatakey,notinlist,simple_locale]'/>
+      <br/>
+      <span class='add_locale_options_hide window_hide button optionsMenuButton'>Close</span>
+      <input type='submit' class='button only_options_menu' value='Add' id='add_locale' />
+    </div>
+  </span>
+</div>

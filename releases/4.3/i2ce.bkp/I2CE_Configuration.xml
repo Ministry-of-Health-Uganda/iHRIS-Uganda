@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="I2CE">
+  <metadata>
+    <displayName>I2CE Basic System</displayName>
+    <className>I2CE_Module_Core</className>
+    <category>Base System Component</category>
+    <description>The I2CE Core System Configuration</description>
+    <longDescription>I2CE is a PHP framework used in the iHRIS Suite. It provides storage abstraction, Javascript handlers, and more.</longDescription>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.3.0</version>
+    <path name="misc">
+      <value>./I2CE_config.inc.php</value>
+      <value>./I2CE_structure.sql</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="sql">
+      <value>./sql</value>
+    </path>
+    <priority>0</priority>
+    <requirement external="1" name="PHP">
+      <atLeast version="5.2.6" />
+    </requirement>
+    <requirement external="1" name="PHP-CLI">
+      <atLeast version="5.2.6" />
+    </requirement>
+    <requirement external="1" name="PECL:APC">
+      <atLeast version="0" />
+    </requirement>
+    <requirement external="1" name="PHP-MySQL">
+      <!-- Not technically required since we could use PG or SQLite, but mysql is hard-coded for now.-->
+      <atLeast version="0" />
+    </requirement>
+    <requirement external="1" name="PHP-Tidy">
+      <atLeast version="0" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="I2CE" path="/I2CE">
+    <displayName>I2CE</displayName>
+    <description>Configuration options for the core engine</description>
+    <status>advanced:true</status>
+    <status>required:true</status>
+    <configurationGroup name="fileSearch">
+      <displayName>File Search</displayName>
+      <configuration name="stale_time" values="single" type="string">
+        <displayName>Stale Time</displayName>
+        <description>The time in seconds until a file found in the file search utility is considered stale. If stale, it will search for the file, if not stale, it will use the previously found location of the file (it will cache the file location). If negative, then we do not cache the file location.</description>
+        <status>required:true</status>
+        <status>validate:integer</status>
+        <value>60</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="update">
+      <displayName>Update System</displayName>
+      <configurationGroup name="times">
+        <displayName>Times</displayName>
+        <description>Various times that affect the configuration</description>
+        <configuration name="stale" values="single" type="string">
+          <displayName>Stale Time</displayName>
+          <description>The time in seconds we wait until we check that the configuration files for the system and the modules are up to date. Defaults to 10. If negative, we check the system files on each page request</description>
+          <status>required:true</status>
+          <value>10</value>
+        </configuration>
+        <configuration name="update_timeout" values="single" type="string">
+          <displayName>Update Time</displayName>
+          <description>The time in minutes we wait until we consider an update to have failed and reset the status to done up to date. Defaults to 10. If negative, we dont have a time out</description>
+          <version>3.2.3</version>
+          <status>required:true</status>
+          <value>-1</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

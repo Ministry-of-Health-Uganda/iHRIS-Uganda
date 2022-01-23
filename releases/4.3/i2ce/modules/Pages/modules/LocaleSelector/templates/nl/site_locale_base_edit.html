@@ -1,0 +1,25 @@
+<div>
+  Hier kunt u de talen selecteren die u beschikbaar wilt maken voor gebruikers van uw site. De standaardtaal voor uw site is <span name="locale_default_name"></span> (<span name="locale_default"></span>).
+  <span id="locales_container">
+    <ul id="locale_list"></ul><span name="has_def_locale" ifset="true">
+
+      <h2 id="add_def_locale_link" class="add_def_locale_options_toggle"><a>Beschikbare landinstellingen selecteren</a></h2>
+      <div id="add_def_locale_options_menu" class="optionsMenu optionsMenuWide toggable">
+	<div class="optionsMenuTitle">Beschikbare landinstellingen selecteren </div>
+
+	<h3>Beschikbare landinstellingen:</h3>
+	Selecteer een landinstelling voor uw systeem
+	<select name="def_locale" id="def_locale"><option>Landinstellingen selecteren</option></select><br><span class="add_def_locale_options_hide window_hide button optionsMenuButton">Sluiten</span>
+	<input type="submit" class="button only_options_menu" value="Select" id="add_def_locale"></div>
+    </span>
+    
+    <h2 id="add_locale_link" class="add_locale_options_toggle"><a>Nieuwe locale toevoegen</a></h2>
+    <div id="add_locale_options_menu" class="optionsMenu optionsMenuWide toggable">
+      <div class="optionsMenuTitle">Nieuwe locale toevoegen </div>
+
+      <h3>Aangepaste landinstellingen:</h3>
+      U kunt aangepaste landinstellingen beschikbaar maken in uw systeem.
+      <input id="new_locale" name="new_locale" type="text" value="" class="validate=[magicdatakey,notinlist,simple_locale]"><br><span class="add_locale_options_hide window_hide button optionsMenuButton">Sluiten</span>
+      <input type="submit" class="button only_options_menu" value="Add" id="add_locale"></div>
+  </span>
+</div>

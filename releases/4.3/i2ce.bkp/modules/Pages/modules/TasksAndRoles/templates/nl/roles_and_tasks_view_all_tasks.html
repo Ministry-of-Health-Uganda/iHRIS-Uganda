@@ -1,0 +1,21 @@
+<div id="siteContent">
+  <h1>Taken beheren</h1>
+  <h2>Bestaande taken</h2>
+  <ul id="task_list"></ul><form method="post" action="tasks-roles/tasks" id="add_user_task">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Nieuwe taak toevoegen
+	</th>
+      </tr><tr><td>
+	  <label>De korte naam van de taak:</label> Een korte naam die bestaat uit letters, cijfers, -, _ en . die wordt gebruikt om te verwijzen naar de taak in pagina's en sjablonen.
+	</td>
+	<td>
+	  <input type="text" id="task_short_name" name="task_short_name" class="validate=[notinlist,nonempty,magicdatakey]"></td>
+      </tr><tr><td>
+	  <label>Taakomschrijving:</label> Een korte beschrijving van deze taak.
+	</td>
+	<td>
+	  <input type="text" name="task_description" class="validate=[nonempty]"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Create"></td>
+      </tr></table></form>
+</div>

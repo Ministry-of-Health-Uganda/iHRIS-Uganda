@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="tasks-roles">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="tasks-roles" locale="pt">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="pt">
+      <configuration name="tasks_and_roles_can_access" values="single" type="string">
+        <value>Permite acesso mínimo ao Sistema de Gestão de Tarefas e de Papéis</value>
+      </configuration>
+      <configuration name="tasks_and_roles_can_edit_tasks" values="single" type="string">
+        <value>Permite acesso com direitos de edição do Sistema de Gestão de Tarefas</value>
+      </configuration>
+      <configuration name="tasks_and_roles_can_edit_roles" values="single" type="string">
+        <value>Permite acesso com direitos de edição do Sistema de Gestão de Papéis</value>
+      </configuration>
+      <configuration name="tasks_and_roles_admin" values="single" type="string">
+        <value>Permite acesso total ao Sistema de Gestão de Tarefas e Papéis</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="roles">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pt" type="string">
+            <value>Administrar Papéis</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="tasks">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pt" type="string">
+            <value>Administrar Tarefas</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pt" type="string">
+            <value>Administrar Tarefas e Papéis</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

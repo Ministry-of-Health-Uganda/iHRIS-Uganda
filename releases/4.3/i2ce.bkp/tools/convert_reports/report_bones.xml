@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name='ihris-manage-report-staff-current'>     
+  <metadata>
+    <displayName></displayName>
+    <className></className>
+    <category>Reports</category>
+    <description></description>
+    <version>3.0.0</version>
+    <requirement name='ihris-manage-reports'>   
+      <atLeast version='3.0'/>
+      <lessThan version='3.1'/>
+    </requirement>
+    <path name='templates'> 
+      <value>./templates</value> 
+    </path>
+  </metadata>
+  <configurationGroup name='ihris-manage-report-staff-current' path='/modules/report/types/staff_current'>
+    <displayName>Current Staff</displayName>
+    <configuration name='display_name' values='single'>
+      <displayName>Display Name</displayName>
+      <description>The display name for this report</description>
+      <status>required:true</status>
+      <value></value>
+    </configuration>
+    
+    <configurationGroup name='primary'> 
+      <displayName>Main field</displayName>
+      <description>Information about the main field for this report type</description>
+      <configuration name='form' values='single'>
+	<displayName>Form name</displayName>
+	<status>required:true</status>
+	<value></value>
+      </configuration>
+      <configuration name='field' values='single'>
+	<displayName>field name</displayName>
+	<status>required:true</status>
+	<value></value>
+      </configuration>     
+      <configuration name='usesParent' values='single'>
+	<displayName>Parent</displayName>
+	<description>Set to say if and how the parent id should be used -- valid values: not set, 'primary','secondary'</description>
+	<status>required:false</status>
+      </configuration>
+    </configurationGroup> <!-- primary-->
+    
+    <configuration name='displays' values='many'>
+      <displayName>Displays</displayName>
+      <description>The displays used for this report type</description>
+      <status>required:false</status>
+      <value>default</value>
+    </configuration>
+    
+    
+    <configurationGroup name='forms'>
+      <displayName>Forms</displayName>
+      <description>The forms used by this report type</description>
+    </configurationGroup> <!--forms-->
+    
+
+    <configurationGroup name='limits'>
+      <displayName> Report Limits</displayName>
+      <configurationGroup name='fields'>
+	<displayName>Fields</displayName>
+	<description>All the fields used for report limit</description>
+      </configurationGroup>
+      <configuration name='limit_forms' values='many'>
+	<displayName>Limit Forms</displayName>
+	<description>     All the forms that are needed by the limit object to limit the results of this report.</description>
+      </configuration>
+      <configurationGroup name='limit_match'>
+	<displayName>Limit Match</displayName>
+	<description>The mapping of post fields to fields in the report cache to limit results.</description>
+      </configurationGroup>
+    </configurationGroup> <!-- limits-->
+    
+    
+    
+    
+    <configurationGroup name='reports'>
+      <displayName>Reports</displayName>
+      <description>The available reports for this report type</description>      
+    </configurationGroup>
+    
+  </configurationGroup>
+</I2CEConfiguration>

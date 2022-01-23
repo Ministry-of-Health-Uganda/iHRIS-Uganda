@@ -1,0 +1,31 @@
+<div id="sql_function">
+  Funkce SQL <span name="name"></span>
+  <span name="description" ifset="true">
+    --
+    <span name="description"></span>
+  </span>
+  <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0" id="reporting_function"><tr><td>
+	<h3>Dotaz Sql:</h3> Určující SQL pro tuto funkci. Na ohlášená pole odkazujete jako `reportform+field`
+      </td>
+      <td>
+	<span name="qry"></span>
+      </td>
+    </tr><tr><td> 
+	<h3>Pole formuláře:</h3> Pole formuláře, z kterého tato funkce bere hodnoty
+      </td>
+      <td>
+	<span name="formfield"></span>
+      </td>
+    </tr><tr><td>
+	<h3>Volitelné formuláře</h3>Formuláře, které jsou zvolitelné pro toto pole. Týká se pouze pokud je pole formuláře podtřídou I2CE_FormField_MAPPED. V takovém případě by to měl být čárkou oddělený seznam formulářů.
+      </td>
+      <td>
+	<span name="select_forms"></span>
+      </td>
+    </tr><tr><td>
+	<h3>Propojené formuláře</h3>Pole, která jsou propojena při výpisu možností. Platí pouze pokud je pole formuláře podtřída I2CE_FormField_MAPPED. Mělo by být čárkou oddělený seznam 'forms' nebo 'form+linkfield'. Příklad: "county:district+region:[region]:country".
+      </td>
+      <td>
+	<span name="link_fields"></span>
+      </td>
+    </tr></table></div>

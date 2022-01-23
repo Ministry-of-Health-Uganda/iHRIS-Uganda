@@ -1,0 +1,36 @@
+<div>
+  <span name="functions_container" id="functions_container"> 
+    <span id="reporting_functions_container">
+      <span name="has_existing_functions" ifset="true">
+	<h2>Existující funkce</h2>
+	<ul id="existing_functions_list"></ul></span>
+      <h2 id="new_function_link" class="new_function_options_toggle"><a>Přidat novou funkci</a></h2>
+      <div id="new_function_options_menu" class="optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true">
+	<div class="optionsMenuTitle window_drag">Přidat novou funkci</div>
+	<table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	      <h3>Název funkce:</h3>Název této funkce, aby mohla být odkazována při vytváření hlášení.
+	    </td>
+	    <td>
+	      <input type="text" name="name" id="function_name" value="" class="validate=[nonempty,notinlist,alphanumericextended,magicdatakey]"></td>
+	  </tr><tr><td>
+	      <h3>Dotaz Sql:</h3> Určující SQL pro tuto funkci. Na formulář odkazujete pomocí názvu &lt;názevformuláře&gt; a pole &lt;pole&gt; ' &lt;názevformuláře&gt;+&lt;pole&gt; ve Vaší funkci.
+	    </td>
+	    <td>
+	      <textarea rows="4" cols="53" name="qry" class="validate=[nonempty]"></textarea></td>
+	  </tr><tr><td>
+	      <h3>Popis:</h3> Popis této funkce, který je zobrazen koncovému uživateli
+	    </td>
+	    <td>
+	      <textarea type="text" name="description" rows="4" cols="53"></textarea></td>
+	  </tr><tr><td colspan="2"> 
+	      <h3>Pole formuláře:</h3> Vyberte pole formuláře, z kterého tato funkce bere hodnoty
+	      <select name="formfield"></select></td>
+	  </tr><tr><td colspan="2">
+	      <div></div>
+	      <span class="new_function_options_hide button optionsMenuButton window_hide">Zavřít</span>
+	      <input type="submit" class="button only_options_menu " value="Create" id="new_function"><div></div>
+	      <br></td>
+	  </tr></table></div>
+    </span>
+  </span>
+</div>

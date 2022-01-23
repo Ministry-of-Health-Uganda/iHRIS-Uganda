@@ -1,0 +1,17 @@
+<span>
+  <span name="displayName"></span> --  <span name="description"></span>
+  <span name="locale_container">   
+    <h3>Підбір локалі:</h3>  
+    <div>
+      Список локалей, перспективних для перекладу <span name="displayName"></span>. Якщо не встановлено, то вибрана локаль перевіряється, потім її базова мова, а потім <span name="locale_default"></span>.
+    </div>
+    <div>
+      Типовою мовою є <span name="displayName"></span>,  <span name="locale_language"></span>, <span name="locale_default"></span>.
+    </div>
+    <div>
+      Якщо ви бажаєте вказати альтернативний підбір мови, то ви можете зробити це, ввівши їх як відокремлений комами список від найвищого до найнижчого пріоритету.  
+      <span printf="'Наприклад fr-RW, fr-FR, %s  може бути відповідним рішенням для локалі fr-RW.',$locale_default"></span>
+      <span printf="'Якщо %s не вказана у списку, то вона автоматично встановлюється як мова з найнижчим пріоритетом.',$locale_default"></span>
+    </div>
+    <input name="resolution" type="textbox"></span>
+</span>

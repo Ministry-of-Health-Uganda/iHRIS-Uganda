@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports_Visualization">
+  <metadata>
+    <displayName>Visualization</displayName>
+    <category>Report Type</category>
+    <description>Configuration options for reports that use the Google Visualization framework</description>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <link>https://launchpad.net/i2ce</link>
+    <requirement name="CustomReports">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+  </metadata>
+  <configurationGroup name="CustomReports_Visualization" path="/modules/CustomReports/displays/Visualization">
+    <displayName>Visualization Reports</displayName>
+    <version>4.2.0.1</version>
+    <configuration name="class" values="single" type="string">
+      <displayName>Display Class</displayName>
+      <description>The class that handles this display</description>
+      <value>I2CE_CustomReport_Display_Visualization</value>
+    </configuration>
+    <configurationGroup name="Datasource" path="/modules/CustomReports/displays/Datasource">
+      <configuration name="class" values="single" type="string">
+        <displayName>Display Class</displayName>
+        <description>The class that handles this display</description>
+        <value>I2CE_CustomReport_Display_Datasource</value>
+      </configuration>
+      <configuration name="hide_with_default" type="boolean" values="single">
+        <value>true</value>
+      </configuration>
+    </configurationGroup>
+    <configuration name="error_message" locale="en_US" values="single" type="string">
+      <displayName>Error Message</displayName>
+      <description>The error message to display when there is no valid chart data.</description>
+      <value>No data has been found for this report. Please make sure the report data has been cached or modify your limits.</value>
+    </configuration>
+    <configuration name="invalid_message" locale="en_US" values="single" type="string">
+      <value>No valid display could be found for this visualization. Please contact your administrator.</value>
+    </configuration>
+    <configuration name="invalid_fields" locale="en_US" values="single" type="string">
+      <value>An invalid number of fields were selected to display. Please contact your administrator.</value>
+    </configuration>
+    <configurationGroup name="display_options">
+      <displayName>Default Options</displayName>
+      <description>Default display options for Visualization</description>
+      <status>required:false</status>
+      <configurationGroup name="global_options">
+        <displayName>Global Visualization Options</displayName>
+        <configuration name="global_options" values="many" type="delimited" path="./">
+          <displayName>Global Options</displayName>
+          <value>height:350</value>
+          <value>width:590</value>
+        </configuration>
+        <configuration name="colors" values="many" type="string">
+          <value>99cc00</value>
+          <value>6666cc</value>
+          <value>339933</value>
+          <value>00cc99</value>
+          <value>ff9900</value>
+          <value>003399</value>
+          <value>999999</value>
+          <value>99ff66</value>
+          <value>cc3366</value>
+          <value>6633cc</value>
+          <value>cc9966</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="styles">
+        <displayName>Chart Styles</displayName>
+        <configurationGroup name="Pie">
+          <displayName>Simple Pie Chart</displayName>
+          <description>A simple Pie Chart</description>
+          <configuration name="display_name" locale="en_US" values="single" type="string">
+            <displayName>Display</displayName>
+            <description>The name displayed when selecting this view</description>
+            <value>Pie Chart</value>
+          </configuration>
+          <configuration name="visualization_class" values="single" type="string">
+            <displayName>Google Visualization Class</displayName>
+            <description>The Google visualization class for this style</description>
+            <value>PieChart</value>
+          </configuration>
+          <configuration name="visualization_type_options" values="many" type="string">
+            <displayName>Visualization Type</displayName>
+            <description>The types of data this chart can view</description>
+            <value>one_row_numeric</value>
+            <value>one_row_count</value>
+            <value>one_row_total</value>
+          </configuration>
+          <configurationGroup name="visualization_options">
+            <displayName>Chart Options for the Pie Chart</displayName>
+            <description>Available options can be found here: https://google-developers.appspot.com/chart/interactive/docs/gallery/piechart#Configuration_Options</description>
+            <configuration name="is3D" type="boolean" values="single">
+              <value>true</value>
+            </configuration>
+            <configuration name="pieSliceText" values="single" type="string">
+              <value>label</value>
+            </configuration>
+            <configuration name="sliceVisibilityThreshold" values="single" type="string">
+              <value>0.01388889</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="Bar">
+          <displayName>Simple Bar Chart</displayName>
+          <description>A simple Bar Chart</description>
+          <configuration name="display_name" locale="en_US" values="single" type="string">
+            <displayName>Display</displayName>
+            <description>The name displayed when selecting this view</description>
+            <value>Bar Chart</value>
+          </configuration>
+          <configuration name="visualization_class" values="single" type="string">
+            <displayName>Google Visualization Class</displayName>
+            <description>The Google visualization class for this style</description>
+            <value>BarChart</value>
+          </configuration>
+          <configuration name="visualization_type_options" values="many" type="string">
+            <displayName>Chart Type</displayName>
+            <description>The types of data this chart can view</description>
+            <value>one_row_numeric</value>
+            <value>one_row_count</value>
+            <value>one_row_total</value>
+            <value>multi_row_numeric</value>
+            <value>multi_row_count</value>
+            <value>multi_row_total</value>
+          </configuration>
+          <configurationGroup name="visualization_options">
+            <displayName>Chart Options for the Bar Chart</displayName>
+            <description>Available options can be found here: https://google-developers.appspot.com/chart/interactive/docs/gallery/barchart#Configuration_Options</description>
+            <configuration name="vAxis" type="delimited" values="single">
+              <value>title:1</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="Column">
+          <displayName>Column Chart</displayName>
+          <description>A simple Vertical Bar Chart</description>
+          <configuration name="display_name" locale="en_US" values="single" type="string">
+            <displayName>Display</displayName>
+            <description>The name displayed when selecting this view</description>
+            <value>Column Chart</value>
+          </configuration>
+          <configuration name="visualization_class" values="single" type="string">
+            <displayName>Google Visualization Class</displayName>
+            <description>The Google visualization class for this style</description>
+            <value>ColumnChart</value>
+          </configuration>
+          <configuration name="visualization_type_options" values="many" type="string">
+            <displayName>Chart Type</displayName>
+            <description>The types of data this chart can view</description>
+            <value>one_row_numeric</value>
+            <value>one_row_count</value>
+            <value>one_row_total</value>
+            <value>multi_row_numeric</value>
+            <value>multi_row_count</value>
+            <value>multi_row_total</value>
+          </configuration>
+          <configurationGroup name="visualization_options">
+            <displayName>Chart Options for the Column Chart</displayName>
+            <description>Available options can be found here: https://google-developers.appspot.com/chart/interactive/docs/gallery/columnchart#Configuration_Options</description>
+            <configuration name="hAxis" type="delimited" values="single">
+              <value>title:1</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

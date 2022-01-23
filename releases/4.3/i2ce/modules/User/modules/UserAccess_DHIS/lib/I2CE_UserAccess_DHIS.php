@@ -312,7 +312,7 @@ class I2CE_UserAccess_DHIS extends I2CE_UserAccess_Mechanism {
                 . ' WHERE p.username  = ? AND a.role IS NOT NULL AND LENGTH(a.role) > 0 ';
             try {
                 $row = I2CE_PDO::getRow( $qry, array( $username ) );
-                if (!$row || !$row->num) {
+                if (!$row instanceof PDORow || !$row->num) {
                     return false;
                 }
                 return ($row->num > 0);
@@ -336,7 +336,7 @@ class I2CE_UserAccess_DHIS extends I2CE_UserAccess_Mechanism {
             . ' WHERE p.username  = ? ';
         try {
             $row = I2CE_PDO::getRow( $qry, array( $username ) );
-            if (!$row || !$row->id) {
+            if (!$row instanceof PDORow || !$row->id) {
                 return false;
             }
             return $row->id;
@@ -384,7 +384,7 @@ class I2CE_UserAccess_DHIS extends I2CE_UserAccess_Mechanism {
             . ' WHERE p.userid  = ? ';
         try {
             $row = I2CE_PDO::getRow( $qry, array( $userid ) );
-            if (!$row || !$row->username || $row->username=='0') {
+            if (!$row instanceof PDORow || !$row->username || $row->username=='0') {
                 return false;
             }
             return $row->username;
@@ -452,7 +452,7 @@ class I2CE_UserAccess_DHIS extends I2CE_UserAccess_Mechanism {
             'password = ? )' ;
         try {
             $row = I2CE_PDO::getRow( $qry, array( $username,$this->encryptPassword($password) ) );                
-            if (!$row ) {
+            if (!$row instanceof PDORow) {
                 return false;
             }
             return ($row->num == 1);        

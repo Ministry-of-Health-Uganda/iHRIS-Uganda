@@ -1,0 +1,46 @@
+<div>
+  <span name="has_existing_relationships" ifset="true">
+    Puoi anche modificare una esistente relationship del form, o costruirne una nuova.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    You may construct an existing form relationship with this page.  
+  </span>
+  <span name="has_existing_relationships" ifset="true">
+    <h2>Modifica una relationship esistente</h2>
+    <ul id="relationships" class="formRelationship_relationship_list"></ul></span>
+  <h2>Costruisci una nuova relationship</h2>
+  <span name="has_existing_relationships" ifset="true">
+    Please select either a form to use as the primary form for this form relationship or choose
+    to copy an existing form relationship to a new one by clicking on the appropriate Options link below.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    Please select  a form to use as the primary form for this form relationship by clicking on the
+    Options link below.
+  </span>
+  <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	<h3>Nome corto della relationship:</h3>An internal key used to identify the form relationship.  It may not be the
+	same as the key for any of the existing form relationships.
+      </td>
+      <td>
+	<input id="relationship" name="relationship" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+    </tr><tr><td>
+	<h3>Nome visualizzato:</h3>Il nome della form relationship visualizzato dall'utente finale
+      </td>
+      <td>
+	<input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+    </tr><tr><td>
+	<h3>Descrizione:</h3>Una descrizione della form relationship che sia comprensibile all'utente finale.
+      </td>
+      <td>
+	<textarea name="description" rows="4" cols="53" value=""></textarea></td>
+    </tr><tr><td>
+	Per costruire una nuova form relationship, devi scegliere per prima cosa un Form primario
+	<select name="form_name" id="form_name"></select></td>
+      <td id="formRelationship_relationship_new_menu_list">
+      </td>
+    </tr><tr name="has_existing_relationships" ifset="true"><td>
+	Seleziona una relationship da copiare.
+	<select name="existing_relationship" id="existing_relationship"><option value="">Non copiare</option></select></td>
+      <td id="formRelationship_relationship_copy_menu_list">
+      </td>
+    </tr></table></div>

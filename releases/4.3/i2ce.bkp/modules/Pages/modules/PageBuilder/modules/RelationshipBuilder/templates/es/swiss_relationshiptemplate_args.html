@@ -1,0 +1,84 @@
+<div>
+  
+
+  <h2>Argumentos de la página</h2>
+  <div id="args_container">
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Título:</h3>El nombre para mostrar del formulario principal
+	</td>
+	<td>
+	  <input name="title"></td>
+      </tr><tr><td>
+	  <h3>Tareas:</h3>Tarea opcional para limitar el acceso a esta página.
+	</td>
+	<td>
+	  <select name="task"><option value="">Ninguna tarea seleccionada</option></select></td>
+      </tr></table><h2>Opciones de relación</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Relación:</h3>La relación de la plantilla se basa en
+	</td>
+	<td>
+	  <select name="relationship"><option value="">Ninguna relación seleccionada</option></select><br><span name="has_relationship" ifset="true"><a name="relationship_link">Editar relación</a></span>
+	</td>
+      </tr><tr><td>
+	  <h3>Usar caché:</h3>Usa el cache en tablas hippo al exportar datos en la relación
+	</td>
+	<td>
+	  <select name="use_cache"><option value="1">Sí</option><option value="0">No</option></select></td>
+      </tr><tr><td>
+	  <h3>Relación de cabecera:</h3>Relación opcional para la cabecera de la plantilla. Debe tener el mismo formulario principal como la relación principal. 
+	</td>
+	<td>
+	  <select name="header_relationship"><option value="">Ninguna relación seleccionada</option></select><br><span name="has_header_relationship" ifset="true"><a name="header_relationship_link">Editar relación</a></span>
+	  
+	</td>
+      </tr></table><h2>Opciones de plantilla ODT</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Plantilla ODT:</h3>Seleccionar o cargar una plantilla ODT
+	</td>
+	<td>
+	  <input name="do_upload" value="1" type="checkbox">Subir un archivo <input name="upload" type="file"><span name="has_download" ifset="true"><a name="download_link">Descargar</a></span>
+	  <hr><input name="do_select" value="1" type="checkbox">Seleccionar plantilla existente <select name="select"></select><br><span name="has_template" ifset="true"><a name="template_link">Descargar plantilla</a></span>
+	</td>
+      </tr><tr><td>
+	  <h3>Estilo de segmento de plantilla</h3>Controla cómo múltiples filas de datos se aplican a la plantilla. "Global" significa que toda la plantilla ODT se repite. "Informar fila" significa que hay una esperada <pre> [!-- BEGIN report_row --] El contenido va aquí [!-- END report_row --]</pre>sección en la plantilla ODT utilizada para cada fila de datos.
+	</td>
+	<td>
+	  <select name="segment_style"><option value="global">Global</option><option value="report_row">Informar fila</option></select></td>
+      </tr><tr><td>
+	  <h3>Ruptura de segmento</h3>Romper para utilizar entre las filas
+	</td>
+	<td>
+	  <select name="segment_break"><option value="page">Página</option><option value="line">Línea</option></select></td>
+      </tr></table><h2>Opciones de conversión de plantilla</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Formato</h3>Formato de salida. El formato predeterminado es ODT. Si deseas otros formatos, necesitarás tener instalado unoconv.
+	</td>
+	<td>
+	  <select name="format"><option value="">Formato predeterminado (archivo ODT)</option></select></td>
+      </tr><tr><td>
+	  <h3>Opciones de exportación</h3>Opciones de exportación para aplicar a UnoConv. Las opciones disponibles dependen del formato de exportación (p. ej. pdf) que estás usando.  
+	</td>
+	<td>
+	  <input name="export_options"></td>
+      </tr><tr><td>
+	  <h3>Opciones de conexión</h3>Detalles de la conexión para la ejecución de unoconv en el servidor remoto.
+	</td>
+	<td>
+	  <input name="connection"></td>
+      </tr><tr><td>
+	  <h3>UnoConv Temporary Directory</h3>Specify the temporary directory to process unoconv in.  Intended for use with remotely mounted drives.
+	</td>
+	<td>
+	  <input name="tmp_dir"></td>
+      </tr></table><span id="fields">
+      <h2><a id="fields_link" href="">Campos obligatorios</a></h2>
+      Si un campo obligatorio no está establecido, la plantilla no se generará.
+      <div class="indented" id="fields_ajax">
+      </div>
+    </span>
+    
+  </div>
+
+
+</div>

@@ -1,0 +1,21 @@
+<div id="siteContent">
+  <h1>Anwendergruppen verwalten</h1>
+  <h2>Vorhandene Anwendergruppen</h2>
+  <ul id="role_list"></ul><form method="post" action="tasks-roles/roles" id="add_user_role">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Eine neue Anwendergruppe hinzufügen
+	</th>
+      </tr><tr><td>
+	  <label>Kurzbezeichnung der Anwendergruppe:</label> Eine aus Buchstaben, Nummern, -, . und _ bestehende Kurzbezeichnung, die genutzt werden soll, um auf Seiten und Vorlagen auf die Anwendergruppe zu verweisen.
+	</td>
+	<td>
+	  <input type="text" id="role_short_name" name="role_short_name" class="validate=[notinlist,nonempty,magicdatakey]"></td>
+      </tr><tr><td>
+	  <label>Anzeigename der Anwendergruppe:</label> Ein Anzeigename für die Anwendergruppe, der dem Anwender angezeigt werden soll.
+	</td>
+	<td>
+	  <input type="text" name="role_name" class="validate=[nonempty]"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Create"></td>
+      </tr></table></form>
+</div>

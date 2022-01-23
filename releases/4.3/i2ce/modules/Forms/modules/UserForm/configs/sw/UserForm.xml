@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="UserForm" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="UserForm" path="/" locale="sw">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="sw">
+      <configuration name="username" path="user/username/unique" values="single" type="string"></configuration>
+      <configuration name="pass_match" path="user/password/mismatch" values="single" type="string"></configuration>
+      <configuration name="pass_match" path="user/password/required" values="single" type="string"></configuration>
+      <configuration name="role_notallowed" path="user/role/notallowed" values="single" type="string"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="sw">
+      <configuration name="users_can_edit" locale="sw" values="single" type="string">
+        <value>Weza kuongeza mtumiaji kwenye mfumo</value>
+      </configuration>
+      <configuration name="users_can_edit_all" locale="sw" values="single" type="string">
+        <value>Weza kuhariri watumiaji wote kwenye mfumo.</value>
+      </configuration>
+      <configuration name="can_create_or_edit_users" locale="sw" values="single" type="string"></configuration>
+    </configurationGroup>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <configurationGroup name="user">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw" type="string">
+            <value>Ongoza Watumiaji/Ufikiaji</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="view_user">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw" type="string">
+            <value>Ongoza Watumiaji/Ufikiaji</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="roleForm" path="/modules/forms/forms/role">
+        <configuration name="display" values="single" locale="sw" type="string">
+          <value>Wajibu</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+        <configurationGroup name="I2CE_Role">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="sw" values="single">
+                <value>default:Wajibu</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="assignable">
+              <configuration name="headers" type="delimited" locale="sw" values="single">
+                <value>default:Weza Kutoa Kwa Mtumiaji</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="homepage">
+              <configuration name="headers" type="delimited" locale="sw" values="single"></configuration>
+            </configurationGroup>
+            <configurationGroup name="trickle_up">
+              <configuration name="headers" type="delimited" locale="sw" values="single">
+                <value>default:Churuza kwenda Juu</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="I2CE_User_Form">
+          <configurationGroup name="fields">
+            <configurationGroup name="username">
+              <configuration name="headers" type="delimited" locale="sw" values="single">
+                <value>default:Mtumiaji</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="password">
+              <configuration name="headers" type="delimited" values="many" locale="sw">
+                <value>default:Nywila (usijaze ili nywila ile ile iendelee kutumika)</value>
+                <value>generate:Andika Nywila Mpya</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="role">
+              <configuration name="headers" type="delimited" locale="sw" values="single">
+                <value>default:Wajibu</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

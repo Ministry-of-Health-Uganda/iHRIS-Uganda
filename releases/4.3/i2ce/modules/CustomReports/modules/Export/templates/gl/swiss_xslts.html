@@ -1,0 +1,26 @@
+<div>
+  <span id="xslt_content">
+    <span name="has_existing_xslts" ifset="true">
+      <h2>Transformacións XSL existentes</h2>
+      <ul id="existing_xslt_list"></ul></span>
+    <h2 id="new_xslt_link" class="new_xslt_options_toggle"><a>Engadir un novo XSLT</a></h2>
+    <div id="new_xslt_options_menu" class="optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true">
+      <div class="optionsMenuTitle window_drag">Engadir un novo XSLT</div>
+      <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	    <h3>Nome:</h3>Un nome breve que describa esta transformación que consista unicamente en números e letras
+	  </td>
+	  <td>
+	    <input type="text" name="name" id="xslt_name" value="" class="validate=[nonempty,magicdatakey,alphanumericextented]"></td>
+	</tr><tr><td>
+	    <h3>Definición:</h3> 
+	  </td>
+	  <td>
+	    <input type="file" name="upload"></td>
+	</tr><tr><td colspan="2">
+	    <div></div>
+	    <span class="new_xslt_options_hide button optionsMenuButton window_hide">Pechar</span>
+	    <input type="submit" class="button only_options_menu " value="Create" id="new_xslt"><div></div>
+	    <br></td>
+	</tr></table></div>
+  </span>
+</div>

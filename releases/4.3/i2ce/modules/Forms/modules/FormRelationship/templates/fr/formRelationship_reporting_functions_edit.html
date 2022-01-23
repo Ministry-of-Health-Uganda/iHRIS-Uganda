@@ -1,0 +1,36 @@
+<div>
+  <span name="functions_container" id="functions_container"> 
+    <span id="reporting_functions_container">
+      <span name="has_existing_functions" ifset="true">
+	<h2>Fonctions existantes</h2>
+	<ul id="existing_functions_list"></ul></span>
+      <h2 id="new_function_link" class="new_function_options_toggle"><a>Ajouter une nouvelle fonction</a></h2>
+      <div id="new_function_options_menu" class="optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true">
+	<div class="optionsMenuTitle window_drag">Ajouter une nouvelle fonction</div>
+	<table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	      <h3>Nom de la fonction:</h3>Un nom de fonction auquel on peut se référer lors de la création de rapports.
+	    </td>
+	    <td>
+	      <input type="text" name="name" id="function_name" value="" class="validate=[nonempty,notinlist,alphanumericextended,magicdatakey]"></td>
+	  </tr><tr><td>
+	      <h3>Requête SQL:</h3> La requête SQL pour cette fonction. On se refère à un formulaire avec le nom &lt;nomdeformulaire&gt; et au champ la syntaxe `&lt;nomde formulaire&gt;+&lt;champ&gt;`
+	    </td>
+	    <td>
+	      <textarea rows="4" cols="53" name="qry" class="validate=[nonempty]"></textarea></td>
+	  </tr><tr><td>
+	      <h3>Description:</h3> Une description de cette fonction à afficher pour l’utilisateur final
+	    </td>
+	    <td>
+	      <textarea type="text" name="description" rows="4" cols="53"></textarea></td>
+	  </tr><tr><td colspan="2"> 
+	      <h3>Champ de formulaire:</h3> Sélectionner le champ de formulaire dans lequel cette fonction prend des valeurs
+	      <select name="formfield"></select></td>
+	  </tr><tr><td colspan="2">
+	      <div></div>
+	      <span class="new_function_options_hide button optionsMenuButton window_hide">Fermer</span>
+	      <input type="submit" class="button only_options_menu " value="Create" id="new_function"><div></div>
+	      <br></td>
+	  </tr></table></div>
+    </span>
+  </span>
+</div>

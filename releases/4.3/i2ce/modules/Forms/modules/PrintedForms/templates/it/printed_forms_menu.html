@@ -1,0 +1,27 @@
+<div id="siteContent">
+  <h2>Moduli Standardizzati</h2>
+
+  <h3>Genere Moduli Standardizzati</h3>
+
+  <span ifset="!true" name="has_valid_forms">
+    Nessun modulo standardizzato per questo registro
+  </span>
+  <span ifset="true" name="has_valid_forms">
+    <ul id="printed_forms_list"></ul></span>
+
+
+  <span type="module" ifenabled="true" name="BinField">
+    <span ifset="true" name="show_archive">
+      <h3>Moduli Standardizzati Archviati</h3>
+
+      <span ifset="!true" name="has_archives">
+	Nessun modulo è stato modulo archiviato per questo registro.
+      </span>
+      <span ifset="true" name="has_archives">
+	<span task="printed_forms_view_all_archives">
+	  <ul id="printed_forms_archive"></ul></span>
+      </span>
+    </span>
+  </span>
+
+</div>

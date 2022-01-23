@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="UserAccess_LDAP">
+  <metadata>
+    <displayName>User</displayName>
+    <className>I2CE_Module_UserAccess_LDAP</className>
+    <category>Base System Component</category>
+    <description>Provides LDAP User Access Mechansim</description>
+    <longDescription />
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="php5-ldap" external="1">
+      <eval>extension_loaded('ldap')</eval>
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

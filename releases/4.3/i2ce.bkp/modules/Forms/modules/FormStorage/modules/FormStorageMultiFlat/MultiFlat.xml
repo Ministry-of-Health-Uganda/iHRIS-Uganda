@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="forms-storage-multiflat">
+  <metadata>
+    <displayName>Form Storage - Multi Flat</displayName>
+    <category>Base System Component</category>
+    <description>A module that enables aggregated storage of Forms from a flat fixed database structure.</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="forms-storage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Lists">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="forms-storage-multiflat" path="/">
+    <configuration name="" path="/modules/forms/storage_options/multi_flat/componentized" values="single" type="string">
+      <version>4.0.1</version>
+      <value>1</value>
+    </configuration>
+  </configurationGroup>
+</I2CEConfiguration>

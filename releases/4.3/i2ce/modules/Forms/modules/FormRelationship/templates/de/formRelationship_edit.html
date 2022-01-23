@@ -1,0 +1,43 @@
+<div>
+  <span name="has_existing_relationships" ifset="true">
+    Du kannst entweder eine vorhandene Datenblattbeziehung anpassen oder eine neue erstellen.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    Du kannst eine vorhandene Datenblattbeziehung auf dieser Seite aufbauen.  
+  </span>
+  <span name="has_existing_relationships" ifset="true">
+    <h2>Eine vorhandene Datenblattbeziehung ansehen</h2>
+    <ul id="relationships" class="formRelationship_relationship_list"></ul></span>
+  <h2>Eine neue Datenblattbeziehung erstellen</h2>
+  <span name="has_existing_relationships" ifset="true">
+    Bitte entweder ein Datenblatt als primäres Datenblatt für diese Datenblattbeziehung auswählen oder kopiere eine vorhandene Datenblattbeziehung in die neue Datenblattbeziehung, indem Du unten auf den entsprechenden Link bei den Optionen klickst.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    Bitte ein Datenblatt als primäres Datenblatt für diese Datenblattbeziehung auswählen indem Du oben auf den Link zu den Optionen klickst.
+  </span>
+  <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	<h3>Datenblattbeziehungskurzname:</h3>Ein interner Schlüssel der zur Identifizierung der Datenblattbeziehung genutzt wird. Er darf nicht einem der Schlüssel für vorhandene Datenblätter dieser Datenblattbeziehung entsprechen.
+      </td>
+      <td>
+	<input id="relationship" name="relationship" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+    </tr><tr><td>
+	<h3>Anzeigename:</h3>Der Name der Datenblattbeziehung, der dem Anwender angezeigt wird.
+      </td>
+      <td>
+	<input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+    </tr><tr><td>
+	<h3>Beschreibung:</h3>Eine Beschreibung der Datenblattbeziehung, die dem Anwender verständlich sein sollte.
+      </td>
+      <td>
+	<textarea name="description" rows="4" cols="53" value=""></textarea></td>
+    </tr><tr><td>
+	Um eine neue Datenblattbeziehung aufzubauen, muss zunächst ein primäres Datenblatt ausgewählt werden.
+	<select name="form_name" id="form_name"></select></td>
+      <td id="formRelationship_relationship_new_menu_list">
+      </td>
+    </tr><tr name="has_existing_relationships" ifset="true"><td>
+	Eine vorhandene Datenblattbeziehung zum Kopieren auswählen.
+	<select name="existing_relationship" id="existing_relationship"><option value="">Nicht kopieren</option></select></td>
+      <td id="formRelationship_relationship_copy_menu_list">
+      </td>
+    </tr></table></div>

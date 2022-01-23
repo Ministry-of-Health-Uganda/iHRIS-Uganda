@@ -1,0 +1,36 @@
+<li>
+  <span name="browser_magic_data_key_label"></span> =&gt; 
+  <a name="browser_magic_data_value_binary_link">Download Binary File</a>
+  <form method="POST" name="erase_action">
+    <input type="hidden" name="caller"><input type="submit" value="Erase" onclick="if (confirm('Are you sure?')) {return true;} else {return false;}"></form>
+  <span class="dropdown">
+    <a href="#" class="dropdown-toggle"> Angkatin <b class="caret "></b> </a>
+    <ul class="dropdown-menu" style="width:40em"><li>
+	<form method="POST" name="upload_action" enctype="multipart/form-data">
+	  <h4>Itakda Mula Sa Talaksan:</h4>
+	  <input type="hidden" name="caller">
+	  Talaksan Ng Pagpapasok:<input type="file" name="upload"><br><input type="submit" value="Upload"></form>
+      </li>
+      <li>	  
+	<form method="POST" name="load_action" enctype="multipart/form-data">
+	  <h4>Ikarga Mula Sa Pilas Ng Latag:</h4>
+	  <input type="hidden" name="caller">
+	  Talaksan Ng Pagpapasok:<input type="file" name="csv"><br>
+	  URL ng Pagpapasok:<input type="file" name="csv_url"><br>
+	  Transform File:<input type="file" name="transform"><br>
+	  Registered Transform:<select name="transform_key"><option value="">Select A Registered Transformation</option></select><br><input type="checkbox" value="1">Burahin kapag Ikinarga 
+	  <br><input type="submit" value="Upload"></form>
+      </li>
+      <li>
+	<form method="POST" name="load_action" enctype="multipart/form-data">
+	  <h4>Ikarga Mula Sa XML:</h4>
+	  <input type="hidden" name="caller">
+	  Talaksan Ng Pagpapasok:<input type="file" name="xml"><br>
+	  URL ng Pagpapasok:<input type="file" name="xml_url"><br>
+	  Transform File:<input type="file" name="transform"><br>
+	  Registered Transform:<select name="transform_key"><option value="">Select A Registered Transformation</option></select><br><input type="checkbox" value="1">Burahin kapag Ikinarga 
+	  <br><input type="submit" value="Upload"></form>
+      </li>
+    </ul></span>
+</li>
+

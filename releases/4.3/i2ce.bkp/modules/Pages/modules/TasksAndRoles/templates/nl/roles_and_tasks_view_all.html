@@ -1,0 +1,21 @@
+<div id="siteContent">
+  <h1>Rollen beheren</h1>
+  <h2>Bestaande rollen</h2>
+  <ul id="role_list"></ul><form method="post" action="tasks-roles/roles">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Nieuwe rol toevoegen
+	</th>
+      </tr><tr><td>
+	   <label>Korte naam rol:</label> Een korte naam die bestaat uit letters, cijfers, -, . en _ die wordt gebruikt om te verwijzen naar de taak in pagina's en sjablonen.
+	 </td>
+	 <td>
+	   <input type="text" id="role_short_name" name="role_short_name" class="validate=[notinlist]"></td>
+	 <td>
+	   <label>Weergavenaam voor rol:</label> Een weergavenaam voor deze rol die wordt weergegeven aan de eindgebruiker
+	 </td>
+	 <td>
+	   <input type="text" name="role_name"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Create"></td>
+      </tr></table></form>
+</div>

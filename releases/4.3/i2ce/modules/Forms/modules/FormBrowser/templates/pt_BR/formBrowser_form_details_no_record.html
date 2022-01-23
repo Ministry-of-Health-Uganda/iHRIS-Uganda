@@ -1,0 +1,24 @@
+<tr><td>
+    <span name="field_name"></span>
+  </td>
+  <td>
+    <span name="field_type" ifset="true">
+      <span name="field_class" ifset="true">
+	O campo <span name="field_name"></span> é registrado como tipo <span name="field_type"></span> que é provido por <span name="field_class"></span>.
+      </span>
+      <span name="field_class" ifset="!true">
+	O campo <span name="field_name"></span> é registrado como tipo <span name="field_type"></span>.
+	<span class="error">Aviso: O campo '<span name="field_name"></span>' não é associado a nenhuma classe.</span>
+      </span>
+    </span>
+    <span name="field_type" ifset="!true">
+      <span class="error">Aviso: O campo '<span name="field_name"></span>' não possui tipo registrado</span>
+    </span>
+    <span name="field_id" ifset="true">
+      O campo tem id <span name="field_id"></span>.
+    </span>
+    <span name="linked_form_name" ifset="true">
+      O campo possui link para o formulário <a href="" name="linked_form_link" id="linked_form_link"><span name="linked_form_name"></span></a>
+    </span> 
+  </td>
+</tr>

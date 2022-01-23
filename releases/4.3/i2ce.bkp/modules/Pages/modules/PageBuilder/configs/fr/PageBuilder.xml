@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="page-builder" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="page-builder" path="/" locale="fr">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="fr">
+      <configuration name="can_build_pages" locale="fr" values="single" type="string">
+        <value>Peut construire ou configurer des pages</value>
+      </configuration>
+      <configuration name="can_delete_pages" locale="fr" values="single" type="string">
+        <value>Permettre de supprimer des pages complètes depuis le constructeur de page</value>
+      </configuration>
+      <configuration name="can_delete_pages_arguments" locale="fr" values="single" type="string">
+        <value>Peut supprimer supprimer des arguments de page</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

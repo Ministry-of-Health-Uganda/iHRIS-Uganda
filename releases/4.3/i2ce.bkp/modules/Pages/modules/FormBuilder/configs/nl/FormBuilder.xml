@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="form-builder" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="form-builder" path="/" locale="nl">
+    <version>4.3.0.1</version>
+    <configurationGroup name="messages" path="/modules/form-builder/messages">
+      <configuration name="cannot_delete" locale="nl" values="single" type="string"></configuration>
+      <configuration name="bad_delete_path" locale="nl" values="single" type="string">
+        <value>Ongeldig pad voor verwijderen</value>
+      </configuration>
+      <configuration name="delete_header" locale="nl" values="single" type="string">
+        <value>Koptekst verwijderen</value>
+      </configuration>
+    </configurationGroup>
+    <configuration name="tasks" path="/I2CE/tasks/task_description" locale="nl" value="many" type="delimited" values="single">
+      <value>form_builder_delete_forms:Kan formuliermetadata verwijderen met de formulierbouwer</value>
+    </configuration>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="nl">
+      <configuration name="can_build_form_classes" locale="nl" values="single" type="string">
+        <value>Kan een formulierklasse bouwen of configureren</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

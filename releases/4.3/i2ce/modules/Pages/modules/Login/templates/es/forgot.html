@@ -1,0 +1,19 @@
+<div id="welcomeIntro">
+  <span name="has_email" ifset="true">
+    <form id="form1" method="post" action="forgot">
+      <table class="loginTable" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="3"><h2>Olvido la contraseña</h2>
+	  <hr><p id="error_message"></p>
+	  </td>
+	</tr><tr><th class="forgotRow">Reinicializar contraseña:</th>
+	  <td class="forgotRow">Digite su Nombre de Usuario para reiniciar su contraseña:<br><input type="text" name="username"></td>
+	  <td class="forgotRow"><input class="button" type="submit" name="submit" value="Reset"></td>
+	</tr><tr><th class="forgotRow">Mostrar nombre de usuario:</th>
+	  <td class="forgotRow">Esriba su dirección de correo electrónico para ver su nombre de usuario:<br><input type="text" name="email"></td>
+	  <td class="forgotRow"><input class="button" type="submit" name="submit" value="View"></td>
+	</tr><tr><td class="forgotRow" colspan="3"><a href="login">Volver a la página de inicio de sesión</a></td>
+	</tr></table></form>
+  </span>
+  <span name="has_email" ifset="!true">
+    <p id="error_message">Por favor, contacte con el administrador para restablecer la contraseña</p>
+  </span>
+</div>

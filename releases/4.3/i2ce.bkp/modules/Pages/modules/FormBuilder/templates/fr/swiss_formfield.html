@@ -1,0 +1,47 @@
+<div>
+  
+
+  <h2>Champ</h2>
+  <div id="field_contents">
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Classe de champ de formulaire</h3>Le type de données pour ce champ.
+	</td>
+	<td>
+	  <select name="formfield"></select></td>
+      </tr><tr><td>
+	  <h3>Obligatoire</h3>Ce champ doit être défini avant de pouvoir être enregistré
+	</td>
+	<td>
+	  <select name="required"><option value="1">Oui</option><option value="0">Non</option></select></td>
+      </tr><tr><td>
+	  <h3>Dans la base de données</h3>Ce champ est enregistré dans la base de données
+	</td>
+	<td>
+	  <select name="in_db"><option value="1">Oui</option><option value="0">Non</option></select></td>
+      </tr><tr><td>
+	  <h3>Unique</h3>Ce champ doit contenir une valeur unique
+	</td>
+	<td>
+	  <select name="unique"><option value="1">Oui</option><option value="0">Non</option></select></td>
+      </tr><tr><td>
+	  <h3>Champs uniques</h3>Si c’est un champ unique, voici les champs qui doivent être uniques en lien avec
+	</td>
+	<td>
+	  <input type="hidden" name="do_unique_field" value="1"><ul name="unique_field"></ul></td>
+      </tr></table><span id="headers">
+      <h2><a id="headers_link" href="">Entêtes</a></h2>
+      Modifier les entêtes pour ce champ
+      <div class="indented" id="headers_ajax"></div>
+    </span>
+
+    
+    <span name="has_meta" ifset="1">
+      <span id="meta">
+	<h2><a id="meta_link" href="">Méta</a></h2>
+	Modifier les métadonnées pour ce champ
+	<div class="indented" id="meta_ajax"></div>
+      </span>
+    </span>
+
+  </div>
+</div>

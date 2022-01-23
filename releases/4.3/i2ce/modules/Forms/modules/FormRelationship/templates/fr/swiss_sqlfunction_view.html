@@ -1,0 +1,32 @@
+<div id="sql_function">
+  La fonction SQL <span name="name"></span>
+  <span name="description" ifset="true">
+    --
+    <span name="description"></span>
+  </span>
+  <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0" id="reporting_function"><tr><td>
+	<h3>Requête SQL:</h3> La requête SQL de cette fonction. On se refère aux champs du rapport par la syntaxe : `Rapport+Champ`
+      </td>
+      <td>
+	<span name="qry"></span>
+      </td>
+    </tr><tr><td> 
+	<h3>Champ de formulaire:</h3> Le champ de formulaire dans lequel cette fonction prend des valeurs
+      </td>
+      <td>
+	<span name="formfield"></span>
+      </td>
+    </tr><tr><td>
+	<h3>Formulaires sélectionnables</h3>Les formulaires qui peuvent être sélectionnés pour ce champ. S'applique uniquement si le champ du formulaire est une sous-classe de I2CE_FormField_MAPPED. Dans ce cas, il doit être une liste de formulaires séparée par des virgules.
+      </td>
+      <td>
+	<span name="select_forms"></span>
+      </td>
+    </tr><tr><td>
+	<h3>Champs liés</h3>Les champs qui sont liés lorsque les options sont listées. S'applique seulement si le champ du formulaire est une sous-classe de I2CE_FormField_MAPPED. Il doit être une liste de 'formulaires' ou de 'formulaire+champ lié' séparée par des deux-points.
+Exemple: "commune:district+région:[région]:commune".
+      </td>
+      <td>
+	<span name="link_fields"></span>
+      </td>
+    </tr></table></div>

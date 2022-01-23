@@ -298,7 +298,7 @@ if (! class_exists('I2CE_Page',false)) {
             if ( function_exists( 'apache_note' ) ) {
                 apache_note( "iHRIS-username", ($this->user->username=='0'?'-':$this->user->username) );
             } elseif (array_key_exists('HTTP_HOST',$_SERVER) && !headers_sent()) {
-                header( 'X-iHRIS-username: ' . ($this->user->username=='0'?'-':$this->user->username) );
+                header( 'X-iHRIS-username', ($this->user->username=='0'?'-':$this->user->username) );
             }
             I2CE_Locales::setPreferredLocale($this->user->getPreferredLocale());
             $this->args = $args;
@@ -386,9 +386,10 @@ if (! class_exists('I2CE_Page',false)) {
                 $this->post = $post;
                 $this->get = $get;
                 if ($strip && get_magic_quotes_gpc()) {
-                    $stripper = function(&$item,$key) {
-                        $item = stripslashes($item);
-                    };
+                    $stripper = create_function(
+                        '&$item,$key',
+                        '$item = stripslashes($item);'
+                        );
                     array_walk_recursive($this->post, $stripper);
                     array_walk_recursive($this->get, $stripper);
                     array_walk_recursive($this->session_req, $stripper);
@@ -991,11 +992,7 @@ if (! class_exists('I2CE_Page',false)) {
          * @param string $url
          */
         public function setRedirect( $url ) {
-            if ( strpos( $url, "http" ) === false ) {
                 $this->redirect = $url;
-            } else {
-                $this->redirect = "home";
-            }
         }    
     }
 }

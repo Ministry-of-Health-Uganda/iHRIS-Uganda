@@ -1,0 +1,39 @@
+<div>
+  <h2>Arguments du formulaire enfant</h2>
+  
+  <div id="child_form_container">
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+		  <h3>Titre:</h3>Le nom affiché pour <span name="form_name"></span>
+		</td>
+		<td>
+		  <input name="title"></td>
+	  </tr><tr><td>
+		  <h3>Lien:</h3>Le lien vers le formulaire fils - <span name="form_name"></span>
+		</td>
+		<td>
+		  <input name="link"></td>
+	  </tr><tr><td>
+		  <h3>Filtre de lien:</h3>Filtre utilisé pour sélectionner le contenu chargé pour <span name="form_name"></span>
+		</td>
+		<td>
+		  <input name="link_filter"></td>
+      </tr><tr><td>
+		  <h3>Autorisation:</h3>L'autorisation unique qu'un utilisateur a besoin pour accéder à <span name="form_name"></span>
+		</td>
+		<td>
+			<select name="task"><option value="">Aucune tâche sélectionnée</option></select></td>
+	  </tr></table><span id="action_links">
+	  <h2><a id="action_links_link" href="">Liens d’action</a></h2>
+	    Modifier les champs du lien d’action
+	  <div class="indented" id="action_links_ajax">
+	  </div>
+	</span>
+	
+	<span id="printf_args">
+	  <h2><a id="printf_args_link" href="">Format d'affichage</a></h2>
+	    Modifier la façon dont le formulaire enfant va s'afficher
+	  <div class="indented" id="printf_args_ajax">
+	  </div>
+	</span>
+  </div>
+</div>

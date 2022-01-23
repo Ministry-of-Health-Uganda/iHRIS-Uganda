@@ -1,0 +1,47 @@
+<div>
+  
+
+  <h2>Campo</h2>
+  <div id="field_contents">
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Clase de campo de formulario</h3>El tipo de datos para este campo.
+	</td>
+	<td>
+	  <select name="formfield"></select></td>
+      </tr><tr><td>
+	  <h3>Obligatorio</h3>Este campo debe establecerse antes de guardarse
+	</td>
+	<td>
+	  <select name="required"><option value="1">Sí</option><option value="0">No</option></select></td>
+      </tr><tr><td>
+	  <h3>En la base de datos</h3>Este campo está guardado en el base de datos
+	</td>
+	<td>
+	  <select name="in_db"><option value="1">Sí</option><option value="0">No</option></select></td>
+      </tr><tr><td>
+	  <h3>Único</h3>Este campo es necesario para ser un valor único
+	</td>
+	<td>
+	  <select name="unique"><option value="1">Sí</option><option value="0">No</option></select></td>
+      </tr><tr><td>
+	  <h3>Campos únicos</h3>Si este es un campo único, estos son los campos que se requieren para ser único en relación con
+	</td>
+	<td>
+	  <input type="hidden" name="do_unique_field" value="1"><ul name="unique_field"></ul></td>
+      </tr></table><span id="headers">
+      <h2><a id="headers_link" href="">Cabeceras</a></h2>
+      Editar encabezados para este campo
+      <div class="indented" id="headers_ajax"></div>
+    </span>
+
+    
+    <span name="has_meta" ifset="1">
+      <span id="meta">
+	<h2><a id="meta_link" href="">Meta</a></h2>
+	Editar metadatos para este campo
+	<div class="indented" id="meta_ajax"></div>
+      </span>
+    </span>
+
+  </div>
+</div>

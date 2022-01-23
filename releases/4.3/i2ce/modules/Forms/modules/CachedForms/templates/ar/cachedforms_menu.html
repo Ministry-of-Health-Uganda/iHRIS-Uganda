@@ -1,0 +1,31 @@
+<div dir="rtl">
+  
+
+
+  <h2 dir="rtl">مخبأ النماذج</h2>
+  <span name="has_profiles" ifset="true" dir="rtl">
+    تخزين كافة النماذج في الملف المحدد.
+    <form action="CachedForms/cache" style="margin-left:2em" method="POST" dir="rtl">
+      حدد الملف:  <select name="profile"></select><br><input type="submit" value="Cache"></form>
+  </span>
+  <br><div dir="rtl">
+    <a href="CachedForms/cacheAll" dir="rtl">مخبأ</a> جميع النماذج
+    <br><a href="CachedForms/cacheAllForce" dir="rtl">قوة التخزين المؤقت</a> لجميع النماذج إن لم تكن قديمة
+    <br><a href="CachedForms/dropAll" dir="rtl">اسقاط</a> تخزين جميع النماذج
+  </div>
+  <br><span name="has_profiles" ifset="true" dir="rtl">
+    <h2 dir="rtl">إصدار النماذج المخزنة</h2>
+    إصدار جميع النماذج المخبأة  في الملف المحدد. إذا قمت بتحديد تاريخ التعديل، فسوف يتم إصدار فقط السجلات التي تم تعديلها في أو بعد التاريخ المحدد. وإلا سيتم اصدار كافة السجلات التي تم تعديلها لملف التعريف المحدد.
+    <form action="CachedForms/export" style="margin-left:2em" method="POST" dir="rtl">
+      حدد الملف:  <select name="profile"></select><br>
+      تاريخ التعديل: <input class="datepicker_ymd" name="mod_date" type="text"><br><input type="checkbox" value="1" name="compress" checked>تمكين ضغط BZIP2
+      <br><input type="submit" value="Export"></form>
+    
+    <br></span>
+
+  <h2 dir="rtl">إنشاء / تعديل الملف</h2>
+  إنشاء ملف تعريف أو تعديل آخر موجود للنماذج
+  <form action="CachedForms/exportProfile" style="margin-left:2em" dir="rtl">
+      حدد الملف:  <select name="profile"><option value="" dir="rtl">إنشاء ملف  جديد</option></select><br><input type="submit" value="Edit"></form>
+  <br><h2 dir="rtl">إدارة التخزين للنماذج الفردية</h2>
+  <ul id="cached_forms_list"></ul></div>

@@ -1,0 +1,93 @@
+.treeselect {
+    max-height: 80px;
+    width: 246px;
+    overflow: auto;
+    border: 2px solid #CCCCCC;
+}
+.tree_main_toggle {
+               background-image: none;
+               color:blue;
+               text-decoration:underline;
+               cursor:pointer;
+               display:block;
+             }
+
+.tree_button_show {
+                    background-image:url(arrow_sub.gif);
+                    background-repeat: no-repeat;
+                    background-position:left; 
+                    min-height: 10px;
+                    min-width:7px;
+                    padding-left:7px;
+                    }
+.tree_button_show:hover{
+                         cursor:pointer;
+                         }
+.tree_button_hide { 
+                    background-image:url(arrow_down.gif);
+                    background-repeat: no-repeat;
+                    background-position:left; 
+                    min-height: 10px;
+                    min-width:7px; 
+                    padding-left:7px;
+                    }      
+.tree_button_hide:hover{
+                         cursor:pointer;
+                         }
+
+
+
+.tree_expandable{
+                  margin-left:0px;
+                  display:block;
+                  }
+.treeselect_selectable {
+                         padding-left:0px;
+                         text-decoration:underline;        
+                         }        
+.treeselect_selectable:hover{
+                              cursor:pointer;
+                              }  
+.treeselect_notselectable {
+                    /*      text-decoration:underline;         */
+                            color:DarkKhaki;
+                         }        
+
+
+.tree_closed {
+               display:none;
+               }
+.tree_open {
+             display:block;
+             padding-left:8px;
+             }
+.treeselect > .treeselect_selectable { 
+   display:block;   
+   margin-left:6px;                                       
+ }
+.treeselect > .treeselect_notselectable { 
+   display:block;                                          
+   margin-left:0px;
+   padding-left:0px;                                          
+   }
+
+
+.tree_children > .treeselect_selectable {
+                                          display:block;
+                                          margin-left:0px;
+                                          }
+.tree_children > .treeselect_notselectable {
+                                          display:block;
+                                          margin-left:0px;
+                                          }
+.tree_expandable > .treeselect_selectable {
+                                            margin-left:0px;
+                                            padding-left:0px;
+                                            }
+
+.selector-ajax-loading {   
+    color:DarkKhaki;
+    text-decoration:none;
+    background: url(loading.gif) no-repeat top center;
+    height:19px;
+}

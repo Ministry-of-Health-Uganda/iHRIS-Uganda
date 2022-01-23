@@ -1,0 +1,48 @@
+<li>
+  <span name="browser_magic_data_key"></span> =&gt; <i>Nenastaveno</i>
+  <form method="POST" name="erase_action">
+    <input type="hidden" name="caller"><input type="submit" value="Erase" onclick="if (confirm('Are you sure?')) {return true;} else {return false;}"></form>
+  <form method="POST" name="scalar_action">
+    <input type="hidden" name="caller"><input type="submit" value="Make Scalar"></form>
+  <form method="POST" name="parent_action">
+    <input type="hidden" name="caller"><input type="submit" value="Make Parent"></form>
+
+  <span class="dropdown">
+    <a href="#" class="dropdown-toggle"> Importovat <b class="caret "></b> </a>
+    <ul class="dropdown-menu" style="width:40em"><li>
+	<form method="POST" name="upload_action" enctype="multipart/form-data">
+	  <h4>Nastavit ze souboru:</h4>
+	  <input type="hidden" name="caller">
+	  Vstupní soubor:<input type="file" name="upload"><br><input type="submit" value="Upload"></form>
+      </li>
+      <li>
+	<form method="POST" name="upload_binary_action" enctype="multipart/form-data">
+	  <h4>Načíst binární soubor:</h4>
+	  <input type="hidden" name="caller">
+	  Vstupní soubor:<input type="file" name="upload"><br><input type="submit" value="Upload"></form>
+      </li>
+      <li>
+	
+	<form method="POST" name="load_action" enctype="multipart/form-data">
+	  <h4>Načíst z tabulky:</h4>
+	  <input type="hidden" name="caller">
+	  Vstupní soubor:<input type="file" name="csv"><br>
+	  Vstupní URL:<input type="text" name="csv_url"><br>
+	  Transformovat soubor:<input type="file" name="transform"><br>
+	  Registrovaná transformace:<select name="transform_key"><option value="">Select A Registered Transformation</option></select><br><input type="checkbox" value="1">Smazat při načtení 
+	  <br><input type="submit" value="Upload"></form>
+      </li>
+      <li>
+	<form method="POST" name="load_action" enctype="multipart/form-data">
+	  <h4>Načíst ze souboru XML:</h4>
+	  <input type="hidden" name="caller">
+	  Vstupní soubor:<input type="file" name="xml"><br>
+	  Vstupní URL:<input type="text" name="xml_url"><br>
+	  Transformovat soubor:<input type="file" name="transform"><br>
+	  Registrovaná transformace:<select name="transform_key"><option value="">Select A Registered Transformation</option></select><br><input type="checkbox" value="1">Smazat při načtení 
+	  <br><input type="submit" value="Upload"></form>
+      </li>
+    </ul></span>
+
+</li>
+

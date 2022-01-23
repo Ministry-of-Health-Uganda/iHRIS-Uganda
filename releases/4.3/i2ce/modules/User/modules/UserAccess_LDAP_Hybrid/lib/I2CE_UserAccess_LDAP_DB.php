@@ -279,7 +279,7 @@ class I2CE_UserAccess_LDAP_DB extends I2CE_UserAccess_Mechanism{
             . ' WHERE u.username  = ? ';
         try {
             $row = I2CE_PDO::getRow( $qry, array( $username ) );
-            if (!$row || !$row->id) {
+            if (!$row instanceof PDORow || !$row->id) {
                 return false;
             }
             return $row->id;
@@ -301,7 +301,7 @@ class I2CE_UserAccess_LDAP_DB extends I2CE_UserAccess_Mechanism{
             . ' WHERE u.username  = ? ';
         try {
             $row = I2CE_PDO::getRow( $qry, array( $username ) );
-            if (!$row || !$row->role) {
+            if (!$row instanceof PDORow || !$row->role) {
                 return false;
             }
         return $row->row;
@@ -324,7 +324,7 @@ class I2CE_UserAccess_LDAP_DB extends I2CE_UserAccess_Mechanism{
             . ' WHERE u.id  = ? ';
         try {
             $row = I2CE_PDO::getRow( $qry, null, array( $userid ), array('integer') );
-            if (!$row || !$row->username) {
+            if (!$row instanceof PDORow || !$row->username) {
                 return false;
             }
             return $row->username;

@@ -1,0 +1,41 @@
+<div id="sql_function">
+  <span id="function_contents">
+    <h2>Die SQL-Funktion bearbeiten <span name="name"></span></h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0" id="reporting_function"><tr><td width="30%">
+	  <h3>SQL-Abfrage:</h3> Der SQL-Code, der diese Funktion definiert. Auf Berichtsfelder bezieht man sich in Form von ‚&lt;berichtsdatenblatt&gt;+&lt;feld&gt;„“.
+	</td>
+	<td width="auto">
+	  <textarea style="width:auto" cols="83" rows="4" name="qry" class="validate=[nonempty]"></textarea></td>
+      </tr><tr><td>
+	  <h3>Beschreibung:</h3> Eine Beschreibung dieser Funktion, die dem Anwender angezeigt wird.
+	</td>
+	<td>
+	  <textarea type="text" name="description" rows="4" cols="53"></textarea></td>
+      </tr><tr><td>
+	  <h3>Datenblattfeld:</h3> Ein Datenblattfeld auswählen in das diese Funktion Werte einfügt
+	</td>
+	<td>
+	  <select name="formfield"></select></td>
+      </tr><tr><td>
+	  <h3>Zusammenfassen:</h3> Eine kommagetrennte Liste von Datenblättern mitsamt Verknüpfung zu den Datenfeldern, die du zusammenfassen möchtest. Dies sind diejenigen, die nicht die Gruppierungsbedingung erfüllen, da sie zu den Datenblättern gehören, die in deiner Funktion enthalten sind.
+	</td>
+	<td>
+	  <input type="text" name="aggregate"></td>
+      </tr><tr><td>
+	  <h3>Auswählbare Datenblätter</h3>Die Datenblätter die für dieses Feld ausgewählt werden können. Nur zutreffend, sofern das Datenblattfeld eine Unterklasse von I2CE_FormField_MAPPED ist. Für diesen Fall sollte die Angabe der Datenblätter in Form einer kommagetrennten Liste erfolgen. Sofern nichts angegeben wird, wird das Datenblatt dem Namen dieser Funktion entsprechen.
+	</td>
+	<td>
+	  <input name="select_forms"></td>
+      </tr><tr><td>
+	  <h3>Verknüpfte Felder</h3>Die Felder die beim Auflisten von Optionen verlinken. Nur zutreffend, sofern das Datenblattfeld eine Unterklasse von I2CE_FormField_MAPPED ist. Es sollte eine mit Doppelpunkten getrennte Liste von Datenblättern oder Datenblättern + Verlinkendes Feld sein. Beispiel: „Staat:Distikt+Region:[Region]:Staat“ Sofern nichts angegeben wird, wird das Datenfeld dem Namen dieser Funktion entsprechen.
+	</td>
+	<td>
+	  <input name="link_fields"></td>
+      </tr></table><span id="dependent_functions">
+	<h2><a name="dependent_functions_link" href="" id="dependent_functions_link_replace"> Abhängige Funktionen</a></h2>
+	<div class="indented" id="dependent_functions_ajax">
+	</div>
+      </span>
+
+  </span>
+</div>

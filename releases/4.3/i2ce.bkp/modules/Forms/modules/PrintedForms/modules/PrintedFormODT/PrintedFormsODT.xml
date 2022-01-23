@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PrintedFormsODT">
+  <metadata>
+    <displayName>ODT Printed Forms</displayName>
+    <category>Application Component</category>
+    <description>Provides Printed/Standardized Forms by ODT document templates</description>
+    <version>4.3.0</version>
+    <requirement name="PrintedForms">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <priority>100</priority>
+  </metadata>
+  <configurationGroup name="PrintedFormsODT" path="/">
+    <configurationGroup name="unconv" path="/modules/PrintedFormsODT/unoconv">
+      <version>4.1.8.1</version>
+      <configuration name="exec" values="single" type="string">
+        <value>/usr/bin/unoconv</value>
+      </configuration>
+      <configurationGroup name="conversions">
+        <version>4.1.8.3</version>
+        <configuration name="pdf" values="many" type="delimited">
+          <value>mime:application/pdf</value>
+          <value>ext:pdf</value>
+        </configuration>
+        <configuration name="ooxml" values="many" type="delimited">
+          <value>mime:application/vnd.openxmlformats-officedocument.wordprocessingml.document</value>
+          <value>ext:docx</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

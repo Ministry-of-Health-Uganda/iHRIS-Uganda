@@ -585,6 +585,11 @@ class I2CE_CachedForm extends I2CE_Fuzzy{
         $db = I2CE::PDO();
         try {
             $prep = $db->prepare($insertQry);
+            if ($check_mod) {
+                $mod_time = $this->getLastCachedTime();
+            } else {
+                $mod_time = -1;
+            }
             $storage = I2CE_FormStorage::getStorageMechanism($this->form);
             if (!$storage instanceof I2CE_FormStorage_Mechanism) {
                 I2CE::raiseError("form $form does not have valid form storage mechanism");
@@ -622,8 +627,8 @@ class I2CE_CachedForm extends I2CE_Fuzzy{
                     I2CE::pdoError( $e, "Error insert into cache table:" );
                     return false;
                 }            
+                unset( $prep );
             }
-            unset( $prep );
             I2CE_FormStorage::releaseStorage($this->form);
             if (I2CE_CachedForm::$spam) {
                 I2CE::raiseError("Populated " . count($ids)  . " entries for {$this->form}");

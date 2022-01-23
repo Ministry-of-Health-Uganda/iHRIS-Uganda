@@ -207,7 +207,7 @@ class I2CE_FormStorage extends I2CE_Module {
             'data'=>array('value'=>"$form|$oldid")
             );        //will get all ids where parent=$form|$oldid
         $set_sql = I2CE::PDO()->quote($form .'|'  . $newid);
-        $set_func = function($val) use($form,$newid) { return $form.'|'.$newid; };
+        $set_func = create_function('$val',"return '$form|$newid';");
         if (!is_callable($set_func)) {
             I2CE::raiseError("Could not create parent update funciton");
             return false;

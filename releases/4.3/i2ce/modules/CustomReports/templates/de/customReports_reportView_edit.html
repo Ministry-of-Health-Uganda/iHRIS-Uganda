@@ -1,0 +1,53 @@
+<div>
+  <h2>Berichtsansicht</h2>
+  <h3><a name="show_link">Ansicht <span name="displayName"></span></a></h3>
+    <p>Diese Berichtansicht basiert auf den Bericht <a name="report_link"><span name="reportName"></span></a></p>
+  <span name="has_default_display" ifset="true">
+    <h3><a name="clear_default_display_link">Lösche Standardansicht</a></h3>
+  </span>
+  <p>Felder und jegliche Datenzusammenfassungen auswählen, die in dieser Berichtsansicht angezeigt werden sollen. Du kannst Felder verschieben, um ihre Anzeigereihenfolge zu ändern.</p>
+  <table class="multiFormTable reportviews" cellpadding="0" cellspacing="0" border="0" id="container"><tr><th colspan="2">
+	  Informationen zu Berichtsansichten
+	</th>
+    </tr><tr><td>
+	<h3>Anzeigename:</h3>
+	Ein kurzer aussagekräftiger Name für diesen Bericht
+      </td>
+      <td>
+	<input name="displayName" type="text" value="" class="validate=[nonempty]"></td>
+    </tr><tr><td>
+	<h3>Beschreibung:</h3>
+	Eine längere Beschreibung dieses Berichts
+      </td>
+      <td>
+	<textarea name="description" rows="4" cols="53" value=""></textarea></td>
+    </tr><tr task="custom_reports_admin"><td>
+	<h3>Berechtigungen zum Ansehen von Berichten:</h3>
+	Eine Aufgabe auswählen, mit der die Anzeige dieses Berichts auf die gewählte Aufgabe beschränkt wird. 
+      </td>
+      <td>
+	<select name="limit_view_to_task"><option value="">Die Anzeige dieses Berichts nicht einschränken</option></select></td>      
+    </tr><tr permission="role(admin) or task(custom_reports_admin)"><td colspan="2">
+	<input name="disable_hide" type="hidden" value="1"><input name="disable" id="disable" type="checkbox" value="1"><h3>Deaktivieren:</h3>
+	Diesen Bericht für Nicht-Administratoren deaktivieren.
+      </td>
+    </tr><tr><td colspan="2">
+	<input name="total_hide" type="hidden" value="1"><input name="total" id="total" type="checkbox" value="1"><h3>Summe aufnehmen:</h3>
+	Die Gesamtzahl der Zeilen dieses Berichts mit aufnehmen.
+      </td>
+    </tr><tr><td>
+	<h3>Ähnliche Ansichten</h3>
+      </td>
+      <td>
+	<select name="related_views[]" multiple size="10"></select></td>
+    </tr><tr><th colspan="2">
+	Gemeldete Felder
+      </th>
+      </tr></table><div id="fields_fill"></div>
+
+  <br><br><span task="custom_reports_admin" name="has_display_editors" ifset="true" id="display_editors">
+    <h2> <a id="displays_link">Bearbeite Darstellungsoptionen</a></h2>
+    <div id="displays_ajax" class="indented"></div>
+  </span>
+
+</div>

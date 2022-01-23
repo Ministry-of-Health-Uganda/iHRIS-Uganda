@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="DatePicker" path="/modules/DatePicker">
+  <metadata>
+    <version>1.17.5.1</version>
+  </metadata>
+  <configurationGroup name="DatePicker" path="/modules/DatePicker" locale="cs">
+    <version>1.17.5.1</version>
+    <configurationGroup name="options_datetime">
+      <configuration name="format" locale="cs"></configuration>
+    </configurationGroup>
+    <configurationGroup name="options">
+      <configuration name="format" locale="cs"></configuration>
+      <configuration name="days" type="delimited" locale="cs">
+        <value>0:Neděle</value>
+        <value>1:Pondělí</value>
+        <value>2:Úterý</value>
+        <value>3:Středa</value>
+        <value>4:Čtvrtek</value>
+        <value>5:Pátek</value>
+        <value>6:Sobota</value>
+      </configuration>
+      <configuration name="months" type="delimited" locale="cs">
+        <value>0:Leden</value>
+        <value>1:Únor</value>
+        <value>2:Březen</value>
+        <value>3:Duben</value>
+        <value>4:Květen</value>
+        <value>5:Červen</value>
+        <value>6:Červenec</value>
+        <value>7:Srpen</value>
+        <value>8:Září</value>
+        <value>9:Říjen</value>
+        <value>10:Listopad</value>
+        <value>11:Prosinec</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

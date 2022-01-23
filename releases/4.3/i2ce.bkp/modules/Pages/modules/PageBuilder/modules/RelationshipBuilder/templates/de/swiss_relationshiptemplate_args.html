@@ -1,0 +1,85 @@
+<div>
+  
+
+  <h2>Seitenargumente</h2>
+  <div id="args_container">
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Titel:</h3>Der Anzeigename für das primäre Formular
+	</td>
+	<td>
+	  <input name="title"></td>
+      </tr><tr><td>
+	  <h3>Aufgaben:</h3>Optionale Aufgabe für die Begrenzung des Zugangs zu dieser Seite.
+	</td>
+	<td>
+	  <select name="task"><option value="">Keine Aufgabe ausgewählt</option></select></td>
+      </tr></table><h2>Beziehungsoptionen</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Beziehung:</h3>Beziehung, auf der die Vorlage basiert
+	</td>
+	<td>
+	  <select name="relationship"><option value="">Keine Beziehung ausgewählt</option></select><br><span name="has_relationship" ifset="true"><a name="relationship_link">Beziehung bearbeiten</a></span>
+	</td>
+      </tr><tr><td>
+	  <h3>Puffer benutzen:</h3>Use caches in hippo tables when exporting data in the relationship
+	</td>
+	<td>
+	  <select name="use_cache"><option value="1">Ja</option><option value="0">Nein</option></select></td>
+      </tr><tr><td>
+	  <h3>Kopfdaten-Beziehung:</h3>Optional relationship for the header of the template.  Needs to have the same primary form as the main relationship. 
+	</td>
+	<td>
+	  <select name="header_relationship"><option value="">Keine Beziehung ausgewählt</option></select><br><span name="has_header_relationship" ifset="true"><a name="header_relationship_link">Beziehung bearbeiten</a></span>
+	  
+	</td>
+      </tr></table><h2>ODT-Vorlageoptionen</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>ODT-Vorlage:</h3>Select or upload an ODT Template
+	</td>
+	<td>
+	  <input name="do_upload" value="1" type="checkbox">Datei hochladen <input name="upload" type="file"><span name="has_download" ifset="true"><a name="download_link">Herunterladen</a></span>
+	  <hr><input name="do_select" value="1" type="checkbox">Vorhandene Vorlage auswählen <select name="select"></select><br><span name="has_template" ifset="true"><a name="template_link">Vorlage herunterladen</a></span>
+	</td>
+      </tr><tr><td>
+	  <h3>Template Segment Style</h3>Controls how multiple rows of data are applied to the template.  "Global" means that the entire ODT template is repeated.  
+	  "Report Row" means that there is an expected <pre> [!-- BEGIN report_row --] Stuff Goes Here [!-- END report_row --]</pre>section in the ODT template used for each row of data.
+	</td>
+	<td>
+	  <select name="segment_style"><option value="global">Global</option><option value="report_row">Berichtszeile</option></select></td>
+      </tr><tr><td>
+	  <h3>Abschnittumbruch</h3>Zu verwendender Umbruch zwischen Zeilen
+	</td>
+	<td>
+	  <select name="segment_break"><option value="page">Seite</option><option value="line">Zeile</option></select></td>
+      </tr></table><h2>Vorlagenumwandlungsoptionen</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Format</h3>Output Format.  The default format is ODT.  If you would like other formats, you will need to have unoconv installed.
+	</td>
+	<td>
+	  <select name="format"><option value="">Standard-Format (ODT-Datei)</option></select></td>
+      </tr><tr><td>
+	  <h3>Exportoptionen</h3>Export options to apply to UnoConv.  The available options depend on the export format (e.g. pdf) that you are using.  
+	</td>
+	<td>
+	  <input name="export_options"></td>
+      </tr><tr><td>
+	  <h3>Verbindungsoptionen</h3>Connection details for running unoconv on remote server.
+	</td>
+	<td>
+	  <input name="connection"></td>
+      </tr><tr><td>
+	  <h3>UnoConv Temporary Directory</h3>Specify the temporary directory to process unoconv in.  Intended for use with remotely mounted drives.
+	</td>
+	<td>
+	  <input name="tmp_dir"></td>
+      </tr></table><span id="fields">
+      <h2><a id="fields_link" href="">Pflichtfelder</a></h2>
+      Wenn ein Pflichtfeld nicht ausgefüllt ist, wird die Vorlage nicht erzeugt.
+      <div class="indented" id="fields_ajax">
+      </div>
+    </span>
+    
+  </div>
+
+
+</div>

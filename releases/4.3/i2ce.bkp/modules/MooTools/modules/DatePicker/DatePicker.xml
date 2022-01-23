@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="DatePicker">
+  <metadata>
+    <displayName>Date Picker</displayName>
+    <className>I2CE_Module_DatePicker</className>
+    <category>Mootools Add-Ons</category>
+    <description>Uses the MooTools Color Date http://www.monkeyphysics.com/mootools/script/2/datepicker</description>
+    <version>1.17.5</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <link>https://launchpad.net/i2ce</link>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="MooTools">
+      <atLeast version="1.4" />
+      <lessThan version="1.5" />
+    </requirement>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+  </metadata>
+  <configurationGroup name="DatePicker" path="/modules/DatePicker">
+    <configurationGroup name="options_datetime">
+      <configuration name="format" locale="en_US">
+        <version>1.17.5</version>
+        <value>F d, Y @ H:i:s</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="options">
+      <version>1.16.1</version>
+      <configuration name="format" locale="en_US">
+        <version>1.17.3</version>
+        <value>F d, Y</value>
+      </configuration>
+      <configuration name="days" type="delimited" locale="en_US">
+        <value>0:Sunday</value>
+        <value>1:Monday</value>
+        <value>2:Tuesday</value>
+        <value>3:Wednesday</value>
+        <value>4:Thursday</value>
+        <value>5:Friday</value>
+        <value>6:Saturday</value>
+      </configuration>
+      <configuration name="months" type="delimited" locale="en_US">
+        <value>0:January</value>
+        <value>1:February</value>
+        <value>2:March</value>
+        <value>3:April</value>
+        <value>4:May</value>
+        <value>5:June</value>
+        <value>6:July</value>
+        <value>7:August</value>
+        <value>8:September</value>
+        <value>9:October</value>
+        <value>10:November</value>
+        <value>11:December</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

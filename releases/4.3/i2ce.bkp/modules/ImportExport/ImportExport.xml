@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name='ImportExport'>
+  <metadata>
+    <displayName>Import Export Support</displayName>   
+    <className>I2CE_Import_Export</className>
+    <category>Base System Component</category>
+    <description>Enables an XML Import and Export tool which allows offline access.</description>
+    <creator>Mark Hershberger</creator>
+    <email>mah@intrahealth.org</email>
+    <description>Custom Reports</description>
+    <vcsRepository>bzr+ssh://bazaar.launchpad.net/~intrahealth+informatics/i2ce/trunk/</vcsRepository>
+    <vcsBrowser>http://bazaar.launchpad.net/~intrahealth%2Binformatics/i2ce/trunk/files/head%3A/modules/ImportExport/</vcsBrowser>
+    <link>https://launchpad.net/i2ce</link>
+    <version>0.9</version>
+    <path name='sql'>
+      <value>./sql</value> 
+    </path>
+    <path name='classes'>
+      <value>./lib</value> 
+    </path>
+  </metadata>
+</I2CEConfiguration>

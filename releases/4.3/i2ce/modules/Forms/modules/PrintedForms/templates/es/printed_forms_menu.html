@@ -1,0 +1,27 @@
+<div id="siteContent">
+  <h2>Formularios estandarizados</h2>
+
+  <h3>Generar formularios estandarizados</h3>
+
+  <span ifset="!true" name="has_valid_forms">
+    No hay formas estnadarizadas disponibles para este registro
+  </span>
+  <span ifset="true" name="has_valid_forms">
+    <ul id="printed_forms_list"></ul></span>
+
+
+  <span type="module" ifenabled="true" name="BinField">
+    <span ifset="true" name="show_archive">
+      <h3>Formas Estandarizadas Archivadas</h3>
+
+      <span ifset="!true" name="has_archives">
+	No hay formas archivadas para este registro
+      </span>
+      <span ifset="true" name="has_archives">
+	<span task="printed_forms_view_all_archives">
+	  <ul id="printed_forms_archive"></ul></span>
+      </span>
+    </span>
+  </span>
+
+</div>

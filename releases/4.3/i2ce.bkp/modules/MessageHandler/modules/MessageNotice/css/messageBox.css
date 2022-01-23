@@ -1,0 +1,52 @@
+.MessageBoxMessages {
+                      display:none;
+                      }
+
+
+
+.MessageBoxWindow {
+    padding: 1em 1em;
+    background: #F3F6ED;
+    border:#E1D6c6 4px solid;                                                          
+    text-align: left;
+    max-width: 80%;
+    max-height: 80%;
+    position:relative;
+}
+
+.MessageBoxCaption{
+        text-align:center;
+	font: bold 1.4em Arial, Helvetica, sans-serif;
+	color: #69c;
+        padding:0.4em;                    
+        border:#E1D6c6 1px solid;                                                                  
+        background: #fbfff3;
+}
+#MessageBox_imageControls {
+    padding-top:0em;
+    float:right;
+    bottom:1em;
+    position:absolute;
+    right:0em;
+}
+
+.MessageBoxContent{
+    padding: 2em;
+}
+
+.MessageBoxOverlay {
+    background-color: white;
+}
+
+.MessageBoxClose {
+    position:absolute;
+    bottom:1em;
+    float:left;
+	background: #ccc url(button_bkgd.gif) repeat-x;
+	border: solid 2px #BFBFBF;
+	color: #333;
+	padding: 5px 12px;
+	font: bold 10px Verdana, Arial, Helvetica, sans-serif;
+	width: auto;
+	text-decoration: none;
+}

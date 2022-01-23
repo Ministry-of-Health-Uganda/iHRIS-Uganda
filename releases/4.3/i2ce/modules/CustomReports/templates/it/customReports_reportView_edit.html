@@ -1,0 +1,53 @@
+<div>
+  <h2>Visualizza report</h2>
+  <h3><a name="show_link">Visualizza <span name="displayName"></span></a></h3>
+    <p>This report view is based on the report <a name="report_link"><span name="reportName"></span></a></p>
+  <span name="has_default_display" ifset="true">
+    <h3><a name="clear_default_display_link">Azzera la visualizzazione predefinita</a></h3>
+  </span>
+  <p>Seleziona i campi e ogni informazione aggregata da visualizzare in questo report. Puoi trascinare i campi per cambiarne l'ordine</p>
+  <table class="multiFormTable reportviews" cellpadding="0" cellspacing="0" border="0" id="container"><tr><th colspan="2">
+	  Reported View Information
+	</th>
+    </tr><tr><td>
+	<h3>Display Name:</h3>
+	Una descrizione breve di questo report
+      </td>
+      <td>
+	<input name="displayName" type="text" value="" class="validate=[nonempty]"></td>
+    </tr><tr><td>
+	<h3>Descrizione:</h3>
+	Una lunga descrizione di questo report
+      </td>
+      <td>
+	<textarea name="description" rows="4" cols="53" value=""></textarea></td>
+    </tr><tr task="custom_reports_admin"><td>
+	<h3>Segnala autorizzazioni di visualizzazione:</h3>
+	Seleziona una funzione per limitare la visualizzazione di questo documento alla funzione selezionata. 
+      </td>
+      <td>
+	<select name="limit_view_to_task"><option value="">Non limitare la visualizzazione di questa relazione</option></select></td>      
+    </tr><tr permission="role(admin) or task(custom_reports_admin)"><td colspan="2">
+	<input name="disable_hide" type="hidden" value="1"><input name="disable" id="disable" type="checkbox" value="1"><h3>Disabilita:</h3>
+	Disabilita questo report per gli utenti non amministativi
+      </td>
+    </tr><tr><td colspan="2">
+	<input name="total_hide" type="hidden" value="1"><input name="total" id="total" type="checkbox" value="1"><h3>Includi il totale:</h3>
+	Includi il numero totale delle righe di questa visualizzazione.
+      </td>
+    </tr><tr><td>
+	<h3>VIsualizzazioni correlate</h3>
+      </td>
+      <td>
+	<select name="related_views[]" multiple size="10"></select></td>
+    </tr><tr><th colspan="2">
+	Reported Fields
+      </th>
+      </tr></table><div id="fields_fill"></div>
+
+  <br><br><span task="custom_reports_admin" name="has_display_editors" ifset="true" id="display_editors">
+    <h2> <a id="displays_link">Modifica le opzioni di visualizzazione</a></h2>
+    <div id="displays_ajax" class="indented"></div>
+  </span>
+
+</div>

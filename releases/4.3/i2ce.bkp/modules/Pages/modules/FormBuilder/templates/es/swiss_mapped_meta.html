@@ -1,0 +1,39 @@
+<div>
+  
+
+  <h2>Metadatos</h2>
+  <div id="meta_container">
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td colspan="2">
+	  <h3>Formularios asignables</h3>Selecciona los formularios que se pueden asignar a este campo.  
+	  <ul><li> Ten en cuenta que si no hay ninguno seleccionado, y el nombre de este campo es el nombre de un formulario, entonces ese formulario es un formulario permitido.</li>
+	    <li>Ten en cuenta como un caso especial, el campo de reasignación automáticamente permitirá solo la asignación al formulario que lo contiene </li>
+	  </ul><div name="forms"></div>
+	</td>
+      </tr><tr><td>
+	  <h3>Cualquier formulario</h3>Permite cualquier formulario de ser elegido como un valor asignado
+	</td>
+	<td>
+	  <select name="form_any"><option value="0">No</option><option value="1">Sí</option></select></td>
+      </tr></table><span id="limits">
+      <h2><a id="limits_link" href="">Límites</a></h2>
+      Editar metadatos para este campo
+      <div class="indented" id="limits_ajax"></div>
+    </span>
+
+    <span id="add_limit_module">
+      <h2><a id="add_limit_module_link" href="">Module Limits</a></h2>
+      Set dynamic limits based on modules
+      <div class="indented" id="add_limit_module_ajax"></div>
+    </span>
+
+
+
+    <span id="display">
+      <h2><a id="display_link" href="">Muestra</a></h2>
+      Configurar varias muestras para este campo
+      <div class="indented" id="display_ajax"></div>
+    </span>
+
+
+  </div>
+</div>

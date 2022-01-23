@@ -1,0 +1,41 @@
+<div id="sql_function">
+  <span id="function_contents">
+    <h2>Editer une fonction SQL <span name="name"></span></h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0" id="reporting_function"><tr><td width="30%">
+	  <h3>Requête SQL:</h3> La requête SQL de cette fonction. On se refère aux champs du rapport par la syntaxe : `Rapport+Champ`
+	</td>
+	<td width="auto">
+	  <textarea style="width:auto" cols="83" rows="4" name="qry" class="validate=[nonempty]"></textarea></td>
+      </tr><tr><td>
+	  <h3>Description:</h3> Une description de cette fonction à afficher pour l’utilisateur final
+	</td>
+	<td>
+	  <textarea type="text" name="description" rows="4" cols="53"></textarea></td>
+      </tr><tr><td>
+	  <h3>Champ de formulaire:</h3> Sélectionner le champ de formulaire dans lequel cette fonction prend des valeurs
+	</td>
+	<td>
+	  <select name="formfield"></select></td>
+      </tr><tr><td>
+	  <h3>Agréger:</h3> Une liste séparée par des virgules des formulaires en lien avec ces champs que vous voulez agréger (c.à.d. ceux qui ne sont pas dans la clause groupby, ce sont les formulaires qui apparaîtront dans votre fonction)
+	</td>
+	<td>
+	  <input type="text" name="aggregate"></td>
+      </tr><tr><td>
+	  <h3>Formulaires sélectionnables</h3>Les formulaires qui peuvent être sélectionnés pour ce champ. S'applique uniquement si le champ du formulaire est une sous-classe de 2CE_FormField_MAPPED. Dans ce cas, il doit être une liste de formulaires séparée par des virgules. S'il n'est pas positionné, sa valeur par défaut sera le nom de cette fonction.
+	</td>
+	<td>
+	  <input name="select_forms"></td>
+      </tr><tr><td>
+	  <h3>Champs liés</h3>Les champs qui sont liés quand on fait la liste des options. Appliquer uniquement si le champ de formulaire est de la sous-classe  I2CE_FormField_MAPPED. Il devait être une liste ‘des formulaires’ ou ‘formulaires+champlié’ séparé par deux-points. Par exemple:  «pays:district+région:[région]:pays». S’il n’est pas précisé, le nom de fonction par défaut sera utilisé.
+	</td>
+	<td>
+	  <input name="link_fields"></td>
+      </tr></table><span id="dependent_functions">
+	<h2><a name="dependent_functions_link" href="" id="dependent_functions_link_replace"> Fonctions dépendantes</a></h2>
+	<div class="indented" id="dependent_functions_ajax">
+	</div>
+      </span>
+
+  </span>
+</div>

@@ -1,0 +1,41 @@
+<div id="sql_function">
+  <span id="function_contents">
+    <h2>Editar la función SQL <span name="name"></span></h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0" id="reporting_function"><tr><td width="30%">
+	  <h3>Consulta Sql:</h3> La definición de SQL para esta función. Debe referirse a los campos informados como `reportform+field`
+	</td>
+	<td width="auto">
+	  <textarea style="width:auto" cols="83" rows="4" name="qry" class="validate=[nonempty]"></textarea></td>
+      </tr><tr><td>
+	  <h3>Descripción:</h3> Una descripción de esta función que será vista por el usuario final
+	</td>
+	<td>
+	  <textarea type="text" name="description" rows="4" cols="53"></textarea></td>
+      </tr><tr><td>
+	  <h3>Campo de Formulario:</h3> Seleccione el campo del formulario del cual esta función tomará valores
+	</td>
+	<td>
+	  <select name="formfield"></select></td>
+      </tr><tr><td>
+	  <h3>Agregado:</h3> Una lista separada por comas de los formularios de la relación cuyos campos deseas unir (p.ej. aquellas que no están en la cláusula groupby, son los formularios que aparecen en su función)
+	</td>
+	<td>
+	  <input type="text" name="aggregate"></td>
+      </tr><tr><td>
+	  <h3>Formularios Seleccionables</h3>Los formularios que son seleccionables para este campo. Solo se aplica sí el formulario es una subclase de I2CE_FormField_MAPPED. En cuyo caso debería ser una lista de formularios separados por comas. Si no es asignado, el valor predeterminado es el nombre de esta función.
+	</td>
+	<td>
+	  <input name="select_forms"></td>
+      </tr><tr><td>
+	  <h3>Campos Relacionados</h3>Los campos que son enlazados cuando se enumeran opciones. Solo se aplica si el formulario es una subclase de I2CE_FormField_MAPPED. Debería ser una lista separada por dos puntos (:) de 'forms' o 'form+linkfield's. Ejemplo: "county:district+region:[region]:country". Si no es asignado, el predeterminado es el nombre de esta función.
+	</td>
+	<td>
+	  <input name="link_fields"></td>
+      </tr></table><span id="dependent_functions">
+	<h2><a name="dependent_functions_link" href="" id="dependent_functions_link_replace"> Funciones dependientes</a></h2>
+	<div class="indented" id="dependent_functions_ajax">
+	</div>
+      </span>
+
+  </span>
+</div>

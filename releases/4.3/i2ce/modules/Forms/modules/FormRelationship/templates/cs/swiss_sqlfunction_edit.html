@@ -1,0 +1,41 @@
+<div id="sql_function">
+  <span id="function_contents">
+    <h2>Upravit funkci SQL <span name="name"></span></h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0" id="reporting_function"><tr><td width="30%">
+	  <h3>Dotaz Sql:</h3> Určující SQL pro tuto funkci. Na ohlášená pole odkazujete jako `reportform+field`
+	</td>
+	<td width="auto">
+	  <textarea style="width:auto" cols="83" rows="4" name="qry" class="validate=[nonempty]"></textarea></td>
+      </tr><tr><td>
+	  <h3>Popis:</h3> Popis této funkce, který je zobrazen koncovému uživateli
+	</td>
+	<td>
+	  <textarea type="text" name="description" rows="4" cols="53"></textarea></td>
+      </tr><tr><td>
+	  <h3>Pole formuláře:</h3> Vyberte pole formuláře, z kterého tato funkce bere hodnoty
+	</td>
+	<td>
+	  <select name="formfield"></select></td>
+      </tr><tr><td>
+	  <h3>Sloučit:</h3> Čárkou oddělený seznam formulářů ve vztahu v jehož polích si přejete sčítat (tj. ty, které nejsou v klauzule groupby, toto jsou formuláře, které se objeví ve Vaší funkci)
+	</td>
+	<td>
+	  <input type="text" name="aggregate"></td>
+      </tr><tr><td>
+	  <h3>Volitelné formuláře</h3>Formuláře, které jsou zvolitelné pro toto pole. Týká se pouze pokud je pole formuláře podtřídou I2CE_FormField_MAPPED. V takovém případě by to měl být čárkou oddělený seznam formulářů. Pokud není nastaveno, je to standardně název této funkce.
+	</td>
+	<td>
+	  <input name="select_forms"></td>
+      </tr><tr><td>
+	  <h3>Propojené formuláře</h3>Pole, která jsou propojena při zobrazování možností v seznamu. Pouze v případě, když pole formuláře je v podtřídě I2CE_FormField_MAPPED. Měl by to být čárkou oddělený seznam 'formulářů' nebo 'formulářů+poleodkazu'. Příklad: "kraj:oblast+region:[region]:země". Pokud toto není nastaveno, je to standardně název této funkce.
+	</td>
+	<td>
+	  <input name="link_fields"></td>
+      </tr></table><span id="dependent_functions">
+	<h2><a name="dependent_functions_link" href="" id="dependent_functions_link_replace"> Závislé funkce</a></h2>
+	<div class="indented" id="dependent_functions_ajax">
+	</div>
+      </span>
+
+  </span>
+</div>

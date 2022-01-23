@@ -1,0 +1,31 @@
+<div id="sql_function">
+  La funzione SQL <span name="name"></span>
+  <span name="description" ifset="true">
+    --
+    <span name="description"></span>
+  </span>
+  <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0" id="reporting_function"><tr><td>
+	<h3>Sql Query:</h3> La definizione di SQL per questa funzione. Si fa riferimento ai campi segnalati come 'reportform + campo'
+      </td>
+      <td>
+	<span name="qry"></span>
+      </td>
+    </tr><tr><td> 
+	<h3>Campo del modulo:</h3> Il campo del form da cui questa funzione prende il valore
+      </td>
+      <td>
+	<span name="formfield"></span>
+      </td>
+    </tr><tr><td>
+	<h3>Moduli selezionabili</h3>I moduli che sono selezionabili per questo campo. Si applica solo se il campo del modulo è una sottoclasse di I2CE_FormField_MAPPED. In tal caso dovrebbe essere un elenco dei moduli separato da virgole.
+      </td>
+      <td>
+	<span name="select_forms"></span>
+      </td>
+    </tr><tr><td>
+	<h3>Campi collegati</h3>I campi collegati nell'elenco di opzioni. Si applica solo se il campo del modulo è una sottoclasse di I2CE_FormField_MAPPED. Dovrebbe essere una lista separata da due punti di 'moduli' o 'moduli+campicollegamento'. Esempio: "contea:distretto+regione:[regione]:paese".
+      </td>
+      <td>
+	<span name="link_fields"></span>
+      </td>
+    </tr></table></div>

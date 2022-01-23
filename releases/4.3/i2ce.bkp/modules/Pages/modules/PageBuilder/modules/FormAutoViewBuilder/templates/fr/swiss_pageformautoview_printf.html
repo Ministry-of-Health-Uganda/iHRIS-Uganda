@@ -1,0 +1,27 @@
+<div>
+  <div id="printf_container">
+    <table id="printf_table" class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td width="50%">
+          <h3>Format d'affichage du formulaire: </h3>
+          <p>Modifier le format dans lequel l’information du formulaire sera affichée dans la page. Utiliser les déterminants du format printf pour ajouter les champs à afficher.</p>
+          <p>Si vous n'êtes pas familier avec les spécificateurs de format printf, utilisez '<i>%s</i>' pour chacun des champs que vous souhaitez voir affiché. L'ordre de la <i>%s</i>' correspondront à l'ordre des champs que vous avez sélectionné (par exemple le premier <i>%s</i> affichera le premier champ).</p>
+        </td>
+        <td id="printf"></td>
+      </tr><tr><td>
+	      <h3>Champs affichés: </h3> 
+	      <p>Les champs pour afficher chaque déterminant du format printf. Chaque déterminant de format dans le Format d’affichage sera remplacé par le champ correspondant. Le nombre de déterminants de format doit correspondre au nombre de champs.</p>
+		</td>
+	 	<td id="printf_args_options" style="text-align:center">
+	 		<br><input type="checkbox" onclick="hideArgs(this)" id="noArgs" name="noArgs" value="noArgs"> Pas d'argument<br><br></td>
+	  </tr><tr><td></td>
+	  	<td style="text-align:right">
+	  	  <button type="button" id="add_arg_btn" onclick='addPrintfArgSelector(this, "printf_args_options");' style="padding:0.25em">Ajouter un argument</button>
+	  	</td>
+	  </tr></table></div>
+</div>
+
+  
+  
+  
+  
+	
+	

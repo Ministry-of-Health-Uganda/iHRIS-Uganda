@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="permissions">
+  <metadata>
+    <displayName>Permission System</displayName>
+    <category>Base System Component</category>
+    <description>A module that enables role and task based permissions</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <requirement name="user">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+</I2CEConfiguration>

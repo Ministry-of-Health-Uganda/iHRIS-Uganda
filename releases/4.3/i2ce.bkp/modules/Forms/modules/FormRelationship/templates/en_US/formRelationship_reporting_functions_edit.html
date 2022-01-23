@@ -1,0 +1,59 @@
+<div>
+  <span name='functions_container' id='functions_container'> 
+    <span id='reporting_functions_container'>
+      <span name='has_existing_functions' ifset='true'>
+	<h2>Existing Functions</h2>
+	<ul id='existing_functions_list'>
+	</ul>
+      </span>
+      <h2 id='new_function_link' class='new_function_options_toggle'><a>Add a new function</a></h2>
+      <div id='new_function_options_menu' class='optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true' >
+	<div class='optionsMenuTitle window_drag'>Add A New Function</div>
+	<table class='multiFormTable' cellpadding="0" cellspacing="0" border="0">
+	  <tr>
+	    <td>
+	      <h3>Function name:</h3>A name for this function that can be refred to when creating reports.
+	    </td>
+	    <td>
+	      <input type='text' name='name'  id='function_name' value='' class='validate=[nonempty,notinlist,alphanumericextended,magicdatakey]'/>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+	      <h3>Sql Query:</h3> The defining SQL for this function.  You refer to a form with the name &lt;formname&gt; and the field  &lt;field&gt;
+	      `&lt;formname&gt;+&lt;field&gt;` in your function.
+	    </td>
+	    <td>
+	      <textarea rows='4' cols='53' name='qry' class='validate=[nonempty]'></textarea>    
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+	      <h3>Description:</h3> A description of this function to be displayed to the end user
+	    </td>
+	    <td>
+	      <textarea type='text' name='description' rows='4' cols='53'></textarea>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td colspan='2'> 
+	      <h3>Form Field:</h3> Select the form field that this function takes values in
+	      <select name='formfield'  >
+	      </select>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td colspan='2'>
+	      <div/>
+	      <span class='new_function_options_hide button optionsMenuButton window_hide'>Close</span>
+	      <input type='submit' class='button only_options_menu ' value='Create' id='new_function' />
+	      <div/>
+	      <br/>
+	    </td>
+	  </tr>
+
+	</table>    
+      </div>
+    </span>
+  </span>
+</div>

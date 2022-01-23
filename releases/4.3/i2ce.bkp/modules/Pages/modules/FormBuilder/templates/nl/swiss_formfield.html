@@ -1,0 +1,47 @@
+<div>
+  
+
+  <h2>Veld</h2>
+  <div id="field_contents">
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Formulierveldklasse</h3>Het gegevenstype voor dit veld.
+	</td>
+	<td>
+	  <select name="formfield"></select></td>
+      </tr><tr><td>
+	  <h3>Vereist</h3>This field needs to be set before it can be saved
+	</td>
+	<td>
+	  <select name="required"><option value="1">Ja</option><option value="0">Nee</option></select></td>
+      </tr><tr><td>
+	  <h3>In database</h3>This field is saved in the databsae
+	</td>
+	<td>
+	  <select name="in_db"><option value="1">Ja</option><option value="0">Nee</option></select></td>
+      </tr><tr><td>
+	  <h3>Uniek</h3>This field is requried to be a unique value
+	</td>
+	<td>
+	  <select name="unique"><option value="1">Ja</option><option value="0">Nee</option></select></td>
+      </tr><tr><td>
+	  <h3>Unieke velden</h3>If this is a unique field, these are fields it is requried to be unique relative to
+	</td>
+	<td>
+	  <input type="hidden" name="do_unique_field" value="1"><ul name="unique_field"></ul></td>
+      </tr></table><span id="headers">
+      <h2><a id="headers_link" href="">Kopteksten</a></h2>
+      Kopteksten voor dit veld bewerken
+      <div class="indented" id="headers_ajax"></div>
+    </span>
+
+    
+    <span name="has_meta" ifset="1">
+      <span id="meta">
+	<h2><a id="meta_link" href="">Meta</a></h2>
+	Metadata voor dit veld bewerken
+	<div class="indented" id="meta_ajax"></div>
+      </span>
+    </span>
+
+  </div>
+</div>

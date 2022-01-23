@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Mailer">
+  <metadata>
+    <displayName>Mailer</displayName>
+    <category>External Software</category>
+    <description>Wrapper for PEAR Mail module</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>1.2.0.1</version>
+    <requirement name="I2CE">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="Mailer">
+    <configuration name="mail_server_backend">
+      <!-- 
+      should be one of "mail","smtp", "sendmail" 
+      If anything other than "mail" is specified then the Pear::Mail module needs to be installed.  
+      This can be done on Ubuntu by "sudo apt-get install php-mail php-mail-mime"
+      -->
+      <value>mail</value>
+    </configuration>
+    <configuration name="mail_server_params" value="many" type="delimited">
+      <status>required:false</status>
+      <!--should be defined according to the $params array in http://pear.php.net/manual/en/package.mail.mail.factory.php-->
+    </configuration>
+    <configuration name="mail_message_headers" value="many" type="delimited">
+      <status>required:false</status>
+      <!--should be defined according to the $params array in http://pear.php.net/manual/en/package.mail.mail.factory.php-->
+    </configuration>
+  </configurationGroup>
+</I2CEConfiguration>

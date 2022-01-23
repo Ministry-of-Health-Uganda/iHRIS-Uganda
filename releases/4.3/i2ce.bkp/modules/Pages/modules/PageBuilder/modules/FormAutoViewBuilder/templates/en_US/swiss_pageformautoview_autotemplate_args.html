@@ -1,0 +1,68 @@
+<div>
+  <div id='auto_template_container'>
+	<table class='multiFormTable' cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td>
+		  <h3>Title:</h3>The title for the primary form
+		</td>
+		<td>
+		  <input name='title'/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		  <h3>Form Display Name:</h3>The display name for the primary form
+		</td>
+		<td>
+		  <input name='form_display_name'/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		  <h3>Child Form Display Order:</h3>This will put the child forms in the order desired. Please place a
+		  1 - <span name='child_number'/> by each child form in the order you want it to display. You may only use each number once.
+		</td>
+		<td name='child_form_order'/>      
+    </tr>
+	<tr><td><br /></td></tr>
+	<tr>
+		<td>
+		  <h3>Display Order:</h3>This will order all of the fields on the primary form of the page. Please place a
+		  1 - <span name='display_number'/> by each field name in the order you want it to display. You may only use each number once.
+		</td>
+		<td>
+		  <div name='display_order'/>
+		</td>
+    </tr>
+	<tr><td><br /></td></tr>
+	<tr>
+		<td>
+		  <h3>Page Permissions:</h3>The permissions a user must have to access this page:
+		</td>
+		<td>
+		  <div style="width:600px; height:300px; overflow:scroll;" name='task' />
+		</td>
+	</tr>
+    </table>
+	   
+	<span id='action_links'>
+		<h2><a id="action_links_link" href=''>Action Links</a></h2>
+		 Edit the fields of the action link
+		<div class='indented' id='action_links_ajax'>
+		</div>
+	</span>
+	
+	<span id='child_forms'>
+		<h2><a id="child_forms_link" href=''>Child Forms</a></h2>
+		 Edit Child Forms on a Page
+		<div class='indented' id='child_forms_ajax'>
+		</div>
+	</span>
+  </div>
+</div>
+  
+  
+  
+  
+	
+	

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports_PieChart" path="/modules/CustomReports/displays/PieChart">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="CustomReports_PieChart" path="/modules/CustomReports/displays/PieChart" locale="es">
+    <version>4.3.0.1</version>
+    <configuration name="error_message" locale="es" values="single" type="string">
+      <value>No se encontraron datos para este informe. Por favor, asegúrese de que los datos del informe se ha almacenado en caché o modifique sus límites.</value>
+    </configuration>
+    <configurationGroup name="display_options">
+      <configurationGroup name="styles">
+        <configurationGroup name="Pie">
+          <configuration name="display_name" locale="es" values="single" type="string">
+            <value>Gráfico de torta (Simple)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="Bar">
+          <configuration name="display_name" locale="es" values="single" type="string">
+            <value>Gráfico de barras (Simple)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="Column">
+          <configuration name="display_name" locale="es" values="single" type="string">
+            <value>Gráfico de Columnas (Simple)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="StackedColumn">
+          <configuration name="display_name" locale="es" values="single" type="string">
+            <value>Gráfico de Columnas Apiladas (Simple)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="Scatter">
+          <configuration name="display_name" locale="es" values="single" type="string">
+            <value>Gráfico de Dispersión</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

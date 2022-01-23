@@ -1,0 +1,33 @@
+<div>
+  
+
+
+  <h2>Fomu Kache</h2>
+  <span name="has_profiles" ifset="true">
+    Hifadhi fomu zote katika Profaili
+    <form action="CachedForms/cache" style="margin-left:2em" method="POST">
+      Select a profile:  <select name="profile"></select><br><input type="submit" value="Cache"></form>
+  </span>
+  <br><div>
+    <a href="CachedForms/cacheAll">Kache</a> fomu zote
+    <br><a href="CachedForms/cacheAllForce">Lazimisha Kuhifadhi</a> wa fomu zote kama hazija chakaa
+    <br><a href="CachedForms/dropAll">Dondosha</a> kitangu cha fomu zote
+  </div>
+  <br><span name="has_profiles" ifset="true">
+    <h2>Tuma Fomu Zilizohifadhiwa</h2>
+    Export all cached forms in the selected profile.  If you select a modification date, then only records that
+    have been modified on or after the specified date will be exported.  Otherwise, all records that have been
+    modified for the selected profile will be exported.
+    <form action="CachedForms/export" style="margin-left:2em" method="POST">
+      Select a profile:  <select name="profile"></select><br>
+      Tarehe ya Kurekebishwa: <input class="datepicker_ymd" name="mod_date" type="text"><br><input type="checkbox" value="1" name="compress" checked>Wezesha Ugandamizaji bzip2
+      <br><input type="submit" value="Export"></form>
+    
+    <br></span>
+
+  <h2>Unda/Hariri Profaili</h2>
+  Unda Profaili au hariri profaili la fomu lililopo.
+  <form action="CachedForms/exportProfile" style="margin-left:2em">
+      Select a profile:  <select name="profile"><option value="">Unda Profaili Jipya</option></select><br><input type="submit" value="Edit"></form>
+  <br><h2>Simamia Uhifadhi wa fomu moja moja</h2>
+  <ul id="cached_forms_list"></ul></div>

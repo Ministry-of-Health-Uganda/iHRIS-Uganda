@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PrintedForms">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="PrintedForms" locale="ar">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="ar">
+      <configuration name="printed_forms_can_access" values="single" type="string">
+        <value>يتيح أقل معدل للوصول&#160;الي نظام&#160;النماذج المطبوعة</value>
+      </configuration>
+      <configuration name="printed_forms_admin" values="single" type="string">
+        <value>يتيح&#160;الوصول الكامل إلى&#160;نظام&#160;النماذج المطبوعة</value>
+      </configuration>
+      <configuration name="printed_forms_all_generate" values="single" type="string">
+        <value>يتيح الوصول الي بناء نظام النماذج المطبوعة</value>
+      </configuration>
+      <configuration name="printed_forms_archive_admin" values="single" type="string">
+        <value>يسمح بادارة أرشيف نظام&#160;النماذج المطبوعة</value>
+      </configuration>
+      <configuration name="printed_forms_create_all_archives" values="single" type="string">
+        <value>يسمح&#160;بانشاء &#160;أرشيف&#160;نظام النماذج المطبوعة</value>
+      </configuration>
+      <configuration name="printed_forms_view_all_archives" values="single" type="string">
+        <value>تسمح بعرض&#160;أرشيف&#160;نظام النماذج المطبوعة</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="generated_doc">
+          <configuration name="display" values="single" locale="ar" type="string">
+            <value>وثيقة منتجة</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="I2CE_GeneratedDoc">
+          <configurationGroup name="fields">
+            <configurationGroup name="document">
+              <configuration name="headers" type="delimited" locale="ar" values="single">
+                <value>default:وثيقة</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="ar" values="single">
+                <value>default:تاريخ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="description">
+              <configuration name="headers" type="delimited" values="many" locale="ar">
+                <value>default:وصف</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="primary_form">
+              <configuration name="headers" type="delimited" values="many" locale="ar">
+                <value>default:الرقم التعريفي للنموذج الابتدائي</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

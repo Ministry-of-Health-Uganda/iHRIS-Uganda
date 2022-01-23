@@ -1,0 +1,43 @@
+<div>
+  <span name="has_existing_relationships" ifset="true">
+    Můžete buď upravit existující vztah formuláře nebo sestavit nový.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    Pomocí této stránky můžete sestavit existující vztah formuláře.  
+  </span>
+  <span name="has_existing_relationships" ifset="true">
+    <h2>Upravit existující vztah</h2>
+    <ul id="relationships" class="formRelationship_relationship_list"></ul></span>
+  <h2>Sestavit nový vztah</h2>
+  <span name="has_existing_relationships" ifset="true">
+    Buď, prosím, vyberte formulář k použití jako hlavní formulář pro tento vztah formuláře, nebo zvolte kopírovat existující vztah do nového kliknutím na odpovídající odkaz možností níže.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    Vyberte, prosím formulář, který bude použit jako hlavní formulář pro tento vztah formuláře kliknutím na odkaz možností níže.
+  </span>
+  <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	<h3>Krátký název vztahu:</h3>Vnitřní klíč, kterým se určuje vztah formuláře. Nemusí být stejný jako klíč pro jakékoliv existující vztahy formuláře.
+      </td>
+      <td>
+	<input id="relationship" name="relationship" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+    </tr><tr><td>
+	<h3>Zobrazený název:</h3>Název vztahu formuláře, který je zobrazen koncovému uživateli.
+      </td>
+      <td>
+	<input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+    </tr><tr><td>
+	<h3>Popis:</h3>Popis vztahu formuláře, který by měl být srozumitelný pro koncového uživatele.
+      </td>
+      <td>
+	<textarea name="description" rows="4" cols="53" value=""></textarea></td>
+    </tr><tr><td>
+	Pro sestavení nového vztahu formuláře, budete muset nejdříve zvolit hlavní formulář
+	<select name="form_name" id="form_name"></select></td>
+      <td id="formRelationship_relationship_new_menu_list">
+      </td>
+    </tr><tr name="has_existing_relationships" ifset="true"><td>
+	Vyberte existující vztah ke kopírování
+	<select name="existing_relationship" id="existing_relationship"><option value="">Nekopírovat</option></select></td>
+      <td id="formRelationship_relationship_copy_menu_list">
+      </td>
+    </tr></table></div>

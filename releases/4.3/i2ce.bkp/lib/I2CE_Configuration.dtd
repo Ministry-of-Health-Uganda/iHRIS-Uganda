@@ -1,0 +1,63 @@
+<!ELEMENT I2CEConfiguration (metadata,(eraseVals|erase)*,configurationGroup?)>
+<!ATTLIST I2CEConfiguration name NMTOKEN #REQUIRED>
+<!ELEMENT metadata
+          (displayName,className?,category?,description?,longDescription?,creator?,email?,link?,version,(enable|requirement|conflict|path)*,priority?)>
+<!ELEMENT priority (#PCDATA)>
+<!ELEMENT version (#PCDATA)>
+<!ELEMENT homepage (#PCDATA)>
+<!ELEMENT path (value*)>
+<!ATTLIST path name NMTOKEN #REQUIRED>
+<!ELEMENT enable EMPTY>
+<!ATTLIST enable name NMTOKEN #REQUIRED>
+<!ELEMENT requirement (atLeast|atMost|exactly|greaterThan|lessThan|eval)*>
+<!ATTLIST requirement name NMTOKEN #REQUIRED>
+<!ATTLIST requirement external NMTOKEN #IMPLIED>
+<!ELEMENT conflict (atLeast|atMost|exactly|greaterThan|lessThan|eval)*>
+<!ATTLIST conflict name NMTOKEN #REQUIRED>
+<!ATTLIST conflict external NMTOKEN #IMPLIED>
+<!ELEMENT erase (atLeast|atMost|exactly|greaterThan|lessThan)>
+<!ATTLIST erase path CDATA #REQUIRED>
+<!ELEMENT eraseVals ((atLeast|atMost|exactly|greaterThan|lessThan),value*) >
+<!ATTLIST eraseVals path CDATA #REQUIRED>
+<!ELEMENT configurationGroup (displayName?,description?,version?,status*,(configurationGroup|configuration|eraseVals|erase)*)>
+<!ATTLIST configurationGroup name NMTOKEN  #REQUIRED>
+<!ATTLIST configurationGroup path CDATA #IMPLIED>
+<!ATTLIST configurationGroup config NMTOKEN #IMPLIED>
+<!ATTLIST configurationGroup locale NMTOKEN #IMPLIED>
+<!ATTLIST configurationGroup binary NMTOKEN #IMPLIED>
+<!ELEMENT configuration (displayName?,description?,version?,status*,value*,(eraseVals|erase)*)>
+<!ATTLIST configuration name NMTOKEN #REQUIRED>
+<!ATTLIST configuration path CDATA #IMPLIED>
+<!ATTLIST configuration values NMTOKEN "single">
+<!ATTLIST configuration type NMTOKEN "string">
+<!ATTLIST configuration config NMTOKEN #IMPLIED>
+<!ATTLIST configuration locale NMTOKEN #IMPLIED>
+<!ATTLIST configuration binary NMTOKEN #IMPLIED>
+<!ATTLIST configuration encoding NMTOKEN #IMPLIED>
+<!ELEMENT displayName (#PCDATA)>
+<!ATTLIST displayName locale NMTOKEN #IMPLIED>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT longDescription (#PCDATA)>
+<!ATTLIST longDescription locale NMTOKEN #IMPLIED>
+<!ATTLIST description locale NMTOKEN #IMPLIED>
+<!ELEMENT className (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ATTLIST category locale NMTOKEN #IMPLIED>
+<!ELEMENT creator (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT value (#PCDATA)> 
+<!ATTLIST value locale NMTOKEN #IMPLIED>
+<!ELEMENT eval EMPTY> 
+<!ELEMENT atLeast EMPTY> 
+<!ATTLIST atLeast version CDATA #REQUIRED>
+<!ELEMENT greaterThan EMPTY> 
+<!ATTLIST greaterThan version CDATA #REQUIRED>
+<!ELEMENT atMost EMPTY> 
+<!ATTLIST atMost version CDATA #REQUIRED>
+<!ELEMENT lessThan EMPTY> 
+<!ATTLIST lessThan version CDATA #REQUIRED> 
+<!ELEMENT exactly EMPTY> 
+<!ATTLIST exactly version CDATA #REQUIRED>
+<!ELEMENT visibility (#PCDATA)> 
+<!ELEMENT status (#PCDATA)>  

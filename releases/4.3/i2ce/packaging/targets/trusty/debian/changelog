@@ -1,31 +1,1000 @@
-i2ce (4.3.2.1~trusty) trusty; urgency=medium
+i2ce (4.2.3.6~trusty) trusty; urgency=medium
 
-  * Ubuntu Release Version 4.3.2.1 4368: Nobert Mijumbi 2018-04-18
-    {4.3.2.0-ubuntu-release, 4.3.2-release} Automated version bumps for
-    release 4.3.2
+  * Ubuntu Release Version 4.2.3.6 4315: Luke Duncan 2016-06-13
+    Fised search function definition for FileSearch_Caching because
+    it didn't match the main FileSearch class.  4314: Luke Duncan
+    2016-06-10 Fixed error in form relationship importer for getting
+    the hash of the xml representation of a form.  4313: Launchpad
+    Translations on behalf of intrahealth+informatics 2016-05-24
+    Launchpad automatic translations update.  4312: Siebrand Mazeland
+    2016-05-23 Localisation updates from https://translatewiki.net.
+    4311: Launchpad Translations on behalf of intrahealth+informatics
+    2016-05-20 Launchpad automatic translations update.  4310:
+    Carl Leitner 2016-05-13 added support for search for classes
+    with namespaces 4309: Launchpad Translations on behalf
+    of intrahealth+informatics 2016-05-11 Launchpad automatic
+    translations update.  4308: Launchpad Translations on behalf
+    of intrahealth+informatics 2016-05-05 Launchpad automatic
+    translations update.  4307: Launchpad Translations on behalf of
+    intrahealth+informatics 2016-04-16 Launchpad automatic translations
+    update.  4306: Siebrand Mazeland 2016-04-08 Localisation updates
+    from https://translatewiki.net.  4305: Launchpad Translations
+    on behalf of intrahealth+informatics 2016-03-27 Launchpad
+    automatic translations update.  4304: Ally Shaban 2016-03-19
+    Commiting changes made by Carl 4303: Launchpad Translations on
+    behalf of intrahealth+informatics 2016-03-19 Launchpad automatic
+    translations update.  4302: Carl Leitner 2016-03-11 allow you
+    get report view name, report name and relationship name for
+    a custom report display 4301: Luke Duncan 2016-03-11 Added in
+    transaction for process_saves on the relationship queue so that
+    if one form fails to validate none will get saved and it rolls
+    back so the XML can be corrected and re-imported without issue.
+    Otherwise the top level form may be saved but some child forms or
+    mapped forms may not be there.  4300: Launchpad Translations on
+    behalf of intrahealth+informatics 2016-03-11 Launchpad automatic
+    translations update.  4299: Launchpad Translations on behalf of
+    intrahealth+informatics 2016-03-10 Launchpad automatic translations
+    update.  4298: Siebrand Mazeland 2016-03-09 Localisation updates
+    from https://translatewiki.net.  4297: Launchpad Translations on
+    behalf of intrahealth+informatics 2016-03-03 Launchpad automatic
+    translations update.  4296: Luke Duncan 2016-02-29 Removed forced
+    removal of CustomReports/limit_excludes/primary_form from all forms
+    in a relationship instead of just the top level.  4295: Luke Duncan
+    2016-02-29 Fixed fuzzy method set up for checkLimit_null_not_null
+    as well.  4294: Luke Duncan 2016-02-29 Fix fuzzy method called
+    for generateLimit_null_not_null to be the correct method isntead
+    of always not null.  Modified null_not_null template to allow a
+    blank option so it can be turned off as a limit when not needed.
+    Also changed text display to be clear on what is being chosen
+    for 'Null' or 'Not Null'.  4293: Ally Shaban 2016-02-26 Fixed
+    syntax error 4292: Luke Duncan 2016-02-24 Modified form field
+    processDOM to not copy over every attribute so there aren't issues
+    with later modules that may modify the DOM (specificaly display
+    with the Tags module).  4291: Launchpad Translations on behalf of
+    intrahealth+informatics 2016-02-20 Launchpad automatic translations
+    update.  4290: Siebrand Mazeland 2016-02-19 Localisation updates
+    from https://translatewiki.net.  4289: Siebrand Mazeland 2016-02-19
+    Localisation updates from https://translatewiki.net.  4288:
+    Launchpad Translations on behalf of intrahealth+informatics
+    2016-02-18 Launchpad automatic translations update.  4287:
+    Luke Duncan 2016-02-11 Added in option for limiting the number
+    of child forms that can exist for a parent by setting it under
+    /modules/forms/forms/FORM/meta/child_forms_limit/CHILD_FORM = #.
+    4286: Luke Duncan 2016-02-10 Added in option to use display reports
+    for web services lists.  This will allow better limiting of top
+    level values when nothing can be selected below them.  For an
+    example of use, see the ManageFacilityTree module in iHRIS Manage.
+    4285: Launchpad Translations on behalf of intrahealth+informatics
+    2016-02-05 Launchpad automatic translations update.  4284: Luke
+    Duncan 2016-02-03 Fixed typo in magic data form storage that was
+    breaking cached forms updates.  4283: Luke Duncan 2016-02-02
+    Added in variable definition to avoid type error.  4282: Luke
+    Duncan 2016-02-02 Fixed up reference to getSubSelectFieldsQuery in
+    updateCachedTable to avoid missing variable errors.  4281: Carl
+    Leitner 2016-01-29 XMLDB - fixed issue with subselect 4280: Carl
+    Leitner 2016-01-29 updated ignore 4279: Carl Leitner 2016-01-29
+    set modtime in slow populate for cached form 4278: Luke Duncan
+    2016-01-28 Put in a hack to make TIME() work with the datetime
+    value starts with 0000-00-00.  In MySQL TIME() returns null on
+    a datetime field that starts with 0s but it works when it's
+    a string.  DATE() works fine in both cases.  4277: Launchpad
+    Translations on behalf of intrahealth+informatics 2016-01-28
+    Launchpad automatic translations update.  4276: Siebrand Mazeland
+    2016-01-27 Localisation updates from https://translatewiki.net.
+    4275: Launchpad Translations on behalf of intrahealth+informatics
+    2015-12-20 Launchpad automatic translations update.  4274:
+    Luke Duncan 2015-12-11 Modified default options for gizmo form
+    to not skip i2ce_hidden in the display, added it back in to skip
+    by default on the view page (when is_edit is false) so it's only
+    there on the edit page.  4273: Luke Duncan 2015-12-11 Fixed link
+    for the show hidden/non-hidden/all menu on the auto list page.
+    4272: Launchpad Translations on behalf of intrahealth+informatics
+    2015-12-03 Launchpad automatic translations update.  4271: Sovello
+    Hildebrand 2015-11-25 {4.2.3.5-ubuntu-release} "Ubuntu Release
+    Version 4.2.3.5"
 
- -- Carl Leitner <litlfred@ibiblio.org>  Wed, 18 Apr 2018 08:21:21 +0000
+ -- Carl Leitner <litlfred@ibiblio.org>  Thu, 16 Jun 2016 18:52:49 +0000
 
-i2ce (4.3.2.0~trusty) trusty; urgency=medium
+i2ce (4.2.3.5~trusty) trusty; urgency=medium
 
-* Ubuntu Release Version 4.3.2.0 for trusty
+  * Ubuntu Release Version 4.2.3.5 4270: Launchpad Translations
+    on behalf of intrahealth+informatics 2015-11-22 Launchpad
+    automatic translations update.  4269: Launchpad Translations on
+    behalf of intrahealth+informatics 2015-11-17 Launchpad automatic
+    translations update.  4268: Luke Duncan 2015-11-10 Updated Swiss
+    SQLFunction getFieldObj method to include the relationship so
+    it can be passed through to web services lists to determine all
+    the details for displaying the field for limits.  Modified web
+    services lists to take this information to determine the correct
+    field object to use for display.  Added in field options for the
+    getFunctionDetails for I2CE_FormRelationship similar to what
+    is used for SQLFunction->getFieldObj.  Also fixed issue with
+    limits when now form field was being used for web services lists.
+    4267: Luke Duncan 2015-11-09 Updated web services lists to work
+    better with forms that refer to the same form limited by a field.
+    Also allowed the different limits set by the display string to be
+    used in this case.  4266: Luke Duncan 2015-11-09 Also removed new
+    link when the form isn't writable for auto list pages.  4265: Luke
+    Duncan 2015-11-09 Added option to display totals for configured
+    columns for ODT printed reports.  Pulled from 4.1-dev.  4264:
+    Luke Duncan 2015-11-09 Changed modified.value comparison for
+    magic data form storage to include STR_TO_DATE to avoid errors in
+    some versions of MySQL.  4263: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-10-31 Launchpad automatic translations
+    update.  4262: Luke Duncan 2015-10-27 Changed paginateList
+    calls to use the jumper_id of select_list as that is what is in
+    the template so paging shows up on auto list pages.  4261: Carl
+    Leitner 2015-10-26 {4.2.3.4-ubuntu-release} "Ubuntu Release Version
+    4.2.3.4"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Wed, 25 Nov 2015 16:41:49 +0000
+
+i2ce (4.2.3.4~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.3.4 4260: Carl Leitner 2015-10-26
+    {4.2.3.3-ubuntu-release} "Ubuntu Release Version 4.2.3.3"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 26 Oct 2015 14:38:21 +0000
+
+i2ce (4.2.3.3~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.3.3 4259: Carl Leitner 2015-10-25
+    XML DB form storage now supports the faster caching by creating a
+    subselect of values UNION'ed together 4258: Carl Leitner 2015-10-25
+    Cached forms and form storage for non-DB like form storage
+    mechanisms can support a faster (than slow) insert.  the form
+    storage mechanism needs to create a sub-select query for an insert
+    statement that looks something like (select 1 as id, 'A1' as code
+    union 2, 'A2') 4257: Carl Leitner 2015-10-25 better error checking
+    in Service Form Storage 4256: Carl Leitner 2015-10-25 Cached
+    forms and form storage for non-DB like form storage mechanisms can
+    support a faster (than slow) insert.  the form storage mechanism
+    needs to create a sub-select query for an insert statement that
+    looks something like (select 1 as id, 'A1' as code union 2, 'A2')
+    4255: Carl Leitner 2015-10-25 hack in Magic Data From Storage to
+    get parent field to work.  needs to be fixed 4254: Carl Leitner
+    2015-10-24 {4.2.3.2-ubuntu-release} "Ubuntu Release Version
+    4.2.3.2"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 26 Oct 2015 14:33:39 +0000
+
+i2ce (4.2.3.2~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.3.2 4253: Carl Leitner 2015-10-24
+    {4.2.3.1-ubuntu-release} "Ubuntu Release Version 4.2.3.1"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sat, 24 Oct 2015 10:28:35 -0400
+
+i2ce (4.2.3.1~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.3.1 4252: Ese Egerega 2015-10-23 [merge]
+    {4.2.3.0-ubuntu-release} Added requirement for forms-storage-entry
+    module
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sat, 24 Oct 2015 10:19:15 -0400
+
+i2ce (4.2.1.1~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.1.1 4241: Sovello Hildebrand 2015-09-24
+    {4.2.1.0-ubuntu-release} fix i2ce naming conflicts and change
+    versioning mechanism when one doesn't want to change the current
+    version numbers
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Thu, 24 Sep 2015 15:34:29 +0000
+
+i2ce (4.2.0.54~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.54 4231: Launchpad Translations on
+    behalf of intrahealth+informatics 2015-09-11 Launchpad automatic
+    translations update.  4230: Siebrand Mazeland 2015-09-10
+    Localisation updates from https://translatewiki.net.  4229:
+    Launchpad Translations on behalf of intrahealth+informatics
+    2015-09-10 Launchpad automatic translations update.  4228: Carl
+    Leitner 2015-09-07 avoid fatal error on edge case 4227: Carl
+    Leitner 2015-09-07 avoid fatal error on edge case 4226: Carl
+    Leitner 2015-09-05 fixed typo in XMLDB getRecords() 4225: Carl
+    Leitner 2015-09-05 MAP field with a reportSelect will default to
+    name of field as a selectable form 4224: Carl Leitner 2015-09-05
+    form gizmo on an MAPPED field will use reportSelect if it is in
+    the default display and enabled 4223: Carl Leitner 2015-09-05
+    {4.2.0.53-ubuntu-release} "Ubuntu Release Version 4.2.0.53"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 14 Sep 2015 07:43:21 +0000
+
+i2ce (4.2.0.53~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.53 4222: Carl Leitner 2015-09-05 allow
+    for optimzation of search query in a special case 4221: Sovello
+    Hildebrand 2015-09-02 require module forms-storage-multiflat. this
+    module was not enabled by default and would cause the site to
+    fail updating when the site is configured to aggregate data from
+    other sites using flat and multiflat storage mechanisms 4220:
+    Launchpad Translations on behalf of intrahealth+informatics
+    2015-08-20 Launchpad automatic translations update.  4219: Luke
+    Duncan 2015-08-13 Fixed issue with ajax drop downs when the
+    display field has form+field.  Also modified ajax drop downs
+    to not include higher level drop downs when there is a lower
+    level limit for the field (most likely by geographic access). So
+    for example when viewing facilities and limited by district,
+    the first option will be district instead of country or region.
+    4218: Luke Duncan 2015-08-12 Added in HTTP_HOST check for sending
+    the iHRIS username header.  4217: Launchpad Translations on
+    behalf of intrahealth+informatics 2015-08-12 Launchpad automatic
+    translations update.  4216: Sovello Hildebrand 2015-08-07 include
+    i2ce in default list of packages in release script 4215: Sovello
+    Hildebrand 2015-08-06 {4.2.0.52-ubuntu-release} "Ubuntu Release
+    Version 4.2.0.52"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sat, 05 Sep 2015 05:08:12 +0000
+
+i2ce (4.2.0.52~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.52 4214: Sovello Hildebrand 2015-08-06
+    add uuid.ini file to available PHP modules 4213: Luke Duncan
+    2015-08-06 Added in style argument to reportSelect display for
+    MAP fields.  4212: Luke Duncan 2015-08-05 Set the page object
+    as the template for the page permissionParser for web services
+    to avoid errors with a missing template.  4211: Luke Duncan
+    2015-08-05 Added in json mime type to MimeTypes module.  4210: Luke
+    Duncan 2015-08-05 Added in some error checking in the I2CE_Date
+    class when adding HTML elements to a page.  4209: Luke Duncan
+    2015-08-04 Added in a hook 'custom_reports_post_generate_all'
+    so you can run additional report type things as needed when all
+    reports are generated.  4208: Launchpad Translations on behalf
+    of intrahealth+informatics 2015-08-01 Launchpad automatic
+    translations update.  4207: Sovello Hildebrand 2015-07-31
+    {4.2.0.51-ubuntu-release} "Ubuntu Release Version 4.2.0.51"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Thu, 06 Aug 2015 16:17:23 +0000
+
+i2ce (4.2.0.51~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.51 4206: Sovello Hildebrand 2015-07-30
+    selectively specify which packages to create release for using
+    release_ihris.sh package1 package2 package3 ...  4205: Sovello
+    Hildebrand 2015-07-30 comments out step to get user defined release
+    version 4204: Sovello Hildebrand 2015-07-30 adds basic script
+    for creating ubuntu releases 4203: Sovello Hildebrand 2015-07-29
+    {4.2.0.50-ubuntu-release} "Ubuntu Release Version 4.2.0.50"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Fri, 31 Jul 2015 02:24:01 +0000
+
+i2ce (4.2.0.50~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.50 4202: Sovello Hildebrand 2015-07-29
+    {4.2.0.49-ubuntu-release} "Ubuntu Release Version 4.2.0.49"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Wed, 29 Jul 2015 19:54:39 +0000
+
+i2ce (4.2.0.49~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.49 4201: sovellohpmgani 2015-07-29
+    {4.2.0.48-ubuntu-release} "Ubuntu Release Version 4.2.0.48"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Wed, 29 Jul 2015 16:08:01 +0000
+
+i2ce (4.2.0.48~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.48 4200: Sovello Hildebrand 2015-07-29
+    change the mechanism to extract branch launchpad URL. If this
+    branch was fetched using bzr checkout, then the path is always in
+    string with `checkout of branch:` 4199: Ally Shaban 2015-07-27
+    Calling a local function getContainerType() 4198: Ally Shaban
+    2015-07-27 Fixed a bug in FieldContainer Class where by a method
+    getContainerType() was called without ->factory 4197: Luke Duncan
+    2015-07-27 Modified cached form fastPopulate to free the prepared
+    statement when id or check_mod is set as the hash will be different
+    each time and there still be a large amount of prepared statements
+    in certain cases.  4196: Luke Duncan 2015-07-24 Updated formfields
+    and fieldcontainers to have static attributes so data can be
+    stored across objects.  This is used for entry form storage to
+    save the entry ids for the form and fields so it doesn't have to
+    be retrieved for each form when saving many of the same form in
+    imports or migrations.  Also modified entry storage to not release
+    the form id and field ids from the cache when a form is cleaned
+    up since this data is relatively small and it keeps from having to
+    query the database for this information on imports and migrations
+    (when lots of forms are created and destroyed).  Also modified
+    getFieldId in entry form storage to add a field id cach instead
+    of a prepared statement to match changes from 4.1 similar to
+    the form id cache.  4195: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-07-24 Launchpad automatic translations
+    update.  4194: Siebrand Mazeland 2015-07-23 Localisation
+    updates from https://translatewiki.net.  4193: Sovello Hildebrand
+    2015-07-22 fix found not found error when accessing *swiss* pages
+    by conditionally loading I2CE_AjaxList.js only when web-services
+    module is enabled.  4192: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-07-17 Launchpad automatic translations
+    update.  4191: Luke Duncan 2015-07-16 Updated getDisplayedFields
+    to use getSelectableForms instead of looking at meta/forms to fix
+    an issue with displaying remap fields with web services lists.
+    4190: Siebrand Mazeland 2015-07-14 Localisation updates from
+    https://translatewiki.net.  4189: Carl Leitner 2015-07-11
+    {4.2.0.47-ubuntu-release} "Ubuntu Release Version 4.2.0.47"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Wed, 29 Jul 2015 16:04:08 +0000
+
+i2ce (4.2.0.48~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.48 4200: Sovello Hildebrand 2015-07-29
+    change the mechanism to extract branch launchpad URL. If this
+    branch was fetched using bzr checkout, then the path is always in
+    string with `checkout of branch:` 4199: Ally Shaban 2015-07-27
+    Calling a local function getContainerType() 4198: Ally Shaban
+    2015-07-27 Fixed a bug in FieldContainer Class where by a method
+    getContainerType() was called without ->factory 4197: Luke Duncan
+    2015-07-27 Modified cached form fastPopulate to free the prepared
+    statement when id or check_mod is set as the hash will be different
+    each time and there still be a large amount of prepared statements
+    in certain cases.  4196: Luke Duncan 2015-07-24 Updated formfields
+    and fieldcontainers to have static attributes so data can be
+    stored across objects.  This is used for entry form storage to
+    save the entry ids for the form and fields so it doesn't have to
+    be retrieved for each form when saving many of the same form in
+    imports or migrations.  Also modified entry storage to not release
+    the form id and field ids from the cache when a form is cleaned
+    up since this data is relatively small and it keeps from having to
+    query the database for this information on imports and migrations
+    (when lots of forms are created and destroyed).  Also modified
+    getFieldId in entry form storage to add a field id cach instead
+    of a prepared statement to match changes from 4.1 similar to
+    the form id cache.  4195: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-07-24 Launchpad automatic translations
+    update.  4194: Siebrand Mazeland 2015-07-23 Localisation
+    updates from https://translatewiki.net.  4193: Sovello Hildebrand
+    2015-07-22 fix found not found error when accessing *swiss* pages
+    by conditionally loading I2CE_AjaxList.js only when web-services
+    module is enabled.  4192: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-07-17 Launchpad automatic translations
+    update.  4191: Luke Duncan 2015-07-16 Updated getDisplayedFields
+    to use getSelectableForms instead of looking at meta/forms to fix
+    an issue with displaying remap fields with web services lists.
+    4190: Siebrand Mazeland 2015-07-14 Localisation updates from
+    https://translatewiki.net.  4189: Carl Leitner 2015-07-11
+    {4.2.0.47-ubuntu-release} "Ubuntu Release Version 4.2.0.47"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Wed, 29 Jul 2015 16:02:45 +0000
+
+i2ce (4.2.0.48~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.48 4200: Sovello Hildebrand 2015-07-29
+    change the mechanism to extract branch launchpad URL. If this
+    branch was fetched using bzr checkout, then the path is always in
+    string with `checkout of branch:` 4199: Ally Shaban 2015-07-27
+    Calling a local function getContainerType() 4198: Ally Shaban
+    2015-07-27 Fixed a bug in FieldContainer Class where by a method
+    getContainerType() was called without ->factory 4197: Luke Duncan
+    2015-07-27 Modified cached form fastPopulate to free the prepared
+    statement when id or check_mod is set as the hash will be different
+    each time and there still be a large amount of prepared statements
+    in certain cases.  4196: Luke Duncan 2015-07-24 Updated formfields
+    and fieldcontainers to have static attributes so data can be
+    stored across objects.  This is used for entry form storage to
+    save the entry ids for the form and fields so it doesn't have to
+    be retrieved for each form when saving many of the same form in
+    imports or migrations.  Also modified entry storage to not release
+    the form id and field ids from the cache when a form is cleaned
+    up since this data is relatively small and it keeps from having to
+    query the database for this information on imports and migrations
+    (when lots of forms are created and destroyed).  Also modified
+    getFieldId in entry form storage to add a field id cach instead
+    of a prepared statement to match changes from 4.1 similar to
+    the form id cache.  4195: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-07-24 Launchpad automatic translations
+    update.  4194: Siebrand Mazeland 2015-07-23 Localisation
+    updates from https://translatewiki.net.  4193: Sovello Hildebrand
+    2015-07-22 fix found not found error when accessing *swiss* pages
+    by conditionally loading I2CE_AjaxList.js only when web-services
+    module is enabled.  4192: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-07-17 Launchpad automatic translations
+    update.  4191: Luke Duncan 2015-07-16 Updated getDisplayedFields
+    to use getSelectableForms instead of looking at meta/forms to fix
+    an issue with displaying remap fields with web services lists.
+    4190: Siebrand Mazeland 2015-07-14 Localisation updates from
+    https://translatewiki.net.  4189: Carl Leitner 2015-07-11
+    {4.2.0.47-ubuntu-release} "Ubuntu Release Version 4.2.0.47"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Wed, 29 Jul 2015 15:54:32 +0000
+
+i2ce (4.2.0.48~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.48 4200: Sovello Hildebrand 2015-07-29
+    change the mechanism to extract branch launchpad URL. If this
+    branch was fetched using bzr checkout, then the path is always in
+    string with `checkout of branch:` 4199: Ally Shaban 2015-07-27
+    Calling a local function getContainerType() 4198: Ally Shaban
+    2015-07-27 Fixed a bug in FieldContainer Class where by a method
+    getContainerType() was called without ->factory 4197: Luke Duncan
+    2015-07-27 Modified cached form fastPopulate to free the prepared
+    statement when id or check_mod is set as the hash will be different
+    each time and there still be a large amount of prepared statements
+    in certain cases.  4196: Luke Duncan 2015-07-24 Updated formfields
+    and fieldcontainers to have static attributes so data can be
+    stored across objects.  This is used for entry form storage to
+    save the entry ids for the form and fields so it doesn't have to
+    be retrieved for each form when saving many of the same form in
+    imports or migrations.  Also modified entry storage to not release
+    the form id and field ids from the cache when a form is cleaned
+    up since this data is relatively small and it keeps from having to
+    query the database for this information on imports and migrations
+    (when lots of forms are created and destroyed).  Also modified
+    getFieldId in entry form storage to add a field id cach instead
+    of a prepared statement to match changes from 4.1 similar to
+    the form id cache.  4195: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-07-24 Launchpad automatic translations
+    update.  4194: Siebrand Mazeland 2015-07-23 Localisation
+    updates from https://translatewiki.net.  4193: Sovello Hildebrand
+    2015-07-22 fix found not found error when accessing *swiss* pages
+    by conditionally loading I2CE_AjaxList.js only when web-services
+    module is enabled.  4192: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-07-17 Launchpad automatic translations
+    update.  4191: Luke Duncan 2015-07-16 Updated getDisplayedFields
+    to use getSelectableForms instead of looking at meta/forms to fix
+    an issue with displaying remap fields with web services lists.
+    4190: Siebrand Mazeland 2015-07-14 Localisation updates from
+    https://translatewiki.net.  4189: Carl Leitner 2015-07-11
+    {4.2.0.47-ubuntu-release} "Ubuntu Release Version 4.2.0.47"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Wed, 29 Jul 2015 15:52:36 +0000
+
+i2ce (4.2.0.47~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.47 4188: Sovello Hildebrand 2015-07-11
+    adds support for adding multiple columns for deafaultaction report
+    display. one can achieve this by returning an array of headers and
+    an array of nodes to append to the report. the order of headers
+    and nodes is important 4187: Sovello Hildebrand 2015-07-11 fixes
+    bug for limits on DATE_YM field. one could not use this field
+    to limit data on report views 4186: Carl Leitner 2015-07-10
+    avoid fatal errors in getting/loading XML representation of a
+    form 4185: Carl Leitner 2015-07-09 fixed issue with formstorage
+    lookup() displayField() with parent field - was only getting the
+    ID and not just form\|id 4184: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-07-09 Launchpad automatic translations
+    update.  4183: Siebrand Mazeland 2015-07-08 Localisation
+    updates from https://translatewiki.net.  4182: Siebrand Mazeland
+    2015-07-01 Localisation updates from https://translatewiki.net.
+    4181: Launchpad Translations on behalf of intrahealth+informatics
+    2015-06-30 Launchpad automatic translations update.  4180: Luke
+    Duncan 2015-06-23 Fixed new isSameValue method for DB_STRING
+    form fields to work when null is passed to the comparison.  4179:
+    Luke Duncan 2015-06-23 Added in different isSameValue method for
+    DB_STRINGs to use compare == 0.  This fixes issues where '123'
+    was the same as '0123' for strings when it shouldn't be.  4178:
+    Luke Duncan 2015-06-23 Fixed typos in isSameValue and compare
+    that would not use  correctly if it was a FormField object.
+    4177: Luke Duncan 2015-06-23 Fixed typo in DB DATE form field.
+    4176: Siebrand Mazeland 2015-06-22 Localisation updates from
+    https://translatewiki.net.  4175: Launchpad Translations
+    on behalf of intrahealth+informatics 2015-06-19 Launchpad
+    automatic translations update.  4174: Siebrand Mazeland 2015-06-18
+    Localisation updates from https://translatewiki.net.  4173: Luke
+    Duncan 2015-06-17 Added in check to be sure target is available
+    in the link data before adding it to the node.  4172: Launchpad
+    Translations on behalf of intrahealth+informatics 2015-06-11
+    Launchpad automatic translations update.  4171: Siebrand Mazeland
+    2015-06-08 Localisation updates from https://translatewiki.net.
+    4170: Luke Duncan 2015-06-07 Added in fix for month day date
+    formfields to display correctly without having a year.  4169:
+    Luke Duncan 2015-06-05 Added in ViewChild page to view a single
+    child form based on the parent.  This can be configured in the
+    page args for child_form and parent_form.  It is paged so you can
+    go through one child form at a time to see them all.  Order by can
+    be set order_by arg.  4168: Jeddú Villatoro 2015-06-03 Fixed bug,
+    when i2ce_template is in use its value was lost after click on
+    'confirm'. Added statement to get the value and set it on an input
+    type=hidden and name=i2ce_template 4167: Launchpad Translations on
+    behalf of intrahealth+informatics 2015-06-03 Launchpad automatic
+    translations update.  4166: Jeddú Villatoro 2015-05-27 Added
+    statement to display raw values when header_relationship
+    is in use and use_display_values=0 4165: Jeddú Villatoro
+    2015-05-27 Added validation for date formfield, using scalar
+    key allow_blank_date under formfield can check if date is blank
+    (0000-00-00 00:00:00). Default value allow_blank_date=1 4164: Luke
+    Duncan 2015-05-26 Fixed error in UserAccess displayName to append
+    the lastname if it exists instead of overwriting.  4163: Launchpad
+    Translations on behalf of intrahealth+informatics 2015-05-26
+    Launchpad automatic translations update.  4162: Siebrand Mazeland
+    2015-05-25 Localisation updates from https://translatewiki.net.
+    4161: Launchpad Translations on behalf of intrahealth+informatics
+    2015-05-17 Launchpad automatic translations update.  4160:
+    Siebrand Mazeland 2015-05-16 Localisation updates from
+    https://translatewiki.net.  4159: Launchpad Translations
+    on behalf of intrahealth+informatics 2015-05-14 Launchpad
+    automatic translations update.  4158: Carl Leitner 2015-05-12
+    {4.2.0.46-ubuntu-release} "Ubuntu Release Version 4.2.0.46"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sat, 11 Jul 2015 15:29:13 -0400
+
+i2ce (4.2.0.46~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.46 4157: Sovello Hildebrand
+    2015-05-06 updated the wiki URL for the wiki_base.php which caused
+    wikidoc.php to fail 4156: Launchpad Translations on behalf
+    of intrahealth+informatics 2015-05-05 Launchpad automatic
+    translations update.  4155: Siebrand Mazeland 2015-05-04
+    Localisation updates from https://translatewiki.net.  4154:
+    Luke Duncan 2015-05-01 Updated logout check to only check when
+    logging the newly created user.  This avoids getting logged out
+    when accessing the user administration page since that needs to
+    create user objects.  Also updated validate in I2CE_User_Form to
+    not log when creating the user object there for role validation.
+    4153: Launchpad Translations on behalf of intrahealth+informatics
+    2015-04-30 Launchpad automatic translations update.  4152:
+    Luke Duncan 2015-04-24 Added check for previous apache_note
+    addition.  When PHP isn't run as an apache module then a
+    header is used which can be accessed in the apache log via:
+    %{X-iHRIS-username}o 4151: Luke Duncan 2015-04-23 Added in
+    apache_note call to all pages so that the iHRIS-username can be
+    accessed from the apache log.  This can be accessed in the apache
+    LogFormat with  %{iHRIS-username}n 4150: Luke Duncan 2015-04-23
+    Added in option by setting /config/site/single_user to only
+    allow a user to be logged in one time.  Subsequent logins will
+    logout any previous logins upon their next access.  Also changed
+    isLogingFromAnotherPc to isLoggingFromAnotherIP and added it to
+    the base mechanism class to avoid errors with other mechanisms.
+    This is only checked if /config/site/check_login_ip is set so is
+    optional and disabled by default.  4149: Luke Duncan 2015-04-22
+    Added in an option to allow multiple instances of unoconv to run
+    from I2CE_PageGenerateRelationshipTemplate.  This is to speed
+    things up when many are run at the same time as currently they'll
+    all share one listener and process sequentially.  If you set
+    /modules/PrintedFormsODT/unoconv/allow_multiple to 1 then multiples
+    can be run concurrently.  4148: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-04-15 Launchpad automatic translations
+    update.  4147: Carl Leitner 2015-04-13 made the index.php in
+    the redirect for update explicit 4146: Carl Leitner 2015-04-11
+    {4.2.0.45-ubuntu-release} "Ubuntu Release Version 4.2.0.45"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 12 May 2015 08:04:57 +0000
+
+i2ce (4.2.0.45~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.45 4145: Carl Leitner 2015-04-11
+    {4.2.0.44-ubuntu-release} "Ubuntu Release Version 4.2.0.44"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sat, 11 Apr 2015 23:34:08 -0400
+
+i2ce (4.2.0.44~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.44 4144: Carl Leitner 2015-04-11
+    fixed issue where redirect on update.php was not working.  4143:
+    Carl Leitner 2015-04-11 {4.2.0.43-ubuntu-release} "Ubuntu Release
+    Version 4.2.0.43"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sat, 11 Apr 2015 23:33:36 -0400
+
+i2ce (4.2.0.43~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.43 4142: Carl Leitner 2015-04-11
+    form relationship importer tracks imported nodes with a hash of
+    the normalized XML of the node and the name of the relationship.
+    importer checks this before importing 4141: Carl Leitner 2015-04-10
+    {4.2.0.42-ubuntu-release} "Ubuntu Release Version 4.2.0.42"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sat, 11 Apr 2015 09:20:07 -0400
+
+i2ce (4.2.0.42~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.42 4140: Carl Leitner 2015-04-09
+    added expiremental Excel 2004 export.   J-P: let me know if there
+    are bugs.  4139: Carl Leitner 2015-04-09 still hitting max prepared
+    statement in fastPopulate() on long runs of a form relationship
+    import but at least failing more gracefully.  4138: Carl Leitner
+    2015-04-09 {4.2.0.41-ubuntu-release} "Ubuntu Release Version
+    4.2.0.41"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Fri, 10 Apr 2015 08:29:37 -0400
+
+i2ce (4.2.0.41~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.41 4137: Carl Leitner 2015-04-09
+    form auto view swiss config: added ids for example pages 4136:
+    Carl Leitner 2015-04-09 got rid of null operation 4135: Carl
+    Leitner 2015-04-09 page builder for xml relationship now has
+    links to examples pages 4134: Carl Leitner 2015-04-08 turn off
+    spammy form caching when using form relationship import 4133:
+    Carl Leitner 2015-04-08 add a way to turn off spammy messages in
+    I2CE_CachedForm 4132: Carl Leitner 2015-04-08 form storage entry:
+    use a prepared statement for getFormID b/c I was hitting the limit
+    of the number of created queries 4131: Carl Leitner 2015-04-08
+    on login of i2ce_admin user, do not try to reset password 4130:
+    Carl Leitner 2015-04-08 updated form relatioship import tool so
+    it is smarter/has more functionality 4129: Luke Duncan 2015-04-07
+    Added in user() permission check so in templates you can use <tag
+    permission="user(USERNAME)"> similar to task and role permissions.
+    4128: Launchpad Translations on behalf of intrahealth+informatics
+    2015-03-28 Launchpad automatic translations update.  4127: Luke
+    Duncan 2015-03-26 Fix for overwriting binary files when the field
+    isn't changed or in the template.  4126: Carl Leitner 2015-03-26
+    {4.2.0.40-ubuntu-release} "Ubuntu Release Version 4.2.0.40"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Thu, 09 Apr 2015 08:35:27 -0400
+
+i2ce (4.2.0.40~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.40 4125: Carl Leitner 2015-03-26 added
+    form relationship import tool for Excel 2004 XML Spreadsheet 4124:
+    Luke Duncan 2015-03-24 Fixed web-services-lists script to hard code
+    index.php for sites where that is required.  4123: Carl Leitner
+    2015-03-22 {4.2.0.39-ubuntu-release} "Ubuntu Release Version
+    4.2.0.39"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Thu, 26 Mar 2015 12:56:43 +0000
+
+i2ce (4.2.0.39~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.39 4122: Carl Leitner 2015-03-22
+    {4.2.0.38-ubuntu-release} "Ubuntu Release Version 4.2.0.38"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sun, 22 Mar 2015 19:17:10 +0000
+
+i2ce (4.2.0.38~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.38 4121: Carl Leitner 2015-03-22 Page
+    does a proper check to see if was accessed by web broweser (this
+    was causing headers not to be sent) 4120: Carl Leitner 2015-03-22
+    fixups for magic data export - default base version is based on
+    site module 4119: Carl Leitner 2015-03-22 {4.2.0.37-ubuntu-release}
+    "Ubuntu Release Version 4.2.0.37"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sun, 22 Mar 2015 19:16:06 +0000
+
+i2ce (4.2.0.37~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.37 4118: Carl Leitner 2015-03-22
+    {4.2.0.36-ubuntu-release} "Ubuntu Release Version 4.2.0.36"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sun, 22 Mar 2015 14:52:23 +0000
+
+i2ce (4.2.0.36~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.36 4117: Carl Leitner 2015-03-22
+    {4.2.0.35-ubuntu-release} "Ubuntu Release Version 4.2.0.35"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sun, 22 Mar 2015 14:47:40 +0000
+
+i2ce (4.2.0.35~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.35 4116: Carl Leitner 2015-03-22 fixed
+    syntax error in form relationship 4115: Carl Leitner 2015-03-22
+    {4.2.0.34-ubuntu-release} "Ubuntu Release Version 4.2.0.34"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sun, 22 Mar 2015 14:46:49 +0000
+
+i2ce (4.2.0.35~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.35 4116: Carl Leitner 2015-03-22 fixed
+    syntax error in form relationship 4115: Carl Leitner 2015-03-22
+    {4.2.0.34-ubuntu-release} "Ubuntu Release Version 4.2.0.34"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sun, 22 Mar 2015 14:43:12 +0000
+
+i2ce (4.2.0.34~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.34 4114: Carl Leitner 2015-03-22
+    oops on that last form storage entry.  its working now 4113:
+    Carl Leitner 2015-03-22 {4.2.0.33-ubuntu-release} "Ubuntu Release
+    Version 4.2.0.33"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sun, 22 Mar 2015 00:49:22 -0400
+
+i2ce (4.2.0.33~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.33 4112: Carl Leitner 2015-03-22 be
+    better about reusing prepared statments in formstorage entry as was
+    causing issues in a big import 4111: Carl Leitner 2015-03-22 reuse
+    prepared statements in fast populate when hash values match.  on a
+    large import the cache refresh was causing lots of fastPopulate()
+    calls 4110: Carl Leitner 2015-03-21 {4.2.0.32-ubuntu-release}
+    "Ubuntu Release Version 4.2.0.32"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sun, 22 Mar 2015 00:37:27 -0400
+
+i2ce (4.2.0.32~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.32 4109: Carl Leitner 2015-03-21
+    removed debugging messages 4108: Carl Leitner 2015-03-21 form
+    relationship importer displays better ongoing summary statistics
+    (will get very verbose).  save the queued entries after reading
+    in every collection - perhaps will help with performance 4107:
+    Carl Leitner 2015-03-21 form relationship import tool can now
+    handle unique_fields when they are seperated by a :.  4106: Carl
+    Leitner 2015-03-21 fixed typo in Form Relationship module version
+    requirements (thanks Kayode).   improvements to form relationship
+    importer so that matched joined forms will results in the parent
+    relationship forms join field being set 4105: Carl Leitner
+    2015-03-20 {4.2.0.31-ubuntu-release} "Ubuntu Release Version
+    4.2.0.31"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Sat, 21 Mar 2015 23:39:39 -0400
+
+i2ce (4.2.0.31~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.31 4104: Carl Leitner 2015-03-20
+    improved form relationship import now can theoretically
+    handle exteremely large files.  also put improved transaction
+    summary and error reporting and restrings on saving forms
+    that are invalid. allowing skipping of valid check by setting
+    @invalid='form1,form2' and matching existing values in lists with
+    @matching='list1,list2' in the <relationshipCollection/> element
+    4103: Carl Leitner 2015-03-20 added form relationship loader that
+    can handle joins like person to person_position to position if the
+    ids are not set 4102: Carl Leitner 2015-03-20 fixed a few typos
+    in form relationship 4101: Carl Leitner 2015-03-20 when loaded
+    field container as XML do not enforce that ID was set 4100: Carl
+    Leitner 2015-03-20 loading form as XML will fail if the container
+    base class fails 4099: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-03-11 Launchpad automatic translations
+    update.  4098: Carl Leitner 2015-03-04 {4.2.0.30-ubuntu-release}
+    "Ubuntu Release Version 4.2.0.30"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Fri, 20 Mar 2015 22:51:03 -0400
+
+i2ce (4.2.0.30~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.30 4097: Carl Leitner 2015-03-04
+    {4.2.0.29-ubuntu-release} "Ubuntu Release Version 4.2.0.29"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Wed, 04 Mar 2015 14:55:21 -0500
+
+i2ce (4.2.0.29~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.29 4096: Carl Leitner 2015-03-04
+    {4.2.0.28-ubuntu-release} "Ubuntu Release Version 4.2.0.28"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Wed, 04 Mar 2015 17:17:23 +0000
+
+i2ce (4.2.0.28~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.28 4095: Carl Leitner 2015-03-04
+    {4.2.0.27-ubuntu-release} "Ubuntu Release Version 4.2.0.27"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Wed, 04 Mar 2015 00:42:14 +0000
+
+i2ce (4.2.0.27~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.27 4094: Carl Leitner 2015-03-03
+    {4.2.0.26-ubuntu-release} "Ubuntu Release Version 4.2.0.26"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Wed, 04 Mar 2015 00:37:48 +0000
+
+i2ce (4.2.0.26~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.26 4093: Carl Leitner 2015-03-03
+    {4.2.0.25-ubuntu-release} "Ubuntu Release Version 4.2.0.25"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 03 Mar 2015 17:18:33 +0000
+
+i2ce (4.2.0.25~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.25 4092: Carl Leitner 2015-03-03
+    {4.2.0.24-ubuntu-release} "Ubuntu Release Version 4.2.0.24"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 03 Mar 2015 16:31:48 +0000
+
+i2ce (4.2.0.24~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.24 4091: Carl Leitner 2015-03-03
+    {4.2.0.23-ubuntu-release} "Ubuntu Release Version 4.2.0.23"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 03 Mar 2015 16:29:30 +0000
+
+i2ce (4.2.0.23~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.23 4090: Carl Leitner 2015-03-03
+    {4.2.0.22-ubuntu-release} "Ubuntu Release Version 4.2.0.22"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 03 Mar 2015 15:59:35 +0000
+
+i2ce (4.2.0.22~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.22 4089: Carl Leitner 2015-03-03
+    {4.2.0.21-ubuntu-release} "Ubuntu Release Version 4.2.0.21"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 03 Mar 2015 15:57:38 +0000
+
+i2ce (4.2.0.21~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.21 4088: Carl Leitner 2015-03-03
+    {4.2.0.20-ubuntu-release} "Ubuntu Release Version 4.2.0.20"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 03 Mar 2015 15:55:21 +0000
+
+i2ce (4.2.0.20~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.20 4087: Carl Leitner 2015-03-03
+    {4.2.0.19-ubuntu-release} "Ubuntu Release Version 4.2.0.19"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 03 Mar 2015 15:41:29 +0000
+
+i2ce (4.2.0.19~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.19 4086: Carl Leitner 2015-03-03
+    {4.2.0.18-ubuntu-release} "Ubuntu Release Version 4.2.0.18"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 03 Mar 2015 15:40:05 +0000
+
+i2ce (4.2.0.18~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.18 4085: Launchpad Translations on
+    behalf of intrahealth+informatics 2015-03-01 Launchpad automatic
+    translations update.  4084: Luke Duncan 2015-02-24 Added in custom
+    report module for displaying using OpenLayers for mapped reports.
+    4083: Luke Duncan 2015-02-24 Added in base module with OpenLayers
+    files.  4082: Sovello Hildebrand 2015-02-21 changes the overlooked
+    value for DATE_YM to be YEAR_MONTH 4081: Launchpad Translations on
+    behalf of intrahealth+informatics 2015-02-21 Launchpad automatic
+    translations update.  4080: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-02-20 Launchpad automatic translations
+    update.  4079: Siebrand Mazeland 2015-02-19 Localisation updates
+    from https://translatewiki.net.  4078: Carl Leitner 2015-02-17
+    {4.2.0.17-ubuntu-release} "Ubuntu Release Version 4.2.0.17"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 03 Mar 2015 15:37:09 +0000
+
+i2ce (4.2.0.18~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.18 4085: Launchpad Translations on
+    behalf of intrahealth+informatics 2015-03-01 Launchpad automatic
+    translations update.  4084: Luke Duncan 2015-02-24 Added in custom
+    report module for displaying using OpenLayers for mapped reports.
+    4083: Luke Duncan 2015-02-24 Added in base module with OpenLayers
+    files.  4082: Sovello Hildebrand 2015-02-21 changes the overlooked
+    value for DATE_YM to be YEAR_MONTH 4081: Launchpad Translations on
+    behalf of intrahealth+informatics 2015-02-21 Launchpad automatic
+    translations update.  4080: Launchpad Translations on behalf of
+    intrahealth+informatics 2015-02-20 Launchpad automatic translations
+    update.  4079: Siebrand Mazeland 2015-02-19 Localisation updates
+    from https://translatewiki.net.  4078: Carl Leitner 2015-02-17
+    {4.2.0.17-ubuntu-release} "Ubuntu Release Version 4.2.0.17"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 03 Mar 2015 15:36:32 +0000
+
+i2ce (4.2.0.17~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.17 4077: Carl Leitner 2015-02-17
+    {4.2.0.16-ubuntu-release} "Ubuntu Release Version 4.2.0.16"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 17 Feb 2015 13:23:14 -0500
+
+i2ce (4.2.0.16~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.16 4076: Carl Leitner 2015-02-17
+    removed selenium jars from branch. these should instead
+    be downloaded independently 4075: Carl Leitner 2015-02-17
+    {4.2.0.15-ubuntu-release} "Ubuntu Release Version 4.2.0.15"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 17 Feb 2015 08:16:46 -0500
+
+i2ce (4.2.0.15~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.15 4074: Carl Leitner 2015-02-17
+    {4.2.0.14-ubuntu-release} "Ubuntu Release Version 4.2.0.14"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 17 Feb 2015 07:31:29 -0500
+
+i2ce (4.2.0.14~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.14 4073: Carl Leitner 2015-02-17
+    {4.2.0.13-ubuntu-release} "Ubuntu Release Version 4.2.0.13"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 17 Feb 2015 07:00:03 -0500
+
+i2ce (4.2.0.13~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.13 4072: Carl Leitner 2015-02-17
+    [merge] merge in user access changes 4071: Carl Leitner
+    2015-02-17 updated install script 4070: Carl Leitner 2015-02-17
+    {4.2.0.12-ubuntu-release} "Ubuntu Release Version 4.2.0.12"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 17 Feb 2015 06:58:54 -0500
+
+i2ce (4.2.0.12~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.12 4069: Carl Leitner 2015-02-17
+    {4.2.0.11-ubuntu-release} "Ubuntu Release Version 4.2.0.11"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 17 Feb 2015 06:35:27 -0500
+
+i2ce (4.2.0.11~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.11 4068: Carl Leitner 2015-02-17
+    {4.2.0.10-ubuntu-release} "Ubuntu Release Version 4.2.0.10"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 17 Feb 2015 06:33:12 -0500
+
+i2ce (4.2.0.10~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.10 4067: Carl Leitner 2015-02-17
+    {4.2.0.9-ubuntu-release} "Ubuntu Release Version 4.2.0.9"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 17 Feb 2015 06:28:53 -0500
+
+i2ce (4.2.0.9~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.9 4066: Carl Leitner 2015-02-16
+    {4.2.0.8-ubuntu-release} "Ubuntu Release Version 4.2.0.8"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Tue, 17 Feb 2015 06:23:29 -0500
+
+i2ce (4.2.0.8~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.8 4065: Carl Leitner 2015-02-16
+    {4.2.0.7-ubuntu-release} "Ubuntu Release Version 4.2.0.7"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 16 Feb 2015 19:05:04 -0500
+
+i2ce (4.2.0.7~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.7 4064: Carl Leitner 2015-02-16
+    {4.2.0.6-ubuntu-release} "Ubuntu Release Version 4.2.0.6"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 16 Feb 2015 19:01:18 -0500
+
+i2ce (4.2.0.6~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.6 4063: Carl Leitner 2015-02-16
+    {4.2.0.5-ubuntu-release} "Ubuntu Release Version 4.2.0.5"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 16 Feb 2015 18:57:28 -0500
+
+i2ce (4.2.0.5~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.5 4062: Carl Leitner 2015-02-16
+    {4.2.0.4-ubuntu-release} "Ubuntu Release Version 4.2.0.4"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 16 Feb 2015 18:36:11 -0500
+
+i2ce (4.2.0.4~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.4 4061: Carl Leitner 2015-02-16
+    {4.2.0.3-ubuntu-release} "Ubuntu Release Version 4.2.0.3"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 16 Feb 2015 18:35:58 -0500
+
+i2ce (4.2.0.3~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.3 4060: Carl Leitner 2015-02-16
+    {4.2.0.2-ubuntu-release} "Ubuntu Release Version 4.2.0.2"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 16 Feb 2015 17:15:48 -0500
+
+i2ce (4.2.0.2~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.2 4059: Carl Leitner 2015-02-16
+    {4.2.0.1-ubuntu-release} "Ubuntu Release Version 4.2.0.1"
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 16 Feb 2015 16:26:55 -0500
+
+i2ce (4.2.0.1~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.1 4058: Carl Leitner 2015-02-16
+    starting new ubuntu packaging 4057: Sovello Hildebrand 2015-02-16
+    {4.2.0.0-ubuntu-release, test, 4.2.0-ubuntu-release} this changes
+    the value for default_password to 0 or 1 depending on who is
+    changing the password. (The changes in I2CE_Module_UserAccess.php
+    actually belonged to the previous commit, for some reason it was
+    forotten to be included there).
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 16 Feb 2015 16:26:30 -0500
+
+i2ce (4.2.0.1~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.1 4058: Carl Leitner 2015-02-16
+    starting new ubuntu packaging 4057: Sovello Hildebrand 2015-02-16
+    {4.2.0.0-ubuntu-release, test, 4.2.0-ubuntu-release} this changes
+    the value for default_password to 0 or 1 depending on who is
+    changing the password. (The changes in I2CE_Module_UserAccess.php
+    actually belonged to the previous commit, for some reason it was
+    forotten to be included there).
+
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 16 Feb 2015 16:23:29 -0500
+
+i2ce (4.2.0.0~trusty) trusty; urgency=medium
+
+  * Ubuntu Release Version 4.2.0.0
     -Initial Packaging
-    --http://bazaar.launchpad.net/~intrahealth+informatics/i2ce/4.3-dev
+    --http://bazaar.launchpad.net/~intrahealth+informatics/i2ce/4.2-dev
 
- -- Nobert Mijumbi <nobertmn@gmail.com>  Wed, 18 Apr 2018 16:08:59 -0500
-
-i2ce (4.3.1.1~trusty) trusty; urgency=medium
-
-  * Ubuntu Release Version 4.3.1.1 4366: Luke Duncan 2018-04-10
-    {4.3.1-release, 4.3.1.0-ubuntu-release} Added check for http in
-    redirect strings to not allow them.
-
- -- Carl Leitner <litlfred@ibiblio.org>  Tue, 10 Apr 2018 14:42:26 +0000
-
-i2ce (4.3.0.0~trusty) trusty; urgency=medium
-
-  * Ubuntu Release Version 4.3.0.0 for trusty
-    -Initial Packaging
-    --http://bazaar.launchpad.net/~intrahealth+informatics/i2ce/4.3-dev
-
- -- Nobert Mijumbi <nobertmn@gmail.com>  Thu, 01 Mar 2018 16:08:59 -0500
+ -- Carl Leitner <litlfred@ibiblio.org>  Mon, 16 Feb 2015 16:08:59 -0500

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="modulePrompter">
+  <metadata>
+    <displayName>Module Prompter</displayName>
+    <className>I2CE_Module_ModulePrompter</className>
+    <category>Base System Component</category>
+    <description>Module to prompt the enable/disable of specific modules upon login</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="I2CE">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="admin">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="modulePrompter">
+    <displayName>Module Promprt</displayName>
+    <description>Information about the module prompter</description>
+    <configuration name="prompt_list" values="many" type="string">
+      <status>required:false</status>
+    </configuration>
+    <configuration name="prompt_status" values="single" type="string">
+      <value>not_prompted</value>
+    </configuration>
+  </configurationGroup>
+</I2CEConfiguration>

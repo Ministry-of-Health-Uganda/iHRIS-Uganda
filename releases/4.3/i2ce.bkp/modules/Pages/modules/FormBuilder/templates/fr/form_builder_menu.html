@@ -1,0 +1,28 @@
+<div>
+  
+  <div id="container">
+
+    <h2>Créer un nouveau formulaire</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Nom du formulaire</h3>Une clé interne utilisée pour identifier la classe du formulaire. Elle ne peut pas être identique à la clé d’un formulaire déjà existant.
+	</td>
+	<td>
+	  <input name="name" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+      </tr><tr><td>
+	  <h3>Nom affiché</h3>Le nom affiché pour ce formulaire. C’est ce qui sera affiché à l’utilisateur final.
+	</td>
+	<td>
+	  <input name="display" type="text" value="" class="validate=[nonempty]"></td>
+      </tr><tr><td>
+	  <h3>Classe:</h3>La classe de formulaire qui implémente ce formulaire.
+	</td>
+	<td>
+	  <select name="class"><option value="">Sélectionner une classe</option></select></td>
+      </tr><tr><td>
+	  <h3>Stockage:</h3>Le mécanisme de stockage pour ce formulaire
+	</td>
+	<td>
+	  <select name="storage"></select></td>
+      </tr></table><h2>Modifier un formulaire existant</h2>
+    <ul id="forms"></ul></div>
+</div>

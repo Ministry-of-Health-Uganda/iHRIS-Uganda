@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="form-builder" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="form-builder" path="/" locale="fr">
+    <version>4.3.0.1</version>
+    <configurationGroup name="messages" path="/modules/form-builder/messages">
+      <configuration name="cannot_delete" locale="fr" values="single" type="string">
+        <value>Vous n’avez pas accès aux données d’un formulaire supprimé</value>
+      </configuration>
+      <configuration name="bad_delete_path" locale="fr" values="single" type="string">
+        <value>Chemin de suppression non valide</value>
+      </configuration>
+      <configuration name="delete_header" locale="fr" values="single" type="string">
+        <value>Supprimer l’entête</value>
+      </configuration>
+    </configurationGroup>
+    <configuration name="tasks" path="/I2CE/tasks/task_description" locale="fr" value="many" type="delimited" values="single">
+      <value>form_builder_delete_forms:Peut supprimer les métadonnées d’un formulaire en utilisant le générateur de formulaire</value>
+    </configuration>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="fr">
+      <configuration name="can_build_form_classes" locale="fr" values="single" type="string">
+        <value>Peut générer ou configurer la classe de formulaire</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

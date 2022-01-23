@@ -557,7 +557,7 @@ abstract class I2CE_CustomReport_Display extends I2CE_Fuzzy{
                 }
             }
         }
-        $group_bys = array_map( function($n) { return ( ($i = stripos( $n, " as" ) ) === false ? $n : substr( $n, 0, $i ) ); }, $group_bys);
+        $group_bys = array_map( create_function( '$n','return ( ($i = stripos( $n, " as" ) ) === false ? $n : substr( $n, 0, $i ) );' ),$group_bys);
         if (count($group_bys) > 0) {
             $lgroup_bys = array();
             foreach ($group_bys as $g) {
@@ -1277,7 +1277,7 @@ abstract class I2CE_CustomReport_Display extends I2CE_Fuzzy{
             return '';
         }
         $wheres = array();
-        $callback = function($f1,$f2) use($form,$field) { return "`$form+$field`"; }; //weird, but i do want $form and $field substituted now and now later.
+        $callback = create_function('$form,$field', "return '`$form+$field`';"); //weird, but i do want $form and $field substituted now and now later.
         foreach ($limitStyles  as $limitStyle=>$values) {
             if (!isset($config->$limitStyle)) {
                 continue;

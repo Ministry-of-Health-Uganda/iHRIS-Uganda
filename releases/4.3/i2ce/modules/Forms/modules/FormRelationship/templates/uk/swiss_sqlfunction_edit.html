@@ -1,0 +1,41 @@
+<div id="sql_function">
+  <span id="function_contents">
+    <h2>Редагувати SQL функцію <span name="name"></span></h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0" id="reporting_function"><tr><td width="30%">
+	  <h3>SQL-запит:</h3> Визначальний SQL для цієї функції. Ви звертаєтеся до оголошених полів як 'reportform+field'
+	</td>
+	<td width="auto">
+	  <textarea style="width:auto" cols="83" rows="4" name="qry" class="validate=[nonempty]"></textarea></td>
+      </tr><tr><td>
+	  <h3>Опис:</h3> Опис цієї функції, який відображається для кінцевих користувачів.
+	</td>
+	<td>
+	  <textarea type="text" name="description" rows="4" cols="53"></textarea></td>
+      </tr><tr><td>
+	  <h3>Поле форми:</h3> Виберіть поле форми, в якому ця функція приймає значення
+	</td>
+	<td>
+	  <select name="formfield"></select></td>
+      </tr><tr><td>
+	  <h3>З'єднати:</h3> Розділений комами список форм у зв'язках, на полях якого ви хочете накопичувати (тобто вони не є згуртованими, вони є формами, які з'являються у вашій функції)
+	</td>
+	<td>
+	  <input type="text" name="aggregate"></td>
+      </tr><tr><td>
+	  <h3>Форми для вибору</h3>Форми, вибрані для цього поля. Застосовується тільки, якщо поле форми є підкласом I2CE_FormField_MAPPED. У цьому випадку поле повинно бути розділеним комами списком форм. Якщо не вказано, то типово воно збігається з ім'ям цієї функції.
+	</td>
+	<td>
+	  <input name="select_forms"></td>
+      </tr><tr><td>
+	  <h3>Зв'язані поля</h3>Поля, які пов'язані при перерахуванні варіантів. Застосовується тільки, якщо поле форми є підкласом I2CE_FormField_MAPPED. Воно повинно бути списком відокремним стовпцем виду  "форми" чи "форма+поле посилання". Приклад: "повіт:район+регіон:[регіон]:країна". Якщо не вказано, то за замовчуванням воно збігається з ім'ям цієї функції.
+	</td>
+	<td>
+	  <input name="link_fields"></td>
+      </tr></table><span id="dependent_functions">
+	<h2><a name="dependent_functions_link" href="" id="dependent_functions_link_replace"> Залежні функції</a></h2>
+	<div class="indented" id="dependent_functions_ajax">
+	</div>
+      </span>
+
+  </span>
+</div>

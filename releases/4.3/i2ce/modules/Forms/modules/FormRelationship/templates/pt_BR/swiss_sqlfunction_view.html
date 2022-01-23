@@ -1,0 +1,34 @@
+<div id="sql_function">
+  A função SQL <span name="name"></span>
+  <span name="description" ifset="true">
+    --
+    <span name="description"></span>
+  </span>
+  <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0" id="reporting_function"><tr><td>
+	<h3>Query Sql:</h3> The defining SQL for this function.  You refer to reported fields as `reportform+field`
+      </td>
+      <td>
+	<span name="qry"></span>
+      </td>
+    </tr><tr><td> 
+	<h3>Campo de Formulário:</h3> O campo do formulário que essa função preenche
+      </td>
+      <td>
+	<span name="formfield"></span>
+      </td>
+    </tr><tr><td>
+	<h3>Formulários selecionáveis</h3>Os formulários que são selecionáveis para este campo. Aplica-se apenas se o campo do formulário for uma sub-classe de I2CE_FormField_MAPPED. Em cujo caso deveria ser uma lista de formulários separados por vírgula.
+      </td>
+      <td>
+	<span name="select_forms"></span>
+      </td>
+    </tr><tr><td>
+	<h3>Campos linkados</h3>The fields that are linked when listing options.
+	Only applies if the form field is a subclass of I2CE_FormField_MAPPED.  
+	It should be  a colon separated list of 'forms' or 'form+linkfield's.	
+	Example: "county:district+region:[region]:country".
+      </td>
+      <td>
+	<span name="link_fields"></span>
+      </td>
+    </tr></table></div>

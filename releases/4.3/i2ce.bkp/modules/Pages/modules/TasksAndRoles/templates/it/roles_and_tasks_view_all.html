@@ -1,0 +1,21 @@
+<div id="siteContent">
+  <h1>Ruoli di amministrazione</h1>
+  <h2>Ruoli esistenti</h2>
+  <ul id="role_list"></ul><form method="post" action="tasks-roles/roles">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Aggiungi un nuovo ruolo
+	</th>
+      </tr><tr><td>
+	   <label>Nome breve ruolo:</label> Un nome breve consiste di lettere e numeri, - e _ , ed è usato per fare riferimento ad un ruolo nelle pagine e nei template.
+	 </td>
+	 <td>
+	   <input type="text" id="role_short_name" name="role_short_name" class="validate=[notinlist]"></td>
+	 <td>
+	   <label>Nome visualizzato del ruolo:</label> Un nome di display per questo ruolo che è visualizzato per l'utente finale
+	 </td>
+	 <td>
+	   <input type="text" name="role_name"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Create"></td>
+      </tr></table></form>
+</div>

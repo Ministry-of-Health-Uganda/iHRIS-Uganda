@@ -1,0 +1,43 @@
+<div>
+  <span name="has_existing_relationships" ifset="true">
+    Unaweza ama kuchagua kurekebisha uhusiano wa fomu iliyopo, au kutengeneza mpya.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    Unaweza kutengeneza uhusiano wa fomu iliyopo na ukurasa huu.  
+  </span>
+  <span name="has_existing_relationships" ifset="true">
+    <h2>Hariri Uhusiano Uliyopo</h2>
+    <ul id="relationships" class="formRelationship_relationship_list"></ul></span>
+  <h2>Tengeneza Uhusiano Mpya</h2>
+  <span name="has_existing_relationships" ifset="true">
+    Tafadhali chagua ama fomu ili kuitumia kama fomu ya msingi kwa ajili ya uhusiano wa fomu hii au chagua kunakili uhusiano wa fomu iliyopo kwenye fomu mpya kwa kubofya kwenye kiungo chaguzi stahili hapa chini.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    Tafadhali chagua fomu ili kuitumia kama fomu ya msingi kwa ajili ya uhusiano wa fomu hii kwa kubofya kwenye kiungo chaguzi hapa chini.
+  </span>
+  <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	<h3>Jina Fupi la Uhusiano:</h3>Dota ya ndani inayotumika kutambua uhusiano wa fomu. Inaweza kuwa isiwe sawa na dota kwa ajili ya mahusiano ya fomu yoyote iliyopo.
+      </td>
+      <td>
+	<input id="relationship" name="relationship" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+    </tr><tr><td>
+	<h3>Jina Linaloonyeshwa:</h3>Jina la uhusiano wa fomu ambalo linaonekana kwa mtumiaji wa mwisho.
+      </td>
+      <td>
+	<input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+    </tr><tr><td>
+	<h3>Ufafanuzi:</h3>Ufafanuzi wa uhusiano wa fomu ambao unapaswa kueleweka kwa mtumiaji wa mwisho.
+      </td>
+      <td>
+	<textarea name="description" rows="4" cols="53" value=""></textarea></td>
+    </tr><tr><td>
+	Ili kutengeneza uhusiano wa fomu mpya, utatakiwa kwanza kuchagua Fomu ya Msingi
+	<select name="form_name" id="form_name"></select></td>
+      <td id="formRelationship_relationship_new_menu_list">
+      </td>
+    </tr><tr name="has_existing_relationships" ifset="true"><td>
+	Chagua uhusiano uliyopo ili kunakili.
+	<select name="existing_relationship" id="existing_relationship"><option value="">Usinakili</option></select></td>
+      <td id="formRelationship_relationship_copy_menu_list">
+      </td>
+    </tr></table></div>

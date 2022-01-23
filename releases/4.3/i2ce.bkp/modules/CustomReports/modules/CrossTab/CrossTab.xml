@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports_CrossTab">
+  <metadata>
+    <displayName>Crosstab reports</displayName>
+    <category>Report Type</category>
+    <description>Configuration options for reports that use Crosstab reports</description>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <link>https://launchpad.net/i2ce</link>
+    <requirement name="CustomReports">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ColorPicker">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="maani-charts">
+      <atLeast version="4.7" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+  </metadata>
+  <configurationGroup name="CustomReports_CrossTab" path="/modules/CustomReports/displays/CrossTab">
+    <displayName>Crosstab Reports</displayName>
+    <configuration name="class" values="single" type="string">
+      <displayName>Display Class</displayName>
+      <description>The class that handles this display</description>
+      <value>I2CE_CustomReport_Display_CrossTab</value>
+    </configuration>
+    <configuration name="error_message" locale="en_US" values="single" type="string">
+      <displayName>Error Message</displayName>
+      <description>The error message to display when there is no valid chart data.</description>
+      <value>No data has been found for this report. Please make sure the report data has been cached or modify your limits.</value>
+    </configuration>
+    <configurationGroup name="display_options">
+      <displayName>Default Options</displayName>
+      <description>Default display options for Crosstab</description>
+      <status>required:false</status>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

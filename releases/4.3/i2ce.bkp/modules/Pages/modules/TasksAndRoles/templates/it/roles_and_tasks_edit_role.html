@@ -1,0 +1,31 @@
+<div id="siteContent">
+  <form method="post" action="REPLACEME" name="edit_role_form_action" id="edit_role">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Modifica Ruolo
+	</th>
+      </tr><tr><td>
+	  <label>Nome visualizzato del ruolo:</label> Un nome visualizzato per questo ruolo che verrà mostrato all'utente finale.
+	</td>
+	<td>
+	  <input type="text" name="role_name" class="validate=[nonempty]"></td>
+      </tr><tr><td>
+	  <label>Ereditarietà del ruolo:</label>I ruoli che hanno gli stessi permessi di questo ruolo. Il ruolo admin avrà automaticamente accesso a questo ruolo
+	</td>
+	<td>
+	  <input type="hidden" name="role_roles[]" value="admin"><select name="role_roles[]" multiple id="role_roles"></select></td>
+      </tr><tr><td>
+	  <label>Attività del ruolo:</label> Attività assegnate a questo ruolo
+	</td>
+	<td>
+	  <select name="role_tasks[]" multiple id="role_tasks" display="checkbox"></select></td>
+      </tr><tr><td>
+	  <label>Role Home page:</label> Default home page for this role
+	</td>
+	<td>
+	  <input type="text" name="homepage"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Save"></td>
+      </tr></table></form>
+
+
+</div>

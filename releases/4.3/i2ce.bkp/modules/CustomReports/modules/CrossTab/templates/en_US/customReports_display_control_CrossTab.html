@@ -1,0 +1,41 @@
+<div >
+  <span title="Select cross tab options and view this report as a cross tab" class="button CrossTab_submit_options_toggle" >Cross Tab</span>
+  <!-- div class="button clickableText CrossTab_submit_options_toggle" >(Options)</div -->
+  <div class="optionsMenu toggable windowFloats=true windowDraggable=true" id="CrossTab_submit_options_menu">
+    <div class="optionsMenuTitle window_drag"> Cross Tab Options </div> 	 
+    <br/>
+    <br/>
+    <span class="field_head"><label>Displayed Fields</label></span>
+    Choose the way you wish to select fields to display.
+      
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <th>Field</th>
+        <th>Left</th>
+        <th>Top</th>
+        <th>None</th>
+      </tr>
+      <tbody id="form_field_list">
+      </tbody>
+    </table>
+    <br/>
+
+    <p id="CrossTab_export_option">
+    <input id="CrossTab_export" type="checkbox" name="CrossTab_export" value="1" /><label for="CrossTab_export">Export to CSV</label>
+    </p>
+    <p id="CrossTab_percentage_option">
+    <input id="CrossTab_percentage" type="checkbox" name="CrossTab_percentage" value="1" /><label for="CrossTab_percentage">Include Percentages</label>
+    </p>
+
+
+    <br/>
+    <p id="CrossTab_error" style="display:none;">
+      <span class="error">
+        You must choose at least one field for the left and one field for the right of the cross tab.<br />
+      </span>
+    </p>
+      <br />
+    <span   title="Display this data as a cross tab"    id='CrossTab_submit'  class="multiformsubmit button">Cross Tab</span> 
+    <span class="button optionsMenuButton CrossTab_submit_options_hide window_hide"> Close </span>
+  </div>
+</div>

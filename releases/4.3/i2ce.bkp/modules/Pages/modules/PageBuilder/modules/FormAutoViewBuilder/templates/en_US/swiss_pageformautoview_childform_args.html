@@ -1,0 +1,54 @@
+<div>
+  <h2>Child Form Arguments</h2>
+  
+  <div id='child_form_container'>
+    <table class='multiFormTable' cellpadding="0" cellspacing="0" border="0">
+	  <tr>
+		<td>
+		  <h3>Title:</h3>The display name for <span name='form_name'/>
+		</td>
+		<td>
+		  <input name='title'/>
+		</td>
+	  </tr>
+	  <tr>
+		<td>
+		  <h3>Link:</h3>The link to child form - <span name='form_name'/>
+		</td>
+		<td>
+		  <input name='link'/>
+		</td>
+	  </tr>
+      <tr>
+		<td>
+		  <h3>Link Filter:</h3>Filter used to select the content loaded for <span name='form_name'/>
+		</td>
+		<td>
+		  <input name='link_filter'/>
+		</td>
+      </tr>
+	  <tr>
+		<td>
+		  <h3>Permission:</h3>The single permission a user needs to access for <span name='form_name'/>
+		</td>
+		<td>
+			<select name='task'><option value=''>No Task Selected</option></select>
+		</td>
+	  </tr>
+    </table>
+    
+	<span id='action_links'>
+	  <h2><a id="action_links_link" href=''>Action Links</a></h2>
+	    Edit the fields of the action link
+	  <div class='indented' id='action_links_ajax'>
+	  </div>
+	</span>
+	
+	<span id='printf_args'>
+	  <h2><a id="printf_args_link" href=''>Display Format</a></h2>
+	    Edit the way the child form will be displayed
+	  <div class='indented' id='printf_args_ajax'>
+	  </div>
+	</span>
+  </div>
+</div>

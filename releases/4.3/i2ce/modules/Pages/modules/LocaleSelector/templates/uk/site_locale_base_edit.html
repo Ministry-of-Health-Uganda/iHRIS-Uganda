@@ -1,0 +1,25 @@
+<div>
+  Тут ви можете вибрати мови, які ви хочете зробити доступними для вибору користувачами на вашому сайті. Типові запасні мови для сайту є <span name="locale_default_name"></span> (<span name="locale_default"></span>).
+  <span id="locales_container">
+    <ul id="locale_list"></ul><span name="has_def_locale" ifset="true">
+
+      <h2 id="add_def_locale_link" class="add_def_locale_options_toggle"><a>Виберіть доступну мову</a></h2>
+      <div id="add_def_locale_options_menu" class="optionsMenu optionsMenuWide toggable">
+	<div class="optionsMenuTitle">Виберіть доступну мову </div>
+
+	<h3>Доступні мови:</h3>
+	Виберіть мову для вашої системи
+	<select name="def_locale" id="def_locale"><option>Виберіть мову</option></select><br><span class="add_def_locale_options_hide window_hide button optionsMenuButton">Закрити</span>
+	<input type="submit" class="button only_options_menu" value="Select" id="add_def_locale"></div>
+    </span>
+    
+    <h2 id="add_locale_link" class="add_locale_options_toggle"><a>Додавання нової мови</a></h2>
+    <div id="add_locale_options_menu" class="optionsMenu optionsMenuWide toggable">
+      <div class="optionsMenuTitle">Додавання нової мови </div>
+
+      <h3>Власна мова:</h3>
+      Ви можете ввести власну мову, аби зробити її доступною для вашої системи.
+      <input id="new_locale" name="new_locale" type="text" value="" class="validate=[magicdatakey,notinlist,simple_locale]"><br><span class="add_locale_options_hide window_hide button optionsMenuButton">Закрити</span>
+      <input type="submit" class="button only_options_menu" value="Add" id="add_locale"></div>
+  </span>
+</div>

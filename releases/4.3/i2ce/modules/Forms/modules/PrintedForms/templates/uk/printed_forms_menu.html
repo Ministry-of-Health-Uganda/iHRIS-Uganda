@@ -1,0 +1,27 @@
+<div id="siteContent">
+  <h2>Стандартизовані форми</h2>
+
+  <h3>Генерувати стандартизовані форми</h3>
+
+  <span ifset="!true" name="has_valid_forms">
+    Немає доступних стандартизованих форм для цього запису.
+  </span>
+  <span ifset="true" name="has_valid_forms">
+    <ul id="printed_forms_list"></ul></span>
+
+
+  <span type="module" ifenabled="true" name="BinField">
+    <span ifset="true" name="show_archive">
+      <h3>Архівовані стандартизовані форми</h3>
+
+      <span ifset="!true" name="has_archives">
+	Жодна форма ще не заархівована для цього запису.
+      </span>
+      <span ifset="true" name="has_archives">
+	<span task="printed_forms_view_all_archives">
+	  <ul id="printed_forms_archive"></ul></span>
+      </span>
+    </span>
+  </span>
+
+</div>

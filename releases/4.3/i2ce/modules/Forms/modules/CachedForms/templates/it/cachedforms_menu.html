@@ -1,0 +1,31 @@
+<div>
+  
+
+
+  <h2>Memorizza moduli</h2>
+  <span name="has_profiles" ifset="true">
+    Memorizza tutti i moduli nel profilo selezionato.
+    <form action="CachedForms/cache" style="margin-left:2em" method="POST">
+      Scegli un profilo:  <select name="profile"></select><br><input type="submit" value="Cache"></form>
+  </span>
+  <br><div>
+    <a href="CachedForms/cacheAll">Cache</a> tutti i moduli
+    <br><a href="CachedForms/cacheAllForce">Forza Caching</a> di tutti i form non vecchi
+    <br><a href="CachedForms/dropAll">Elimina</a> cache di tutti i form
+  </div>
+  <br><span name="has_profiles" ifset="true">
+    <h2>Esporta Moduli Memorizzati</h2>
+    Esporta tutti i profili memorizzati nel profilo selezionato. Se selezioni una data di modifica, poi registra solo quello che è stato modificato o dopo la data specificata sarà esportata. Altrimenti, tutte le registrazioni che sono state modificate per il profilo selezionato saranno esportati.
+    <form action="CachedForms/export" style="margin-left:2em" method="POST">
+      Scegli un profilo:  <select name="profile"></select><br>
+      Data di modifica: <input class="datepicker_ymd" name="mod_date" type="text"><br><input type="checkbox" value="1" name="compress" checked>Abilita ompressione bzip2
+      <br><input type="submit" value="Export"></form>
+    
+    <br></span>
+
+  <h2>Crea/Modifica profilo</h2>
+  Crea un profilo o modifica un profilo di moduli esistente.
+  <form action="CachedForms/exportProfile" style="margin-left:2em">
+      Scegli un profilo:  <select name="profile"><option value="">Creare un nuovo profilo</option></select><br><input type="submit" value="Edit"></form>
+  <br><h2>Gestisci Caching di singoli moduli</h2>
+  <ul id="cached_forms_list"></ul></div>

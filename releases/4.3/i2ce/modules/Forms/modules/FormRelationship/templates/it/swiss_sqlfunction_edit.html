@@ -1,0 +1,45 @@
+<div id="sql_function">
+  <span id="function_contents">
+    <h2>Modifica la funzione SQL <span name="name"></span></h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0" id="reporting_function"><tr><td width="30%">
+	  <h3>Sql Query:</h3> La definizione di SQL per questa funzione. Si fa riferimento ai campi segnalati come 'reportform + campo'
+	</td>
+	<td width="auto">
+	  <textarea style="width:auto" cols="83" rows="4" name="qry" class="validate=[nonempty]"></textarea></td>
+      </tr><tr><td>
+	  <h3>Descrizione:</h3> Una descrizione di questa funzione che verraà visualizzata dall'utente finale
+	</td>
+	<td>
+	  <textarea type="text" name="description" rows="4" cols="53"></textarea></td>
+      </tr><tr><td>
+	  <h3>Campo del modulo:</h3> Seleziona il campo del modulo da cui questa funzione prende il valore
+	</td>
+	<td>
+	  <select name="formfield"></select></td>
+      </tr><tr><td>
+	  <h3>Aggrega:</h3> Un elenco separato da virgole dei moduli in relazione a quei campi che vuoi aggregare (es. quelli che non sono nella clausola groupby, quelli sono i moduli che appaiono nella tua funzione)
+	</td>
+	<td>
+	  <input type="text" name="aggregate"></td>
+      </tr><tr><td>
+	  <h3>Moduli selezionabili</h3>I moduli selezionabili per questo campo. Si applica solo se il campo del modulo è una sottoclasse di I2CE_FormField_MAPPED. In tal caso dovrebbe essere un elenco separato da virgole di moduli. Se non indicato, il valore predefinito sarà il nome di questa funzione.
+	</td>
+	<td>
+	  <input name="select_forms"></td>
+      </tr><tr><td>
+	  <h3>Campi collegati</h3>The fields that are linked when listing options.
+	  Only applies if the form field is a subclass of I2CE_FormField_MAPPED.  
+	  It should be  a colon separated list of 'forms' or 'form+linkfield's.	
+	  Example: "county:district+region:[region]:country".
+	  If not set, it defaults to the name of this function.
+	</td>
+	<td>
+	  <input name="link_fields"></td>
+      </tr></table><span id="dependent_functions">
+	<h2><a name="dependent_functions_link" href="" id="dependent_functions_link_replace"> Funzioni dipendenti</a></h2>
+	<div class="indented" id="dependent_functions_ajax">
+	</div>
+      </span>
+
+  </span>
+</div>

@@ -1,0 +1,36 @@
+<div>
+  <span name="functions_container" id="functions_container"> 
+    <span id="reporting_functions_container">
+      <span name="has_existing_functions" ifset="true">
+	<h2>Funciones Existentes</h2>
+	<ul id="existing_functions_list"></ul></span>
+      <h2 id="new_function_link" class="new_function_options_toggle"><a>Añadir una nueva Función</a></h2>
+      <div id="new_function_options_menu" class="optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true">
+	<div class="optionsMenuTitle window_drag">Añadir Una Nueva Función</div>
+	<table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	      <h3>Nombre de la función:</h3>Un nombre para referirse a esta función cuando se crean informes.
+	    </td>
+	    <td>
+	      <input type="text" name="name" id="function_name" value="" class="validate=[nonempty,notinlist,alphanumericextended,magicdatakey]"></td>
+	  </tr><tr><td>
+	      <h3>Consulta Sql:</h3> La definición de SQL para esta función. Debe referirse al formulario de nombre &lt;formname&gt; y al campo &lt;field&gt; `&lt;formname&gt;+&lt;field&gt;` en su función.
+	    </td>
+	    <td>
+	      <textarea rows="4" cols="53" name="qry" class="validate=[nonempty]"></textarea></td>
+	  </tr><tr><td>
+	      <h3>Descripción:</h3> Una descripción de esta función que será vista por el usuario final
+	    </td>
+	    <td>
+	      <textarea type="text" name="description" rows="4" cols="53"></textarea></td>
+	  </tr><tr><td colspan="2"> 
+	      <h3>Campo de Formulario:</h3> Seleccione el campo del formulario del cual esta función tomará valores
+	      <select name="formfield"></select></td>
+	  </tr><tr><td colspan="2">
+	      <div></div>
+	      <span class="new_function_options_hide button optionsMenuButton window_hide">Cerrar</span>
+	      <input type="submit" class="button only_options_menu " value="Create" id="new_function"><div></div>
+	      <br></td>
+	  </tr></table></div>
+    </span>
+  </span>
+</div>

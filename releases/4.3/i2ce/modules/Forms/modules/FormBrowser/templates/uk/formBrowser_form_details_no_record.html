@@ -1,0 +1,24 @@
+<tr><td>
+    <span name="field_name"></span>
+  </td>
+  <td>
+    <span name="field_type" ifset="true">
+      <span name="field_class" ifset="true">
+	Поле <span name="field_name"></span> зареєстровано як тип <span name="field_type"></span> яке забезпечується <span name="field_class"></span>.
+      </span>
+      <span name="field_class" ifset="!true">
+	Поле <span name="field_name"></span> зареєстровано як тип <span name="field_type"></span>.
+	<span class="error">Попередження: Поле '<span name="field_name"></span>'не пов'язане з жодним класом.</span>
+      </span>
+    </span>
+    <span name="field_type" ifset="!true">
+      <span class="error">Попередження: Поле '<span name="field_name"></span>' немає зареєстрованого типу.</span>
+    </span>
+    <span name="field_id" ifset="true">
+      Поле має id <span name="field_id"></span>.
+    </span>
+    <span name="linked_form_name" ifset="true">
+      Це поле посилається на форму <a href="" name="linked_form_link" id="linked_form_link"><span name="linked_form_name"></span></a>
+    </span> 
+  </td>
+</tr>

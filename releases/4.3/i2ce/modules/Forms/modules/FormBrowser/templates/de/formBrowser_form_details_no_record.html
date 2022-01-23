@@ -1,0 +1,24 @@
+<tr><td>
+    <span name="field_name"></span>
+  </td>
+  <td>
+    <span name="field_type" ifset="true">
+      <span name="field_class" ifset="true">
+	Das Feld <span name="field_name"></span> ist registriert als Typ <span name="field_type"></span> welcher zur Verfügung gestellt wird durch <span name="field_class"></span>.
+      </span>
+      <span name="field_class" ifset="!true">
+	Das Feld <span name="field_name"></span> ist registriert als Typ <span name="field_type"></span>.
+	<span class="error">Warnung: Das Feld<span name="field_name"></span>ist keiner Klasse zugeordnet.</span>
+      </span>
+    </span>
+    <span name="field_type" ifset="!true">
+      <span class="error">Warnung: Das Feld<span name="field_name"></span>hat keinen registrierten Typ.</span>
+    </span>
+    <span name="field_id" ifset="true">
+      Das Feld hat die Kennung <span name="field_id"></span>.
+    </span>
+    <span name="linked_form_name" ifset="true">
+      Dieses Feld ist verweist auf Datenblatt <a href="" name="linked_form_link" id="linked_form_link"><span name="linked_form_name"></span></a>
+    </span> 
+  </td>
+</tr>

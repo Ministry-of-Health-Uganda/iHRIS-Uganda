@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="forms">
+  <metadata>
+    <displayName>I2CE Forms</displayName>
+    <className>I2CE_Module_Forms</className>
+    <category>Base System Component</category>
+    <description>Adds a few basic forms to the system as well as some form functionality to the template</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <description>Custom Reports</description>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <requirement name="I2CE">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Fields">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="template-data">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="DisplayData">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+  <configurationGroup name="forms">
+    <displayName>Base Forms</displayName>
+    <configurationGroup name="template">
+      <displayName>Template Information</displayName>
+      <description>Various Default Information About The Templating System</description>
+      <configuration name="form_error" values="single" type="string">
+        <displayName>Form Error Template</displayName>
+        <description>The template file loaded for any error form</description>
+        <value>form_error.html</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formClasses">
+      <displayName>Form Class Configuration</displayName>
+      <configurationGroup name="I2CE_Form">
+        <displayName>Configuration for I2CE_Form</displayName>
+        <configuration name="extends" values="single" type="string">
+          <displayName>The class this form extends</displayName>
+          <value>I2CE_Fuzzy</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Arguements for I2CE_Form</displayName>
+          <configuration name="change_type_default" values="single" type="string">
+            <displayName>Change Type Default</displayName>
+            <value>CHANGE_UPDATE</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms">
+      <displayName>Forms</displayName>
+      <description>Information about the forms made available by I2CE</description>
+      <status>advanced:true</status>
+      <status>required:true</status>
+      <configurationGroup name="user">
+        <displayName>User</displayName>
+        <description>The User Form</description>
+        <configuration name="class" values="single" type="string">
+          <displayName>Class Name</displayName>
+          <description>The name of the class providing the form</description>
+          <value>I2CE_User_Form</value>
+        </configuration>
+        <configuration name="display" values="single" locale="en_US" type="string">
+          <displayName>Display name</displayName>
+          <description>The display name for this form</description>
+          <value>User</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configuration name="messages" path="/modules/forms/messages" type="delimited" values="many" locale="en_US">
+      <version>4.1.8.0</version>
+      <value>title:View %s</value>
+    </configuration>
+  </configurationGroup>
+</I2CEConfiguration>

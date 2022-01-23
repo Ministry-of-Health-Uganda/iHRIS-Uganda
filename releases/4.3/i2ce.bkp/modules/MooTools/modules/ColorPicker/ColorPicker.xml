@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ColorPicker">
+  <metadata>
+    <displayName>Color Picker</displayName>
+    <className>I2CE_Module_ColorPicker</className>
+    <category>Mootools Add-Ons</category>
+    <description>Uses the MooTools Color Picker written by Kelly Anderson at http://www.sweetvision.com/projects/javascript-color-picker/. Enable some additional functionality for configuration as well</description>
+    <version>4.3.0</version>
+    <link>https://launchpad.net/i2ce</link>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="MooTools">
+      <atLeast version="1.4" />
+      <lessThan version="1.5" />
+    </requirement>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

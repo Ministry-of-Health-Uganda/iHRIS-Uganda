@@ -1,0 +1,14 @@
+<div>
+  <span name='reported_form_header'><h2><span name='reported_form_display_name'/> (<span name='reported_form_name'/>)</h2></span>
+  <br/>
+  <div id='form_contents' class='indented'>
+    <span name='reported_form_description'></span>  
+    <input name='submit' type='hidden'/>
+    <span name='form_is_primary' ifset='!true'>
+      <h3> <input name='required' type='checkbox' value='1' title='Check to make required'/> Required:</h3> Require that the data for this form be found.  Otherwise remove
+      the row from the report.
+    </span>
+    <a id='fields_link'><h3>Reported Fields</h3></a>
+    <div id='fields_ajax' class='indented'/>
+  </div>
+</div>

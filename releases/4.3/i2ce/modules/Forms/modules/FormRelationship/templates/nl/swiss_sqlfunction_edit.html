@@ -1,0 +1,41 @@
+<div id="sql_function">
+  <span id="function_contents">
+    <h2>SQL-functie bewerken <span name="name"></span></h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0" id="reporting_function"><tr><td width="30%">
+	  <h3>SQL-query:</h3> De bepalende SQL voor deze functie. U verwijst naar gerapporteerde velden als 'reportform + field'
+	</td>
+	<td width="auto">
+	  <textarea style="width:auto" cols="83" rows="4" name="qry" class="validate=[nonempty]"></textarea></td>
+      </tr><tr><td>
+	  <h3>Beschrijving:</h3> Een beschrijving van deze functie die wordt weergegeven aan een eindgebruiker
+	</td>
+	<td>
+	  <textarea type="text" name="description" rows="4" cols="53"></textarea></td>
+      </tr><tr><td>
+	  <h3>Formulierveld:</h3> Selecteer het formulierveld waar deze functies waarden in accepteert
+	</td>
+	<td>
+	  <select name="formfield"></select></td>
+      </tr><tr><td>
+	  <h3>Aggregaat:</h3> Een kommagescheiden lijst van de formulieren in de relatie waarvan u de velden wilt aggregeren (bijvoorbeeld velden die niet in de "groupby" definitie staan, die zijn de formulieren die in uw functie voorkomen)
+	</td>
+	<td>
+	  <input type="text" name="aggregate"></td>
+      </tr><tr><td>
+	  <h3>Selecteerbare formulieren</h3>De formulieren die te selecteren zijn voor dit veld. Alleen van toepassing als het formulierveld ene subklasse is van I2CE_FormField_MAPPED. In dit geval moet het een kommagescheiden lijst van formulieren zijn. Als het veld niet is ingesteld, is de standaardwaarde de naam van deze functie.
+	</td>
+	<td>
+	  <input name="select_forms"></td>
+      </tr><tr><td>
+	  <h3>Gekoppelde velden</h3>De velden die gekoppeld zijn als lijsten worden weergegeven. Alleen van toepassing als het formulierveld een subklasse is van I2CE_FormField_MAPPED. Dit moet een door dubbele punten gescheiden lijst zijn van "formulieren" of "formulier+koppelingsveld". Voorbeeld: "county:district+region:[region]:country". Als het veld niet is ingesteld, is de standaardwaarde de naam van deze functie.
+	</td>
+	<td>
+	  <input name="link_fields"></td>
+      </tr></table><span id="dependent_functions">
+	<h2><a name="dependent_functions_link" href="" id="dependent_functions_link_replace"> Afhankelijke functies</a></h2>
+	<div class="indented" id="dependent_functions_ajax">
+	</div>
+      </span>
+
+  </span>
+</div>

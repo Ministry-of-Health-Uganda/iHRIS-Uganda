@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="BinField" path="/modules/BinField">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="BinField" path="/modules/BinField" locale="pt_BR">
+    <version>4.3.0.1</version>
+    <configuration name="snap_message" path="/modules/forms/messages/snap_picture" locale="pt_BR" values="single" type="string">
+      <value>Imagem instantânea</value>
+    </configuration>
+    <configurationGroup name="invalid_messages" path="/modules/forms/invalid_field_messages" locale="pt_BR">
+      <configuration name="no_upload" values="single" type="string">
+        <value>Não foi possível carregar o arquivo:</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>
