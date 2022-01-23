@@ -58,7 +58,7 @@ function rearrange($arr1){
                 // $job->getField('classification')->setFromDB($classification_id);
 			    // $job->save( $user );
 			    // $job->cleanup();
-				print_r($value);
+				print_r($key);
 		    	 
 
 		}
