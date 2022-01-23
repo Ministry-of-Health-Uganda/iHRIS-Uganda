@@ -61,7 +61,7 @@ $form_factory = I2CE_FormFactory::instance();
 			// 	$not++;
 			// 	}
 
-			echo $key.'<br>';
+			print_r($jobs);
 		}
 	
 		//echo "Done ".$row++." Records.\n";
