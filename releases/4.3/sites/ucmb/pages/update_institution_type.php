@@ -60,7 +60,7 @@ $form_factory = I2CE_FormFactory::instance();
 			// 	$row++;
 			// 	
 
-			print_r($facdata);
+			print_r($_SESSION);
 		//}
 	}
 	
