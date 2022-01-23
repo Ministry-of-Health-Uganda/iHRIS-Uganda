@@ -44,7 +44,7 @@ function rearrange($arr1){
 }	
 
 	  $cache = array();
-	  $cache['job'] = array_flip( rearrange(I2CE_List::listOptions( "job" ) ));
+	  $cache['job'] = array_flip(I2CE_List::listOptions( "job" ));
 
       $count =0;
 	 
