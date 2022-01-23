@@ -1,3 +1,4 @@
+
 <?php
 
 $i2ce_site_user_access_init = null;
@@ -47,21 +48,21 @@ $form_factory = I2CE_FormFactory::instance();
       $count =0;         
         foreach ($facs as $facdata){               
 		
-			 if($facdata['value']){
-			 	$fac = $form_factory->createContainer( $facdata['value'] );
-				$fac->populate();
-				$institution_type_id = "institution_type|111596";
-				$fac->getField('institution_type')->setFromDB($institution_type_id);
-			 	$fac->save( $user );
-				$fac->cleanup();
-				unset( $fac );
+			//  if($facdata['value']){
+			//  	$facility = $form_factory->createContainer( $jobdata['value'] );
+			// 	$facility->populate();
+			// 	$institution_type_id = "institution_type|111596";
+			//     $facility->getField('institution_type')->setFromDB( $institution_type_id );
+			//  	$facility->save( $user );
+			// 	$facility->cleanup();
+			// 	unset( $job );
 		
-				$row++;
+			// 	$row++;
 			// 	
 
-			//print_r($facdata);
-		}
-	    }
+			print_r($facdata);
+		//}
+	}
 	
 		echo "Done ".$row++." Records.\n";
 		
