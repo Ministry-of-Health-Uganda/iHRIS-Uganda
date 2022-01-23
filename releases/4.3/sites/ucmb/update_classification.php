@@ -45,7 +45,7 @@ $form_factory = I2CE_FormFactory::instance();
 
    $jobs = I2CE_List::listOptions( "job");
       $count =0;         
-        foreach ($jobs as $key => $value){               
+        foreach ($jobs as $jobdata){               
 		
 			// if($job_id){
 			// 	$job = $form_factory->createContainer( 'job|'. $data[iHRIS_JOB] );
@@ -61,7 +61,7 @@ $form_factory = I2CE_FormFactory::instance();
 			// 	$not++;
 			// 	}
 
-			print_r($jobs);
+			print_r($jobs['value']);
 		}
 	
 		//echo "Done ".$row++." Records.\n";
