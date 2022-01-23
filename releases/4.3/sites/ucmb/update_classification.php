@@ -47,11 +47,11 @@ function rearrange($arr1){
 
 $find_id = array(
 	'operator' => 'FIELD_LIMIT',
-	'field' => 'position',
+	'field' => 'job',
 	'style' => 'null'
 	);
 
- $position_id = I2CE_FormStorage::listFields( "position", array('id'), $find_id );
+ $position_id = I2CE_FormStorage::listFields( "job", array('id'), $find_id );
 
 	//   $cache = array();
 	//   $cache['job'] = array_flip( rearrange(I2CE_List::listOptions( "job" ) ));
