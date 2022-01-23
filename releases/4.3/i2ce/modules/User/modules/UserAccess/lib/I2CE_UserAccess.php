@@ -581,7 +581,7 @@ class I2CE_UserAccess extends I2CE_UserAccess_Mechanism {
         try {
             $userDetails = I2CE_PDO::getRow( "SELECT user FROM " . $this->logTable 
                     . " WHERE user = IFNULL((SELECT id FROM " . $this->detailTable . " WHERE username = ?),0) AND session_id = ? AND logout IS NULL ", array( $username, session_id() ) );
-            if(count($userDetails) == 0){
+            if(count(array($userDetails)) == 0){
                 return true;
             } else {
                 return false;
