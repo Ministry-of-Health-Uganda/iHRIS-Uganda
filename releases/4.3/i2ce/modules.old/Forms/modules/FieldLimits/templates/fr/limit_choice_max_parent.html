@@ -1,0 +1,27 @@
+<div title="Limit this field to be the maximum for all forms that have the same value for the given field.">
+  <table border="0" cellpadding="0" cellspacing="0"><tr><td>
+        <span name="limit_description" ifset="true">
+          Limiter ce champ pour qu'il soit le maximum pour tous les formulaires qui prennent la même valeur pour ce champ particulier
+        </span>
+      </td>
+      <td>
+        <select name="linked_field"></select></td>
+    </tr><tr><td>
+        Decaler a partir de maximum (Saisir 0 pour le maximum): 
+      </td>
+      <td>
+        <input type="text" name="offset" value="0"></td>
+    </tr><tr><td>
+        Permettre vide (nul valeur): 
+      </td>
+      <td>
+        <select name="allow_null"><option value="0">Oui</option><option value="1">Non</option></select></td>
+    </tr><tr><td>
+        Return all (non-distinct) matches:<br>
+        When the selected field is 'parent' you may want to allow all matches<br>
+        when linking to child forms to get the order based on the limited field.<br>
+        For other fields you probably only want distinct values returned.
+      </td>
+      <td>
+        <select name="allow_all"><option value="0">Non</option><option value="1">Oui</option></select></td>
+    </tr></table></div>

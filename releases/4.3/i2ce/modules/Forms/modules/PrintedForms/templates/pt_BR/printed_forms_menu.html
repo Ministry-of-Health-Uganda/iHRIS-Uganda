@@ -1,0 +1,27 @@
+<div id="siteContent">
+  <h2>Formulários padronizados</h2>
+
+  <h3>Gerar formulários padronizados</h3>
+
+  <span ifset="!true" name="has_valid_forms">
+    Não há formulários padronizados para esse registro.
+  </span>
+  <span ifset="true" name="has_valid_forms">
+    <ul id="printed_forms_list"></ul></span>
+
+
+  <span type="module" ifenabled="true" name="BinField">
+    <span ifset="true" name="show_archive">
+      <h3>Formulários padronizados arquivados</h3>
+
+      <span ifset="!true" name="has_archives">
+	Nenhum formulário foi arquivado para esse registro.
+      </span>
+      <span ifset="true" name="has_archives">
+	<span task="printed_forms_view_all_archives">
+	  <ul id="printed_forms_archive"></ul></span>
+      </span>
+    </span>
+  </span>
+
+</div>

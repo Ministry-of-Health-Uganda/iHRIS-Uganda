@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="maani-charts">
+  <metadata>
+    <displayName>Charted Reports</displayName>
+    <category>External Software</category>
+    <description>Configuration options for the Maani chart reporting software http://www.maani.us/charts</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.7</version>
+    <path name="maani_chart_files">
+      <value>./maani_charts</value>
+    </path>
+    <path name="swf">
+      <value>./maani_charts</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <requirement name="FileDump">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="maani-charts">
+    <displayName>Chart Configuration</displayName>
+    <description>configuration options for charts using the maani flash charts.</description>
+    <status>required:false</status>
+    <configuration name="license" values="single">
+      <displayName>Maani License</displayName>
+      <description>Enter a license to enable full charting capability</description>
+      <status>required:false</status>
+    </configuration>
+    <configurationGroup name="fileDump" path="/modules/FileDump">
+      <displayName>File Dump</displayName>
+      <description>Interactions with the file dump</description>
+      <status>visible:false</status>
+      <configuration name="limitToCategories" values="many">
+        <displayName>Limit</displayName>
+        <description>Added shockwave flash to the allowed limit categories</description>
+        <value>SWF</value>
+      </configuration>
+      <configuration name="defaultCategories" path="defaultCategories/SWF" values="many">
+        <displayName>Default Categories</displayName>
+        <description>Added shockwave extensions as a default category</description>
+        <value>swf</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

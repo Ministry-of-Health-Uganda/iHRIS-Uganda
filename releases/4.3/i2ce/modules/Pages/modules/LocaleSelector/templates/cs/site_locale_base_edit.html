@@ -1,0 +1,25 @@
+<div>
+  Zde můžete vybrat jazyky, které si přejete, aby byly uživatelům na Vaši stránce k dispozici k výběru. Výchozí návratový jazyk na této stránce je <span name="locale_default_name"></span> (<span name="locale_default"></span>).
+  <span id="locales_container">
+    <ul id="locale_list"></ul><span name="has_def_locale" ifset="true">
+
+      <h2 id="add_def_locale_link" class="add_def_locale_options_toggle"><a>Vybrat dostupnou lokalizaci</a></h2>
+      <div id="add_def_locale_options_menu" class="optionsMenu optionsMenuWide toggable">
+	<div class="optionsMenuTitle">Vybrat dostupnou lokalizaci </div>
+
+	<h3>Dostupné lokalizace:</h3>
+	Vyberte jazyk pro Váš systém
+	<select name="def_locale" id="def_locale"><option>Vybrat lokalizaci</option></select><br><span class="add_def_locale_options_hide window_hide button optionsMenuButton">Zavřít</span>
+	<input type="submit" class="button only_options_menu" value="Select" id="add_def_locale"></div>
+    </span>
+    
+    <h2 id="add_locale_link" class="add_locale_options_toggle"><a>Přidat Nový Jazyk</a></h2>
+    <div id="add_locale_options_menu" class="optionsMenu optionsMenuWide toggable">
+      <div class="optionsMenuTitle">Přidat Nový Jazyk </div>
+
+      <h3>Upravená lokalizace:</h3>
+      Je možné zadat vlastní jazyk, který bude pro Váš systém dostupný.
+      <input id="new_locale" name="new_locale" type="text" value="" class="validate=[magicdatakey,notinlist,simple_locale]"><br><span class="add_locale_options_hide window_hide button optionsMenuButton">Zavřít</span>
+      <input type="submit" class="button only_options_menu" value="Add" id="add_locale"></div>
+  </span>
+</div>

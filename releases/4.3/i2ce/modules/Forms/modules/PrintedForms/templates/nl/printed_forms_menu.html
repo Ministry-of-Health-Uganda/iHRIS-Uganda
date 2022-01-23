@@ -1,0 +1,27 @@
+<div id="siteContent">
+  <h2>Gestandaardiseerde formulieren</h2>
+
+  <h3>Gestandaardiseerde formulieren genereren</h3>
+
+  <span ifset="!true" name="has_valid_forms">
+    Geen gestandaardiseerde formulieren beschikbaar voor dit record.
+  </span>
+  <span ifset="true" name="has_valid_forms">
+    <ul id="printed_forms_list"></ul></span>
+
+
+  <span type="module" ifenabled="true" name="BinField">
+    <span ifset="true" name="show_archive">
+      <h3>Gearchiveerde gestandaardiseerde formulieren</h3>
+
+      <span ifset="!true" name="has_archives">
+	Er zijn geen formulieren gearchiveerd voor dit record.
+      </span>
+      <span ifset="true" name="has_archives">
+	<span task="printed_forms_view_all_archives">
+	  <ul id="printed_forms_archive"></ul></span>
+      </span>
+    </span>
+  </span>
+
+</div>

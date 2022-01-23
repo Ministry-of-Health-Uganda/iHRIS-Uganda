@@ -1,0 +1,21 @@
+<div id="siteContent">
+  <h1>Administrar Papéis</h1>
+  <h2>Papéis Existentes</h2>
+  <ul id="role_list"></ul><form method="post" action="tasks-roles/roles">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Adicione novo Papel
+	</th>
+      </tr><tr><td>
+	   <label>Denominação Abreviada do Papel:</label> Uma breve denominação formada por uma letra e um número, -, . e _ usada para se referir ao papel em páginas e modelos.
+	 </td>
+	 <td>
+	   <input type="text" id="role_short_name" name="role_short_name" class="validate=[notinlist]"></td>
+	 <td>
+	   <label>Denominação do Papel:</label> A display name for this role that is displayed to the end user
+	 </td>
+	 <td>
+	   <input type="text" name="role_name"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Create"></td>
+      </tr></table></form>
+</div>

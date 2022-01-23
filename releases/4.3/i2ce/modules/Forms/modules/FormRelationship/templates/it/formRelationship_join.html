@@ -1,0 +1,31 @@
+<div>
+  <h2 id="join_form_link" class="join_form_options_toggle"><a>Aggiungere un nuovo modulo bambino</a></h2>
+  <div id="join_form_options_menu" class="optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true">
+    <div class="optionsMenuTitle window_drag">Aggiungi un nuovo modulo </div>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  Seleziona un modulo bambino per accedere a questo modulo:
+	</td>
+	<td>
+	  <select name="form_which" id="join_forms_selector"></select></td>
+      </tr><tr><td>
+	  <h3>Nome breve:</h3>Una chiave interna utilizzata per identificare il modulo della parentela. Potrebbe non essere la stessa chiave utilizzata per gli altri moduli indicati in questa parentela.
+	</td>
+	<td>
+	  <input id="form_name" name="form_name" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+      </tr><tr><td>
+	  <h3>Nome visualizzato:</h3>Il nome del modulo congiunto che verrà visualizzato dall'utente finale.
+	</td>
+	<td>
+	  <input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+      </tr><tr><td>
+	  <h3>Descrizione:</h3>Una descrizione del modulo e del suo ruolo nella parentela che deve poter essere comprensibile all'utente finale.
+	</td>
+	<td>
+	  <textarea name="description" rows="4" cols="53" value=""></textarea></td>
+      </tr><tr><td colspan="2">
+	  <div></div>
+	  <span class="join_form_options_hide button optionsMenuButton window_hide">Chiudi</span>
+	  <input type="submit" class="button only_options_menu" value="Add" id="join_form"><div></div>
+	  <br></td>
+      </tr></table></div>
+</div>

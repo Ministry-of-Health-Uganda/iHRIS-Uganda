@@ -1,0 +1,25 @@
+<div>
+  Dito mo maaaring piliin ang mga katutubong lugar na nais mong makuha ng mga tagagamit na mapipili para sa sityo mo.  Ang likas na nakatakdang bagsakang katutubong pook para sa sityong ito ay <span name="locale_default_name"></span> (<span name="locale_default"></span>).
+  <span id="locales_container">
+    <ul id="locale_list"></ul><span name="has_def_locale" ifset="true">
+
+      <h2 id="add_def_locale_link" class="add_def_locale_options_toggle"><a>Piliin ang Makukuhang Lugar</a></h2>
+      <div id="add_def_locale_options_menu" class="optionsMenu optionsMenuWide toggable">
+	<div class="optionsMenuTitle">Piliin ang Makukuhang Lugar </div>
+
+	<h3>Makukuhang mga Lugar:</h3>
+	Pumili ng isang pook para sa sistema mo
+	<select name="def_locale" id="def_locale"><option>Pumili ng Lugar</option></select><br><span class="add_def_locale_options_hide window_hide button optionsMenuButton">Isara</span>
+	<input type="submit" class="button only_options_menu" value="Select" id="add_def_locale"></div>
+    </span>
+    
+    <h2 id="add_locale_link" class="add_locale_options_toggle"><a>Magdagdag ng Isang Bagong Pook</a></h2>
+    <div id="add_locale_options_menu" class="optionsMenu optionsMenuWide toggable">
+      <div class="optionsMenuTitle">Magdagdag ng Isang Bagong Pook </div>
+
+      <h3>Ipasadya ang Lugar:</h3>
+      Maaari kang magpasok ng isang ipinasadyang lugar na magagawang makukuha papunta sa sistema mo.
+      <input id="new_locale" name="new_locale" type="text" value="" class="validate=[magicdatakey,notinlist,simple_locale]"><br><span class="add_locale_options_hide window_hide button optionsMenuButton">Isara</span>
+      <input type="submit" class="button only_options_menu" value="Add" id="add_locale"></div>
+  </span>
+</div>

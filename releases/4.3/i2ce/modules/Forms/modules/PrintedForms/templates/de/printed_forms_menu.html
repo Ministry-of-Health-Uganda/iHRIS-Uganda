@@ -1,0 +1,27 @@
+<div id="siteContent">
+  <h2>Standardisierte Datenblätter</h2>
+
+  <h3>Standardisierte Datenblätter generieren</h3>
+
+  <span ifset="!true" name="has_valid_forms">
+    Für diesen Datensatz gibt es kein standardisiertes Datenblatt.
+  </span>
+  <span ifset="true" name="has_valid_forms">
+    <ul id="printed_forms_list"></ul></span>
+
+
+  <span type="module" ifenabled="true" name="BinField">
+    <span ifset="true" name="show_archive">
+      <h3>Archivierte standardisierte Datenblätter</h3>
+
+      <span ifset="!true" name="has_archives">
+	Keine Datenblätter wurden für diesen Datensatz archiviert.
+      </span>
+      <span ifset="true" name="has_archives">
+	<span task="printed_forms_view_all_archives">
+	  <ul id="printed_forms_archive"></ul></span>
+      </span>
+    </span>
+  </span>
+
+</div>

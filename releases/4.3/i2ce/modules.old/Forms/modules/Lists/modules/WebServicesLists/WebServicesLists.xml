@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="web-services-lists">
+  <metadata>
+    <displayName>Lists Web Services</displayName>
+    <category>Base System Component</category>
+    <description>Provides Web Services for List Forms</description>
+    <creator>Luke Duncan</creator>
+    <email>lduncan@intrahealth.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="web-services">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="MooTools">
+      <atLeast version="1.4.5" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+  </metadata>
+  <configurationGroup name="web-services-lists" path="/modules/web-services">
+    <configurationGroup name="lists-page" path="page/lists">
+      <configuration name="style" values="single" type="string">
+        <value>web_service</value>
+      </configuration>
+      <configuration name="class" values="single" type="string">
+        <value>I2CE_WebService_Lists</value>
+      </configuration>
+      <configurationGroup name="args">
+        <configuration name="access" values="many" type="string">
+          <version>4.2.0.0.4</version>
+          <status>required:false</status>
+          <value>all</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="messages" locale="en_US">
+      <configuration name="invalid_list" values="single" type="string">
+        <version>4.2.0.0.2</version>
+        <value>That is not a valid list: '%s'</value>
+      </configuration>
+      <configuration name="invalid_form" values="single" type="string">
+        <version>4.2.0.0.3</version>
+        <value>That is not a valid form '%s'</value>
+      </configuration>
+      <configuration name="invalid_field" values="single" type="string">
+        <version>4.2.0.0.3</version>
+        <value>That is not a valid field '%s' in form '%s'</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

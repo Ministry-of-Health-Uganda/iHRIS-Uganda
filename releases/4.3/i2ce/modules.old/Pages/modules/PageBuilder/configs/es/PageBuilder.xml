@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="page-builder" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="page-builder" path="/" locale="es">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="es">
+      <configuration name="can_build_pages" locale="es" values="single" type="string">
+        <value>Puede crear o configurar páginas</value>
+      </configuration>
+      <configuration name="can_delete_pages" locale="es" values="single" type="string"></configuration>
+      <configuration name="can_delete_pages_arguments" locale="es" values="single" type="string"></configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

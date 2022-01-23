@@ -1,0 +1,51 @@
+<div>
+  <h2 id='join_form_link' class='join_form_options_toggle'><a>Add a new child form</a></h2>
+  <div id='join_form_options_menu' class='optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true' >
+    <div class='optionsMenuTitle window_drag'>Add A New Form </div>
+    <table class='multiFormTable' cellpadding="0" cellspacing="0" border="0">
+      <tr>
+	<td>
+	  Select a child form to join to this form:
+	</td>
+	<td>
+	  <select name='form_which' id='join_forms_selector'>
+	  </select>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Short Name:</h3>An internal key used to identify the form relationship.  It may not be the
+	  same as the key for any of the existing named forms in this relationship.
+	</td>
+	<td>
+	  <input id='form_name' name='form_name' type='text'   value='' class='validate=[nonempty,magicdatakey,notinlist]'/>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Display Name:</h3>The name of the joined form that is displayed to the end user.
+	</td>
+	<td>
+	  <input name='display_name' type='text' value=''  class='validate=[nonempty]'/>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Description:</h3>A description of the form and its role in the relationship that should be understandable to the end user.
+	</td>
+	<td>
+	  <textarea name='description'   rows='4' cols='53' value=''/>
+	</td>
+      </tr>
+      <tr>
+	<td colspan='2'>
+	  <div/>
+	  <span class='join_form_options_hide button optionsMenuButton window_hide'>Close</span>
+	  <input type='submit' class='button only_options_menu' value='Add' id='join_form' />
+	  <div/>
+	  <br/>
+	</td>
+      </tr>
+    </table>    
+  </div>
+</div>

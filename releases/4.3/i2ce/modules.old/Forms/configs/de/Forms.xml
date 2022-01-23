@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="forms">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="forms" locale="de">
+    <version>4.3.0.1</version>
+    <configurationGroup name="forms">
+      <configurationGroup name="user">
+        <configuration name="display" values="single" locale="de" type="string">
+          <value>Anwender</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configuration name="messages" path="/modules/forms/messages" type="delimited" values="many" locale="de">
+      <value>title:%s ansehen</value>
+    </configuration>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,26 @@
+<tr>	
+  <td >
+    <span name="field_name"></span>
+  </td>
+  <td >
+    <span name="field_type" ifset="true">
+      <span name="field_class" ifset="true">
+	The field <span name="field_name"></span> is registered as type <span name="field_type"></span> which is provided 
+	by <span name="field_class"/>.
+      </span>
+      <span name="field_class" ifset="!true">
+	The field <span name="field_name"/> is registered as type <span name="field_type"/>.
+	<span class='error'>Warning: The field '<span name="field_name"/>' is not associated with any class.</span>
+      </span>
+    </span>
+    <span name="field_type" ifset="!true">
+      <span class="error">Warning: The field '<span name="field_name"/>' has no  registed type.</span>
+    </span>
+    <span name="field_id" ifset="true">
+      The field has id <span name="field_id"></span>.
+    </span>
+    <span name="linked_form_name" ifset="true">
+      This field links to the form <a href="" name="linked_form_link" id="linked_form_link"><span name="linked_form_name"></span></a>
+    </span> 
+  </td>
+</tr>

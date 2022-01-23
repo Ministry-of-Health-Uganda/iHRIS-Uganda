@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="pages">
+  <metadata>
+    <displayName>Pages</displayName>
+    <category>Base System Component</category>
+    <description>Provides pages, Users and Templates</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="I2CE">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="user">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="permissions">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="pages" path="/I2CE">
+    <configurationGroup name="roles" path="/I2CE/formsData/forms/role">
+      <displayName>Roles</displayName>
+      <version>3.2.6</version>
+      <configurationGroup name="admin">
+        <displayName>'Admin' Role</displayName>
+        <description>The Role 'admin' is the role that allows access for the adminstrator</description>
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="en_US" type="string">
+            <displayName>Display Name</displayName>
+            <value>Administrator</value>
+          </configuration>
+          <configuration name="trickle_up" values="single" type="string">
+            <displayName>Trickle Up</displayName>
+            <value />
+          </configuration>
+          <configuration name="assignable" values="single" type="string">
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="last_modified" values="single" type="string">
+          <value>2009-06-15 1:23:45</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="any">
+        <displayName>'Any' Role</displayName>
+        <description>The Role 'any' is the role that allows access for anybody that is logged in</description>
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="en_US" type="string">
+            <displayName>Display Name</displayName>
+            <description>The name displayed for the role 'Any'</description>
+            <value>Any</value>
+          </configuration>
+          <configuration name="trickle_up" values="single" type="string">
+            <displayName>Trickle Up</displayName>
+            <value>admin</value>
+            <!-- This means that an admin can look at anything labeled as any!-->
+          </configuration>
+          <configuration name="assignable" values="single" type="string">
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="last_modified" values="single" type="string">
+          <value>2009-06-15 1:23:45</value>
+        </configuration>
+      </configurationGroup>
+      <!-- end of role any-->
+      <configurationGroup name="all">
+        <displayName>'All' Role</displayName>
+        <description>The Role 'all' allows universal access -- the user does not have to be logged in. This is a special role and does not need to be included in any trickle ups.</description>
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="en_US" type="string">
+            <displayName>Display Name</displayName>
+            <value>All</value>
+          </configuration>
+          <configuration name="assignable" values="single" type="string">
+            <value>0</value>
+          </configuration>
+          <configuration name="trickle_up" values="single" type="string">
+            <displayName>Trickle Up</displayName>
+            <value>admin</value>
+            <!-- This means that an admin can look at anything labeled as any!-->
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <!-- end of role all-->
+    </configurationGroup>
+    <configurationGroup name="template">
+      <displayName>Template Information</displayName>
+      <description>Various Default Information About The Templating System</description>
+      <configuration name="prefix_title" values="single" type="string">
+        <displayName>Prefix Title</displayName>
+        <description>The prefix added to any page title</description>
+        <status>required:false</status>
+      </configuration>
+      <configurationGroup name="page_styles">
+        <displayName>Page Style</displayName>
+        <description>Various Page style with their default templates</description>
+        <status>required:false</status>
+        <configurationGroup name="main" path="main/args">
+          <displayName>Main</displayName>
+          <description>Values passed to the pages' constructor</description>
+          <configuration name="templates" values="many" type="string">
+            <displayName>Template</displayName>
+            <description>The templates loaded containing the main page look</description>
+            <value>main.html</value>
+          </configuration>
+          <configuration name="attributes" values="many" type="string">
+            <displayName>Attributes</displayName>
+            <description>Body attributes for pages that use the main page</description>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many" type="string">
+            <displayName>Default HTML File</displayName>
+            <description>The default html template file containing the page content</description>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:true</status>
+            <value>any</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="empty" path="empty/args">
+          <displayName>Empty</displayName>
+          <description>Values passed to the pages' constructor with a style that loads nothing by default</description>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <value>any</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+      <configurationGroup name="noaccess">
+        <displayName>Noaccess Page</displayName>
+        <description>The page 'noaccess' which has the action of: Access Denied</description>
+        <configuration name="class" values="single" type="string">
+          <value>I2CE_Page</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>main</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US" type="string">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Access Denied</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many" type="string">
+            <displayName>Default HTML File</displayName>
+            <description>The default HTML File for this page</description>
+            <status>required:true</status>
+            <value>noaccess.html</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <value>all,any</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="web-services-lists" path="/modules/web-services">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="web-services-lists" path="/modules/web-services" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="messages" locale="en_US">
+      <configuration name="invalid_list" values="single" type="string">
+        <value>That is not a valid list: '%s'</value>
+      </configuration>
+      <configuration name="invalid_form" values="single" type="string">
+        <value>That is not a valid form '%s'</value>
+      </configuration>
+      <configuration name="invalid_field" values="single" type="string">
+        <value>That is not a valid field '%s' in form '%s'</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

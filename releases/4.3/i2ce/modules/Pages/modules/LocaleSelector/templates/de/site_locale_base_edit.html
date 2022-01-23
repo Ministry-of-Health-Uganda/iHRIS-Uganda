@@ -1,0 +1,25 @@
+<div>
+  An dieser Stelle kann das Gebietsschema ausgewählt werden, das die Anwender für ihre Arbeit auf  dieser Website wählen können. Das Standardgebietsschema dieser Website ist <span name="locale_default_name"></span> (<span name="locale_default"></span>).
+  <span id="locales_container">
+    <ul id="locale_list"></ul><span name="has_def_locale" ifset="true">
+
+      <h2 id="add_def_locale_link" class="add_def_locale_options_toggle"><a>Verfügbares Gebietsschema auswählen</a></h2>
+      <div id="add_def_locale_options_menu" class="optionsMenu optionsMenuWide toggable">
+	<div class="optionsMenuTitle">Verfügbares Gebietsschema auswählen </div>
+
+	<h3>Verfügbare Gebietsschemata:</h3>
+	Ein Gebietsschema für das System auswählen
+	<select name="def_locale" id="def_locale"><option>Gebietsschema auswählen</option></select><br><span class="add_def_locale_options_hide window_hide button optionsMenuButton">Schließen</span>
+	<input type="submit" class="button only_options_menu" value="Select" id="add_def_locale"></div>
+    </span>
+    
+    <h2 id="add_locale_link" class="add_locale_options_toggle"><a>Ein neues Gebietsschema hinzufügen</a></h2>
+    <div id="add_locale_options_menu" class="optionsMenu optionsMenuWide toggable">
+      <div class="optionsMenuTitle">Ein neues Gebietsschema hinzufügen </div>
+
+      <h3>Benutzerdefiniertes Gebietsschema:</h3>
+      Es kann ein benutzerdefiniertes Gebietsschema angegeben werden, das auf diesem System verfügbar sein soll.
+      <input id="new_locale" name="new_locale" type="text" value="" class="validate=[magicdatakey,notinlist,simple_locale]"><br><span class="add_locale_options_hide window_hide button optionsMenuButton">Schließen</span>
+      <input type="submit" class="button only_options_menu" value="Add" id="add_locale"></div>
+  </span>
+</div>

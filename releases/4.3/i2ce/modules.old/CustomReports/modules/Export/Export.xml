@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports_Export">
+  <metadata>
+    <displayName>Export Reports</displayName>
+    <category>Report Type</category>
+    <description>Configuration options for exported reports</description>
+    <version>4.3.0</version>
+    <link>http://launchpad.net/i2ce</link>
+    <requirement name="CustomReports">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="CustomReports_Export" path="/modules/CustomReports/displays/Export">
+    <displayName>Export Reports</displayName>
+    <configuration name="class" values="single" type="string">
+      <displayName>Display Class</displayName>
+      <description>The class that handles this display</description>
+      <value>I2CE_CustomReport_Display_Export</value>
+    </configuration>
+    <configuration name="editor_class" values="single" type="string">
+      <displayName>Display Editor Class</displayName>
+      <description>The editor that handles the display options</description>
+      <version>4.0.6</version>
+      <value>CustomReport_ReportView_ExportEditor</value>
+    </configuration>
+    <configurationGroup name="display_options">
+      <displayName>Default Export</displayName>
+      <description>Default display options for exporting reports</description>
+      <configuration name="export_style" values="single" type="string">
+        <displayName>Unit Of Measure</displayName>
+        <value>CSV</value>
+      </configuration>
+      <configuration name="compression" values="single" type="string">
+        <displayName>Compression</displayName>
+        <version>4.0.6.1</version>
+        <value />
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

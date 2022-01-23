@@ -1,0 +1,17 @@
+<span>
+  <span name="displayName"></span> --  <span name="description"></span>
+  <span name="locale_container">   
+    <h3>Resolución da configuración rexional:</h3>  
+    <div>
+      A lista de configuracións rexionais para procurar as traducións da configuración <span name="displayName"></span>. Se non está definido, entón a configuración rexional seleccionada está marcada, logo a lingua secundaria, e despois <span name="locale_default"></span>.
+    </div>
+    <div>
+      A resolución predeterminada é <span name="displayName"></span>,  <span name="locale_language"></span>, <span name="locale_default"></span>.
+    </div>
+    <div>
+      Se quere especificar outra resolución para a configuración rexional pode facelo indicándoo mediante unha lista separada por comas de maior a menor prioridade.  
+      <span printf="'Por exemplo, &quot;fr-RW,fr-FR,%s&quot; pode ser unha resolución axeitada para a configuración local &quot;fr-RW&quot;.',$locale_default"></span>
+      <span printf="'Se %s non está especificado na lista, defínese automaticamente como a configuración rexional de menor prioridade.',$locale_default"></span>
+    </div>
+    <input name="resolution" type="textbox"></span>
+</span>

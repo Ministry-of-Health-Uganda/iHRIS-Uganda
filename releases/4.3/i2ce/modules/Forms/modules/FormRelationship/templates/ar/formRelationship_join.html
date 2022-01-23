@@ -1,0 +1,31 @@
+<div>
+  <h2 id="join_form_link" class="join_form_options_toggle"><a dir="rtl">إضافة نموذج فرعي جديد</a></h2>
+  <div id="join_form_options_menu" class="optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true">
+    <div class="optionsMenuTitle window_drag" dir="rtl">إضافة نموذج جديد </div>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td dir="rtl">
+	  اختر نموذج فرعي للانضمام إلى هذا النموذج:
+	</td>
+	<td>
+	  <select name="form_which" id="join_forms_selector"></select></td>
+      </tr><tr><td dir="rtl">
+	  <h3 dir="rtl">اسم قصير:</h3>استخدام مفتاح داخلي لتحديد شكل العلاقة. قد لا يكون هو نفسه مفتاح لأي من النماذج الموجودة وردت أسماؤهم في هذه العلاقة.
+	</td>
+	<td>
+	  <input id="form_name" name="form_name" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+      </tr><tr><td dir="rtl">
+	  <h3 dir="rtl">عرض اسم:</h3>اسم النموذج المرتبط الذي يتم عرضه للمستخدم النهائي.
+	</td>
+	<td>
+	  <input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+      </tr><tr><td dir="rtl">
+	  <h3 dir="rtl">توصيف:</h3>وصف لنموذج ودوره في العلاقة التي ينبغي أن تكون مفهومة للمستخدم النهائي.
+	</td>
+	<td>
+	  <textarea name="description" rows="4" cols="53" value=""></textarea></td>
+      </tr><tr><td colspan="2">
+	  <div></div>
+	  <span class="join_form_options_hide button optionsMenuButton window_hide" dir="rtl">أغلق</span>
+	  <input type="submit" class="button only_options_menu" value="Add" id="join_form"><div></div>
+	  <br></td>
+      </tr></table></div>
+</div>

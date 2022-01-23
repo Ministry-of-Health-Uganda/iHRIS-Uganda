@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="messageNotice">
+  <metadata>
+    <displayName>Message Notices</displayName>
+    <className>I2CE_MessageNotice</className>
+    <category>Messages</category>
+    <description>Displays any messages taggged with 'notice' in a notice box box</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>http://www.capacityproject.org</link>
+    <version>4.3.0</version>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="messageHandler">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="MooTools">
+      <atLeast version="1.4" />
+      <lessThan version="1.5" />
+    </requirement>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="images">
+      <value>./images</value>
+    </path>
+    <priority>50</priority>
+  </metadata>
+</I2CEConfiguration>

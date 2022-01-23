@@ -1,0 +1,17 @@
+<span>
+  <span name="displayName"></span> --  <span name="description"></span>
+  <span name="locale_container">   
+    <h3>Résolution de l’option régionale:</h3>  
+    <div>
+      La liste des options régionales pour rechercher des traductions de l’option <span name="displayName"></span>Si elle n’est pas définie, l’option régionale sélectionnée est cochée, puis le langage y étant associé, puis" <span name="locale_default"></span>.
+    </div>
+    <div>
+      La résolution par défaut est <span name="displayName"></span>,  <span name="locale_language"></span>, <span name="locale_default"></span>.
+    </div>
+    <div>
+      Si vous voulez spécifier une résolution locale différente, vous pouvez le faire en les saisissant sous forme d'une liste séparée par des virgules, de la plus grande priorité à la plus faible.  
+      <span printf="'Par exemple, fr-RW,fr-FR,%s peut être une résolution appropriée pour la localisation fr-RW.',$locale_default"></span>
+      <span printf="'Si %s n'est pas spécifié dans la liste, il est automatiquement ajouté comme la localisation de plus basse priorité.',$locale_default"></span>
+    </div>
+    <input name="resolution" type="textbox"></span>
+</span>

@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports_PDF">
+  <metadata>
+    <displayName>PDF Reports</displayName>
+    <category>Report Type</category>
+    <description>Configuration options for reports that use PDF</description>
+    <version>4.3.0</version>
+    <link>http://launchpad.net/i2ce</link>
+    <requirement name="CustomReports">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="textlayout">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ColorPicker">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="CustomReports_PDF" path="/modules/CustomReports/displays/PDF">
+    <displayName>PDF Reports</displayName>
+    <configuration name="class" values="single" type="string">
+      <displayName>Display Class</displayName>
+      <description>The class that handles this display</description>
+      <value>I2CE_CustomReport_Display_PDF</value>
+    </configuration>
+    <configurationGroup name="display_options">
+      <displayName>Default PDF</displayName>
+      <description>Default display options for PDF</description>
+      <configuration name="inline" type="boolean" values="single">
+        <displayName>Inline</displayName>
+        <value>1</value>
+      </configuration>
+      <configuration name="unit_of_measure" values="single" type="string">
+        <displayName>Unit Of Measure</displayName>
+        <value>in</value>
+      </configuration>
+      <configuration name="paper_size" values="single" type="string">
+        <displayName>Paper Size</displayName>
+        <value>Letter</value>
+      </configuration>
+      <configuration name="paper_orientation" type="list" values="single">
+        <displayName>Paper Orientation</displayName>
+        <status>list:L=&gt;Landscape,P=&gt;Portrait</status>
+        <value>L</value>
+      </configuration>
+      <configuration name="compression" type="boolean" values="single">
+        <displayName>Compression</displayName>
+        <value>false</value>
+      </configuration>
+      <configuration name="hyphenation_file" values="single" type="string">
+        <displayName>Hyphenation File</displayName>
+        <value>hyph_en_US.dic</value>
+      </configuration>
+      <configuration name="line_spacing" values="single" type="string">
+        <displayName>Line Spacing</displayName>
+        <value>1.3</value>
+      </configuration>
+      <configurationGroup name="main">
+        <displayName>Main</displayName>
+        <configurationGroup name="font">
+          <displayName>Font</displayName>
+          <configuration name="type" values="single" type="string">
+            <displayName>Type</displayName>
+            <value>core</value>
+          </configuration>
+          <configuration name="name" values="single" type="string">
+            <displayName>Name</displayName>
+            <value>arial</value>
+          </configuration>
+          <configuration name="style" values="single" type="string">
+            <displayName>Style</displayName>
+            <status>required:false</status>
+            <value />
+          </configuration>
+          <configuration name="size" values="single" type="string">
+            <displayName>Size</displayName>
+            <value>9</value>
+          </configuration>
+          <configuration name="file" values="single" type="string">
+            <displayName>File</displayName>
+            <status>required:false</status>
+            <value />
+          </configuration>
+        </configurationGroup>
+        <configuration name="top_margin" values="single" type="string">
+          <displayName>Top Margin</displayName>
+          <value>1.2</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="table">
+        <displayName>Table</displayName>
+        <configurationGroup name="header">
+          <displayName>Header</displayName>
+          <configuration name="fill_color" values="many" type="delimited">
+            <displayName>Fill Color</displayName>
+            <description>A color</description>
+            <version>3.2.3</version>
+            <value>0:44</value>
+            <value>1:100</value>
+            <value>2:44</value>
+          </configuration>
+          <configuration name="text_color" values="many" type="delimited">
+            <displayName>Text Color</displayName>
+            <description>A color. There needs to be three keys, 0,1,2 each associated to a number between 0 and 255 and corresponding to the RGB values</description>
+            <version>3.2.1</version>
+            <value>0:255</value>
+            <value>1:255</value>
+            <value>2:255</value>
+          </configuration>
+          <configuration name="justification" values="single" type="string">
+            <displayName>Justification</displayName>
+            <value>C</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="data">
+          <displayName>Data</displayName>
+          <configuration name="fill_color" values="many" type="delimited">
+            <displayName>Fill Color</displayName>
+            <description>A color. There needs to be three keys, 0,1,2 each associated to a number between 0 and 255 and corresponding to the RGB values</description>
+            <version>3.2.1</version>
+            <value>0:250</value>
+            <value>1:255</value>
+            <value>2:201</value>
+          </configuration>
+          <configuration name="text_color" values="many" type="delimited">
+            <displayName>Text Color</displayName>
+            <description>A color. There needs to be three keys, 0,1,2 each associated to a number between 0 and 255 and corresponding to the RGB values</description>
+            <version>3.2.1</version>
+            <value>0:0</value>
+            <value>1:0</value>
+            <value>2:0</value>
+          </configuration>
+          <configuration name="justification" values="single" type="string">
+            <displayName>Justification</displayName>
+            <value>C</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="min_cell_width" values="single" type="string">
+          <displayName>Min Cell Width</displayName>
+          <value>0.4</value>
+        </configuration>
+        <configuration name="border" values="single" type="string">
+          <displayName>Border</displayName>
+          <value>1</value>
+        </configuration>
+        <configuration name="max_width" values="single" type="string">
+          <displayName>Max Width</displayName>
+          <value>0</value>
+        </configuration>
+        <configuration name="framing_color" values="many" type="delimited">
+          <displayName>Framing Color</displayName>
+          <description>A color. There needs to be three keys, 0,1,2 each associated to a number between 0 and 255 and corresponding to the RGB values</description>
+          <version>3.2.4</version>
+          <value>0:0</value>
+          <value>1:0</value>
+          <value>2:0</value>
+        </configuration>
+        <configuration name="column_spacing" values="single" type="string">
+          <displayName>Column Spacing</displayName>
+          <value>0.04</value>
+        </configuration>
+        <configuration name="use_running_header" type="boolean" values="single">
+          <displayName>Use Running Header</displayName>
+          <value>true</value>
+        </configuration>
+        <configuration name="has_header" type="boolean" values="single">
+          <displayName>Has Header</displayName>
+          <value>true</value>
+        </configuration>
+        <configuration name="width_style" values="single" type="string">
+          <displayName>Width Style</displayName>
+          <value>ALL</value>
+        </configuration>
+        <configurationGroup name="explicit_widths">
+          <displayName>Explicit Widths</displayName>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="header">
+        <displayName>Header</displayName>
+        <configuration name="show" type="boolean" values="single">
+          <displayName>Show</displayName>
+          <value>true</value>
+        </configuration>
+        <configurationGroup name="logo">
+          <displayName>Logo</displayName>
+          <configuration name="file" values="single" type="string">
+            <displayName>File</displayName>
+            <status>required:false</status>
+          </configuration>
+          <configuration name="width" values="single" type="string">
+            <displayName>Width</displayName>
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="title_prefix" values="single" type="string">
+          <displayName>Title</displayName>
+          <value />
+        </configuration>
+        <configuration name="text_prefix" values="single" type="string">
+          <displayName>Text</displayName>
+          <value />
+        </configuration>
+        <configuration name="margin" values="single" type="string">
+          <displayName>Margin</displayName>
+          <value>0.12</value>
+        </configuration>
+        <configurationGroup name="font">
+          <displayName>Font</displayName>
+          <configuration name="type" values="single" type="string">
+            <displayName>Type</displayName>
+            <value>core</value>
+          </configuration>
+          <configuration name="name" values="single" type="string">
+            <displayName>Name</displayName>
+            <value>Arial</value>
+          </configuration>
+          <configuration name="style" values="single" type="string">
+            <displayName>Style</displayName>
+            <status>required:false</status>
+            <value />
+          </configuration>
+          <configuration name="size" values="single" type="string">
+            <displayName>Size</displayName>
+            <value>12</value>
+          </configuration>
+          <configuration name="file" values="single" type="string">
+            <displayName>File</displayName>
+            <status>required:false</status>
+            <value />
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

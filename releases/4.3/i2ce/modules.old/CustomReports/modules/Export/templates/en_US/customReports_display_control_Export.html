@@ -1,0 +1,37 @@
+<div>
+  <!--  <input title="Select export options and export this report into another format" class="button Export_submit_options_toggle" type="button" value="Export" />-->
+  <span title="Select export options and export this report into another format" class="button Export_submit_options_toggle">Export</span>
+  <!-- div class="clickableText  Export_submit_options_toggle centered" >(Options)</div -->
+  <div class="optionsMenu toggable windowFloats=true windowDraggable=true" id="Export_submit_options_menu" >
+    <div class="optionsMenuTitle window_drag"> Export Options </div> 	 
+    <hr/>
+    <span class="field_head"><label>File Type</label></span>
+    <span class="form_field">
+      <select name="export_style" id="export_style" >
+	<option value="XLS_2004_XML" selected="selected">Excel 2004 (XML)</option>
+	<option value="CSV" >Comma Separated Values</option>
+	<option value="CSVXLS">CSV for Excel</option>
+	<option value="TAB" >Tab Delimited</option>
+	<option value="HTML">HTML</option>
+	<option value="XML">XML</option>
+	<option value="JSON">JSON</option>
+	<option value="RAWJSON">Raw JSON (no lookups)</option>
+      </select>
+    </span>
+    <br/>
+    <span class="field_head"><label>Compression Options</label></span>
+    <span class="form_field">
+      <select name="export_compression" id="export_compression" >
+	<option value='' >no compression</option>
+	<option name='has_gz' ifset='true'  value='gz'>gzip</option>
+	<option name='has_bz2' ifset='true' value='bz2'>bzip2</option>
+	<option name='has_zip' ifset='true'  value='zip'>zip file</option>
+      </select>
+    </span>
+    <p />
+    <br/>
+    <!--    <input  class="button  method=post"  id='Export_submit' type="submit"   value="Export" />-->
+    <span   title="Export this report"    id='Export_submit'  class="multiformsubmit button">Export</span> 
+    <span class="button optionsMenuButton Export_submit_options_hide window_hide"> Close </span>    
+  </div>
+</div>

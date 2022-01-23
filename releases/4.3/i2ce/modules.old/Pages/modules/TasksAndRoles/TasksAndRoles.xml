@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="tasks-roles">
+  <metadata>
+    <displayName>Tasks and Roles</displayName>
+    <category>Base System Page</category>
+    <description>Provides administator interface to define tasks and role</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="tasks-roles">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="tasks_and_roles_can_access" values="single" type="string">
+        <value>Allows minimal access to the Task and Role Management System</value>
+      </configuration>
+      <configuration name="tasks_and_roles_can_edit_tasks" values="single" type="string">
+        <value>Allows edit access to the Task Management System</value>
+      </configuration>
+      <configuration name="tasks_and_roles_can_edit_roles" values="single" type="string">
+        <value>Allows edit access to the Role Management System</value>
+      </configuration>
+      <configuration name="tasks_and_roles_admin" values="single" type="string">
+        <value>Allows complete access to the Task and Role Management System</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="role_trickle_down" path="/I2CE/tasks/role_trickle_down">
+      <configuration name="admin" values="many" type="string">
+        <status>uniquemerge:true</status>
+        <value>tasks_and_roles_admin</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="tasks_and_roles_admin" values="many" type="string">
+        <value>tasks_and_roles_can_access</value>
+        <value>tasks_and_roles_can_edit_roles</value>
+        <value>tasks_and_roles_can_edit_tasks</value>
+      </configuration>
+      <configuration name="tasks_and_roles_can_edit_tasks" values="many" type="string">
+        <value>tasks_and_roles_can_access</value>
+        <value>tasks_and_roles_can_edit_tasks</value>
+      </configuration>
+      <configuration name="tasks_and_roles_can_edit_roles" values="many" type="string">
+        <value>tasks_and_roles_can_access</value>
+        <value>tasks_and_roles_can_edit_roles</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="styles" path="/I2CE/template/page_styles">
+      <configurationGroup name="tasks_and_roles_admin">
+        <configuration name="style" values="single" type="string">
+          <displayName>Style</displayName>
+          <value>shell</value>
+        </configuration>
+        <configuration name="class" values="single" type="string">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>I2CE_Page_TasksAndRoles</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="tasks" values="many" type="string">
+            <value>tasks_roles_can_access</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:true</status>
+            <value>admin</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <displayName>Page</displayName>
+      <configurationGroup name="roles">
+        <status>required:true</status>
+        <configuration name="style" values="single" type="string">
+          <displayName>Style</displayName>
+          <value>tasks_and_roles_admin</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US" type="string">
+            <value>Administer Roles</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="tasks">
+        <status>required:true</status>
+        <configuration name="style" values="single" type="string">
+          <displayName>Style</displayName>
+          <value>tasks_and_roles_admin</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US" type="string">
+            <value>Administer Tasks</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="home">
+        <status>required:true</status>
+        <configuration name="style" values="single" type="string">
+          <displayName>Style</displayName>
+          <value>tasks_and_roles_admin</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US" type="string">
+            <value>Administer Tasks and Roles</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

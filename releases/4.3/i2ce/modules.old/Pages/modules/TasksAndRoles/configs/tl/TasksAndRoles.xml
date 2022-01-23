@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="tasks-roles">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="tasks-roles" locale="tl">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="tl">
+      <configuration name="tasks_and_roles_can_access" values="single" type="string">
+        <value>Nagpapahintulog ng kakaunting pagpapapunta sa Sistema ng Pamamahala ng Gawain at Gampanin</value>
+      </configuration>
+      <configuration name="tasks_and_roles_can_edit_tasks" values="single" type="string">
+        <value>Nagpapahintulot ng pagpuntang nakapagbabago sa Sistema ng Pamamahala ng Gawain</value>
+      </configuration>
+      <configuration name="tasks_and_roles_can_edit_roles" values="single" type="string">
+        <value>Nagpapahintulot sa pagpuntang nakapagbabago papaunta sa Sistema ng Pamamahala ng Gampanin</value>
+      </configuration>
+      <configuration name="tasks_and_roles_admin" values="single" type="string">
+        <value>Nagpapahintulot ng buong pagpapapunta sa Sistema ng Pamamahala ng Gawain at Gampanin</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="roles">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="tl" type="string">
+            <value>Pangasiwaan ang mga Gampanin</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="tasks">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="tl" type="string">
+            <value>Pangasiwaan ang mga Gawain</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="tl" type="string">
+            <value>Pangasiwaan ang mga Gawain at mga Gampanin</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

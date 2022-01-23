@@ -1,0 +1,52 @@
+<div>
+  
+
+  <h2>Pagina-argumenten</h2>
+  <div id="args_container">
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Titel:</h3>The display name for the primary form
+	</td>
+	<td>
+	  <input name="title"></td>
+      </tr><tr><td>
+	  <h3>Taken:</h3>Optional task for limiting access to this page.
+	</td>
+	<td>
+	  <select name="task"><option value="">Geen taak geselecteerd</option></select></td>
+      </tr></table><h2>Relatie-instellingen</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Relatie:</h3>Relationship this page is based on
+	</td>
+	<td>
+	  <select name="relationship"><option value="">Geen relatie geselecteerd</option></select><br><span name="has_relationship" ifset="true"><a name="relationship_link">Relatie bewerken</a></span>
+	</td>
+      </tr><tr><td>
+	  <h3>Export All Fields:</h3>Export all fields in the relationship
+	</td>
+	<td>
+	  <select name="get_all_fields"><option value="1">Ja</option><option value="0">Nee</option></select></td>
+      </tr><tr><td>
+	  <h3>Cache gebruiken:</h3>Use caches in hippo tables when exporting data in the relationship
+	</td>
+	<td>
+	  <select name="use_cache"><option value="1">Ja</option><option value="0">Nee</option></select></td>
+      </tr></table><h2>XSL Transform Options</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>XSL Transform:</h3>Select a XSL transform or upload an transform to further process the export.
+	</td>
+	<td>
+	  <input name="do_upload" value="1" type="checkbox">Bestand uploaden <input name="upload" type="file"><span name="has_download" ifset="true"><a name="download_link">Downloaden</a></span>
+	  <hr><input name="do_select" value="1" type="checkbox">Select Existing Transform <select name="select"></select><br><span name="has_transform" ifset="true"><a name="transform_link">Download Transform</a></span>
+	  <hr><input name="do_erase" value="1" type="checkbox">No Tranform
+	</td>
+      </tr></table><span id="fields">
+      <h2><a id="fields_link" href="">Selected Fields</a></h2>
+      Select individual fields in the relationship to export
+      <div class="indented" id="fields_ajax">
+      </div>
+    </span>
+    
+  </div>
+
+
+</div>

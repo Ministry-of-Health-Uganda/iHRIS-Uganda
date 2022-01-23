@@ -1,0 +1,53 @@
+<div>
+  <h2>Vista do informe</h2>
+  <h3><a name="show_link">Vista <span name="displayName"></span></a></h3>
+    <p>A vista de informe baséase no informe <a name="report_link"><span name="reportName"></span></a></p>
+  <span name="has_default_display" ifset="true">
+    <h3><a name="clear_default_display_link">Limpar a vista predeterminada</a></h3>
+  </span>
+  <p>Seleccionar os campos e calquera dato agregado que queira na vista deste informe. Pode arrastrar e soltar os campos para cambiar a súa orde.</p>
+  <table class="multiFormTable reportviews" cellpadding="0" cellspacing="0" border="0" id="container"><tr><th colspan="2">
+	  Información da vista do informe
+	</th>
+    </tr><tr><td>
+	<h3>Nome mostrado:</h3>
+	Un nome breve e descritivo para este informe
+      </td>
+      <td>
+	<input name="displayName" type="text" value="" class="validate=[nonempty]"></td>
+    </tr><tr><td>
+	<h3>Descrición:</h3>
+	Unha descrición máis longa deste informe
+      </td>
+      <td>
+	<textarea name="description" rows="4" cols="53" value=""></textarea></td>
+    </tr><tr task="custom_reports_admin"><td>
+	<h3>Permisos da vista do informe:</h3>
+	Seleccione unha terefa para limitar a vista deste informe á tarefa seleccionada. 
+      </td>
+      <td>
+	<select name="limit_view_to_task"><option value="">Non limitar a vista deste informe</option></select></td>      
+    </tr><tr permission="role(admin) or task(custom_reports_admin)"><td colspan="2">
+	<input name="disable_hide" type="hidden" value="1"><input name="disable" id="disable" type="checkbox" value="1"><h3>Desactivar:</h3>
+	Desactivar este informe para os usuarios non administrativos.
+      </td>
+    </tr><tr><td colspan="2">
+	<input name="total_hide" type="hidden" value="1"><input name="total" id="total" type="checkbox" value="1"><h3>Incluír o total:</h3>
+	Incluír o número total de liñas para esta vista.
+      </td>
+    </tr><tr><td>
+	<h3>Vistas relacionadas</h3>
+      </td>
+      <td>
+	<select name="related_views[]" multiple size="10"></select></td>
+    </tr><tr><th colspan="2">
+	Campos dos que se informou
+      </th>
+      </tr></table><div id="fields_fill"></div>
+
+  <br><br><span task="custom_reports_admin" name="has_display_editors" ifset="true" id="display_editors">
+    <h2> <a id="displays_link">Editar as opcións de visualización</a></h2>
+    <div id="displays_ajax" class="indented"></div>
+  </span>
+
+</div>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ReportArchiver">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="ReportArchiver" locale="ar">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="ar">
+      <configuration name="custom_reports_archiver_can_view" locale="ar" values="single" type="string">
+        <value>السماح بعرض&#160;تقارير مخصصة محفوظة بالأرشيف</value>
+      </configuration>
+      <configuration name="custom_reports_archiver_can_archive" locale="ar" values="single" type="string">
+        <value>السماح&#160;بأرشفة&#160;التقارير المخصصة</value>
+      </configuration>
+      <configuration name="custom_reports_archiver_can_delete" locale="ar" values="single" type="string">
+        <value>السماح بحذف &#160;تقارير مخصصة محفوظة بالأرشيف</value>
+      </configuration>
+      <configuration name="custom_reports_archiver_admin" locale="ar" values="single" type="string">
+        <value>السماح بالوصول&#160;الكامل لنظام أرشيف التقارير المخصصة</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="archived_report">
+          <configuration name="display" values="single" locale="ar" type="string">
+            <value>تقرير محفوظة الأرشيف</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="I2CE_ArchivedReport">
+          <configurationGroup name="meta" path="meta/list/default">
+            <configuration name="display_string" locale="ar" values="single" type="string">
+              <value>%s تم توليدها في %s</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="fields">
+            <configurationGroup name="report">
+              <configuration name="headers" type="delimited" locale="ar" values="single">
+                <value>default:تقرير</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="ar" values="single">
+                <value>default:تاريخ الإنتاج</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="report_view">
+              <configuration name="headers" type="delimited" values="many" locale="ar">
+                <value>default:عرض التقرير</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" values="many" locale="ar">
+                <value>default:لقب</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="CLI_archive_page" path="/modules/CustomReports/command_line/archive">
+      <configurationGroup name="args">
+        <configuration name="title" locale="ar" values="single" type="string">
+          <value>تقرير&#160;الأرشيف</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="archive_page" path="/modules/CustomReports/page/archive">
+      <configurationGroup name="args">
+        <configuration name="title" locale="ar" values="single" type="string">
+          <value>تقرير&#160;الأرشيف</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="view_archives_page" path="/modules/CustomReports/page/viewArchives">
+      <configurationGroup name="args">
+        <configuration name="title" locale="ar" values="single" type="string">
+          <value>عرض تقارير محفوظة بالأرشيف</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

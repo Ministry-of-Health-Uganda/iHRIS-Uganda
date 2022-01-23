@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Clash Hash Test</title>
+    <script src='../../../scripts/mootools-core.js' type='text/javascript'>
+    </script>
+    <script src='../scripts/I2CE_ClassValues.js' type='text/javascript'>
+    </script>
+    <script type='text/javascript'>
+      function valAlert(key,val) {
+	   if ($type(val) == 'object' || $type(val)=='array') {
+              msg = 'key ' + key + " is an " + $type(val) + ":\n";
+              $each(val, function (item,index) {
+                    msg += index + ' -> ' + item + " with type " + $type(item) + "\n";
+                 });
+	      alert(msg);
+           } else {
+	      alert('key:' + key + ' has value (' + val + ') with type ' + $type(val));
+	   }
+     }
+
+
+      function showEachVal(node,options)      {
+        alert('showing each value');
+        node = $(node);
+        if ($type(node) != 'element') {
+          alert('bad element');
+          return false;
+        }	
+	$each(options, function(default_val,key) {
+   	   var val = node.findClassValue(key)
+	   valAlert(key,val);
+        });
+        return false;  
+      }
+
+      function showAllVals(node,options)      {
+        alert('showing all values');
+        node = $(node);
+        if ($type(node) != 'element') {
+          alert('bad element');
+          return false;
+        }
+	node.loadClassValues(options);
+	$each(options, function(val,key) {
+	   valAlert(key,val);
+        });
+        return false;  
+      }
+
+    </script>    
+  </head>
+  <body>
+    <h2>I2CE Class Hash</h2>
+
+    This shows how to access add key/value pairs saved into a class attribute.
+    <ul>
+      <li>
+	key:val means that we should do a json_decode  on the value.
+      </li>
+      <li>
+	key=val means that key has the value val.  If val is true or false, it is interpreted as a boolean. If val is
+	of the form [0-9]* it is converted to an int.  if val is of the form [0-9]+\.[0-9]*  it is converted to a float.
+	If it is of the form \[.*(,*)\] it is converted to an array, exploded on ',', where each part is subject to the same
+	parsing rules.	Otherwise it is a string.
+      </li>
+      <li>
+	Only the property names in the object passed to showEachVal() or showAllVals() are scanned in the class attribute.
+      </li>
+      <li> 
+	Any value can be single quoted so that you can, for example, include white space in a value.  The back-slash and single quote character
+	are  escaped with a back-slash.
+      </li>
+    </ul>
+    
+    <h2>Tests</h2>
+    <ul>
+      <li >
+ 	<a href='' onclick="return showEachVal(this,{a:null,b:null,c:null,d:null,e:null,f:null})" class='a=A b=2 c=true d=false e=0.3 f=[1,2,gogo]'/>Equals Each Test</a>  
+	<br/>Should show a with value A, b with value 2, c= true, d = false, e=0.3, f the array [1,2,gogo]
+	<br/><pre>class='a=A b=2 c=true d=false e=0.3 f=[1,2,gogo]</pre>
+      </li>
+      <li>
+	<a href='' onclick="return showAllVals(this,{a:null,b:null})" class='a=A b=B c=true d=false'/>Equals All Test</a>
+	<br/>Should show a with value A, b with value B. 
+	<br/>Note: although c and d are set, they will not show b/c they are not in the options passed to showAllVals()
+	<br/><pre>class='a=A b=B c=true d=false'</pre>
+      </li>
+      <li>
+ 	<a href='' onclick="return showEachVal(this,{a:null,b:null})" class="a='A A' b='B B'"/>Equals Quoted Each Test</a>  
+	<br/>Should show a with value A A, b with value B B
+	<br/><pre>class="a='A A' b='B B'"</pre>
+      </li>
+      <li>
+	<a href='' onclick="return showAllVals(this,{a:null,b:null})" class="a='A A' b='B B'"/>Equals Quoted All Test</a>
+	<br/>Should show a with value A A, b with value B B
+	<br/><pre>class="a='A A' b='B B'"</pre>
+      </li>
+      <li>
+ 	<a href='' onclick="return showEachVal(this,{a:null,b:null})" class='a:{a1:"A1",a2:2} b:{b1:"B1",b2:2}'/>JSON Each Test</a>  
+	<br/>Should show a with value {a1:'A1',a2:2}, b with value {b1:'B1',b2:2}
+	<br/><pre>class='a:{a1:"A1",a2:2} b:{b1:"B1",b2:2}'</pre>
+      </li>
+      <li>
+	<a href='' onclick="return showAllVals(this,{a:null,b:null})" class='a:{a1:"A1",a2:2} b:{b1:"B1",b2:2}'/>JSON All Test</a>
+	<br/>Should show a with value {a1:'A1',a2:2}, b with value {b1:'B1',b2:2}
+	<br/><pre>class='a:{a1:"A1",a2:2} b:{b1:"B1",b2:2}'</pre>
+      </li>
+      <li>
+ 	<a href='' onclick="return showEachVal(this,{a:null,b:null})" class="a:'{a1: \'A1\' ,a2:2}' b:'{b1:\'B1\', b2:2} '"/>JSON Quoted Each Test</a>  
+	<br/>Should show a with value {a1:'A1',a2:2}, b with value {b1:'B1',b2:2}
+	<br/><pre>class="a:'{a1: \'A1\' ,a2:2}' b:'{b1:\'B1\', b2:2} '"</pre>
+      </li>
+      <li>
+	<a href='' onclick="return showAllVals(this,{a:null,b:null})" class="a:'{a1: \'A1\' ,a2:2}' b:'{b1:\'B1\', b2:2} '"/>JSON Quoted All Test</a>
+	<br/>Should show a with value {a1:'A1',a2:2}, b with value {b1:'B1',b2:2}
+	<br/><pre>class="a:'{a1: \'A1\' ,a2:2}' b:'{b1:\'B1\', b2:2} '"</pre>
+      </li>
+
+    </ul>
+  </body>
+</html>

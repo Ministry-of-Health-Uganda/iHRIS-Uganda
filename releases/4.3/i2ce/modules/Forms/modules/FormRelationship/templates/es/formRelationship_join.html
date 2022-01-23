@@ -1,0 +1,31 @@
+<div>
+  <h2 id="join_form_link" class="join_form_options_toggle"><a>Añadir un nuevo formulario hijo</a></h2>
+  <div id="join_form_options_menu" class="optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true">
+    <div class="optionsMenuTitle window_drag">Añadir un Nuevo Formulario </div>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  Seleccione un formulario hijo para unir a este formulario:
+	</td>
+	<td>
+	  <select name="form_which" id="join_forms_selector"></select></td>
+      </tr><tr><td>
+	  <h3>Nombre corto:</h3>Una llave interna usada para identificar la relación del formulario. No puede ser la misma llave de ningún otro formulario en esta relación.
+	</td>
+	<td>
+	  <input id="form_name" name="form_name" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+      </tr><tr><td>
+	  <h3>Nombre en Pantalla:</h3>El nombre del formulario adjunto que se muestra al usuario final.
+	</td>
+	<td>
+	  <input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+      </tr><tr><td>
+	  <h3>Descripción:</h3>Una descripción del formulario y su papel en la relación. Debe de ser entendible para el usuario final.
+	</td>
+	<td>
+	  <textarea name="description" rows="4" cols="53" value=""></textarea></td>
+      </tr><tr><td colspan="2">
+	  <div></div>
+	  <span class="join_form_options_hide button optionsMenuButton window_hide">Cerrar</span>
+	  <input type="submit" class="button only_options_menu" value="Add" id="join_form"><div></div>
+	  <br></td>
+      </tr></table></div>
+</div>

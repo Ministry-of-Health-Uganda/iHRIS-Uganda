@@ -1,0 +1,17 @@
+<div>
+  <!--  <input title="Select export options and export this report into another format" class="button Export_submit_options_toggle" type="button" value="Export" />-->
+  <span title="Виберіть параметри експорту та експортуйте цей звіт в іншому форматі" class="button Export_submit_options_toggle">Експорт</span>
+  <!-- div class="clickableText  Export_submit_options_toggle centered" >(Options)</div -->
+  <div class="optionsMenu toggable windowFloats=true windowDraggable=true" id="Export_submit_options_menu">
+    <div class="optionsMenuTitle window_drag"> Параметри експорту </div> 	 
+    <hr><span class="field_head"><label>Тип файлу</label></span>
+    <span class="form_field">
+      <select name="export_style" id="export_style"><option value="XLS_2004_XML" selected>Excel 2004 (XML)</option><option value="CSV">Значення, розділені комами</option><option value="CSVXLS">CSV для Excel</option><option value="TAB">Розділене табуляціями</option><option value="HTML">HTML</option><option value="XML">XML</option><option value="JSON">JSON</option><option value="RAWJSON">чистий JSON (без пошуку)</option></select></span>
+    <br><span class="field_head"><label>Параметри стиснення</label></span>
+    <span class="form_field">
+      <select name="export_compression" id="export_compression"><option value="">без стиснення</option><option name="has_gz" ifset="true" value="gz">gzip</option><option name="has_bz2" ifset="true" value="bz2">bzip2</option><option name="has_zip" ifset="true" value="zip">zip-файл</option></select></span>
+    <p></p>
+    <br><!--    <input  class="button  method=post"  id='Export_submit' type="submit"   value="Export" />--><span title="Експортувати цей звіт" id="Export_submit" class="multiformsubmit button">Експорт</span> 
+    <span class="button optionsMenuButton Export_submit_options_hide window_hide"> Закрити </span>    
+  </div>
+</div>

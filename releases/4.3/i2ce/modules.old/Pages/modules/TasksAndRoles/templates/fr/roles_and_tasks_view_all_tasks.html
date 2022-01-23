@@ -1,0 +1,21 @@
+<div id="siteContent">
+  <h1>Tâches d’administration</h1>
+  <h2>Tâches existantes</h2>
+  <ul id="task_list"></ul><form method="post" action="tasks-roles/tasks" id="add_user_task">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Ajouter une nouvelle tâche
+	</th>
+      </tr><tr><td>
+	  <label>Nom abrégé de tâche:</label> "Un nom abrégé composé de lettre et de chiffre, -, . et _ utilisé pour désigner la tâche dans les pages et les gabarits."
+	</td>
+	<td>
+	  <input type="text" id="task_short_name" name="task_short_name" class="validate=[notinlist,nonempty,magicdatakey]"></td>
+      </tr><tr><td>
+	  <label>Description de la tâche:</label> Une brève description de cette tâche.
+	</td>
+	<td>
+	  <input type="text" name="task_description" class="validate=[nonempty]"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Create"></td>
+      </tr></table></form>
+</div>

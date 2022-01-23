@@ -1,0 +1,35 @@
+<div id='siteContent'>
+  <form method='post' action='REPLACEME' name='edit_task_form_action' id='edit_task'>
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0" >
+      <tr>
+	<th colspan="2">
+	  Edit Task
+	</th>
+      </tr>   
+      <tr>
+	<td>
+	  <label>Task Description:</label> A description for this task that is displayed to the end user.
+	</td>
+	<td>
+	  <input type='text' name='task_description' class='validate=[nonempty]'/>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <label>Task Tasks:</label> The tasks that are assigned to this task
+	</td>
+	<td>
+	  <select name='task_tasks[]' multiple='multiple'   id='task_tasks' display='checkbox'>
+	  </select>
+	</td>
+      </tr>
+      <tr>
+	<td colspan='2'>
+	  <input  class="button" type="submit"   value="Save" />
+	</td>
+      </tr>
+    </table>
+  </form>
+
+
+</div>

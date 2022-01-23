@@ -1,0 +1,27 @@
+<div id="siteContent">
+  <h2>Isinapamantayang mga Pormularyo</h2>
+
+  <h3>Likhain ang mga Pormularyong Isinapamantayan</h3>
+
+  <span ifset="!true" name="has_valid_forms">
+    Walang makukuhang isinapamantayang mga pormularyo para sa rekord na ito.
+  </span>
+  <span ifset="true" name="has_valid_forms">
+    <ul id="printed_forms_list"></ul></span>
+
+
+  <span type="module" ifenabled="true" name="BinField">
+    <span ifset="true" name="show_archive">
+      <h3>Nakasupnay na Isinapamantayang mga Pormularyo</h3>
+
+      <span ifset="!true" name="has_archives">
+	Walang mga pormularyong isinapamantayan para sa rekord na ito.
+      </span>
+      <span ifset="true" name="has_archives">
+	<span task="printed_forms_view_all_archives">
+	  <ul id="printed_forms_archive"></ul></span>
+      </span>
+    </span>
+  </span>
+
+</div>

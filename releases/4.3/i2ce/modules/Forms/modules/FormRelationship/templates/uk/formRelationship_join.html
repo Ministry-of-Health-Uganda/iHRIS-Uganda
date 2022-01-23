@@ -1,0 +1,31 @@
+<div>
+  <h2 id="join_form_link" class="join_form_options_toggle"><a>Додавання нової дочірньої форми</a></h2>
+  <div id="join_form_options_menu" class="optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true">
+    <div class="optionsMenuTitle window_drag">Додати нову форму </div>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  Виберіть дочірню форму, аби приєднатися до цієї форми:
+	</td>
+	<td>
+	  <select name="form_which" id="join_forms_selector"></select></td>
+      </tr><tr><td>
+	  <h3>Коротке ім'я:</h3>Внутрішній ключ використовується для ідентифікації форми зв'язків. Він не може бути таким же, як ключ для будь-яких наявних іменованих форм в цих зв'язках.
+	</td>
+	<td>
+	  <input id="form_name" name="form_name" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+      </tr><tr><td>
+	  <h3>Показати ім'я:</h3>Назва приєднаної форми, яка відображається для кінцевих користувачів.
+	</td>
+	<td>
+	  <input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+      </tr><tr><td>
+	  <h3>Опис:</h3>Опис форми та її ролі у зв'язках, які повинні бути зрозумілі кінцевому користувачеві.
+	</td>
+	<td>
+	  <textarea name="description" rows="4" cols="53" value=""></textarea></td>
+      </tr><tr><td colspan="2">
+	  <div></div>
+	  <span class="join_form_options_hide button optionsMenuButton window_hide">Закрити</span>
+	  <input type="submit" class="button only_options_menu" value="Add" id="join_form"><div></div>
+	  <br></td>
+      </tr></table></div>
+</div>

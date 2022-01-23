@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="form-relationship-based-permission">
+  <metadata>
+    <displayName>Form Relationship Based Permission</displayName>
+    <className>I2CE_Module_FormRelationshipBasedPermissions</className>
+    <category>Base System Component</category>
+    <description>A module that enables permission for based on form relationships</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="formRelationships">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="BinField">
+  <metadata>
+    <displayName>Binary Fields</displayName>
+    <className>I2CE_Module_BinaryFiles</className>
+    <description>A module that allows binary files for form fields</description>
+    <version>4.3.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <link>https://launchpad.net/i2ce</link>
+    <requirement name="forms">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="MimeTypes">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="sql">
+      <value>./sql</value>
+    </path>
+  </metadata>
+  <configurationGroup name="BinField" path="/modules/BinField">
+    <configuration name="snap_message" path="/modules/forms/messages/snap_picture" locale="en_US" values="single" type="string">
+      <version>4.2.0.1</version>
+      <value>Snap Picture</value>
+    </configuration>
+    <configurationGroup name="invalid_messages" path="/modules/forms/invalid_field_messages" locale="en_US">
+      <version>4.1.1.1</version>
+      <configuration name="no_upload" values="single" type="string">
+        <value>Unable to upload the file:</value>
+      </configuration>
+    </configurationGroup>
+    <configuration name="cache_time" values="single" type="string">
+      <value>1</value>
+      <!-- default cache time is 1 minute -->
+    </configuration>
+    <configurationGroup name="form_field" path="/modules/forms/FORMFIELD">
+      <displayName>Form Fields</displayName>
+      <description>Information about the various classes used to handle fields of a form</description>
+      <configuration name="IMAGE" values="single" type="string">
+        <displayName>Float</displayName>
+        <description>The class for a Image field</description>
+        <value>I2CE_FormField_IMAGE</value>
+      </configuration>
+      <configuration name="PASSPORT" values="single" type="string">
+        <displayName>Float</displayName>
+        <description>The class for a Image field</description>
+        <version>4.1.2.1</version>
+        <value>I2CE_FormField_PASSPORT</value>
+      </configuration>
+      <configuration name="DOCUMENT" values="single" type="string">
+        <displayName>Float</displayName>
+        <description>The class for a DOCUMENT field</description>
+        <version>4.0.1.1</version>
+        <value>I2CE_FormField_DOCUMENT</value>
+      </configuration>
+    </configurationGroup>
+    <!-- form_field -->
+    <configurationGroup name="page" path="/I2CE/page/BinField">
+      <displayName>Page</displayName>
+      <description>Information about the file dump page</description>
+      <status>required:true</status>
+      <configuration name="style" values="single" type="string">
+        <displayName>Style</displayName>
+        <value>empty</value>
+      </configuration>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_Page_BinaryField</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="command_line_styles" path="/I2CE/template/command_line_styles">
+      <version>4.2.0.2</version>
+      <configurationGroup name="empty">
+        <configurationGroup name="args">
+          <configuration name="access" values="many" type="string">
+            <value>any</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="command_line" path="/I2CE/command_line/BinField">
+      <displayName>Command Line</displayName>
+      <description>Information about the file dump command_line</description>
+      <version>4.2.0.2</version>
+      <status>required:true</status>
+      <configuration name="style" values="single" type="string">
+        <displayName>Style</displayName>
+        <value>empty</value>
+      </configuration>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_Page_BinaryField</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

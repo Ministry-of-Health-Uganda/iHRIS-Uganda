@@ -1,0 +1,25 @@
+<div dir="rtl">
+  هنا يمكنك اختيار اللغات التي ترغب في أن تتاح للمستخدمين عند اختيارها لموقعك.  اللغة الأساسية للموقع هي <span name="locale_default_name"></span> (<span name="locale_default"></span>).
+  <span id="locales_container">
+    <ul id="locale_list"></ul><span name="has_def_locale" ifset="true">
+
+      <h2 id="add_def_locale_link" class="add_def_locale_options_toggle"><a dir="rtl">اختر لغة متاحة</a></h2>
+      <div id="add_def_locale_options_menu" class="optionsMenu optionsMenuWide toggable" dir="rtl">
+	<div class="optionsMenuTitle" dir="rtl">اختر لغة متاحة </div>
+
+	<h3 dir="rtl">اللغات المتاحة:</h3>
+	حدد لغة للنظام الخاص بك
+	<select name="def_locale" id="def_locale"><option dir="rtl">اختر اللغة</option></select><br><span class="add_def_locale_options_hide window_hide button optionsMenuButton" dir="rtl">أغلق</span>
+	<input type="submit" class="button only_options_menu" value="Select" id="add_def_locale"></div>
+    </span>
+    
+    <h2 id="add_locale_link" class="add_locale_options_toggle"><a dir="rtl">إضافة لغة جديد</a></h2>
+    <div id="add_locale_options_menu" class="optionsMenu optionsMenuWide toggable" dir="rtl">
+      <div class="optionsMenuTitle" dir="rtl">إضافة لغة جديد </div>
+
+      <h3 dir="rtl">لغة مخصصة:</h3>
+      قد تقوم بإدخال لغة مخصصة حتي تكون متاحة للنظام الخاص بك.
+      <input id="new_locale" name="new_locale" type="text" value="" class="validate=[magicdatakey,notinlist,simple_locale]"><br><span class="add_locale_options_hide window_hide button optionsMenuButton" dir="rtl">أغلق</span>
+      <input type="submit" class="button only_options_menu" value="Add" id="add_locale"></div>
+  </span>
+</div>

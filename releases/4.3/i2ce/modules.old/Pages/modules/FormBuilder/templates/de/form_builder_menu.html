@@ -1,0 +1,28 @@
+<div>
+  
+  <div id="container">
+
+    <h2>Ein neues Formular erstellen</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Formularname</h3>An internal key used to identify the form class.   It may not be the same as the key for any of the existing forms.
+	</td>
+	<td>
+	  <input name="name" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+      </tr><tr><td>
+	  <h3>Anzeigename</h3>The displayed name of this form.  This is what is presented to the end user.
+	</td>
+	<td>
+	  <input name="display" type="text" value="" class="validate=[nonempty]"></td>
+      </tr><tr><td>
+	  <h3>Klasse:</h3>The form class that implements this form.
+	</td>
+	<td>
+	  <select name="class"><option value="">Eine Klasse auswählen</option></select></td>
+      </tr><tr><td>
+	  <h3>Speicher:</h3>Der Speichermechanismus für dieses Formular
+	</td>
+	<td>
+	  <select name="storage"></select></td>
+      </tr></table><h2>Ein bestehendes Formular bearbeiten</h2>
+    <ul id="forms"></ul></div>
+</div>

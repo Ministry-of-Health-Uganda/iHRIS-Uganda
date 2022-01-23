@@ -1,0 +1,39 @@
+<div id="feedback">
+<p>
+  Kontaktiere uns bitte sofern Du einen Systemfehler melden möchtest, ein Problem mit der Anwendung, einen Funktionswunsch oder eine Frage hast, indem Du das folgende Formular ausfüllst. Wir werden Deine E-Mail-Adresse nur nutzen, um Dir zu antworten.
+  
+</p>
+<hr><h4>Kontaktformular der Website</h4>
+<!-- <p>Required fields are marked with a red asterisk (<span style="color:red;"><b>*</b></span>)</p> -->
+<div id="error"></div>
+<form method="POST" id="feedback_form" action="feedback">
+<input type="hidden" name="referer" id="referer"><table class="tableForm"><tr><td colspan="2"><label for="Comments">Kommentare:</label><br><textarea name="Comments" rows="10" cols="45" id="Comments"></textarea></td>
+  </tr><tr class="spacer"><td><label for="Name">Name:</label></td>
+   <td><input type="text" name="Name" id="Name"></td>
+  </tr><tr><td><label for="Company">Firma:</label></td>
+   <td><input type="text" name="Company" id="Company"></td>
+  </tr><tr><td><label for="Title">Titel:</label></td>
+   <td><input type="text" name="Title" id="Title"></td>
+  </tr><tr><td><label for="Industry">Branche:</label></td>
+   <td><input type="text" name="Industry" id="Industry"></td>
+  </tr><tr><td><label for="Address">Anschrift:</label></td>
+   <td><input type="text" name="Address" id="Address"></td>
+  </tr><tr><td><label for="City">Stadt:</label></td>
+   <td><input type="text" name="City" id="City"></td>
+  </tr><tr><td><label for="State">Bundesland/Provinz:</label></td>
+   <td><input type="text" name="State" id="State"></td>
+  </tr><tr><td><label for="Postal_Code">Postleitzahl:</label></td>
+   <td><input type="text" name="Postal_Code" id="Postal_Code"></td>
+  </tr><tr><td><label for="Country">Staat:</label></td>
+   <td><input type="text" name="Country" id="Country"></td>
+  </tr><tr class="spacer"><td><label for="Telephone">Rufnummer:</label></td>
+   <td><input type="text" name="Telephone" id="Telephone"></td>
+  </tr><tr><td><label for="Fax">Faxnummer:</label></td>
+   <td><input type="text" name="Fax" id="Fax"></td>
+  </tr><tr><td><label for="Email">E-Mail-Adresse:</label></td>
+   <td><input type="text" name="Email" id="Email"></td>
+  </tr><tr class="spacer"><td><!-- <p class="smallGray"><span style="color: red;">*</span> Required</p> --></td>
+   <td><input type="submit" value="Submit" name="submit" class="button"><input type="reset" value="Clear" name="reset" class="button"></td>
+  </tr></table></form>
+
+</div><!-- /feedback -->

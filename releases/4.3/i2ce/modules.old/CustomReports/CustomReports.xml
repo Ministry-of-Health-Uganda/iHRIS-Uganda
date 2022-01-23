@@ -1,0 +1,636 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports">
+  <metadata>
+    <displayName>Custom Reports</displayName>
+    <className>I2CE_Module_CustomReports</className>
+    <category>Reporting</category>
+    <description>Custom Reports</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="formRelationships">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="magicDataExport">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="CachedForms">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="jumper">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="images">
+      <value>./images</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="xml">
+      <value>./xml</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+  <configurationGroup name="CustomReports">
+    <displayName>Custom Reports</displayName>
+    <configurationGroup name="tasks" path="/modules/CustomReports/text/" locale="en_US">
+      <version>4.0.9</version>
+      <configuration name="Increasing" values="single" type="string">
+        <value>Increasing</value>
+      </configuration>
+      <configuration name="Decreasing" values="single" type="string">
+        <value>Decreasing</value>
+      </configuration>
+      <configurationGroup name="user_messages">
+        <configuration name="no_report_view" values="single" type="string">
+          <value>You need to specify a report to view</value>
+        </configuration>
+        <configuration name="invalid_report_view" values="single" type="string">
+          <value>You specified an invalid report to view</value>
+        </configuration>
+        <configuration name="no_permission_report_view" values="single" type="string">
+          <value>You do not have permission to view this report</value>
+        </configuration>
+        <configuration name="no_display_report_view" values="single" type="string">
+          <value>Could not find any valid displays for this report view</value>
+        </configuration>
+        <configuration name="reportView_merged_field_display" values="single" type="string">
+          <version>4.1.0.2</version>
+          <value>%s from %s</value>
+        </configuration>
+        <configuration name="merge_display" values="single" type="string">
+          <value>%s linked on %s</value>
+        </configuration>
+        <configurationGroup name="merge_descriptions">
+          <configuration name="parent" values="single" type="string">
+            <value>%s linked on %s as a parent form</value>
+          </configuration>
+          <configuration name="child" values="single" type="string">
+            <value>%s linked on %s as a child form</value>
+          </configuration>
+          <configuration name="default" values="single" type="string">
+            <value>%s linked on %s</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="report_no_name" values="single" type="string">
+          <value>No shortname specified for the report</value>
+        </configuration>
+        <configuration name="report_bad_name" values="single" type="string">
+          <value>Invalid shortname specified for the report</value>
+        </configuration>
+        <configuration name="report_bad_used" values="single" type="string">
+          <value>Shortname specified for the report is already in use</value>
+        </configuration>
+        <configuration name="report_no_relationship" values="single" type="string">
+          <value>No report relationship specified for the report</value>
+        </configuration>
+        <configuration name="report_bad_relationship" values="single" type="string">
+          <value>Specified report relationship is invalid</value>
+        </configuration>
+        <configuration name="cannot_delete" values="single" type="string">
+          <value>You don't have access to delete report data</value>
+        </configuration>
+        <configuration name="bad_delete_path" values="single" type="string">
+          <value>Invalid path for deletion</value>
+        </configuration>
+        <configuration name="not_cached" values="single" type="string">
+          <value>Unable to setup cached form</value>
+        </configuration>
+        <configuration name="not_saved" values="single" type="string">
+          <value>Could not save display options</value>
+        </configuration>
+        <configuration name="saved" values="single" type="string">
+          <value>Saved display options</value>
+        </configuration>
+        <configuration name="not_generated" values="single" type="string">
+          <value>Unable to generate report</value>
+        </configuration>
+        <configuration name="not_updated" values="single" type="string">
+          <value>Unable to Update Values</value>
+        </configuration>
+        <configuration name="updated" values="single" type="string">
+          <value>Updated Values</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="report_status">
+        <configuration name="does_not_exist" values="single" type="string">
+          <value>Does Not Exist</value>
+        </configuration>
+        <configuration name="not_generated" values="single" type="string">
+          <version>4.1.0.2</version>
+          <value>Not Generated</value>
+        </configuration>
+        <configuration name="stale" values="single" type="string">
+          <value>Stale</value>
+        </configuration>
+        <configuration name="failed" values="single" type="string">
+          <value>Failed</value>
+        </configuration>
+        <configuration name="in_progress" values="single" type="string">
+          <version>4.1.3.2</version>
+          <value>In Progress</value>
+        </configuration>
+        <configuration name="generated" values="single" type="string">
+          <value>Generated</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="headers">
+        <configuration name="sum" values="single" type="string">
+          <value>Sum</value>
+        </configuration>
+        <configuration name="maximum" values="single" type="string">
+          <value>Maximum</value>
+        </configuration>
+        <configuration name="minimum" values="single" type="string">
+          <value>Minimum</value>
+        </configuration>
+        <configuration name="average" values="single" type="string">
+          <value>Average</value>
+        </configuration>
+        <configuration name="count" values="single" type="string">
+          <value>Total</value>
+        </configuration>
+        <configuration name="count_distinct" values="single" type="string">
+          <value>Total Distinct</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>4.1.4.2</version>
+      <configuration name="custom_reports_can_access" locale="en_US" values="single" type="string">
+        <value>Allows minimal access to the Custom Reporting System</value>
+      </configuration>
+      <configuration name="custom_reports_delete" locale="en_US" values="single" type="string">
+        <value>Allows deletion of data about custom reports</value>
+      </configuration>
+      <configuration name="custom_reports_can_access_relationships" locale="en_US" values="single" type="string">
+        <value>Allows access to the Custom Report Relationships</value>
+      </configuration>
+      <configuration name="custom_reports_can_edit_relationships" locale="en_US" values="single" type="string">
+        <value>Allows editing of the Custom Report Relationships</value>
+      </configuration>
+      <configuration name="custom_reports_can_access_reports" locale="en_US" values="single" type="string">
+        <value>Allows access to the Custom Reports</value>
+      </configuration>
+      <configuration name="custom_reports_can_edit_reports" locale="en_US" values="single" type="string">
+        <value>Allows editing of the Custom Report</value>
+      </configuration>
+      <configuration name="custom_reports_can_view_reportViews" locale="en_US" values="single" type="string">
+        <value>Allows view of the Custom Report Views</value>
+      </configuration>
+      <configuration name="custom_reports_can_edit_reportViews" locale="en_US" values="single" type="string">
+        <value>Allows editing of the Custom Report Views</value>
+      </configuration>
+      <configuration name="custom_reports_admin" locale="en_US" values="single" type="string">
+        <value>Administator for custom reports. Can perform all tasks associated with custom reports</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <configuration name="custom_reports_admin" values="many" type="string">
+        <value>custom_reports_can_access</value>
+        <value>custom_reports_delete_reports</value>
+        <value>custom_reports_can_access_relationships</value>
+        <value>custom_reports_can_access_reports</value>
+        <value>custom_reports_can_edit_reportViews</value>
+        <value>custom_reports_can_view_reportViews</value>
+      </configuration>
+      <configuration name="custom_reports_can_edit_reportViews" values="many" type="string">
+        <value>custom_reports_can_view_reportViews</value>
+      </configuration>
+      <configuration name="custom_reports_can_view_reportViews" values="many" type="string">
+        <value>custom_reports_can_access</value>
+      </configuration>
+      <configuration name="custom_reports_can_access_relationships" values="many" type="string">
+        <value>custom_reports_can_access</value>
+        <value>custom_reports_can_access_reports</value>
+        <value>custom_reports_can_edit_reportViews</value>
+      </configuration>
+      <configuration name="custom_reports_can_access_reports" values="many" type="string">
+        <value>custom_reports_can_access</value>
+        <value>custom_reports_can_edit_reportViews</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="role_trickle_down" path="/I2CE/tasks/role_trickle_down">
+      <configuration name="admin" values="many" type="string">
+        <status>uniquemerge:true</status>
+        <value>custom_reports_admin</value>
+      </configuration>
+    </configurationGroup>
+    <configuration name="id_varchar_length" values="single" type="string">
+      <version>4.1.3.1</version>
+      <value>255</value>
+    </configuration>
+    <configurationGroup name="command_line">
+      <displayName>Command Line</displayName>
+      <configuration name="command_line_default" path="/modules/CustomReports/command_line_default" values="single" type="string">
+        <displayName>Default CLI page</displayName>
+        <description>The default page for the command line</description>
+        <status>required:true</status>
+        <value>generate</value>
+      </configuration>
+      <configurationGroup name="show">
+        <version>4.1.1.3</version>
+        <configuration name="class" values="single" type="string">
+          <value>I2CE_Page_ShowReport</value>
+        </configuration>
+        <configuration name="execution_parameters" values="many" type="delimited">
+          <value>memory_limit:268435456</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Custom Reports</displayName>
+          <description>Values passed to the pages' constructor</description>
+          <configuration name="tasks" values="many" type="string">
+            <value>custom_reports_can_access</value>
+          </configuration>
+          <configuration name="title" locale="en_US" values="single" type="string">
+            <displayName>The Page Title</displayName>
+            <value>View Reports</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:true</status>
+            <value>admin</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="generate">
+        <displayName>Admin Page</displayName>
+        <description>Information about the configure modules page</description>
+        <status>required:true</status>
+        <configuration name="class" values="single" type="string">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>I2CE_Page_CustomReports</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <value>all</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="generate_force">
+        <displayName>Admin Page</displayName>
+        <description>Information about the configure modules page</description>
+        <status>required:true</status>
+        <configuration name="class" values="single" type="string">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>I2CE_Page_CustomReports</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <value>all</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="displays">
+      <displayName>Report Displays</displayName>
+      <configurationGroup name="Default">
+        <displayName>Default Display</displayName>
+        <configuration name="class" values="single" type="string">
+          <displayName>Class</displayName>
+          <value>I2CE_CustomReport_Display_Default</value>
+        </configuration>
+        <configurationGroup name="display_options">
+          <displayName>Display Options</displayName>
+          <configuration name="limit_paginated" values="single" type="string">
+            <displayName>Paginated</displayName>
+            <description>Make the default display paginated</description>
+            <value>1</value>
+          </configuration>
+          <configuration name="limit_per_page" values="single" type="string">
+            <displayName>Per Page</displayName>
+            <description>The default number of rows in a paginated result</description>
+            <value>50</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="DefaultAction">
+        <displayName>Default Display</displayName>
+        <version>4.1.4.1</version>
+        <configuration name="class" values="single" type="string">
+          <displayName>Class</displayName>
+          <value>I2CE_CustomReport_Display_DefaultAction</value>
+        </configuration>
+        <configuration name="hide_with_default" values="single" type="string">
+          <displayName>Hide with Default</displayName>
+          <description>Hide the display controls unless specifically called.</description>
+          <version>4.1.5.3</version>
+          <value>1</value>
+        </configuration>
+        <configurationGroup name="display_options">
+          <displayName>Display Options</displayName>
+          <configuration name="limit_paginated" values="single" type="string">
+            <displayName>Paginated</displayName>
+            <description>Make the default display paginated</description>
+            <value>1</value>
+          </configuration>
+          <configuration name="limit_per_page" values="single" type="string">
+            <displayName>Per Page</displayName>
+            <description>The default number of rows in a paginated result</description>
+            <value>50</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="times">
+      <displayName>Times</displayName>
+      <configuration name="stale" values="single" type="string">
+        <displayName>Stale Time</displayName>
+        <description>The time (in minutes) after which reports are considered stale. If less than or equal to zero then it is always considered stale</description>
+        <value>10</value>
+      </configuration>
+      <configuration name="stale_by_report" values="many" type="delimited">
+        <displayName>Stale Time</displayName>
+        <description>The time (in minutes) after which a specific report is considered stale. Overides the value in times/stale. If less than or equal to zero then it is always considered stale</description>
+        <status>required:false</status>
+        <version>4.0.1</version>
+        <!-- Example <value>staff_list:10</value> -->
+      </configuration>
+      <configuration name="background" values="single" type="string">
+        <displayName>Background Time</displayName>
+        <description>The time (in minutes) after which to launch the backround process to generate reports. If less than or equal to zero we do not launch it.</description>
+        <version>4.0.1</version>
+        <value>10</value>
+      </configuration>
+      <configuration name="fail" values="single" type="string">
+        <displayName>Fail Time</displayName>
+        <description>The time (in minutes) after which a report is considered to have failed generation</description>
+        <value>15</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="database_options">
+      <displayName>Database Options</displayName>
+      <status>required:false</status>
+      <configuration name="table_prefix" values="single" type="string">
+        <displayName>Table Prefix</displayName>
+        <description>A prefix we prepend to the cached tables created for a form</description>
+        <value>zebra_</value>
+      </configuration>
+      <configuration name="database" values="single" type="string">
+        <displayName>Database</displayName>
+        <description>The database we wish to store the cached tables in. If it is not set, we use the main database</description>
+        <status>required:false</status>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="relationships" config="CustomReports_Relationships">
+      <displayName>Custom Reports</displayName>
+    </configurationGroup>
+    <configuration name="default_display" values="single" type="string">
+      <displayName>Default display</displayName>
+      <description>The default display used for a report view</description>
+      <status>required:false</status>
+    </configuration>
+    <configurationGroup name="limit_excludes">
+      <displayName>Limit Excludes</displayName>
+      <description>Information about exclusions of different limits in certain situraitons</description>
+      <status>required:false</status>
+      <status>advanced:true</status>
+      <configuration name="displayed" values="many" type="string">
+        <displayName>Displayed</displayName>
+        <description>Limits which are excluded when displaying a report view</description>
+        <value>max_parent</value>
+        <value>min_parent</value>
+        <value>max_parent_form</value>
+        <value>min_parent_form</value>
+        <value>greaterthan_now</value>
+        <value>lessthan_now</value>
+        <value>not_null</value>
+        <value>null</value>
+        <value>true</value>
+        <value>false</value>
+        <value>yes</value>
+        <value>no</value>
+      </configuration>
+      <configuration name="primary_form" values="many" type="string">
+        <displayName>Primary Form</displayName>
+        <description>Limits which are excluded when specifying a limit for a primary form</description>
+        <value>max_parent</value>
+        <value>min_parent</value>
+      </configuration>
+      <configuration name="relationship_form" values="many" type="string">
+        <displayName>Relationship Form</displayName>
+        <description>Limits which are excluded when displaying a limit for form in a relationship view</description>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <displayName>Magic Data Pages</displayName>
+      <description>Information about the custom report pages</description>
+      <configurationGroup name="page_styles" path="/I2CE/template/page_styles">
+        <displayName>Page Styles</displayName>
+        <configurationGroup name="customreport_export">
+          <displayName>Custom Report Export Style</displayName>
+          <configuration name="class" values="single" type="string">
+            <displayName>Page Class</displayName>
+            <description>The class responsible for displaying this page</description>
+            <status>required:true</status>
+            <value>I2CE_Page_Report_MagicDataExport</value>
+          </configuration>
+          <configurationGroup name="args">
+            <displayName>Export</displayName>
+            <description>Values passed to the pages' constructor</description>
+            <configuration name="templates" values="many" type="string">
+              <displayName>Template</displayName>
+              <description>The templates loaded containing the main page look</description>
+              <value>customreports_export_magicdata.xml</value>
+            </configuration>
+            <configuration name="tasks" values="many" type="string">
+              <value>custom_reports_can_access</value>
+            </configuration>
+            <configuration name="access" values="many" type="string">
+              <displayName>Page Access</displayName>
+              <description>All of the roles that have access to this page</description>
+              <status>required:true</status>
+              <value>admin</value>
+            </configuration>
+            <configuration name="template" values="single" type="string">
+              <displayName>Template</displayName>
+              <status>visible:false</status>
+              <status>required:false</status>
+              <value>I2CE_CustomReport_Template</value>
+            </configuration>
+            <configuration name="configType" values="single" type="string">
+              <displayName>Config Type</displayName>
+              <status>visible:false</status>
+              <status>required:false</status>
+              <value>CustomReports</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="customreport_config">
+          <displayName>Custom Report Style</displayName>
+          <configuration name="class" values="single" type="string">
+            <displayName>Page Class</displayName>
+            <description>The class responsible for displaying this page</description>
+            <status>required:true</status>
+            <value>I2CE_Page_CustomReports</value>
+          </configuration>
+          <configuration name="style" values="single" type="string">
+            <displayName>Style</displayName>
+            <value>shell</value>
+          </configuration>
+          <configurationGroup name="args">
+            <displayName>Custom Reports</displayName>
+            <description>Values passed to the pages' constructor</description>
+            <configuration name="tasks" values="many" type="string">
+              <value>custom_reports_can_access</value>
+            </configuration>
+            <configuration name="title" locale="en_US" values="single" type="string">
+              <displayName>The Page Title</displayName>
+              <value>Create Reports</value>
+            </configuration>
+            <configuration name="access" values="many" type="string">
+              <displayName>Page Access</displayName>
+              <description>All of the roles that have access to this page</description>
+              <status>required:true</status>
+              <value>admin</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="export">
+        <displayName>Export Relationship</displayName>
+        <configuration name="style" values="single" type="string">
+          <displayName>Page Style</displayName>
+          <value>customreport_export</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="edit">
+        <displayName>Edit Custom Report</displayName>
+        <configuration name="style" values="single" type="string">
+          <displayName>Page Style</displayName>
+          <value>customreport_config</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="show">
+        <version>4.1.1.3</version>
+        <configuration name="class" values="single" type="string">
+          <value>I2CE_Page_ShowReport</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <value>shell</value>
+        </configuration>
+        <configuration name="execution_parameters" values="many" type="delimited">
+          <value>memory_limit:268435456</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Custom Reports</displayName>
+          <description>Values passed to the pages' constructor</description>
+          <configuration name="tasks" values="many" type="string">
+            <value>custom_reports_can_access</value>
+          </configuration>
+          <configuration name="title" locale="en_US" values="single" type="string">
+            <displayName>The Page Title</displayName>
+            <value>View Reports</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:true</status>
+            <value>admin</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="saveOptions">
+        <version>4.0.6</version>
+        <configuration name="class" values="single" type="string">
+          <value>I2CE_Page_ShowReport</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <version>4.0.7</version>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Custom Reports</displayName>
+          <description>Values passed to the pages' constructor</description>
+          <configuration name="tasks" values="many" type="string">
+            <value>custom_reports_can_access</value>
+          </configuration>
+          <configuration name="title" locale="en_US" values="single" type="string">
+            <displayName>The Page Title</displayName>
+            <value>View Reports</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:true</status>
+            <value>admin</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="nodisplay">
+        <version>4.1.5.1</version>
+        <configuration name="class" values="single" type="string">
+          <version>4.1.5.2</version>
+          <value>I2CE_Page</value>
+        </configuration>
+        <configuration name="style" values="single" type="string">
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Custom Reports</displayName>
+          <description>Values passed to the pages' constructor</description>
+          <configuration name="defaultHTMLFile" values="many" type="string">
+            <value>customReports_reportView_nodisplay.html</value>
+          </configuration>
+          <configuration name="tasks" values="many" type="string">
+            <value>custom_reports_can_access</value>
+          </configuration>
+          <configuration name="title" locale="en_US" values="single" type="string">
+            <displayName>The Page Title</displayName>
+            <value>No Valid Display</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:true</status>
+            <value>admin</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configuration name="default_page" path="/modules/CustomReports/page_default" values="single" type="string">
+        <displayName>Default page</displayName>
+        <status>required:true</status>
+        <value>edit</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -51,9 +51,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             'I2CE_FormField->checkLimitString_null'=>'checkLimitString_null',
             'I2CE_FormField->checkLimitString_not_null'=>'checkLimitString_not_null',
             'I2CE_FormField->checkLimitString_null_not_null'=>'checkLimitString_null_not_null',
-            'I2CE_FormField->checkLimitFunction_null'=>'checkLimitFunction_null',
-            'I2CE_FormField->checkLimitFunction_not_null'=>'checkLimitFunction_not_null',
-            'I2CE_FormField->checkLimitFunction_null_not_null'=>'checkLimitFunction_null_not_null',
             'I2CE_FormField->getLimitMenu_null'=>'I2CE_FormField_DISPLAYFIELDSTYLE_null',
             'I2CE_FormField->getLimitMenu_not_null'=>'I2CE_FormField_DISPLAYFIELDSTYLE_not_null',
             'I2CE_FormField->getLimitMenu_null_not_null'=>'I2CE_FormField_DISPLAYFIELDSTYLE_null_not_null',
@@ -69,9 +66,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             'I2CE_FormField_DB_DATE->checkLimitString_null'=>'checkLimitString_DB_DATE_null',
             'I2CE_FormField_DB_DATE->checkLimitString_not_null'=>'checkLimitString_DB_DATE_not_null',
             'I2CE_FormField_DB_DATE->checkLimitString_null_not_null'=>'checkLimitString_DB_DATE_null_not_null',
-            'I2CE_FormField_DB_DATE->checkLimitFunction_null'=>'checkLimitFunction_DB_DATE_null',
-            'I2CE_FormField_DB_DATE->checkLimitFunction_not_null'=>'checkLimitFunction_DB_DATE_not_null',
-            'I2CE_FormField_DB_DATE->checkLimitFunction_null_not_null'=>'checkLimitFunction_DB_DATE_null_not_null',
 
             'I2CE_FormField->generateLimit_max_parent'=>'generateLimit_max_parent',
             'I2CE_FormField->generateLimit_min_parent'=>'generateLimit_min_parent',
@@ -173,7 +167,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             $class = 'I2CE_FormField_' . $shortclass;
             $t_ret[$class . '->' . 'checkLimit_'  . $style] = 'checkLimit_' . $shortclass . '_' . $style;
             $t_ret[$class . '->' . 'checkLimitString_'  . $style] = 'checkLimitString_' . $shortclass . '_' . $style;
-            $t_ret[$class . '->' . 'checkLimitFunction_'  . $style] = 'checkLimitFunction_' . $shortclass . '_' . $style;
 
             $t_ret[$class . '->' . 'getLimitMenu_'  . $style] = $class . '_DISPLAYFIELDSTYLE_' . $style;
             $t_ret[$class . '->' . 'processLimitMenu_'  . $style] = $class . '_PROCESSFIELDSTYLE_' . $style;
@@ -185,7 +178,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
                 $ret["I2CE_FormField_{$key2}->generateLimit_{$key1}"] = "DATE_generateLimit_{$key2}_{$key1}";
                 $ret["I2CE_FormField_{$key2}->checkLimit_{$key1}"] = "DATE_checkLimit_{$key2}_{$key1}";
                 $ret["I2CE_FormField_{$key2}->checkLimitString_{$key1}"] = "DATE_checkLimit_{$key2}_{$key1}";
-                $ret["I2CE_FormField_{$key2}->checkLimitFunction_{$key1}"] = "DATE_checkLimitFunction_{$key2}_{$key1}";
                 $ret["I2CE_FormField_{$key2}->getLimitMenu_{$key1}"] = "DATE_getLimitMenu_{$key2}_{$key1}";
                 $ret["I2CE_FormField_{$key2}->processLimitMenu_{$key1}"] = "DATE_processLimitMenu_{$key2}_{$key1}";
             }
@@ -196,7 +188,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             $ret['I2CE_FormField_' . $type . '->generateLimit_between']='DATE_generateLimit_' . $type . '_between';
             $ret['I2CE_FormField_' . $type . '->checkLimit_between']='DATE_checkLimit_' . $type . '_between';
             $ret['I2CE_FormField_' . $type . '->checkLimitString_between']='DATE_checkLimitString_' . $type . '_between';
-            $ret['I2CE_FormField_' . $type . '->checkLimitFunction_between']='DATE_checkLimitFunction_' . $type . '_between';
             $ret['I2CE_FormField_' . $type . '->processLimitMenu_between']='DATE_processLimitMenu_' . $type . '_between';
         }
         return $ret;
@@ -487,38 +478,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         return  '((I2CE_Date::fromDB(\'' .$min .'\')->before(I2CE_Date::fromDB(' . $ref . ',' . $type . ' )))'.
             ' && (I2CE_Date::fromDB(' . $ref . ', ' . $type .')->before(I2CE_Date::fromDB(\'' . $max  .'\'))))';
     }
-    protected function DATE_between_checkLimitFunction($type,$fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('min',$vals) || !array_key_exists('max',$vals)) {
-            return true;
-        }
-        if (is_array($vals['min'])) {
-            $min =  I2CE_Date::now($type,$vals['min'],true);
-        } else if (is_string($vals['min'])) {
-            $min = I2CE_Date::fromDB($vals['min']);
-        } else {
-            return true;
-        }
-        if (! ($min instanceof I2CE_Date)) {
-            return true;
-        }
-        if (is_array($vals['max'])) {
-            $max =  I2CE_Date::now($type,$vals['max'],true);
-        } else if (is_string($vals['max'])) {
-            $max = I2CE_Date::fromDB($vals['max']);
-        } else {
-            return true;
-        }
-        if (! $max instanceof I2CE_Date) {
-            return true;
-        }
-        $min = $min->dbFormat();
-        $max = $max->dbFormat();
-        return function($data) use($min,$max,$ref,$type) {
-            return  ((I2CE_Date::fromDB($min)->before(I2CE_Date::fromDB($data[$ref],$type ))) 
-                    && (I2CE_Date::fromDB($data[$ref], $type)->before(I2CE_Date::fromDB($max))));
-        };
-    }
-
 
     protected function DATE_between_checkLimit($type,$fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('min',$vals) || !array_key_exists('max',$vals)) {
@@ -1138,11 +1097,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
     public function checkLimitString_null($fieldObj,$vals,$ref) {
         return  "$ref == null";
     }
-    public function checkLimitFunction_null($fieldObj,$vals,$ref) {
-        return function($data) use ($ref) {
-            return $data[$ref] == null;
-        };
-    }
     public function checkLimit_null($fieldObj,$vals) {
         return $fieldObj->getDBValue() === null;
     }
@@ -1152,11 +1106,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
     }
     public function checkLimitString_DB_DATE_null($fieldObj,$vals,$ref) {
         return  "$ref == null || $ref == '0000-00-00 00:00:00'";
-    }
-    public function checkLimitFunction_DB_DATE_null($fieldObj,$vals,$ref) {
-        return function($data) use ($ref) {
-            return  $data[$ref] == null || $data[$ref] == '0000-00-00 00:00:00';
-        };
     }
     public function checkLimit_DB_DATE_null($fieldObj,$vals) {
         return $fieldObj->getDBValue() === null || $fieldObj->getValue()->isBlank();
@@ -1171,11 +1120,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
     public function checkLimitString_not_null($fieldObj,$vals,$ref) {
         return  "$ref != null";
     }
-    public function checkLimitFunction_not_null($fieldObj,$vals,$ref) {
-        return function($data) use($ref) {
-            return  $data[$ref] != null;
-        };
-    }
     public function checkLimit_not_null($fieldObj,$vals) {
         return $fieldObj->getDBValue() !== null;
     }
@@ -1185,11 +1129,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
     }
     public function checkLimitString_DB_DATE_not_null($fieldObj,$vals,$ref) {
         return  "$ref != null && $ref != '0000-00-00 00:00:00'";
-    }
-    public function checkLimitFunction_DB_DATE_not_null($fieldObj,$vals,$ref) {
-        return function($data) use($ref) {
-            return  $data[$ref] != null && $data[$ref] != '0000-00-00 00:00:00';
-        };
     }
     public function checkLimit_DB_DATE_not_null($fieldObj,$vals) {
         return $fieldObj->getDBValue() !== null && !$fieldObj->getValue()->isBlank();
@@ -1214,16 +1153,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             return $this->checkLimitString_null($fieldObj,$vals,$ref);
         } else {
             return $this->checkLimitLimitString_not_null($fieldObj,$vals,$ref);
-        }
-    }
-    public function checkLimitFunction_null_not_null($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals) || $vals['value'] == '')  {
-            return function($data) { return null; };
-        }
-        if ($vals['value']) {
-            return $this->checkLimitFunction_null($fieldObj,$vals,$ref);
-        } else {
-            return $this->checkLimitFunction_not_null($fieldObj,$vals,$ref);
         }
     }
     public function checkLimit_null_not_null($fieldObj,$vals) {
@@ -1255,16 +1184,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             return $this->checkLimitString_DB_DATE_null($fieldObj,$vals,$ref);
         } else {
             return $this->checkLimitLimitString_DB_DATE_not_null($fieldObj,$vals,$ref);
-        }
-    }
-    public function checkLimitFunction_DB_DATE_null_not_null($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals) || $vals['value'] == '')  {
-            return function($data) { return null; };
-        }
-        if ($vals['value']) {
-            return $this->checkLimitFunction_DB_DATE_null($fieldObj,$vals,$ref);
-        } else {
-            return $this->checkLimitFunction_DB_DATE_not_null($fieldObj,$vals,$ref);
         }
     }
     public function checkLimit_DB_DATE_null_not_null($fieldObj,$vals) {
@@ -1315,11 +1234,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
     public function checkLimitString_greaterthan_now($fieldObj,$vals,$ref) {
         return ' I2CE_Date::now()->before(I2CE_Date::fromDB(' . $ref . '))';
     }
-    public function checkLimitFunction_greaterthan_now($fieldObj,$vals,$ref) {
-        return function($data) use ($ref) {
-            return I2CE_Date::now()->before(I2CE_Date::fromDB($data[$ref]));
-        };
-    }
     public function checkLimit_greaterthan_now($fieldObj,$vals) {
         if (!$fieldObj->getValue() instanceof I2CE_Date) {
             return null;
@@ -1333,11 +1247,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
     }
     public function checkLimitString_greaterthan_equals_now($fieldObj,$vals,$ref) {
         return ' ! I2CE_Date::now()->after(I2CE_Date::fromDB(' . $ref . '))';
-    }
-    public function checkLimitFunction_greaterthan_equals_now($fieldObj,$vals,$ref) {
-        return function($data) use ($ref) {
-            return ! I2CE_Date::now()->after(I2CE_Date::fromDB($data[$ref]));
-        };
     }
     public function checkLimit_greaterthan_equals_now($fieldObj,$vals) {
         if (!$fieldObj->getValue() instanceof I2CE_Date) {
@@ -1353,11 +1262,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
     public function checkLimitString_lessthan_now($fieldObj,$vals,$ref) {
         return ' I2CE_Date::now()->after(I2CE_Date::fromDB(' . $ref . '))';
     }
-    public function checkLimitFunction_lessthan_now($fieldObj,$vals,$ref) {
-        return function($data) use($ref) {
-            return I2CE_Date::now()->after(I2CE_Date::fromDB($data[$ref]));
-        };
-    }
     public function checkLimit_lessthan_now($fieldObj,$vals) {
         if (!$fieldObj->getValue() instanceof I2CE_Date) {
             return null;
@@ -1370,11 +1274,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
     }
     public function checkLimitString_lessthan_equals_now($fieldObj,$vals,$ref) {
         return ' !I2CE_Date::now()->after(I2CE_Date::fromDB(' . $ref . '))';
-    }
-    public function checkLimitFunction_lessthan_equals_now($fieldObj,$vals,$ref) {
-        return function($data) use ($ref) {
-            return !I2CE_Date::now()->after(I2CE_Date::fromDB($data[$ref]));
-        };
     }
     public function checkLimit_lessthan_equals_now($fieldObj,$vals) {
         if (!$fieldObj->getValue() instanceof I2CE_Date) {
@@ -1404,18 +1303,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             return '';
         }
         return $ref . ' == \''  . addslashes($vals['value']) . '\'';
-    }
-    public function checkLimitFunction_DB_TEXT_equals($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals))  {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref] == $vals['value'];
-        };
     }
     public function checkLimit_DB_TEXT_equals($fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('value',$vals))  {
@@ -1458,22 +1345,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         return 'in_array( \'' . addslashes( $vals['value'] ) . '\', array( '
                     . implode(',', $set_vals ) . ' ) )';
     }
-    public function checkLimitFunction_MAP_MULT_equals($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        $set_vals = explode( ',', $fieldObj->getDBValue() );
-        if ( count($set_vals) == 0 ) {
-            return true;
-        }
-        return function($data) use ($vals,$set_vals) {
-            return in_array( $vals['value'], $set_vals );
-        };
-    }
     public function checkLimit_MAP_MULT_equals($fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('value',$vals)) {
             return null;
@@ -1509,18 +1380,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             return '';
         }
         return $ref . ' == \''  . addslashes($vals['value']) . '\'';
-    }
-    public function checkLimitFunction_DB_STRING_equals($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref]  == $vals['value'];
-        };
     }
     public function checkLimit_DB_STRING_equals($fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('value',$vals)) {
@@ -1567,21 +1426,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return 'in_array( ' . $ref . ', array( '
                 . implode( ',', $use_values ) . ') )';
-    }
-    public function checkLimitFunction_MAP_within($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        $use_values = I2CE_List::findLowerMatches( $vals['value'],
-                $fieldObj->getDisplayedFields(),
-                $fieldObj->getSelectableForms(), true );
-        return function($data) use ($ref,$use_values) {
-            return in_array( $data[$ref], $use_values );
-        };
     }
     public function checkLimit_MAP_within($fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('value',$vals)) {
@@ -1694,18 +1538,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return $ref . ' <= \'' . addslashes($vals['value']) . '\'';
     }
-    public function checkLimitFunction_DB_TEXT_lessthan_equals($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref] <= $vals['value'];
-        };
-    }
     public function checkLimit_DB_TEXT_lessthan_equals($fieldObj,$vals) {
         return $fieldObj->getDBValue() <= $vals['value'];
     }
@@ -1773,18 +1605,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return $ref . ' < \'' . addslashes($vals['value']) . '\'';
     }
-    public function checkLimitFunction_DB_TEXT_lessthan($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref] < $vals['value'];
-        };
-    }
     public function checkLimit_DB_TEXT_lessthan($fieldObj,$vals) {
         return $fieldObj->getDBValue() < $vals['value'];
     }
@@ -1810,18 +1630,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return $ref . ' < \'' . addSlashes($vals['value']) . '\'';
     }
-    public function checkLimitFunction_DB_STRING_lessthan($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref] < $vals['value'];
-        };
-    }
     public function checkLimit_DB_STRING_lessthan($fieldObj,$vals) {
         return $fieldObj->getDBValue() < $vals['value'];
     }
@@ -1845,17 +1653,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return $ref . ' <' .  $vals['value'] . '';
     }
-    public function checkLimitFunction_DB_INT_lessthan($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        if (!(is_integer($vals['value']) || ctype_digit($vals['value']))) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref] < $vals['value'];
-        };
-    }
     public function checkLimit_DB_INT_lessthan($fieldObj,$vals) {
         return $fieldObj->getDBValue() < $vals['value'];
     }
@@ -1876,17 +1673,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             return '';
         }
         return $ref . ' <' .  $vals['value'] . '';
-    }
-    public function checkLimitFunction_DB_FLOAT_lessthan($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        if (!(is_numeric($vals['value']) )) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref] < $vals['value'];
-        };
     }
     public function checkLimit_DB_FLOAT_lessthan($fieldObj,$vals) {
         return $fieldObj->getDBValue() < $vals['value'];
@@ -1915,18 +1701,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return $ref . ' >= \'' . addslashes($vals['value']) . '\'';
     }
-    public function checkLimitFunction_DB_TEXT_greaterthan_equals($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref] >= $vals['value'];
-        };
-    }
     public function checkLimit_DB_TEXT_greaterthan_equals($fieldObj,$vals) {
         return $fieldObj->getDBValue() >= $vals['value'];
     }
@@ -1951,18 +1725,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return $ref . ' >= \'' . addSlashes($vals['value']) . '\'';
     }
-    public function checkLimitFunction_DB_STRING_greaterthan_equals($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref] >= $vals['value'];
-        };
-    }
     public function checkLimit_DB_STRING_greaterthan_equals($fieldObj,$vals) {
         return $fieldObj->getDBValue() >= $vals['value'];
     }
@@ -1985,17 +1747,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return $ref . ' >=' .  $vals['value'] . '';
     }
-    public function checkLimitFunction_DB_INT_greaterthan_equals($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        if (!(is_integer($vals['value']) || ctype_digit($vals['value']))) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref] >= $vals['value'];
-        };
-    }
     public function checkLimit_DB_INT_greaterthan_equals($fieldObj,$vals) {
         return $fieldObj->getDBValue() >= $vals['value'];
     }
@@ -2016,17 +1767,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             return '';
         }
         return $ref . ' >=' .  $vals['value'] . '';
-    }
-    public function checkLimitFunction_DB_FLOAT_greaterthan_equals($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        if (!(is_numeric($vals['value']) )) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref] >= $vals['value'];
-        };
     }
     public function checkLimit_DB_FLOAT_greaterthan_equals($fieldObj,$vals) {
         return $fieldObj->getDBValue() >= $vals['value'];
@@ -2055,18 +1795,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return $ref . ' > \'' . addslasshes($vals['value']) . '\'';
     }
-    public function checkLimitFunction_DB_TEXT_greaterthan($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref] > $vals['value'];
-        };
-    }
     public function checkLimit_DB_TEXT_greaterthan($fieldObj,$vals) {
         return $fieldObj->getDBValue() > $vals['value'];
     }
@@ -2091,18 +1819,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return $ref . ' > \'' . addslashes($vals['value']) . '\'';
     }
-    public function checkLimitFunction_DB_STRING_greaterthan($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref] > $vals['value'];
-        };
-    }
     public function checkLimit_DB_STRING_greaterthan($fieldObj,$vals) {
         return $fieldObj->getDBValue() > $vals['value'];
     }
@@ -2125,17 +1841,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return $ref . ' >' .  $vals['value'] . '';
     }
-    public function checkLimitFunction_DB_INT_greaterthan($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        if (!(is_integer($vals['value']) || ctype_digit($vals['value']))) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref] > $vals['value'];
-        };
-    }
     public function checkLimit_DB_INT_greaterthan($fieldObj,$vals) {
         return ( $fieldObj->getDBValue() >  $vals['value'] );
     }
@@ -2156,17 +1861,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             return '';
         }
         return $ref . ' >' .  $vals['value'] . '';
-    }
-    public function checkLimitFunction_DB_FLOAT_greaterthan($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        if (!(is_numeric($vals['value']) )) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return $data[$ref] > $vals['value'];
-        };
     }
     public function checkLimit_DB_FLOAT_greaterthan($fieldObj,$vals) {
         return ( $fieldObj->getDBValue() >  $vals['value'] );
@@ -2206,23 +1900,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return  '((\''.addslashes($vals['min']) .'\' < '. $ref . ' ) && ( ' . $ref . '< \'' . addslashes($vals['max']) . '\'))';
     }
-    public function checkLimitFunction_DB_TEXT_between($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('min',$vals) || !array_key_exists('max',$vals)) {
-            return true;
-        }
-        $vals['max'] = '' . $vals['max'];
-        if (strlen($vals['max']) == 0) {
-            return true;
-        }
-        $vals['min'] = '' . $vals['min'];
-        if (strlen($vals['min']) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return  (($vals['min'] < $data[$ref] ) 
-                    && ( $data[$ref] < $vals['max'] ));
-        };
-    }
     public function checkLimit_DB_TEXT_between($fieldObj,$vals) {
         return ($fieldObj->getDBValue() >= $vals['min']) && ($fieldObj->getDBValue() <= $data['0']['max']);
     }
@@ -2257,23 +1934,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return  '((\''.addslashes($vals['min']) .'\' < ' .$ref . ' ) && ( ' . $ref . '< \'' . addslashes($vals['max']) . '\'))';
     }
-    public function checkLimitFunction_DB_STRING_between($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('min',$vals) || !array_key_exists('max',$vals)) {
-            return true;
-        }
-        $vals['max'] = '' . $vals['max'];
-        if (strlen($vals['max']) == 0) {
-            return true;
-        }
-        $vals['min'] = '' . $vals['min'];
-        if (strlen($vals['min']) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return  (($vals['min'] < $data[$ref] ) 
-                    && ( $data[$ref] < $vals['max'] ));
-        };
-    }
     public function checkLimit_DB_STRING_between($fieldObj,$vals) {
         return ($fieldObj->getDBValue() >= $vals['min']) && ($fieldObj->getDBValue() <= $data['0']['max']);
     }
@@ -2303,21 +1963,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return  '( (' . $vals['min'] .  '< ' . $ref . ') && (' . $ref . '<' . $vals['max'] .'))';
     }
-    public function checkLimitFunction_DB_INT_between($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('min',$vals) || !array_key_exists('max',$vals)) {
-            return true;
-        }
-        if (!(is_integer($vals['min']) || ctype_digit($vals['min']))) {
-            return true;
-        }
-        if (!(is_integer($vals['max']) || ctype_digit($vals['max']))) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return  ( ( $vals['min'] < $data[$ref] ) 
-                    && ( $data[$ref] < $vals['max'] ));
-        };
-    }
     public function checkLimit_DB_INT_between($fieldObj,$vals) {
         return ($fieldObj->getDBValue() >= $vals['min']) && ($fieldObj->getDBValue() <= $data['0']['max']);
     }
@@ -2344,21 +1989,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             return '';
         }
         return  '( (' . $vals['min'] .  '< ' . $ref . ') && (' . $ref . '<' . $vals['max'] .'))';
-    }
-    public function checkLimitFunction_DB_FLOAT_between($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('min',$vals) || !array_key_exists('max',$vals)) {
-            return true;
-        }
-        if (!(is_numeric($vals['min']) )) {
-            return true;
-        }
-        if (!(is_numeric($vals['max']) )) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return  ( ( $vals['min'] < $data[$ref] ) 
-                    && ( $data[$ref] < $vals['max']));
-        };
     }
     public function checkLimit_DB_FLOAT_between($fieldObj,$vals) {
         return ($fieldObj->getDBValue() >= $vals['min']) && ($fieldObj->getDBValue() <= $data['0']['max']);
@@ -2402,22 +2032,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             return '';
         }
         return 'in_array(' . $ref . 'array(' . implode(',', $vals) . '))';
-    }
-    public function checkLimitFunction_DB_TEXT_in($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        if (is_array($vals['value'])) {
-            $vals = $vals['value'];
-        } else {
-            $vals = preg_split('/,/',$vals['value'],-1,PREG_SPLIT_NO_EMPTY);
-        }
-        if (count($vals) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return in_array( $data[$ref], $vals );
-        };
     }
     public function checkLimit_DB_TEXT_in($fieldObj,$vals) {
         if (is_array($vals['value'])) {
@@ -2531,26 +2145,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         return 'count( array_intersect( array( ' . implode(',', $set_vals )
                         . ' ), array( ' . implode( ',', $vals ) . ' ) ) ) > 0';
     }
-    public function checkLimitFunction_MAP_MULT_in($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        if (is_array($vals['value'])) {
-            $vals = $vals['value'];
-        } else {
-            $vals = preg_split('/,/',$vals['value'],-1,PREG_SPLIT_NO_EMPTY);
-        }
-        if (count($vals) == 0) {
-            return true;
-        }
-        $set_vals = explode( ',', $fieldObj->getDBValue() );
-        if ( count($set_vals) == 0 ) {
-            return true;
-        }
-        return function($data) use ($set_vals,$vals) {
-            return count( array_intersect( $set_vals, $vals ) ) > 0;
-        };
-    }
     public function checkLimit_MAP_MULT_in($fieldObj,$vals,$ref) {
         if (!is_array($vals) || !array_key_exists('value',$vals)) {
             return '';
@@ -2599,22 +2193,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return 'in_array(' . $ref . ', array(' . implode(',', $vals) . '))';
     }
-    public function checkLimitFunction_DB_STRING_in($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        if (is_array($vals['value'])) {
-            $vals = $vals['value'];
-        } else {
-            $vals = preg_split('/,/',$vals['value'],-1,PREG_SPLIT_NO_EMPTY);
-        }
-        if (count($vals) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return in_array( $data[$ref], $vals );
-        };
-    }
     public function checkLimit_DB_STRING_in($fieldObj,$vals) {
         if (is_array($vals['value'])) {
             $vals = $vals['value'];
@@ -2657,22 +2235,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return 'in_array(' . $ref . 'array(' . implode(',', $vals) . '))';
     }
-    public function checkLimitFunction_DB_INT_in($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        if (is_array($vals['value'])) {
-            $vals = $vals['value'];
-        } else {
-            $vals = preg_split('/,/',$vals['value'],-1,PREG_SPLIT_NO_EMPTY);
-        }
-        if (count($vals) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return in_array( $data[$ref]. $vals );
-        };
-    }
     public function checkLimit_DB_INT_in($fieldObj,$vals) {
         if (is_array($vals['value'])) {
             $vals = $vals['value'];
@@ -2714,22 +2276,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return 'in_array(' . $ref . 'array(' . implode(',', $vals) . '))';
     }
-    public function checkLimitFunction_DB_FLOAT_in($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        if (is_array($vals['value'])) {
-            $vals = $vals['value'];
-        } else {
-            $vals = preg_split('/,/',$vals['value'],-1,PREG_SPLIT_NO_EMPTY);
-        }
-        if (count($vals) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return in_array( $data[$ref], $vals );
-        };
-    }
     public function checkLimit_DB_FLOAT_in($fieldObj,$vals) {
         if (is_array($vals['value'])) {
             $vals = $vals['value'];
@@ -2749,11 +2295,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
     public function checkLimitString_BOOL_true($fieldObj,$vals,$ref) {
         return $ref . ' == 1 ';
     }
-    public function checkLimitFunction_BOOL_true($fieldObj,$vals,$ref) {
-        return function($data) use ($ref) {
-            return $data[$ref] == 1;
-        };
-    }
     public function checkLimit_BOOL_true($fieldObj,$vals) {
         return $fieldObj->getDBValue() == true;
     }
@@ -2765,11 +2306,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
     public function checkLimitString_BOOL_false($fieldObj,$vals,$ref) {
         return $ref . ' == 0 ';
     }
-    public function checkLimitFunction_BOOL_false($fieldObj,$vals,$ref) {
-        return function($data) use ($ref) {
-            return $data[$ref] == 0;
-        };
-    }
     public function checkLimit_BOOL_false($fieldObj,$vals) {
         return $fieldObj->getDBValue() != true;
     }
@@ -2779,11 +2315,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
     }
     public function checkLimitString_YESNO_yes($fieldObj,$vals,$ref) {
         return $ref . ' == 1 ';
-    }
-    public function checkLimitFunction_YESNO_yes($fieldObj,$vals,$ref) {
-        return function($data) use ($ref) {
-            return $data[$ref] == 1;
-        };
     }
     public function checkLimit_YESNO_yes($fieldObj,$vals) {
         return $fieldObj->getDBValue() == true;
@@ -2795,11 +2326,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
     }
     public function checkLimitString_YESNO_no($fieldObj,$vals,$ref) {
         return $ref . ' == 0 ';
-    }
-    public function checkLimitFunction_YESNO_no($fieldObj,$vals,$ref) {
-        return function($data) use ($ref) {
-            return $data[$ref] == 0;
-        };
     }
     public function checkLimit_YESNO_no($fieldObj,$vals) {
         return $fieldObj->getDBValue() != true;
@@ -2825,20 +2351,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             return $ref . ' == 1';
         } else {
             return $ref . ' == 0';
-        }
-    }
-    public function checkLimitFunction_YESNO_yesno($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals) || $vals['value'] == '') {
-            return true;
-        }
-        if ($vals['value'] == '1') {
-            return function($data) use ($ref) {
-                return $data[$ref] == 1;
-            };
-        } else {
-            return function($data) use ($ref) {
-                return $data[$ref] == 0;
-            };
         }
     }
     public function checkLimit_YESNO_yesno($fieldObj,$vals) {
@@ -2867,20 +2379,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             return $ref . ' == 1';
         } else {
             return $ref . ' == 0';
-        }
-    }
-    public function checkLimitFunction_BOOL_truefalse($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        if ($vals['value'] == '1') {
-            return function($data) use ($ref) {
-                return $data[$ref] == 1;
-            };
-        } else {
-            return function($data) use ($ref) {
-                return $data[$ref] == 0;
-            };
         }
     }
     public function checkLimit_BOOL_truefalse($fieldObj,$vals) {
@@ -2915,19 +2413,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         $regexp = '/^' . I2CE_Util::convertLikeToRegExp($vals['value']) . '$/';
         return 'preg_match(\''. addslashes($regexp) .'\',' . $ref .') > 0';
     }
-    public function checkLimitFunction_DB_TEXT_like($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        $regexp = '/^' . I2CE_Util::convertLikeToRegExp($vals['value']) . '$/';
-        return function($data) use ($ref,$regexp) {
-            return preg_match( $regexp, $data[$ref] ) > 0;
-        };
-    }
     public function checkLimit_DB_TEXT_like($fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('value',$vals)) {
             return false;
@@ -2960,19 +2445,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         $regexp = '/^' . I2CE_Util::convertLikeToRegExp($vals['value']) . '$/';;
         return 'preg_match(\''. addslashes($regexp) .'\',' . $ref .') > 0';
-    }
-    public function checkLimitFunction_DB_STRING_like($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        $regexp = '/^' . I2CE_Util::convertLikeToRegExp($vals['value']) . '$/';;
-        return function($data) use ($ref,$regexp) {
-            return preg_match( $regexp, $data[$ref] ) > 0;
-        };
     }
     public function checkLimit_DB_STRING_like($fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('value',$vals)) {
@@ -3007,19 +2479,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         $regexp = '/^' . I2CE_Util::convertLikeToRegExp($vals['value']) . '$/i';
         return 'preg_match(\''. addslashes($regexp) .'\',' . $ref .') > 0';
-    }
-    public function checkLimitFunction_DB_TEXT_lowerlike($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        $regexp = '/^' . I2CE_Util::convertLikeToRegExp($vals['value']) . '$/i';
-        return function($data) use ($ref,$regexp) {
-            return preg_match( $regexp, $data[$ref] ) > 0;
-        };
     }
     public function checkLimit_DB_TEXT_lowerlike($fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('value',$vals)) {
@@ -3057,20 +2516,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         $regexp = '/^' . I2CE_Util::convertLikeToRegExp($vals['value']) . '$/i';
         return 'preg_match(\''. addslashes($regexp) .'\',' . $ref .') > 0';
     }
-    public function checkLimitFunction_DB_STRING_lowerlike($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-
-        $regexp = '/^' . I2CE_Util::convertLikeToRegExp($vals['value']) . '$/i';
-        return function($data) use ($ref,$regexp) {
-            return preg_match( $regexp, $data[$ref] ) > 0;
-        };
-    }
     public function checkLimit_DB_STRING_lowerlike($fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('value',$vals)) {
             return false;
@@ -3107,18 +2552,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         return ' strtolower(' . $ref  . ') == \''  . addslashes(strtolower($vals['value'])) . '\'';
     }
-    public function checkLimitFunction_DB_TEXT_lowerequals($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        return function($data) use ($ref,$vals) {
-            return strtolower( $data[$ref] ) == strtolower($vals['value']);
-        };
-    }
     public function checkLimit_DB_TEXT_lowerequals($fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('value',$vals)) {
             return false;
@@ -3151,18 +2584,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
             return '';
         }
         return ' strtolower(' . $ref  . ') == \''  . addslashes(strtolower($vals['value'])) . '\'';
-    }
-    public function checkLimitFunction_DB_STRING_lowerequals($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        return function($data) use($ref,$vals) {
-            return strtolower( $data[$ref] ) == strtolower($vals['value']);
-        };
     }
     public function checkLimit_DB_STRING_lowerequals($fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('value',$vals)) {
@@ -3198,19 +2619,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         $regexp = '/^' . I2CE_Util::convertLikeToRegExp('%' . strtolower($vals['value']) . '%') . '$/i';
         return 'preg_match(\''. addslashes($regexp) .'\',' . $ref .') > 0';
     }
-    public function checkLimitFunction_DB_TEXT_contains($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        $regexp = '/^' . I2CE_Util::convertLikeToRegExp('%' . strtolower($vals['value']) . '%') . '$/i';
-        return function($data) use ($ref,$regexp) {
-            return preg_match( $regexp, $data[$ref] ) > 0;
-        };
-    }
     public function checkLimit_DB_TEXT_contains($fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('value',$vals)) {
             return false;
@@ -3244,19 +2652,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         $regexp = '/^' . I2CE_Util::convertLikeToRegExp('%' . strtolower($vals['value']) . '%') . '$/i';
         return 'preg_match(\''. addslashes($regexp) .'\',' . $ref .') > 0';
-    }
-    public function checkLimitFunction_DB_STRING_contains($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        $regexp = '/^' . I2CE_Util::convertLikeToRegExp('%' . strtolower($vals['value']) . '%') . '$/i';
-        return function($data) use ($ref,$regexp) {
-            return preg_match( $regexp, $data[$ref] ) > 0;
-        };
     }
     public function checkLimit_DB_STRING_contains($fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('value',$vals)) {
@@ -3296,19 +2691,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         $regexp = '/^' . I2CE_Util::convertLikeToRegExp( strtolower($vals['value']) . '%') . '$/i';
         return 'preg_match(\''. addslashes($regexp) .'\',' . $ref .') > 0';
     }
-    public function checkLimitFunction_DB_TEXT_startswith($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        $regexp = '/^' . I2CE_Util::convertLikeToRegExp( strtolower($vals['value']) . '%') . '$/i';
-        return function($data) use ($ref,$regexp) {
-            return preg_match( $regexp, $data[$ref] ) > 0;
-        };
-    }
     public function checkLimit_DB_TEXT_startswith($fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('value',$vals)) {
             return false;
@@ -3342,19 +2724,6 @@ class I2CE_Module_FieldLimits extends I2CE_Module {
         }
         $regexp = '/^' . I2CE_Util::convertLikeToRegExp( strtolower($vals['value']) . '%') . '$/i';
         return 'preg_match(\''. addslashes($regexp) .'\',' . $ref .') > 0';
-    }
-    public function checkLimitFunction_DB_STRING_startswith($fieldObj,$vals,$ref) {
-        if (!is_array($vals) || !array_key_exists('value',$vals)) {
-            return true;
-        }
-        $vals['value'] = '' . $vals['value'];
-        if (strlen($vals['value']) == 0) {
-            return true;
-        }
-        $regexp = '/^' . I2CE_Util::convertLikeToRegExp( strtolower($vals['value']) . '%') . '$/i';
-        return function($data) use ($ref,$regexp) {
-            return preg_match( $regexp, $data[$ref] ) > 0;
-        };
     }
     public function checkLimit_DB_STRING_startswith($fieldObj,$vals) {
         if (!is_array($vals) || !array_key_exists('value',$vals)) {

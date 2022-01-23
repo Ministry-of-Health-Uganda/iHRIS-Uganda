@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="cron">
+  <metadata>
+    <displayName>Cron Page</displayName>
+    <className>I2CE_Module_Cron</className>
+    <category>Administration</category>
+    <description>The I2CE Cron page for running commands based on timing.</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="admin">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="cron" path="/modules/admin/cron">
+    <configurationGroup name="page" path="/modules/admin/command_line/cron">
+      <displayName>Cron Page</displayName>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_PageCron</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Page Options</displayName>
+        <description>The options that control the access and display of all pages</description>
+        <configuration name="access" values="many" type="string">
+          <displayName>Page Access</displayName>
+          <description>All of the roles that have access to this page</description>
+          <status>required:false</status>
+          <value>admin</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="types">
+      <displayName>Cron Types</displayName>
+      <description>The types of cron jobs allowed.</description>
+      <version>4.1.6.3</version>
+      <configuration name="five" type="delimited" values="single">
+        <displayName>Five Minutes</displayName>
+        <value>display_name:Five Minutes</value>
+        <value>delay:300</value>
+        <value>timeout:900</value>
+      </configuration>
+      <configuration name="ten" type="delimited" values="single">
+        <displayName>Ten Minutes</displayName>
+        <value>display_name:Ten Minutes</value>
+        <value>delay:600</value>
+        <value>timeout:1800</value>
+      </configuration>
+      <configuration name="fifteen" type="delimited" values="single">
+        <displayName>Fifteen Minutes</displayName>
+        <value>display_name:Fifteen Minutes</value>
+        <value>delay:900</value>
+        <value>timeout:2700</value>
+      </configuration>
+      <configuration name="thirty" type="delimited" values="single">
+        <displayName>Thirty Minutes</displayName>
+        <value>display_name:Thirty Minutes</value>
+        <value>delay:1800</value>
+        <value>timeout:5400</value>
+      </configuration>
+      <configuration name="hourly" type="delimited" values="single">
+        <displayName>Hourly</displayName>
+        <value>display_name:Hourly</value>
+        <value>getdate_key:hours</value>
+        <value>getdate_trail:yday,year</value>
+        <value>delay:3000</value>
+        <value>timeout:10800</value>
+      </configuration>
+      <configuration name="daily" type="delimited" values="single">
+        <displayName>Daily</displayName>
+        <value>display_name:Daily</value>
+        <value>getdate_key:yday</value>
+        <value>getdate_trail:year</value>
+        <value>delay:80000</value>
+        <value>timeout:172800</value>
+      </configuration>
+      <configuration name="weekly" type="delimited" values="single">
+        <displayName>Weekly</displayName>
+        <value>display_name:Weekly</value>
+        <value>getdate_key:wday</value>
+        <value>getdate_value:0</value>
+        <value>delay:518400</value>
+        <value>timeout:0</value>
+      </configuration>
+      <configuration name="monthly" type="delimited" values="single">
+        <displayName>Monthly</displayName>
+        <value>display_name:Monthly</value>
+        <value>getdate_key:mday</value>
+        <value>getdate_value:1</value>
+        <value>delay:2332800</value>
+        <value>timeout:0</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

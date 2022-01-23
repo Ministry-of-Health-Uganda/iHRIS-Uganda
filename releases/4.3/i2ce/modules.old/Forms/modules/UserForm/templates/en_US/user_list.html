@@ -1,0 +1,21 @@
+<div id="siteContent">
+    <h1>Administer Users</h1>
+
+    <form method="GET" action="view_user">
+      <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+	  <td>
+	    <p><span class="field_head"><label for="user_list">Select User to Edit</label></span></p>
+	    <select name="username" id="user_list" onChange="this.form.submit();" style="width: 350px;">
+	      <option value="0">Add new User</option>
+	    </select>
+	  </td>
+	</tr>
+      <tr class="submitCell"><td>
+          <a href="user?add=1" class="button">add</a>
+      </td></tr>
+    </table>
+  </form>
+<p style="height:200px">&nbsp;</p>
+</div>
+

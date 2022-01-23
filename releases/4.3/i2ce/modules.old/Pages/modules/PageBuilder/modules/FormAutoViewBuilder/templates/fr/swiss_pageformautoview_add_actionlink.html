@@ -1,0 +1,31 @@
+<div>
+  <h2 id="add_action_link" class="add_actionlink_options_toggle"><a>Ajouter un nouveau lien d'action</a></h2>
+  <div id="add_actionlink_options_menu" class="optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true">
+    <div class="optionsMenuTitle window_drag">Ajouter un nouveau lien d'action</div>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr></tr><tr><td>
+		  <h3>Identificateur unique</h3>Ceci doit être un nom unique, comme le "modifier" ou "nouveau".
+		</td>
+		<td>
+		  <input id="key_name" name="key_name" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+      </tr><tr><td>
+		  <h3>Champ de formulaire</h3>Typiquement le nom de la forme primaire suivi de :id
+		</td>
+		<td>
+		  <input name="form_field" class="validate=[nonempty]"></td>
+      </tr><tr><td>
+		  <h3>Adresse du lien</h3>La page vers laquelle pointe le lien
+		</td>
+		<td>
+		  <input name="linkloc" class="validate=[nonempty]"></td>
+	  </tr><tr><td>
+		  <h3>Texte du lien</h3>Le texte de la liste déroulante de lien d’action.
+		</td>
+		<td>
+		  <input name="linktext" class="validate=[nonempty]"></td>
+	  </tr><tr><td colspan="3">
+		  <div></div>
+		    <span class="add_actionlink_options_hide button optionsMenuButton window_hide">Fermer</span>
+		    <input type="submit" class="button only_options_menu" value="Add" id="add_actionlink"><div></div>
+		  <br></td>
+      </tr></table></div>
+</div>

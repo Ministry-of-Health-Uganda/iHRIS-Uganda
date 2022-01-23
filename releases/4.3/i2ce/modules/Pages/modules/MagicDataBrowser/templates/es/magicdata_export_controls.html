@@ -1,0 +1,36 @@
+<div id="magicdata_export_control">  
+  <span type="module" ifenable="true" name="magicDataExport">
+    <form id="magicdata_export_form" method="GET">
+      <!--<input id="magicdata_export" class="button action=index.php/magicDataExport/export" type="submit"   value="Export" /> -->
+      <div class="clickableText magicdata_export_options_toggle centered button">Exportar</div>
+      <div class="optionsMenu toggable windowFloats=true windowDraggable=true" id="magicdata_export_options_menu">
+	<input type="hidden" name="config_path"><div class="optionsMenuTitle window_drag"> Exportar Opciones </div>
+	<hr><p>
+	  <span class="field_head"><label>Nombre del módulo</label></span>
+	  <br><span class="form_field"><input name="name" type="text" value="" class="validate=[nonempty,magicdatakey]"></span>
+	  <br><span class="field_description">	Un nombre de módulo para los datos exportados (requerido).</span>
+	</p>
+	<p>
+	  <span class="field_head"><label>Nombre Mostrado</label></span>
+	  <br><span class="form_field"><input name="displayName" type="text" value="" class="validate=[nonempty]"></span>
+	  <br><span class="field_description">	Se requiere un nombre a mostrar para los datos exportados.</span>
+	</p>
+	<p>
+	  <span class="field_head"><label>Versión</label></span>
+	  <br><span class="form_field"><input name="version" type="text" value="1.0.0" class="validate=[nonempty,version]"></span>
+	  <br><span class="field_description">	Un número de versión para los datos (requerido)</span>
+	</p>
+	<p>
+	  <span class="field_head"><label>Descripción</label></span>
+	  <br><span class="form_field"><textarea name="description" id="description" rows="5" cols="25"></textarea></span>
+	  <br><span class="field_description">Una pequeña descripción de los datos exportados (opcional)</span>
+	</p>
+	<table><tr><td>
+	      <div class="button optionsMenuButton window_hide"> Cerrar </div>
+	    </td>
+	    <td>
+	      <input id="magicdata_export" class="button action=index.php/magicDataExport/export" type="submit" value="Export"></td>
+	  </tr></table></div>
+    </form>
+  </span>
+</div>

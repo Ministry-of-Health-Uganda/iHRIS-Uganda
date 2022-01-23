@@ -1,0 +1,90 @@
+<div id='field_contents'>
+    <table class='multiFormTable customReportsTable' cellpadding="0" cellspacing="0" border="0" >
+      <thead>
+      <tr>
+	<th colspan='2'>
+	  <span class="left">
+	      <h2>  <span name='field_name'/></h2>
+	      <input name='enabled' type='checkbox' value='1'/>Enabled
+	      <!-- <h3><span name='field_name'></span></h3>-->
+	      <input type='hidden' value='1' name='field_submit'/> 
+	      <span name='show_default' ifset='true' >
+		with values in
+		<select name='limit_default' id='default_list' style='width:auto;'>
+		</select>
+	      </span>
+	      <span id='limits_link' class='button toggle_closed '><h3>Limit Options</h3></span>
+	      <span id='merges_link' class='button toggle_closed '><h3>Merge Options</h3></span> 
+	      <span id='link_options_toggle' class='link_options_toggle button  toggle_closed' ><h3>Link Options</h3></span>
+	      <span name='has_module_limits' ifset='true'>
+		<span id='module_limits_link' class='button toggle_closed '><h3>Module Limits</h3></span>
+	      </span>
+	      <input type='submit' name='link' id='link' style="display:none; visibility:hidden"/>
+	  </span>
+	</th>
+      </tr>
+      </thead>
+      <tr>
+	<td><h3>Header:</h3> The header text which is displayed for this field</td>
+	<td><input name='header' id='header' type='text' value='' class='validate=[nonempty,notinlist]'/></td>
+      </tr>
+      <span name="is_id_field" ifset="true">
+        <tr>
+          <td><h3>Limit as Map (Drop Down):</h3> Limit this field as a drop down with the given fields display string (e.g. district:region:country).</td>
+          <td><input name='form_display' id="form_display" type="checkbox" value="1" />Display Limit as Mapped Field.<br />Fields: <input name="form_display_fields" id="form_display_fields" type="text" value="" /></td>
+        </tr>
+      </span>
+      <tbody id='link_options_menu'  class='toggable  windowHideClass:toggle_invisible windowShowClass:toggle_visible toggleButtonHideClass:toggle_close toggleButtonShowClass:toggle_open windowFloats:false windowDraggable:false preserveOptions toggle_invisible'   >
+	<tr>
+	  <td><h3>Link url:</h3> The (base) url for the link</td>
+	  <td><input name='link_url'  type='text' cols='40' /></td>
+	</tr>
+  <tr>
+	  <td><h3>Link Target:</h3> When the link is clicked</td>
+	  <td>
+      <select name='link_target' >
+        <option value='_blank'>Open a new page</option>
+	      <option value='_self'>Display link content on same page</option>
+	    </select>
+    </td>
+	</tr>
+	<tr>
+	  <td><h3>Link field:</h3>  The data, if any, we append to the link.</td>
+	  <td>
+	    <select name='link_append' >
+	      <option value=''>None</option>
+	    </select>
+	  </td>
+	</tr>
+  <tr>
+   <td><h3>Link Type:</h3>  The type of the link.</td>
+   <td>
+     <select name='link_type' >
+       <option value='link'>Link (a href)</option>
+     </select>
+   </td>
+  </tr>
+      </tbody>
+      <tr> 
+	<td colspan='2'>
+	  <table id='limits_ajax' style="border-spacing:0;border-collapse:collapse;border-width:0">
+	  </table>
+	</td>
+      </tr>
+      <tr> 
+	<td colspan='2'>
+	  <span id='merges_ajax'/>
+	</td>
+      </tr>
+      <tr> 
+	<td colspan='2' >
+	  <table id='module_limits_ajax' style="border-spacing:0;border-collapse:collapse;border-width:0">
+	  </table>
+	</td>
+      </tr>
+
+
+    </table>
+
+
+</div>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="UserForm" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="UserForm" path="/" locale="cs">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="cs">
+      <configuration name="username" path="user/username/unique" values="single" type="string">
+        <value>Toto uživatelské jméno je již používán.</value>
+      </configuration>
+      <configuration name="pass_match" path="user/password/mismatch" values="single" type="string">
+        <value>Heslo a heslo pro potvrzení nebyly stejné.</value>
+      </configuration>
+      <configuration name="pass_match" path="user/password/required" values="single" type="string">
+        <value>Noví uživatelé musí zadat počáteční heslo.</value>
+      </configuration>
+      <configuration name="role_notallowed" path="user/role/notallowed" values="single" type="string"></configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="cs">
+      <configuration name="users_can_edit" locale="cs" values="single" type="string">
+        <value>Může vytvořit uživatele v systému</value>
+      </configuration>
+      <configuration name="users_can_edit_all" locale="cs" values="single" type="string">
+        <value>Může upravovat všechny uživateke v systému.</value>
+      </configuration>
+      <configuration name="can_create_or_edit_users" locale="cs" values="single" type="string">
+        <value>Umožňuje vytvořit nebo změnit uživatele systému</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <configurationGroup name="user">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs" type="string">
+            <value>Uprav Uživatele/Přístup</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="view_user">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs" type="string">
+            <value>Uprav Uživatele/Přístup</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="roleForm" path="/modules/forms/forms/role">
+        <configuration name="display" values="single" locale="cs" type="string"></configuration>
+      </configurationGroup>
+      <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+        <configurationGroup name="I2CE_Role">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="cs" values="single"></configuration>
+            </configurationGroup>
+            <configurationGroup name="assignable">
+              <configuration name="headers" type="delimited" locale="cs" values="single">
+                <value>default:Lze přiřadit k uživateli</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="homepage">
+              <configuration name="headers" type="delimited" locale="cs" values="single">
+                <value>default:Preferovaná domovská stránka</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="trickle_up">
+              <configuration name="headers" type="delimited" locale="cs" values="single">
+                <value>default:Posun nahoru</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="I2CE_User_Form">
+          <configurationGroup name="fields">
+            <configurationGroup name="username">
+              <configuration name="headers" type="delimited" locale="cs" values="single">
+                <value>default:Uživatelské jméno</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="password">
+              <configuration name="headers" type="delimited" values="many" locale="cs">
+                <value>default:Heslo (nechte prázdné pro zachování hesla)</value>
+                <value>generate:Vytvoř nové heslo</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="role">
+              <configuration name="headers" type="delimited" locale="cs" values="single"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

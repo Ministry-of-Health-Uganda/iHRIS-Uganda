@@ -1,0 +1,17 @@
+<div>
+  <!--  <input title="Select export options and export this report into another format" class="button Export_submit_options_toggle" type="button" value="Export" />-->
+  <span title="Seleccionar opciones de exportación y exportar este informe a otro formato" class="button Export_submit_options_toggle">Exportar</span>
+  <!-- div class="clickableText  Export_submit_options_toggle centered" >(Options)</div -->
+  <div class="optionsMenu toggable windowFloats=true windowDraggable=true" id="Export_submit_options_menu">
+    <div class="optionsMenuTitle window_drag"> Opciones de exportación </div> 	 
+    <hr><span class="field_head"><label>Tipo de Archivo</label></span>
+    <span class="form_field">
+      <select name="export_style" id="export_style"><option value="XLS_2004_XML" selected>Excel 2004 (XML)</option><option value="CSV">Valores separados por comas</option><option value="CSVXLS">CSV para Excel</option><option value="TAB">Delimitados por Tabulación</option><option value="HTML">HTML</option><option value="XML">XML</option><option value="JSON">JSON</option><option value="RAWJSON">JSON en bruto (sin consultas)</option></select></span>
+    <br><span class="field_head"><label>Opciones de compresión</label></span>
+    <span class="form_field">
+      <select name="export_compression" id="export_compression"><option value="">sin compresión</option><option name="has_gz" ifset="true" value="gz">gzip</option><option name="has_bz2" ifset="true" value="bz2">bzip2</option><option name="has_zip" ifset="true" value="zip">archivo zip</option></select></span>
+    <p></p>
+    <br><!--    <input  class="button  method=post"  id='Export_submit' type="submit"   value="Export" />--><span title="Exportar este informe" id="Export_submit" class="multiformsubmit button">Exportar</span> 
+    <span class="button optionsMenuButton Export_submit_options_hide window_hide"> Cerrar </span>    
+  </div>
+</div>

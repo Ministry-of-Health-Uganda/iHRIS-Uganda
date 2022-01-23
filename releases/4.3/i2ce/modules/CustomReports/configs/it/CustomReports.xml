@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="CustomReports" locale="it">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/modules/CustomReports/text/" locale="it">
+      <configuration name="Increasing" values="single" type="string">
+        <value>Incremento</value>
+      </configuration>
+      <configuration name="Decreasing" values="single" type="string">
+        <value>Diminuizione</value>
+      </configuration>
+      <configurationGroup name="user_messages">
+        <configuration name="no_report_view" values="single" type="string">
+          <value>Specificare il report da visualizzare</value>
+        </configuration>
+        <configuration name="invalid_report_view" values="single" type="string">
+          <value>Report da visualizzare non valido</value>
+        </configuration>
+        <configuration name="no_permission_report_view" values="single" type="string">
+          <value>Non hai i permessi necessari per visualizzare questo rapporto.</value>
+        </configuration>
+        <configuration name="no_display_report_view" values="single" type="string">
+          <value>Impossibile trovare visualizzazioni valide per il report</value>
+        </configuration>
+        <configuration name="reportView_merged_field_display" values="single" type="string">
+          <value>%s da %s</value>
+        </configuration>
+        <configuration name="merge_display" values="single" type="string">
+          <value>%s collegato a %s</value>
+        </configuration>
+        <configurationGroup name="merge_descriptions">
+          <configuration name="parent" values="single" type="string">
+            <value>%s collegato a %s come un partner</value>
+          </configuration>
+          <configuration name="child" values="single" type="string">
+            <value>% collegato a %s come figlio</value>
+          </configuration>
+          <configuration name="default" values="single" type="string">
+            <value>%s collegato a %s</value>
+          </configuration>
+        </configurationGroup>
+        <configuration name="report_no_name" values="single" type="string">
+          <value>Nessuna abbreviazione specificata per il report</value>
+        </configuration>
+        <configuration name="report_bad_name" values="single" type="string">
+          <value>L'abbreviazione specificata per il report non è valida</value>
+        </configuration>
+        <configuration name="report_bad_used" values="single" type="string">
+          <value>L'abbreviazione specificata è già in uso</value>
+        </configuration>
+        <configuration name="report_no_relationship" values="single" type="string">
+          <value>Nessuna parentela specificata per il report</value>
+        </configuration>
+        <configuration name="report_bad_relationship" values="single" type="string">
+          <value>La parentela del report specificata non è valida</value>
+        </configuration>
+        <configuration name="cannot_delete" values="single" type="string">
+          <value>Non si hanno i permessi sufficienti per cancellare i dati</value>
+        </configuration>
+        <configuration name="bad_delete_path" values="single" type="string">
+          <value>Percorso per la cancellazione non valido</value>
+        </configuration>
+        <configuration name="not_cached" values="single" type="string">
+          <value>Impossibile configurare il modulo caricato</value>
+        </configuration>
+        <configuration name="not_saved" values="single" type="string">
+          <value>Impossibile salvare le impostazioni di visualizzazione</value>
+        </configuration>
+        <configuration name="saved" values="single" type="string">
+          <value>Impostazioni di visualizzazione salvate</value>
+        </configuration>
+        <configuration name="not_generated" values="single" type="string">
+          <value>Generazione del report non riuscita</value>
+        </configuration>
+        <configuration name="not_updated" values="single" type="string"></configuration>
+        <configuration name="updated" values="single" type="string"></configuration>
+      </configurationGroup>
+      <configurationGroup name="report_status">
+        <configuration name="does_not_exist" values="single" type="string">
+          <value>Non Esiste</value>
+        </configuration>
+        <configuration name="not_generated" values="single" type="string">
+          <value>Non Generato</value>
+        </configuration>
+        <configuration name="stale" values="single" type="string">
+          <value>Interrotti</value>
+        </configuration>
+        <configuration name="failed" values="single" type="string">
+          <value>Non riuscito</value>
+        </configuration>
+        <configuration name="in_progress" values="single" type="string">
+          <value>In corso</value>
+        </configuration>
+        <configuration name="generated" values="single" type="string">
+          <value>Generato</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="headers">
+        <configuration name="sum" values="single" type="string">
+          <value>Somma</value>
+        </configuration>
+        <configuration name="maximum" values="single" type="string">
+          <value>Valore massimo</value>
+        </configuration>
+        <configuration name="minimum" values="single" type="string">
+          <value>Minimo</value>
+        </configuration>
+        <configuration name="average" values="single" type="string">
+          <value>Medio</value>
+        </configuration>
+        <configuration name="count" values="single" type="string">
+          <value>Totale</value>
+        </configuration>
+        <configuration name="count_distinct" values="single" type="string"></configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="it">
+      <configuration name="custom_reports_can_access" locale="it" values="single" type="string"></configuration>
+      <configuration name="custom_reports_delete" locale="it" values="single" type="string">
+        <value>Consenti l'eliminazione dei dati sui report personalizzati</value>
+      </configuration>
+      <configuration name="custom_reports_can_access_relationships" locale="it" values="single" type="string">
+        <value>Consenti l'accesso alle relationship tra report personalizzati</value>
+      </configuration>
+      <configuration name="custom_reports_can_edit_relationships" locale="it" values="single" type="string">
+        <value>Consente il ritocco le Relazioni di Rapporti Personalizzati</value>
+      </configuration>
+      <configuration name="custom_reports_can_access_reports" locale="it" values="single" type="string">
+        <value>Consenti accesso ai report personalizzati</value>
+      </configuration>
+      <configuration name="custom_reports_can_edit_reports" locale="it" values="single" type="string"></configuration>
+      <configuration name="custom_reports_can_view_reportViews" locale="it" values="single" type="string">
+        <value>Consenti la visualizzazione dei report personalizzati</value>
+      </configuration>
+      <configuration name="custom_reports_can_edit_reportViews" locale="it" values="single" type="string">
+        <value>Consenti la modifica della visualizzazione dei report personalizzati</value>
+      </configuration>
+      <configuration name="custom_reports_admin" locale="it" values="single" type="string">
+        <value>Amministratore dei report personalizzati. Può eseguire tutti i task associati ai report personalizzati</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="command_line">
+      <configurationGroup name="show">
+        <configurationGroup name="args">
+          <configuration name="title" locale="it" values="single" type="string">
+            <value>Visualizza Rapporti</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="page_styles" path="/I2CE/template/page_styles">
+        <configurationGroup name="customreport_config">
+          <configurationGroup name="args">
+            <configuration name="title" locale="it" values="single" type="string">
+              <value>Crea report</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="show">
+        <configurationGroup name="args">
+          <configuration name="title" locale="it" values="single" type="string">
+            <value>Visualizza Rapporti</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="saveOptions">
+        <configurationGroup name="args">
+          <configuration name="title" locale="it" values="single" type="string">
+            <value>Visualizza Rapporti</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="nodisplay">
+        <configurationGroup name="args">
+          <configuration name="title" locale="it" values="single" type="string"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

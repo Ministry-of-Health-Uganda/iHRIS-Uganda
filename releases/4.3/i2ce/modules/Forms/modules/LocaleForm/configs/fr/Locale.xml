@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="LocaleForm" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="LocaleForm" path="/" locale="fr">
+    <version>4.3.0.1</version>
+    <configurationGroup name="form" path="/modules/forms/forms/locale">
+      <configuration name="display" values="single" locale="fr" type="string">
+        <value>Option régionale</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="class" path="/modules/forms/formClasses/I2CE_Form_Locale">
+      <configurationGroup name="fields">
+        <configurationGroup name="name">
+          <configuration name="headers" type="delimited" locale="fr" values="single">
+            <value>default:Option régionale</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="selectable">
+          <configuration name="headers" type="delimited" locale="fr" values="single">
+            <value>default:Sélectionnable</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

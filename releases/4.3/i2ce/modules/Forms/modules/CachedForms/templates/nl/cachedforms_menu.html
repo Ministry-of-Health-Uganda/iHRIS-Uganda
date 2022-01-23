@@ -1,0 +1,31 @@
+<div>
+  
+
+
+  <h2>Formulieren cachen</h2>
+  <span name="has_profiles" ifset="true">
+    Alle formulieren in het geselecteerde profiel cachen.
+    <form action="CachedForms/cache" style="margin-left:2em" method="POST">
+      Selecteer een profiel:  <select name="profile"></select><br><input type="submit" value="Cache"></form>
+  </span>
+  <br><div>
+    <a href="CachedForms/cacheAll">Cache</a> alle formulieren
+    <br><a href="CachedForms/cacheAllForce">Cachen forceren</a> voor alle niet verlopen formulieren
+    <br><a href="CachedForms/dropAll">Verwijderen</a> caches voor alle formulieren
+  </div>
+  <br><span name="has_profiles" ifset="true">
+    <h2>Formulieren uit cache exporteren</h2>
+    Alle in de cache opgeslagen formulieren in het geselecteerde profiel exporteren. Als u een wijzigingsdatum selecteert worden alleen de records die op of na de opgegeven datum zijn gewijzigd geëxporteerd. Anders worden alle records die zijn gewijzigd voor het geselecteerde profiel geëxporteerd.
+    <form action="CachedForms/export" style="margin-left:2em" method="POST">
+      Selecteer een profiel:  <select name="profile"></select><br>
+      Wijzigingsdatum: <input class="datepicker_ymd" name="mod_date" type="text"><br><input type="checkbox" value="1" name="compress" checked>bzip2-compressie inschakelen
+      <br><input type="submit" value="Export"></form>
+    
+    <br></span>
+
+  <h2>Profiel aanmaken of bewerken</h2>
+  Maak een profiel aan of bewerk een bestaand profiel voor formulieren.
+  <form action="CachedForms/exportProfile" style="margin-left:2em">
+      Selecteer een profiel:  <select name="profile"><option value="">Nieuw profiel aanmaken</option></select><br><input type="submit" value="Edit"></form>
+  <br><h2>Cachen van formulieren beheren</h2>
+  <ul id="cached_forms_list"></ul></div>

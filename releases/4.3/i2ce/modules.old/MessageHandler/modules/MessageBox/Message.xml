@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="messageBox">
+  <metadata>
+    <displayName>Message Box</displayName>
+    <className>I2CE_MessageBox</className>
+    <category>Messages</category>
+    <description>Displays the default message in a box</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>http://www.capacityproject.org</link>
+    <version>4.3.0</version>
+    <requirement name="messageHandler">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="MooTools">
+      <atLeast version="1.4" />
+      <lessThan version="1.5" />
+    </requirement>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

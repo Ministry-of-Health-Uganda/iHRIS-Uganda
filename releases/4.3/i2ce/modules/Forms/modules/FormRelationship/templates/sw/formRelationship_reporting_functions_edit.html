@@ -1,0 +1,36 @@
+<div>
+  <span name="functions_container" id="functions_container"> 
+    <span id="reporting_functions_container">
+      <span name="has_existing_functions" ifset="true">
+	<h2>Kadhia Zilizopo</h2>
+	<ul id="existing_functions_list"></ul></span>
+      <h2 id="new_function_link" class="new_function_options_toggle"><a>Ongeza kadhia mpya</a></h2>
+      <div id="new_function_options_menu" class="optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true">
+	<div class="optionsMenuTitle window_drag">Ongeza Kadhia Mpya</div>
+	<table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	      <h3>Jina la kadhia:</h3>Jina kwa ajili ya kadhia hii ambalo linaweza kurejewa wakati wa kutengeneza ripoti.
+	    </td>
+	    <td>
+	      <input type="text" name="name" id="function_name" value="" class="validate=[nonempty,notinlist,alphanumericextended,magicdatakey]"></td>
+	  </tr><tr><td>
+	      <h3>Dodosi la Sql:</h3> Kufasili SQL kwa ajili ya kadhia hii. Rejea kwenye fomu yenye jina &lt;jina la fomu&gt; na uga &lt;uga&gt;`&lt;jina la fomu&gt;+&lt;uga&gt;` kwenye kadhia yako.
+	    </td>
+	    <td>
+	      <textarea rows="4" cols="53" name="qry" class="validate=[nonempty]"></textarea></td>
+	  </tr><tr><td>
+	      <h3>Ufafanuzi:</h3> Ufafanuzi wa kadhia hii kuonyeshwa kwa mtumiaji wa mwisho
+	    </td>
+	    <td>
+	      <textarea type="text" name="description" rows="4" cols="53"></textarea></td>
+	  </tr><tr><td colspan="2"> 
+	      <h3>Uga ya Fomu:</h3> Chagua uga ya fomu ambamo kadhia hii inaingiza thamani
+	      <select name="formfield"></select></td>
+	  </tr><tr><td colspan="2">
+	      <div></div>
+	      <span class="new_function_options_hide button optionsMenuButton window_hide">Funga</span>
+	      <input type="submit" class="button only_options_menu " value="Create" id="new_function"><div></div>
+	      <br></td>
+	  </tr></table></div>
+    </span>
+  </span>
+</div>

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="web-services">
+  <metadata>
+    <displayName>Web Services</displayName>
+    <category>Base System Component</category>
+    <description>Provides Web Services</description>
+    <creator>Luke Duncan</creator>
+    <email>lduncan@intrahealth.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="xml">
+      <value>./xml</value>
+    </path>
+  </metadata>
+  <configurationGroup name="web-services" path="/modules/web-services">
+    <configurationGroup name="page_styles" path="/I2CE/template/page_styles">
+      <configurationGroup name="web_service">
+        <configurationGroup name="args">
+          <configuration name="access" values="many" type="string">
+            <value>any</value>
+          </configuration>
+          <configuration name="template" values="single" type="string">
+            <version>4.2.0.2</version>
+            <value>I2CE_TemplateMeister</value>
+          </configuration>
+          <configuration name="templates" values="many" type="string">
+            <version>4.2.0.3</version>
+            <value>web_service_base.xml</value>
+          </configuration>
+          <configurationGroup name="styles">
+            <configuration name="allowed" values="many" type="string">
+              <version>4.2.0.1</version>
+              <value>json</value>
+              <value>xml</value>
+            </configuration>
+            <configuration name="default" values="single" type="string">
+              <value>json</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="messages" locale="en_US">
+      <configuration name="unknown_error" values="single" type="string">
+        <value>An unknown error has occurred.</value>
+      </configuration>
+      <configuration name="noaccess" values="single" type="string">
+        <value>You do not have access to this service. Please login first or contact the administrator.</value>
+      </configuration>
+      <configuration name="noaccess_page" values="single" type="string">
+        <value>You do not have access to the service '%s'.</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

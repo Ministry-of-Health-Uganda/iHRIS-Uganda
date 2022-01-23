@@ -1,0 +1,91 @@
+.optionsMenu {  
+               position: absolute;
+               display: none;
+               top: 4em;
+               right: auto;
+               left: 2em;
+               bottom: auto;
+               width: 39em;
+               text-align: left;
+               background: #F3F6ED;
+               padding: 1em 1em;
+               border:#E1D6c6 4px solid;                                                          
+               }
+
+.optionsMenuWide {  
+               position: absolute;
+               display: none;
+               top: 4em;
+               right: auto;
+               left: 2em;
+               bottom: auto;
+               width: 79em;
+               text-align: left;
+               background: #F3F6ED;
+               padding: 1em 1em;
+               border:#E1D6c6 4px solid;                                                          
+               }
+
+
+.clickableText { 
+	color: #069;                 
+ }
+
+.clickableText:hover { 
+                       cursor:pointer;
+                       color: #39C;
+
+ }
+
+.optionsMenuTitle { 
+        text-align:center;
+	font: bold 1.4em Arial, Helvetica, sans-serif;
+	color: #69c;
+        padding:0.4em;                    
+        border:#E1D6c6 1px solid;                                                                  
+        background: #fbfff3;
+                    
+ }
+
+.optionsMenuTitle:hover { 
+                          cursor:pointer;
+                          }
+
+.optionsMenuButton { 
+                       text-align:center;
+                       width:3em;
+ }
+
+
+div.invalidSubmission, span.invalidSubmission {
+	display: block;
+	color: #993333;
+	font: italic 8px Verdana, Arial, Helvetica, sans-serif;
+	padding: 0px 2px 0px 2px;
+	width: 246px;
+	margin: 0px;
+}
+ul.invalidSubmission {
+	color: #993333;
+	font: italic 8px Verdana, Arial, Helvetica, sans-serif;
+}
+input.invalidSubmission,  textarea.invalidSubmission {
+	border: 1px solid #993333;
+}
+select.invalidSubmission {
+	border: 1px solid #993333;
+	background-color: #993333;
+	color: #FFFFFF;
+                                    
+}
+
+
+
+.invalidSubmissionMessage { 
+	display: block;
+	color: #993333;                            
+ }
+
+.ajax-loading {  
+    background: url(loading.gif) no-repeat top center;
+}

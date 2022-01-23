@@ -1,0 +1,37 @@
+<div id='siteContent'>
+  <h1>Administer Roles</h1>
+  <h2>Existing Roles</h2>
+  <ul id='role_list'>
+  </ul>
+  <form method='post' action='tasks-roles/roles' id='add_user_role'>
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0" >
+      <tr>
+	<th colspan="2">
+	  Add a new role
+	</th>
+      </tr>   
+      <tr>
+	<td>
+	  <label>Role Short Name:</label> A short name consisting of letter and number, -, .  and _ used to
+	  refer the role in pages and templates.
+	</td>
+	<td>
+	  <input type='text' id='role_short_name' name='role_short_name' class='validate=[notinlist,nonempty,magicdatakey]' />
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <label>Role Display Name:</label> A display name for this role that is displayed to the end user.
+	</td>
+	<td>
+	  <input type='text' name='role_name' class='validate=[nonempty]'/>
+	</td>
+      </tr>
+      <tr>
+	<td colspan='2'>
+	  <input  class="button" type="submit"   value="Create" />
+	</td>
+      </tr>
+    </table>
+  </form>
+</div>

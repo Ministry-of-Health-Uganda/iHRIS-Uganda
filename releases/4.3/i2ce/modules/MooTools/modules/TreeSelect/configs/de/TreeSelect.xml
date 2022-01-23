@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="TreeSelect">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="TreeSelect" locale="de">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/modules/TreeSelect/text/" locale="de">
+      <configuration name="select_value" values="single" type="string">
+        <value>Wert auswählen</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page" path="/I2CE/page/treedata">
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="de" type="string">
+          <value>Baumdaten</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,31 @@
+<div id="siteContent">
+  <form method="post" action="REPLACEME" name="edit_role_form_action" id="edit_role">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Editar Función
+	</th>
+      </tr><tr><td>
+	  <label>Nombre en Pantalla de la Función:</label> Un nombre para está función, que será mostrado al usuario final.
+	</td>
+	<td>
+	  <input type="text" name="role_name" class="validate=[nonempty]"></td>
+      </tr><tr><td>
+	  <label>Herencia del Rol:</label>Los roles que tienen todos los derechos de este rol. El rol de administrador tendrá acceso a este rol automáticamente
+	</td>
+	<td>
+	  <input type="hidden" name="role_roles[]" value="admin"><select name="role_roles[]" multiple id="role_roles"></select></td>
+      </tr><tr><td>
+	  <label>Tareas de Función:</label> Las tareas que están asignadas a esta función
+	</td>
+	<td>
+	  <select name="role_tasks[]" multiple id="role_tasks" display="checkbox"></select></td>
+      </tr><tr><td>
+	  <label>Rol de la página de Inicio:</label> Página de inicio predeterminada para este rol
+	</td>
+	<td>
+	  <input type="text" name="homepage"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Save"></td>
+      </tr></table></form>
+
+
+</div>

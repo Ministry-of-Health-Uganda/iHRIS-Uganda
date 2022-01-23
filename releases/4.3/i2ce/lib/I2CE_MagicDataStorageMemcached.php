@@ -49,17 +49,7 @@ if (!class_exists('I2CE_MagicDataStorageMemcached',false)) {
             if (class_exists('Memcached',false)) {
                 $this->memcached = new Memcached(); 
                 if (count($this->memcached->getServerList()) == 0) {
-                    if ( array_key_exists( 'IHRIS_MEMCACHED_SERVER', $_ENV ) ) { 
-                        $memcached_info = explode( ':', trim( $_ENV['IHRIS_MEMCACHED_SERVER'] ) );
-                        if ( count( $memcached_info ) == 0 || $memcached_info[0] == '' ) {
-                            $this->memcached->addServer('127.0.0.1',11211);            
-                        } elseif ( count( $memcached_info ) == 1 || $memcached_info[1] == '' ) {
-                            $memcached_info[1] = 11211;
-                        }
-                        $this->memcached->addServer( $memcached_info[0], $memcached_info[1] );
-                    } else {
-                        $this->memcached->addServer('127.0.0.1',11211);            
-                    }
+                    $this->memcached->addServer('127.0.0.1',11211);            
                 }
             }
         }

@@ -1,0 +1,41 @@
+<div>
+    <h2>Meta Data</h2>
+  <div id='display_container'>
+    <table class='multiFormTable' cellpadding="0" cellspacing="0" border="0">
+      <tr>
+	<td>
+	  <h3>Field Link</h3>Colon seperate list of forms[+field] to define hierarchy
+	</td>
+	<td>
+	  <input name='fields'/>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Display Style</h3>The way that this form is displayed when editing.
+	</td>
+	<td>
+	  <select name='style'/>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Report Display</h3>The report used when populating data for populating drop-downs, tree views.  You should consider using this if the field linking is complicated.
+	</td>
+	<td>
+	  <select name='display_report'><option value=''>Select A Report</option></select>
+	</td>
+      </tr>
+
+    </table>
+
+    
+    
+    <span id='orders'>
+      <h2><a id="orders_link" href=''>Orders</a></h2>
+      Set the ordering by fields
+      <div class='indented' id='orders_ajax'/>
+    </span>
+
+
+</div>

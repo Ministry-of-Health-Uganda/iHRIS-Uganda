@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PrintedForms">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="PrintedForms" locale="es">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="es">
+      <configuration name="printed_forms_can_access" values="single" type="string">
+        <value>Permite acceso mínimo al Sistema de Formas Impresas</value>
+      </configuration>
+      <configuration name="printed_forms_admin" values="single" type="string">
+        <value>Permite acceso completo al Sistema de Formas Impresas</value>
+      </configuration>
+      <configuration name="printed_forms_all_generate" values="single" type="string">
+        <value>Permite acceso al Sistema de Generación de formas impresas</value>
+      </configuration>
+      <configuration name="printed_forms_archive_admin" values="single" type="string">
+        <value>Permite la Administración del Sistema de Archivo de Formas impresas</value>
+      </configuration>
+      <configuration name="printed_forms_create_all_archives" values="single" type="string">
+        <value>Permite la creación de formas impresas archivadas</value>
+      </configuration>
+      <configuration name="printed_forms_view_all_archives" values="single" type="string">
+        <value>Permite la visualización de formas impresas archivadas</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="generated_doc">
+          <configuration name="display" values="single" locale="es" type="string">
+            <value>Documento Generado</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="I2CE_GeneratedDoc">
+          <configurationGroup name="fields">
+            <configurationGroup name="document">
+              <configuration name="headers" type="delimited" locale="es" values="single">
+                <value>default:Documento</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="date">
+              <configuration name="headers" type="delimited" locale="es" values="single">
+                <value>default:Fecha</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="description">
+              <configuration name="headers" type="delimited" values="many" locale="es">
+                <value>default:Descripción</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="primary_form">
+              <configuration name="headers" type="delimited" values="many" locale="es">
+                <value>default:Identificaición de la Forma Principal</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports-PrintedReportsODT">
+  <metadata>
+    <displayName>ODT Reports</displayName>
+    <category>Report Type</category>
+    <description>Configuration options for reports that use ODT</description>
+    <version>4.3.0</version>
+    <link>http://launchpad.net/i2ce</link>
+    <requirement name="CustomReports">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="textlayout">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="ColorPicker">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="PrintedFormsODT">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+  </metadata>
+  <configurationGroup name="CustomReports-PrintedReportsODT" path="/modules/CustomReports/displays/ODT">
+    <displayName>ODT Reports</displayName>
+    <configuration name="class" values="single" type="string">
+      <displayName>Display Class</displayName>
+      <description>The class that handles this display</description>
+      <value>I2CE_CustomReport_Display_ODT</value>
+    </configuration>
+    <configurationGroup name="display_options">
+      <displayName>Default PDF</displayName>
+      <description>Default display options for PDF</description>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

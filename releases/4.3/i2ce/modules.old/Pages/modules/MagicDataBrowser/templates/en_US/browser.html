@@ -1,0 +1,41 @@
+<div id="siteContent">
+  <div class='magicDataBrowser'>
+    <h3 >Magic Data Path: <span id='config_path_display' ></span></h3>
+    <h3>
+   
+
+    <span ifset='true' name='full_view'><a name='full_view'>Expanded View</a></span>
+    <span ifset='true' name='compressed_view'><a name='compressed_view'>Compressed View</a></span>
+    <span ifset='true' name='mini_view'><a name='mini_view'>Mini View</a></span>
+    <span ifset='true' name='nomini_view'><a name='nomini_view'>Full View</a></span>
+    </h3>
+    <ul name='magic_data_list' class='magic_data_list' id='magic_data_list'>
+    </ul>
+    <br/>
+    <table>
+      <tr>
+	<td>
+	  <form  method="post" action="magicDataBrowser/erase" id='magicdata_erase'> 
+	    <input onclick="return confirm('Are you sure you want to do this? It can not be undone!');" class="button" type="submit" value="Erase" />
+	  </form>
+	</td>
+	<td>
+	  <div id="magicdata_export_control"></div>
+	</td>
+      </tr>
+    </table>
+    <span ifset='true' name='root_node'>
+      <form method='POST' name='load_action' enctype="multipart/form-data">
+	<h4>Load Magic Data From Module</h4>
+	<input type='hidden' name='caller' />
+	Input File:<input type='file' name='xml'/>
+	<br/>
+	Input URL:<input type='text'/>
+	<br/>
+	<input type='submit' value='Upload'  />
+      </form>
+    </span>
+    </div>
+    
+  
+</div>

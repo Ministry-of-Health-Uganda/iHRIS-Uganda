@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Lists" path="/I2CE/">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="Lists" path="/I2CE/" locale="es">
+    <version>4.3.0.1</version>
+    <configurationGroup name="auto_list" path="/I2CE/page/auto_list">
+      <configuration name="title" locale="es" values="single" type="string">
+        <value>Administrar listas de base de datos</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="Lists" path="/modules/Lists">
+      <configuration name="messages" type="delimited" values="many" locale="es">
+        <value>other_lists:Otras listas</value>
+        <value>title:Ver %s</value>
+        <value>edit_title:Añadir/Actualizar %s</value>
+        <value>edit_text:Actualizar esta información</value>
+        <value>add_text:Añadir nuevo %s</value>
+        <value>add_new:Añadir nuevo</value>
+        <value>select_text:Selecciona otro %s</value>
+        <value>menu_title:Administrar listas de base de datos</value>
+        <value>remap_field_text:Reasignar campo %1$s en %2$s (%3$s coincidencias)</value>
+        <value>remap_text:Establecer reasignación de datos</value>
+        <value>view_remap_text:Ver reasignación de datos</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="invalid_messages" path="/modules/forms/invalid_field_messages" locale="es">
+      <configuration name="unique_fields" values="single" type="string">
+        <value>Este debe ser único y otro registro tiene este valor para los valores especificados de los campos:</value>
+      </configuration>
+      <configuration name="unique_field" values="single" type="string">
+        <value>Este debe ser único y otro registro tiene este valor para los valores especificados del campo:</value>
+      </configuration>
+      <configuration name="unique" values="single" type="string">
+        <value>Este debe ser único y otro registro tiene este valor.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="template_text" path="/modules/forms/template_text">
+      <configuration name="blank" values="single" locale="es" type="string">
+        <value>Selecciona uno</value>
+      </configuration>
+      <configuration name="loading" values="single" locale="es" type="string">
+        <value>Cargando</value>
+      </configuration>
+      <configuration name="no_results" values="single" locale="es" type="string">
+        <value>Sin resultados</value>
+      </configuration>
+      <configuration name="default_display" values="single" locale="es" type="string">
+        <value>Selecciona de abajo</value>
+      </configuration>
+      <configuration name="clear_display" values="single" locale="es" type="string">
+        <value>Restablecer</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+      <configurationGroup name="I2CE_List">
+        <configurationGroup name="fields">
+          <configurationGroup name="remap">
+            <configuration name="headers" type="delimited" locale="es" values="single">
+              <value>default:Valor reasignado</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="i2ce_hidden">
+            <configuration name="headers" type="delimited" locale="es" values="single">
+              <value>default:Ocultar</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="I2CE_SimpleList">
+        <configurationGroup name="fields">
+          <configurationGroup name="name">
+            <configuration name="headers" type="delimited" locale="es" values="single">
+              <value>default:Nombre</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="I2CE_SimpleCodedList">
+        <configurationGroup name="fields">
+          <configurationGroup name="code">
+            <configuration name="headers" type="delimited" locale="es" values="single">
+              <value>default:Código</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="es">
+      <configuration name="can_hide_list_members" values="single" type="string">
+        <value>Puede ocultar la lista de miembros</value>
+      </configuration>
+      <configuration name="can_edit_database_lists" values="single" type="string">
+        <value>Puede editar alguna de las lista almacenada en la base de datos</value>
+      </configuration>
+      <configuration name="can_edit_all_database_lists" values="single" type="string">
+        <value>Puede editar todas las listas almacenadas en la base de datos</value>
+      </configuration>
+      <configuration name="can_view_database_lists" values="single" type="string">
+        <value>Puede ver alguna de las listas almacenadas en la base de datos</value>
+      </configuration>
+      <configuration name="can_view_all_database_lists" values="single" type="string">
+        <value>Puede ver todas las listas almacenadas en la base de datos</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <configurationGroup name="view_list">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="es" type="string">
+            <value>Ver Lista</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

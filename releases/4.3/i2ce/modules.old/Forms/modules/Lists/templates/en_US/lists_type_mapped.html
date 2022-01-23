@@ -1,0 +1,61 @@
+<div id="siteContent">
+    <h1 class="header"><a href="lists">Administer Database</a>: <span name="type_name" /></h1>
+
+    <form method='get' action='lists'>
+        <table border="0" cellpadding="5" cellspacing="10">
+	  <tr>
+	    <th>
+	      <span printf="'Select %s',$field_name"/>:
+	    </th>
+	    <td style="text-align: right">
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+	      <span printf="'Select the %1$s to limit the displayed values of %2$s.',$field_name,$type_name"/>
+	      <div id="mapped">
+	      </div>
+	    </td>
+	    <td style="vertical-align: text-top;">
+	      <input type='submit' value='view' class='button' style="float: right;"/>
+	    </td>
+	  </tr>
+	</table>
+	<input type='hidden' name='type'/>
+	<input type='hidden' name='mapped'/>
+	<input type='hidden' name='field'/>
+	<input type='hidden' name='nosetdefault'/>
+	<input type='hidden' name='link'/>
+	<input type='hidden' name='id'/>
+
+	<span name='list_is_writable' ifset='true'>
+	  <p>
+	    <a href="lists?add=1" name="add_type" class="add_new_link"><span printf="'Add new %s',$type_name" /></a>
+	  </p>
+	</span>
+
+	<div class="recordsData" id='select_list'>
+	  <div id='select_list_results'>
+	    <table border="0" cellpadding="0" cellspacing="0">
+	      <thead>
+      <tr>
+        <td style="text-align: right;" id="lists_alphabet">
+        </td>
+      </tr>
+		<tr id="lists_header">
+		</tr>
+	      </thead>
+	      <tbody id="lists_body">		
+	      </tbody>
+	    </table>
+	    <div style='float:right' class='pager_display' id='select_list_pager_display'>
+	    </div>	
+	  </div>
+	</div>
+    </form>
+
+    <br/>
+    
+    <div ><a href="lists" class="button">return</a></div>
+    
+</div>

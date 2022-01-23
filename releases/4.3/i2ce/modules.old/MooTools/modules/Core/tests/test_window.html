@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Window Test</title>
+    <script src='../../../scripts/mootools-core.js' type='text/javascript'>
+    </script>
+    <script src='../../../scripts/mootools-more.js' type='text/javascript'>
+    </script>
+    <script src='../scripts/I2CE_ClassValues.js' type='text/javascript'>
+    </script>
+    <script src='../scripts/I2CE_Window.js' type='text/javascript'>
+    </script>
+    <script type='text/javascript'>
+      var windows = new Hash();
+
+      function createAndShowWindow(id,options) {
+        if (windows.has(id)) {
+           alert('already created ' + id);
+        } else {
+	  if (!options) {
+	    options = {};
+          }
+          var my_window = new I2CE_Window(id,options);
+	  if (!my_window) {
+             alert('bad window');
+             return false;
+           }
+           windows.set(id,my_window);
+        }
+        windows.get(id).show();
+        return false;
+
+      }
+
+    </script>
+  </head>
+  <body>
+    <h2 class='title'>I2CE Window</h2>
+    Given a node, or node id, create a window object that can be opened, closed, and dragged.
+    <ul>
+      <li>
+	Class Options:  
+	<br/>The following are the options that  can be set in the window's constuctor
+	<ul>
+	  <li>
+	    windowShow: false,  a function to call on the  window when you want to show it.  if false, it will set the display style to block.
+	     the function should take one argument, the window element
+	  </li>
+	  <li>
+	    windowHide: false,   a function to call on the  window when you want to show it.  if false, it will set the display style to none
+	     the function should take one argument, the window element
+	  </li>
+	  <li>
+	    windowCheck: false,   a function to call on The  window when see if it is 'hidden' or 'shown'  if false, it will checkthe display style state
+	     to work with the default (false) windowHide and windowShow
+	  </li>
+	  <li>
+	     the function should take one argument, the window wlement. It should also return true (if 'visible') or false (if not 'visible')
+	    windowDraggable: true,  make the  window draggable.  only applies if windowHide/Show/Check are false
+	  </li>
+	  <li>
+	    windowDragButtonClass: 'window_drag',  the class of an element to idenfity a dragging handle for a floating draggable window.  Defaults to 'window_drag_handle'. only matches elements contained within the window
+	  </li>
+	  <li>
+	    windowDragContainer: false,  the container to limit dragging to. Defaults to false meaning there is no containment
+	  </li>
+	  <li>
+	    windowFloats: false,  make the  window a floater (if no function is specifed)  otherwise affects the style.visible propert.
+	     if false, then the  window is not draggable.  You can also make a window not floatable by setting the class not_floats
+	  </li>
+	  <li>
+	    windowShowClass: false,  defaults to false.  if set to a string, it is the class we set a  window to if the window is not a floater  nor a function
+	     when we show the class.  To set the class, both windowShowClass and windowHideClass need to be strings (possibly empty)
+	  </li>
+	  <li>
+	    windowHideClass: false,  defaults to false.  if set to a string, it is the class we set window to if the window is not a floater nor a function
+	  </li>
+	  <li>
+	    windowPositionVert: 'upper_viewable',  where to place the  windowmake the  window vertically.  only applies if windowShow is false
+	     valid options  'upper_viewable' (defaul) , 'lower_viewable', 'center_viewable', 'upper', 'lower' 'center' 'mouse_above' 'mouse_below'
+	     or none of these which means we dont do anything 
+	  </li>
+	  <li>
+	    windowPositionHoriz: 'center_viewable',  where to place the  windowmake the  window vertically.  only applies if windowShow is false
+	     valid options  'center_viewable' (default), 'left_viewable', 'right_viewable' , 'left', 'right' 'center' or none of these which means we dont do anything 
+	  </li>
+	  <li>
+	    windowZIndex: 50000,  the default z-index set for a floating window
+	  </li>
+	  <li>
+	    windowRepositions: false,  set to true to reposition a floating  window on a scroll/pgup event
+	  </li>
+	  <li>
+	    windowRepositionMorphDuration: 50, 
+	  </li>
+	  <li>
+	    windowLeftPad: 10,
+	  </li>
+	  <li>
+	    windowRightPad: 10,
+	  </li>
+	  <li>
+	    windowTopPad: 10,
+	  </li>
+	  <li>
+	    windowBottomPad: 10,
+	  </li>
+	  <li>
+	    windowHideOnKeys: [],  For example, 27=escape, 18=CTRL-W
+	  </li>
+	  <li>
+	    windowHideButtonClass: 'window_hide'  applies to floating windows and defaults to 'window_hide'.  
+	     If set, it is a class we check within the window element to attach a hide on click event
+	  </li>
+	</ul>
+      </li>
+      <li>Optional: I2CE_ClassHash.js.  If present, window options can be loaded from the class hash values.
+      </li>
+    </ul>
+    <h2 class='title'>Tests</h2>
+    <ul>
+      <li>
+	<a href='' onclick='return createAndShowWindow("default_window")'>Default Window</a>
+	<div style='display:none;background:gray' id='default_window'>
+	  <div>
+	    The content of the default window
+	    <ul>
+	      <li>
+		You should be able to <span class='window_hide' style='background:lime'>close</span> me.
+	      </li>
+	      <li>
+		You should be able to <span class='window_hide' style='background:red'>also close</span> me.
+	      </li>
+	      <li>
+		You should be able to <span class='window_hide' style='background:yellow'>close 3</span> me.
+	      </li>
+	    </ul>
+	  </div>
+	</div>
+      </li>
+      <li>
+	<a href='' onclick='return createAndShowWindow("float_window1",{windowFloats:true})'>Floating Window by option</a>
+	<span style='display:none;background:gray' id='float_window1'>
+	  The content of the floating  window -- 1
+	  You should be able to <input type='submit' class='window_hide' value='Close'/> me.
+	</span>
+      </li>
+
+      <li>
+	<a href='' onclick='return createAndShowWindow("float_window2")'>Floating Window by class value</a>
+	<span style='display:none;background:gray' id='float_window2' class='windowFloats=true'>
+	  The content of the floating window -- 2
+	  <br/>
+	  You should be able to <span class='window_hide'  style='background:blue'>close</span> me.
+	  You should NOT be able to <span  style='background:yellow' class='window_drag'>drag</span> me.
+	</span>
+      </li>
+
+      <li>
+	<a href='' onclick='return createAndShowWindow("floatdrag_window")'>Floating Draggable Window by class value</a>
+	<span style='display:none;background:gray' id='floatdrag_window' class='windowFloats=true windowDraggable=true  windowRepositions=true'>
+	  You should be able to <span  style='background:yellow' class='window_drag'>drag</span> me.
+	  <br/>
+	  The content of the floating draggable window.
+	  <br/>
+	  This window should reposition on a scroll/resize.
+	  <br/>
+	  You should be able to <span class='window_hide'  style='background:blue'>close</span> me.
+	</span>
+      </li>
+
+
+      <li>
+	<a href='' onclick='return createAndShowWindow("floatdrag_window_norepo")'>Floating Draggable Window by class value.  Does not reposition</a>
+	
+	<span style='display:none;background:gray' id='floatdrag_window_norepo' class='windowFloats=true windowDraggable=true windowHideOnKeys=[18,27]'>
+	  You should be able to <span  style='background:yellow' class='window_drag'>drag</span> me.
+	  <br/>
+	  The content of the floating draggable window 
+	  <br/>
+	  You should be able to <span class='window_hide'  style='background:blue'>close</span> me.
+	  <br/>Hitting escape should also close me
+	</span>
+      </li>
+
+
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<div id="field_contents">
+    <table class="multiFormTable customReportsTable" cellpadding="0" cellspacing="0" border="0"><thead><tr><th colspan="2">
+	  <span class="left">
+	      <h2>  <span name="field_name"></span></h2>
+	      <input name="enabled" type="checkbox" value="1">Activé
+	      <!-- <h3><span name='field_name'></span></h3>-->
+	      <input type="hidden" value="1" name="field_submit"><span name="show_default" ifset="true">
+		avec des valeurs dans
+		<select name="limit_default" id="default_list" style="width:auto;"></select></span>
+	      <span id="limits_link" class="button toggle_closed "><h3>Options des Limites</h3></span>
+	      <span id="merges_link" class="button toggle_closed "><h3>Fusionner les options</h3></span> 
+	      <span id="link_options_toggle" class="link_options_toggle button  toggle_closed"><h3>Options des liens</h3></span>
+	      <span name="has_module_limits" ifset="true">
+		<span id="module_limits_link" class="button toggle_closed "><h3>Module de limites</h3></span>
+	      </span>
+	      <input type="submit" name="link" id="link" style="display:none; visibility:hidden"></span>
+	</th>
+      </tr></thead><tr><td><h3>En-tête:</h3> Le texte d’en-tête affiché pour ce champ</td>
+	<td><input name="header" id="header" type="text" value="" class="validate=[nonempty,notinlist]"></td>
+      </tr><span name="is_id_field" ifset="true">
+        <tr><td><h3>Limiter comme correspondance (liste déroulante):</h3> Limiter ce champ comme une liste déroulante avec la chaîne d’affichage des champs fournis (par ex. commune:région:pays).</td>
+          <td><input name="form_display" id="form_display" type="checkbox" value="1">Afficher la limite comme un champ de correspondance.<br>Champs: <input name="form_display_fields" id="form_display_fields" type="text" value=""></td>
+        </tr></span>
+      <tbody id="link_options_menu" class="toggable  windowHideClass:toggle_invisible windowShowClass:toggle_visible toggleButtonHideClass:toggle_close toggleButtonShowClass:toggle_open windowFloats:false windowDraggable:false preserveOptions toggle_invisible"><tr><td><h3>URL du lien:</h3> L’URL (de base) pour le lien</td>
+	  <td><input name="link_url" type="text" cols="40"></td>
+	</tr><tr><td><h3>Lien cible:</h3> Quand le lien est cliqué</td>
+	  <td>
+      <select name="link_target"><option value="_blank">Ouvrir une nouvelle page</option><option value="_self">Afficher le contenu du lien sur la même page</option></select></td>
+	</tr><tr><td><h3>Champ de liaison:</h3>  S'il y a des données, nous annexons au lien.</td>
+	  <td>
+	    <select name="link_append"><option value="">Aucun</option></select></td>
+	</tr><tr><td><h3>Type de lien:</h3>  Le type du lien.</td>
+   <td>
+     <select name="link_type"><option value="link">Lien (un href)</option></select></td>
+  </tr></tbody><tr><td colspan="2">
+	  <table id="limits_ajax" style="border-spacing:0;border-collapse:collapse;border-width:0"></table></td>
+      </tr><tr><td colspan="2">
+	  <span id="merges_ajax"></span>
+	</td>
+      </tr><tr><td colspan="2">
+	  <table id="module_limits_ajax" style="border-spacing:0;border-collapse:collapse;border-width:0"></table></td>
+      </tr></table></div>

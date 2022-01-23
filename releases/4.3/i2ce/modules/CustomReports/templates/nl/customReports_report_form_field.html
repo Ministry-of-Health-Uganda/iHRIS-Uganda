@@ -1,0 +1,42 @@
+<div id="field_contents">
+    <table class="multiFormTable customReportsTable" cellpadding="0" cellspacing="0" border="0"><thead><tr><th colspan="2">
+	  <span class="left">
+	      <h2>  <span name="field_name"></span></h2>
+	      <input name="enabled" type="checkbox" value="1">Ingeschakeld
+	      <!-- <h3><span name='field_name'></span></h3>-->
+	      <input type="hidden" value="1" name="field_submit"><span name="show_default" ifset="true">
+		met waarden in
+		<select name="limit_default" id="default_list" style="width:auto;"></select></span>
+	      <span id="limits_link" class="button toggle_closed "><h3>Beperkingsinstellingen</h3></span>
+	      <span id="merges_link" class="button toggle_closed "><h3>Instellingen samenvoegen</h3></span> 
+	      <span id="link_options_toggle" class="link_options_toggle button  toggle_closed"><h3>Koppelingsinstellingen</h3></span>
+	      <span name="has_module_limits" ifset="true">
+		<span id="module_limits_link" class="button toggle_closed "><h3>Modulelimieten</h3></span>
+	      </span>
+	      <input type="submit" name="link" id="link" style="display:none; visibility:hidden"></span>
+	</th>
+      </tr></thead><tr><td><h3>Koptekst:</h3> De koptekst die voor dit veld wordt weergegeven</td>
+	<td><input name="header" id="header" type="text" value="" class="validate=[nonempty,notinlist]"></td>
+      </tr><span name="is_id_field" ifset="true">
+        <tr><td><h3>Beperking vanuit lijst (downdown):</h3> Beperk dit veld als een downdown met de opgegeven velden, bijvoorbeeld district:regio:land.</td>
+          <td><input name="form_display" id="form_display" type="checkbox" value="1">Beperking als lijst met velden weergeven.<br>Velden: <input name="form_display_fields" id="form_display_fields" type="text" value=""></td>
+        </tr></span>
+      <tbody id="link_options_menu" class="toggable  windowHideClass:toggle_invisible windowShowClass:toggle_visible toggleButtonHideClass:toggle_close toggleButtonShowClass:toggle_open windowFloats:false windowDraggable:false preserveOptions toggle_invisible"><tr><td><h3>Koppelings-URL:</h3> Basis-URL voor de koppeling</td>
+	  <td><input name="link_url" type="text" cols="40"></td>
+	</tr><tr><td><h3>Doel koppelen:</h3> Als op de koppeling wordt geklikt</td>
+	  <td>
+      <select name="link_target"><option value="_blank">Nieuwe pagina openen</option><option value="_self">Inhoud voor de koppeling op dezelfde pagina weergeven</option></select></td>
+	</tr><tr><td><h3>Koppelingsveld:</h3>  De aan de koppeling toe te voegen gegevens (als nodig).</td>
+	  <td>
+	    <select name="link_append"><option value="">Geen</option></select></td>
+	</tr><tr><td><h3>Koppelingstype:</h3>  Het koppelingstype.</td>
+   <td>
+     <select name="link_type"><option value="link">Koppeling (a href)</option></select></td>
+  </tr></tbody><tr><td colspan="2">
+	  <table id="limits_ajax" style="border-spacing:0;border-collapse:collapse;border-width:0"></table></td>
+      </tr><tr><td colspan="2">
+	  <span id="merges_ajax"></span>
+	</td>
+      </tr><tr><td colspan="2">
+	  <table id="module_limits_ajax" style="border-spacing:0;border-collapse:collapse;border-width:0"></table></td>
+      </tr></table></div>

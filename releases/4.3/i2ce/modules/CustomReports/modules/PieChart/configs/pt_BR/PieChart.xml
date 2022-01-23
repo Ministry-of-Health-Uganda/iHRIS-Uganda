@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports_PieChart" path="/modules/CustomReports/displays/PieChart">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="CustomReports_PieChart" path="/modules/CustomReports/displays/PieChart" locale="pt_BR">
+    <version>4.3.0.1</version>
+    <configuration name="error_message" locale="pt_BR" values="single" type="string">
+      <value>Não foram encontrados dados para este relatório. Por favor, assegure-se de que os dados do relatório estejam na memória cache ou modifique seus limites.</value>
+    </configuration>
+    <configurationGroup name="display_options">
+      <configurationGroup name="styles">
+        <configurationGroup name="Pie">
+          <configuration name="display_name" locale="pt_BR" values="single" type="string"></configuration>
+        </configurationGroup>
+        <configurationGroup name="Bar">
+          <configuration name="display_name" locale="pt_BR" values="single" type="string">
+            <value>Gráfico de Barras (Simples)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="Column">
+          <configuration name="display_name" locale="pt_BR" values="single" type="string">
+            <value>Gráfico de Colunas (Simples)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="StackedColumn">
+          <configuration name="display_name" locale="pt_BR" values="single" type="string"></configuration>
+        </configurationGroup>
+        <configurationGroup name="Scatter">
+          <configuration name="display_name" locale="pt_BR" values="single" type="string"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

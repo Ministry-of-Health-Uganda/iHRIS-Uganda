@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports_PieChart" path="/modules/CustomReports/displays/PieChart">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="CustomReports_PieChart" path="/modules/CustomReports/displays/PieChart" locale="de">
+    <version>4.3.0.1</version>
+    <configuration name="error_message" locale="de" values="single" type="string">
+      <value>Es wurden für diesen Bericht keine Daten gefunden. Stelle sicher, dass die Berichtsdaten gecached wurden oder passe Deine Einschränkungen an.</value>
+    </configuration>
+    <configurationGroup name="display_options">
+      <configurationGroup name="styles">
+        <configurationGroup name="Pie">
+          <configuration name="display_name" locale="de" values="single" type="string">
+            <value>Kreisdiagramm (einfach)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="Bar">
+          <configuration name="display_name" locale="de" values="single" type="string">
+            <value>Balkendiagramm (einfach)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="Column">
+          <configuration name="display_name" locale="de" values="single" type="string">
+            <value>Säulendiagramm (einfach)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="StackedColumn">
+          <configuration name="display_name" locale="de" values="single" type="string">
+            <value>Gestapeltes Säulendiagramm (einfach)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="Scatter">
+          <configuration name="display_name" locale="de" values="single" type="string">
+            <value>Punktdiagramm</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

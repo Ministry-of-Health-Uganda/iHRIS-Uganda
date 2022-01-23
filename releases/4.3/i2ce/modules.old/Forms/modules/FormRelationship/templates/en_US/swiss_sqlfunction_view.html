@@ -1,0 +1,49 @@
+<div id='sql_function'>
+  The SQL Function <span name='name'/>
+  <span name='description' ifset='true'>
+    --
+    <span name='description' />
+  </span>
+  <table class='multiFormTable' cellpadding="0" cellspacing="0" border="0" id='reporting_function'>
+    <tr>
+      <td>
+	<h3>Sql Query:</h3> The defining SQL for this function.  You refer to reported fields as `reportform+field`
+      </td>
+      <td>
+	<span  name='qry' />
+      </td>
+    </tr>
+    <tr>
+      <td > 
+	<h3>Form Field:</h3> The form field that this function takes values in
+      </td>
+      <td>
+	<span name='formfield'  />
+      </td>
+    </tr>
+    <tr>
+      <td>
+	<h3>Selectable Forms</h3>The forms which are selectable for this field.  Only applies if
+	the form field is a subclass of I2CE_FormField_MAPPED.  In which case it should be
+	a comma separated list of forms.
+      </td>
+      <td>
+	<span name='select_forms'/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+	<h3>Linked Fields</h3>The fields that are linked when listing options.
+	Only applies if the form field is a subclass of I2CE_FormField_MAPPED.  
+	It should be  a colon separated list of 'forms' or 'form+linkfield's.	
+	Example: "county:district+region:[region]:country".
+      </td>
+      <td>
+	<span name='link_fields'/>
+      </td>
+    </tr>
+
+
+  </table>
+
+</div>

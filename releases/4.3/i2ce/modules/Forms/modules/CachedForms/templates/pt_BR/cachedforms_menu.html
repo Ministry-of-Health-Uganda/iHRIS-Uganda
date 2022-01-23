@@ -1,0 +1,31 @@
+<div>
+  
+
+
+  <h2>Formulários Cache</h2>
+  <span name="has_profiles" ifset="true">
+    Pôr em cache todos os formulários no perfil selecionado.
+    <form action="CachedForms/cache" style="margin-left:2em" method="POST">
+      Selecionar um perfil:  <select name="profile"></select><br><input type="submit" value="Cache"></form>
+  </span>
+  <br><div>
+    <a href="CachedForms/cacheAll">Cache</a> todos os formulários
+    <br><a href="CachedForms/cacheAllForce">Forçar Cache</a> de todos os formulários se não for antigo
+    <br><a href="CachedForms/dropAll">Remover</a> caches de todos os formulários
+  </div>
+  <br><span name="has_profiles" ifset="true">
+    <h2>Exportar Formulários em Cache</h2>
+    Exportar todos os formulários em cache no perfil selecionado. Se você selecionar uma data de modificação, apenas registros que foram modificados durante ou após a data especificada serão exportados. De outra forma, todos os registros que foram modificados para o perfil selecionado serão exportados.
+    <form action="CachedForms/export" style="margin-left:2em" method="POST">
+      Selecionar um perfil:  <select name="profile"></select><br>
+      Data de modificação: <input class="datepicker_ymd" name="mod_date" type="text"><br><input type="checkbox" value="1" name="compress" checked>Habilitar compressão bzip2
+      <br><input type="submit" value="Export"></form>
+    
+    <br></span>
+
+  <h2>Criar/Editar Perfil</h2>
+  Criar um perfil ou editar um perfil de formulários existente.
+  <form action="CachedForms/exportProfile" style="margin-left:2em">
+      Selecionar um perfil:  <select name="profile"><option value="">Criar Um Novo Perfil</option></select><br><input type="submit" value="Edit"></form>
+  <br><h2>Gerenciar Cache de Formulários Individuais</h2>
+  <ul id="cached_forms_list"></ul></div>

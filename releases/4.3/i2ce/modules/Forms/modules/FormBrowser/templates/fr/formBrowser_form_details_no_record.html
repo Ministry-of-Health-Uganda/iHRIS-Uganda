@@ -1,0 +1,24 @@
+<tr><td>
+    <span name="field_name"></span>
+  </td>
+  <td>
+    <span name="field_type" ifset="true">
+      <span name="field_class" ifset="true">
+	Le champ <span name="field_name"></span> est enregistré en tant que type <span name="field_type"></span> qui est fourni par <span name="field_class"></span>.
+      </span>
+      <span name="field_class" ifset="!true">
+	Le champ <span name="field_name"></span> est enregistré en tant que type <span name="field_type"></span>.
+	<span class="error">Avertissement: Le champ  '<span name="field_name"></span>'n’est associé à aucune classe.</span>
+      </span>
+    </span>
+    <span name="field_type" ifset="!true">
+      <span class="error">Avertissement: Le champ  '<span name="field_name"></span>' n'a pas de type enregistré</span>
+    </span>
+    <span name="field_id" ifset="true">
+      Le champ a un ID <span name="field_id"></span>.
+    </span>
+    <span name="linked_form_name" ifset="true">
+      Ce champ est lié au formulaire <a href="" name="linked_form_link" id="linked_form_link"><span name="linked_form_name"></span></a>
+    </span> 
+  </td>
+</tr>

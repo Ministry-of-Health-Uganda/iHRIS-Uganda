@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<title>Color Picker Example 2</title>
+	<meta name="Generator" content="EditPlus" />
+	<meta name="Author" content="" />
+	<meta name="Keywords" content="" />
+	<meta name="Description" content="" />
+	<style type="text/css">
+		body{
+			padding:5px;
+			margin:0px;
+		}
+		.cpDialog {
+			background-color:#000000 !important;
+			border: none 0px #ff0000 !important;
+			padding: 0px !important;
+			color: #000000 !important;
+		}
+		
+		.cpTitleBar{
+		
+		}
+
+		.cpHueBar{
+			margin-bottom:0px !important;
+		}
+
+		.cpSVBox{
+			margin-bottom:0px !important;
+			margin-right: 1px !important;
+		}
+
+		.cpColorInfoContainer{
+		}
+
+		.cpSelectedColor{
+		}
+
+		.cpPreviewColor{
+		}
+
+		.cpsInput{
+		}
+		
+		.cphInput{
+		}	
+		
+		.cpvInput{
+		}
+		
+		.cprInput{
+		}
+		
+		.cpgInput{
+		}
+		
+		.cpbInput{
+		}
+		
+		.cpokInput{
+		}
+		
+		.cpcancelInput{
+		}
+	</style>
+
+	<script type="text/javascript" src="js/mootools.min.v1.00.js" language="javascript"></script>
+	<script type="text/javascript" src="colorpicker1.0.2_compressed.js" language="javascript"></script>
+	<!--
+	
+	<script type="text/javascript" src="colorpicker1.0.2.js" language="javascript"></script>
+	-->
+	<script type="text/javascript" language="JavaScript">
+			myColorPicker = null;
+			function init(){
+				myColorPicker = new ColorPicker({attachTo: $('Div2'), left: "0", top:"0", initialState: "Open", showTitleBar: false, showColorInfo: false, hueBarWidth: 10, hueBarHeight:206, svBoxWidth:50, svBoxHeight:206});
+				myColorPicker.SVClickCallback = ChangeDivBackground;
+			}
+
+			function ChangeDivBackground(){
+				$("ColorDiv").setStyle("background-color", myColorPicker.CurColor);
+			}
+	</script>
+
+</head>
+<body onload="init();">
+	<div id="ColorDiv" style=" width:200px; height:200px; border-style: solid; border-color: #000000; float:left;">
+		This is an example div whose colors we can change.
+	</div>
+	<div id="Div2" style="position:relative; height:200px; float:left;">
+		
+	</div>	
+</body>
+</html>

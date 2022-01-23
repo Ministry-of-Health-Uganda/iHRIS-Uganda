@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="UserAccess">
+  <metadata>
+    <displayName>User</displayName>
+    <className>I2CE_Module_UserAccess</className>
+    <category>Base System Component</category>
+    <description>Provides Deafult User Access Mechansim</description>
+    <longDescription />
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.3.0</version>
+    <requirement name="user">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="sql">
+      <value>./sql</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

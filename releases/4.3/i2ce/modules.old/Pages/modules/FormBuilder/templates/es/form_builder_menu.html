@@ -1,0 +1,28 @@
+<div>
+  
+  <div id="container">
+
+    <h2>Crear un formulario nuevo</h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Nombre del formulario</h3>An internal key used to identify the form class.   It may not be the same as the key for any of the existing forms.
+	</td>
+	<td>
+	  <input name="name" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+      </tr><tr><td>
+	  <h3>Nombre para mostrar</h3>The displayed name of this form.  This is what is presented to the end user.
+	</td>
+	<td>
+	  <input name="display" type="text" value="" class="validate=[nonempty]"></td>
+      </tr><tr><td>
+	  <h3>Clase:</h3>The form class that implements this form.
+	</td>
+	<td>
+	  <select name="class"><option value="">Selecciona una categoría</option></select></td>
+      </tr><tr><td>
+	  <h3>Almacenamiento:</h3>El mecanismo de almacenamiento de este formulario
+	</td>
+	<td>
+	  <select name="storage"></select></td>
+      </tr></table><h2>Editar un formulario existente</h2>
+    <ul id="forms"></ul></div>
+</div>

@@ -1,0 +1,43 @@
+<div>
+  <span name="has_existing_relationships" ifset="true">
+    Ви можете вибрати або змінити наявний зв'язок форми, або побудувати новий.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    Може побудувати наявну форму зв'язків з цієї сторінки.  
+  </span>
+  <span name="has_existing_relationships" ifset="true">
+    <h2>Редагувати наявний зв'язок</h2>
+    <ul id="relationships" class="formRelationship_relationship_list"></ul></span>
+  <h2>Побудувати новий зв'язок</h2>
+  <span name="has_existing_relationships" ifset="true">
+    Будь ласка, виберіть форму для використання в якості основної форми для цієї форми зв'язків або виберіть, щоб скопіювати наявну форму зв'язків на нову, натиснувши на відповідне посилання нижче Параметрів.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    Будь ласка, виберіть форму для використання в якості основної форми для цієї форми зв'язків, натиснувши на посилання нижче Параметрів.
+  </span>
+  <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	<h3>Коротке ім'я зв'язку:</h3>Внутрішній ключ використаний для ідентифікації форми зв'язків. Він не може бути таким же, як ключ для будь-яких наявних форм зв'язків.
+      </td>
+      <td>
+	<input id="relationship" name="relationship" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+    </tr><tr><td>
+	<h3>Показати ім'я:</h3>Назва форми зв'язку, яка відображається для кінцевих користувачів.
+      </td>
+      <td>
+	<input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+    </tr><tr><td>
+	<h3>Опис:</h3>Опис форми зв'язків, які повинні бути зрозумілі користувачеві.
+      </td>
+      <td>
+	<textarea name="description" rows="4" cols="53" value=""></textarea></td>
+    </tr><tr><td>
+	Щоб побудувати зв'язок нової форми, вам необхідно спочатку вибрати основну форму
+	<select name="form_name" id="form_name"></select></td>
+      <td id="formRelationship_relationship_new_menu_list">
+      </td>
+    </tr><tr name="has_existing_relationships" ifset="true"><td>
+	Виберіть наявний зв'язок для копіювання.
+	<select name="existing_relationship" id="existing_relationship"><option value="">Не копіювати</option></select></td>
+      <td id="formRelationship_relationship_copy_menu_list">
+      </td>
+    </tr></table></div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="forms-storage" path="/modules/forms">
+  <metadata>
+    <version>4.3.3.0</version>
+  </metadata>
+  <configurationGroup name="forms-storage" path="/modules/forms" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="invalid_messages" path="/modules/forms/invalid_field_messages" locale="en_US">
+      <configuration name="only_child" values="single" type="string">
+        <value>You have exceeded the limit of this child form for this parent.</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

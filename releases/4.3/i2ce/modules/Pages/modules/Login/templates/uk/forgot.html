@@ -1,0 +1,19 @@
+<div id="welcomeIntro">
+  <span name="has_email" ifset="true">
+    <form id="form1" method="post" action="forgot">
+      <table class="loginTable" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="3"><h2>Забув пароль</h2>
+	  <hr><p id="error_message"></p>
+	  </td>
+	</tr><tr><th class="forgotRow">Скинути пароль:</th>
+	  <td class="forgotRow">Введіть своє ім'я користувача для зміни паролю:<br><input type="text" name="username"></td>
+	  <td class="forgotRow"><input class="button" type="submit" name="submit" value="Reset"></td>
+	</tr><tr><th class="forgotRow">Показувати ім'я користувача:</th>
+	  <td class="forgotRow">Введіть адресу електронної пошти, щоб побачити своє ім'я користувача:<br><input type="text" name="email"></td>
+	  <td class="forgotRow"><input class="button" type="submit" name="submit" value="View"></td>
+	</tr><tr><td class="forgotRow" colspan="3"><a href="login">Повернутися до сторінки входу</a></td>
+	</tr></table></form>
+  </span>
+  <span name="has_email" ifset="!true">
+    <p id="error_message">Будь ласка, зв'яжіться з вашим системним адміністратором для зміни паролю</p>
+  </span>
+</div>

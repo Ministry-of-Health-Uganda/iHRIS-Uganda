@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="form-builder">
+  <metadata>
+    <displayName>Form Builder</displayName>
+    <category>Administration</category>
+    <description>Form Builder</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@gmail.com</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="forms">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="swissfactory">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>100</priority>
+  </metadata>
+  <configurationGroup name="form-builder" path="/">
+    <configurationGroup name="messages" path="/modules/form-builder/messages">
+      <version>4.2.0.1</version>
+      <configuration name="cannot_delete" locale="en_US" values="single" type="string">
+        <value>You don't have access to delete form data</value>
+      </configuration>
+      <configuration name="bad_delete_path" locale="en_US" values="single" type="string">
+        <value>Invalid path for deletion</value>
+      </configuration>
+      <configuration name="delete_header" locale="en_US" values="single" type="string">
+        <value>Delete Header</value>
+      </configuration>
+    </configurationGroup>
+    <configuration name="tasks" path="/I2CE/tasks/task_description" locale="en_US" value="many" type="delimited" values="single">
+      <value>form_builder_delete_forms:Can delete form meta-data using the form builder</value>
+    </configuration>
+    <configurationGroup name="form" path="/I2CE/page/FormBuilder">
+      <version>4.2.0.16</version>
+      <configuration name="class" values="single" type="string">
+        <value>I2CE_FormClassBuilder</value>
+      </configuration>
+      <configuration name="style" values="single" type="string">
+        <value>shell</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="can_build_form_classes" locale="en_US" values="single" type="string">
+        <value>Can build or configure form class</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="form_class_builder_handler" path="/modules/form-builder/storage_handlers">
+      <version>4.2.0.16</version>
+      <configurationGroup name="SVSFile">
+        <version>4.2.0.17</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>FS_SVSFile</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>Form storage for an SVS file uploaded to the system (stored in magic data.)</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="magicdata">
+        <configuration name="swiss" values="single" type="string">
+          <value>FS_MagicData</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>Form storage for magic data. Easily exportable. No change history.</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="entry">
+        <configuration name="swiss" values="single" type="string">
+          <value>FS_Entry</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>Entry form storage. Has change history.</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="form_class_builder_handler" path="/modules/form-builder/class_handlers">
+      <configurationGroup name="I2CE_Form">
+        <configuration name="swiss" values="single" type="string">
+          <value>FormClass</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>Default form with almost no functionality</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="I2CE_List">
+        <version>4.2.0.4</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>ListClass</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>Basic List</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="field_builder_handler" path="/modules/form-builder/field_handlers">
+      <configurationGroup name="I2CE_FormField">
+        <configuration name="swiss" values="single" type="string">
+          <value>FormField</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>Base form field class</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="I2CE_FormField_REFERENCE">
+        <version>4.2.0.15</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>REFERENCE</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>Base Reference form field</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="I2CE_FormField_MAPPED">
+        <version>4.2.0.2</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>MAPPED</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>Base mapped form field</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="I2CE_FormField_MAP">
+        <version>4.2.0.3</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>MAP</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>MAP form field</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="I2CE_FormField_INT_RANGE">
+        <version>4.2.0.7</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>INT_RANGE</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>INT_RANGE form field</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="I2CE_FormField_ENUM">
+        <version>4.2.0.8</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>ENUM</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>ENUM form field</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="I2CE_FormField_BINARY_FILE">
+        <version>4.2.0.11</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>BINARY_FILE</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>BINARY_FILE form field</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="I2CE_FormField_PASSPORT">
+        <version>4.2.0.11</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>PASSPORT</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>PASSPORT form field</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="I2CE_FormField_ASSOC_PERCENT">
+        <version>4.2.0.14</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>ASSOC_PERCENT</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>ASSOC_PERCENT form field</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="I2CE_FormField_PERCENT_INT">
+        <version>4.2.0.10</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>PERCENT_INT</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>PERCENT_INT form field</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="I2CE_FormField_ASSOC_LIST">
+        <version>4.2.0.6</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>ASSOC_LIST</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>ASSOC_LIST form field</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="I2CE_FormField_ASSOC_MAP">
+        <version>4.2.0.5</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>ASSOC_MAP</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>ASSOC_MAP form field</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="I2CE_FormField_MAP_MULT">
+        <version>4.2.0.3</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>MAP_MULT</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>MAP_MULT form field</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="I2CE_FormField_CURRENCY">
+        <version>4.2.0.3</version>
+        <configuration name="swiss" values="single" type="string">
+          <value>CURRENCY</value>
+        </configuration>
+        <configuration name="description" local="en_US" values="single" type="string">
+          <value>CURRENCY form field</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

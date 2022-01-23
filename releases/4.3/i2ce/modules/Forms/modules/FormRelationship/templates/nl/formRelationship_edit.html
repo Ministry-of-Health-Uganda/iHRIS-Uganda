@@ -1,0 +1,43 @@
+<div>
+  <span name="has_existing_relationships" ifset="true">
+    U kunt een bestaande relatie aanpassen of een nieuwe aanmaken.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    U kun een bestaande formulierrelatie voor deze pagina aanmaken.  
+  </span>
+  <span name="has_existing_relationships" ifset="true">
+    <h2>Bestaande relatie bewerken</h2>
+    <ul id="relationships" class="formRelationship_relationship_list"></ul></span>
+  <h2>Nieuwe relatie aanleggen</h2>
+  <span name="has_existing_relationships" ifset="true">
+    Selecteer hier ofwel een te gebruiken formulier als het primaire formulier voor deze formulierrelatie of maak een kopie van een bestaande formulierrelatie door te klikken op de gewenste optie hieronder.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    Selecteer een te gebruiken formulier als het primaire formulier voor deze formulierrelatie door te klikken op de gewenste optie hieronder.
+  </span>
+  <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	<h3>Korte naam van relatie:</h3>Een interne sleutel die wordt gebruikt om de formulierrelatie te identificeren. Deze mag niet dezelfde zijn als de sleutel voor enige bestaande formulierrelatie.
+      </td>
+      <td>
+	<input id="relationship" name="relationship" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+    </tr><tr><td>
+	<h3>Weergavenaam:</h3>De naam van de formulierrelatie die wordt weergegeven aan de eindgebruiker.
+      </td>
+      <td>
+	<input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+    </tr><tr><td>
+	<h3>Beschrijving:</h3>Een beschrijving van de formulierrelatie die begrijpelijk moet zijn voor de eindgebruiker.
+      </td>
+      <td>
+	<textarea name="description" rows="4" cols="53" value=""></textarea></td>
+    </tr><tr><td>
+	Om een nieuwe formulierrelatie aan te leggen, moet u eerst een primair formulier kiezen
+	<select name="form_name" id="form_name"></select></td>
+      <td id="formRelationship_relationship_new_menu_list">
+      </td>
+    </tr><tr name="has_existing_relationships" ifset="true"><td>
+	Selecteer een bestaande relatie om te kopiëren.
+	<select name="existing_relationship" id="existing_relationship"><option value="">Niet kopiëren</option></select></td>
+      <td id="formRelationship_relationship_copy_menu_list">
+      </td>
+    </tr></table></div>

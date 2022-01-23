@@ -1,0 +1,39 @@
+<div>
+  
+
+  <h2>Métadonnées</h2>
+  <div id="meta_container">
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td colspan="2">
+	  <h3>Formulaires associables</h3>Sélectionner les formulaires qui peuvent être associés par ce champ.  
+	  <ul><li> Noter, par commodité, que si aucun n’est sélectionné, et que le nom de ce champ est le nom d’un formulaire, alors ce formulaire est un formulaire autorisé.</li>
+	    <li>Noter que, comme cas particulier, le champ de réorganisation autorisera automatiquement une seule correspondance vers le formulaire qui le contient </li>
+	  </ul><div name="forms"></div>
+	</td>
+      </tr><tr><td>
+	  <h3>N’importe quel formulaire</h3>Permettre de choisir n’importe quelle forme comme valeur de correspondance
+	</td>
+	<td>
+	  <select name="form_any"><option value="0">Non</option><option value="1">Oui</option></select></td>
+      </tr></table><span id="limits">
+      <h2><a id="limits_link" href="">Limites</a></h2>
+      Modifier la donnée limite pour ce champ
+      <div class="indented" id="limits_ajax"></div>
+    </span>
+
+    <span id="add_limit_module">
+      <h2><a id="add_limit_module_link" href="">Limites du module</a></h2>
+      Fixer les limites dynamiques basées sur les modules
+      <div class="indented" id="add_limit_module_ajax"></div>
+    </span>
+
+
+
+    <span id="display">
+      <h2><a id="display_link" href="">Affichages</a></h2>
+      Configurer des affichages divers pour ce champ
+      <div class="indented" id="display_ajax"></div>
+    </span>
+
+
+  </div>
+</div>

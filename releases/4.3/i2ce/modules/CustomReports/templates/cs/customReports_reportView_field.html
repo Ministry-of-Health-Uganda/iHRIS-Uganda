@@ -1,0 +1,20 @@
+<span>
+  <h2>Pole</h2>
+  <span id="field_content">
+    <span name="name" class="sortme" style="display:none;visibility:hidden"></span>
+    <table class="multiFormTable reportviews" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3><span name="displayName" class="sortablehandle"></span></h3>
+	  <br><input name="enabled_hide" type="hidden" value="1"><input name="enabled" type="checkbox" value="1">
+	  Povoleno: Zaškrtněte pro povolení tohoto pole v zobrazení hlášení
+	</td>
+	<td>
+	  Zvolte metodu pro sběr (souhrn) těchto dat:
+	  <select name="aggregate"><option value="none">Žádné</option><option value="count">Celkový počet</option><option value="count_distinct">Celkem odlišných</option></select><div name="merge_additional_container" ifset="true">
+	    Vyberte dodatečné hodnoty ke shodě:
+	    <select name="merge_additional" id="merge_additional"><option value="">Žádné dodatečné hodnoty</option></select><input type="hidden" name="merge_additional_exists" value="1"></div>
+	</td>
+      </tr><tr name="merge_link_container" ifset="true"><td colspan="2" style="padding-left:2em">
+	  <span id="merges_link" class="button toggle_closed "></span><h2>Sloučit další hlášení</h2>
+	  <ul id="merges_ajax"></ul></td>
+      </tr></table></span>
+<span></span></span>

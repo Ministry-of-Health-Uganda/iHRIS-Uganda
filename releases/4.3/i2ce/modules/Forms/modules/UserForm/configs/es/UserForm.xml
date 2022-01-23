@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="UserForm" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="UserForm" path="/" locale="es">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="es">
+      <configuration name="username" path="user/username/unique" values="single" type="string">
+        <value>Este nombre de usuario ya está siendo usado.</value>
+      </configuration>
+      <configuration name="pass_match" path="user/password/mismatch" values="single" type="string">
+        <value>La contraseña y su confirmación no eran iguales.</value>
+      </configuration>
+      <configuration name="pass_match" path="user/password/required" values="single" type="string">
+        <value>Los nuevos usuarios deben introducir una contraseña inicial.</value>
+      </configuration>
+      <configuration name="role_notallowed" path="user/role/notallowed" values="single" type="string">
+        <value>No tienes permiso para asignar dicha función a otros usuarios.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="es">
+      <configuration name="users_can_edit" locale="es" values="single" type="string">
+        <value>Puede crear un usuario en el sistema</value>
+      </configuration>
+      <configuration name="users_can_edit_all" locale="es" values="single" type="string">
+        <value>Puede editar todos los usuarios en el sistema.</value>
+      </configuration>
+      <configuration name="can_create_or_edit_users" locale="es" values="single" type="string">
+        <value>Puede crear o editar usuarios en el sistema.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <configurationGroup name="user">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="es" type="string">
+            <value>Gestionar usuarios/accesos</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="view_user">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="es" type="string">
+            <value>Gestionar usuarios/accesos</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="roleForm" path="/modules/forms/forms/role">
+        <configuration name="display" values="single" locale="es" type="string">
+          <value>Rol</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+        <configurationGroup name="I2CE_Role">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="es" values="single">
+                <value>default:Rol</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="assignable">
+              <configuration name="headers" type="delimited" locale="es" values="single">
+                <value>default:Puede asignar a usuario</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="homepage">
+              <configuration name="headers" type="delimited" locale="es" values="single">
+                <value>default:Página de inicio preferida</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="trickle_up">
+              <configuration name="headers" type="delimited" locale="es" values="single"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="I2CE_User_Form">
+          <configurationGroup name="fields">
+            <configurationGroup name="username">
+              <configuration name="headers" type="delimited" locale="es" values="single">
+                <value>default:Nombre de usuario</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="password">
+              <configuration name="headers" type="delimited" values="many" locale="es">
+                <value>default:Clave (deje en blanco si desea mantener la misma clave)</value>
+                <value>generate:Generar una contraseña nueva</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="role">
+              <configuration name="headers" type="delimited" locale="es" values="single">
+                <value>default:Rol</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

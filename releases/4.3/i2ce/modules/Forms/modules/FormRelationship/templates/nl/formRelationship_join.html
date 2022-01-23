@@ -1,0 +1,31 @@
+<div>
+  <h2 id="join_form_link" class="join_form_options_toggle"><a>Nieuw kindformulier toevoegen</a></h2>
+  <div id="join_form_options_menu" class="optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true">
+    <div class="optionsMenuTitle window_drag">Nieuw formulier toevoegen </div>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  Selecteer een kindformulier om aan dit formulier toe te voegen:
+	</td>
+	<td>
+	  <select name="form_which" id="join_forms_selector"></select></td>
+      </tr><tr><td>
+	  <h3>Korte naam:</h3>Een interne sleutel die wordt gebruikt om de formulierrelatie te identificeren. Deze mag niet dezelfde zijn als de sleutel voor enige bestaande formuliernamen in deze relatie.
+	</td>
+	<td>
+	  <input id="form_name" name="form_name" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+      </tr><tr><td>
+	  <h3>Weergavenaam:</h3>De naam van het samengevoegde formulier die wordt weergegeven aan de eindgebruiker.
+	</td>
+	<td>
+	  <input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+      </tr><tr><td>
+	  <h3>Beschrijving:</h3>Een beschrijving van het formulier en haar rol in de relatie die begrijpelijk moet zijn voor een eindgebruiker.
+	</td>
+	<td>
+	  <textarea name="description" rows="4" cols="53" value=""></textarea></td>
+      </tr><tr><td colspan="2">
+	  <div></div>
+	  <span class="join_form_options_hide button optionsMenuButton window_hide">Sluiten</span>
+	  <input type="submit" class="button only_options_menu" value="Add" id="join_form"><div></div>
+	  <br></td>
+      </tr></table></div>
+</div>

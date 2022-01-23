@@ -1,0 +1,46 @@
+
+/* HTML Reports --------------------------------------------------------------- */
+#report_table {
+	max-height: 400px;
+	width: 100%;
+	overflow: auto;
+	padding-bottom: 5px;
+}
+#report_table table {
+	width: 95%;
+	border-right: 1px solid #BFBFBF;
+	border-bottom: 1px solid #BFBFBF;
+}
+#report_results div {
+	text-align: right;
+	font: 10px Verdana, Arial, Helvetica, sans-serif;
+}
+#report_table table th, #report_table table td {
+	padding: 1px;
+	border-top: 1px solid #BFBFBF;
+	border-left: 1px solid #BFBFBF;
+	vertical-align: top;
+}
+#report_table table th {
+	text-align: center;
+}
+#report_table table th a {
+	color: #333333;
+	text-decoration: none;
+}
+#report_table table th.selected {
+	background-color: #333333;
+	color: #BFBFBF;
+}
+#report_table table th.secondary_selected {
+	background-color: #CCCCCC;
+	color: #BFBFBF;
+}
+#report_table table th.selected a {
+	background-color: #333333;
+	color: #BFBFBF;
+}
+
+#report_pager_display {
+	border: thin solid #BFBFBF;
+}

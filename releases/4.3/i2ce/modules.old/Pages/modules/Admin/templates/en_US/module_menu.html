@@ -1,0 +1,21 @@
+<div id="siteContent">
+    <h1>Available Modules</h1>
+    Here you may select modules to enable or disable by clicking or unclicking the checkboxes and
+    then hitting the <i>Enable</i> button at the bottom of the page.  You may also configure
+    certain modules by clicking on the <i>Configure</i> link associated to them if it is present.  
+    Some modules
+    also have sub-modules associated with them which may be accessed by clicking on the
+    <i>sub-modules</i> link or on the down-pointing arrow if present.
+    <br/>
+    <br/>
+    
+    <a href="admin/modules">Main Module Menu</a>
+    <form method="post"  name='admin_enable_form' id='admin_enable_form'>
+      <div id="modules" ></div>
+      <input type='hidden' id='module_possibles' name='possibles'/>
+      <input type='hidden' id='redirect' name='redirect'/>
+      <div id="button" class='submitCell'>
+	<input  class='button' type="submit" name="Enable" value="enable" id="module_enable_button"/>
+      </div>
+    </form>
+</div>

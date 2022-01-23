@@ -1,0 +1,43 @@
+<div>
+  <span name="has_existing_relationships" ifset="true">
+    Vous pouvez soit choisir ou modifier une relation de formulaire existante, ou construire une nouvelle.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    Vous pouvez construire une relation de fomulaire existante avec cette page.  
+  </span>
+  <span name="has_existing_relationships" ifset="true">
+    <h2>Éditer une Relation Existante</h2>
+    <ul id="relationships" class="formRelationship_relationship_list"></ul></span>
+  <h2>Construire Relation Existante</h2>
+  <span name="has_existing_relationships" ifset="true">
+    Veuillez sélectionner un formulaire à utiliser soit comme le formulaire principal pour cette relation de formulaires ou choisir de copier une relation de formulaire existante vers un nouveau en cliquant sur le lien approprié des options ci-dessous.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    Veuillez sélectionner un formulaire à utiliser comme formulaire principal pour cette relation entre formulaires en cliquant sur le lien des options ci-dessous
+  </span>
+  <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	<h3>Nom abrégé de la relation:</h3>Une clé interne utilisée pour identifier la relation du formulaire. Elle peut ne pas être la même que la clé utilisée pour n’importe lequel des relations de formulaires existants
+      </td>
+      <td>
+	<input id="relationship" name="relationship" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+    </tr><tr><td>
+	<h3>Nom d’affichage:</h3>Le nom de la relation du formulaire affiché pour l’utilisateur final.
+      </td>
+      <td>
+	<input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+    </tr><tr><td>
+	<h3>Description:</h3>Une description de la relation de formulaire qui doit être compréhensible pour l’utilisateur final
+      </td>
+      <td>
+	<textarea name="description" rows="4" cols="53" value=""></textarea></td>
+    </tr><tr><td>
+	Pour construire une nouvelle relation de formulaire, vous devrez d'abord choisir a Formulaire Principal
+	<select name="form_name" id="form_name"></select></td>
+      <td id="formRelationship_relationship_new_menu_list">
+      </td>
+    </tr><tr name="has_existing_relationships" ifset="true"><td>
+	Sélectionner une relation existante à copier.
+	<select name="existing_relationship" id="existing_relationship"><option value="">Ne pas copier</option></select></td>
+      <td id="formRelationship_relationship_copy_menu_list">
+      </td>
+    </tr></table></div>

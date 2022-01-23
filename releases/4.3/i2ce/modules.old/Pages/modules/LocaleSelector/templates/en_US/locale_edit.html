@@ -1,0 +1,20 @@
+<span >
+  <span name='displayName'/> --  <span name='description'/>
+  <span name='locale_container'>   
+    <h3>Locale Resolution:</h3>  
+    <div>
+      The list of locales to looking for  translations of the locale <span name='displayName'/>.
+      If not set, then the selected locale is checked, then its underlying language, and  then <span name='locale_default'/>.
+    </div>
+    <div>
+      The default resolution is <span name='displayName'/>,  <span name='locale_language'/>, <span name='locale_default'/>.
+    </div>
+    <div>
+      If you wish to specify an alternate locale resolution you may do so by entering them as a
+      comma separated list from highest priority to lowest priority.  
+      <span printf='"For example fr-RW,fr-FR,%s  may be an appropriate resolution for the locale fr-RW.",$locale_default'/>
+      <span printf='"If %s is not specified in the list, it is automatically set as the lowest priority locale.",$locale_default'/>
+    </div>
+    <input name='resolution' type='textbox'/>
+  </span>
+</span>

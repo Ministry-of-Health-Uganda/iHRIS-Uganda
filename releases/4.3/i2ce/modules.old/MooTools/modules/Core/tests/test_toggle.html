@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Toggle Window Test</title>
+    <script src='../../../scripts/mootools-core.js' type='text/javascript'>
+    </script>
+    <script src='../../../scripts/mootools-more.js' type='text/javascript'>
+    </script>
+    <script src='../scripts/I2CE_ClassValues.js' type='text/javascript'>
+    </script>
+    <script src='../scripts/I2CE_Window.js' type='text/javascript'>
+    </script>
+    <script src='../scripts/I2CE_ToggableWindow.js' type='text/javascript'>
+    </script>
+    <script type='text/javascript'>
+      var windows = new Hash();
+
+      function createAndShowToggableWindow(id,options) {
+        if (windows.has(id)) {
+           alert('already created ' + id);
+        } else {
+	  if (!options) {
+	    options = {};
+          }
+	  var toggle_class = id + '_toggle';
+          var my_window = new I2CE_ToggableWindow(id,toggle_class,options);
+	  if (!my_window) {
+             alert('bad window');
+             return false;
+           }
+           windows.set(id,my_window);
+        }
+        windows.get(id).show();
+        return false;
+
+      }
+
+
+    </script>
+    <style type="text/css">
+      .toggle_button_show {
+        color:green;
+      }
+      .toggle_button_hide {
+        color:tomato;
+      }
+      .fried_toggle_show {
+        color:green;
+	background:yellow;
+      }
+      .fried_toggle_hide {
+        color:tomato;
+	background:yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>I2CE_ToggableWindow</h2>
+    <ul>
+      <li>
+	Implement I2CE_Window 
+      </li>
+      <li>
+	Constuctor has three options. the element/element id, the class to search the document for toggle buttons, any options.
+      </li>
+      <li>	
+	Class Options:  
+	<br/>The following are the options that  can be set in the toggable windows's constuctor (in addition to the windows options)
+	<ul>
+	  <li>
+	    toggleEvent: 'click', //the event which triggers the toggable window.  defaults to 'click'
+	  </li>
+	  <li>	  
+	    toggleButtonShowClass: 'toggle_button_show', //'toggle_button_show'.  if is is a string then this is the class that any toggle buttons are set to when 
+	    the  window is shown
+	  </li>
+	  <li>
+	    toggleButtonHideClass: 'toggle_button_hide' //defaults to 'toggle_button_hide'.  if is is a string then this is the class that any toggle  buttons are set to when 
+	    the window is hidden
+	  </li>
+	</ul>
+      </li>
+    </ul>
+    
+    <h2 class='title'>Tests</h2>
+    <ul>
+      <li>
+	Toggles:
+	<br/>Default toggle button is green = open, tomato = closed
+	<br/>Windows are not created until you click on them below
+	<br/>
+	<ul>
+	  <li class='default_window_toggle'>Default Window</li>
+	  <li class='float_window1_toggle'>First Floating Window</li>
+	  <li class='float_window2_toggle'>Second Floating Window</li>
+	  <li class='float_window1_toggle'>First Floating Window, Again</li>
+	  <li class='floatdrag_window_toggle'>Floating Draggable Window</li>
+	  <li class='floatdrag_window_norepo_toggle'>Floating Draggable Window, No Repositions</li>
+	  <li class='fried_toggle'>Floating Draggable Window, No Repositions. Alternate Toggle Style</li>
+	</ul>
+      </li>
+      <li>
+	Windows:
+	<br/>
+	<ul>
+	  <li>
+	    <a href='' onclick='return createAndShowToggableWindow("default_window")'>Default Window</a>
+	    <div style='display:none;background:gray' id='default_window'>
+	      <div>
+		The content of the default window
+		<ul>
+		  <li>
+		    You should be able to <span class='window_hide' style='background:lime'>close</span> me.
+		  </li>
+		  <li>
+		    You should be able to <span class='window_hide' style='background:red'>also close</span> me.
+		  </li>
+		  <li>
+		    You should be able to <span class='window_hide' style='background:yellow'>close 3</span> me.
+		  </li>
+		</ul>
+	      </div>
+	    </div>
+	  </li>
+	  <li>
+	    <a href='' onclick='return createAndShowToggableWindow("float_window1",{windowFloats:true})'>Floating Window by option</a>
+	    <span style='display:none;background:gray' id='float_window1'>
+	      The content of the floating  window -- 1
+	      You should be able to <input type='submit' class='window_hide' value='Close'/> me.
+	    </span>
+	  </li>
+
+	  <li>
+	    <a href='' onclick='return createAndShowToggableWindow("float_window2")'>Floating Window by class value</a>
+	    <span style='display:none;background:gray' id='float_window2' class='windowFloats=true'>
+	      The content of the floating window -- 2
+	      <br/>
+	      You should be able to <span class='window_hide'  style='background:blue'>close</span> me.
+	      You should NOT be able to <span  style='background:yellow' class='window_drag'>drag</span> me.
+	    </span>
+	  </li>
+
+	  <li>
+	    <a href='' onclick='return createAndShowToggableWindow("floatdrag_window")'>Floating Draggable Window by class value</a>
+	    <span style='display:none;background:gray' id='floatdrag_window' class='windowFloats=true windowDraggable=true  windowRepositions=true'>
+	      You should be able to <span  style='background:yellow' class='window_drag'>drag</span> me.
+	      <br/>
+	      The content of the floating draggable window.
+	      <br/>
+	      This window should reposition on a scroll/resize.
+	      <br/>
+	      You should be able to <span class='window_hide'  style='background:blue'>close</span> me.
+	    </span>
+	  </li>
+
+
+	  <li>
+	    <a href='' onclick='return createAndShowToggableWindow("fried")'>Floating Draggable Window by class value.  Does not reposition. Alternate Toggle Class</a>
+	    
+	    <span style='display:none;background:gray' id='fried' class='windowFloats=true windowDraggable=true windowHideOnKeys=[18,27] toggleButtonShowClass=fried_toggle_show toggleButtonHideClass=fried_toggle_hide'>
+	      You should be able to <span  style='background:yellow' class='window_drag'>drag</span> me.
+	      <br/>
+	      The content of the floating draggable window 
+	      <br/>
+	      You should be able to <span class='window_hide'  style='background:blue'>close</span> me.
+	      <br/>Hitting escape should also close me
+	    </span>
+	  </li>
+
+
+	</ul>
+      </li>
+    </ul>
+	
+  </body>
+</html>

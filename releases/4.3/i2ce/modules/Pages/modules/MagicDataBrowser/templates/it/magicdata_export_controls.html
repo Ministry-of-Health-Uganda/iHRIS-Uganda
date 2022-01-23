@@ -1,0 +1,36 @@
+<div id="magicdata_export_control">  
+  <span type="module" ifenable="true" name="magicDataExport">
+    <form id="magicdata_export_form" method="GET">
+      <!--<input id="magicdata_export" class="button action=index.php/magicDataExport/export" type="submit"   value="Export" /> -->
+      <div class="clickableText magicdata_export_options_toggle centered button">Esporta</div>
+      <div class="optionsMenu toggable windowFloats=true windowDraggable=true" id="magicdata_export_options_menu">
+	<input type="hidden" name="config_path"><div class="optionsMenuTitle window_drag"> Opzioni di esportazione </div>
+	<hr><p>
+	  <span class="field_head"><label>Nome Modulo</label></span>
+	  <br><span class="form_field"><input name="name" type="text" value="" class="validate=[nonempty,magicdatakey]"></span>
+	  <br><span class="field_description">	Un nome modulo per i dati esportai (richiesto).</span>
+	</p>
+	<p>
+	  <span class="field_head"><label>Nome Visualizzato</label></span>
+	  <br><span class="form_field"><input name="displayName" type="text" value="" class="validate=[nonempty]"></span>
+	  <br><span class="field_description">	Nome da visualizzare per i dati esportati (obbligatorio).</span>
+	</p>
+	<p>
+	  <span class="field_head"><label>Versione</label></span>
+	  <br><span class="form_field"><input name="version" type="text" value="1.0.0" class="validate=[nonempty,version]"></span>
+	  <br><span class="field_description">	Un numero di versione per i dati (richiesto)</span>
+	</p>
+	<p>
+	  <span class="field_head"><label>Descrizione</label></span>
+	  <br><span class="form_field"><textarea name="description" id="description" rows="5" cols="25"></textarea></span>
+	  <br><span class="field_description">Una breve descrizione dei dati esportati (facoltativo)</span>
+	</p>
+	<table><tr><td>
+	      <div class="button optionsMenuButton window_hide"> Chiudi </div>
+	    </td>
+	    <td>
+	      <input id="magicdata_export" class="button action=index.php/magicDataExport/export" type="submit" value="Export"></td>
+	  </tr></table></div>
+    </form>
+  </span>
+</div>

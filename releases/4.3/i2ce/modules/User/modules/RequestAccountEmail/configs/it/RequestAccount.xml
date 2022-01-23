@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="RequestAccount-VerifyEmail">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="RequestAccount-VerifyEmail" locale="it">
+    <version>4.3.0.1</version>
+    <configurationGroup name="user_request_class_data" path="/modules/forms/formClasses/I2CE_User_Request">
+      <configurationGroup name="fields">
+        <configurationGroup name="request_number">
+          <configuration name="headers" type="delimited" locale="it" values="single"></configuration>
+        </configurationGroup>
+        <configurationGroup name="verified">
+          <configuration name="headers" type="delimited" locale="it" values="single"></configuration>
+        </configurationGroup>
+        <configurationGroup name="email">
+          <configuration name="headers" type="delimited" locale="it" values="single"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="user_messages" locale="it">
+      <configuration name="verify_email" values="single" type="string"></configuration>
+      <configuration name="verify_email_fail" values="single" type="string"></configuration>
+      <configuration name="verified" values="single" type="string"></configuration>
+      <configuration name="not_verified" values="single" type="string">
+        <value>Non abbiamo potuto verificare il tuo account.</value>
+      </configuration>
+      <configuration name="invalid_username" values="single" type="string"></configuration>
+      <configuration name="invalid_email" path="/modules/forms/formfield_messages/user_request/email/invalid_email" values="single" type="string"></configuration>
+      <configuration name="email_subject" values="single" type="string"></configuration>
+      <configuration name="email_message" values="single" type="string"></configuration>
+      <configuration name="email_message_verify_only" values="single" type="string"></configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="it" type="string"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

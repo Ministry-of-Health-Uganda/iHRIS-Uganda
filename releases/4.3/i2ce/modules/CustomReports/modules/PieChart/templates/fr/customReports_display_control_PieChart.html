@@ -1,0 +1,178 @@
+<div>
+  <script type="text/javascript" id="script_chart_type_options">
+
+    var custom_report_chart_types = new Array();
+    function custom_report_update_chart_types(style) {
+    if (!custom_report_chart_types) {
+    return;
+    }
+    if (!custom_report_chart_types[style]) {
+    return;
+    }
+    var list = custom_report_chart_types[style];    
+    var options = $("displayFieldTypes");
+    if (!options) {
+    return;
+    }
+    var selected  = -1;
+    if (options.selectedIndex >= 0) {
+    list.each(function(type,i) {
+    if (type == options[options.selectedIndex].value) {
+    selected = i;
+    }
+    });
+    }
+
+    var new_selected = false;
+    options.length = 0;
+    list.each(function(type,i) {
+    var label = $(type+ '_label');
+    if (label) {
+    name = label.get('text');
+    } else {
+    name = type;
+    }
+    var option = new Option(name,type);
+    options[i] = option;
+    if ( (selected  == -1 ) || (i == selected)) {
+    option.selected = true;
+    new_selected = type;
+    }
+    });
+    custom_report_show_chart_type(new_selected);
+    }
+    
+    function custom_report_show_chart_type(type) {
+    var chart_option = $('chart_type_options_' + type);
+    if (!chart_option) {
+    return;
+    }
+    var chart_options = $$('.custom_report_chart_options');
+    if (!chart_options) {	   
+    return;
+    }
+    chart_options.each(function(option) {
+    var option_id = option.getProperty('id');
+    if (option_id == 'chart_type_options_'+type) {
+    option.setStyles({'display':"block", 'visibility':"visible"});
+    } else {
+    option.setStyles({'display':"none", 'visibility':"hidden"});
+    }
+    });
+    }
+
+
+  </script><span title="Sélectionner les options du graphique et afficher ce rapport sous forme de graphique" class="button PieChart_submit_options_toggle">Graphique</span>
+  <!-- div class="button clickableText PieChart_submit_options_toggle" >(Options)</div -->
+  <div class="optionsMenu toggable windowFloats=true windowDraggable=true" id="PieChart_submit_options_menu">
+    <div class="optionsMenuTitle window_drag"> Options des camemberts </div> 	 
+    <br><span class="field_head"><label>Style de camemberts</label></span>
+    Choisir le style de graphique
+    <span class="form_field">
+      <select name="style" id="chart_styles" onchange="custom_report_update_chart_types(this.options[this.selectedIndex].value)"></select></span>
+    <br><span class="field_head"><label>Champs affichés</label></span>
+    Choisir la façon dont vous voulez sélectionner les graphiques à afficher
+    <span class="form_field">
+      <select name="displayFieldsType" id="displayFieldTypes" onchange="custom_report_show_chart_type(this.options[this.selectedIndex].value)"></select></span>
+    <br><div id="chart_type_options_one_row_total" class="custom_report_chart_options">
+
+      <h3>Un champ -- Total</h3>
+      <span id="one_row_total_label" style="display:none">Un champ (Total)</span>
+      Affiche un champ avec les nombres totaux avec cette valeur pour ce champ.
+      <span class="field_head"><label>Permier champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:one_row_total:0:formfield" class="reportformfield"></select></span>
+      <br><input type="hidden" name="displayFieldsTypes:one_row_total:1:formfield" value="total"></div>
+
+    <div id="chart_type_options_one_row_count" class="custom_report_chart_options">
+      <h3>Deux champs -- Total sur le deuxième</h3>
+      Affiche deux champs avec les nombres totaux sur le second champ.
+      <span id="one_row_count_label" style="display:none">Deux champs (Total sur le deuxième)</span>
+      <span class="field_head"><label>Permier champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:one_row_count:0:formfield" class="reportformfield"></select></span>
+      <br><span class="field_head"><label>Deuxième champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:one_row_count:1:formfield" class="reportformfield">&gt;
+	</select></span>
+      <br><span class="field_head"><label>Total du deuxième champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:one_row_count:1:aggregate" class="reportformfield_aggregate"><option value="count" selected>Nombre total</option><option value="count_distinct">Total Distinct</option></select></span>     
+    </div>
+
+    <div id="chart_type_options_one_row_numeric" class="custom_report_chart_options">
+      <h3>Deux champs – Le second est numérique</h3>
+      Affiche deux champs dont un a une valeur numérique
+      <span id="one_row_numeric_label" style="display:none">Deux champs (Nmérique)</span>
+      <span class="field_head"><label>Permier champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:one_row_numeric:0:formfield" class="reportformfield"></select></span>
+      <br><span class="field_head"><label>Deuxième champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:one_row_numeric:1:formfield" class="reportformfield_numeric"></select></span>
+      <br><span class="field_head"><label>Agrégation du deuxième champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:one_row_numeric:1:aggregate" class="reportformfield_aggregate"><option value="none">Aucun</option><option value="sum">Somme</option><option value="maximum">Maximum</option><option value="minimum">Minimum</option><option value="average">Moyenne</option><option value="count">Nombre total</option><option value="count_distinct">Total Distinct</option></select></span>     
+    </div>
+
+
+
+
+
+
+
+    <div id="chart_type_options_multi_row_total" class="custom_report_chart_options">
+      <h3> Total sur deux champs</h3>
+      Affiche le total pour deux champs
+      <span id="multi_row_total_label" style="display:none">Deux champs (Total)</span>
+      <span class="field_head"><label>Permier champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:multi_row_total:0:formfield" class="reportformfield"></select></span>
+      <br><span class="field_head"><label>Deuxième champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:multi_row_total:1:formfield" class="reportformfield"></select></span>
+      <input type="hidden" name="displayFieldsTypes:multi_row_total:2:formfield" value="total"></div>
+
+    <div id="chart_type_options_multi_row_count" class="custom_report_chart_options">
+      <h3>Trois champs – Total sur le troisième</h3>
+      <span id="multi_row_count_label" style="display:none">Trois champs (Total sur le troisième)</span>
+      <span class="field_head"><label>Permier champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:multi_row_count:0:formfield" class="reportformfield"></select></span>
+      <br><span class="field_head"><label>Deuxième champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:multi_row_count:1:formfield" class="reportformfield"></select></span>
+      <br><span class="field_head"><label>Troisième champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:multi_row_count:2:formfield" class="reportformfield"></select></span>
+      <br><span class="field_head"><label>Agrégation du troisième champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:multi_row_count:2:aggregate" class="reportformfield_aggregate"><option value="count">Nombre total</option><option value="count_distinct">Total Distinct</option></select></span>     
+    </div>
+    
+    <div id="chart_type_options_multi_row_numeric" class="custom_report_chart_options">
+      <h3>Trois champs -- Le troisième est numérique</h3>
+      Affiche trois champs dont un est numérique.
+      <span id="multi_row_numeric_label" style="display:none">Trois champs (Numériques)</span>
+      <span class="field_head"><label>Permier champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:multi_row_numeric:0:formfield" class="reportformfield"></select></span>
+      <br><span class="field_head"><label>Deuxième champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:multi_row_numeric:1:formfield" class="reportformfield"></select></span>
+      <br><span class="field_head"><label>Troisième champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:multi_row_numeric:2:formfield" class="reportformfield_numeric"></select></span>
+      <br><span class="field_head"><label>Agrégation du troisième champ</label></span>
+      <span class="form_field">
+	<select name="displayFieldsTypes:multi_row_numeric:2:aggregate" class="reportformfield_aggregate"><option value="sum">Somme</option><option value="maximum">Maximum</option><option value="minimum">Minimum</option><option value="average">Moyenne</option><option value="count">Nombre total</option><option value="count_distinct">Total Distinct</option></select></span>     
+    </div>
+    
+
+    
+
+    <br><p></p>
+    <br><span title="Tracer ces données" id="PieChart_submit" class="multiformsubmit button">Graphique</span> 
+    <span class="button optionsMenuButton PieChart_submit_options_hide window_hide"> Fermer </span>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="MimeTypes">
+  <metadata>
+    <displayName locale="en_US">Mime Types</displayName>
+    <category locale="en_US">Administration</category>
+    <description locale="en_US">Adds a in mime type capabilities</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="mime">
+      <value>mime</value>
+    </path>
+    <requirement name="I2CE">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="MimeTypes" path="/modules/MimeTypes">
+    <configuration name="magic_file" values="single" type="string">
+      <version>4.0.0.1</version>
+      <value>mime.mgc</value>
+    </configuration>
+    <configuration values="single" name="mime_types" type="string">
+      <displayName>The location of the mime.types file</displayName>
+      <description>The mime.types file is a standard file on a unix system, usually located in /etc/mime.types, which describes the type of a file based on its extension.</description>
+      <status>required:true</status>
+      <value>mime.types</value>
+    </configuration>
+  </configurationGroup>
+</I2CEConfiguration>

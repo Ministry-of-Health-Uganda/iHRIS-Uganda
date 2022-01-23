@@ -1,0 +1,31 @@
+<div id="sql_function">
+  SQL функція <span name="name"></span>
+  <span name="description" ifset="true">
+    --
+    <span name="description"></span>
+  </span>
+  <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0" id="reporting_function"><tr><td>
+	<h3>SQL-запит:</h3> Визначальний SQL для цієї функції. Ви звертаєтеся до оголошених полів як 'reportform+field'
+      </td>
+      <td>
+	<span name="qry"></span>
+      </td>
+    </tr><tr><td> 
+	<h3>Поле форми:</h3> Поле форми, в якому ця функція приймає значення
+      </td>
+      <td>
+	<span name="formfield"></span>
+      </td>
+    </tr><tr><td>
+	<h3>Форми для вибору</h3>Форми, вибрані для цього поля. Застосовується тільки, якщо поле форми є підкласом I2CE_FormField_MAPPED. У цьому випадку поле повинно бути розділеним комами списком форм.
+      </td>
+      <td>
+	<span name="select_forms"></span>
+      </td>
+    </tr><tr><td>
+	<h3>Зв'язані поля</h3>Поля, які пов'язані при перерахуванні варіантів. Застосовується тільки, якщо поле форми є підкласом I2CE_FormField_MAPPED. Воно повинно бути списком відокремним стовпцем виду  "форми" чи "форма+поле посилання". Приклад: "повіт:район+регіон:[регіон]:країна".
+      </td>
+      <td>
+	<span name="link_fields"></span>
+      </td>
+    </tr></table></div>

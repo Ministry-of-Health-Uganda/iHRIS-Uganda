@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="UserForm" path="/">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="UserForm" path="/" locale="fr">
+    <version>4.3.0.1</version>
+    <configurationGroup name="invalid_formfield_message" path="/modules/forms/formfield_messages" locale="fr">
+      <configuration name="username" path="user/username/unique" values="single" type="string">
+        <value>Ce nom d'utilisateur est déjà utilisé.</value>
+      </configuration>
+      <configuration name="pass_match" path="user/password/mismatch" values="single" type="string">
+        <value>Le mot de passe et la confirmation du mot de passe n'étaient pas identique.</value>
+      </configuration>
+      <configuration name="pass_match" path="user/password/required" values="single" type="string">
+        <value>Pour les nouveaux utilisateurs, vous devez saisir un mot de passe initial.</value>
+      </configuration>
+      <configuration name="role_notallowed" path="user/role/notallowed" values="single" type="string">
+        <value>Vous n'êtes pas autorisé à attribuer ce rôle à d'autres utilisateurs.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="fr">
+      <configuration name="users_can_edit" locale="fr" values="single" type="string">
+        <value>Peut créer un utilisateur sur le système</value>
+      </configuration>
+      <configuration name="users_can_edit_all" locale="fr" values="single" type="string">
+        <value>Peut éditer tous les utilisateurs du système.</value>
+      </configuration>
+      <configuration name="can_create_or_edit_users" locale="fr" values="single" type="string">
+        <value>Peut créer ou modifier les utilisateurs dans le système.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <configurationGroup name="user">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr" type="string">
+            <value>Gérer les utilisateurs/l’accès</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="view_user">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="fr" type="string">
+            <value>Gérer les utilisateurs/l’accès</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="roleForm" path="/modules/forms/forms/role">
+        <configuration name="display" values="single" locale="fr" type="string">
+          <value>Rôle</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+        <configurationGroup name="I2CE_Role">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="fr" values="single">
+                <value>default:Rôle</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="assignable">
+              <configuration name="headers" type="delimited" locale="fr" values="single">
+                <value>default:Peut affecter à l’utilisateur</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="homepage">
+              <configuration name="headers" type="delimited" locale="fr" values="single">
+                <value>default:Page d’accueil préférée</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="trickle_up">
+              <configuration name="headers" type="delimited" locale="fr" values="single"></configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="I2CE_User_Form">
+          <configurationGroup name="fields">
+            <configurationGroup name="username">
+              <configuration name="headers" type="delimited" locale="fr" values="single">
+                <value>default:Nom d’utilisateur</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="password">
+              <configuration name="headers" type="delimited" values="many" locale="fr">
+                <value>default:Mot de passe (laisser vierge pour garder le même mot de passe)</value>
+                <value>generate:Générer un nouveau mot de passe</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="role">
+              <configuration name="headers" type="delimited" locale="fr" values="single">
+                <value>default:Rôle</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

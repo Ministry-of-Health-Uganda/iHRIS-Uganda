@@ -1,0 +1,29 @@
+<div id="siteContent">
+  <div class="magicDataBrowser">
+    <h3>Pfad zu den „magischen Daten“: <span id="config_path_display"></span></h3>
+    <h3>
+   
+
+    <span ifset="true" name="full_view"><a name="full_view">Erweiterte Ansicht</a></span>
+    <span ifset="true" name="compressed_view"><a name="compressed_view">Komprimierte Ansicht</a></span>
+    <span ifset="true" name="mini_view"><a name="mini_view">Minimalansicht</a></span>
+    <span ifset="true" name="nomini_view"><a name="nomini_view">Gesamtansicht</a></span>
+    </h3>
+    <ul name="magic_data_list" class="magic_data_list" id="magic_data_list"></ul><br><table><tr><td>
+	  <form method="post" action="magicDataBrowser/erase" id="magicdata_erase"> 
+	    <input onclick="return confirm('Are you sure you want to do this? It can not be undone!');" class="button" type="submit" value="Erase"></form>
+	</td>
+	<td>
+	  <div id="magicdata_export_control"></div>
+	</td>
+      </tr></table><span ifset="true" name="root_node">
+      <form method="POST" name="load_action" enctype="multipart/form-data">
+	<h4>Magische Daten von Modul laden</h4>
+	<input type="hidden" name="caller">
+	Eingabedatei:<input type="file" name="xml"><br>
+	Eingabe-URL:<input type="text"><br><input type="submit" value="Upload"></form>
+    </span>
+    </div>
+    
+  
+</div>

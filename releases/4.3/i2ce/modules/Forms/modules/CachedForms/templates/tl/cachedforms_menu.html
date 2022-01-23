@@ -1,0 +1,31 @@
+<div>
+  
+
+
+  <h2>Itago ang mga Pormularyo</h2>
+  <span name="has_profiles" ifset="true">
+    Itago ang lahat ng mga pormularyo sa loob ng napiling balangkas.
+    <form action="CachedForms/cache" style="margin-left:2em" method="POST">
+      Pumili ng isang balangkas:  <select name="profile"></select><br><input type="submit" value="Cache"></form>
+  </span>
+  <br><div>
+    <a href="CachedForms/cacheAll">Taguan</a> lahat ng mga pormularyo
+    <br><a href="CachedForms/cacheAllForce">Sapiling Pagtatago</a> ng lahat ng mga pormularyo kung hindi bilasa
+    <br><a href="CachedForms/dropAll">Ibagsak</a> mga taguan ng lahat ng mga pormularyo
+  </div>
+  <br><span name="has_profiles" ifset="true">
+    <h2>Iluwas ang Itinagong mga Pormularyo</h2>
+    Iluwas ang lahat ng mga pormularyong nakatago na nasa loob ng napiling balangkas.  Kapag pumili ka ng isang petsa ng pagbabago, kung gayon ang mga rekord lamang na nabago noon o pagkalipas ng tinukoy na petsa ang iluluwas.  Kung hindi, iluluwas ang lahat ng mga rekord na nabago para sa napiling balangkas.
+    <form action="CachedForms/export" style="margin-left:2em" method="POST">
+      Pumili ng isang balangkas:  <select name="profile"></select><br>
+      Petsa ng Pagbago: <input class="datepicker_ymd" name="mod_date" type="text"><br><input type="checkbox" value="1" name="compress" checked>Paganahin ang Pagsisiksik na bzip2
+      <br><input type="submit" value="Export"></form>
+    
+    <br></span>
+
+  <h2>Likhain/Baguhin ang Balangkas</h2>
+  Lumikha ng isang balangkas o baguhin ang umiiral na balangkas ng mga pormularyo.
+  <form action="CachedForms/exportProfile" style="margin-left:2em">
+      Pumili ng isang balangkas:  <select name="profile"><option value="">Lumikha ng Isang Bagong Balangkas</option></select><br><input type="submit" value="Edit"></form>
+  <br><h2>Pamahalaan ang Pagtatago ng Bawat Isang mga Pormularyo</h2>
+  <ul id="cached_forms_list"></ul></div>

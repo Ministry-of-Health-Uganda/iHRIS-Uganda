@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="tasks-roles">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="tasks-roles" locale="es">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="es">
+      <configuration name="tasks_and_roles_can_access" values="single" type="string">
+        <value>Permitir acceso mínimo al Sistema de Gestión de Tareas y Permisos</value>
+      </configuration>
+      <configuration name="tasks_and_roles_can_edit_tasks" values="single" type="string">
+        <value>Permitir acceso de edición al Sistema de Gestión de Tareas</value>
+      </configuration>
+      <configuration name="tasks_and_roles_can_edit_roles" values="single" type="string">
+        <value>Permitir acceso de edición al Sistema de Gestión de Permisos</value>
+      </configuration>
+      <configuration name="tasks_and_roles_admin" values="single" type="string">
+        <value>Permitir acceso total al Sistema de Gestión de Tareas y Permisos</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="roles">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="es" type="string">
+            <value>Administrar Funciones</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="tasks">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="es" type="string">
+            <value>Administrar Tareas</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="es" type="string">
+            <value>Administrar Tareas y Permisos</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

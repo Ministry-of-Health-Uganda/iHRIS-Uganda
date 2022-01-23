@@ -1,0 +1,100 @@
+ul.configuration_list, ul.configurationGroup_list { 
+                 list-style-type:none; 
+                 padding:0px;
+                 margin:0px;
+                 width:90%;
+                 padding-left: 2em;
+ }
+
+.indented {
+    padding-left:2em;
+}
+
+li.configuration_list, li.configurationGroup_list { 
+                        padding:0px;
+                        margin:0px;
+ }
+
+td.string_many_index { 
+                             text-align:center;
+              }
+
+table.th { 
+         	color: #000;
+	font-weight: bold;
+
+            }
+
+table.string_many { 
+                    border-spacing:1em;
+                    }
+
+
+
+.configDescription { 
+                  	color: #39C;
+                     
+ }
+
+.configurationGroupDescription { 
+                          margin-left:2em;
+ }
+
+
+.configForm label {
+	color: #000;
+	font-weight: bold;
+        display:block;
+}
+
+.configForm .configValue { 
+	background-color: #f5f5f5;
+                               margin-left:2em;
+                               padding:0.5em;
+                               } 
+
+.configForm select {
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	background-color: #fff;
+	border: solid 2px #ccc;
+	padding: 1px;
+	width: 254px;
+	margin-top: 3px;
+}
+
+
+.configForm input.button {
+	background: #ccc url(button_bkgd.gif) repeat-x;
+	border: 2px solid #BFBFBF;
+	color: #333;
+	padding: 4px 12px;
+	font: bold 10px Verdana, Arial, Helvetica, sans-serif;
+	width: auto;
+}
+
+.configForm input, form.configForm textarea {
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	background-color: #fff;
+	border: solid 2px #ccc;
+	padding: 3px 2px;
+	margin-top: 3px;
+	width: 246px;
+}
+
+
+.configForm td input, form.configForm td textarea {
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	background-color: #fff;
+	border: solid 2px #ccc;
+	padding: 3px 2px;
+	margin-top: 3px;
+	width: 146px;
+}
+
+
+
+form.configForm input[type="checkbox"],
+form.configForm input[type="radiobutton"] {
+	width: auto;
+	border: 0;
+}

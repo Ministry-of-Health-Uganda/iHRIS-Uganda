@@ -1,0 +1,17 @@
+<li >
+  <a name='show_link'><span name='displayName'/></a>
+  <span name='description' ifset='true'>
+    -- <span name='description' />
+  </span>
+  <div class='indented'>
+    <a href='' name='edit_link'>Edit</a>, 
+    <span type='module' name='ReportArchiver' ifenabled='true'>
+      <span type='module' call='ReportArchiver->showArchiveMenu($reportView)'/>
+    </span>
+
+    <!--
+    <a href='' name='save_link'>Save</a>,
+    <a href='' name='delete_link' onclick='javascript:return confirm("Are you sure you want to delete?");'>Delete</a>
+    -->
+  </div>
+</li>

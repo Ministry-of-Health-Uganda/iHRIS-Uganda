@@ -1,0 +1,27 @@
+<div id="siteContent">
+  <h2 dir="rtl">نماذج موحدة</h2>
+
+  <h3 dir="rtl">إنتاج نماذج موحدة</h3>
+
+  <span ifset="!true" name="has_valid_forms" dir="rtl">
+    لا توجد أشكال موحدة متاحة لهذا السجل.
+  </span>
+  <span ifset="true" name="has_valid_forms">
+    <ul id="printed_forms_list"></ul></span>
+
+
+  <span type="module" ifenabled="true" name="BinField">
+    <span ifset="true" name="show_archive">
+      <h3 dir="rtl">نماذج موحدة في الأرشيف</h3>
+
+      <span ifset="!true" name="has_archives" dir="rtl">
+	لا توجد نماذج محفوظة بالأرشيف لهذا السجل
+      </span>
+      <span ifset="true" name="has_archives">
+	<span task="printed_forms_view_all_archives">
+	  <ul id="printed_forms_archive"></ul></span>
+      </span>
+    </span>
+  </span>
+
+</div>

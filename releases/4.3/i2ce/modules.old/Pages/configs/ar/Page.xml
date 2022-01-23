@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="pages" path="/I2CE">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="pages" path="/I2CE" locale="ar">
+    <version>4.3.0.1</version>
+    <configurationGroup name="roles" path="/I2CE/formsData/forms/role">
+      <configurationGroup name="admin">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="ar" type="string">
+            <value>مدير</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="any">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="ar" type="string">
+            <value>أي</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="all">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single" locale="ar" type="string">
+            <value>جميع</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="noaccess">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ar" type="string">
+            <value>غير مسموح بالدخول</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

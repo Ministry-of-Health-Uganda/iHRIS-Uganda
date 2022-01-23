@@ -1,0 +1,137 @@
+# This is a sample yaml config file for a sample module.  To learn
+# more about the YAML syntax you might want to try
+#       http://yaml.kwiki.org/index.cgi?YamlInFiveMinutesMinuteFive
+# or
+#       http://yaml4r.sourceforge.net/cookbook/
+#
+module: dummy_yaml_module
+metadata:
+  version: 1.0
+  displayName: Sample YAML(Req)
+  className: I2CE_Module_Dummy_Yaml
+  category: Sample Modules
+  description: >
+    A sample YAML config file.  
+
+    In the metadata section any required options are marked by (Req).  
+    These are only displayName and version.  The 'className' is the
+    the name of an optional class which extends I2CE_Module and is used
+    to define any fuzzy methods and hooks as well as installation and upgrade 
+    methods.  The 'category' is optional and defines which group the
+    module belongs to when displaying a list of modules.  Thee 'requirements'
+    and 'conflicts' sections defines requirements that must be met and conflicts
+    that must be avoided for this module.  Then 'enable' section is a list
+    of modules we would like to be enabled for this module, but for which we
+    will not care if they are not present.  The section 'paths'  adds in
+    different directory to the search path based on the category of the search path.
+
+    In the configdata section you are essentially building a nested
+    array of key/value pairs.  The keys must not start with '__' and
+    but otherwise may consist of letters, numbers, -, +, ., _, and +.
+    This nested array is stored in magic data.  By default it is
+    stored under the path '/modules/my_sample_yaml_module'.
+    The path in the magic data node is given by going down the keys
+    in the nested array you are defining.  So if you had a key 'my_data'
+    under the 'configdata' you have data at the path
+    /modules/my_sample_yaml_module/my_data.  While if you had a key
+    under 'my_data' called 'my_list' you would have data at
+    /modules/my_sample_yaml_module/my_data/my_list.
+
+
+    There is some extra information that  we may choose to carry along with 
+    these arrays.  This extra information are given by keys that with '__', 
+    and include __displayName,  __desription which give a nice displayed 
+    name and description when editing this data through the configuration
+    menu.  There is also   __path which allows you place the data at
+    a different place in the magic data.  The option __config lets you
+    specify a different handler for displaying the configuration menu
+    (this is done with custom reports for example).  
+
+    There is two more keys __type __values which describes the  actual values which are 
+    stored at the path.  These do no apply to   keys which themselves have child
+    data.  The __type defaults to 'string' but there are several other possibilities
+    such as 'boolean', 'color_triple_rgb', etc.  (New types can be added via a module).
+    The values at the magic data node are stored under the key __values.  It may
+    either be a single value or a list of values.  Although you can technically, according
+    to the YAML specification,  put  practially anything under the __values key,  we
+    limit it to be either a single value (such as 'data') or a sequence (such as
+    [data1,data2]) or a map ( such as {data1:val1,data2:val2} )  The latter two
+    must _not_ be nested.  In the case of a map the __type defaults to 'delimited', otherwise
+    the __type defaults to string.  The __type values which are handled by default are
+    'string','boolean','list','delimited'.  
+
+    Other types (XXX) may be added in by adding a fuzzy method processYAML_values_XXX to 
+    I2CE_MagicDataTemplate_YAML.  The type 'list' restricts the values set to be the keys 
+    in sequence or map under '__status'=>'list'.  The keys/values of '__status'='list' must
+    _not_ contain commas.
+
+    There is an array __status consisting of key/value pairs that let you specify 
+    information about how the configuration data is stored and displayed.      Some
+    of these values are contect dependent, but let us describe a few of them.
+    The first is 'overwrite' which defaults to false.  Usually when a configuration
+    file is changed or updated, we do not change any data already existing in the
+    magic data -- we leave it alone.  It overwrite is set to true, we will overwrite
+    any values that already exist in magic data.    A few options (with their defaults) 
+    which affect the default configuration menu for the   module are 
+    'advanced' (false), 'visible' (true), 'required' (true), 'showIndex' (false)
+    advanced:true means that we should not show this in the configuration menu only under
+    an 'advanced' mode.   visible:false means that we should not show this node under the
+    configuration menu.  required:true means that any __values section must have data in them
+    and 'showIndex' true means that we show the index (or key) for an array.
+    Any values in __status is inherited by its children.
+    
+  creator: Carl Leitner
+  email: litlfred@ibiblio.i_like_spam.org       
+  link: http://www.ibiblio.org/litlfred
+  requirements:
+    I2CE:
+      atLeast: 3.0
+      lessThan: 3.1
+  conflicts:
+    some_module_2:
+      atLeast: 3.0
+      lessThan: 3.1
+  enable:
+    -some_module_3
+    -some_module_4
+  paths:
+     scripts: ./scripts
+     css: ./css
+     classes:
+       -./lib
+       -./lib2
+configdata:     
+  #we want to store our data in the path of some other module           
+  __path: /modules/dummy_yaml_other_module  
+  some_data:
+    __displayName: Some Data
+    __description: Just Some Data
+    a:
+      ## /modules/dummy_yaml_other_module/some_data/a is set to Hello
+      __values: Hello
+    b:
+      ## /modules/dummy_yaml_other_module/some_data/a is set to the array {'Hello1','Hello2'}
+      __values:
+        -Hello1
+        -Hello2
+    c:
+      -test1:
+        __type:boolean
+        __values: true
+      -test2:
+        __type:boolean
+        __status:
+          required:false
+        __values: 
+      -test3:
+        __type:boolean
+        __values: false
+  some_data2:
+    #we want to store this data under /modules/dummy_yaml_other_module/pirates.  
+    __path: ./pirates
+    w:
+      __descripition: My daughter's favorite letter
+      __values: W
+    creatures:
+      __description: My daughter's favorite living things
+      __values: [Hippo, Lion, Lemur, Butterfly]

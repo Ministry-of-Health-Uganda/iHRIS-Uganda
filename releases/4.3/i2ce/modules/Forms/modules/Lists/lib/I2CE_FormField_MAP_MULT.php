@@ -102,16 +102,7 @@ class I2CE_FormField_MAP_MULT extends I2CE_FormField_MAPPED {
                       )
                 );
 
-        $set_func = function($val) use ($form, $oldid) { 
-            $vals = explode(",", $val); 
-            foreach ($vals as &$v) {
-                if ($v == $form . '|' . $oldid ) {
-                    $v = $form . '|' . $newid;
-                }
-            } 
-            unset($v); 
-            return implode(",",$vals); 
-        };
+        $set_func = create_function('$val','$vals = explode(",", $val); foreach ($vals as &$v) {if ($v == "' . $form . '|' . $oldid . '") {$v = "' . $form . '|' . $newid .'"}} unset($v); return implode(",",$vals);');
         return $this->globalFieldUpdate($where,$set_func);
     }
 

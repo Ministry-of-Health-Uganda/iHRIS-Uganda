@@ -1,0 +1,21 @@
+<div id="siteContent">
+  <h1>Адміністрування завдань</h1>
+  <h2>Наявні завдання</h2>
+  <ul id="task_list"></ul><form method="post" action="tasks-roles/tasks" id="add_user_task">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Додати нове завдання
+	</th>
+      </tr><tr><td>
+	  <label>Коротке ім'я завдання:</label> Коротке ім'я, що складається з букв, цифр,-,. і _, та використовується, щоб посилатися на завдання у сторінках і шаблонах.
+	</td>
+	<td>
+	  <input type="text" id="task_short_name" name="task_short_name" class="validate=[notinlist,nonempty,magicdatakey]"></td>
+      </tr><tr><td>
+	  <label>Опис завдання:</label> Короткий опис цього завдання.
+	</td>
+	<td>
+	  <input type="text" name="task_description" class="validate=[nonempty]"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Create"></td>
+      </tr></table></form>
+</div>

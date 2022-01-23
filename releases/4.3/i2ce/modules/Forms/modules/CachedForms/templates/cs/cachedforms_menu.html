@@ -1,0 +1,31 @@
+<div>
+  
+
+
+  <h2>Uložit Formuláře</h2>
+  <span name="has_profiles" ifset="true">
+    Uložit všechny formuláře ve vybraném profilu
+    <form action="CachedForms/cache" style="margin-left:2em" method="POST">
+      Vybrat profil:  <select name="profile"></select><br><input type="submit" value="Cache"></form>
+  </span>
+  <br><div>
+    <a href="CachedForms/cacheAll">Uložení</a> všech formulářů
+    <br><a href="CachedForms/cacheAllForce">Vynutit Uložení</a> všech formulářů, pokud nejsou staré
+    <br><a href="CachedForms/dropAll">Zahodit</a> uložení všech formulářů
+  </div>
+  <br><span name="has_profiles" ifset="true">
+    <h2>Exportovat Uložené Formuláře</h2>
+    Exportovat všechny formuláře ve vybraném profilu. Pokud zvolíte datum změny, pak pouze záznamy, které byly změněny v nebo po určeném datu budou exportovány. Jinak všechny záznamy, které byly změněny pro vybraný profil budou exportovány.
+    <form action="CachedForms/export" style="margin-left:2em" method="POST">
+      Vybrat profil:  <select name="profile"></select><br>
+      Datum Změny: <input class="datepicker_ymd" name="mod_date" type="text"><br><input type="checkbox" value="1" name="compress" checked>Zapnout Komprimaci bzip2
+      <br><input type="submit" value="Export"></form>
+    
+    <br></span>
+
+  <h2>Vytvořit/Upravit Profil</h2>
+  Vytvořit, nebo upravit existující profil formulářů
+  <form action="CachedForms/exportProfile" style="margin-left:2em">
+      Vybrat profil:  <select name="profile"><option value="">Vytvořit Nový Profil</option></select><br><input type="submit" value="Edit"></form>
+  <br><h2>Spravovat Ukládání Jednotlivých Formulářů</h2>
+  <ul id="cached_forms_list"></ul></div>

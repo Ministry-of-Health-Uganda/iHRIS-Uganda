@@ -1,0 +1,59 @@
+<div id="report">
+  <h2><span name="report_view_display_name"></span></h2>
+  <p>
+    <span name='report_view_description' ></span>
+  </p>
+  <p>
+    <span name='report_view_limit_has_description' ifset="true" >
+      Results limited by: 
+    </span>
+    <span name='report_view_limit_description' ></span>
+  </p>
+  <form  method="POST" action="report" id="limit_form">
+    <div id='report_results_openlayers_container' >
+      <div id="report_results" class='report_results_openlayers'> <!--map goes in here-->	
+        <div id="report_results_map" class="openlayers_map"></div>
+        <div id="report_results_style_edit" class="openlayers_style">
+          <div id="report_results_style_layer" class="openlayers_style_layer"></div>
+          <span name="openlayers_style_details_vector_button" ifset="true">
+            <div id="report_results_style_submit" class="openlayers_style_submit">
+              <input type="button" onClick='setMapStyle();' value="Set Style" />
+            </div>
+          </span>
+        </div>
+        <div id="report_results_display" class="openlayers_feature_display"></div>
+      </div>
+    </div>
+    <div name="report_view_show_controls" ifset="true">
+      <table class="multiFormTable customReportsTable" border="0" cellpadding="0" cellspacing="0" >
+        <tr>
+          <th colspan="2">
+            Choose options to limit results 
+            <span role='admin' class='right' >
+              <input type='checkbox' name='save_options_as_default_view' value='1'/>Save as default view
+            </span>
+
+          </th>
+        </tr>	
+      </table>
+      <table class="multiFormTable toggable" border="0" cellpadding="0" cellspacing="0" id='report_limits' >
+      </table>
+      <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+        <tr class="submitCell">
+          <td colspan="2">
+            <div id="report_controls" class='CustomReport_controls'></div>
+          </td>      
+        </tr>
+        <tbody name='related_views' ifset='true'>
+          <tr>
+            <th>Related Views:</th>
+            <td>
+              <ul id='related_views_list'>
+              </ul>
+            </td> 
+          </tr> 
+        </tbody>
+      </table>
+    </div>
+  </form>            
+</div>

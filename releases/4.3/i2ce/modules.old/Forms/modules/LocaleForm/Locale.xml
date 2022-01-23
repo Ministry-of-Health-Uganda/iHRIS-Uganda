@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="LocaleForm">
+  <metadata>
+    <displayName>Locale Form</displayName>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <description />
+    <longDescription>Maps Selectable/Available Local to a User Forms</longDescription>
+    <link>https://launchpad.net/i2ce</link>
+    <requirement name="forms">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms-storage-eval">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="LocaleForm" path="/">
+    <configurationGroup name="form" path="/modules/forms/forms/locale">
+      <configuration name="class" values="single" type="string">
+        <displayName>Class Name</displayName>
+        <description>The name of the class providing the form</description>
+        <value>I2CE_Form_Locale</value>
+      </configuration>
+      <configuration name="display" values="single" locale="en_US" type="string">
+        <displayName>Display name</displayName>
+        <description>The display name for this form</description>
+        <value>Locale</value>
+      </configuration>
+      <configuration name="storage" values="single" type="string">
+        <displayName>Storage Mechanism</displayName>
+        <description>The storage mechanism for this form</description>
+        <value>eval</value>
+      </configuration>
+      <configurationGroup name="storage_options">
+        <version>4.0.3.6</version>
+        <configurationGroup name="eval">
+          <configuration name="records" values="single" type="string">
+            <value>I2CE_Locales::getAvailableLocales()</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="populate" values="single" type="string">
+                <value>$id</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="selectable">
+              <configuration name="populate" values="single" type="string">
+                <value>in_array($id,I2CE_Locales::getSelectableLocales())</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="class" path="/modules/forms/formClasses/I2CE_Form_Locale">
+      <version>4.0.3.3</version>
+      <configuration name="extends" values="single" type="string">
+        <displayName>The class this form extends</displayName>
+        <value>I2CE_List</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <configurationGroup name="name">
+          <configuration name="formfield" values="single" type="string">
+            <displayName>The form field type</displayName>
+            <version>4.0.3.5</version>
+            <value>STRING_LINE</value>
+          </configuration>
+          <configuration name="required" type="boolean" values="single">
+            <displayName>This field is required to be set</displayName>
+            <value>true</value>
+          </configuration>
+          <configuration name="unique" type="boolean" values="single">
+            <displayName>This field is required to be set</displayName>
+            <value>true</value>
+          </configuration>
+          <configuration name="headers" type="delimited" locale="en_US" values="single">
+            <displayName>The headers for this field.</displayName>
+            <value>default:Locale</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="selectable">
+          <version>4.0.3.6</version>
+          <configuration name="formfield" values="single" type="string">
+            <displayName>The form field type</displayName>
+            <value>YESNO</value>
+          </configuration>
+          <configuration name="headers" type="delimited" locale="en_US" values="single">
+            <displayName>The headers for this field.</displayName>
+            <value>default:Selectable</value>
+          </configuration>
+          <configuration name="required" type="boolean" values="single">
+            <displayName>This field is required to be set</displayName>
+            <value>true</value>
+          </configuration>
+          <configuration name="unique" type="boolean" values="single">
+            <displayName>This field is required to be set</displayName>
+            <value>true</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

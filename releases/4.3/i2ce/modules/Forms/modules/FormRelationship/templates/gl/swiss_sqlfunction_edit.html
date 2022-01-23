@@ -1,0 +1,41 @@
+<div id="sql_function">
+  <span id="function_contents">
+    <h2>Editar a función SQL <span name="name"></span></h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0" id="reporting_function"><tr><td width="30%">
+	  <h3>Pescuda SQL:</h3> A pescuda SQL para esta función. Cómpre referirse aos campos dos que se informou como `formulariodeinforme+campo`
+	</td>
+	<td width="auto">
+	  <textarea style="width:auto" cols="83" rows="4" name="qry" class="validate=[nonempty]"></textarea></td>
+      </tr><tr><td>
+	  <h3>Descrición:</h3> Unha descrición da función que se mostra ao usuario final
+	</td>
+	<td>
+	  <textarea type="text" name="description" rows="4" cols="53"></textarea></td>
+      </tr><tr><td>
+	  <h3>Campo de formulario:</h3> Seleccione o campo de formulario desde o que a función toma os valores
+	</td>
+	<td>
+	  <select name="formfield"></select></td>
+      </tr><tr><td>
+	  <h3>Agregar:</h3> Unha lista separada por comas dos formularios na relación cuxos campos quere agregar (é dicir, aqueles que non están na cláusula "groupby", estes son os formularios que aparecen na función)
+	</td>
+	<td>
+	  <input type="text" name="aggregate"></td>
+      </tr><tr><td>
+	  <h3>Formularios seleccionables</h3>Os formularios seleccionables para este campo. Unicamente se aplica se o campo do formulario é unha subclase de I2CE_FormField_MAPPED. Nese caso, debe ser unha lista de formularios separados por comas. Se non está definido, utilízase o nome da función por omisión.
+	</td>
+	<td>
+	  <input name="select_forms"></td>
+      </tr><tr><td>
+	  <h3>Campos ligados</h3>Os campos ligados ao listar as opcións. Unicamente se aplica se o campo do formulario é unha subclase de I2CE_FormField_MAPPED. Debe ser unha lista separada por dous puntos de 'formularios' ou 'formulario+campoligado'. Exemplo: "país:distrito+rexión:[rexión]:país". Se non está definido, utilízase o nome da función por omisión.
+	</td>
+	<td>
+	  <input name="link_fields"></td>
+      </tr></table><span id="dependent_functions">
+	<h2><a name="dependent_functions_link" href="" id="dependent_functions_link_replace"> Funcións dependentes</a></h2>
+	<div class="indented" id="dependent_functions_ajax">
+	</div>
+      </span>
+
+  </span>
+</div>

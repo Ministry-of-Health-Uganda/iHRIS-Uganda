@@ -1,0 +1,69 @@
+<div id='sql_function'>
+  <span id='function_contents'>
+    <h2>Edit the SQL function <span name='name'/></h2>
+    <table class='multiFormTable' cellpadding="0" cellspacing="0" border="0" id='reporting_function'>
+      <tr>
+	<td width='30%'>
+	  <h3>Sql Query:</h3> The defining SQL for this function.  You refer to reported fields as `reportform+field`
+	</td>
+	<td  width='auto'>
+	  <textarea style='width:auto' cols='83' rows='4'  name='qry' class='validate=[nonempty]'></textarea>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Description:</h3> A description of this function to be displayed to the end user
+	</td>
+	<td>
+	  <textarea type='text' name='description' rows='4' cols='53'></textarea>
+	</td>
+      </tr>
+      <tr>
+	<td >
+	  <h3>Form Field:</h3> Select the form field that this function takes values in
+	</td>
+	<td>
+	  <select name='formfield'  >
+	  </select>
+	</td>
+      </tr>
+      <tr>
+	<td >
+	  <h3>Aggregate:</h3> A comma separated list of the forms in the relationship on whose fields you which you wish to aggregate on (i.e. those not in the groupby clause, these are the forms that appear in your function)
+	</td>
+	<td>
+	  <input type='text' name='aggregate'  />
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Selectable Forms</h3>The forms which are selectable for this field.  Only applies if
+	  the form field is a subclass of I2CE_FormField_MAPPED.  In which case it should be
+	  a comma separated list of forms.  If not set, it defaults to the name of this function.
+	</td>
+	<td>
+	  <input name='select_forms'/>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Linked Fields</h3>The fields that are linked when listing options.
+	  Only applies if the form field is a subclass of I2CE_FormField_MAPPED.  
+	  It should be  a colon separated list of 'forms' or 'form+linkfield's.	
+	  Example: "county:district+region:[region]:country".
+	  If not set, it defaults to the name of this function.
+	</td>
+	<td>
+	  <input name='link_fields'/>
+	</td>
+      </tr>
+    </table>
+
+      <span id='dependent_functions'>
+	<h2><a name="dependent_functions_link" href='' id='dependent_functions_link_replace'> Dependent Functions</a></h2>
+	<div class='indented' id='dependent_functions_ajax'>
+	</div>
+      </span>
+
+  </span>
+</div>

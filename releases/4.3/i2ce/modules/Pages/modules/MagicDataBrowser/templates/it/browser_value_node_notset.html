@@ -1,0 +1,48 @@
+<li>
+  <span name="browser_magic_data_key"></span> =&gt; <i>Non impostato</i>
+  <form method="POST" name="erase_action">
+    <input type="hidden" name="caller"><input type="submit" value="Erase" onclick="if (confirm('Are you sure?')) {return true;} else {return false;}"></form>
+  <form method="POST" name="scalar_action">
+    <input type="hidden" name="caller"><input type="submit" value="Make Scalar"></form>
+  <form method="POST" name="parent_action">
+    <input type="hidden" name="caller"><input type="submit" value="Make Parent"></form>
+
+  <span class="dropdown">
+    <a href="#" class="dropdown-toggle"> Importa <b class="caret "></b> </a>
+    <ul class="dropdown-menu" style="width:40em"><li>
+	<form method="POST" name="upload_action" enctype="multipart/form-data">
+	  <h4>Imposta dal file.:</h4>
+	  <input type="hidden" name="caller">
+	  File di input:<input type="file" name="upload"><br><input type="submit" value="Upload"></form>
+      </li>
+      <li>
+	<form method="POST" name="upload_binary_action" enctype="multipart/form-data">
+	  <h4>Load Binary File:</h4>
+	  <input type="hidden" name="caller">
+	  File di input:<input type="file" name="upload"><br><input type="submit" value="Upload"></form>
+      </li>
+      <li>
+	
+	<form method="POST" name="load_action" enctype="multipart/form-data">
+	  <h4>Carica dal foglio di calcolo:</h4>
+	  <input type="hidden" name="caller">
+	  File di input:<input type="file" name="csv"><br>
+	  URL di input:<input type="text" name="csv_url"><br>
+	  Trasforma file.:<input type="file" name="transform"><br>
+	  Trasformazione registrata:<select name="transform_key"><option value="">Select A Registered Transformation</option></select><br><input type="checkbox" value="1">Cancella al caricamento 
+	  <br><input type="submit" value="Upload"></form>
+      </li>
+      <li>
+	<form method="POST" name="load_action" enctype="multipart/form-data">
+	  <h4>Carica da XML:</h4>
+	  <input type="hidden" name="caller">
+	  File di input:<input type="file" name="xml"><br>
+	  URL di input:<input type="text" name="xml_url"><br>
+	  Trasforma file.:<input type="file" name="transform"><br>
+	  Trasformazione registrata:<select name="transform_key"><option value="">Select A Registered Transformation</option></select><br><input type="checkbox" value="1">Cancella al caricamento 
+	  <br><input type="submit" value="Upload"></form>
+      </li>
+    </ul></span>
+
+</li>
+

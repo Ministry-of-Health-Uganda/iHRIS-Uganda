@@ -1,0 +1,52 @@
+<div>
+  <div id="formBrowser_content">
+    <h2><span name="form_name"></span></h2>
+    <h3>
+      <span ifset="true" name="form_dispname">
+	Ця <span name="form_dispname"></span> форма
+      </span>
+    </h3>
+    <span name="form_desc" ifset="true">
+      <p>
+	<span name="form_desc"></span>
+      </p>
+    </span>
+    <span name="form_class" ifset="true">
+      Форма '<span name="form_name"></span>"забезпечується через клас"<span name="form_class"></span>'.  
+    </span>
+    <span name="form_class" ifset="!true">
+      <span class="error">Попередження: немає класу, зареєстрованого для цієї форми.</span>
+    </span>
+    <span name="form_class" ifset="true" class="dataTable recordsData">
+      <span id="particular_record_holder">
+	<table border="0" cellspacing="0" cellpadding="0" id="particular_record" class="formTable"><tr id="form_view_record_row"><td>
+		Вибрати запис для перегляду:
+	    </td>
+	    <td>
+	      <form method="get" name="form_view_record" id="form_view_record">
+		<select name="id" id="particular_record_select" class="formBrowser"><option value="-1">Жоден</option></select><input type="hidden" name="FBPrefix" id="fb_prefix"><input class="button" type="submit" action="showForm" value="Show Record" id="form_view_record_button"></form>
+	    </td>
+	  </tr><tr name="form_view_child" ifset="true" id="form_view_child_row" class="even"><td>
+		Виберіть дочірню форму, щоб переглянути:
+	    </td>
+	    <td>
+	      <form name="form_view_child" method="get" id="form_view_child">
+		<select name="child_form" id="child_form_select" class="formBrowser"></select><input type="hidden" name="FBPrefix" id="child_fb_prefix"><input id="form_view_child_button" class="button formBrowserButton" type="submit" action="showForm" value="Show Child Form"></form>
+	    </td>
+	  </tr><tr name="parent_form_name" ifset="true" id="parent_form_row"><td valign="middle">
+	      Перегляд батьківської форми (<span name="parent_form_name"></span>).
+	    </td>
+	    <td class="form_button_box">
+	      <a href="" id="form_view_parent_button" name="parent_form_link" class="button formBrowserButton">Переглянути батьківську</a>
+	    </td>
+	  </tr><tr name="edit_form_link" ifset="true" id="edit_form_row"><td valign="middle">
+	      Редагувати цю форму (<span name="form_name"></span>).
+	    </td>
+	    <td class="form_button_box">
+	      <a href="" id="form_edit_button" name="edit_form_link" class="button formBrowserButton">Редагувати форму</a>
+	    </td>
+	  </tr></table></span>
+    </span>
+  </div>
+</div>
+

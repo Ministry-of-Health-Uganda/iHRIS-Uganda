@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="page" path="/I2CE/page">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="page" path="/I2CE/page" locale="fr">
+    <version>4.3.0.1</version>
+    <configurationGroup name="login">
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="fr" type="string">
+          <value>Ouverture de session</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="logout">
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="fr" type="string">
+          <value>Se déconnecter</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forgot">
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="fr" type="string">
+          <value>Mot de passe oublié</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="password">
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="fr" type="string">
+          <value>Changer de mot de passe</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

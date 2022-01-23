@@ -1,0 +1,43 @@
+<div>
+  <span name="has_existing_relationships" ifset="true" dir="rtl">
+    يمكنك اختيار إما لتعديل شكل العلاقة القائمة، أو إنشاء واحدة جديدة.
+  </span>
+  <span name="has_existing_relationships" ifset="!true" dir="rtl">
+    يمكنك بناء علاقة مع نموذج موجود هذه الصفحة.  
+  </span>
+  <span name="has_existing_relationships" ifset="true">
+    <h2 dir="rtl">تحرير العلاقة القائمة</h2>
+    <ul id="relationships" class="formRelationship_relationship_list"></ul></span>
+  <h2 dir="rtl">بناء علاقة جديدة</h2>
+  <span name="has_existing_relationships" ifset="true" dir="rtl">
+    الرجاء اختيار إما نموذج لاستخدام النموذج الأساسي لهذه العلاقة  أو اختيار لنسخ شكل العلاقة القائمة على واحد جديد من خلال النقر على رابط الخيارات المناسبة أدناه.
+  </span>
+  <span name="has_existing_relationships" ifset="!true" dir="rtl">
+    يرجى تحديد نموذج لاستخدام النموذج الأساسي لهذه العلاقة النموذج بالنقر على وصلة خيارات أدناه.
+  </span>
+  <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td dir="rtl">
+	<h3 dir="rtl">اسم علاقة قصيرة:</h3>استخدام مفتاح داخلي لتحديد شكل العلاقة. قد لا يكون هو نفسه مفتاح لأي من العلاقات نموذج موجود.
+      </td>
+      <td>
+	<input id="relationship" name="relationship" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+    </tr><tr><td dir="rtl">
+	<h3 dir="rtl">عرض اسم:</h3>اسم علاقة شكل يتم عرض ذلك على المستخدم النهائي.
+      </td>
+      <td>
+	<input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+    </tr><tr><td dir="rtl">
+	<h3 dir="rtl">توصيف:</h3>وصفا للعلاقة الشكل الذي ينبغي أن تكون مفهومة للمستخدم النهائي.
+      </td>
+      <td>
+	<textarea name="description" rows="4" cols="53" value=""></textarea></td>
+    </tr><tr><td dir="rtl">
+	لبناء علاقة جديدة نموذج ، وسوف تحتاج أولا إلى اختيار الشكل الأساسي
+	<select name="form_name" id="form_name"></select></td>
+      <td id="formRelationship_relationship_new_menu_list">
+      </td>
+    </tr><tr name="has_existing_relationships" ifset="true"><td dir="rtl">
+	حدد العلاقة القائمة لنسخ.
+	<select name="existing_relationship" id="existing_relationship"><option value="" dir="rtl">لا تنسخ</option></select></td>
+      <td id="formRelationship_relationship_copy_menu_list">
+      </td>
+    </tr></table></div>

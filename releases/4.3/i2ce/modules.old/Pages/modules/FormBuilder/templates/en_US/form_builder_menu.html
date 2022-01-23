@@ -1,0 +1,49 @@
+<div>
+  
+  <div id='container'>
+
+    <h2>Create A New Form</h2>
+    <table class='multiFormTable' cellpadding="0" cellspacing="0" border="0">
+      <tr>
+	<td>
+	  <h3>Form Name</h3>An internal key used to identify the form class.   It may not be the same as the key for any of the existing forms.
+	</td>
+	<td>
+	  <input name='name' type='text' value='' class='validate=[nonempty,magicdatakey,notinlist]'/>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Display Name</h3>The displayed name of this form.  This is what is presented to the end user.
+	</td>
+	<td>
+	  <input name='display' type='text' value='' class='validate=[nonempty]'/>
+	</td>
+      </tr>
+
+      <tr>
+	<td>
+	  <h3>Class:</h3>The form class that implements this form.
+	</td>
+	<td>
+	  <select name='class' ><option value=''>Select A Class</option></select>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <h3>Storage:</h3>The storage mechanism for this form
+	</td>
+	<td>
+	  <select name='storage' />
+	</td>
+      </tr>
+
+    </table>
+
+    
+    <h2>Edit an Existing Form</h2>
+    <ul id="forms" />
+
+
+  </div>
+</div>

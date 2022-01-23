@@ -1,0 +1,43 @@
+<div>
+  <span name="has_existing_relationships" ifset="true">
+    Maaari kang pumili na baguhin ang isang umiiral na kaugnayan ng pormularyo, o magtatag ng isang bago.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    Maaari kang bumuo ng isang umiiral na ugnayan ng pormularyo na may pahinang ito.  
+  </span>
+  <span name="has_existing_relationships" ifset="true">
+    <h2>Baguhin ang Umiiral na Ugnayan</h2>
+    <ul id="relationships" class="formRelationship_relationship_list"></ul></span>
+  <h2>Magtatag ng isang Bagong Ugnayan</h2>
+  <span name="has_existing_relationships" ifset="true">
+    Mangyaring pumili ng isang pormularyong gagamitin bilang pangunahing pormularyo para sa kaugnayang ito ng promularyo o piliin na kopyahin ang isang umiiral na ugnayan ng pormularyo papaunta sa isang bago sa pamamagitan ng pagpindot sa naaangkop na kawing ng Mga Mapagpipilian sa ibaba.
+  </span>
+  <span name="has_existing_relationships" ifset="!true">
+    Mangyaring pumili ng isang pormularyong gagamitin bilang pangunahing pormularyo para sa ugnayang ito ng pormularyo sa pamamagitan ng pagpindot sa kawing ng Mga Mapagpipilian na nasa ibaba.
+  </span>
+  <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	<h3>Maikling Pangalan ng Ugnayan:</h3>Isang susing panloob na ginagamit upang makilala ang ugnayan ng pormularyo.  Maaaring hindi ito katulad ng susi para sa anumang umiiral na mga ugnayan ng pormularyo.
+      </td>
+      <td>
+	<input id="relationship" name="relationship" type="text" value="" class="validate=[nonempty,magicdatakey,notinlist]"></td>
+    </tr><tr><td>
+	<h3>Ipakita ang Pangalan:</h3>Ang pangalan ng ugnayan ng pormularyo na ipinapakita sa tumatanggap na tagagamit.
+      </td>
+      <td>
+	<input name="display_name" type="text" value="" class="validate=[nonempty]"></td>
+    </tr><tr><td>
+	<h3>Paglalarawan:</h3>Isang paglalarawan ng ugnayan ng pormularyo na dapat na nauunawaan ng tumatanggap na tagagamit.
+      </td>
+      <td>
+	<textarea name="description" rows="4" cols="53" value=""></textarea></td>
+    </tr><tr><td>
+	Upang makabuo ng isang bagong ugnayan ng pormularyo, kakailanganin mo munang pumili ng isang Pangunahing Pormularyo
+	<select name="form_name" id="form_name"></select></td>
+      <td id="formRelationship_relationship_new_menu_list">
+      </td>
+    </tr><tr name="has_existing_relationships" ifset="true"><td>
+	Pumili ng isang kokopyahing umiiral na ugnayan.
+	<select name="existing_relationship" id="existing_relationship"><option value="">Huwag kopyahin</option></select></td>
+      <td id="formRelationship_relationship_copy_menu_list">
+      </td>
+    </tr></table></div>

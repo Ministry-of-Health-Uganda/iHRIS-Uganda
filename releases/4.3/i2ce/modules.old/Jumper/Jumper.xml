@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="jumper">
+  <metadata>
+    <displayName>Page Jumper</displayName>
+    <className>I2CE_Module_Jumper</className>
+    <category>Base System Component</category>
+    <description>Creates a page jumper for elements of a page.</description>
+    <creator>Carl Leitner</creator>
+    <email>litlfred@ibiblio.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <enable name="stub" />
+    <!--enabled the stub module for ajax goodness, if it is there-->
+    <path name="images">
+      <value>./images</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+  </metadata>
+</I2CEConfiguration>

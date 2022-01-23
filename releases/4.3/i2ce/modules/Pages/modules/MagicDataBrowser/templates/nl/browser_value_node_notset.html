@@ -1,0 +1,48 @@
+<li>
+  <span name="browser_magic_data_key"></span> =&gt; <i>Niet ingesteld</i>
+  <form method="POST" name="erase_action">
+    <input type="hidden" name="caller"><input type="submit" value="Erase" onclick="if (confirm('Are you sure?')) {return true;} else {return false;}"></form>
+  <form method="POST" name="scalar_action">
+    <input type="hidden" name="caller"><input type="submit" value="Make Scalar"></form>
+  <form method="POST" name="parent_action">
+    <input type="hidden" name="caller"><input type="submit" value="Make Parent"></form>
+
+  <span class="dropdown">
+    <a href="#" class="dropdown-toggle"> Importeren <b class="caret "></b> </a>
+    <ul class="dropdown-menu" style="width:40em"><li>
+	<form method="POST" name="upload_action" enctype="multipart/form-data">
+	  <h4>Ingesteld vanuit bestand:</h4>
+	  <input type="hidden" name="caller">
+	  Invoerbestand:<input type="file" name="upload"><br><input type="submit" value="Upload"></form>
+      </li>
+      <li>
+	<form method="POST" name="upload_binary_action" enctype="multipart/form-data">
+	  <h4>Binair bestand laden:</h4>
+	  <input type="hidden" name="caller">
+	  Invoerbestand:<input type="file" name="upload"><br><input type="submit" value="Upload"></form>
+      </li>
+      <li>
+	
+	<form method="POST" name="load_action" enctype="multipart/form-data">
+	  <h4>Laden vanuit spreadsheet:</h4>
+	  <input type="hidden" name="caller">
+	  Invoerbestand:<input type="file" name="csv"><br>
+	  Invoer-URL:<input type="text" name="csv_url"><br>
+	  Transformatiebestand:<input type="file" name="transform"><br>
+	  Geregistreerde transformatie:<select name="transform_key"><option value="">Selecteer een geregistreerde transformatie</option></select><br><input type="checkbox" value="1">Verwijderen na laden 
+	  <br><input type="submit" value="Upload"></form>
+      </li>
+      <li>
+	<form method="POST" name="load_action" enctype="multipart/form-data">
+	  <h4>Laden vanuit XML:</h4>
+	  <input type="hidden" name="caller">
+	  Invoerbestand:<input type="file" name="xml"><br>
+	  Invoer-URL:<input type="text" name="xml_url"><br>
+	  Transformatiebestand:<input type="file" name="transform"><br>
+	  Geregistreerde transformatie:<select name="transform_key"><option value="">Selecteer een geregistreerde transformatie</option></select><br><input type="checkbox" value="1">Verwijderen na laden 
+	  <br><input type="submit" value="Upload"></form>
+      </li>
+    </ul></span>
+
+</li>
+

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Lists" path="/I2CE/">
+  <metadata>
+    <version>4.3.3.0.1</version>
+  </metadata>
+  <configurationGroup name="Lists" path="/I2CE/" locale="sw">
+    <version>4.3.0.1</version>
+    <configurationGroup name="auto_list" path="/I2CE/page/auto_list">
+      <configuration name="title" locale="sw" values="single" type="string"></configuration>
+    </configurationGroup>
+    <configurationGroup name="Lists" path="/modules/Lists">
+      <configuration name="messages" type="delimited" values="many" locale="sw">
+        <value>add_text:Ongeza %s mpya</value>
+        <value>add_new:Ongeza mpya</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="invalid_messages" path="/modules/forms/invalid_field_messages" locale="sw">
+      <configuration name="unique_fields" values="single" type="string"></configuration>
+      <configuration name="unique_field" values="single" type="string"></configuration>
+      <configuration name="unique" values="single" type="string"></configuration>
+    </configurationGroup>
+    <configurationGroup name="template_text" path="/modules/forms/template_text">
+      <configuration name="blank" values="single" locale="sw" type="string"></configuration>
+      <configuration name="loading" values="single" locale="sw" type="string"></configuration>
+      <configuration name="no_results" values="single" locale="sw" type="string"></configuration>
+      <configuration name="default_display" values="single" locale="sw" type="string"></configuration>
+      <configuration name="clear_display" values="single" locale="sw" type="string"></configuration>
+    </configurationGroup>
+    <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+      <configurationGroup name="I2CE_List">
+        <configurationGroup name="fields">
+          <configurationGroup name="remap">
+            <configuration name="headers" type="delimited" locale="sw" values="single"></configuration>
+          </configurationGroup>
+          <configurationGroup name="i2ce_hidden">
+            <configuration name="headers" type="delimited" locale="sw" values="single">
+              <value>default:Ficha</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="I2CE_SimpleList">
+        <configurationGroup name="fields">
+          <configurationGroup name="name">
+            <configuration name="headers" type="delimited" locale="sw" values="single">
+              <value>default:Jina</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="I2CE_SimpleCodedList">
+        <configurationGroup name="fields">
+          <configurationGroup name="code">
+            <configuration name="headers" type="delimited" locale="sw" values="single"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="sw">
+      <configuration name="can_hide_list_members" values="single" type="string">
+        <value>Weza kuficha orodha ya wanachama</value>
+      </configuration>
+      <configuration name="can_edit_database_lists" values="single" type="string">
+        <value>Weza kuhariri baadhi ya orodha zilizohifadhiwa kwenye hazinadata</value>
+      </configuration>
+      <configuration name="can_edit_all_database_lists" values="single" type="string">
+        <value>Weza kuhariri orodha zote zilizohifadhiwa kwenye hazinadata</value>
+      </configuration>
+      <configuration name="can_view_database_lists" values="single" type="string">
+        <value>Weza kuangalia baadhi ya orodha zilizohifadhiwa kwenye hazinadata</value>
+      </configuration>
+      <configuration name="can_view_all_database_lists" values="single" type="string">
+        <value>Weza kuangalia orodha zote zilizohifadhiwa kwenye hazinadata</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pages" path="/I2CE/page">
+      <configurationGroup name="view_list">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sw" type="string">
+            <value>Angalia Orodha</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

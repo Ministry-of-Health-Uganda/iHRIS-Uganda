@@ -1,0 +1,43 @@
+<div id="sql_function">
+  <span id="function_contents">
+    <h2 dir="rtl">تعديل وظيفة SQL <span name="name"></span></h2>
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0" id="reporting_function"><tr><td width="30%" dir="rtl">
+	  <h3 dir="rtl">SQL الاستعلام:</h3> ال SQL المعرف لهذه الوظيفة. قم بالرجوع الي الحقول ال مقررة مثل  تقرير النموذج + حقل`
+	</td>
+	<td width="auto">
+	  <textarea style="width:auto" cols="83" rows="4" name="qry" class="validate=[nonempty]"></textarea></td>
+      </tr><tr><td dir="rtl">
+	  <h3 dir="rtl">توصيف:</h3> توصيف المهمة ليتم عرضها للمستخدم النهائي
+	</td>
+	<td>
+	  <textarea type="text" name="description" rows="4" cols="53"></textarea></td>
+      </tr><tr><td dir="rtl">
+	  <h3 dir="rtl">حقل النموذج:</h3> حدد حقل النموذج المستخدم بواسطة المهمة لتعبئة القيم
+	</td>
+	<td>
+	  <select name="formfield"></select></td>
+      </tr><tr><td>
+	  <h3 dir="rtl">إجمالي:</h3> A comma separated list of the forms in the relationship on whose fields you which you wish to aggregate on (i.e. those not in the groupby clause, these are the forms that appear in your function)
+	</td>
+	<td>
+	  <input type="text" name="aggregate"></td>
+      </tr><tr><td>
+	  <h3 dir="rtl">النماذج التي تم اختيارها</h3>The forms which are selectable for this field.  Only applies if
+	  the form field is a subclass of I2CE_FormField_MAPPED.  In which case it should be
+	  a comma separated list of forms.  If not set, it defaults to the name of this function.
+	</td>
+	<td>
+	  <input name="select_forms"></td>
+      </tr><tr><td dir="rtl">
+	  <h3 dir="rtl">الحقول المرتبطة</h3>الحقول المرتبطة بقائمة الخيارات. لا ينطبق إلا إذا كان حقل النموذج هو فئة فرعية من I2CE_FormField_MAPPED. فهي يجب ان تكون قائمة جدول منفصل من "النماذج" أو "شكل + في linkfield. على سبيل المثال: "مقاطعة: المنطقة + المنطقة: [المنطقة]: البلد". إذا لم يتم ضبطها سوف تعود الي الإسم المفترض للخاصية.
+	</td>
+	<td>
+	  <input name="link_fields"></td>
+      </tr></table><span id="dependent_functions">
+	<h2><a name="dependent_functions_link" href="" id="dependent_functions_link_replace" dir="rtl"> وظائف تابعة</a></h2>
+	<div class="indented" id="dependent_functions_ajax">
+	</div>
+      </span>
+
+  </span>
+</div>

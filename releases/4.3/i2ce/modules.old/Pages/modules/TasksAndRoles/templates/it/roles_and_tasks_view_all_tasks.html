@@ -1,0 +1,21 @@
+<div id="siteContent">
+  <h1>Attività di amministrazione</h1>
+  <h2>Attività esistenti</h2>
+  <ul id="task_list"></ul><form method="post" action="tasks-roles/tasks" id="add_user_task">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Aggiungi una nuova attività
+	</th>
+      </tr><tr><td>
+	  <label>Nome breve attività:</label> Un nome breve consiste in lettere e numeri, - e _ ed è usato per fare riferimento ad una attività nelle pagine e nei template.
+	</td>
+	<td>
+	  <input type="text" id="task_short_name" name="task_short_name" class="validate=[notinlist,nonempty,magicdatakey]"></td>
+      </tr><tr><td>
+	  <label>Descrizione attività:</label> Una descrizione breve di questa attività
+	</td>
+	<td>
+	  <input type="text" name="task_description" class="validate=[nonempty]"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Create"></td>
+      </tr></table></form>
+</div>

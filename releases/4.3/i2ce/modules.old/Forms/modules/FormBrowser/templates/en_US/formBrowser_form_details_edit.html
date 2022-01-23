@@ -1,0 +1,82 @@
+<div>
+  <div id="formBrowser_content">
+    <form  method='post' name="form_save_link" >   
+    <h2><span  name="form_name"></span></h2>
+    <h3>
+      <span ifset="true"  name="form_dispname">
+	The <span name="form_dispname"></span> form
+      </span>
+    </h3>
+    <span name="form_desc" ifset="true">
+      <p>
+	<span name="form_desc"/>
+      </p>
+    </span>
+    <span name="form_class" ifset="true">
+      The form '<span  name="form_name"/>'  is provided via the class '<span name="form_class"/>'.  
+    </span>
+    <span name="form_class" ifset="!true">
+      <span class="error">Warning: There is no class registered for this form.</span>
+    </span>
+    <span name="form_class" ifset="true"  class="dataTable recordsData">
+      <span id="particular_record_holder">
+	<table  border="0" cellspacing="0" cellpadding="0" id="particular_record" class="multiFormTable">      
+	  <tr id="form_view_record_row">
+	    <td >
+		Select a record to view:
+	    </td>
+	    <td>
+	      <form  method='get' name="form_view_record" id="form_view_record">
+		<select name="id" id="particular_record_select" class="formBrowser">
+		  <option value="-1">None</option>
+		</select>
+		<input class="button" type="submit"  action="showForm" value="Show Record" id="form_view_record_button"/>
+	      </form>
+	    </td>
+	  </tr> 
+	  <tr  name="form_view_child" ifset="true" id="form_view_child_row" class='even'>
+	    <td >
+		Select a child form to view:
+	    </td>
+	    <td>
+	      <form name="form_view_child"  method='get' id="form_view_child">
+		<select name="child_form" id="child_form_select" class="formBrowser">
+		</select>
+		<input id="form_view_child_button" class="button formBrowserButton" type="submit"  action="showForm" value="Show Child Form" />
+	      </form>
+	    </td>
+	  </tr>
+	  <tr  name="parent_form_name" ifset="true" id="parent_form_row" >
+	    <td valign="middle">
+	      View the parent form (<span name="parent_form_name"></span>).
+	    </td>
+	    <td class='form_button_box'>
+	      <a  href="" id='form_view_parent_button' name="parent_form_link" class="button formBrowserButton">View Parent</a>
+	    </td>
+	  </tr>
+	  <tr name="form_save_link" ifset="true" id="form_save_row">
+	    <td valign="middle">
+	      Save this  form (<span name="form_name"></span>).
+	    </td>
+	    <td class='form_button_box'>
+		<input class="button" type="submit"   value="Save Form" />
+	    </td>
+	  </tr>
+	</table>
+      </span>
+    </span>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

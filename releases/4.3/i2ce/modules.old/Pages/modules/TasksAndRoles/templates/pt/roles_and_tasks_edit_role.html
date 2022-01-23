@@ -1,0 +1,31 @@
+<div id="siteContent">
+  <form method="post" action="REPLACEME" name="edit_role_form_action" id="edit_role">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><tr><th colspan="2">
+	  Editar Papel
+	</th>
+      </tr><tr><td>
+	  <label>Denominação do Papel:</label> O nome atribuído, a este papel, que é apresentado ao utilizador final.
+	</td>
+	<td>
+	  <input type="text" name="role_name" class="validate=[nonempty]"></td>
+      </tr><tr><td>
+	  <label>Aspectos Inerentes ao Papel:</label>A posições que possuem todos os direitos de acesso sobre este papel. A posição de administrador terá automaticamente acesso aeste papel
+	</td>
+	<td>
+	  <input type="hidden" name="role_roles[]" value="admin"><select name="role_roles[]" multiple id="role_roles"></select></td>
+      </tr><tr><td>
+	  <label>Tarefas do Papel:</label> As tarefas atribuidas a este papel
+	</td>
+	<td>
+	  <select name="role_tasks[]" multiple id="role_tasks" display="checkbox"></select></td>
+      </tr><tr><td>
+	  <label>Role Home page:</label> Default home page for this role
+	</td>
+	<td>
+	  <input type="text" name="homepage"></td>
+      </tr><tr><td colspan="2">
+	  <input class="button" type="submit" value="Save"></td>
+      </tr></table></form>
+
+
+</div>

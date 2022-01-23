@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="FileDump">
+  <metadata>
+    <displayName>File Dump</displayName>
+    <category>Base System Page</category>
+    <description>File Download Utility</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="MimeTypes">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="pages">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="FileDump">
+    <displayName>File dump</displayName>
+    <description>Configuration options for the file dump. File dump provides a universal download page for things in the search path</description>
+    <status>advanced:false</status>
+    <status>required:true</status>
+    <configuration values="single" name="cache_time" type="string">
+      <displayName>Cache Time</displayName>
+      <description>The time (in minutes) to cache content</description>
+      <status>required:true</status>
+      <value>10</value>
+    </configuration>
+    <configuration values="single" name="ttl" type="string">
+      <displayName>Location Cache Time</displayName>
+      <description>The time (in minutes) to cache locations in apc</description>
+      <status>required:true</status>
+      <value>60</value>
+    </configuration>
+    <configurationGroup name="defaultCategories">
+      <displayName>Default File Categories</displayName>
+      <configuration name="SCRIPTS" values="many" type="string">
+        <displayName>Scripts</displayName>
+        <description>The file extensions that default to this category</description>
+        <status>required:false</status>
+        <value>js</value>
+        <value>vb</value>
+      </configuration>
+      <configuration name="IMAGES" values="many" type="string">
+        <displayName>Images</displayName>
+        <description>The file extensions that default to this category</description>
+        <status>required:false</status>
+        <value>gif</value>
+        <value>png</value>
+        <value>jpg</value>
+        <value>jpeg</value>
+        <value>ico</value>
+      </configuration>
+      <configuration name="XSLTS" values="many" type="string">
+        <version>4.2.0.2</version>
+        <value>xsl</value>
+        <value>XSL</value>
+      </configuration>
+      <configuration name="ODT_TEMPLATES" values="many" type="string">
+        <version>4.2.0.2</version>
+        <value>odt</value>
+        <value>ODT</value>
+      </configuration>
+      <configuration name="CSS" values="many" type="string">
+        <displayName>CSS</displayName>
+        <description>The file extensions that default to this category</description>
+        <status>required:false</status>
+        <value>css</value>
+      </configuration>
+      <configuration name="STATIC" values="many" type="string">
+        <displayName>STATIC</displayName>
+        <description>The file extensions that default to this category</description>
+        <status>required:false</status>
+        <status>version:3.2.1</status>
+        <value>html</value>
+        <value>htm</value>
+      </configuration>
+    </configurationGroup>
+    <configuration name="limitToCategories" values="many" type="string">
+      <displayName>Allowed Categories</displayName>
+      <description>A list of the categories of files we allow downloading of</description>
+      <status>uniquemerge:true</status>
+      <version>4.2.0.1</version>
+      <value>SCRIPTS</value>
+      <value>IMAGES</value>
+      <value>CSS</value>
+      <value>STATIC</value>
+      <value>XSLTS</value>
+      <value>ODT_TEMPLATES</value>
+    </configuration>
+    <configurationGroup name="page" path="/I2CE/page/file">
+      <displayName>Page</displayName>
+      <description>Information about the file dump page</description>
+      <status>required:true</status>
+      <configuration name="style" values="single" type="string">
+        <displayName>Style</displayName>
+        <value>empty</value>
+      </configuration>
+      <configuration name="class" values="single" type="string">
+        <displayName>Page Class</displayName>
+        <description>The class responsible for displaying this page</description>
+        <status>required:true</status>
+        <value>I2CE_FileDump</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Page Options</displayName>
+        <description>The options that control the access and display of all pages</description>
+        <configuration name="title" values="single" locale="en_US" type="string">
+          <displayName>Page Title</displayName>
+          <description>Page Title</description>
+          <status>required:true</status>
+          <value>Form Dump</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

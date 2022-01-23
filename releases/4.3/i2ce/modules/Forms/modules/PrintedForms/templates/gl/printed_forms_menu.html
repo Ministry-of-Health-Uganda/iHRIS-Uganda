@@ -1,0 +1,27 @@
+<div id="siteContent">
+  <h2>Formularios estandarizados</h2>
+
+  <h3>Xerar formularios estandarizados</h3>
+
+  <span ifset="!true" name="has_valid_forms">
+    Non hai formularios estandarizados dispoñibles para este rexistro.
+  </span>
+  <span ifset="true" name="has_valid_forms">
+    <ul id="printed_forms_list"></ul></span>
+
+
+  <span type="module" ifenabled="true" name="BinField">
+    <span ifset="true" name="show_archive">
+      <h3>Formularios estandarizados arquivados</h3>
+
+      <span ifset="!true" name="has_archives">
+	Non hai formularios arquivados para este rexistro.
+      </span>
+      <span ifset="true" name="has_archives">
+	<span task="printed_forms_view_all_archives">
+	  <ul id="printed_forms_archive"></ul></span>
+      </span>
+    </span>
+  </span>
+
+</div>

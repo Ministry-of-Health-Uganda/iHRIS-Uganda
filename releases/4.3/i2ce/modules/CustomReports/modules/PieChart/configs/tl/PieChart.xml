@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports_PieChart" path="/modules/CustomReports/displays/PieChart">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="CustomReports_PieChart" path="/modules/CustomReports/displays/PieChart" locale="tl">
+    <version>4.3.0.1</version>
+    <configuration name="error_message" locale="tl" values="single" type="string">
+      <value>Walang datong natagpuan para sa ulat na ito. Pakitiyak na ang dato ng ulat ay naitago o baguhin ang mga hangganan mo.</value>
+    </configuration>
+    <configurationGroup name="display_options">
+      <configurationGroup name="styles">
+        <configurationGroup name="Pie">
+          <configuration name="display_name" locale="tl" values="single" type="string">
+            <value>Talangguhit na Bilog (Payak)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="Bar">
+          <configuration name="display_name" locale="tl" values="single" type="string">
+            <value>Talangguhit na Bareta (Payak)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="Column">
+          <configuration name="display_name" locale="tl" values="single" type="string">
+            <value>Talangguhit na Haligi (Payak)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="StackedColumn">
+          <configuration name="display_name" locale="tl" values="single" type="string">
+            <value>Talangguhit na Sapin-sapin ang Haligi (Payak)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="Scatter">
+          <configuration name="display_name" locale="tl" values="single" type="string">
+            <value>Nakakalat na Tuldok</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

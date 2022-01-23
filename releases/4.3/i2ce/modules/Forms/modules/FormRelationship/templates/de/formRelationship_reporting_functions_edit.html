@@ -1,0 +1,36 @@
+<div>
+  <span name="functions_container" id="functions_container"> 
+    <span id="reporting_functions_container">
+      <span name="has_existing_functions" ifset="true">
+	<h2>Vorhandene Funktionen</h2>
+	<ul id="existing_functions_list"></ul></span>
+      <h2 id="new_function_link" class="new_function_options_toggle"><a>Eine neue Funktion hinzufügen</a></h2>
+      <div id="new_function_options_menu" class="optionsMenu optionsMenuWide toggable windowDraggable=true windowFloats=true">
+	<div class="optionsMenuTitle window_drag">Eine neue Funktion hinzufügen</div>
+	<table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	      <h3>Funktionsname:</h3>Der Name dieser Funktion auf den man sich beim Erstellen von Berichten beziehen kann.
+	    </td>
+	    <td>
+	      <input type="text" name="name" id="function_name" value="" class="validate=[nonempty,notinlist,alphanumericextended,magicdatakey]"></td>
+	  </tr><tr><td>
+	      <h3>SQL-Abfrage:</h3> Die SQL-Abfrage zu dieser Funktion. Auf ein Datenblatt mit dem Namen &lt;datenblattname&gt; und dem Datenfeld &lt;feld&gt; wird in der Funktion mit „&lt;datenblattname&gt;+&lt;feld&gt;“ Bezug genommen.
+	    </td>
+	    <td>
+	      <textarea rows="4" cols="53" name="qry" class="validate=[nonempty]"></textarea></td>
+	  </tr><tr><td>
+	      <h3>Beschreibung:</h3> Eine Beschreibung dieser Funktion, die dem Anwender angezeigt wird.
+	    </td>
+	    <td>
+	      <textarea type="text" name="description" rows="4" cols="53"></textarea></td>
+	  </tr><tr><td colspan="2"> 
+	      <h3>Datenblattfeld:</h3> Ein Datenblattfeld auswählen in das diese Funktion Werte einfügt
+	      <select name="formfield"></select></td>
+	  </tr><tr><td colspan="2">
+	      <div></div>
+	      <span class="new_function_options_hide button optionsMenuButton window_hide">Schließen</span>
+	      <input type="submit" class="button only_options_menu " value="Create" id="new_function"><div></div>
+	      <br></td>
+	  </tr></table></div>
+    </span>
+  </span>
+</div>

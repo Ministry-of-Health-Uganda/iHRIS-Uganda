@@ -1,0 +1,47 @@
+<div>
+  
+
+  <h2>Feld</h2>
+  <div id="field_contents">
+    <table class="multiFormTable" cellpadding="0" cellspacing="0" border="0"><tr><td>
+	  <h3>Klasse des Formularfeldes</h3>Der Datentyp für dieses Feld.
+	</td>
+	<td>
+	  <select name="formfield"></select></td>
+      </tr><tr><td>
+	  <h3>Erforderlich</h3>Dieses Feld muss bearbeitet werden, bevor es gespeichert werden kann.
+	</td>
+	<td>
+	  <select name="required"><option value="1">Ja</option><option value="0">Nein</option></select></td>
+      </tr><tr><td>
+	  <h3>In Datenbank</h3>Dieses Feld wird in der Datenbank gespeichert
+	</td>
+	<td>
+	  <select name="in_db"><option value="1">Ja</option><option value="0">Nein</option></select></td>
+      </tr><tr><td>
+	  <h3>Eindeutig</h3>Dieses Feld muss ein eindeutiger Wert sein
+	</td>
+	<td>
+	  <select name="unique"><option value="1">Ja</option><option value="0">Nein</option></select></td>
+      </tr><tr><td>
+	  <h3>Eindeutige Felder</h3>If this is a unique field, these are fields it is requried to be unique relative to
+	</td>
+	<td>
+	  <input type="hidden" name="do_unique_field" value="1"><ul name="unique_field"></ul></td>
+      </tr></table><span id="headers">
+      <h2><a id="headers_link" href="">Kopfzeilen</a></h2>
+      Kopfzeilen für dieses Feld bearbeiten
+      <div class="indented" id="headers_ajax"></div>
+    </span>
+
+    
+    <span name="has_meta" ifset="1">
+      <span id="meta">
+	<h2><a id="meta_link" href="">Metadaten</a></h2>
+	Metadaten für dieses Feld bearbeiten
+	<div class="indented" id="meta_ajax"></div>
+      </span>
+    </span>
+
+  </div>
+</div>

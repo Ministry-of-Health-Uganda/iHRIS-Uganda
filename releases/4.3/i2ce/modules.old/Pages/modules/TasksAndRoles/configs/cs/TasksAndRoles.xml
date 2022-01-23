@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="tasks-roles">
+  <metadata>
+    <version>4.3.0.1</version>
+  </metadata>
+  <configurationGroup name="tasks-roles" locale="cs">
+    <version>4.3.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="cs">
+      <configuration name="tasks_and_roles_can_access" values="single" type="string">
+        <value>Umožnit minimální přístup k systému správy úkolů a rolí</value>
+      </configuration>
+      <configuration name="tasks_and_roles_can_edit_tasks" values="single" type="string">
+        <value>Umožní přístup pro úpravu do systému správy úkolů</value>
+      </configuration>
+      <configuration name="tasks_and_roles_can_edit_roles" values="single" type="string">
+        <value>Umožní přístup pro úpravu do systému správy úkolů</value>
+      </configuration>
+      <configuration name="tasks_and_roles_admin" values="single" type="string">
+        <value>Umožní úplný přístup do systému správy úkolů a rolí</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="roles">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs" type="string">
+            <value>Spravovat role</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="tasks">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs" type="string">
+            <value>Spravovat úkoly</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="home">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="cs" type="string">
+            <value>Spravovat úkoly a role</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

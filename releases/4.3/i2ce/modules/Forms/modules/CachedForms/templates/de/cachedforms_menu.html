@@ -1,0 +1,31 @@
+<div>
+  
+
+
+  <h2>Datenblätter cachen</h2>
+  <span name="has_profiles" ifset="true">
+    Alle Datenblätter des ausgewählten Profils cachen.
+    <form action="CachedForms/cache" style="margin-left:2em" method="POST">
+      Ein Profil auswählen:  <select name="profile"></select><br><input type="submit" value="Cache"></form>
+  </span>
+  <br><div>
+    <a href="CachedForms/cacheAll">Cachen</a> alle Datenblätter
+    <br><a href="CachedForms/cacheAllForce">Cachen erzwingen</a> von allen nicht veralteten Datenblättern
+    <br><a href="CachedForms/dropAll">Löschen</a> Caches von allen Datenblättern
+  </div>
+  <br><span name="has_profiles" ifset="true">
+    <h2>Gecachte Datenblätter exportieren</h2>
+    Alle gecachten Datenblätter des ausgewählten Profils exportieren. Sofern ein Änderungsdatum ausgewählt wird, erden nur Datensätze exportiert, die am angegebenen Datum oder danach verändert wurden. Ansonsten werden alle Datensätze des ausgewählten Profils exportiert, die geändert wurden.
+    <form action="CachedForms/export" style="margin-left:2em" method="POST">
+      Ein Profil auswählen:  <select name="profile"></select><br>
+      Änderungsdatum: <input class="datepicker_ymd" name="mod_date" type="text"><br><input type="checkbox" value="1" name="compress" checked>Aktiviere bzip2-Komprimierung
+      <br><input type="submit" value="Export"></form>
+    
+    <br></span>
+
+  <h2>Profil erstellen/bearbeiten</h2>
+  Profil erstellen oder ein bestehendes Profil mit Datenblättern bearbeiten.
+  <form action="CachedForms/exportProfile" style="margin-left:2em">
+      Ein Profil auswählen:  <select name="profile"><option value="">Ein neues Profil erstellen</option></select><br><input type="submit" value="Edit"></form>
+  <br><h2>Cachen einzelner Datenblätter verwalten</h2>
+  <ul id="cached_forms_list"></ul></div>
