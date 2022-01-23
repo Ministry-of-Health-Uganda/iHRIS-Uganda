@@ -4,20 +4,20 @@
   <metadata>
     <displayName>Relationship: staff</displayName>
     <description>loads reports related to gender</description>
-    <version>4.3.1</version>
+    <version>4.1.6.1</version>
   </metadata>
   <erase path="/modules/CustomReports/reportViews/gender_per_job">
-    <lessThan version="4.3.1" />
+    <lessThan version="4.1.6.1" />
   </erase>
   <erase path="/modules/CustomReports/reportViews/gender_per_facility">
-    <lessThan version="4.3.1" />
+    <lessThan version="4.1.6.1" />
   </erase>
   <requirement name="CustomReports-full-staff">
-      <atLeast version="4.3" />
-      <lessThan version="4.4" />
+      <atLeast version="4.0" />
+      <lessThan version="4.2" />
     </requirement>
   <configurationGroup name="uganda-manage-gender-reports" path="/modules/CustomReports">
-    <version>4.3.1</version>
+    <version>4.1.6.1</version>
     <configurationGroup name="gender_per_job" path="//modules/CustomReports/reportViews/gender_per_job">
       <displayName>Export</displayName>
       <configuration name="report">
