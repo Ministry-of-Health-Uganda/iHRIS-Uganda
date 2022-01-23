@@ -56,12 +56,12 @@ $form_factory = I2CE_FormFactory::instance();
 				$job->cleanup();
 				unset( $job );
 		
-			// 	$row++;
+				$row++;
 			// 	
 
-			print_r($job);
+		///	print_r($job);
 		}}
 	
-		//echo "Done ".$row++." Records.\n";
+		echo "Done ".$row++." Records.\n";
 		
 		?>
