@@ -44,7 +44,7 @@ function getAttendance(){
    $firstday_previous_month = Date("Y-m-01", strtotime("first day of previous month"));
 
 $lastday_previous_month = Date("Y-m-t", strtotime("last day of previous month"));
-	$endpoint ='https://hris2.health.go.ug/attendance/api/person_attend/2021-10-01/2021-10-31';
+	$endpoint ='https://hris2.health.go.ug/attendance/api/person_attend/2021-08-01/2021-09-30';
 	//$endpoint='https://hris2.health.go.ug/attendance/api/person_attend/'.$firstday_previous_month.'/'.$lastday_previous_month;
 	$attdata   = sendRequest($endpoint);
 return $attdata;
