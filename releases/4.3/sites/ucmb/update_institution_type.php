@@ -44,7 +44,7 @@ function rearrange($arr1){
 }	
 $form_factory = I2CE_FormFactory::instance();
 
-   $facs = I2CE_List::listOptions( "facility");
+   $facs = I2CE_List::listOptions( "job");
       $count =0;         
         foreach ($facs as $facdata){               
 		
