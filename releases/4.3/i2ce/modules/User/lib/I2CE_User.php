@@ -244,7 +244,7 @@ if (!class_exists('I2CE_User',false)) {
         /**
          *  @var protected mixed $id.  False or int, the id for this user. 
          */
-        protected $id = false;
+        protected $id = 0;
 
 
         /**

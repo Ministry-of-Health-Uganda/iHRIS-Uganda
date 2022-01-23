@@ -130,8 +130,18 @@ class I2CE_Dumper {
             header("Pragma: no-cache");
             session_cache_limiter("nocache");
         } else {
-            $req_headers = apache_request_headers();
-            if (isset($req_headers['If-Modified-Since']) && (strtotime($req_headers['If-Modified-Since']) == $file_mtime)) {
+            $isModified = true;
+            if ( function_exists( 'apache_request_headers' ) ) {
+                $req_headers = apache_request_headers();
+                if (isset($req_headers['If-Modified-Since']) && (strtotime($req_headers['If-Modified-Since']) == $file_mtime)) {
+                    $isModified = false;
+                }
+            } else {
+                if (array_key_exists( 'HTTP_IF_MODIFIED_SINCE', $_SERVER ) && isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) && (strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) == $file_mtime)) {
+                    $isModified = false;
+                }
+            }
+            if ( !$isModified ) {
                 // Client's cache IS current, so we just respond '304 Not Modified'.
                 header('Last-Modified: '.gmdate('D, d M Y H:i:s', $file_mtime).' GMT', true, 304);
                 header("Cache-Control: public,max-age=$cacheTime");

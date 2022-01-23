@@ -66,6 +66,7 @@ class I2CE_Module_FormLimits extends I2CE_Module {
             'I2CE_Form->checkWhereClause'=>'checkWhereClause',
             'I2CE_Form->createCheckFunction'=>'createCheckFunction',
             'I2CE_Form->createCheckLimitString'=>'createCheckLimitString',
+            'I2CE_Form->createCheckLimitFunction'=>'createCheckLimitFunction',
             'I2CE_Form->generateLimit'=>'generateLimit',
             'I2CE_Form->generateWhereClause'=>'generateWhereClause',
             );
@@ -233,11 +234,25 @@ class I2CE_Module_FormLimits extends I2CE_Module {
      * @param mixed $expr array or class implementing ArrayAccess, Iterator, and Countable (e.g. MagicDataNode) . the where data.  
      * @param callback $field_refernece_callback.  A callback function whose first arguement is the form, the second arguements
      * is the field and which returns the way the field value should be references as a field.  If the callback is null (the default) then
-     * the reference used is $data["$field']
-     * @param string $func_args.  Defaults to $data
+     * the reference used is $data["$field'].  THIS FIELD IS DEPRECATED.
+     * @param string $func_args.  Defaults to $data.  THIS FIELD IS DEPRECATED.
      * @returns false on failure a funciton on sucess.
      */
     public function createCheckFunction($formObj,$expr,$field_reference_callback=null, $func_args = '$data') {
+        if ( $field_reference_callback != null || $func_args != '$data' ) {
+            I2CE::raiseError("createCheckFunction called with deprecated arguments for field reference callback or func args.");
+            return false;
+        }
+        if (is_array($expr) && count($expr) > 0) {
+            $function = $this->createCheckFunctionFunction($formObj, $expr);
+            if (!is_callable($function)) {
+                return false;
+            }
+        } else {
+            return function($data) { return true; };
+        }
+        return function($data) { return $function($data); };
+         /*
         if (is_array($expr) && count($expr) > 0) {
             $function_string = $this->createCheckFunctionString($formObj, $expr,$field_reference_callback);
             if (!is_string($function_string)) {
@@ -248,7 +263,167 @@ class I2CE_Module_FormLimits extends I2CE_Module {
         }
         I2CE::raiseError("Got $function_string");
         $function_string = 'return (' . $function_string . ');';
-        return @create_function($func_args,$function_string);
+        // There should really be a better way to handle this.
+        eval( "\$created = function($func_args) { $function_string };" );
+        return $created;
+        */
+    }
+
+    /**
+     * Create a check function based on the where data.
+     * The function takes on argument which is an array indexed by the field names and with values the value of the field.
+     * @param I2CE_Form $form
+     * @param mixed $expr array or class implementing ArrayAccess, Iterator, and Countable (e.g. MagicDataNode) . the where data.  
+     * @return false on failure a function to which can be evalued.
+     */
+    public function createCheckFunctionFunction($formObj, $expr ) {
+        I2CE::raiseError("Creating Check Function on " . $formObj->getName() . " from:\n" . print_r($expr,true));
+        if (! (is_array($expr) || ($expr instanceof ArrayAccess && $expr instanceof Countable && $expr instanceof Iterator ))) {
+            I2CE::raiseError("array was not found while processing the where clause \n");
+            return false;
+        }
+        if (!isset($expr['operator']) || !is_string($expr['operator'])) {
+            I2CE::raiseError("No operator set");
+            return false;
+        }
+        switch($expr['operator']) {
+        case 'FIELD_LIMIT':
+            $subExpr = $this->createCheckLimitFunction($formObj,$expr);
+            if ($subExpr === false) {
+                I2CE::raiseError("Could not generate check function for " . print_R($expr,true));
+                return false;
+            }
+            if ( is_callable($subExpr) || $subExpr === true ) {
+                return $subExpr;
+            } else {
+                return false;
+            }
+        case 'AND': //we are allowing these to be n-ary operators
+        case 'OR':
+        case 'XOR':
+            if (!isset($expr['operand']) ) {
+                I2CE::raiseError("No operands set");
+                return false;
+            }
+            if (! (
+                    is_array($expr['operand']) 
+                    || ($expr['operand'] instanceof ArrayAccess && $expr['operand'] instanceof Iterator &&$expr['operand'] instanceof Countable))
+                ) {
+                I2CE::raiseError("Invalid operands set");                
+                return false;                
+            }
+            $subExpr = array();                
+            foreach ($expr['operand'] as $sub) {
+                $tmpExpr = $this->createCheckFunctionFunction($formObj,$sub);
+                if  ($tmpExpr == false) {
+                    I2CE::raiseError("GOT BAD subexpression from: " . print_r($sub,true));
+                    return false;
+                }
+                if (is_callable($tmpExpr)) {
+                    $subExpr[] = $tmpExpr;
+                }
+            }
+            if (count($subExpr) > 0) {
+                return function($data) use($subExpr,$expr){
+                    $ret = null;
+                    foreach($subExpr as $func) {
+                        if ( $ret === null ) {
+                            $ret = $func($data);
+                        } else {
+                            switch($expr['operator']) {
+                                case 'AND' :
+                                    $ret = $ret && $expr($data);
+                                    break;
+                                case 'OR' :
+                                    $ret = $ret || $expr($data);
+                                    break;
+                                case 'XOR' :
+                                    $ret = $ret xor $expr($data);
+                                    break;
+                            }
+                            return false;
+                        }
+                    }
+                    return $ret;
+                };
+            } else {
+                return true;
+            }
+        case 'NOT':
+            if (!isset($expr['operand']) ) {
+                I2CE::raiseError("No operands set");
+                return false;
+            }
+            if (! (
+                    is_array($expr['operand']) 
+                    || ($expr['operand'] instanceof ArrayAccess && $expr['operand'] instanceof Iterator &&$expr['operand'] instanceof Countable))
+                ) {
+                I2CE::raiseError("Invalid operands set");                
+                return false;                
+            }
+            if ( count($expr['operand']) != 1) {
+                I2CE::raiseError("Expecing one operand but did not receive");
+                return false;
+            }
+            reset($expr['operand']);
+            $subExpr  = $this->createCheckFunctionFunction($formObj,current($expr['operand']));
+            if ($subExpr === false) {
+                I2CE::raiseError("got bad subexpression from :" . print_r(current($expr['operand']),true));
+                return false;
+            }            
+            if (is_callable($subExpr)) {
+                return function($data) use ($subExpr) {
+                    return ! $subExpr($data);
+                };
+            }
+            return $subExpr;
+        default:
+            I2CE::raiseError("Unrecognzied operator " . $expr['operator'] . "\n");
+            return false;
+        }
+
+    }
+
+
+
+    /**
+     * Checks a limit boolean expression for a field based on  limit data
+     * @param I2CE_Form $formObj
+     * @param mixed $limit_data
+     * @returns string  or false on failure
+     */
+    public function createCheckLimitFunction($formObj,$limit_data=array()) {
+        if (!is_array($limit_data)) {
+            I2CE::raiseError("Expected array for generating where sub-expression, but not received");
+            return false;
+        }
+        if (!array_key_exists('field', $limit_data) || !is_string($limit_data['field'])) {
+            I2CE::raiseError("Field name is not given at 'field' ");
+            return false;
+        }
+        if (! ($fieldObj = $formObj->getField($limit_data['field'])) instanceof I2CE_FormField) {
+            I2CE::raiseError("Field named  {$limit_data['field']} is not a field of " . $formObj->getName() . "\nValid fields are:\n\t" . implode(",",$formObj->getFieldNames()));
+            return false;
+        }
+        if (!array_key_exists('style', $limit_data) || !is_string($limit_data['style'])) {
+            I2CE::raiseError("Style is not given at 'style' ");
+            return false;
+        }
+        if (!array_key_exists('data',$limit_data) || !is_array($limit_data['data'])) {
+            $limit_data['data'] = array();
+        }
+        $method = 'checkLimitFunction' . $limit_data['style'];
+        if (!$fieldObj->_hasMethod($method)) {
+            I2CE::raiseError("Not able to check limit (via $method)  for style " . $limit_data['style'] . " for class " . get_class($fieldObj));
+            return false;
+        }
+        $ret = $fieldObj->$method($limit_data['data'],$limit_data['field']);
+        if (is_callable($ret) || $ret === true) {
+            return $ret;
+        } else {
+            I2CE::raiseError("Unexpected return from limit $style");
+            return false;
+        }
     }
 
 

@@ -65,8 +65,9 @@ if (isset($set_categories) && $set_categories !== false && array_key_exists('cat
 
 
 function launchpad($str) {
-    $func = create_function('$c', 'return strtolower($c[1]) . "_" . strtolower($c[2]);');
-    return strtr(strtolower(preg_replace_callback('/([a-z])([A-Z])/', $func, $str)),'_','-');
+    return strtr(strtolower(preg_replace_callback('/([a-z])([A-Z])/', function( $matches ) {
+                        return strtolower($c[1]) . "_" . strtolower($c[2]);
+                    }, $str)),'_','-');
 }
 
 

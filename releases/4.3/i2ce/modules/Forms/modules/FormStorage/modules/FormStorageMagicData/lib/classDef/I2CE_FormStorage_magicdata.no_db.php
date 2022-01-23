@@ -472,7 +472,6 @@ class I2CE_FormStorage_magicdata extends I2CE_FormStorage_Mechanism {
         $order_fields=array();
         $order_func = false;
         if (count($ordering) > 0) {
-            $order_func ='';
             foreach ($ordering as $order) {
                 if (!is_string($order) || strlen($order) == 0) {                    
                     continue;
@@ -480,14 +479,30 @@ class I2CE_FormStorage_magicdata extends I2CE_FormStorage_Mechanism {
                 if ($order[0] == '-') {
                     $order = substr($order,1);
                     $order_fields[] = $order;                    
-                    $order_func .= "if ( array_key_exists('$order',\$a) && array_key_exists('$order',\$b)) { if (\$a['$order'] < \$b['$order']) return 1; if (\$a['$order'] > \$b['$order']) return -1;}";
                 } else {
                     $order_fields[] = $order;
-                    $order_func .= "if ( array_key_exists('$order',\$a) && array_key_exists('$order',\$b)) { if (\$a['$order'] < \$b['$order']) return -1; if (\$a['$order'] > \$b['$order']) return 1;}";                    
                 }                
             }            
-            $order_func .= 'return 0;';
-            $order_func = @create_function('$a,$b',$order_func);
+            $order_func = function($a,$b) use ($ordering) {
+                foreach( $ordering as $order ) {
+                    if (!is_string($order) || strlen($order) == 0) {                    
+                        continue;
+                    }
+                    if ($order[0] == '-') {
+                        $order = substr($order,1);
+                        if ( array_key_exists($order,$a) && array_key_exists($order,$b)) { 
+                            if ($a[$order] < $b[$order]) return 1; 
+                            if ($a[$order] > $b[$order]) return -1;
+                        }
+                    } else {
+                        if ( array_key_exists($order,$a) && array_key_exists($order,$b)) { 
+                            if ($a[$order] < $b[$order]) return -1; 
+                            if ($a[$order] > $b[$order]) return 1;
+                        }
+                    }
+                }
+                return 0;
+            };
         }
         $all_fields = array_unique(array_merge($data_fields,$this->getLimitedFields($where_data), $order_fields));
         $new_fields = array_diff($all_fields,$data_fields);
@@ -637,7 +652,6 @@ class I2CE_FormStorage_magicdata extends I2CE_FormStorage_Mechanism {
         $order_fields=array();
         $order_func = false;
         if (count($ordering) > 0) {
-            $order_func ='';
             foreach ($ordering as $order) {
                 if (!is_string($order) || strlen($order) == 0) {                    
                     continue;
@@ -645,15 +659,31 @@ class I2CE_FormStorage_magicdata extends I2CE_FormStorage_Mechanism {
                 if ($order[0] == '-') {
                     $order = substr($order,1);
                     $order_fields[] = $order;                    
-                    $order_func .= "if ( array_key_exists('$order',\$a) && array_key_exists('$order',\$b)) { if (\$a['$order'] < \$b['$order']) return 1; if (\$a['$order'] > \$b['$order']) return -1;}";
                 } else {
                     $order_fields[] = $order;
-                    $order_func .= "if ( array_key_exists('$order',\$a) && array_key_exists('$order',\$b)) { if (\$a['$order'] < \$b['$order']) return -1; if (\$a['$order'] > \$b['$order']) return 1;}";                    
                 }                
             }            
-            $order_func .= 'return 0;';
-            $order_func = @create_function('$a,$b',$order_func);
-        }
+            $order_func = function($a,$b) use ($ordering) {
+                foreach( $ordering as $order ) {
+                    if (!is_string($order) || strlen($order) == 0) {                    
+                        continue;
+                    }
+                    if ($order[0] == '-') {
+                        $order = substr($order,1);
+                        if ( array_key_exists($order,$a) && array_key_exists($order,$b)) { 
+                            if ($a[$order] < $b[$order]) return 1; 
+                            if ($a[$order] > $b[$order]) return -1;
+                        }
+                    } else {
+                        if ( array_key_exists($order,$a) && array_key_exists($order,$b)) { 
+                            if ($a[$order] < $b[$order]) return -1; 
+                            if ($a[$order] > $b[$order]) return 1;
+                        }
+                    }
+                }
+                return 0;
+            };
+ }
         $all_fields = array_unique(array_merge($data_fields,$this->getLimitedFields($where_data), $order_fields));
         $new_fields = array_diff($all_fields,$data_fields);
         $factory = I2CE_FormFactory::instance();

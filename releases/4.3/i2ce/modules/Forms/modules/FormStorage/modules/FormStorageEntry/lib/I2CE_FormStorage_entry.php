@@ -43,11 +43,6 @@ class I2CE_FormStorage_entry extends I2CE_FormStorage_DB {
     static protected $prepared;
 
     /**
-     * @var array A list of all cached callback functions.
-     */
-    static protected $callback;
-
-    /**
      * @var array Keys are form names values are arrays with keys fields 
      * and values an array for the form field id and details
      */
@@ -69,29 +64,9 @@ class I2CE_FormStorage_entry extends I2CE_FormStorage_DB {
         if ( !is_array( self::$prepared ) ) {
             self::$prepared = array();
         }
-        if ( !is_array( self::$callback ) ) {
-            self::$callback = array();
-        }
         $this->form_field_data_cache = array();
         $this->form_id_cache = array();
         $this->field_id_cache = array();
-    }
-
-    /**
-     * Create a callback function or return it from the cache if
-     * it already exists.
-     * @param string $code The code for the function
-     * @return string
-     */
-    protected static function createCallback( $code ) {
-        $hash = md5( $code );
-        if ( !array_key_exists( $hash, self::$callback ) ) {
-            if ( false === (self::$callback[$hash] = create_function('$form,$field',$code))) {
-                I2CE::raiseError( "Could not create callback from:\n $code");
-                return false;
-            }
-        }
-        return self::$callback[$hash];
     }
 
     /**
@@ -1532,28 +1507,29 @@ class I2CE_FormStorage_entry extends I2CE_FormStorage_DB {
         if (is_string($fields)) {
             $fields = array($fields);
         }
-        $internal_callback_code = 'switch($field) {';
-        $internal_callback_code .= " case 'id': return 'id' ;";
-        $internal_callback_code .= " case 'parent': return 'parent';";
-        $internal_callback_code .= " case 'last_modified': return 'last_modified';";
-        $internal_callback_code .= " case 'created': return 'created';";
+        $deets = array();
         foreach ($fields as $field) {
-            $details = $this->getFormFieldIdAndType($form,$field);
-            if (!is_array($details) || !array_key_exists('type',$details)) {
-                // This should be rare but could happen if no data has been saved yet.
-                
-                $internal_callback_code .= " case '$field': return 'NULL' ;";
-            } else {
-                //$internal_callback_code .= " case '$field': return '`$field`' ;";
-                $internal_callback_code .= " case '$field': return '`$field`' ;";
-            }
+            $deets["$form+$field"] = $this->getFormFieldIdAndType($form,$field);
         }
-        $internal_callback_code .= "default: return \"`BAD_FIELD_REFERENCE_FOR_\$field`\"; }";
-        if ( false === ($internal_reference_callback = self::createCallback($internal_callback_code))) {
-            I2CE::raiseError("Could not create callback from:\n $internal_callback_code");
-            return false;
-        }        
-        return $internal_reference_callback;
+
+        return function($form,$field) use($deets) {
+            switch($field) {
+                case 'id': return 'id' ;
+                case 'parent': return 'parent';
+                case 'last_modified': return 'last_modified';
+                case 'created': return 'created';
+            }
+            if ( array_key_exists("$form+$field", $deets ) ) {
+                $details = $deets["$form+$field"];
+                if (!is_array($details) || !array_key_exists('type',$details)) {
+                    return 'NULL';
+                } else {
+                    return "`$field`";
+                }
+            } else {
+                return "'BAD_FIELD_REFERENCE FOR_$field'";
+            }
+        };
     }
 
     /**
@@ -1572,27 +1548,30 @@ class I2CE_FormStorage_entry extends I2CE_FormStorage_DB {
         if (is_string($fields)) {
             $fields = array($fields);
         }
-        $internal_callback_code2 = 'switch($field) {';
-        $internal_callback_code2 .= " case 'id': return 'id' ;";
-        $internal_callback_code2 .= " case 'parent': return \"CONCAT(r.parent_form,'|',r.parent_id)\";  ";
-        $internal_callback_code2 .= " case 'last_modified': return 'r.last_modified';";
-        $internal_callback_code2 .= " case 'created': return 'r.created';";
         foreach ($fields as $field) {
-            $details = $this->getFormFieldIdAndType($form,$field);
-            if (!is_array($details) || !array_key_exists('type',$details)) {
-                // This should be rare but could happen if no data has been saved yet.
-                $internal_callback_code2 .= " case '$field': return 'NULL' ;";
-            } else {
-                $internal_callback_code2 .= " case '$field': return '`e_$field`.`{$details['type']}_value`';";
-            }
+            $deets["$form+$field"] = $this->getFormFieldIdAndType($form,$field);
         }
-        $internal_callback_code2 .= "default: return \"`BAD_FIELD_REFERENCE2_FOR_\$field`\"; }";
-        if ( false === ($internal_reference_callback2 = self::createCallback($internal_callback_code2))) {
-            I2CE::raiseError("Could not create callback from:\n $internal_callback_code2");
-            return false;
-        }        
-        return $internal_reference_callback2;
-    }
+
+        return function ($form,$field) use ($deets) {
+            switch($field) {
+                case 'id': return 'id' ;
+                case 'parent': return "CONCAT(r.parent_form,'|',r.parent_id)";
+                case 'last_modified': return 'r.last_modified';
+                case 'created': return 'r.created';
+            }
+            if ( array_key_exists("$form+$field", $deets ) ) {
+                $details = $deets["$form+$field"];
+                if (!is_array($details) || !array_key_exists('type',$details)) {
+                    return 'NULL';
+                } else {
+                    return "`e_$field`.`{$details['type']}_value`";
+                }
+            } else {
+                return "`BAD_FIELD_REFERENCE2_FOR_$field`";
+            }
+        };
+
+     }
 
 
 

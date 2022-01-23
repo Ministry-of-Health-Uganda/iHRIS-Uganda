@@ -44,7 +44,7 @@ echo Parent Branch is $PARENT
 $BZR status
 
 echo Should we update changelogs, commit under packacing everything and increment to $VERS? [y/n]
-INCVERS="y" 
+read INCVERS 
 
 if [[ "$INCVERS" == "y" || "$INCVERS" == "Y" ]];  then
     COMMITMSG="Ubuntu Release Version $VERS"
