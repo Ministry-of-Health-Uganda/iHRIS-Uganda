@@ -71,38 +71,38 @@ class I2CE_Page_BinaryField extends I2CE_Page{
                 }
                 $db = I2CE::PDO();
                 try {
-                    $get_field_info = $db->prepare( "SELECT ff.id as ff_id,ff.field as field_id,field.name as field,field.type AS type,ff.form as form_id,form.name as form FROM form_field ff JOIN field ON field.id = ff.field JOIN form ON form.id = ff.form WHERE ff.id = ?", array('integer'), array( 'integer', 'integer', 'text', 'text', 'integer', 'text' ) );
+                    $get_field_info = $db->prepare( "SELECT ff.id as ff_id,ff.field as field_id,field.name as field,field.type AS type,ff.form as form_id,form.name as form FROM form_field ff JOIN field ON field.id = ff.field JOIN form ON form.id = ff.form WHERE ff.id = ?" );
                 } catch ( PDOException $e ) {
                     I2CE::pdoError( $e, "Unable to prepare statement for field info lookup: " );
                     die();
                 }
                 try {
-                    $find_string_field = $db->prepare( "SELECT id from field WHERE name = ? AND type = 'string'", array( 'text' ), array( 'integer' ) );
+                    $find_string_field = $db->prepare( "SELECT id from field WHERE name = ? AND type = 'string'" );
                 } catch ( PDOException $e ) {
                     I2CE::pdoError( $e, "Unable to prepare statement for new field lookup: " );
                     die();
                 }
                 try {
-                    $update_ff = $db->prepare( "UPDATE form_field SET field = ? WHERE id = ?", array( 'integer', 'integer' ) );
+                    $update_ff = $db->prepare( "UPDATE form_field SET field = ? WHERE id = ?" );
                 } catch ( PDOException $e ) {
                     I2CE::pdoError( $e, "Unable to prepare statement for updating form field: " );
                     die();
                 }
                 $updates = array();
                 try {
-                    $updates['last_entry'] = $db->prepare( "UPDATE last_entry SET blob_value = null, string_value = ? WHERE record = ? AND form_field = ?", array( 'text', 'integer', 'integer' ) );
+                    $updates['last_entry'] = $db->prepare( "UPDATE last_entry SET blob_value = null, string_value = ? WHERE record = ? AND form_field = ?" );
                 } catch ( PDOException $e ) {
                     I2CE::pdoError( $e, "Unable to prepare statement for updating last_entry" );
                     die();
                 }
                 try {
-                    $updates['entry'] = $db->prepare( "UPDATE entry SET blob_value = null, string_value = ? WHERE record = ? AND form_field = ? AND UNIX_TIMESTAMP(date) = ?", array( 'text', 'integer', 'integer', 'integer' ) );
+                    $updates['entry'] = $db->prepare( "UPDATE entry SET blob_value = null, string_value = ? WHERE record = ? AND form_field = ? AND UNIX_TIMESTAMP(date) = ?" );
                 } catch ( PDOException $e ) {
                     I2CE::pdoError( $e, "Unable to prepare statement for updating entry" );
                     die();
                 }
                 try {
-                    $updates['config_alt'] = $db->prepare( "UPDATE config_alt SET value = ? WHERE parent = ? AND name = ?", array( 'text', 'text', 'text' ) );
+                    $updates['config_alt'] = $db->prepare( "UPDATE config_alt SET value = ? WHERE parent = ? AND name = ?" );
                 } catch ( PDOException $e ) {
                     I2CE::pdoError( $e, "Unable to prepare statement for updating entry" );
                     die();
@@ -146,7 +146,7 @@ class I2CE_Page_BinaryField extends I2CE_Page{
                                 continue;
                             }
                             try {
-                                $get_field_info->execute( $data->form_field );
+                                $get_field_info->execute( array( $data->form_field ) );
                                 $field_info = $get_field_info->fetch();
                                 $get_field_info->closeCursor();
                                 if ( !$field_info ) {
@@ -162,12 +162,12 @@ class I2CE_Page_BinaryField extends I2CE_Page{
                             if ( !array_key_exists( $data->form_field, $processed_ffs ) ) {
                                 if ( $field_info->type == 'blob' ) {
                                     try {
-                                        $find_string_field->execute( $field_info->field );
+                                        $find_string_field->execute( array( $field_info->field ) );
                                         $existing_field = $find_string_field->fetch();
                                         $find_string_field->closeCursor();
                                         if ( !$existing_field ) {
                                             try {
-                                                $add_res = $db->execParam( "INSERT INTO field ( name, type ) VALUES ( ?, ? )", array( $field_info->field, 'string' ) );
+                                                $add_res = I2CE_PDO::execParam( "INSERT INTO field ( name, type ) VALUES ( ?, ? )", array( $field_info->field, 'string' ) );
                                                 $existing_field = $db->lastInsertId();
                                             } catch ( PDOException $e ) {
                                                 I2CE::pdoError( $e, "Unable to add new field to entry storage: " );

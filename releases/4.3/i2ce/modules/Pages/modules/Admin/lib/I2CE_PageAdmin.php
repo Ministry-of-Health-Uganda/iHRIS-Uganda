@@ -177,7 +177,9 @@ class I2CE_PageAdmin extends I2CE_Page {
             } 
         }
         ksort($cats);
-        $compare = create_function('$m,$n','return strcasecmp($m,$n);');
+        $compare = function($m, $n) {
+            return strcasecmp($m,$n);
+        };
         foreach ($cats as $cat=>$modules) {
             uasort($modules,$compare);
             $cats[$cat] = $modules;

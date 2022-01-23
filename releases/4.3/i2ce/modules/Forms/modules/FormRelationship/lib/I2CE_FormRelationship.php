@@ -992,11 +992,10 @@ class I2CE_FormRelationship extends I2CE_Fuzzy {
             I2CE::raiseError("Could not instantiate $formName=>$form");
             return false;
         }
-        //$callback = create_function('$form,$field',"return \"`$formName+\$field`\";");
         if ( $formName == "primary_form" ) {
-            $callback = create_function('$form,$field',"return \"`$form`.`\$field`\";");
+            $callback = function($f,$field) use ($form) { return "`$form`.`$field`"; };
         } else {
-            $callback = create_function('$form,$field',"return \"`$formName`.`\$field`\";");
+            $callback = function($f,$field) use ($formName) { return "`$formName`.`$field`"; };
         }
         $where =  $formObj->generateWhereClause($this->formConfigs[$formName]->where->getAsArray(),$callback, "`" . $this->getParentFormNames($formName) . "+id`" );
         return $where;
@@ -1045,8 +1044,11 @@ class I2CE_FormRelationship extends I2CE_Fuzzy {
         }
         $fieldObj = $formObj->getField($fieldName);
         if (!$fieldObj instanceof I2CE_FormField_MAP) {
+           //new adds if(is_object($fieldObj)) 
+            // if(is_object($fieldObj)){
             I2CE::raiseError("Field $fieldName does not exist in $joinForm: " .get_class($fieldObj));
             return $ret;
+            // }
         }
         $sub_fields = $fieldObj->getDisplayedFields($style,false);
         if (count($sub_fields) <= 1)  {
