@@ -44,7 +44,7 @@ function rearrange($arr1){
 }	
 
 	  $cache = array();
-	  $cache['job'] =  rearrange(I2CE_List::listOptions( "job" ) );
+	  $cache['job'] = array_flip( rearrange(I2CE_List::listOptions( "job" ) ));
 
       $count =0;
 	 
@@ -58,7 +58,7 @@ function rearrange($arr1){
                 // $job->getField('classification')->setFromDB($classification_id);
 			    // $job->save( $user );
 			    // $job->cleanup();
-				print_r($key);
+				print_r($cache);
 		    	 
 
 		}
