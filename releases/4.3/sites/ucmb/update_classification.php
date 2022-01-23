@@ -29,7 +29,6 @@ if (PEAR::isError($db)) {
 	die($db->getMessage());
 }
 
-$form_factory = I2CE_FormFactory::instance();
 
 echo "Memory Limit: " . ini_get( "memory_limit" ) . "\n";
 echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
@@ -42,33 +41,35 @@ function rearrange($arr1){
     }
     return $arr2;
 }	
-
+$form_factory = I2CE_FormFactory::instance();
 
    $jobs = I2CE_List::listOptions( "job");
       $count =0;         
         foreach ($jobs as $key => $value){               
 		
-           
-		         $job = $form_factory->createContainer( 'job'.'|'.$key );
-		         $job->populate();
-				// $classification_id = 'classification|3';
-                // $job->getField('classification')->setFromDB($classification_id);
-			    // $job->save( $user );
-			    // $job->cleanup();
-				print_r($job);
-		    	 
+			// if($job_id){
+			// 	$job = $form_factory->createContainer( 'job|'. $data[iHRIS_JOB] );
+			// 			$job->populate();
+			// 			$job->code = $data[iHRIS_DHIS_JOB];
+			// 	$job->save( $user );
+			// 	$job->cleanup();
+			// 			unset( $job );
+		
+			// 	$row++;
+			// 			}else{
+		
+			// 	$not++;
+			// 	}
 
+			print_r($key);
 		}
-			
-        		$count++;
+	
+		echo "Done ".$row++." Records.\n";
+		
+		?>
 
           
 	    
 
 			  
-	    
 	
-
-//echo "DONE  ". $count." records have position information updated  ";
-
-?>
