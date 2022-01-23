@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CachedForms">
+  <metadata>
+    <displayName>Cached Forms</displayName>
+    <className>I2CE_Module_CachedForms</className>
+    <category>Reporting</category>
+    <description>A module that allow the creation of a cached table corresponding to a form</description>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="forms-storage">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="forms-storage-flat">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="BackgroundProcess">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+  </metadata>
+  <configurationGroup name="CachedForms">
+    <displayName>Cached Forms</displayName>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <version>3.2.5</version>
+      <configuration name="cached_forms_can_administer" values="single" type="string">
+        <value locale="en_US">Allows administering of cached forms</value>
+      </configuration>
+    </configurationGroup>
+    <configuration name="storage_not_assignable" path="/modules/forms/storage/not_assignable" type="delimited" values="single">
+      <version>4.1.1.1</version>
+      <value>cached:1</value>
+    </configuration>
+    <configurationGroup name="role_trickle_down" path="/I2CE/tasks/role_trickle_down">
+      <version>3.2.5</version>
+      <configuration name="admin" values="many" type="string">
+        <status>uniquemerge:true</status>
+        <value>cached_forms_can_administer</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="database_options">
+      <displayName>Database Options</displayName>
+      <status>required:false</status>
+      <configuration name="table_prefix" values="single" type="string">
+        <displayName>Table Prefix</displayName>
+        <description>A prefix we prepend to the cached tables created for a form</description>
+        <value>hippo_</value>
+      </configuration>
+      <configuration name="database" values="single" type="string">
+        <displayName>Database</displayName>
+        <description>The database we wish to store the cached tables in. If it is not set, we use the main database</description>
+        <status>required:false</status>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="times">
+      <displayName>Times</displayName>
+      <configuration name="background_time" values="single" type="string">
+        <displayName>Stale Time</displayName>
+        <description>The time (in minutes) after which to launch the background page. You can disable the launching of the background page by setting this to be less than or equal to 0</description>
+        <version>4.0.3.0</version>
+        <value>0</value>
+      </configuration>
+      <configuration name="stale_time" values="single" type="string">
+        <displayName>Stale Time</displayName>
+        <description>The time (in minutes) after which a cached table is consider stale. Setting to be less than or equal to zero means that it is always considered stale.</description>
+        <value>10</value>
+      </configuration>
+      <configuration name="fail_time" values="single" type="string">
+        <displayName>Fail Time</displayName>
+        <description>The time (in minutes) after which generation of a cached table is consider to have failed</description>
+        <status>required:true</status>
+        <value>15</value>
+      </configuration>
+      <configuration name="recache_time" values="single" type="string">
+        <displayName>Fail Time</displayName>
+        <description>The time (in minutes) after which the cached table is recached</description>
+        <status>required:true</status>
+        <version>3.2.7</version>
+        <value>1440</value>
+        <!-- one day -->
+      </configuration>
+      <configuration name="stale_time_by_storage" values="many" type="delimited">
+        <description>The default stale time in minutes for a form based on its storage mechanism. If set, overides the value under times/stale_time. Setting to be less than or equal to zero means that it is always considered stale.</description>
+        <version>4.0.1</version>
+        <value>entry:10</value>
+        <value>magicadata:30</value>
+        <value>flat:20</value>
+        <value>mutli_flat:20</value>
+      </configuration>
+      <configuration name="stale_time_by_form" values="many" type="delimited">
+        <description>The default stale time in minutes for a specific form. If set, overides the value under times/stale_time_by_storage and times/stale_time. Setting to be less than or equal to zero means that it is always considered stale.</description>
+        <version>4.0.2</version>
+        <value>person:3</value>
+        <!-- OK. so this form is in ihris-common, but I am being a bit lazy and I want also to illustrate-->
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="command_line">
+      <displayName>Command Line</displayName>
+      <configuration name="command_line_default" path="/modules/CachedForms/command_line_default" values="single" type="string">
+        <displayName>Default CLI page</displayName>
+        <description>The default page for the command line</description>
+        <status>required:true</status>
+        <value>cacheAll</value>
+      </configuration>
+      <configurationGroup name="cacheAll">
+        <displayName>Admin Page</displayName>
+        <description>Information about the configure modules page</description>
+        <status>required:true</status>
+        <configuration name="class" values="single" type="string">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>I2CE_Page_CachedForm</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <value>all</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="cacheAllForce">
+        <displayName>Admin Page</displayName>
+        <description>Information about the configure modules page</description>
+        <status>required:true</status>
+        <configuration name="class" values="single" type="string">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>I2CE_Page_CachedForm</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <value>all</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <configuration name="default_page" path="/modules/CachedForms/page_default" values="single" type="string">
+        <displayName>Default page</displayName>
+        <status>required:true</status>
+        <value>createCache</value>
+      </configuration>
+      <configurationGroup name="createCache">
+        <displayName>Admin Page</displayName>
+        <description>Information about the configure modules page</description>
+        <status>required:true</status>
+        <configuration name="style" values="single" type="string">
+          <displayName>Style</displayName>
+          <version>3.2.8</version>
+          <value>shell</value>
+        </configuration>
+        <configuration name="class" values="single" type="string">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>I2CE_Page_CachedForm</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US" type="string">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Cached Forms</value>
+          </configuration>
+          <configuration name="tasks" values="many" type="string">
+            <version>3.2.6</version>
+            <value>cached_forms_can_administer</value>
+          </configuration>
+          <configuration name="access" values="many" type="string">
+            <displayName>Page Access</displayName>
+            <description>All of the roles that have access to this page</description>
+            <status>required:false</status>
+            <value>admin</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

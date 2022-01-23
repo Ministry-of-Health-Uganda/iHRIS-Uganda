@@ -856,6 +856,9 @@ class I2CE   {
                 continue;
             }
             $last = strtolower($val[strlen($val)-1]);
+            if (!is_numeric($last)) {
+                $val = substr($val, 0, -1);
+            }
             switch($last) {
             case 'g':
                 $val *= 1024;

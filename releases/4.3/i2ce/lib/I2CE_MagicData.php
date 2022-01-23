@@ -245,9 +245,6 @@ class I2CE_MagicData extends I2CE_MagicDataNode {
      * @param I2CE_MagicDataStorage $storage
      */
     public function addStorage( $storage ) {
-        if ( !is_array( $this->storage ) ) {
-            $this->storage = array();
-        }
         if (!$storage instanceof I2CE_MagicDataStorage) {
             I2CE::raiseError("Magic data storage mechanism is invalid " .
                              print_r($storage,true));
@@ -328,6 +325,7 @@ class I2CE_MagicData extends I2CE_MagicDataNode {
         parent::__construct($name,null,$check_key);
         $this->locales = array (I2CE_Locales::DEFAULT_LOCALE);
         $this->num_storage = 0;
+        $this->storage = array();
     }
 
 

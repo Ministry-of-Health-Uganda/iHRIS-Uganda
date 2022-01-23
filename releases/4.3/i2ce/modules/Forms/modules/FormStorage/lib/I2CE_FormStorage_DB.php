@@ -212,7 +212,7 @@ abstract class I2CE_FormStorage_DB extends I2CE_FormStorage_Mechanism {
      *    
      */
     public function getSubSelectFieldsQuery($form,$sel_fields,$id = null ,$mod_time = -1,  $parent =false ,$limit = false  ) {
-        $callback = function($a,$b) { return "`" . $b . "`"; };
+        $callback = @create_function('$a,$b','return "`" . $b . "`";');
         if (!$callback) {
             I2CE::raiseError("Could not create callback reference");
             return false;

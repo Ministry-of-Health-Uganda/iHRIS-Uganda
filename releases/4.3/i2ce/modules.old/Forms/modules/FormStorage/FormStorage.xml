@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="forms-storage">
+  <metadata>
+    <displayName>Form Storage</displayName>
+    <className>I2CE_FormStorage</className>
+    <category>Base System Component</category>
+    <description>A module that enables storage of Forms. Sub modules will enable the specific storage and retrieval options.</description>
+    <creator>Luke Duncan</creator>
+    <email>lduncan@intrahealth.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.3.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="forms">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="sql">
+      <value>./sql</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+  </metadata>
+  <configurationGroup name="forms-storage" path="/modules/forms">
+    <displayName>Forms Storage</displayName>
+    <configurationGroup name="storage">
+      <displayName>Storage Information</displayName>
+      <description>Information for forms storage.</description>
+      <configuration name="default" values="single" type="string">
+        <displayName>Default Storage</displayName>
+        <description>The default storage type for forms.</description>
+        <value>entry</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="invalid_messages" path="/modules/forms/invalid_field_messages" locale="en_US">
+      <configuration name="only_child" values="single" type="string">
+        <version>4.2.1.1</version>
+        <value>You have exceeded the limit of this child form for this parent.</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>
