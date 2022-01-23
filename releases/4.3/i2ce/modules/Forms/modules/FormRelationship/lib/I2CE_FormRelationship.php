@@ -1048,10 +1048,11 @@ class I2CE_FormRelationship extends I2CE_Fuzzy {
             I2CE::raiseError("Field $fieldName does not exist in $joinForm: " .get_class($fieldObj));
             return $ret;
         }
-    }
+    
         $sub_fields = $fieldObj->getDisplayedFields($style,false);
         if (count($sub_fields) <= 1)  {
             return $ret; //there is no linking data
+        }
         }
         if ( ($refJoinForm = $this->getReferencedForm($joinForm)) === false ) {
             I2CE::raiseError("Could not get reference to $joinForm");
