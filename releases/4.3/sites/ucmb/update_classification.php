@@ -49,13 +49,13 @@ function rearrange($arr1){
         foreach ($jobs as $key => $value){               
 		
            
-		        // $job = $form_factory->createContainer( 'job'.'|'.$id );
+		         $job_container = $form_factory->createContainer( 'job'.'|'.$key );
 		        // $job->populate();
 				// $classification_id = 'classification|3';
                 // $job->getField('classification')->setFromDB($classification_id);
 			    // $job->save( $user );
 			    // $job->cleanup();
-				print_r($key);
+				print_r($job_container);
 		    	 
 
 		}
