@@ -51,7 +51,7 @@ $form_factory = I2CE_FormFactory::instance();
 			 	$fac = $form_factory->createContainer( $facdata['value'] );
 				$fac->populate();
 				$institution_type_id = "institution_type|111596";
-				$fac->getField('classification')->setFromDB($institution_type_id);
+				$fac->getField('institution_type')->setFromDB($institution_type_id);
 			 	$fac->save( $user );
 				$fac->cleanup();
 				unset( $fac );
