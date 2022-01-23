@@ -47,20 +47,20 @@ $form_factory = I2CE_FormFactory::instance();
       $count =0;         
         foreach ($facs as $facdata){               
 		
-			//  if($jobdata['value']){
-			//  	$job = $form_factory->createContainer( $jobdata['value'] );
-			// 	$job->populate();
-			// 	$classification="classification|3";
-			// 	$job->getField('classification')->setFromDB( $classification );
-			//  	$job->save( $user );
-			// 	$job->cleanup();
-			// 	unset( $job );
+			 if($jobdata['value']){
+			 	$fac = $form_factory->createContainer( $facdata['value'] );
+				$fac->populate();
+				$institution_type_id = "institution_type|111596";
+				$fac->getField('classification')->setFromDB($institution_type_id);
+			 	$fac->save( $user );
+				$fac->cleanup();
+				unset( $fac );
 		
-			// 	$row++;
+				$row++;
 			// 	
 
-			print_r($facdata);
-	//	}
+			//print_r($facdata);
+		}
 	    }
 	
 		echo "Done ".$row++." Records.\n";
