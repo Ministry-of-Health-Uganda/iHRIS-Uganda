@@ -1051,9 +1051,10 @@ class I2CE_FormRelationship extends I2CE_Fuzzy {
            
         }
         $sub_fields = $fieldObj->getDisplayedFields($style,false);
-         }
+         
         if (count($sub_fields) <= 1)  {
             return $ret; //there is no linking data
+        }
         }
         if ( ($refJoinForm = $this->getReferencedForm($joinForm)) === false ) {
             I2CE::raiseError("Could not get reference to $joinForm");
