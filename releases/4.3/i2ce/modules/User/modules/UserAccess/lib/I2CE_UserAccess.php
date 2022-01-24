@@ -322,9 +322,8 @@ class I2CE_UserAccess extends I2CE_UserAccess_Mechanism {
                 . ' WHERE u.username  = ? AND a.role IS NOT NULL AND LENGTH(a.role) > 0 ';
             try {
                 $row = I2CE_PDO::getRow( $qry, $params );
-                if (!$row instanceof PDORow || !$row->num) {
-                    $stmt->closeCursor();
-                    unset( $stmt );
+                if (!$row || !$row->num) {
+                    unset( $row );
                     return false;
                 }
                 $exists = $row->num > 0;
@@ -350,7 +349,10 @@ class I2CE_UserAccess extends I2CE_UserAccess_Mechanism {
             . ' FROM ' . $this->detailTable . ' u'
             . ' WHERE u.username  = ? ';
         try {
-            $row = I2CE_PDO::getRow( $qry, array( 'username' ) );
+            $row = I2CE_PDO::getRow( $qry, array( $username ) );
+            if ( !$row ) {
+                return false;
+            }
             $row_id = $row->id;
             unset( $row );
             if ( $row_id ) {
@@ -452,7 +454,7 @@ class I2CE_UserAccess extends I2CE_UserAccess_Mechanism {
                 $this->encryptPassword($old_password)
                 );
             try {
-                $result = $I2CE_PDO::execParam($qry, $params);
+                $result = I2CE_PDO::execParam($qry, $params);
                 return $result == 1;
             } catch ( PDOException $e ) {
                 I2CE::pdoError($e, "Cannot update password");
@@ -481,7 +483,7 @@ class I2CE_UserAccess extends I2CE_UserAccess_Mechanism {
         }
         try {
             $row = I2CE_PDO::getRow( $qry, $params );                
-            if (!$row instanceof PDORow) {
+            if (!$row) {
                 return false;
             }
             return ($row->num == 1);        
@@ -506,7 +508,7 @@ class I2CE_UserAccess extends I2CE_UserAccess_Mechanism {
 
             try {
                 $row = I2CE_PDO::getRow( $qry, $params );                
-                if (!$row instanceof PDORow) {
+                if (!$row) {
                     return false;
                 }
                 return ($row->default_password == 1);        
@@ -581,7 +583,7 @@ class I2CE_UserAccess extends I2CE_UserAccess_Mechanism {
         try {
             $userDetails = I2CE_PDO::getRow( "SELECT user FROM " . $this->logTable 
                     . " WHERE user = IFNULL((SELECT id FROM " . $this->detailTable . " WHERE username = ?),0) AND session_id = ? AND logout IS NULL ", array( $username, session_id() ) );
-            if(count(array($userDetails)) == 0){
+            if(!$userDetails || (is_array($userDetails) && count($userDetails) == 0)){
                 return true;
             } else {
                 return false;
@@ -624,8 +626,8 @@ class I2CE_UserAccess extends I2CE_UserAccess_Mechanism {
       * @returns boolean. true on success
       */
     public function _createUser($username, $password, $role = false, $details= array()) {
-        $qry = "INSERT INTO " . $this->detailTable . " ( username, password, default_password) VALUES (?,?,?)";
-        $params = array($username,$this->encryptPassword($password), 1);
+        $qry = "INSERT INTO " . $this->detailTable . " ( username, password, default_password,firstname,lastname,creator) VALUES (?,?,?,?,?,?)";
+        $params = array($username,$this->encryptPassword($password), 1,'','',0);
         try {
             I2CE_PDO::execParam($qry, $params );
         } catch( PDOException $e ) {
