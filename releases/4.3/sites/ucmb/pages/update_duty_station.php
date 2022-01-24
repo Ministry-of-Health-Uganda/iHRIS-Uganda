@@ -34,33 +34,32 @@ echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 //get person position
 $person_position = I2CE_FormStorage::listFields( "person_position", false, false, array(), true ); 
 
-//$person_position = I2CE_List::listOptions( "person_position");
-print_r($person_position);
-	// // $count=0;
-	// // $skipped=0;
-	// // foreach ($person_position_ids as $id) {
-    // // 		 $person_position = $form_factory->createContainer('person_position|' . $id);
-   	// // 	 $person_position->populate();
-	// // 	 $position = $person_position->getField('position')->getDBValue();
-	// // 	 $dutystation = $person_position->getField('duty_station')->getDisplayValue();
-	// // 	 if($dutystation){
-	// // 		$skipped++;
-	// // 	 }else{
-	// // 	 $position = $form_factory->createContainer($position);
-   	// // 	 $position->populate();
-	// // 	 $facility = $position->getField('facility')->getDBValue();
-	// // 	 //I2CE::raiseError("Displaying " . $facility);
-	// // 	 $person_position->getField('duty_station')->setFromDB( $facility );
-    // // 		 $person_position->save( $user );
-	// // 	 $person_position->cleanup();
-	// //     	 unset( $person_position );
-	// // 	 $position->cleanup();
-	// //     	 unset( $position );
-	// // 	 $count++;
+	$count=0;
+	$skipped=0;
+	foreach ($person_position_ids as $id) {
+		print_r($id);
+    	// 	 $person_position = $form_factory->createContainer('person_position|' . $id);
+   		//  $person_position->populate();
+		//  $position = $person_position->getField('position')->getDBValue();
+		//  $dutystation = $person_position->getField('duty_station')->getDisplayValue();
+		//  if($dutystation){
+		// 	$skipped++;
+		//  }else{
+		//  $position = $form_factory->createContainer($position);
+   		//  $position->populate();
+		//  $facility = $position->getField('facility')->getDBValue();
+		//  //I2CE::raiseError("Displaying " . $facility);
+		//  $person_position->getField('duty_station')->setFromDB( $facility );
+    	// 	 $person_position->save( $user );
+		//  $person_position->cleanup();
+	    // 	 unset( $person_position );
+		//  $position->cleanup();
+	    // 	 unset( $position );
+		//  $count++;
 	
-	// // 	 continue; 
-	// // 	}
-	// // 	}
-	// echo "DONE  ". $count." records have position information updated";
-	// echo "DONE  ". $skipped." records had duty station updated";
+		//  continue; 
+		// }
+		}
+	echo "DONE  ". $count." records have position information updated";
+	echo "DONE  ". $skipped." records had duty station updated";
 ?>
