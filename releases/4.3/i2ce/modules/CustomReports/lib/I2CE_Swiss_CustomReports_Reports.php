@@ -106,7 +106,7 @@ class I2CE_Swiss_CustomReports_Reports extends I2CE_Swiss_CustomReports_Report_B
     protected function displayNewReport($contentNode, $transient_options) {
         //get the existing report relationships.
         $swissRelationships = $this->setupRelationshipFactory();
-        if (!$swissRelationships instanceof I2CE_SwissFactory || count($swissRelationships) == 0
+        if (!$swissRelationships instanceof I2CE_SwissFactory || count(array($swissRelationships)) == 0
                 || !$swissRelationships->getSwiss( '/' ) instanceof I2CE_Swiss_FormRelationships ) {
             //we have no relationships to create a report on.
             $noReportNode = $this->template->appendFileById('customReports_reports_no_new.html','div','new_report',false,$contentNode);
