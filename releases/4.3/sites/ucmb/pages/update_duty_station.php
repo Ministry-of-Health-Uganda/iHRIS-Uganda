@@ -36,7 +36,7 @@ $person_position = I2CE_FormStorage::listFields( "person_position", false, false
 	$count=0;
 	$skipped=0;
 	foreach ($person_position as $id) {
-		print_r($id);
+		print_r($id[0]);
     	// 	 $person_position = $form_factory->createContainer('person_position|' . $id);
    		//  $person_position->populate();
 		//  $position = $person_position->getField('position')->getDBValue();
