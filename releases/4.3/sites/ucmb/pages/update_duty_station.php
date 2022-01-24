@@ -32,7 +32,7 @@ $form_factory = I2CE_FormFactory::instance();
 echo "Memory Limit: " . ini_get( "memory_limit" ) . "\n";
 echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
 //get person position
-$person_position = I2CE_FormStorage::search( "job", false, false, array(), true ); 
+$person_position = I2CE_FormStorage::listFields( "person_position", false, false, array(), true ); 
 
 //$person_position = I2CE_List::listOptions( "person_position");
 print_r($person_position);
