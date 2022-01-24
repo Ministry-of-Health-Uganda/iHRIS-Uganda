@@ -36,28 +36,28 @@ $person_position = I2CE_FormStorage::listFields( "person_position", false, false
 	$count=0;
 	$skipped=0;
 	foreach ($person_position as $id) {
-		print_r($id[0]);
-    	// 	 $person_position = $form_factory->createContainer('person_position|' . $id);
-   		//  $person_position->populate();
-		//  $position = $person_position->getField('position')->getDBValue();
-		//  $dutystation = $person_position->getField('duty_station')->getDisplayValue();
-		//  if($dutystation){
-		// 	$skipped++;
-		//  }else{
-		//  $position = $form_factory->createContainer($position);
-   		//  $position->populate();
-		//  $facility = $position->getField('facility')->getDBValue();
-		//  //I2CE::raiseError("Displaying " . $facility);
-		//  $person_position->getField('duty_station')->setFromDB( $facility );
-    	// 	 $person_position->save( $user );
-		//  $person_position->cleanup();
-	    // 	 unset( $person_position );
-		//  $position->cleanup();
-	    // 	 unset( $position );
-		//  $count++;
+		//print_r($id[0]);
+    		 $person_position = $form_factory->createContainer('person_position|' . $id[0]);
+   		 $person_position->populate();
+		 $position = $person_position->getField('position')->getDBValue();
+		 $dutystation = $person_position->getField('duty_station')->getDisplayValue();
+		 if($dutystation){
+			$skipped++;
+		 }else{
+		 $position = $form_factory->createContainer($position);
+   		 $position->populate();
+		 $facility = $position->getField('facility')->getDBValue();
+		 //I2CE::raiseError("Displaying " . $facility);
+		 $person_position->getField('duty_station')->setFromDB( $facility );
+    		 $person_position->save( $user );
+		 $person_position->cleanup();
+	    	 unset( $person_position );
+		 $position->cleanup();
+	    	 unset( $position );
+		 $count++;
 	
-		//  continue; 
-		// }
+		 continue; 
+		}
 		}
 	echo "DONE  ". $count." records have position information updated";
 	echo "DONE  ". $skipped." records had duty station updated";
