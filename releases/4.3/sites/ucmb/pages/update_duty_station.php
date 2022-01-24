@@ -31,12 +31,11 @@ $form_factory = I2CE_FormFactory::instance();
 
 echo "Memory Limit: " . ini_get( "memory_limit" ) . "\n";
 echo "Execution Time: " . ini_get( "max_execution_time" ) . "\n";
-//get person position
+//get person position from person position
 $person_position = I2CE_FormStorage::listFields( "person_position", false, false, array(), true ); 
-
 	$count=0;
 	$skipped=0;
-	foreach ($person_position_ids as $id) {
+	foreach ($person_position as $id) {
 		print_r($id);
     	// 	 $person_position = $form_factory->createContainer('person_position|' . $id);
    		//  $person_position->populate();
