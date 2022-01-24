@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="nextOfKin" path="/">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="nextOfKin" path="/" locale="pa">
+    <version>4.2.0.1</version>
+    <configurationGroup name="dep_class" path="/modules/forms/formClasses/iHRIS_NextOfKin">
+      <configurationGroup name="fields">
+        <configurationGroup name="name">
+          <configuration name="headers" type="delimited" values="many" locale="pa">
+            <value>default:ਨਾਂ</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="relationship">
+          <configuration name="headers" type="delimited" values="many" locale="pa">
+            <value>default:ਰਿਸ਼ਤਾ</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="dep_form" path="/modules/forms/forms/nextofkin">
+      <configuration name="display" locale="pa">
+        <value>ਸਾਕ-ਸਬੰਧੀ</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="pa">
+      <configuration name="person_can_view_child_form_nextofkin" locale="pa">
+        <value>ਸ਼ਖ਼ਸ ਦੇ ਸਾਕ-ਸਬੰਧੀ ਵੇਖ ਸਕਦੇ ਹੋ</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_nextofkin" locale="pa">
+        <value>ਸ਼ਖ਼ਸ ਦੇ ਸਾਕ-ਸਬੰਧੀ ਸੋਧ ਸਕਦੇ ਹੋ</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="nextofkin_page" path="/I2CE/page/nextofkin">
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="pa">
+          <value>ਸਾਕ-ਸਬੰਧੀਆਂ ਦੀ ਜਾਣਕਾਰੀ ਜੋੜੋ/ਨਵਿਆਉ</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

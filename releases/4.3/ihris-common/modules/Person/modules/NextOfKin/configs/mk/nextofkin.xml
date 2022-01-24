@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="nextOfKin" path="/">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="nextOfKin" path="/" locale="mk">
+    <version>4.2.0.1</version>
+    <configurationGroup name="dep_class" path="/modules/forms/formClasses/iHRIS_NextOfKin">
+      <configurationGroup name="fields">
+        <configurationGroup name="name">
+          <configuration name="headers" type="delimited" values="many" locale="mk">
+            <value>default:Име</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="relationship">
+          <configuration name="headers" type="delimited" values="many" locale="mk">
+            <value>default:Сродство</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="dep_form" path="/modules/forms/forms/nextofkin">
+      <configuration name="display" locale="mk">
+        <value>Најблизок роднина</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="mk">
+      <configuration name="person_can_view_child_form_nextofkin" locale="mk"></configuration>
+      <configuration name="person_can_edit_child_form_nextofkin" locale="mk"></configuration>
+    </configurationGroup>
+    <configurationGroup name="nextofkin_page" path="/I2CE/page/nextofkin">
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="mk">
+          <value>Додај/Поднови информации за најблизок роднина</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -257,7 +257,7 @@ class iHRIS_FormField_CURRENCY extends I2CE_FormField_MAP {
     public function isValid() {
         $value = $this->getValue();
         $curr_value = parent::getFromDB( $value[0] );
-        return count(array($this->value)) == 2 
+        return count($value) == 2 
             && I2CE_Validate::checkCurrency( $value[1] )
             && I2CE_Validate::checkString( $curr_value[1] ) 
             && in_array($curr_value[0],$this->getSelectableForms());

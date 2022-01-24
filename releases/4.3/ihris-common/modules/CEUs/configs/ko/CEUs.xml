@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CEUs" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="CEUs" path="/I2CE" locale="ko">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_continuing_education_course" locale="ko">
+        <value>평생 교육 목록 편집</value>
+      </configuration>
+      <configuration name="can_view_database_list_continuing_education_course" locale="ko">
+        <value>평생 교육 목록 보기</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="continuing_education">
+          <configuration name="display" values="single" locale="ko">
+            <value>평생 교육</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="continuing_education_course">
+          <configuration name="display" values="single" locale="ko">
+            <value>교육 과정 계속하기</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_ContinuingEducationCourse">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:이름</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="credit_hours">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:학점</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_ContinuingEducation">
+          <configurationGroup name="fields">
+            <configurationGroup name="continuing_education_course">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:교육 과정 계속하기</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="credit_hours">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:학점</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:시작한 날</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:끝난 날</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

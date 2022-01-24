@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Contact" path="/I2CE">
+  <metadata>
+    <version>4.2.1.2.1</version>
+  </metadata>
+  <configurationGroup name="Contact" path="/I2CE" locale="sv">
+    <version>4.2.1.2.1</version>
+    <configurationGroup name="/modules/forms/forms/contact_group">
+      <configuration name="display" values="single" locale="sv">
+        <value>Kontaktgrupp</value>
+      </configuration>
+      <configurationGroup name="meta">
+        <configuration name="description" locale="sv">
+          <value>En lista över kontaktgrupper</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="/modules/forms/formClasses/iHRIS_Contact/fields/contact_group">
+      <configuration name="headers" type="delimited" locale="sv">
+        <value>default:Kontaktgrupper</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Contact">
+          <configurationGroup name="fields">
+            <configurationGroup name="address">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Postadress</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="telephone">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Telefonnummer</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="mobile_phone">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Mobiltelefonnummer</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="alt_telephone">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Alternativa Telefonnummer</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="fax">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Faxnummer</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="email">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:E-postadress</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" values="many" locale="sv">
+                <value>default:Anteckningar</value>
+                <value>contact_person:Anteckningar (primär kontaktperson)</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_NamedContact">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="sv">
+                <value>default:Namn</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Currency" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="Currency" path="/I2CE" locale="tr">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="tr">
+      <configuration name="can_edit_database_list_currency" locale="tr"></configuration>
+      <configuration name="can_view_database_list_currency" locale="tr"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="currency">
+          <configuration name="display" values="single" locale="tr">
+            <value>Para Birimi</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Currency">
+          <configurationGroup name="fields">
+            <configurationGroup name="code">
+              <configuration name="headers" type="delimited" locale="tr">
+                <value>default:Para Birimi Kodu</value>
+                <value>title:Uluslararası para birimi kodu (Ex. "USD", "GBP", vb.)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="tr">
+                <value>default:Ad</value>
+                <value>title:Örn. "ABD Doları", "İngiliz Sterlini"</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="country">
+              <configuration name="headers" type="delimited" locale="tr">
+                <value>default:Ülke</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="symbol">
+              <configuration name="headers" type="delimited" locale="tr">
+                <value>default:Simge</value>
+                <value>title:Örn. "$"</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

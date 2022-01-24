@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Currency" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="Currency" path="/I2CE" locale="br">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="br">
+      <configuration name="can_edit_database_list_currency" locale="br">
+        <value>Gallout a ra kemmañ an titouroù a-zivout ar moneiz</value>
+      </configuration>
+      <configuration name="can_view_database_list_currency" locale="br">
+        <value>Gallout a ra gwelet an titouroù a-zivout ar moneiz</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="currency">
+          <configuration name="display" values="single" locale="br">
+            <value>Teulenn</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Currency">
+          <configurationGroup name="fields">
+            <configurationGroup name="code">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Kod pep moneiz</value>
+                <value>title:Kod etrebroadel ar moneiz (Da skouer "USD", "GBP", ha kement zo...)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Anv</value>
+                <value>title:da skouer, "Dollar Stadoù-Unanet Amerika", "Lur sterling"</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="country">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Bro</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="symbol">
+              <configuration name="headers" type="delimited" locale="br">
+                <value>default:Arouez</value>
+                <value>title:da sk. "$"</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

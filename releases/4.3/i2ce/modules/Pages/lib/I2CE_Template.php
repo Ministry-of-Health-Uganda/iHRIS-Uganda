@@ -299,7 +299,9 @@ if (!class_exists('I2CE_Template',false)) {
             $css = preg_replace('/@import\s+\"(.*?)\"/','@import url("\1")',$css); //in case the url is not wrapped in parens
             $css = preg_replace_callback(
                 '/@import\s+url\(\s*(\"?)(.*?)\1\s*\)/',
-                create_function('$matches','return "@import url(\"" . I2CE_Template::ensureURL($matches[2]) . "\")";')
+                function( $matches ) {
+                    return "@import url(\"" . I2CE_Template::ensureURL($matches[2]) . "\")";
+                }
                 ,$css);
             return $css;
         }

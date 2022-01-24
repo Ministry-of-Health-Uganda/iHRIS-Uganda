@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="DHIS-Dashboard" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="DHIS-Dashboard" path="/I2CE" locale="pa">
+    <version>4.2.0.1</version>
+    <configurationGroup name="forms" path="/modules/forms/forms/dataelement">
+      <configuration name="display" values="single" locale="pa">
+        <value>ਅੰਕੜਾ ਤੱਤ</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/forms/dataset">
+      <configuration name="display" values="single" locale="pa"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/formClasses/">
+      <configurationGroup name="iHRIS_Facility">
+        <configurationGroup name="fields">
+          <configurationGroup name="facility_code">
+            <configuration name="headers" type="delimited" locale="pa"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="iHRIS_DataElement">
+        <configurationGroup name="fields">
+          <configurationGroup name="name">
+            <configuration name="headers" type="delimited" locale="pa">
+              <value>default:ਨਾਂ</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="shortname">
+            <configuration name="headers" type="delimited" locale="pa">
+              <value>default:ਨਿੱਕਾ ਨਾਂ</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="dataelement_code">
+            <configuration name="headers" type="delimited" locale="pa">
+              <value>default:ਕੋਡ</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="dataset">
+            <configuration name="headers" type="delimited" locale="pa"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="iHRIS_DataSet">
+        <configurationGroup name="fields">
+          <configurationGroup name="name">
+            <configuration name="headers" type="delimited" locale="pa">
+              <value>default:ਨਾਂ</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="shortname">
+            <configuration name="headers" type="delimited" locale="pa">
+              <value>default:ਨਿੱਕਾ ਨਾਂ</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="dataset_code">
+            <configuration name="headers" type="delimited" locale="pa">
+              <value>default:ਕੋਡ</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="pa">
+      <configuration name="can_view_DHISDashboard" locale="pa"></configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="DHISDashboardExport">
+        <configurationGroup name="args">
+          <configuration name="title" locale="pa">
+            <value>ਇਤਲਾਹਾਂ ਵੇਖੋ</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="dashboard">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pa">
+            <value>ਸੰਦ-ਤਖ਼ਤਾ ਵੇਖੋ</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="dataelement">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pa">
+            <value>ਸਮੱਗਰੀ ਤੱਤ ਜੋੜੋ/ਨਵਿਆਉ</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="dataset">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pa"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

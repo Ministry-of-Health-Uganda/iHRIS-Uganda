@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Currency" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="Currency" path="/I2CE" locale="fr_ML">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="fr_ML">
+      <configuration name="can_edit_database_list_currency" locale="fr_ML">
+        <value>Peut éditer les informations sur la monnaie</value>
+      </configuration>
+      <configuration name="can_view_database_list_currency" locale="fr_ML">
+        <value>Peut afficher les informations sur la monnaie</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="currency">
+          <configuration name="display" values="single" locale="fr_ML">
+            <value>Monnaie</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Currency">
+          <configurationGroup name="fields">
+            <configurationGroup name="code">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Code de la monnaie</value>
+                <value>title:Le code de conversion universel (Ex. "USD",GDP",etc.)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Nom</value>
+                <value>title:Ex. "Dollars americains", "Livre sterling"</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="country">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Pays</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="symbol">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Symbole</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

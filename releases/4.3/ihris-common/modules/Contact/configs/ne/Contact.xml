@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Contact" path="/I2CE">
+  <metadata>
+    <version>4.2.1.2.1</version>
+  </metadata>
+  <configurationGroup name="Contact" path="/I2CE" locale="ne">
+    <version>4.2.1.2.1</version>
+    <configurationGroup name="/modules/forms/forms/contact_group">
+      <configuration name="display" values="single" locale="ne"></configuration>
+      <configurationGroup name="meta">
+        <configuration name="description" locale="ne"></configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="/modules/forms/formClasses/iHRIS_Contact/fields/contact_group">
+      <configuration name="headers" type="delimited" locale="ne"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Contact">
+          <configurationGroup name="fields">
+            <configurationGroup name="address">
+              <configuration name="headers" type="delimited" locale="ne">
+                <value>default:प्राप्त गर्ने ठेगाना</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="telephone">
+              <configuration name="headers" type="delimited" locale="ne">
+                <value>default:दूरभाष संख्या</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="mobile_phone">
+              <configuration name="headers" type="delimited" locale="ne">
+                <value>default:मोवाइल फोन नम्बर</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="alt_telephone">
+              <configuration name="headers" type="delimited" locale="ne">
+                <value>default:वैकल्पिक दूरभाष संख्या</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="fax">
+              <configuration name="headers" type="delimited" locale="ne">
+                <value>default:फ्याक्स नम्बर</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="email">
+              <configuration name="headers" type="delimited" locale="ne">
+                <value>default:इमेल ठेगाना</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" values="many" locale="ne">
+                <value>default:टिप्पणी</value>
+                <value>contact_person:टिप्पणी (प्राथमिक संपर्क व्यक्ति)</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_NamedContact">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="ne">
+                <value>default:नाम</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

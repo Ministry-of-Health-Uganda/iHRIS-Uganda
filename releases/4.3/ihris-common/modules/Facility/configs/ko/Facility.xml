@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Facility" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="Facility" path="/I2CE" locale="ko">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_facility" locale="ko">
+        <value>시설 목록 편집</value>
+      </configuration>
+      <configuration name="can_view_database_list_facility" locale="ko">
+        <value>시설 목록 보기</value>
+      </configuration>
+      <configuration name="can_edit_database_list_facility_type" locale="ko">
+        <value>시설 종류 목록 편집</value>
+      </configuration>
+      <configuration name="can_view_database_list_facility_type" locale="ko">
+        <value>시설 종류 목록 보기</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="facility">
+          <configurationGroup name="meta">
+            <configuration name="description" locale="ko"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility_type">
+          <configuration name="display" values="single" locale="ko">
+            <value>가족 종류</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility_type">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:가족 종류</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

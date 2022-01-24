@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="dependents" path="/">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="dependents" path="/" locale="te">
+    <version>4.2.0.1</version>
+    <configurationGroup name="dep_class" path="/modules/forms/formClasses/iHRIS_Dependent">
+      <configurationGroup name="fields">
+        <configurationGroup name="gender">
+          <configuration name="headers" type="delimited" values="many" locale="te">
+            <value>default:లింగము</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="date_of_birth">
+          <configuration name="headers" type="delimited" values="many" locale="te">
+            <value>default:పుట్టిన తేదీ</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="name">
+          <configuration name="headers" type="delimited" values="many" locale="te">
+            <value>default:పేరు</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="dep_form" path="/modules/forms/forms/dependent">
+      <configuration name="display" locale="te">
+        <value>ఆధారపడినవారు</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="te">
+      <configuration name="person_can_view_child_form_dependent" locale="te">
+        <value>ఒక వ్యక్తి క్రింద ఆధారపడినవారి వివరాలను చూడగలరు</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_dependent" locale="te">
+        <value>ఒక వ్యక్తి క్రింద ఆధారపడినవారి వివరాలను మార్చగలరు</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="dependent_page" path="/I2CE/page/dependent">
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="te">
+          <value>ఆధారపడినవారి వివరాలను జతపరచండి లేదా మార్చండి</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

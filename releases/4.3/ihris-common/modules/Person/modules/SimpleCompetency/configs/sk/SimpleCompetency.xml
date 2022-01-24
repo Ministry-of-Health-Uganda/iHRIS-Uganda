@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="person-simple-competency" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="person-simple-competency" path="/I2CE" locale="sk">
+    <version>4.2.0.1</version>
+    <configurationGroup name="formsdata" path="/I2CE/formsData/forms">
+      <configurationGroup name="competency_evaluation">
+        <configurationGroup name="not_evaluated">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="sk">
+              <value>nehodnotené</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="competent">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="sk">
+              <value>Spôsobilý</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="not_competent">
+          <configurationGroup name="fields">
+            <configuration name="name" locale="sk">
+              <value>nespôsobilý</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="person_tasks" path="/I2CE/tasks/task_description" locale="sk">
+      <configuration name="person_can_view_child_form_person_competency" locale="sk">
+        <value>Možno zobraziť osobný formulár spôsobilosti dieťaťa</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_competency" locale="sk">
+        <value>Možno upraviť osobné formuláre spôsobilosti dieťaťa</value>
+      </configuration>
+      <configuration name="person_competency_can_view_evaluation_history" locale="sk">
+        <value>Možno zobraziť osobnú históriu hodnotenia spôsobilosti</value>
+      </configuration>
+      <configuration name="person_competency_can_view_evaluation" locale="sk">
+        <value>Možno zobraziť hodnotenie spôsobilosti osoby</value>
+      </configuration>
+      <configuration name="can_edit_database_list_competency_evaluation" locale="sk">
+        <value>uprav zoznam hodnotení spôsobilosti</value>
+      </configuration>
+      <configuration name="can_view_database_list_competency_evaluation" locale="sk">
+        <value>Zobraz zoznam hodnotenia spôsobilosti</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="competency_evaluation">
+          <configuration name="display" values="single" locale="sk">
+            <value>Hodnotenie spôsobilosti</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_competency">
+          <configuration name="display" values="single" locale="sk">
+            <value>Spôsobilosť osoby</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PersonCompetency">
+          <configurationGroup name="fields">
+            <configurationGroup name="evaluation_date">
+              <configuration name="headers" type="delimited" locale="sk">
+                <value>default:Naposledy hodnotené</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency_evaluation">
+              <configuration name="headers" type="delimited" locale="sk">
+                <value>default:hodnotenie</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="competency">
+              <configuration name="headers" type="delimited" locale="sk">
+                <value>default:Spôsobilosť</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_competency_history">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sk">
+            <value>História hodnotení spôsobilosti</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="person_competency">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sk">
+            <value>Pridaj/Aktualizuj spôsobilosť</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

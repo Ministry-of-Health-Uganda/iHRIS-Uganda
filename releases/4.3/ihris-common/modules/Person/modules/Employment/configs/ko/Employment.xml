@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEmployment" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEmployment" path="/I2CE" locale="ko">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="ko">
+      <configuration name="person_can_view_child_form_employment" locale="ko"></configuration>
+      <configuration name="person_can_edit_child_form_employment" locale="ko"></configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="employment">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="ko"></configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="employment">
+          <configuration name="display" values="single" locale="ko">
+            <value>고용 기록</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Employment">
+          <configurationGroup name="fields">
+            <configurationGroup name="company_name">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:회사 이름</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="company_address">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:회사 주소</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="company_phone">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:회사 전화번호</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:시작한 날</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_wage">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:초봉</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_position">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:시작한 직위</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:끝난 날 (고용중이면 공란)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_wage">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:퇴직 시 임금</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_position">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:마지막 직위</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="supervisor">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:감독자</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="contact_ok">
+              <configuration name="headers" type="delimited" locale="ko"></configuration>
+            </configurationGroup>
+            <configurationGroup name="responsibilities">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:직업 업무</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reason_for_leaving">
+              <configuration name="headers" type="delimited" locale="ko">
+                <value>default:퇴사 이유</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

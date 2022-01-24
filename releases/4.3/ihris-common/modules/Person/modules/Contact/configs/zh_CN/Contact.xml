@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonContact" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonContact" path="/I2CE" locale="zh_CN">
+    <version>4.2.0.1</version>
+    <configurationGroup name="invalid_messages" path="/modules/forms/formfield_messages" locale="zh_CN">
+      <configuration name="work" path="work/email/invalid_email">
+        <value>请输入一个有效的电邮地址</value>
+      </configuration>
+      <configuration name="personal" path="personal/email/invalid_email">
+        <value>请输入一个有效的电邮地址</value>
+      </configuration>
+      <configuration name="other" path="other/email/invalid_email">
+        <value>请输入一个有效的电邮地址</value>
+      </configuration>
+      <configuration name="emergency" path="emergency/email/invalid_email">
+        <value>请输入一个有效的电邮地址</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="zh_CN">
+      <configuration name="person_can_view_child_form_person_contact_work" locale="zh_CN">
+        <value>可以查看工作联系的子窗体的人</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_work" locale="zh_CN">
+        <value>可以编辑工作联系的子窗体的人</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_emergency" locale="zh_CN">
+        <value>可以查看紧急联系人的子窗体的人</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_emergency" locale="zh_CN">
+        <value>可以编辑人的紧急联络的子窗的体</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_personal" locale="zh_CN">
+        <value>可以查看人的个人联系人的子窗的体</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_personal" locale="zh_CN">
+        <value>可以编辑人的个人联系人的子窗的体</value>
+      </configuration>
+      <configuration name="person_can_view_child_form_person_contact_other" locale="zh_CN">
+        <value>可以查看其他联系人的子窗体，一个人的</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_contact_other" locale="zh_CN">
+        <value>可以编辑其他的接触的子窗体的人</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_contact_work">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>工作联系</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_emergency">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>紧急联系人</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_other">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>其他联系人</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_contact_personal">
+          <configuration name="display" values="single" locale="zh_CN">
+            <value>个人联系人</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="contact">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="zh_CN">
+            <value>添加更新联系信息</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,32 @@
+<div id="siteContent">
+  <h1 class="header">Zoznam osôb pre tréningový kurz</h1>
+  <h2><span type="form" name="person:surname" noedit="true"></span>,<span type="form" name="person:firstname" noedit="true"></span></h2>
+
+  <div id="error"></div>
+  <form method="post" action="training-course/schedule-person">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0"><span type="form" name="person:id" alt_name="parent"></span>
+    <span type="form" name="person_scheduled_training_course:id"></span>
+      <tr><th colspan="2"><span name="type_name">Pridaj/Aktualizuj plánovanie tréningového kurzu</span></th>
+      </tr><tbody id="list_fields"><tr><td>
+	    <span type="form" name="person_scheduled_training_course:scheduled_training_course" showhead="default" show="open_any_date"></span> 
+	    <span type="form" name="person_scheduled_training_course:request_date" showhead="default"></span>
+	    <span type="form" name="person_scheduled_training_course:duty_commencement_date" showhead="default"></span>
+	    <span type="form" name="person_scheduled_training_course:training_course_requestor" showhead="default"></span>
+	    <span type="form" name="person_scheduled_training_course:certification_date" showhead="default"></span>
+	    <span type="form" name="person_scheduled_training_course:training_course_mod" showhead="default"></span>
+	  </td>
+	  <td>
+	    <span type="form" name="person_scheduled_training_course:is_retraining" showhead="default"></span>
+	    <span type="form" name="person_scheduled_training_course:completed" showhead="default"></span>
+	    <span type="form" name="person_scheduled_training_course:training_course_evaluation" showhead="default"></span>
+	  </td>
+	</tr><tr><td colspan="2">
+	    <span type="form" name="person_scheduled_training_course:notes" showhead="default"></span>
+	  </td>
+	</tr><tr class="submitCell"><td colspan="2">
+	    <div id="button"></div>
+	  </td>
+	</tr></tbody></table></form>
+
+
+</div>

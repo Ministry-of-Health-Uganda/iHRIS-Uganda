@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonLanguage" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonLanguage" path="/I2CE" locale="pa">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="pa">
+      <configuration name="person_can_view_child_form_person_language" locale="pa"></configuration>
+      <configuration name="person_can_edit_child_form_person_language" locale="pa"></configuration>
+      <configuration name="can_edit_database_list_language" locale="pa"></configuration>
+      <configuration name="can_view_database_list_language" locale="pa"></configuration>
+    </configurationGroup>
+    <configurationGroup name="formsData" path="formsData/forms">
+      <configurationGroup name="language_proficiency">
+        <configurationGroup name="elementary">
+          <configuration name="fields" value="many" type="delimited" locale="pa">
+            <value>name:ਮੁੱਢਲੀ</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="limited">
+          <configuration name="fields" value="many" type="delimited" locale="pa">
+            <value>name:ਸੀਮਤ ਕੰਮ-ਚਲਾਊ</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="professional">
+          <configuration name="fields" value="many" type="delimited" locale="pa">
+            <value>name:ਪੇਸ਼ਾਵਰ ਕੰਮ-ਚਲਾਊ</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="full_professional">
+          <configuration name="fields" value="many" type="delimited" locale="pa">
+            <value>name:ਮੁਕੰਮਲ ਪੇਸ਼ਾਵਰ</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="fluent">
+          <configuration name="fields" value="many" type="delimited" locale="pa">
+            <value>name:ਰਵਾਂ</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_language">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pa">
+            <value>ਬੋਲੀ ਜੋੜੋ/ਨਵਿਆਉ</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="language">
+          <configuration name="display" values="single" locale="pa">
+            <value>ਭਾਸ਼ਾ</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="language_proficiency">
+          <configuration name="display" values="single" locale="pa">
+            <value>ਬੋਲੀ 'ਚ ਮੁਹਾਰਤ</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="person_language">
+          <configuration name="display" values="single" locale="pa">
+            <value>ਸ਼ਖ਼ਸ ਦੀ ਬੋਲੀ ਵਿੱਚ ਮੁਹਾਰਤ</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_PersonLanguage">
+          <configurationGroup name="fields">
+            <configurationGroup name="language">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਭਾਸ਼ਾ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="speaking">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਬੋਲਣ ਵਿੱਚ ਮੁਹਾਰਤ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reading">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਪੜ੍ਹਨ ਵਿੱਚ ਮੁਹਾਰਤ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="writing">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਲਿਖਣ ਵਿੱਚ ਮੁਹਾਰਤ</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

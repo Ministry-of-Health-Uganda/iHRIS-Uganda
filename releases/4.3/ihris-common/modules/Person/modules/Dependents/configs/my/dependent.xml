@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="dependents" path="/">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="dependents" path="/" locale="my">
+    <version>4.2.0.1</version>
+    <configurationGroup name="dep_class" path="/modules/forms/formClasses/iHRIS_Dependent">
+      <configurationGroup name="fields">
+        <configurationGroup name="gender">
+          <configuration name="headers" type="delimited" values="many" locale="my">
+            <value>default:ကျား/မ -</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="date_of_birth">
+          <configuration name="headers" type="delimited" values="many" locale="my">
+            <value>default:မွေးနေ့</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="name">
+          <configuration name="headers" type="delimited" values="many" locale="my">
+            <value>default:အမည်</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="dep_form" path="/modules/forms/forms/dependent">
+      <configuration name="display" locale="my">
+        <value>မှီခို</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="my">
+      <configuration name="person_can_view_child_form_dependent" locale="my">
+        <value>မှီခို၏အကြောင်းအားရှု့ရန်</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_dependent" locale="my">
+        <value>မှီခို၏အကြောင်းအားပြင်ရန်</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="dependent_page" path="/I2CE/page/dependent">
+      <configurationGroup name="args">
+        <configuration name="title" values="single" locale="my"></configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

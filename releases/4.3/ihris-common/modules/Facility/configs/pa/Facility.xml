@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Facility" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="Facility" path="/I2CE" locale="pa">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description">
+      <configuration name="can_edit_database_list_facility" locale="pa">
+        <value>ਸਹੂਲਤ ਸੂਚੀ ਸੋਧੋ</value>
+      </configuration>
+      <configuration name="can_view_database_list_facility" locale="pa">
+        <value>ਸਹੂਲਤ ਸੂਚੀ ਵੇਖੋ</value>
+      </configuration>
+      <configuration name="can_edit_database_list_facility_type" locale="pa">
+        <value>ਸਹੂਲਤ ਕਿਸਮਾਂ ਦੀ ਸੂਚੀ ਸੋਧੋ</value>
+      </configuration>
+      <configuration name="can_view_database_list_facility_type" locale="pa">
+        <value>ਸਹੂਲਤ ਕਿਸਮਾਂ ਦੀ ਸੂਚੀ ਵੇਖੋ</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="facility">
+          <configurationGroup name="meta">
+            <configuration name="description" locale="pa"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="facility_type">
+          <configuration name="display" values="single" locale="pa">
+            <value>ਸਹੂਲਤ ਦੀ ਕਿਸਮ</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Facility">
+          <configurationGroup name="fields">
+            <configurationGroup name="facility_type">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਸਹੂਲਤ ਦੀ ਕਿਸਮ</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

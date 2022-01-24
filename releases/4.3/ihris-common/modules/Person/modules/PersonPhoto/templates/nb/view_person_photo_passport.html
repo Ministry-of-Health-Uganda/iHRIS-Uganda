@@ -1,0 +1,23 @@
+<div task="person_can_view_child_form_person_photo_passport">  
+  <div class="editRecord">
+    <p>Rediger denne informasjonen</p>
+    <ul><li task="person_can_edit_child_form_person_photo_passport">
+	<span type="form" ifset="person_photo_passport:id" name="person_photo_passport:id" href="person_photo_passport?id=" parent="true">
+	  Oppdater denne informasjonen
+	</span>
+  <span type="form" ifset="person_photo_passport:id" name="person:id" href="history?form=person_photo_passport&amp;order_by=date&amp;id=">
+    View Photo History
+  </span>
+      </li>
+    </ul></div> <!-- editRecord -->
+  
+  <div class="dataTable">
+    <table border="0" cellspacing="0" cellpadding="0"><tbody><tr><th colspan="2">Passfoto</th>
+	</tr><tr><td colspan="2">
+	    <center>
+	      <span type="form" name="person_photo_passport:image">
+	      </span>
+	    </center>
+	  </td>
+	</tr></tbody></table></div> <!-- dataTable -->
+</div>

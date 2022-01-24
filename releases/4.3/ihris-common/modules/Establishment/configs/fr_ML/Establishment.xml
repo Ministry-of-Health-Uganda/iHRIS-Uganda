@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="establishment" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="establishment" path="/I2CE" locale="fr_ML">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="fr_ML">
+      <configuration name="can_edit_database_list_establishment_type" locale="fr_ML">
+        <value>Peut éditer la base de donnée de la liste de type des normes</value>
+      </configuration>
+      <configuration name="can_view_database_list_establishment_type" locale="fr_ML">
+        <value>Peut afficher la base de donnée de la liste de type des normes</value>
+      </configuration>
+      <configuration name="can_edit_database_list_establishment_period" locale="fr_ML">
+        <value>Peut éditer la base de donnée de la période d'application des normes</value>
+      </configuration>
+      <configuration name="can_view_database_list_establishment_period" locale="fr_ML">
+        <value>Peut afficher la base de donnée de la période d'application des normes</value>
+      </configuration>
+      <configuration name="can_edit_database_list_establishment" locale="fr_ML">
+        <value>Peut éditer la base de donnée des normes</value>
+      </configuration>
+      <configuration name="can_view_database_list_establishment" locale="fr_ML">
+        <value>Peut afficher la base de donnée des normes</value>
+      </configuration>
+      <configuration name="establishment_can_access" locale="fr_ML">
+        <value>Peut avoir accès des information sur les normes</value>
+      </configuration>
+      <configuration name="establishment_can_edit" locale="fr_ML">
+        <value>Peut éditer des information sur les normes</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="establishment">
+          <configuration name="display" values="single" locale="fr_ML">
+            <value>Les normes</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="establishment_period">
+          <configuration name="display" values="single" locale="fr_ML">
+            <value>La période des normes</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="establishment_type">
+          <configuration name="display" values="single" locale="fr_ML">
+            <value>Type des normes</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_EstablishmentPeriod">
+          <configurationGroup name="fields">
+            <configurationGroup name="establishment_type">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Type des normes</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="year">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:L'année applicabilité</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_Establishment">
+          <configurationGroup name="meta" path="meta/list/default">
+            <configuration name="display_string" locale="fr_ML">
+              <value>%s à %s (%s)</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="fields">
+            <configurationGroup name="establishment_period">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:La période des normes</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="job_cadre">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Fonction ou cadre</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="location">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Structure ou type de structure</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="amount">
+              <configuration name="headers" type="delimited" locale="fr_ML">
+                <value>default:Nombre des agents de santé</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

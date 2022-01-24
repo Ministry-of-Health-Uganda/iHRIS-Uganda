@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonPhoto" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonPhoto" path="/I2CE" locale="sk">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="sk">
+      <configuration name="person_can_view_child_form_person_photo_passport" locale="sk">
+        <value>možno zobraziť osobnú fotografiu z pasu</value>
+      </configuration>
+      <configuration name="person_can_edit_child_form_person_photo_passport" locale="sk">
+        <value>Možno upraviť osobnú fotografiu z pasu</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person_photo_passport">
+          <configuration name="display" values="single" locale="sk">
+            <value>Fotografia osoby</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="person_photo_passport">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="sk">
+            <value>pridaj/Aktualizuj pasovú fotografiu</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

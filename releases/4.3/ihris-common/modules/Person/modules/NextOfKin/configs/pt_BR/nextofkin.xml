@@ -2,10 +2,10 @@
 <!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
 <I2CEConfiguration name="nextOfKin" path="/">
   <metadata>
-    <version>4.3.0.1</version>
+    <version>4.2.1.0.1</version>
   </metadata>
   <configurationGroup name="nextOfKin" path="/" locale="pt_BR">
-    <version>4.3.0.1</version>
+    <version>4.2.0.1</version>
     <configurationGroup name="dep_class" path="/modules/forms/formClasses/iHRIS_NextOfKin">
       <configurationGroup name="fields">
         <configurationGroup name="name">
@@ -26,18 +26,12 @@
       </configuration>
     </configurationGroup>
     <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="pt_BR">
-      <configuration name="person_can_view_child_form_nextofkin" locale="pt_BR">
-        <value>Pode ver os parentes mais próximos de uma pessoa</value>
-      </configuration>
-      <configuration name="person_can_edit_child_form_nextofkin" locale="pt_BR">
-        <value>Pode editar os parentes mais próximos de uma pessoa</value>
-      </configuration>
+      <configuration name="person_can_view_child_form_nextofkin" locale="pt_BR"></configuration>
+      <configuration name="person_can_edit_child_form_nextofkin" locale="pt_BR"></configuration>
     </configurationGroup>
     <configurationGroup name="nextofkin_page" path="/I2CE/page/nextofkin">
       <configurationGroup name="args">
-        <configuration name="title" values="single" locale="pt_BR">
-          <value>Adicionar/Atualizar a informação do parentesco mais Próximo</value>
-        </configuration>
+        <configuration name="title" values="single" locale="pt_BR"></configuration>
       </configurationGroup>
     </configurationGroup>
   </configurationGroup>

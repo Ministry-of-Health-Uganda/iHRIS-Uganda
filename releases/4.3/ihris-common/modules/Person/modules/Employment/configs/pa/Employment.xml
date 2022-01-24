@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonEmployment" path="/I2CE">
+  <metadata>
+    <version>4.2.1.0.1</version>
+  </metadata>
+  <configurationGroup name="PersonEmployment" path="/I2CE" locale="pa">
+    <version>4.2.0.1</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="pa">
+      <configuration name="person_can_view_child_form_employment" locale="pa"></configuration>
+      <configuration name="person_can_edit_child_form_employment" locale="pa"></configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name="employment">
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="pa">
+            <value>ਪੇਸ਼ੇ ਦਾ ਅਤੀਤ ਜੋੜੋ/ਨਵਿਆਉ</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="employment">
+          <configuration name="display" values="single" locale="pa">
+            <value>ਪੇਸ਼ੇ ਦਾ ਅਤੀਤ</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Employment">
+          <configurationGroup name="fields">
+            <configurationGroup name="company_name">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਕੰਪਨੀ ਦਾ ਨਾਂ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="company_address">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਕੰਪਨੀ ਦਾ ਪਤਾ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="company_phone">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਕੰਪਨੀ ਦਾ ਟੈਲੀਫ਼ੋਨ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_date">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਸ਼ੁਰੂਆਤ ਮਿਤੀ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_wage">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਸ਼ੁਰੂਆਤੀ ਦਿਹਾੜੀ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="start_position">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਸ਼ੁਰੂਆਤੀ ਅਹੁਦਾ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="end_date">
+              <configuration name="headers" type="delimited" locale="pa"></configuration>
+            </configurationGroup>
+            <configurationGroup name="end_wage">
+              <configuration name="headers" type="delimited" locale="pa"></configuration>
+            </configurationGroup>
+            <configurationGroup name="end_position">
+              <configuration name="headers" type="delimited" locale="pa"></configuration>
+            </configurationGroup>
+            <configurationGroup name="supervisor">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਨਿਗਰਾਨ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="contact_ok">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਰਾਬਤਾ ਬਣਾ ਸਕਦੇ ਹਾਂ?</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="responsibilities">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਨੌਕਰੀ ਦੀਆਂ ਜ਼ੁੰਮੇਵਾਰੀਆਂ</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="reason_for_leaving">
+              <configuration name="headers" type="delimited" locale="pa">
+                <value>default:ਛੱਡਣ ਦਾ ਕਾਰਨ</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Contact" path="/I2CE">
+  <metadata>
+    <version>4.2.1.2.1</version>
+  </metadata>
+  <configurationGroup name="Contact" path="/I2CE" locale="ms">
+    <version>4.2.1.2.1</version>
+    <configurationGroup name="/modules/forms/forms/contact_group">
+      <configuration name="display" values="single" locale="ms"></configuration>
+      <configurationGroup name="meta">
+        <configuration name="description" locale="ms"></configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="/modules/forms/formClasses/iHRIS_Contact/fields/contact_group">
+      <configuration name="headers" type="delimited" locale="ms"></configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Contact">
+          <configurationGroup name="fields">
+            <configurationGroup name="address">
+              <configuration name="headers" type="delimited" locale="ms">
+                <value>default:Alamat Surat-Menyurat</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="telephone">
+              <configuration name="headers" type="delimited" locale="ms">
+                <value>default:Nombor Telefon</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="mobile_phone">
+              <configuration name="headers" type="delimited" locale="ms">
+                <value>default:Nombor Telefon Bimbit</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="alt_telephone">
+              <configuration name="headers" type="delimited" locale="ms">
+                <value>default:Nombor Telefon Lain</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="fax">
+              <configuration name="headers" type="delimited" locale="ms">
+                <value>default:Nombor Faks</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="email">
+              <configuration name="headers" type="delimited" locale="ms">
+                <value>default:Alamat E-mel</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="notes">
+              <configuration name="headers" type="delimited" values="many" locale="ms">
+                <value>default:Catatan</value>
+                <value>contact_person:Nota (Kenalan Utama)</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_NamedContact">
+          <configurationGroup name="fields">
+            <configurationGroup name="name">
+              <configuration name="headers" type="delimited" locale="ms">
+                <value>default:Nama</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>
