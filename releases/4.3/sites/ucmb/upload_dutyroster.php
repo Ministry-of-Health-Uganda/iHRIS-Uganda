@@ -68,7 +68,7 @@ function dotrim(&$value){
 }
 
 function getRoster(){
-	$endpoint ='https://hris2.health.go.ug/attendance/api/person_roster/2021-07-01/2021-10-30';
+	$endpoint ='https://hris2.health.go.ug/attendance/api/person_roster/2021-06-01/2021-10-30';
 	$attdata   = sendRequest($endpoint);
 return $attdata;
 }
