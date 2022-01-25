@@ -164,10 +164,14 @@ foreach ($datas as $data) {
 	         $person_attendance = $form_factory->createContainer( 'person_attendance|'.$person_attendance_id );
 	         $person_attendance->populate();
      
-	    	 $person_attendance->work_days = $data['D'];
+	     $person_attendance->work_days = $data['D'];
 		 $person_attendance->off_days = $data['O'];
 		 $person_attendance->leave_days = $data['L'];
 		 $person_attendance->other_days = $data['Z'];
+		$person_attendance->getField("days_present")->getDBValue();
+		$person_attendance->getField("days_od")->getDBValue();
+		$person_attendance->getField("days_or")->getDBValue();
+		$person_attendance->getField("days_leave")->getDBValue();
 		 
 
 		if ( $person_attendance->month_year->isValid() ) {
@@ -241,6 +245,18 @@ foreach ($datas as $data) {
 		  
 		  
 
+		  ///No of days not at facility
+		  $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
+		  $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
+		  $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
+		  $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
+		  //I2CE::raiseError(" date ".$month_year );
+
+          //Work on attendance
+		  ///No of days absolutely absent
+		  $person_attendance->absolute_days_absent = ($no_of_days - $totalDays) ;
+		  $person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
+		  
 		  ///No of days not at facility
 		  $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
 		  $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
