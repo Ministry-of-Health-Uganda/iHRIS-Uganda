@@ -173,7 +173,6 @@ foreach ($datas as $data) {
 		 $days_or=$person_attendance->getField("days_or")->getDBValue();
 		 $days_leave=$person_attendance->getField("days_leave")->getDBValue();
 		 
-
 		if ( $person_attendance->month_year->isValid() ) {
 
 		$current_year = date(" Y");
@@ -190,8 +189,8 @@ foreach ($datas as $data) {
 	
                 }
 
-		 $totalDays = 0;
-	     $totalDays = $days_present+$days_or+$days_od+$days_leave;
+		 $totalDays_att = 0;
+	     $totalDays_att = $days_present+$days_or+$days_od+$days_leave;
 
 	
 	
@@ -254,11 +253,12 @@ foreach ($datas as $data) {
 
           //Work on attendance
 		  ///No of days absolutely absent
-		  $person_attendance->absolute_days_absent = ($no_of_days - $totalDays) ;
+		 
+		  $person_attendance->absolute_days_absent = ($no_of_days - $totalDays_att) ;
 		  $person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
 		  
 		  ///No of days not at facility
-		  $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
+		  $person_attendance->days_not_at_facility = ($no_of_days - $days_present) ;
 		  $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
 		  $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
 		  $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
