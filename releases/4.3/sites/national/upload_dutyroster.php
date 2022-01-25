@@ -277,7 +277,7 @@ foreach ($datas as $data) {
 
     
 }
-fclose($fh);
+// fclose($fh);
 echo "Skipped $skip_no_post no record.\n";
 echo "Found $found records.\n";
 echo "Created $created records.\n";
