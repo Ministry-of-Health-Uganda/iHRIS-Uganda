@@ -168,10 +168,10 @@ foreach ($datas as $data) {
 		 $person_attendance->off_days = $data['O'];
 		 $person_attendance->leave_days = $data['L'];
 		 $person_attendance->other_days = $data['Z'];
-		$person_attendance->getField("days_present")->getDBValue();
-		$person_attendance->getField("days_od")->getDBValue();
-		$person_attendance->getField("days_or")->getDBValue();
-		$person_attendance->getField("days_leave")->getDBValue();
+		 $days_present = $person_attendance->getField("days_present")->getDBValue();
+		 $days_od=$person_attendance->getField("days_od")->getDBValue();
+		 $days_or=$person_attendance->getField("days_or")->getDBValue();
+		 $days_leave=$person_attendance->getField("days_leave")->getDBValue();
 		 
 
 		if ( $person_attendance->month_year->isValid() ) {
@@ -191,7 +191,7 @@ foreach ($datas as $data) {
                 }
 
 		 $totalDays = 0;
-	         $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;
+	     $totalDays = $days_present+$days_or+$days_od+$days_leave;
 
 	
 	
@@ -245,12 +245,12 @@ foreach ($datas as $data) {
 		  
 		  
 
-		  ///No of days not at facility
-		  $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
-		  $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
-		  $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
-		  $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
-		  //I2CE::raiseError(" date ".$month_year );
+		//   ///No of days not at facility
+		//   $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
+		//   $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
+		//   $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
+		//   $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
+		//   //I2CE::raiseError(" date ".$month_year );
 
           //Work on attendance
 		  ///No of days absolutely absent
