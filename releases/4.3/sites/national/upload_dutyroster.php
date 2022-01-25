@@ -195,7 +195,7 @@ foreach ($datas as $data) {
 	
 	
       
-		// if( ($totalDays) > ($no_of_days) ){
+		// if( ($totalDays_att) > ($no_of_days) ){
 		//         $person_attendance->setInvalidMessage('days_present', 'Total number of days exceeds maximum days of selected month');
 		       
 		//     }elseif(($current_month < $values[1]) && ($current_year <= $values[0])){
@@ -229,14 +229,14 @@ foreach ($datas as $data) {
 		  }
 		 
 		  ///No of days absolutely absent
-		  if(($person_attendance->absolute_days_absent = ($no_of_days - $totalDays)) <= 0) {
+		  if(($person_attendance->absolute_days_absent = ($no_of_days - $totalDays_att)) <= 0) {
 
 			$person_attendance->absolute_days_absent = 0.01;
 			$person_attendance->absolute_absenteeism_rate  = 0.01;
 
   		  }else{
 
-			$person_attendance->absolute_days_absent = ($no_of_days - $totalDays);
+			$person_attendance->absolute_days_absent = ($no_of_days - $totalDays_att);
 			$person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
 		  }
 		  
