@@ -205,27 +205,27 @@ foreach ($datas as $data) {
 
 		// }	
 		
-		  if(($person_attendance->work_days - ($person_attendance->days_present + $person_attendance->days_or + $person_attendance->days_leave)) <= 0){
+		  if(($person_attendance->work_days - ($days_present + $days_or + $days_leave)) <= 0){
 			
-			$person_attendance->days_absent = 0.01;
+			 $person_attendance->days_absent = 0.01;
 		  }else{
-		  $person_attendance->days_absent = ($person_attendance->work_days - ($person_attendance->days_present + $person_attendance->days_or + $person_attendance->days_leave)) ;
+		     $person_attendance->days_absent = ($person_attendance->work_days - ($days_present + $days_or + $days_leave)) ;
 
-		}
+		   }
 
 		  
 		  	
 
-		  if(($person_attendance->final_work_days = ($person_attendance->work_days - ( $person_attendance->days_or + $person_attendance->days_leave)) 	) <= 0){
+		  if(($person_attendance->final_work_days = ($person_attendance->work_days - ( $days_or + $days_leave)) 	) <= 0){
 			
 			$person_attendance->final_work_days = 0.01;
 		  }  
 			
-		  if( ($person_attendance->work_days - ($person_attendance->days_or + $person_attendance->days_leave) ) <= 0){
+		  if( ($person_attendance->work_days - ($days_or + $days_leave) ) <= 0){
 			
 			$person_attendance->absenteeism_rate = 0.01;
 		  }else{
-		  $person_attendance->absenteeism_rate = ($person_attendance->days_absent /( $person_attendance->work_days - ($person_attendance->days_or + $person_attendance->days_leave))*100);
+		  $person_attendance->absenteeism_rate = ($person_attendance->days_absent /( $person_attendance->work_days - ($days_or + $days_leave))*100);
 		  }
 		 
 		  ///No of days absolutely absent
