@@ -195,15 +195,15 @@ foreach ($datas as $data) {
 	
 	
       
-		if( ($totalDays) > ($no_of_days) ){
-		        $person_attendance->setInvalidMessage('days_present', 'Total number of days exceeds maximum days of selected month');
+		// if( ($totalDays) > ($no_of_days) ){
+		//         $person_attendance->setInvalidMessage('days_present', 'Total number of days exceeds maximum days of selected month');
 		       
-		    }elseif(($current_month < $values[1]) && ($current_year <= $values[0])){
+		//     }elseif(($current_month < $values[1]) && ($current_year <= $values[0])){
 
-			 $person_attendance->setInvalidMessage('month_year', 'You cannot upload a month in advance');
+		// 	 $person_attendance->setInvalidMessage('month_year', 'You cannot upload a month in advance');
 
 
-		}	
+		// }	
 		
 		  if(($person_attendance->work_days - ($person_attendance->days_present + $person_attendance->days_or + $person_attendance->days_leave)) <= 0){
 			
