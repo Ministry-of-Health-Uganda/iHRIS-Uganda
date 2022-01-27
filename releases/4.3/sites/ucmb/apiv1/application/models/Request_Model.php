@@ -20,7 +20,7 @@ Class Request_Model extends CI_Model
         `department_structure+name` as department_id,
         `department_structure+name` as department,
         CONCAT('UCMB-',trim(`job+id`)) as job_id,
-        `job+title` as job,
+       `job+title` as job,
         replace(`primary_form+employment_terms`,'employment_terms|','') as employment_terms,
         `person+surname` as surname,
         `person+firstname` as firstname,
