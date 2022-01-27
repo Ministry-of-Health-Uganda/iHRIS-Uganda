@@ -176,7 +176,7 @@ class iHRIS_Module_PersonID extends I2CE_Module {
         $id_number = $form->getField('id_num')->getDBValue();
         $id_type = $form->getField('id_type')->getDBValue();
 
-        if ($id_type=='id_type|1'){
+        if (($id_type=='id_type|1')||($id_type=='id_type|2')){
             if (!is_numeric($id_number)){
                 $form->setInvalidMessage('id_num', 'Invalid National Card Number');
             }
