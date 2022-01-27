@@ -31,7 +31,7 @@ Class Request_Model extends CI_Model
          `institution_type+id` as institution_type_id,
          CURRENT_TIMESTAMP as last_update
         
-        from  `zebra_staff_list` WHERE `national_id_card_no+id_num` IS NOT NULL");
+        from  `zebra_staff_list` WHERE `national_id_card_no+id_num` IS NOT NULL ");
     return $query->result();
            
     }
