@@ -6,7 +6,7 @@ Class Request_Model extends CI_Model
     public function getihrisdata()
     {
         $query=$this->db->query("SELECT
-        trim(`person+id`) as ihris_pid,
+        CONCAT('UCMB-',trim(`person+id`)) as ihris_pid,
         trim(`district+id`) as district_id,
         `district+name` as district,
          'dhis_facility_id',
@@ -15,11 +15,11 @@ Class Request_Model extends CI_Model
         `national_id_card_no+id_num` as card_number,
         `ipps_no+id_num` as ipps,
         `facility+facility_type` as facility_type_id,
-        trim(`facility+id`) as facility_id,
+        CONCAT('UCMB-',trim(trim(`facility+id`)) as facility_id,
         `facility+name` as facility,
         `department_structure+name` as department_id,
         `department_structure+name` as department,
-        trim(`job+id`) as job_id,
+        CONCAT('UCMB-',trim(trim(`job+id`)) as job_id,
         `job+title` as job,
         `primary_form+employment_terms` as employment_terms,
         `person+surname` as surname,
