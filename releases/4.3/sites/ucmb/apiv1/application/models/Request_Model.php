@@ -7,7 +7,7 @@ Class Request_Model extends CI_Model
     {
         $query=$this->db->query("SELECT
         CONCAT('UCMB-',trim(`person+id`)) as ihris_pid,
-        trim(`district+id`) as district_id,
+        trim(`district+name`) as district_id,
         `district+name` as district,
          'dhis_facility_id',
          'dhis_district_id',
