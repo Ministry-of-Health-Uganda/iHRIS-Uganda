@@ -125,68 +125,68 @@ $query = [$qry1,$qry2,$qry3,$qry4];
 
 //$query = [$qry3];
     
-foreach ($query as $key => $value) {
+// foreach ($query as $key => $value) {
 
 
-        //I2CE::raiseMessage("Query: " . $qry);
-        try {
-            $stmt = $db->prepare( $value);
-            $stmt->execute();
-            $last_facility = 'NOTSET';
-            $totals = array( 'amount' => 0, 'filled' => 0, 'variance' => 0,'percentage_filled' => 0 );
-            $faciltyNode = null;
-            while( $data = $stmt->fetch() ) {
-                if ( $data->facility != $last_facility ) {
-                    if ( $last_facility != 'NOTSET' ) {
-                       if ($data->amount == 0 && $data->filled_positions == 0  ){
-               		    }else{
-		                    $totalNode = $this->template->appendFileByName( "audit_report_facility_total.html", "tr", 
-                                "establishment_list", 0, $facilityNode );
-                            foreach( $totals as $type => $total ) {
-                                $this->template->setDisplayDataImmediate( "total_$type", $total, $totalNode );
-                    	    }
-		                }
-                    }
-		            if ($data->amount == 0 && $data->filled_positions == 0  ){
-               	    } else {
-                        $facilityNode = $this->template->appendFileById( "audit_report_facility.html", 'div', 'facility_list' );
-                        $this->template->setDisplayDataImmediate( 'facility_name', $data->facility_name, $facilityNode );
-                        $establishment_count = 1;
-                        $totals = array( 'amount' => 0, 'filled' => 0, 'variance' => 0, 'percentage_filled' => 0 );
-               	   }
-                }
-                if ($data->amount == 0 && $data->filled_positions == 0  ){
-                } else {
-                    $establishmentNode = $this->template->appendFileByName( "audit_report_facility_establishment.html", "tr", 
-                            "establishment_list", 0, $facilityNode );
-                    $this->template->setDisplayDataImmediate( 'establishment_no', $establishment_count, $establishmentNode );
-                    foreach( array( 'title', 'salary_grade', 'amount', 'filled_positions', 'variance','percentage_filled' ) as $field ) {
+//         //I2CE::raiseMessage("Query: " . $qry);
+//         try {
+//             $stmt = $db->prepare( $value);
+//             $stmt->execute();
+//             $last_facility = 'NOTSET';
+//             $totals = array( 'amount' => 0, 'filled' => 0, 'variance' => 0,'percentage_filled' => 0 );
+//             $faciltyNode = null;
+//             while( $data = $stmt->fetch() ) {
+//                 if ( $data->facility != $last_facility ) {
+//                     if ( $last_facility != 'NOTSET' ) {
+//                        if ($data->amount == 0 && $data->filled_positions == 0  ){
+//                		    }else{
+// 		                    $totalNode = $this->template->appendFileByName( "audit_report_facility_total.html", "tr", 
+//                                 "establishment_list", 0, $facilityNode );
+//                             foreach( $totals as $type => $total ) {
+//                                 $this->template->setDisplayDataImmediate( "total_$type", $total, $totalNode );
+//                     	    }
+// 		                }
+//                     }
+// 		            if ($data->amount == 0 && $data->filled_positions == 0  ){
+//                	    } else {
+//                         $facilityNode = $this->template->appendFileById( "audit_report_facility.html", 'div', 'facility_list' );
+//                         $this->template->setDisplayDataImmediate( 'facility_name', $data->facility_name, $facilityNode );
+//                         $establishment_count = 1;
+//                         $totals = array( 'amount' => 0, 'filled' => 0, 'variance' => 0, 'percentage_filled' => 0 );
+//                	   }
+//                 }
+//                 if ($data->amount == 0 && $data->filled_positions == 0  ){
+//                 } else {
+//                     $establishmentNode = $this->template->appendFileByName( "audit_report_facility_establishment.html", "tr", 
+//                             "establishment_list", 0, $facilityNode );
+//                     $this->template->setDisplayDataImmediate( 'establishment_no', $establishment_count, $establishmentNode );
+//                     foreach( array( 'title', 'salary_grade', 'amount', 'filled_positions', 'variance','percentage_filled' ) as $field ) {
 
-                        $this->template->setDisplayDataImmediate( $field, $data->{$field}, $establishmentNode );
+//                         $this->template->setDisplayDataImmediate( $field, $data->{$field}, $establishmentNode );
 
-                    }
-                    $totals['amount'] += $data->amount;
-                    $totals['filled'] += $data->filled_positions;
-                    $totals['variance'] += $data->variance;
-                    $totals['percentage_filled'] = round((($totals['filled']/ $totals['amount']) * 100),1);
-                    $last_facility = $data->facility;
-                    $establishment_count++;
-                }
-            }
-            if ( $facilityNode && $facilityNode instanceof DOMNode ) {
-                $totalNode = $this->template->appendFileByName( "audit_report_facility_total.html", "tr", 
-                        "establishment_list", 0, $facilityNode );
-                foreach( $totals as $type => $total ) {
-                    $this->template->setDisplayDataImmediate( "total_$type", $total, $totalNode );
-                }
-            }
-        } catch ( PDOException $e ){
-            I2CE::pdoError( $e,  "Unable to get audit results:");
-            $this->userMessage("An error has occurred: " . $e->getMessage() );
-            $this->action_district();
-        }
+//                     }
+//                     $totals['amount'] += $data->amount;
+//                     $totals['filled'] += $data->filled_positions;
+//                     $totals['variance'] += $data->variance;
+//                     $totals['percentage_filled'] = round((($totals['filled']/ $totals['amount']) * 100),1);
+//                     $last_facility = $data->facility;
+//                     $establishment_count++;
+//                 }
+//             }
+//             if ( $facilityNode && $facilityNode instanceof DOMNode ) {
+//                 $totalNode = $this->template->appendFileByName( "audit_report_facility_total.html", "tr", 
+//                         "establishment_list", 0, $facilityNode );
+//                 foreach( $totals as $type => $total ) {
+//                     $this->template->setDisplayDataImmediate( "total_$type", $total, $totalNode );
+//                 }
+//             }
+//         } catch ( PDOException $e ){
+//             I2CE::pdoError( $e,  "Unable to get audit results:");
+//             $this->userMessage("An error has occurred: " . $e->getMessage() );
+//             $this->action_district();
+//         }
 
-}
+// }
 
 
     }
