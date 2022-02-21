@@ -1,5 +1,5 @@
 <div class="facility_block">
-<div id="frame"></div>
+<div class="frame"></div>
 
   <script>
     var url_string = window.location.href;
@@ -11,7 +11,7 @@
     iframe.setAttribute('style',"width:58rem; border:0px; height:100rem;");
     iframe.setAttribute('src',`https://hris.health.go.ug/hrhdashboard/audit/auditReport?display=ihris&districts=${district}`); 
     
-    var frame = document.getElementById('frame');
+    var frame = document.getElementsByClassName('frame');
     console.log(frame);
     //frame.parentNode.insertBefore(iframe,frame);
   
