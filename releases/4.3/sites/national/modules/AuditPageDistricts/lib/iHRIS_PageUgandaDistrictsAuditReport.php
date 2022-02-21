@@ -149,7 +149,7 @@ $query = [$qry1,$qry2,$qry3,$qry4];
 //                     }
 // 		            if ($data->amount == 0 && $data->filled_positions == 0  ){
 //                	    } else {
-                        $facilityNode = $this->template->appendFileById( "audit_report_facility.html", 'div', 'facility_list' );
+                        $facilityNode = $this->template->appendFileById( "audit_report_facility.php", 'div', 'facility_list' );
 //                         $this->template->setDisplayDataImmediate( 'facility_name', $data->facility_name, $facilityNode );
 //                         $establishment_count = 1;
 //                         $totals = array( 'amount' => 0, 'filled' => 0, 'variance' => 0, 'percentage_filled' => 0 );
