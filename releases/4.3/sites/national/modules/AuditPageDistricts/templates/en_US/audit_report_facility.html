@@ -1,8 +1,9 @@
 <div class="facility_block">
   <script>
-
-    let url = urlParams.get("district");
-    console.log(url);
+      var url_string = window.location.href;
+      var url = new URL(url_string);
+      var district = url.searchParams.get("district");
+      console.log(district);
   </script>
   <iframe src="https://hris.health.go.ug/hrhdashboard/audit/auditReport?display=ihris?district="  sandbox="allow-downloads allow-forms allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-same-origin	"   style="width:58rem; border:0px; height:100rem;"></iframe>
 
