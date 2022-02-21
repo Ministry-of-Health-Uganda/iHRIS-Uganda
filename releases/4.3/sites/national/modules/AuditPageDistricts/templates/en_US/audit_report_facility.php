@@ -7,7 +7,7 @@
     var iframe =document.createElement('iframe');
     iframe.setAttribute('sandbox',"allow-downloads allow-forms allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-same-origin	");
     iframe.setAttribute('style',"width:58rem; border:0px; height:100rem;");
-    ifrmane.setAttribute('src',"https://hris.health.go.ug/hrhdashboard/audit/auditReport?display=ihris&districts="); 
+    iframe.setAttribute('src',`https://hris.health.go.ug/hrhdashboard/audit/auditReport?display=ihris&districts=${district}`); 
     
     var frame = document.getElementById('frame');
     frame.parentNode.insertBefore(iframe,frame);
