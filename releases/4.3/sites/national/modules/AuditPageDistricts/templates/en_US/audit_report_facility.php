@@ -4,7 +4,7 @@
     var url = new URL(url_string);
     var district = url.searchParams.get("district");
     //document.getElementsByName("thistime").appendChild(first);
-    var uri document.getElementsByName("https://hris.health.go.ug/hrhdashboard/audit/auditReport?display=ihris&districts=").appendChild(first);
+    var uri = document.getElementsByName("https://hris.health.go.ug/hrhdashboard/audit/auditReport?display=ihris&districts=").appendChild(first);
     console.log(uri);
     
 </script>
