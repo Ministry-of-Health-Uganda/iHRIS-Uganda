@@ -12,8 +12,8 @@
     iframe.setAttribute('src',`https://hris.health.go.ug/hrhdashboard/audit/auditReport?display=ihris&districts=${district}`); 
     
     var frame = document.getElementsByClassName('frame');
-    console.log(frame[0]);
-    //frame[0].appendChild(iframe);
+    //console.log(frame);
+    document.body.appendChild(iframe);
   
 </script>
 
