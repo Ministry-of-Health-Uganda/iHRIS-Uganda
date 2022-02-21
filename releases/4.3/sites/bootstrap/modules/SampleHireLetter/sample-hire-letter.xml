@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="sample-hire-letter">
+  <metadata>
+    <displayName>Sample Staff Hire Letter</displayName>
+    <description>Sample staff hire letter generated from the staff form relationship.</description>
+    <version>4.1.0</version>
+    <requirement name="ihris-manage-CustomReports-staff-reports">
+      <atLeast version="4.1" />
+      <lessThan version="4.2" />
+    </requirement>
+    <requirement name="PrintedForms">
+      <atLeast version="4.1" />
+      <lessThan version="4.2" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="sample-hire-letter" path="/modules/PrintedForms/forms/sample_hire_letter">
+    <version>4.0.5.2</version>
+    <configuration name="relationship">
+      <value>staff</value>
+    </configuration>
+    <configuration name="archive">
+      <value>person</value>
+    </configuration>
+    <configuration name="displayName">
+      <value>Staff Hire Letter</value>
+    </configuration>
+    <configurationGroup name="elements">
+      <configurationGroup name="0">
+        <configuration name="type">
+          <value>image</value>
+        </configuration>
+        <configuration name="definition" values="many" type="delimited">
+          <value>image:iHRISManage_logo_whiteBG.png</value>
+          <value>horiz_min:5</value>
+          <value>vert_min:1</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="50">
+        <configuration name="type">
+          <value>text</value>
+        </configuration>
+        <configuration name="text_properties" values="many" type="delimited">
+          <value>style:I</value>
+        </configuration>
+        <configuration name="definition" values="many" type="delimited">
+          <value>horiz_min:33</value>
+          <value>vert_min:6</value>
+          <value>printf:Certification of Employment</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="51">
+        <configuration name="type">
+          <value>text</value>
+        </configuration>
+        <configuration name="text_properties" values="many" type="delimited">
+          <value>style:BU</value>
+        </configuration>
+        <configuration name="definition" values="many" type="delimited">
+          <value>horiz_min:33</value>
+          <value>vert_min:12</value>
+          <value>printf:Ministry of Health</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="52">
+        <configuration name="type">
+          <value>text</value>
+        </configuration>
+        <configuration name="definition" values="many" type="delimited">
+          <value>horiz_min:160</value>
+          <value>vert_min:6</value>
+          <value>printf:%s</value>
+        </configuration>
+        <configuration name="printf_args" path="definition/printf_args" values="many" type="delimited">
+          <value>0:++date(%e %B %Y)</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="100">
+        <configuration name="type">
+          <value>text</value>
+        </configuration>
+        <configuration name="definition" values="many" type="delimited">
+          <value>horiz_min:3</value>
+          <value>vert_min:50</value>
+          <value>printf:Dir Sir/Madam, Please accept this letter as certification of employment for %s %s. On %s, employment began as %s in the %s department of %s. Sincerely, %s</value>
+        </configuration>
+        <configuration name="printf_args" path="definition/printf_args" values="many" type="delimited">
+          <value>0:person+firstname</value>
+          <value>1:person+surname</value>
+          <value>2:staff+start_date</value>
+          <value>3:position+title</value>
+          <value>4:department+name</value>
+          <value>5:facility+name</value>
+          <value>6:++user</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="sample-staff-list-printed-form">
+  <metadata>
+    <displayName>Sample Staff Printed Forms</displayName>
+    <description>Sample staff printed forms generated from the staff_directory report view.</description>
+    <version>4.1.2.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="ihris-manage-CustomReports-staff-reports">
+      <atLeast version="4.1" />
+      <lessThan version="4.2" />
+    </requirement>
+    <requirement name="CustomReports-PrintedReportsODT">
+      <atLeast version="4.1" />
+      <lessThan version="4.2" />
+    </requirement>
+    <path name="odt_templates">
+      <value>./odt_templates</value>
+    </path>
+  </metadata>
+  <configurationGroup name="sample-staff-list-printed-form" path="/modules/CustomReports/reportViews/staff_directory/printed_forms">
+    <configurationGroup name="staff_form">
+      <version>4.1.0.7</version>
+      <configuration name="template">
+        <value>StaffForm.odt</value>
+      </configuration>
+      <configuration name="displayName" locale="en_US">
+        <value>Staff Form</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="staff_table">
+      <version>4.1.0.7</version>
+      <configuration name="template">
+        <value>StaffTableForm.odt</value>
+      </configuration>
+      <configuration name="displayName" locale="en_US">
+        <value>Staff Table</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

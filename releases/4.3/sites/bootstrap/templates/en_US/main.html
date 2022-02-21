@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+
+    <title>iHRIS Manage Demo</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="robots" content="all" />
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta name="author" content="Development by IntraHealth International, Inc.  http://www.intrahealth.org/  Website graphic design by DesignHammer Media Group LLC, Building Smarter Websites http://www.designhammer.com" />
+    <meta name="copyright" content="" />
+    <meta name="Description" content="" />
+    <meta name="Keywords" content="" />
+    <link rel="Shortcut Icon" href="file/favicon.ico" />
+    <link rel="stylesheet" href="file/container-print.css" type="text/css" media="print" />
+    <style type="text/css" media="screen">
+      @import url(file/container-screen.css);
+    </style>
+    <!--[if lt IE 7]><link href="file/iehacks.css?newman" rel="stylesheet" type="text/css" media="screen" /><![endif]-->
+    <script src='file/mootools-core.js' type="text/javascript" />
+    <script src='file/mootools-more.js' type="text/javascript" />
+    <script src='file/I2CE_DropdownMenu.js' type="text/javascript" />
+    <script src='file/ihris_menu.js' type="text/javascript" />
+    
+    <script type='text/javascript' id='dropdown-js'>
+
+window.addEvent('domready',  function() {  
+    //$$('.slider').each(function(e) {new SliderMenu(e); });
+
+    $$('.clickslider').each(function(e) {new ClickSlider(e); });
+    $$('.ajaxlink').each(function(e) {  new AjaxLink(e);});
+    $$('.dropdown').each(function(e) {  new I2CE_DropdownMenu(e); });
+    var error = document.id('error_message'); 
+    if (error && error.get('html').replace(/^\s+|\s+$/, '').length == 0) { error.dispose();}
+});
+
+
+</script>
+  </head>
+  <body>
+    <div id="siteHeadWrap"><!-- ie6 redundant tag fix -->
+      <div id="siteHeader">
+	<div class='navbar navbar-fixed-top'>
+	  <div class="navbar-inner">
+	      <img class="brand " src="file/iHRISManage_logo.png" alt="" width="62" height="62" id="siteLogo" />
+	      <a class="brand" href="home" style='position:absolute;left:70px;'>iHRIS Manage Demonstration Site</a>
+
+	    <div class="container">
+	      <div class='nav-collapse'>
+		<ul class='nav pull-left'>
+		  <li ><a href="home" id='nav_home'>Home</a></li>
+		  <li class='dropdown' id='navBar'>
+                    <a href="#" class="dropdown-toggle"  id='nav_actions'> Actions <b class="caret "/> </a>
+		    <ul class='dropdown-menu' id='navBarUL'>
+		      <li   id="menuManage"   task='person_can_view'><a href="manage">Manage People</a></li>
+		      <span type='module' name='CustomReports' ifenabled='true'>
+			<li id="menuSearch" task='custom_reports_can_access'><a href="search">Search Records</a></li>
+			<li id="menuCustomReports" task='custom_reports_can_view_reportViews'><a href="CustomReports/view/reportViews">View Reports</a></li>
+		      </span>
+		      <li id="menuConfigure" task='can_configure_system'><a href="configure">Configure System</a></li>
+		      <li id="menuPassword" task='can_change_own_password'><a href="password">Change Password</a></li>
+		      <!-- <span type='module' name='SelfService' ifenabled='true' task='can_view_own_personnel'> -->
+		      <!-- 	<span type='module' name="SelfService" if="userHasRecord()"> -->
+		      <!-- 	  <li>	  <span type='module' name="SelfService" call="linkToPersonRecord('view?id=')">View Your Record</span></li> -->
+		      <!-- 	</span> -->
+		      <!-- </span>		       -->
+		    </ul>
+		    </div>
+		  </li>
+		</ul>
+
+		<ul class='nav pull-right'>
+		  <li class="dropdown" >
+                    <a href="#" class="dropdown-toggle"  id='nav_about'> About <b class="caret "/> </a>
+		    <ul class="dropdown-menu" >
+		      <li ><a href="http://www.ihris.org/" target="_new_ihris" id='nav_moh'>iHRIS</a></li>
+		      <li ><a href="http://www.hrhresourcecenter.org/elearning/course/view.php?id=4"  target="_new_admin_course">iHRIS Administrator's Course</a></li>
+		      <li ><a href="feedback" >Feedback</a></li>
+		    </ul>
+		  </li>
+		  <li  class="dropdown" >
+                    <a href="#" class="dropdown-toggle"> <span type='module' call="ihris-common->welcomeNamedUser('Welcome, %s!','Welcome!')" /> <b class="caret "/> </a>
+		    <ul class="dropdown-menu"  >
+		      <li  role='any'><a href="logout" class="logout">Log Out</a></li>
+		      <li  role='NOT_LOGGED_IN' ><a href="login" class="logout">Log In</a></li>
+		      <li role='any'><a href="password">Change Password</a></li>
+		      <li role='any'>
+			<a  task="can_administer_database_lists" href="lists" >Administer Database</a>  
+		      </li>
+		      <li role='any' task='can_configure_system'>
+			<a href="configure" class="adminDatabase">Configure System</a>
+		      </li>
+		      <span type='module' call='localeSelector->showSelectableLocales()' ></span>
+		    </ul>
+		  </li>
+		</ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div id='siteMain'>
+	  
+
+	  <div id="welcomeIntro" />
+	</div>
+
+      </div><!-- /siteHeader -->
+    </div><!-- /siteHeadWrap -->
+
+    <div id="siteOuterWrap">
+
+      <div id="siteInnerWrap">
+
+	<div id="siteContent" />
+
+
+	<br style="clear: both;" />
+
+      </div><!-- /siteInnerWrap -->
+
+      <div id='StretchPage'></div>
+      <div id="siteFooter">
+	<div style='margin:auto'>
+	  <img src="file/usaid-logo.png" style='padding:2em'/>
+	  <img src="file/capacity-plus-logo.png" style='padding:2em'/>
+	  <img src="file/intrahealth-logo.png" style='padding:2em'/>
+	</div>
+	
+	iHRIS Manage Version: <span type='module' call="ihris-common->showModuleVersion('ihris-manage')"/>
+      </div><!-- /siteFooter -->
+    </div><!-- /siteOuterWrap -->
+
+  </body>
+</html>
