@@ -1,7 +1,7 @@
 <div class="facility_block">
 </div>
 
-<div class="frame"></div>
+<div id="frame"></div>
 
   <script>
 
