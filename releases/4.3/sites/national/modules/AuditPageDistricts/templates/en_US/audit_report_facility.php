@@ -1,12 +1,14 @@
 <div class="facility_block">
-</div>
 
-<div id="frame">
+<div id="frame"></div>
+
 
   <script>
 
     document.addEventListener("DOMContentLoaded",
     function(event){
+
+      console.log(event);
 
     var url_string = window.location.href;
     var url = new URL(url_string);
