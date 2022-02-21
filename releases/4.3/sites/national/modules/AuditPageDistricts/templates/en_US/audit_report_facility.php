@@ -13,7 +13,7 @@
     
     var frame = document.getElementsByClassName('frame');
     console.log(frame);
-    //frame.parentNode.insertBefore(iframe,frame);
+    frame.appendChild(iframe);
   
 </script>
 
