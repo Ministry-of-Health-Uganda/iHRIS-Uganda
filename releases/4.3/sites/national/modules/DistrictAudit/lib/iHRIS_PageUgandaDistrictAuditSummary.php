@@ -129,17 +129,17 @@ class iHRIS_PageUgandaDistrictAuditSummary extends I2CE_Page {
         }
         $this->template->setDisplayData( "district_name", $districtName, $districtNode );
 
-	$db = I2CE::PDO();
+	//$db = I2CE::PDO();
 			
-        $qry = "SELECT `job+id`,`salary_grade+id`,`job+title` AS title,`salary_grade+name` AS salary_grade, SUM(`primary_form+amount`) as `amount` , SUM(`+filled_positions`) AS filled_positions , SUM(`+variance`) AS `variance` , (CONCAT(ROUND(( SUM(`+filled_positions`)/SUM(`primary_form+amount`) * 100 ),1),'%')) AS percentage_filled FROM `zebra_staff_norm` WHERE `district+id` = '" . I2CE_PDO::escape_string( $district ) . "' GROUP BY `job+id` ORDER BY `salary_grade+id`, `job+title`";
+        //$qry = "SELECT `job+id`,`salary_grade+id`,`job+title` AS title,`salary_grade+name` AS salary_grade, SUM(`primary_form+amount`) as `amount` , SUM(`+filled_positions`) AS filled_positions , SUM(`+variance`) AS `variance` , (CONCAT(ROUND(( SUM(`+filled_positions`)/SUM(`primary_form+amount`) * 100 ),1),'%')) AS percentage_filled FROM `zebra_staff_norm` WHERE `district+id` = '" . I2CE_PDO::escape_string( $district ) . "' GROUP BY `job+id` ORDER BY `salary_grade+id`, `job+title`";
 
-        try {
-            $stmt = $db->prepare( $qry);
-            $stmt->execute();
-            $last_facility = 'NOTSET';
-            $totals = array( 'amount' => 0, 'filled' => 0, 'variance' => 0,'percentage_filled' => 0 );
+        // try {
+        //     $stmt = $db->prepare( $qry);
+        //     $stmt->execute();
+        //     $last_facility = 'NOTSET';
+        //     $totals = array( 'amount' => 0, 'filled' => 0, 'variance' => 0,'percentage_filled' => 0 );
             $jobNode = $this->template->appendFileById( "audit_report_job.html", 'div', 'job_list' );
-            while( $data = $stmt->fetch() ) {
+            // while( $data = $stmt->fetch() ) {
               //  if ( $data->facility != $last_facility ) {
                  /*   if ( $last_facility != 'NOTSET' ) {
                        if ($data->amount == 0 && $data->filled_positions == 0  ){
@@ -160,39 +160,39 @@ class iHRIS_PageUgandaDistrictAuditSummary extends I2CE_Page {
                         $totals = array( 'amount' => 0, 'filled' => 0, 'variance' => 0, 'percentage_filled' => 0 );
                	   }*/
               //  }
-                if ($data->amount == 0 && $data->filled_positions == 0  ){
-                } else {
-                    $establishmentNode = $this->template->appendFileByName( "audit_report_job_establishment.html", "tr", 
-                        "establishment_list", 0, $jobNode );
-                    $this->template->setDisplayDataImmediate( 'establishment_no', $establishment_count, $establishmentNode );
-			foreach( array( 'title', 'salary_grade', 'amount', 'filled_positions', 'variance','percentage_filled' ) as $field ) {
+    //             if ($data->amount == 0 && $data->filled_positions == 0  ){
+    //             } else {
+    //                 $establishmentNode = $this->template->appendFileByName( "audit_report_job_establishment.html", "tr", 
+    //                     "establishment_list", 0, $jobNode );
+    //                 $this->template->setDisplayDataImmediate( 'establishment_no', $establishment_count, $establishmentNode );
+	// 		foreach( array( 'title', 'salary_grade', 'amount', 'filled_positions', 'variance','percentage_filled' ) as $field ) {
 
-                        $this->template->setDisplayDataImmediate( $field, $data->{$field}, $establishmentNode );
+    //                     $this->template->setDisplayDataImmediate( $field, $data->{$field}, $establishmentNode );
 
-                    }
-                    $totals['amount'] += $data->amount;
-                    $totals['filled'] += $data->filled_positions;
-                    $totals['variance'] += $data->variance;
-                    $totals['percentage_filled'] = round((($totals['filled']/ $totals['amount']) * 100),1);
-                   // $last_facility = $data->facility;
-                    $establishment_count++;
-                }
-            }
-            if ( $jobNode && $jobNode instanceof DOMNode ) {
-                $totalNode = $this->template->appendFileByName( "audit_report_job_total.html", "tr", 
-                        "establishment_list", 0, $jobNode );
-                foreach( $totals as $type => $total ) {
-                    $this->template->setDisplayDataImmediate( "total_$type", $total, $totalNode );
-                }
-            }
-        } catch ( PDOException $e ){
-            I2CE::pdoError( $e,  "Unable to get audit results:");
-            $this->userMessage("An error has occurred: " . $e->getMessage() );
-            $this->action_district();
-        }
-    }
+    //                 }
+    //                 $totals['amount'] += $data->amount;
+    //                 $totals['filled'] += $data->filled_positions;
+    //                 $totals['variance'] += $data->variance;
+    //                 $totals['percentage_filled'] = round((($totals['filled']/ $totals['amount']) * 100),1);
+    //                // $last_facility = $data->facility;
+    //                 $establishment_count++;
+    //             }
+    //         }
+    //         if ( $jobNode && $jobNode instanceof DOMNode ) {
+    //             $totalNode = $this->template->appendFileByName( "audit_report_job_total.html", "tr", 
+    //                     "establishment_list", 0, $jobNode );
+    //             foreach( $totals as $type => $total ) {
+    //                 $this->template->setDisplayDataImmediate( "total_$type", $total, $totalNode );
+    //             }
+    //         }
+    //     } catch ( PDOException $e ){
+    //         I2CE::pdoError( $e,  "Unable to get audit results:");
+    //         $this->userMessage("An error has occurred: " . $e->getMessage() );
+    //         $this->action_district();
+       }
+     }
 
-}
+
     
 
 # Local Variables:
