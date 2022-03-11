@@ -199,8 +199,8 @@ class iHRIS_Page_DataSupplier extends I2CE_Page{
      * @param DOMNode &$top The node to append data to.
      * @return boolean
      */
-    protected function ( &$top ) {
-loadData_Practitioner
+    protected function loadData_Practitioner ( &$top ) {
+
         if(isset($this->id)){
             $person_ids = array();
             $ids = I2CE_FormStorage::listFields( 'person_id', array('parent'), false, array(
