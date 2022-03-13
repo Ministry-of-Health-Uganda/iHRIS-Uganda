@@ -76,7 +76,7 @@ Class Request_Model extends CI_Model
     return $query->result();
            
     }
-    public function get_practioner($district){
+    public function practitioner_data($district){
 
         if(!empty($district)){
             $filter="where  `district+name`='$district'";

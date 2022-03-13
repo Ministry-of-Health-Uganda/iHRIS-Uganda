@@ -95,9 +95,9 @@ Class Api extends REST_Controller
         }
     }
     //get praction json
-    public function practioner_get($district=FALSE) 
+    public function practitioner_get($district=FALSE) 
     {
-        $results = $this->requestHandler->practioner_data($district);
+        $results = $this->requestHandler->practitioner_data($district);
         if(!empty($results)){
         $this->response($results, REST_Controller::HTTP_OK);
         }
