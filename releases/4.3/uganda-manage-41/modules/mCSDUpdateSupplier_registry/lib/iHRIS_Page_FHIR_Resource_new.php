@@ -2549,7 +2549,7 @@ class iHRIS_Page_FHIR_Resource_new extends I2CE_Page{
     protected function create_Practitioner( $data, &$top ) {
         //echo "\nTracing: Enter create practitioner!\n";
         //var_dump($data['identification']);
-        //$top["extension"]=array();
+        @$top["extension"]=array();
         $maritalStatusDict=array('marital_status|1'=>'Never Married','marital_status|2'=>'Married','marital_status|3'=>'Divorced',
             'marital_status|4'=>'Widowed');
         $languageProficiencyDict=array('language_proficiency|elementary'=>'Elémentaire',
