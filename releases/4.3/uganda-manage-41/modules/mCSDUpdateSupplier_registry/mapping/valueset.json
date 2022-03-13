@@ -1,0 +1,101 @@
+{
+    "resourceType":"ValueSet",
+    "fieldsMapping":[
+        {
+            "iHRISForm":"id_type",
+            "useForLinked":true,
+            "meta":{
+                "id": "identifier-type-rdc",
+                "profile":"http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+                "url": "http://ihris.org/fhir/ValueSet/identifier-type-rdc",
+                "version": "4.0.0",
+                "name": "Identifier Type Codes RDC",
+                "title": "IdentifierType RDC",
+                "publisher": "iHRIS Foundation RDC",
+                "status": "active",
+                "description": "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose."
+            },
+            "iHRISField":[
+                {
+                    "fieldId":"id",
+                    "iHRISFieldAlias":"id",
+                    "fhirField":"code",
+                    "active":true,
+                    "fhirBaseElement":"concept"
+                },
+                {
+                    "fieldId":"name",
+                    "iHRISFieldAlias":"name",
+                    "fhirField":"display",
+                    "active":true,
+                    "fhirBaseElement":"concept"
+                },
+                {
+                    "fieldId":"name",
+                    "iHRISFieldAlias":"definition",
+                    "fhirField":"definition",
+                    "active":true,
+                    "fhirBaseElement":"concept"
+                }
+            ],
+            "extension":[],
+            "iHRISJoinedForms":[
+            ]
+        },
+        {
+            "iHRISForm":"cadre",
+            "useForLinked":true,
+            "meta":{
+                "id": "ihris-job-rdc",
+                "profile":"",
+                "url": "http://ihris.org/fhir/ValueSet/ihris-job-rdc",
+                "version": "4.0.0",
+                "name": "iHRISJob RDC",
+                "title": "iHRISJob RDC",
+                "publisher": "iHRIS Foundation RDC",
+                "status": "active",
+                "description": "List of iHRIS RDC ValueSet for cadre: iHRISJob"
+            },
+            "iHRISField":[
+                {
+                    "fieldId":"id",
+                    "iHRISFieldAlias":"id",
+                    "fhirField":"code",
+                    "active":true,
+                    "fhirBaseElement":"concept"
+                },
+                {
+                    "fieldId":"name",
+                    "iHRISFieldAlias":"name",
+                    "fhirField":"display",
+                    "active":true,
+                    "fhirBaseElement":"concept"
+                },
+                {
+                    "fieldId":"name",
+                    "iHRISFieldAlias":"definition",
+                    "fhirField":"definition",
+                    "active":true,
+                    "fhirBaseElement":"concept"
+                }
+            ],
+            "extension":[],
+            "iHRISJoinedForms":[
+            ]
+        }
+    ],
+    "fieldsLinked":[],
+    "configs":{
+        "defaultIdentifierCodeableConcept":{
+            "code":"IHRSID",
+            "display":"Internal IHRIS ID"
+        },
+        "removeiHRISPrefixForCodeableConcept":true,
+        "limitLocationForm":{
+            "status":false,
+            "form":"",
+            "fieldName":"",
+            "value":""
+        }
+    }
+}
