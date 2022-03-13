@@ -19,19 +19,19 @@
       <value>./templates</value>
     </path>
     <requirement name="FHIR">
-      <atLeast version="4.3" />
+      <atLeast version="4.2" />
       <lessThan version="4.4" />
     </requirement>
     <requirement name="ihris-manage-csd-qus">
-      <atLeast version="4.3" />
+      <atLeast version="4.2" />
       <lessThan version="4.4" />
     </requirement>
     <requirement name="csd_facility_default">
-      <atLeast version="4.3" />
+      <atLeast version="4.2" />
       <lessThan version="4.4" />
     </requirement>
     <requirement name="ihris-manage-csd-PersonPosition">
-      <atLeast version="4.3" />
+      <atLeast version="4.2" />
       <lessThan version="4.4" />
     </requirement>
   </metadata>
@@ -55,7 +55,7 @@
   </erase>
   <configurationGroup name="ihris-manage-mcsd-update-supplier-extract" path="/">
     <configurationGroup name="tasks" path="/I2CE/tasks">
-      <version>4.3.0.3</version>
+      <version>4.3.4.24</version>
       <configurationGroup name="task_description" locale="en_US">
         <configuration name="mcsd_can_access_all" locale="en_US" values="single" type="string">
           <value>Allows access to mCSD/FHIR directories (Care Services Update Supplier)</value>
@@ -103,7 +103,7 @@
           <value>iHRIS_Page_FHIR_Resource_new</value>
         </configuration>
         <configuration name="style" values="single" type="string">
-          <version>4.3.0.6</version>
+         <version>4.3.4.24</version>
           <value>empty</value>
         </configuration>
         <configurationGroup name="args">
@@ -111,11 +111,11 @@
             <value>Practitioner</value>
           </configuration>
           <configuration name="access" values="many" type="string">
-            <version>4.3.0.3</version>
+            <version>4.3.4.24</version>
             <value>admin</value>
           </configuration>
           <configuration name="tasks" values="many" type="string">
-            <version>4.3.0.3</version>
+            <version>4.3.4.24</version>
             <value>mcsd_can_access_practitioner</value>
           </configuration>
         </configurationGroup>
@@ -125,7 +125,7 @@
           <value>iHRIS_Page_FHIR_Resource_new</value>
         </configuration>
         <configuration name="style" values="single" type="string">
-          <version>4.3.0.6</version>
+         <version>4.3.4.24</version>
           <value>empty</value>
         </configuration>
         <configurationGroup name="args">
@@ -133,11 +133,11 @@
             <value>PractitionerRole</value>
           </configuration>
           <configuration name="access" values="many" type="string">
-            <version>4.3.0.3</version>
+            <version>4.3.4.24</version>
             <value>admin</value>
           </configuration>
           <configuration name="tasks" values="many" type="string">
-            <version>4.3.0.3</version>
+            <version>4.3.4.24</version>
             <value>mcsd_can_access_practitioner</value>
           </configuration>
         </configurationGroup>
@@ -147,7 +147,7 @@
           <value>iHRIS_Page_FHIR_Resource_new</value>
         </configuration>
         <configuration name="style" values="single" type="string">
-          <version>4.3.0.6</version>
+         <version>4.3.4.24</version>
           <value>empty</value>
         </configuration>
         <configurationGroup name="args">
@@ -155,11 +155,11 @@
             <value>Organization</value>
           </configuration>
           <configuration name="access" values="many" type="string">
-            <version>4.3.0.3</version>
+            <version>4.3.4.24</version>
             <value>admin</value>
           </configuration>
           <configuration name="tasks" values="many" type="string">
-            <version>4.3.0.3</version>
+            <version>4.3.4.24</version>
             <value>mcsd_can_access_organization</value>
           </configuration>
         </configurationGroup>
@@ -169,7 +169,7 @@
           <value>iHRIS_Page_FHIR_Resource_new</value>
         </configuration>
         <configuration name="style" values="single" type="string">
-          <version>4.3.0.6</version>
+         <version>4.3.4.24</version>
           <value>empty</value>
         </configuration>
         <configurationGroup name="args">
@@ -177,11 +177,11 @@
             <value>Location</value>
           </configuration>
           <configuration name="access" values="many" type="string">
-            <version>4.3.0.3</version>
+            <version>4.3.4.24</version>
             <value>admin</value>
           </configuration>
           <configuration name="tasks" values="many" type="string">
-            <version>4.3.0.3</version>
+            <version>4.3.4.24</version>
             <value>mcsd_can_access_location</value>
           </configuration>
         </configurationGroup>
@@ -210,7 +210,7 @@
           <value>iHRIS_Page_FHIR_Resource_new</value>
         </configuration>
         <configuration name="style" values="single" type="string">
-          <version>4.3.0.6</version>
+         <version>4.3.4.24</version>
           <value>empty</value>
         </configuration>
         <configurationGroup name="args">
@@ -218,11 +218,11 @@
             <value>Person</value>
           </configuration>
           <configuration name="access" values="many" type="string">
-            <version>4.3.0.3</version>
+            <version>4.3.4.24</version>
             <value>admin</value>
           </configuration>
           <configuration name="tasks" values="many" type="string">
-            <version>4.3.0.3</version>
+            <version>4.3.4.24</version>
             <value>mcsd_can_access_person</value>
           </configuration>
         </configurationGroup>
