@@ -103,11 +103,11 @@ Class Api extends REST_Controller
          foreach($results as $result):  
 
         $genInfo = array(
-            "firstName"=> "Denis", // First Name 
-            "surname"=> "Muramuzi", // Surname
+            "firstName"=> $result->firstname, // First Name 
+            "surname"=> $result->surname, // Surname
             "middleName"=> null, // 
             "maidenName"=> null,
-            "otherName1"=> null,
+            "otherName1"=> $result->othername,
             "otherName2"=> null,
             "otherName3"=> null,
             "country1"=> "Uganda", // Country of birth
@@ -115,7 +115,7 @@ Class Api extends REST_Controller
             "country3"=> null, //Country of present citizenship
             "country4"=> null, // Country fo residence
             "country5"=> null, // Country of second citizenship (multiple citizenship)
-            "dateOfBirth"=> "1996-08-26",
+            "dateOfBirth"=> $result->birthdate,
             "gender"=> "MALE",
             "districtOrTown"=> "Kampala", 
             "subCounty"=> "Nakawa Division", 

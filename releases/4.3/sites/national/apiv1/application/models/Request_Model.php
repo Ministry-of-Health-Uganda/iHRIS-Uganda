@@ -85,25 +85,7 @@ Class Request_Model extends CI_Model
             $filter="";
         }
           
-        $result = $this->db->query("SELECT
-        DISTINCT trim(`person+id`) as ihris_pid,
-        trim(`district+id`) as district_id,
-        `district+name` as district,
-        `national_id+id_num` as national_id,
-        `facility+facility_type` as facility_type,
-        trim(`facility+id`) as facility_id,
-        `facility+name` as facility,
-        trim(`job+id`) as job_id, 
-        `job+title` as job,
-        `person+surname` as surname,
-        `person+firstname` as firstname,
-        `person+othername` as othername,
-        `person_contact_personal+mobile_phone` as phone ,
-        DATE_FORMAT(`demographic+birth_date`,'%Y-%m-%d') as birth_date,
-        CASE WHEN `demographic+gender` ='gender|M' THEN 'Male'
-        WHEN `demographic+gender` ='gender|F' THEN 'Female' 
-        ELSE 'NULL' END  as gender
-        from  `national_manage`.`zebra_staff_list` $filter
+        $result = $this->db->query("SELECT * `zebra_staff_list`
         LIMIT 2")->result();
 
     return $result;
