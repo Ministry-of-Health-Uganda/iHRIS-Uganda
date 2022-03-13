@@ -101,9 +101,24 @@ Class Api extends REST_Controller
         
         // foreach($results as $result):  
 
+        $genInfo = array(
+            "name"=>"Henry"
+        );
+
+        $contactInfo = array(
+            "name"=>"Henry"
+        );
+
+        $response = array(
+            "generalInformation"=>$genInfo,
+            "contactInformation"=>$contactInfo,
+            "district_id"=>$result[0]->district_id
+        );
+        
+
         // endforeach;
         if(!empty($results)){
-        $this->response($results, REST_Controller::HTTP_OK);
+        $this->response($response, REST_Controller::HTTP_OK);
         }
         else{
         $response['status'] = 'FAILED';
