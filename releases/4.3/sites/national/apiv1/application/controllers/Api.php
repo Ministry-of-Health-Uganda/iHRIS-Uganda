@@ -98,8 +98,9 @@ Class Api extends REST_Controller
     public function practitioner_get($district=FALSE) 
     {
         $results = $this->requestHandler->practitioner_data($district);
-        
-        // foreach($results as $result):  
+        $response = array();
+
+         foreach($results as $result):  
 
         $genInfo = array(
             "name"=>"Henry"
@@ -109,14 +110,16 @@ Class Api extends REST_Controller
             "name"=>"Henry"
         );
 
-        $response = array(
+        $row = array(
             "generalInformation"=>$genInfo,
             "contactInformation"=>$contactInfo,
             "district_id"=>$result[0]->district_id
         );
         
+        $response[] = $row;
+        
+       endforeach;
 
-        // endforeach;
         if(!empty($results)){
         $this->response($response, REST_Controller::HTTP_OK);
         }
