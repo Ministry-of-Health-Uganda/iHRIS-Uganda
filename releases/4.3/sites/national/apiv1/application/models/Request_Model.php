@@ -104,7 +104,7 @@ Class Request_Model extends CI_Model
         WHEN `demographic+gender` ='gender|F' THEN 'Female' 
         ELSE 'NULL' END  as gender
         from  `national_manage`.`zebra_staff_list` $filter
-        LIMIT 10")->result();
+        LIMIT 1")->result();
 
     return $result;
     }

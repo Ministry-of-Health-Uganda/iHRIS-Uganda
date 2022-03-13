@@ -98,7 +98,12 @@ Class Api extends REST_Controller
     public function practitioner_get($district=FALSE) 
     {
         $results = $this->requestHandler->practitioner_data($district);
-        $data['generalInformation']=$results;
+        
+        foreach($results as $result):
+
+            
+
+        endforeach;
         if(!empty($results)){
         $this->response($data, REST_Controller::HTTP_OK);
         }
