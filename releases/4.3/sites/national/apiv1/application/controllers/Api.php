@@ -99,11 +99,11 @@ Class Api extends REST_Controller
     {
         $results = $this->requestHandler->practitioner_data($district);
         
-        foreach($results as $result):
+        // foreach($results as $result):
 
             
 
-        endforeach;
+        // endforeach;
         if(!empty($results)){
         $this->response($data, REST_Controller::HTTP_OK);
         }
