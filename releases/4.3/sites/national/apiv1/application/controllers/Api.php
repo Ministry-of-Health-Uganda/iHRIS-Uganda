@@ -103,7 +103,28 @@ Class Api extends REST_Controller
          foreach($results as $result):  
 
         $genInfo = array(
-            "name"=>"Henry"
+            "firstName"=> "Denis", // First Name 
+            "surname"=> "Muramuzi", // Surname
+            "middleName"=> null, // 
+            "maidenName"=> null,
+            "otherName1"=> null,
+            "otherName2"=> null,
+            "otherName3"=> null,
+            "country1"=> "Uganda", // Country of birth
+            "country2"=> null, // Citizenship at birth
+            "country3"=> null, //Country of present citizenship
+            "country4"=> null, // Country fo residence
+            "country5"=> null, // Country of second citizenship (multiple citizenship)
+            "dateOfBirth"=> "1996-08-26",
+            "gender"=> "MALE",
+            "districtOrTown"=> "Kampala", 
+            "subCounty"=> "Nakawa Division", 
+            "tribe"=> null, // Tribe of a health worker
+            "fatherName"=> "Musoke",
+            "motherName"=> "Marria Agness",
+            "maritalStatus"=> "SINGLE",
+            "fullName"=> "Muramuzi Denis",
+            "disciplinaryAction"=> ""
         );
 
         $contactInfo = array(
@@ -113,7 +134,7 @@ Class Api extends REST_Controller
         $row = array(
             "generalInformation"=>$genInfo,
             "contactInformation"=>$contactInfo,
-            "district_id"=>$result->district_id
+            "district_id"=>$result->district_id,
         );
         
         $response[] = $row;
@@ -121,7 +142,7 @@ Class Api extends REST_Controller
        endforeach;
 
         if(!empty($results)){
-        $this->response($response, REST_Controller::HTTP_OK);
+        $this->response($results, REST_Controller::HTTP_OK);
         }
         else{
         $response['status'] = 'FAILED';
