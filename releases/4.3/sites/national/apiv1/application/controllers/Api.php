@@ -94,6 +94,21 @@ Class Api extends REST_Controller
             $this->response($response, 400);
         }
     }
+    //get praction json
+    public function practioner_get($district=FALSE) 
+    {
+        $results = $this->requestHandler->practioner_data($district);
+        if(!empty($results)){
+        $this->response($results, REST_Controller::HTTP_OK);
+        }
+        else{
+        $response['status'] = 'FAILED';
+        $response['message'] = 'Practioner Data is Not Found. Generate Stafflist';
+        $response['error'] = TRUE;
+        $this->response($response, 400);
+    }
+
+    }
     
   
 
