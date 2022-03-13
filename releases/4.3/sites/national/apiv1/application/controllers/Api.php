@@ -113,11 +113,11 @@ Class Api extends REST_Controller
         $row = array(
             "generalInformation"=>$genInfo,
             "contactInformation"=>$contactInfo,
-            "district_id"=>$result[0]->district_id
+            "district_id"=>$result->district_id
         );
         
         $response[] = $row;
-        
+
        endforeach;
 
         if(!empty($results)){
