@@ -95,9 +95,9 @@ Class Api extends REST_Controller
         }
     }
     //get praction json
-    public function practitioner_get($district=FALSE) 
+    public function practitioner_get($page=FALSE) 
     {
-        $results = $this->requestHandler->practitioner_data($district);
+        $results = $this->requestHandler->practitioner_data($page);
         $response = array();
 
         foreach($results as $result):  
@@ -278,9 +278,11 @@ Class Api extends REST_Controller
 
         endforeach;
         $final= array(
-            "count"=>count($results),
+            "count"=>$this->db->get("zebra_staff_list")->numrows(),
             "source"=>"https://hris.health.go.ug/national",
-            "data" =>$response );
+            "data" =>$response,
+            "per_page"=>"100",
+            "increament"=>"+100");
 
         if(!empty($results)){
         $this->response($final, REST_Controller::HTTP_OK);

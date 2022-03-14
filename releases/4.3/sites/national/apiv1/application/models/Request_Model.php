@@ -35,7 +35,7 @@ Class Request_Model extends CI_Model
     return $query->result();
            
     }
-    public function getallihrisdata()
+    public function getallihrisdata($page)
     {
         $query=$this->db->query("SELECT
         trim(`person+id`) as ihris_pid,
@@ -62,7 +62,7 @@ Class Request_Model extends CI_Model
          `institution_type+id` as institution_type_id,
          CURRENT_TIMESTAMP as last_update
         
-        from  `national_manage`.`zebra_staff_list`");
+        from  `national_manage`.`zebra_staff_list` LIMIT $page, 200");
     return $query->result();
            
     }
