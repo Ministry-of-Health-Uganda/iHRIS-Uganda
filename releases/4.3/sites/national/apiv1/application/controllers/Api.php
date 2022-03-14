@@ -201,7 +201,7 @@ Class Api extends REST_Controller
             );
 
             $employmentInfoDto = array(
-                "cadre" => $result['classification+cadre'],
+                "cadre" => $result['cadre_name'],
                 "date_started_work" => date('Y-m-d', strtotime($result['primary_form+start_date'])),
                 "alternative_workplaces" => null,
                 "former_worker_places" => "[]",
