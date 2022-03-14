@@ -152,13 +152,13 @@ Class Api extends REST_Controller
         endforeach;
 
         if(!empty($results)){
-        $this->response($result, REST_Controller::HTTP_OK);
+        $this->response($response, REST_Controller::HTTP_OK);
         }
         else{
         $response['status'] = 'FAILED';
         $response['message'] = 'Practioner Data is Not Found. Generate Stafflist';
         $response['error'] = TRUE;
-        $this->response($result, 400);
+        $this->response($response, 400);
     }
 
     }
