@@ -7,7 +7,7 @@ Class Request_Model extends CI_Model
     {
         $query=$this->db->query("SELECT
         trim(`person+id`) as ihris_pid,
-        trim(`district+id`) as district_id,
+        trim(`district+name`) as district_id,
         `district+name` as district,
          'dhis_facility_id',
          'dhis_district_id',
@@ -31,7 +31,7 @@ Class Request_Model extends CI_Model
          `institution_type+id` as institution_type_id,
          CURRENT_TIMESTAMP as last_update
         
-        from  `national_manage`.`zebra_staff_list` WHERE `national_id_card_no+id_num` IS NOT NULL");
+        from  `national_manage`.`zebra_staff_list` WHERE `national_id_card_no+id_num` IS NOT NULL AND `institution_type+name`!='UCMB'");
     return $query->result();
            
     }
@@ -75,6 +75,20 @@ Class Request_Model extends CI_Model
          from zebra_person_attendance_all WHERE  DATE_FORMAT(`primary_form+month_year_day`,'%Y-%m') between '$from' AND '$to'");
     return $query->result();
            
+    }
+    public function practitioner_data($district){
+
+        if(!empty($district)){
+            $filter="where  `district+name`='$district'";
+        }
+        else{
+            $filter="";
+        }
+          
+        $result = $this->db->query("SELECT z.*  FROM `zebra_staff_list` z
+        LIMIT 2")->result();
+
+    return $result;
     }
 
     
