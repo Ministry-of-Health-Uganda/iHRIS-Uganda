@@ -191,6 +191,26 @@ Class Api extends REST_Controller
                 "healthWorker" => $result['person+surname'].' '.$result['person+firstname'].' '. @$result['person+othername']
             );
 
+            $currentAddress = array (
+                "entityAddress" => null,
+                "zipCode" => null,
+                "postalAdress" => $result['person_contact_personal+address'],
+                "streetAddress" => null,
+                "townOrCity" => $result['residence_district+name'],
+                "country" => $result['country_name']
+            );
+
+            $employmentInfoDto = array(
+                "cadre" => $result['classification+cadre'],
+                "date_started_work" => date('Y-m-d', strtotime($result['primary_form+start_date'])),
+                "alternative_workplaces" => null,
+                "former_worker_places" => "[]",
+                "date_at_first_job" => date('Y-m-d', strtotime($result['primary_form+dofa_date'])),
+                "currentAddress" => $result['person_contact_personal+address'],
+                "healthWorker" => null,
+                "working_hours_days_available" => null
+            );
+
 
             
 
@@ -235,6 +255,8 @@ Class Api extends REST_Controller
             "psDateOfExpiration" => null,
             "educationDetailsDto" => null,
             "educationDetailId" => null,
+            "currentAddress" =>$currentAddress,
+
 
         );
         
