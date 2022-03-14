@@ -271,6 +271,11 @@ Class Api extends REST_Controller
 
 
         );
+
+        $final = array(
+                       "count"=>count($results),
+                       "source"=>"https://hris.health.go.ug/national",
+                       "data" =>$row );
         
          $response[] = $row;
 
