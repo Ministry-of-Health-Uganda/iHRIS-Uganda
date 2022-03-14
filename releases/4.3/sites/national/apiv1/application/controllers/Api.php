@@ -101,7 +101,8 @@ Class Api extends REST_Controller
         $response = array();
 
         foreach($results as $result):  
-        $gender = $result->strval("demographic+gender");
+            $g=strval("demographic+gender");
+        $gender = $result->$g;
                 if($gender='gender|M'){
                 $sex="MALE";
                 }
