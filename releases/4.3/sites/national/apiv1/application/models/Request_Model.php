@@ -78,7 +78,7 @@ Class Request_Model extends CI_Model
     }
     public function practitioner_data($page){
 
-        if(!empty($district)){
+        if(!empty($page)){
             $page=0;
         }
         $result = $this->db->query("SELECT * FROM `zebra_staff_list` LIMIT $page,100")->result_array();
