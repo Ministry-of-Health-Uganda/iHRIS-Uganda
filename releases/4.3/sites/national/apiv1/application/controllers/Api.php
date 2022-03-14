@@ -155,9 +155,39 @@ Class Api extends REST_Controller
                 "contactName"=> $result['person+surname'].' '.$result['person+firstname'].' '. @$result['person+othername']
       );
 
+            $address = array(
+                "entityAddress" => null,
+                "zipCode" => null,
+                "postalAdress" => null,
+                "streetAddress" => null,
+                "townOrCity" => $result['residence_district+name'],
+                "country" => $result['country_name']
+            );
+
+
+            
+
         $row = array(
             "generalInformation"=>$genInfo,
             "contactInformation"=>$contactInformation,
+            "nin" => $result['national_id+id_num'],
+            "socialSecurityNumber" => null,
+            "passportNumber" => null,
+            "driverLicenceNumber" => null,
+            "incomeTaxNumber" => null,
+            "insuranceNumber" => null,
+            "externalReferenceId" => null,
+            "address" => $address,
+            "occupationalCategory" => null,
+            "employmentStatus" => "Active_In_service",
+            "employmentStatusId" => null,
+            "employmentTitle" => $result['job+title'],
+            "homePhone" => $result['person_contact_personal+telephone'],
+            "businessPhone" => null,
+            "mobilePhone" => $result['person_contact_personal+telephone'],
+            "faxNumber" => null,
+            "homeMail" => $result['person_contact_personal+email'],
+            "businessMail" => $result['person_contact_personal+email'],
         );
         
          $response[] = $row;
