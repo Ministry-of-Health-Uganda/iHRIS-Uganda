@@ -129,7 +129,7 @@ Class Api extends REST_Controller
             "country5"=> null, // Country of second citizenship (multiple citizenship)
             "dateOfBirth"=>date('Y-m-d', strtotime($result['demographic+birth_date'])),
             "gender"=>null,
-            "districtOrTown"=> $result["residence_district+name"],
+            "districtOrTown"=> $result["home_district+name"],
             "subCounty"=> "", 
             "tribe"=> null, // Tribe of a health worker
             "fatherName"=> null,
@@ -139,12 +139,25 @@ Class Api extends REST_Controller
             "disciplinaryAction"=> ""
         );
 
-    //     $contactInfo = array(
-    //         "name"=>"Henry"
-    //     );
+      //contact Info
+      $contactInformation = array(
+                "personalAddress"=> $result['person_contact_personal+address'],
+                "residence"=> $result['residence_district+name'],
+                "telephoneNumber1"=>$result['person_contact_personal+mobile_phone'] ,
+                "telephoneNumber2"=> $result['person_contact_personal+telephone'],
+                "emailAddress1"=> $result['person_contact_personal+email'],
+                "emailAddress2"=> null,
+                "placeOfWork"=> null,
+                "workAddress"=>null ,
+                "workPhoneNumber"=>null ,
+                "locality"=> null,
+                "districtTown"=>null ,
+                "contactName"=> $result['person+surname'].' '.$result['person+firstname'].' '. @$result['person+othername']
+      );
 
         $row = array(
-            "generalInformation"=>$genInfo
+            "generalInformation"=>$genInfo,
+            "contactInformation"=>$contactInformation,
         );
         
          $response[] = $row;
