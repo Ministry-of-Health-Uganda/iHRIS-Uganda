@@ -35,7 +35,7 @@ Class Request_Model extends CI_Model
     return $query->result();
            
     }
-    public function getallihrisdata($page)
+    public function getallihrisdata()
     {
         $query=$this->db->query("SELECT
         trim(`person+id`) as ihris_pid,
@@ -62,7 +62,7 @@ Class Request_Model extends CI_Model
          `institution_type+id` as institution_type_id,
          CURRENT_TIMESTAMP as last_update
         
-        from  `national_manage`.`zebra_staff_list` LIMIT $page, 200");
+        from  `national_manage`.`zebra_staff_list`");
     return $query->result();
            
     }
@@ -76,15 +76,12 @@ Class Request_Model extends CI_Model
     return $query->result();
            
     }
-    public function practitioner_data($district){
+    public function practitioner_data($page){
 
         if(!empty($district)){
-            $filter="where  `district+name`='$district'";
+            $page=0;
         }
-        else{
-            $filter="";
-        }
-        $result = $this->db->query("SELECT * FROM `zebra_staff_list` LIMIT 200")->result_array();
+        $result = $this->db->query("SELECT * FROM `zebra_staff_list` LIMIT $page,100")->result_array();
 
     
     return $result;
