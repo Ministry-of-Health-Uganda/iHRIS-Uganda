@@ -128,7 +128,7 @@ Class Api extends REST_Controller
             "country4"=> null, // Country fo residence
             "country5"=> null, // Country of second citizenship (multiple citizenship)
             "dateOfBirth"=>date('Y-m-d', strtotime($result['demographic+birth_date'])),
-            "gender"=>null,
+            "gender"=>$sex,
             "districtOrTown"=> $result["home_district+name"],
             "subCounty"=> "", 
             "tribe"=> null, // Tribe of a health worker
@@ -164,6 +164,33 @@ Class Api extends REST_Controller
                 "country" => $result['country_name']
             );
 
+            $healthFacility = array(
+                "id" => str_replace("facility|","",$result['position+facility']),
+                "facilityCode" => $result['position+facility'],
+                "facilityName" => $result['facility+name'],
+            
+            );
+
+            $professionalEntity = array(
+                "id" => $result['registration+id'],
+                "professionalBody" => $result['registration+council'] ,
+                "professionalBodyId" =>null,
+                "registrationNumber" => $result['registration+registration_number'],
+                "emailAddress" => null,
+                "website" => null,
+                "telephoneNumber1" => null,
+                "telephoneNumber2" => null,
+                "fileAttachment" => null
+            );
+
+            $dataSubmissionInstitution = array(
+                "id" => 'NM1',
+                "institutionName" => "Ministry of Health",
+                "dateOfSubmission" => date("Y-m-d H:i:s"),
+                "referenceData" => "https://hris.health.go.ug/national/view?id=".$result['person+id'],
+                "healthWorker" => $result['person+surname'].' '.$result['person+firstname'].' '. @$result['person+othername']
+            );
+
 
             
 
@@ -188,6 +215,27 @@ Class Api extends REST_Controller
             "faxNumber" => null,
             "homeMail" => $result['person_contact_personal+email'],
             "businessMail" => $result['person_contact_personal+email'],
+            "healthFacility"=>$healthFacility,
+            "professionalEntity" => $professionalEntity,
+            "languageInfos" => null,
+            "educationalInstitutions" => null,
+            "licenseRegistrationCertifications" => null,
+            "internshipTrainings" => null,
+            "professionalTrainings" => null,
+            "facilityTypeOwnership" => null,
+            "photograph1" => null,
+            "photograph2" => null,
+            'dataSubmissionInstitution'=>$dataSubmissionInstitution,
+            "ninDateOfIssue" => null,
+            "ninDateOfExpiration" => null,
+            "nin_date_issue_expiration" => null,
+            "name_dob_gender_id" => null,
+            "psCountryOfIssuance" => null,
+            "psDateOfIssue" => null,
+            "psDateOfExpiration" => null,
+            "educationDetailsDto" => null,
+            "educationDetailId" => null,
+
         );
         
          $response[] = $row;
