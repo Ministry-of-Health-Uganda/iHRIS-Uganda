@@ -183,6 +183,17 @@ Class Api extends REST_Controller
                 "fileAttachment" => null
             );
 
+            $photograph1 = array(
+                "id"=>"manage_".str_replace("person_photo_passport|","",$result['Photo+id']),
+                "name"=>$result['person+surname'].str_replace("person|","",$result['person+id']),
+                "contentType"=>"base64",
+                "extension"=>"",
+                "contentAbstract"=>"",
+                "content"=>$result['imagedata'],  
+                "attachmentType"=>"",
+                "attachmentTypeId"=>""
+            );
+
             $dataSubmissionInstitution = array(
                 "id" => 'NM1',
                 "institutionName" => "Ministry of Health",
@@ -243,7 +254,7 @@ Class Api extends REST_Controller
             "internshipTrainings" => null,
             "professionalTrainings" => null,
             "facilityTypeOwnership" => null,
-            "photograph1" => $result['imagedata'],
+            "photograph1" => $photograph1,
             "photograph2" => null,
             'dataSubmissionInstitution'=>$dataSubmissionInstitution,
             "ninDateOfIssue" => null,
