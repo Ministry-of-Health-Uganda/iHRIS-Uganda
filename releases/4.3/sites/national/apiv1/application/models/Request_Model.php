@@ -84,7 +84,7 @@ Class Request_Model extends CI_Model
         else{
             $filter="";
         }
-        $result = $this->db->query("SELECT s.* , TO_BASE64(a.`Photo+image`) as `imagedata`, m.name as 'marital_status',c.name as 'country_name' FROM `zebra_staff_list` s Left  join `zebra_staff_album` a ON a.`Photo+id`=s.`Photo+id` right join `hippo_marital_status` m on m.id=s.`demographic+marital_status` right join `hippo_country` c on c.id=s.`person+nationality` LIMIT 2")->result_array();
+        $result = $this->db->query("SELECT s.* , TO_BASE64(a.`Photo+image`) as `imagedata`, m.name as 'marital_status',c.name as 'country_name' FROM `zebra_staff_list` s Left  join `zebra_staff_album` a ON a.`Photo+id`=s.`Photo+id` right join `hippo_marital_status` m on m.id=s.`demographic+marital_status`  join `hippo_country` c on c.id=s.`person+nationality` LIMIT 2")->result_array();
 
     
     return $result;
