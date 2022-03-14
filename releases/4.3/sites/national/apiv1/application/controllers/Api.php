@@ -272,17 +272,18 @@ Class Api extends REST_Controller
 
         );
 
-        $final = array(
-                       "count"=>count($results),
-                       "source"=>"https://hris.health.go.ug/national",
-                       "data" =>$row );
+       
         
-         $response[] = $final;
+         $response[] = $row;
 
         endforeach;
+        $final= array(
+            "count"=>count($results),
+            "source"=>"https://hris.health.go.ug/national",
+            "data" =>$response );
 
         if(!empty($results)){
-        $this->response($response, REST_Controller::HTTP_OK);
+        $this->response($final, REST_Controller::HTTP_OK);
         }
         else{
         $response['status'] = 'FAILED';
