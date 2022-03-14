@@ -101,8 +101,8 @@ Class Api extends REST_Controller
         $response = array();
 
         foreach($results as $result):  
-            $g=strval("demographic+gender");
-        $gender = $result->$g;
+            
+        $gender = $result["demographic+gender"];
                 if($gender='gender|M'){
                 $sex="MALE";
                 }
@@ -112,17 +112,14 @@ Class Api extends REST_Controller
                 else{
                     $sex=""; 
                 }
-        $dn=strval("residence_district+name");
-        $fname= strval("person+firstname");
-        $sname= strval("person+surname");
-        $oname= strval("person+othername");
-        $bd= strval("person+demographic+birth_date");
+      
+      
         $genInfo = array(
-            "firstName"=> $result->fname, // First Name 
-            "surname"=> $result->$sname, // Surname
+            "firstName"=>null, 
+            "surname"=> null, 
             "middleName"=> null, // 
             "maidenName"=> null,
-            "otherName1"=> $result->$oname,
+            "otherName1"=>null ,
             "otherName2"=> null,
             "otherName3"=> null,
             "country1"=> "Uganda", // Country of birth
@@ -130,15 +127,15 @@ Class Api extends REST_Controller
             "country3"=> null, //Country of present citizenship
             "country4"=> null, // Country fo residence
             "country5"=> null, // Country of second citizenship (multiple citizenship)
-            "dateOfBirth"=> $result->$bd,
-            "gender"=> $sex,
-            "districtOrTown"=> $result->$dn,
+            "dateOfBirth"=>null,
+            "gender"=>null,
+            "districtOrTown"=> $result["residence_district+name"],
             "subCounty"=> "", 
             "tribe"=> null, // Tribe of a health worker
             "fatherName"=> null,
             "motherName"=> null,
-            "maritalStatus"=> $result->marital_status,
-            "fullName"=> "$result->$sname.' '.$result->$fname.' '. @$result->oname",
+            "maritalStatus"=> $result['marital_status'],
+            "fullName"=> $result['person+surname'].' '.$result['person+firstname'].' '. @$result['person+othername'],
             "disciplinaryAction"=> ""
         );
 
