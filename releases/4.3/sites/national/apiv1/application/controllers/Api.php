@@ -208,7 +208,7 @@ Class Api extends REST_Controller
                 "postalAdress" => @$result['person_contact_personal+address'],
                 "streetAddress" => null,
                 "townOrCity" => @$result['residence_district+name'],
-                "country" => $this->getCountry($result['person+nationality'])
+                "country" => @$this->getCountry($result['person+nationality'])
             );
 
             $employmentInfoDto = array(
