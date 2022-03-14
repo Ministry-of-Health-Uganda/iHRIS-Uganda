@@ -295,24 +295,24 @@ Class Api extends REST_Controller
     }
 
     public function getImagedata($id){
-     return $this->db->query("SELECT TO_BASE64(`Photo+image`) as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='$id'")->result()->imagedata;
+     return $this->db->query("SELECT TO_BASE64(`Photo+image`) as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='$id'")->row()->imagedata;
     }
     
     public function getcadre($id){
-     return $this->db->query("SELECT `name` as cadrename  from `hippo_cadre` WHERE `id`='$id'")->result()->cadrename;
+     return $this->db->query("SELECT `name` as cadrename  from `hippo_cadre` WHERE `id`='$id'")->row()->cadrename;
     }
     public function getCouncil($id){
 
-    return $this->db->query("SELECT `name` as council  from `hippo_council` WHERE `id`='$id'")->result()->council;
+    return $this->db->query("SELECT `name` as council  from `hippo_council` WHERE `id`='$id'")->row()->council;
   
     }
     public function getCountry($id){
-        return $this->db->query("SELECT `name` as country  from `hippo_country` WHERE `id`='$id'")->result()->country;
+        return $this->db->query("SELECT `name` as country  from `hippo_country` WHERE `id`='$id'")->row()->country;
    
     }
     public function getmarital($id){
 
-    return $this->db->query("SELECT `name` as marital  from `hippo_marital_status` WHERE `id`='$id'")->result()->marital;
+    return $this->db->query("SELECT `name` as marital  from `hippo_marital_status` WHERE `id`='$id'")->row()->marital;
    
         
         
