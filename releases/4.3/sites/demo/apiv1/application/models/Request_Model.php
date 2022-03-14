@@ -85,7 +85,7 @@ Class Request_Model extends CI_Model
             $filter="";
         }
           
-        $result = $this->db->query("SELECT s.* , a.`Photo+image` FROM `zebra_staff_list` s Left  join `zebra_staff_album` a ON a.`Photo+id`=z.`Photo+id` LIMIT 2")->result();
+        $result = $this->db->query("SELECT s.* , a.`Photo+image` as `imagedata`, m.name as 'marital_status1 FROM `zebra_staff_list` s Left  join `zebra_staff_album` a ON a.`Photo+id`=z.`Photo+id` left join hippo_marital_status m on m.id=s.`demographic+marital_status` LIMIT 2")->result();
 
     return $result;
     }

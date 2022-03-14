@@ -100,32 +100,42 @@ Class Api extends REST_Controller
         $results = $this->requestHandler->practitioner_data($district);
         $response = array();
 
-    //      foreach($results as $result):  
-
-    //     $genInfo = array(
-    //         "firstName"=> $result->firstname, // First Name 
-    //         "surname"=> $result->surname, // Surname
-    //         "middleName"=> null, // 
-    //         "maidenName"=> null,
-    //         "otherName1"=> $result->othername,
-    //         "otherName2"=> null,
-    //         "otherName3"=> null,
-    //         "country1"=> "Uganda", // Country of birth
-    //         "country2"=> null, // Citizenship at birth
-    //         "country3"=> null, //Country of present citizenship
-    //         "country4"=> null, // Country fo residence
-    //         "country5"=> null, // Country of second citizenship (multiple citizenship)
-    //         "dateOfBirth"=> $result->birthdate,
-    //         "gender"=> "MALE",
-    //         "districtOrTown"=> "Kampala", 
-    //         "subCounty"=> "Nakawa Division", 
-    //         "tribe"=> null, // Tribe of a health worker
-    //         "fatherName"=> "Musoke",
-    //         "motherName"=> "Marria Agness",
-    //         "maritalStatus"=> "SINGLE",
-    //         "fullName"=> "Muramuzi Denis",
-    //         "disciplinaryAction"=> ""
-    //     );
+        foreach($results as $result):  
+        $gender = $result->strval(demographic+gender);
+                if($gender='gender|M'){
+                $sex="MALE";
+                }
+                else if ($gender='gender|F'){
+                    $sex="FEMALE";
+                }
+                else{
+                    $sex=""; 
+                }
+        $marital_status=$result->
+        $genInfo = array(
+            "firstName"=> $result->firstname, // First Name 
+            "surname"=> $result->surname, // Surname
+            "middleName"=> null, // 
+            "maidenName"=> null,
+            "otherName1"=> $result->othername,
+            "otherName2"=> null,
+            "otherName3"=> null,
+            "country1"=> "Uganda", // Country of birth
+            "country2"=> null, // Citizenship at birth
+            "country3"=> null, //Country of present citizenship
+            "country4"=> null, // Country fo residence
+            "country5"=> null, // Country of second citizenship (multiple citizenship)
+            "dateOfBirth"=> $result->birthdate,
+            "gender"=> $sex,
+            "districtOrTown"=> $result->strval(residence_district+name),
+            "subCounty"=> "", 
+            "tribe"=> null, // Tribe of a health worker
+            "fatherName"=> null,
+            "motherName"=> null,
+            "maritalStatus"=> "$marital_status",
+            "fullName"=> "$result->surname.' '.$result->firstname.' '. @$result->othername",
+            "disciplinaryAction"=> ""
+        );
 
     //     $contactInfo = array(
     //         "name"=>"Henry"
@@ -139,7 +149,7 @@ Class Api extends REST_Controller
         
     //     $response[] = $row;
 
-    //    endforeach;
+        endforeach;
 
         if(!empty($results)){
         $this->response($results, REST_Controller::HTTP_OK);
