@@ -113,13 +113,16 @@ Class Api extends REST_Controller
                     $sex=""; 
                 }
         $dn=strval("residence_district+name");
-      
+        $fname= strval("person+firstname");
+        $sname= strval("person+surname");
+        $oname= strval("person+othername");
+        $bd= strval("person+demographic+birth_date");
         $genInfo = array(
-            "firstName"=> $result->firstname, // First Name 
-            "surname"=> $result->surname, // Surname
+            "firstName"=> $result->fname, // First Name 
+            "surname"=> $result->$sname, // Surname
             "middleName"=> null, // 
             "maidenName"=> null,
-            "otherName1"=> $result->othername,
+            "otherName1"=> $result->$oname,
             "otherName2"=> null,
             "otherName3"=> null,
             "country1"=> "Uganda", // Country of birth
@@ -127,7 +130,7 @@ Class Api extends REST_Controller
             "country3"=> null, //Country of present citizenship
             "country4"=> null, // Country fo residence
             "country5"=> null, // Country of second citizenship (multiple citizenship)
-            "dateOfBirth"=> $result->birthdate,
+            "dateOfBirth"=> $result->$bd,
             "gender"=> $sex,
             "districtOrTown"=> $result->$dn,
             "subCounty"=> "", 
@@ -135,7 +138,7 @@ Class Api extends REST_Controller
             "fatherName"=> null,
             "motherName"=> null,
             "maritalStatus"=> $result->marital_status,
-            "fullName"=> "$result->surname.' '.$result->firstname.' '. @$result->othername",
+            "fullName"=> "$result->$sname.' '.$result->$fname.' '. @$result->oname",
             "disciplinaryAction"=> ""
         );
 
