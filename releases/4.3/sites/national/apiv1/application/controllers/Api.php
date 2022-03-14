@@ -115,37 +115,37 @@ Class Api extends REST_Controller
       
       
         $genInfo = array(
-            "firstName"=>$result['person+firstname'], 
-            "surname"=> $result['person+surname'], 
+            "firstName"=>@$result['person+firstname'], 
+            "surname"=> @$result['person+surname'], 
             "middleName"=> null, // 
             "maidenName"=> null,
-            "otherName1"=>$result['person+othername'],
+            "otherName1"=>@$result['person+othername'],
             "otherName2"=> null,
             "otherName3"=> null,
-            "country1"=> $result['country_name'], // Country of birth
+            "country1"=> @$this->getCountry($result['person+nationality']), // Country of birth
             "country2"=> null, // Citizenship at birth
             "country3"=> null, //Country of present citizenship
             "country4"=> null, // Country fo residence
             "country5"=> null, // Country of second citizenship (multiple citizenship)
-            "dateOfBirth"=>date('Y-m-d', strtotime($result['demographic+birth_date'])),
+            "dateOfBirth"=>@date('Y-m-d', strtotime($result['demographic+birth_date'])),
             "gender"=>$sex,
             "districtOrTown"=> $result["home_district+name"],
             "subCounty"=> "", 
             "tribe"=> null, // Tribe of a health worker
             "fatherName"=> null,
             "motherName"=> null,
-            "maritalStatus"=> $result['marital_status'],
+            "maritalStatus"=> @$this->getmarital($result['demographic+marital_status']),
             "fullName"=> $result['person+surname'].' '.$result['person+firstname'].' '. @$result['person+othername'],
             "disciplinaryAction"=> ""
         );
 
       //contact Info
       $contactInformation = array(
-                "personalAddress"=> $result['person_contact_personal+address'],
-                "residence"=> $result['residence_district+name'],
-                "telephoneNumber1"=>$result['person_contact_personal+mobile_phone'] ,
-                "telephoneNumber2"=> $result['person_contact_personal+telephone'],
-                "emailAddress1"=> $result['person_contact_personal+email'],
+                "personalAddress"=> @$result['person_contact_personal+address'],
+                "residence"=> @$result['residence_district+name'],
+                "telephoneNumber1"=>@$result['person_contact_personal+mobile_phone'] ,
+                "telephoneNumber2"=> @$result['person_contact_personal+telephone'],
+                "emailAddress1"=> @$result['person_contact_personal+email'],
                 "emailAddress2"=> null,
                 "placeOfWork"=> null,
                 "workAddress"=>null ,
@@ -161,7 +161,7 @@ Class Api extends REST_Controller
                 "postalAdress" => null,
                 "streetAddress" => null,
                 "townOrCity" => $result['residence_district+name'],
-                "country" => $result['country_name']
+                "country" => @$this->getCountry($result['person+nationality'])
             );
 
             $healthFacility = array(
@@ -173,9 +173,9 @@ Class Api extends REST_Controller
 
             $professionalEntity = array(
                 "id" => $result['registration+id'],
-                "professionalBody" => $result['council'] ,
-                "professionalBodyId" =>$result['registration+council'],
-                "registrationNumber" => $result['registration+registration_number'],
+                "professionalBody" => @$this->getCouncil($result['registration+council']) ,
+                "professionalBodyId" =>@$result['registration+council'],
+                "registrationNumber" => @$result['registration+registration_number'],
                 "emailAddress" => null,
                 "website" => null,
                 "telephoneNumber1" => null,
@@ -189,7 +189,7 @@ Class Api extends REST_Controller
                 "contentType"=>"base64",
                 "extension"=>"",
                 "contentAbstract"=>"",
-                "content"=>$result['imagedata'],  
+                "content"=>@$this->getImagedata($result['photo+id']),  
                 "attachmentType"=>"",
                 "attachmentTypeId"=>""
             );
@@ -205,14 +205,14 @@ Class Api extends REST_Controller
             $currentAddress = array (
                 "entityAddress" => null,
                 "zipCode" => null,
-                "postalAdress" => $result['person_contact_personal+address'],
+                "postalAdress" => @$result['person_contact_personal+address'],
                 "streetAddress" => null,
-                "townOrCity" => $result['residence_district+name'],
-                "country" => $result['country_name']
+                "townOrCity" => @$result['residence_district+name'],
+                "country" => @$this->getCountry($result['person+nationality'])
             );
 
             $employmentInfoDto = array(
-                "cadre" => @$result['cadre_name'],
+                "cadre" => @$this->getcadre($result['classification+cadre']),
                 "date_started_work" => date('Y-m-d', strtotime($result['primary_form+start_date'])),
                 "alternative_workplaces" => null,
                 "former_worker_places" => "[]",
@@ -291,6 +291,30 @@ Class Api extends REST_Controller
         $this->response($response, 400);
     }
 
+    }
+
+    public function getImagedata($id){
+    return $this->db->query("SELECT TO_BASE64(a.`Photo+image`) as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='".$id."'")->result()->imagedata;
+    }
+    
+    public function getcadre($id){
+     return $this->db->query("SELECT `name` as cadrename  from `hippo_cadre` WHERE `id`='".$id."'")->result()->cadrename;
+    }
+    public function getCouncil($id){
+
+        return $this->db->query("SELECT `name` as council  from `hippo_council` WHERE `id`='".$id."'")->result()->council;
+  
+    }
+    public function getCountry($id){
+        return $this->db->query("SELECT `name` as country  from `hippo_country` WHERE `id`='".$id."'")->result()->country;
+   
+    }
+    public function getmarital($id){
+
+        return $this->db->query("SELECT `name` as marital  from `hippo_marital_status` WHERE `id`='".$id."'")->result()->marital;
+   
+        
+        
     }
     
   
