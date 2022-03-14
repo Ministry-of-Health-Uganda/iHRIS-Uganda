@@ -173,8 +173,8 @@ Class Api extends REST_Controller
 
             $professionalEntity = array(
                 "id" => $result['registration+id'],
-                "professionalBody" => $result['registration+council'] ,
-                "professionalBodyId" =>null,
+                "professionalBody" => $result['council'] ,
+                "professionalBodyId" =>$result['registration+council'],
                 "registrationNumber" => $result['registration+registration_number'],
                 "emailAddress" => null,
                 "website" => null,
