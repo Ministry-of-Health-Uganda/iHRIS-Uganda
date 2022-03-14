@@ -122,7 +122,7 @@ Class Api extends REST_Controller
             "otherName1"=>$result['person+othername'],
             "otherName2"=> null,
             "otherName3"=> null,
-            "country1"=> "Uganda", // Country of birth
+            "country1"=> $result['country_name'], // Country of birth
             "country2"=> null, // Citizenship at birth
             "country3"=> null, //Country of present citizenship
             "country4"=> null, // Country fo residence
