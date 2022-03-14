@@ -84,7 +84,7 @@ Class Request_Model extends CI_Model
         else{
             $filter="";
         }
-        $result = $this->db->query("SELECT s.* FROM `zebra_staff_list` s LIMIT 10")->result_array();
+        $result = $this->db->query("SELECT s.* FROM `zebra_staff_list` s")->result_array();
 
     
     return $result;
