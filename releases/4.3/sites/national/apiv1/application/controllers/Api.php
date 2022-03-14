@@ -256,6 +256,7 @@ Class Api extends REST_Controller
             "educationDetailsDto" => null,
             "educationDetailId" => null,
             "currentAddress" =>$currentAddress,
+            "employmentInfoDto" =>$employmentInfoDto 
 
 
         );
