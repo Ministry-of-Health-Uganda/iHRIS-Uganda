@@ -101,7 +101,7 @@ Class Api extends REST_Controller
         $response = array();
 
         foreach($results as $result):  
-        $gender = $result->strval(demographic+gender);
+        $gender = $result->strval("demographic+gender");
                 if($gender='gender|M'){
                 $sex="MALE";
                 }
@@ -111,7 +111,8 @@ Class Api extends REST_Controller
                 else{
                     $sex=""; 
                 }
-        $marital_status=$result->
+        $dn=strval("residence_district+name");
+      
         $genInfo = array(
             "firstName"=> $result->firstname, // First Name 
             "surname"=> $result->surname, // Surname
@@ -127,12 +128,12 @@ Class Api extends REST_Controller
             "country5"=> null, // Country of second citizenship (multiple citizenship)
             "dateOfBirth"=> $result->birthdate,
             "gender"=> $sex,
-            "districtOrTown"=> $result->strval(residence_district+name),
+            "districtOrTown"=> $result->$dn,
             "subCounty"=> "", 
             "tribe"=> null, // Tribe of a health worker
             "fatherName"=> null,
             "motherName"=> null,
-            "maritalStatus"=> "$marital_status",
+            "maritalStatus"=> $result->marital_status,
             "fullName"=> "$result->surname.' '.$result->firstname.' '. @$result->othername",
             "disciplinaryAction"=> ""
         );
@@ -141,18 +142,16 @@ Class Api extends REST_Controller
     //         "name"=>"Henry"
     //     );
 
-    //     $row = array(
-    //         "generalInformation"=>$genInfo,
-    //         "contactInformation"=>$contactInfo,
-    //         "district_id"=>$result->district_id,
-    //     );
+        $row = array(
+            "generalInformation"=>$genInfo
+        );
         
-    //     $response[] = $row;
+         $response[] = $row;
 
         endforeach;
 
         if(!empty($results)){
-        $this->response($results, REST_Controller::HTTP_OK);
+        $this->response($response, REST_Controller::HTTP_OK);
         }
         else{
         $response['status'] = 'FAILED';
