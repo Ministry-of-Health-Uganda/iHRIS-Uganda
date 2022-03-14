@@ -280,9 +280,10 @@ Class Api extends REST_Controller
         $final= array(
             "count"=>$this->db->get("zebra_staff_list")->num_rows(),
             "source"=>"https://hris.health.go.ug/national",
-            "data" =>$response,
-            "per_page"=>"100",
-            "increament"=>"+100");
+            "per_page"=>"50",
+            "increament"=>"+50",
+            "data" =>$response
+            );
 
         if(!empty($results)){
         $this->response($final, REST_Controller::HTTP_OK);
