@@ -277,7 +277,7 @@ Class Api extends REST_Controller
                        "source"=>"https://hris.health.go.ug/national",
                        "data" =>$row );
         
-         $response[] = $row;
+         $response[] = $final;
 
         endforeach;
 
