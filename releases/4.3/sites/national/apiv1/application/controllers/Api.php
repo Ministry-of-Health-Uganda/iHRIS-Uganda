@@ -127,7 +127,7 @@ Class Api extends REST_Controller
             "country3"=> null, //Country of present citizenship
             "country4"=> null, // Country fo residence
             "country5"=> null, // Country of second citizenship (multiple citizenship)
-            "dateOfBirth"=>$result['demographic+birth_date'],
+            "dateOfBirth"=>date('Y-m-d', strtotime($result['demographic+birth_date'])),
             "gender"=>null,
             "districtOrTown"=> $result["residence_district+name"],
             "subCounty"=> "", 
