@@ -243,7 +243,7 @@ Class Api extends REST_Controller
             "internshipTrainings" => null,
             "professionalTrainings" => null,
             "facilityTypeOwnership" => null,
-            "photograph1" => null,
+            "photograph1" => $result['imagedata'],
             "photograph2" => null,
             'dataSubmissionInstitution'=>$dataSubmissionInstitution,
             "ninDateOfIssue" => null,
