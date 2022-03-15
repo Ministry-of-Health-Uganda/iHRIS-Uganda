@@ -245,7 +245,7 @@ Class Api extends REST_Controller
             "driverLicenceNumber" => null,
             "incomeTaxNumber" => null,
             "insuranceNumber" => null,
-            "externalReferenceId" => null,
+            "externalReferenceId" =>"https://hris.health.go.ug/national/view?id=".$result['person+id'],
             "address" => $address,
             "occupationalCategory" => null,
             "employmentStatus" => "Active_In_service",
