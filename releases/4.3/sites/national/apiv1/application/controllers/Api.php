@@ -15,6 +15,16 @@ Class Api extends REST_Controller
         echo "iHRIS Manage API";
 
     }
+    public function auth($key){
+        $keys= array('92cfdef7-8f2c-433e-ba62-49fa7a243974','3b7abf71-f644-4ff4-a2b9-6b4a9892438c','330b3bc3-4990-4727-98e9-39c32350184b');
+        if (in_array($key, $keys)){
+         return true;
+           
+        }
+        else{
+         return false;
+        }
+    }
 
     //GET ihrisdata
     public function ihrisdata_get() 
@@ -95,8 +105,9 @@ Class Api extends REST_Controller
         }
     }
     //get praction json
-    public function practitioner_get($page=FALSE) 
+    public function practitioner_get($page=FALSE,$key) 
     {
+        if($this->auth($key)){
         $results = $this->requestHandler->practitioner_data($page);
         $response = array();
 
@@ -294,7 +305,7 @@ Class Api extends REST_Controller
         $response['message'] = 'Practioner Data is Not Found. Generate Stafflist';
         $response['error'] = TRUE;
         $this->response($response, 400);
-    }
+    }}
 
     }
 
