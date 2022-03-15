@@ -105,7 +105,7 @@ Class Api extends REST_Controller
         }
     }
     //get praction json
-    public function practitioner_get($page=FALSE,$key) 
+    public function practitioner_get($key,$page=FALSE) 
     {
         if($this->auth($key)){
         $results = $this->requestHandler->practitioner_data($page);
