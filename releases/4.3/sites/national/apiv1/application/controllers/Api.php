@@ -239,7 +239,7 @@ Class Api extends REST_Controller
         $row = array(
             "generalInformation"=>$genInfo,
             "contactInformation"=>$contactInformation,
-            "nin" => $result['national_id+id_num'],
+            "nin" => str_replace(" ","",$result['national_id+id_num']),
             "socialSecurityNumber" => null,
             "passportNumber" => null,
             "driverLicenceNumber" => null,
