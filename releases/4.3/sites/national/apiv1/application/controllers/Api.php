@@ -302,7 +302,7 @@ Class Api extends REST_Controller
         }
         else{
         $response['status'] = 'FAILED';
-        $response['message'] = 'Practioner Data is Not Found. Generate Stafflist';
+        $response['message'] = 'Practioner Data is Not Found';
         $response['error'] = TRUE;
         $this->response($response, 400);
     }}
