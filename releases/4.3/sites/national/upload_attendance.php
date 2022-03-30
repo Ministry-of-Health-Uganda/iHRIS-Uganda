@@ -140,7 +140,7 @@ foreach ($datas as $data) {
 			 $person_attendance = $form_factory->createContainer( 'person_attendance|'.$person_attendance_id );
 			 $person_attendance->populate();
 	     
-		    $person_attendance->days_present = $data['P'];
+		     $person_attendance->days_present = $data['P'];
 			 $person_attendance->days_od = $data['O'];
 			 $person_attendance->days_or = $data['R'];
 			 $person_attendance->days_leave = $data['L'];

@@ -165,13 +165,13 @@ foreach ($datas as $data) {
 	         $person_attendance->populate();
      
 	     $person_attendance->work_days = $data['D'];
-		 $person_attendance->off_days = $data['O'];
-		 $person_attendance->leave_days = $data['L'];
-		 $person_attendance->other_days = $data['Z'];
-		 $days_present = $person_attendance->getField("days_present")->getDBValue();
-		 $days_od=$person_attendance->getField("days_od")->getDBValue();
-		 $days_or=$person_attendance->getField("days_or")->getDBValue();
-		 $days_leave=$person_attendance->getField("days_leave")->getDBValue();
+		 $days_od=$person_attendance->off_days = $data['O'];
+		 $days_leave=$person_attendance->leave_days = $data['L'];
+		 $days_or = $person_attendance->other_days = $data['Z'];
+		//  $days_present = $person_attendance->getField("days_present")->getDBValue();
+		//  $days_od=$person_attendance->getField("days_od")->getDBValue();
+		//  $days_or=$person_attendance->getField("days_or")->getDBValue();
+		//  $days_leave=$person_attendance->getField("days_leave")->getDBValue();
 		 
 		if ( $person_attendance->month_year->isValid() ) {
 
@@ -189,8 +189,8 @@ foreach ($datas as $data) {
 	
                 }
 
-		 $totalDays_att = 0;
-	     $totalDays_att = $days_present+$days_or+$days_od+$days_leave;
+		//  $totalDays_att = 0;
+	    //  $totalDays_att = $days_present+$days_or+$days_od+$days_leave;
 
 	
 	
@@ -205,40 +205,26 @@ foreach ($datas as $data) {
 
 		// }	
 		
-		  if(($person_attendance->work_days - ($days_present + $days_or + $days_leave)) <= 0){
+		//   if(($person_attendance->work_days - ($days_present + $days_or + $days_leave)) <= 0){
 			
-			 $person_attendance->days_absent = 0.01;
-		  }else{
-		     $person_attendance->days_absent = ($person_attendance->work_days - ($days_present + $days_or + $days_leave)) ;
+		// 	 $person_attendance->days_absent = 0.01;
+		//   }else{
+		//      $person_attendance->days_absent = ($person_attendance->work_days - ($days_present + $days_or + $days_leave)) ;
 
-		   }
+		//    }
 
 		  
 		  	
 
-		  if(($person_attendance->final_work_days = ($person_attendance->work_days - ( $days_or + $days_leave)) 	) <= 0){
+		  if(($person_attendance->final_work_days = ($person_attendance->work_days - ($days_or + $days_leave))) <= 0){
 			
 			$person_attendance->final_work_days = 0.01;
 		  }  
 			
-		  if( ($person_attendance->work_days - ($days_or + $days_leave) ) <= 0){
-			
-			$person_attendance->absenteeism_rate = 0.01;
-		  }else{
-		  $person_attendance->absenteeism_rate = ($person_attendance->days_absent /( $person_attendance->work_days - ($days_or + $days_leave))*100);
-		  }
+		
 		 
 		  ///No of days absolutely absent
-		  if(($person_attendance->absolute_days_absent = ($no_of_days - $totalDays_att)) <= 0) {
-
-			$person_attendance->absolute_days_absent = 0.01;
-			$person_attendance->absolute_absenteeism_rate  = 0.01;
-
-  		  }else{
-
-			$person_attendance->absolute_days_absent = ($no_of_days - $totalDays_att);
-			$person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
-		  }
+		  
 		  
 
 		  
@@ -251,15 +237,7 @@ foreach ($datas as $data) {
 		//   $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
 		//   //I2CE::raiseError(" date ".$month_year );
 
-          //Work on attendance
-		  ///No of days absolutely absent
-		 
-		  $person_attendance->absolute_days_absent = ($no_of_days - $totalDays_att) ;
-		  $person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
-		  
-		  ///No of days not at facility
-		  $person_attendance->days_not_at_facility = ($no_of_days - $days_present) ;
-		  $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
+   
 		  $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
 		  $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
 		  //I2CE::raiseError(" date ".$month_year );
