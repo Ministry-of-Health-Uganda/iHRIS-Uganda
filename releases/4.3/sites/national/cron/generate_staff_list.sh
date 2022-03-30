@@ -1,5 +1,5 @@
 #!/bin/bash
-reports="staff_list staff_analysis_other staff_analysis staff_analysis_moh analysis_ii_iii"
+reports="staff_analysis_other staff_analysis staff_analysis_moh analysis_ii_iii"
 for report in $reports
 do
     echo Generating $report >> /tmp/report_cron.log
