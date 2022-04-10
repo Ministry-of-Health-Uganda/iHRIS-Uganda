@@ -38,7 +38,7 @@ unset($i2ce_site_i2ce_path);
 unset($i2ce_site_module_config);
 
 function getAttendance(){
-	$endpoint ='https://hris2.health.go.ug/attendance/api/person_attend/2021-07-01/2021-10-30';
+	$endpoint ='https://hris2.health.go.ug/attendance/api/person_attend/2021-07-01/2021-07-31';
 	$attdata   = sendRequest($endpoint);
 return $attdata;
 }
@@ -193,7 +193,7 @@ foreach ($datas as $data) {
 
 		    }else{
 
-                         $person_attendance = $form_factory->createContainer( "person_attendance" );
+             $person_attendance = $form_factory->createContainer( "person_attendance" );
 			 $person_attendance->position = $person_position_form->position;
 			 $person_attendance->getField('month_year')->setFromDB( $month_year );
 		    	 $person_attendance->days_present = $data['P'];

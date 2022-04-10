@@ -1,4 +1,5 @@
 <?php
+//Data for the current month is pulled on 5th of the month. Duty roster for the current month is supposed to be completed in the previous month
 
 /**
  * The best way to run this is:
@@ -68,7 +69,11 @@ function dotrim(&$value){
 }
 
 function getRoster(){
-	$endpoint ='https://hris2.health.go.ug/attendance/api/person_roster/2021-07-01/2021-10-30';
+	$firstday_current_month = date('Y-m-01');
+    $lastday_current_month = date('Y-m-t');
+
+    //$endpoint='https://hris2.health.go.ug/attendance/api/person_attend/'.$firstday_current_month.'/'.$lastday_current_month;
+	$endpoint ='https://hris2.health.go.ug/attendance/api/person_roster/2021-07-01/2021-07-31';
 	$attdata   = sendRequest($endpoint);
 return $attdata;
 }
@@ -101,13 +106,10 @@ foreach ($datas as $data) {
        continue;
     }
 
-
     $person = $form_factory->createContainer( $data['ihris_pid'] );
     $person->populate();
     $person->populateLast( array( "person_position" => "start_date" ));
     $person_position_form = current( $person->children['person_position'] );
-   
-		  
 		$find_pers = array(
                                 'operator' => 'AND',
                                 'operand' => array(
@@ -159,12 +161,15 @@ foreach ($datas as $data) {
 	         $person_attendance = $form_factory->createContainer( 'person_attendance|'.$person_attendance_id );
 	         $person_attendance->populate();
      
-	    	 $person_attendance->work_days = $data['D'];
-		 $person_attendance->off_days = $data['O'];
-		 $person_attendance->leave_days = $data['L'];
-		 $person_attendance->other_days = $data['Z'];
+	     $person_attendance->work_days = $data['D'];
+		 $days_od=$person_attendance->off_days = $data['O'];
+		 $days_leave=$person_attendance->leave_days = $data['L'];
+		 $days_or = $person_attendance->other_days = $data['Z'];
+		//  $days_present = $person_attendance->getField("days_present")->getDBValue();
+		//  $days_od=$person_attendance->getField("days_od")->getDBValue();
+		//  $days_or=$person_attendance->getField("days_or")->getDBValue();
+		//  $days_leave=$person_attendance->getField("days_leave")->getDBValue();
 		 
-
 		if ( $person_attendance->month_year->isValid() ) {
 
 		$current_year = date(" Y");
@@ -181,64 +186,58 @@ foreach ($datas as $data) {
 	
                 }
 
-		 $totalDays = 0;
-	         $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;
+		//  $totalDays_att = 0;
+	    //  $totalDays_att = $days_present+$days_or+$days_od+$days_leave;
 
 	
 	
       
-		if( ($totalDays) > ($no_of_days) ){
-		        $person_attendance->setInvalidMessage('days_present', 'Total number of days exceeds maximum days of selected month');
+		// if( ($totalDays_att) > ($no_of_days) ){
+		//         $person_attendance->setInvalidMessage('days_present', 'Total number of days exceeds maximum days of selected month');
 		       
-		    }elseif(($current_month < $values[1]) && ($current_year <= $values[0])){
+		//     }elseif(($current_month < $values[1]) && ($current_year <= $values[0])){
 
-			 $person_attendance->setInvalidMessage('month_year', 'You cannot upload a month in advance');
+		// 	 $person_attendance->setInvalidMessage('month_year', 'You cannot upload a month in advance');
 
 
-		}	
+		// }	
 		
-		  if(($person_attendance->work_days - ($person_attendance->days_present + $person_attendance->days_or + $person_attendance->days_leave)) <= 0){
+		//   if(($person_attendance->work_days - ($days_present + $days_or + $days_leave)) <= 0){
 			
-			$person_attendance->days_absent = 0.01;
-		  }else{
-		  $person_attendance->days_absent = ($person_attendance->work_days - ($person_attendance->days_present + $person_attendance->days_or + $person_attendance->days_leave)) ;
+		// 	 $person_attendance->days_absent = 0.01;
+		//   }else{
+		//      $person_attendance->days_absent = ($person_attendance->work_days - ($days_present + $days_or + $days_leave)) ;
 
-		}
+		//    }
 
 		  
 		  	
 
-		  if(($person_attendance->final_work_days = ($person_attendance->work_days - ( $person_attendance->days_or + $person_attendance->days_leave)) 	) <= 0){
+		  if(($person_attendance->final_work_days = ($person_attendance->work_days - ($days_or + $days_leave))) <= 0){
 			
 			$person_attendance->final_work_days = 0.01;
 		  }  
-			
-		  if( ($person_attendance->work_days - ($person_attendance->days_or + $person_attendance->days_leave) ) <= 0){
-			
-			$person_attendance->absenteeism_rate = 0.01;
-		  }else{
-		  $person_attendance->absenteeism_rate = ($person_attendance->days_absent /( $person_attendance->work_days - ($person_attendance->days_or + $person_attendance->days_leave))*100);
+		  else{
+			$person_attendance->final_work_days = ($person_attendance->work_days - ($days_or + $days_leave));
 		  }
+			
+		
 		 
 		  ///No of days absolutely absent
-		  if(($person_attendance->absolute_days_absent = ($no_of_days - $totalDays)) <= 0) {
-
-			$person_attendance->absolute_days_absent = 0.01;
-			$person_attendance->absolute_absenteeism_rate  = 0.01;
-
-  		  }else{
-
-			$person_attendance->absolute_days_absent = ($no_of_days - $totalDays);
-			$person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
-		  }
+		  
 		  
 
 		  
 		  
 
-		  ///No of days not at facility
-		  $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
-		  $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
+		//   ///No of days not at facility
+		//   $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
+		//   $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
+		//   $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
+		//   $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
+		//   //I2CE::raiseError(" date ".$month_year );
+
+   
 		  $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
 		  $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
 		  //I2CE::raiseError(" date ".$month_year );
@@ -256,7 +255,7 @@ foreach ($datas as $data) {
 
     
 }
-fclose($fh);
+// fclose($fh);
 echo "Skipped $skip_no_post no record.\n";
 echo "Found $found records.\n";
 echo "Created $created records.\n";
