@@ -174,10 +174,10 @@ foreach ($datas as $data) {
 		    }
 			else
 			{
-             $person_attendance = $form_factory->createContainer( "person_attendance" );
+       $person_attendance = $form_factory->createContainer( "person_attendance" );
 			 $person_attendance->position = $person_position_form->position;
 			 $person_attendance->getField('month_year')->setFromDB( $month_year );
-		     $person_attendance->days_present = $data['P'];
+		   $person_attendance->days_present = $data['P'];
 			 $person_attendance->days_od = $data['O'];
 			 $person_attendance->days_or = $data['R'];
 			 $person_attendance->days_leave = $data['L'];
