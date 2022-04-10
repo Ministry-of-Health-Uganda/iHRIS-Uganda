@@ -147,38 +147,11 @@ foreach ($datas as $data) {
 
 			 if ( $person_attendance->month_year->isValid() ) {
 
-			$current_year = date(" Y");
-
-		        $current_month = date(" n");
-	      
-			$values = explode('-',$person_attendance->getField("month_year")->getDBValue());
-
-			I2CE::raiseError($current_year."---".$values[0]);
-
-			I2CE::raiseError($current_month."---".$values[1]);
-
-			$no_of_days=cal_days_in_month(CAL_GREGORIAN,$values[1],$values[0]);
-	
-		        }
+			   $no_of_days=cal_days_in_month(CAL_GREGORIAN,date('m',strtotime($month_year)),date('Y',strtotime($month_year)));
+		    }
 
 			 $totalDays = 0;
-			 $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;
-
-	
-	
-      
-			if( ($totalDays) > ($no_of_days) ){
-				$person_attendance->setInvalidMessage('days_present', 'Total number of days exceeds maximum days of selected month');
-			       
-			    }elseif(($current_month < $values[1]) && ($current_year <= $values[0])){
-
-				 $person_attendance->setInvalidMessage('month_year', 'You cannot upload a month in advance');
-
-
-			}	
-			 
-			  
-			  
+			  $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave; 
 			  
 			  ///No of days absolutely absent
 			  $person_attendance->absolute_days_absent = ($no_of_days - $totalDays) ;
@@ -188,9 +161,9 @@ foreach ($datas as $data) {
 			  ///No of days not at facility
 			  $person_attendance->days_not_at_facility = ($no_of_days - $person_attendance->days_present) ;
 			  $person_attendance->per_days_not_at_facility = (($person_attendance->days_not_at_facility / $no_of_days)*100);
-			  $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
-			  $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
-			  //I2CE::raiseError(" date ".$month_year );
+			//   $month_year_split = explode('-',$person_attendance->getField("month_year")->getDBValue());
+			//   $month_year_day = $month_year_split[0]."-".$month_year_split[1]."-"."01";
+			//   //I2CE::raiseError(" date ".$month_year );
 			  
 			 $person_attendance->setParent( $data['ihris_pid'] );
 		    	 $person_attendance->save( $user );
@@ -198,39 +171,27 @@ foreach ($datas as $data) {
 		    	 unset( $person_attendance );
 			 $found++;
 
-		    }else{
-
-                         $person_attendance = $form_factory->createContainer( "person_attendance" );
+		    }
+			else
+			{
+             $person_attendance = $form_factory->createContainer( "person_attendance" );
 			 $person_attendance->position = $person_position_form->position;
 			 $person_attendance->getField('month_year')->setFromDB( $month_year );
-		    	 $person_attendance->days_present = $data['P'];
+		     $person_attendance->days_present = $data['P'];
 			 $person_attendance->days_od = $data['O'];
 			 $person_attendance->days_or = $data['R'];
 			 $person_attendance->days_leave = $data['L'];
 			 $person_attendance->getField("month_year_day")->setFromDB( $month_year_day );
 
-			 if ( $person_attendance->month_year->isValid() ) {
+			if ( $person_attendance->month_year->isValid() ) {
+			$no_of_days=cal_days_in_month(CAL_GREGORIAN,date('m',strtotime($month_year)),date('Y',strtotime($month_year)));
 
-			$current_year = date(" Y");
-
-		        $current_month = date(" n");
-	      
-			$values = explode('-',$person_attendance->getField("month_year")->getDBValue());
-
-			I2CE::raiseError($current_year."---".$values[0]);
-
-			I2CE::raiseError($current_month."---".$values[1]);
-
-			$no_of_days=cal_days_in_month(CAL_GREGORIAN,$values[1],$values[0]);
-	
-		        }
+	        //set nodays
+		    }
 
 			 $totalDays = 0;
 			 $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave;
 
-	
-	
-      
 			if( ($totalDays) > ($no_of_days) ){
 				$person_attendance->setInvalidMessage('days_present', 'Total number of days exceeds maximum days of selected month');
 			       
@@ -241,8 +202,6 @@ foreach ($datas as $data) {
 
 			}	
 			 
-			  
-			  
 			  
 			  ///No of days absolutely absent
 			  $person_attendance->absolute_days_absent = ($no_of_days - $totalDays) ;

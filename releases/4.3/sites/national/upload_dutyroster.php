@@ -220,6 +220,9 @@ foreach ($datas as $data) {
 			
 			$person_attendance->final_work_days = 0.01;
 		  }  
+		  else{
+			$person_attendance->final_work_days = ($person_attendance->work_days - ($days_or + $days_leave));
+		  }
 			
 		
 		 
