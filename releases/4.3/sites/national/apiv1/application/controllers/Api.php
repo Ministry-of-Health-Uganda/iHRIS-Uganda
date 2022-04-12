@@ -200,8 +200,7 @@ Class Api extends REST_Controller
                 "contentType"=>"base64",
                 "extension"=>"",
                 "contentAbstract"=>"",
-                "content"=>
-                chunk_split(base64_encode($this->getImagedata($result['Photo+id']))),
+                "content"=> chunk_split(@$this->getImagedata($result['Photo+id'])),  
                 "attachmentType"=>"",
                 "attachmentTypeId"=>""
             );
