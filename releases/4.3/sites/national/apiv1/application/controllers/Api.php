@@ -200,7 +200,7 @@ Class Api extends REST_Controller
                 "contentType"=>"base64",
                 "extension"=>"",
                 "contentAbstract"=>"",
-                "content"=>@$this->getImagedata($result['Photo+id']),  
+                "content"=>file_get_contents(@$this->getImagedata($result['Photo+id'])),  
                 "attachmentType"=>"",
                 "attachmentTypeId"=>""
             );
@@ -310,7 +310,7 @@ Class Api extends REST_Controller
     }
 
     public function getImagedata($id){
-     return $this->db->query("SELECT TO_BASE64(`Photo+image`) as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='$id'")->row()->imagedata;
+     return $this->db->query("SELECT `Photo+image` as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='$id'")->row()->imagedata;
     }
     
     public function getcadre($id){
