@@ -124,7 +124,11 @@ Class Api extends REST_Controller
                     $sex=""; 
                 }
       
-      
+        $image = $this->getImagedata($result['Photo+id']) 
+        ob_start(); //start capture of the output buffer
+        imagejpeg($image, null, 80);
+        $data = ob_get_contents();
+        ob_end_clean();
         $genInfo = array(
             "firstName"=>@$result['person+firstname'], 
             "surname"=> @$result['person+surname'], 
@@ -200,11 +204,12 @@ Class Api extends REST_Controller
                 "contentType"=>"base64",
                 "extension"=>"",
                 "contentAbstract"=>"",
-                "content"=> chunk_split($this->getImagedata($result['Photo+id'])),  
+                "content"=> $image,  
                 "attachmentType"=>"",
                 "attachmentTypeId"=>""
             );
 
+            
             $dataSubmissionInstitution = array(
                 "id" => 'NM1',
                 "institutionName" => "Ministry of Health",
