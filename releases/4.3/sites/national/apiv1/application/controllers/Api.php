@@ -290,7 +290,7 @@ Class Api extends REST_Controller
 
        
         
-         $response[] = $row;
+         $responses[] = $row;
 
         endforeach;
         $final= array(
@@ -299,7 +299,7 @@ Class Api extends REST_Controller
             "page"=>($page/50)." of ".round(($count/50),0),
             "per_page"=>"50",
             "increament"=>"+50",
-            "data" =>$response
+            "data" =>$responses
             );
 
         if(!empty($results)){
