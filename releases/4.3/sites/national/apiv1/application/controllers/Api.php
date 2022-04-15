@@ -124,7 +124,7 @@ Class Api extends REST_Controller
                     $sex=""; 
                 }
       
-        $image = $this->getImagedata($result['Photo+id']);
+        @$image = $this->getImagedata($result['Photo+id']);
         ob_start(); //start capture of the output buffer
         imagejpeg($image, null, 80);
         $data = ob_get_contents();
@@ -132,7 +132,7 @@ Class Api extends REST_Controller
         $genInfo = array(
             "firstName"=>@$result['person+firstname'], 
             "surname"=> @$result['person+surname'], 
-            "middleName"=> null, // 
+            "middleName"=> null, 
             "maidenName"=> null,
             "otherName1"=>@$result['person+othername'],
             "otherName2"=> null,
