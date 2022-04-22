@@ -207,7 +207,7 @@ Class Api extends REST_Controller
             "dateOfIssue" => "",
             "dateOfExpiry" => "",
             "attachment" => "",
-            "licenseNo" => ""
+            "licenseNo" => $result['registration+license_number']
         );
 
         $professionalRegistration = array(
@@ -232,7 +232,7 @@ Class Api extends REST_Controller
               "facility"=>array(
                 "type" => "",
                 "instituteCategory" => "",
-                "instituteType" => "",
+                "instituteType" =>$result['institution_type+name'],
                 "district" => "",
                 "subCounty"=> "",
                 "dhis2Id"=> "",
@@ -301,9 +301,17 @@ Class Api extends REST_Controller
 
     }
 
-    public function getImagedata($id){
+    public function institution_category($id){
      return $this->db->query("SELECT `Photo+image` as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='$id'")->row()->imagedata;
     }
+
+    public function facility_details($id){
+        return $this->db->query("SELECT `Photo+image` as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='$id'")->row()->imagedata;
+       }
+
+    public function getImagedata($id){
+        return $this->db->query("SELECT `Photo+image` as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='$id'")->row()->imagedata;
+       }
     
     public function getcadre($id){
      return $this->db->query("SELECT `name` as cadrename  from `hippo_cadre` WHERE `id`='$id'")->row()->cadrename;
