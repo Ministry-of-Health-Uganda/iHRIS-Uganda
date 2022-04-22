@@ -171,7 +171,7 @@ Class Api extends REST_Controller
          ),
         );
 
-        $contact= array(
+        $contact=
             array(
               "phone1" =>@$result['person_contact_personal+mobile_phone'],
               "phone2"=> @$result['person_contact_personal+telephone'],
@@ -181,14 +181,14 @@ Class Api extends REST_Controller
               "emergencyContact"=>array(
                 "name"=> "",
                 "phone"=> ""
-              )
+              ),
               "mobile_money"=>array(
                 "name"=> "",
                 "phone"=> "",
                 "kyc_verified"=>""
               )
-            )
-        );
+              );
+        
 
         $education = array(
         
