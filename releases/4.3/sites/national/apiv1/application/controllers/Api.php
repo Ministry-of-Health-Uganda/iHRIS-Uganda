@@ -224,7 +224,7 @@ Class Api extends REST_Controller
 
         $positionInformation = array(
             
-              "position" => "$result['job+title']",
+              "position" => $result['job+title'],
               "startDate" => date('Y-m-d', strtotime($result['primary_form+start_date'])),
               "endDate" => "",
               "dateOfFirst" => date('Y-m-d', strtotime($result['primary_form+dofa_date'])),
