@@ -154,7 +154,7 @@ Class Api extends REST_Controller
               ),
               "employeeIPPS"=>"" 
         
-        );
+        ));
 
         $language = array(
         array(
