@@ -131,7 +131,7 @@ Class Api extends REST_Controller
               
         ); 
         
-        $nextOfKin => array(
+        $nextOfKin = array(
             array("name" =>"","type"=>"")
             
         );
