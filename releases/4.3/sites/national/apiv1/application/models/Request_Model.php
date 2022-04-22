@@ -81,7 +81,7 @@ Class Request_Model extends CI_Model
         if(empty($page)){
             $page=0;
         }
-        $result = $this->db->query("SELECT * FROM `	zebra_ihris_data_api` where `national_id+id_num`!='' ORDER BY `person+id` ASC LIMIT $page,50")->result_array();
+        $result = $this->db->query("SELECT * FROM `zebra_ihris_data_api` where `national_id+id_num`!='' ORDER BY `person+id` ASC LIMIT $page,50")->result_array();
 
     
     return $result;
