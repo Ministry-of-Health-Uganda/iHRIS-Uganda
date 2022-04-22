@@ -125,167 +125,154 @@ Class Api extends REST_Controller
                 }
       
         
-        // ob_start(); //start capture of the output buffer
-        // imagejpeg($image, null, 80);
-        // $data = ob_get_contents();
-        // ob_end_clean();
-        $genInfo = array(
-            "firstName"=>@$result['person+firstname'], 
-            "surname"=> @$result['person+surname'], 
-            "middleName"=> null, 
-            "maidenName"=> null,
-            "otherName1"=>@$result['person+othername'],
-            "otherName2"=> null,
-            "otherName3"=> null,
-            "country1"=> @$this->getCountry($result['person+nationality']), // Country of birth
-            "country2"=> null, // Citizenship at birth
-            "country3"=> null, //Country of present citizenship
-            "country4"=> null, // Country fo residence
-            "country5"=> null, // Country of second citizenship (multiple citizenship)
-            "dateOfBirth"=>@date('Y-m-d', strtotime($result['demographic+birth_date'])),
-            "gender"=>$sex,
-            "districtOrTown"=> $result["home_district+name"],
-            "subCounty"=> "", 
-            "tribe"=> null, // Tribe of a health worker
-            "fatherName"=> null,
-            "motherName"=> null,
-            "maritalStatus"=> @$this->getmarital($result['demographic+marital_status']),
-            "fullName"=> $result['person+surname'].' '.$result['person+firstname'].' '. @$result['person+othername'],
-            "disciplinaryAction"=> ""
+        $citizenship = array(
+                
+            array("country" => @$this->getCountry($result['person+nationality']))
+              
+        ); 
+        
+        $nextOfKin => array(
+            array("name" =>"","type"=>"")
+            
         );
 
-      //contact Info
-      $contactInformation = array(
-                "personalAddress"=> @$result['person_contact_personal+address'],
-                "residence"=> @$result['residence_district+name'],
-                "telephoneNumber1"=>@$result['person_contact_personal+mobile_phone'] ,
-                "telephoneNumber2"=> @$result['person_contact_personal+telephone'],
-                "emailAddress1"=> @$result['person_contact_personal+email'],
-                "emailAddress2"=> null,
-                "placeOfWork"=> null,
-                "workAddress"=>null ,
-                "workPhoneNumber"=>null ,
-                "locality"=> null,
-                "districtTown"=>null ,
-                "contactName"=> $result['person+surname'].' '.$result['person+firstname'].' '. @$result['person+othername']
-      );
+        $identity = array(
+            "HWID"=> "",
+            "uhwr"=>array(
+              "nationalID"=> array(
+                "nin"=>str_replace(" ","",$result['national_id+id_num']),
+                "cardNo"=> "",
+                "expiryDate"=> ""
+              ),
+              "passport"=> array(
+                "passportNo"=> "",
+                "expiryDate"=> ""
+              ),
+              "driverLicense"=> array(
+                "regNo"=> "",
+                "expiryDate"=> ""
+              ),
+              "employeeIPPS"=>"" 
+        
+        );
 
-            $address = array(
-                "entityAddress" => null,
-                "zipCode" => null,
-                "postalAdress" => null,
-                "streetAddress" => null,
-                "townOrCity" => $result['residence_district+name'],
-                "country" => @$this->getCountry($result['person+nationality'])
-            );
+        $language = array(
+        array(
+              "name"=>"",
+              "proficiency"=> ""
+        ),
+        array(
+            "name"=>"",
+            "proficiency"=> ""
+         ),
+         array(
+            "name"=>"",
+            "proficiency"=> ""
+         ),
+        );
 
-            $healthFacility = array(
-                "id" => str_replace("facility|","",$result['position+facility']),
-                "facilityCode" => $result['position+facility'],
-                "facilityName" => $result['facility+name'],
+        $contact= array(
+            array(
+              "phone1" =>@$result['person_contact_personal+mobile_phone'],
+              "phone2"=> @$result['person_contact_personal+telephone'],
+              "phone3"=> "",
+              "email1" =>@$result['person_contact_personal+email'],
+              "email2" => "",
+              "emergencyContact"=>array(
+                "name"=> "",
+                "phone"=> ""
+              )
+              "mobile_money"=>array(
+                "name"=> "",
+                "phone"=> "",
+                "kyc_verified"=>""
+              )
+            )
+        );
+
+        $education = array(
+        
+              "primary"=> "",
+              "secondary"=>array(
+                "upper" => "",
+                "ordinary"=> ""
+              ),
+              "tertiary" =>"",
+              "other" => "",
+              "speciality" => ""
+        );
+
+        $professionalLicense = array(
+            "professionalCouncil" =>@$this->getCouncil($result['registration+council']),
+            "dateOfIssue" => "",
+            "dateOfExpiry" => "",
+            "attachment" => "",
+            "licenseNo" => ""
+        );
+
+        $professionalRegistration = array(
+            "professionalCouncil" => @$this->getCouncil($result['registration+council']),
+            "dateOfRegistration" => "",
+            "registrationNo" => @$result['registration+registration_number']
+        );
+
+        $professionalGazzette = array(
+            "registrationNo" => @$result['registration+registration_number'],
+            "startDate" => "",
+            "endDate" =>""
+        );
+
+        $positionInformation = array(
             
-            );
+              "position" => "$result['job+title']",
+              "startDate" => date('Y-m-d', strtotime($result['primary_form+start_date'])),
+              "endDate" => "",
+              "dateOfFirst" => date('Y-m-d', strtotime($result['primary_form+dofa_date'])),
+              "positionStatus" => "",
+              "facility"=>array(
+                "type" => "",
+                "instituteCategory" => "",
+                "instituteType" => "",
+                "district" => "",
+                "subCounty"=> "",
+                "dhis2Id"=> "",
+                "ihrisId" => "",
+                "facilityRegId" => "",
+                "facility_name"=>$result['facility+name']
+              ),
+              "cadre"=> @$this->getcadre($result['classification+cadre']),
+              "workingHours"=> ""
+        );
 
-            $professionalEntity = array(
-                "id" => $result['registration+id'],
-                "professionalBody" => @$this->getCouncil($result['registration+council']) ,
-                "professionalBodyId" =>@$result['registration+council'],
-                "registrationNumber" => @$result['registration+registration_number'],
-                "emailAddress" => null,
-                "website" => null,
-                "telephoneNumber1" => null,
-                "telephoneNumber2" => null,
-                "fileAttachment" => null
-            );
-
-            $photograph1 = array(
-                "id"=>"manage_".str_replace("person_photo_passport|","",$result['Photo+id']),
-                "name"=>$result['person+surname'].str_replace("person|","",$result['person+id']),
-                "contentType"=>"base64",
-                "extension"=>"",
-                "contentAbstract"=>"",
-                "content"=> @$image=base64_encode($this->getImagedata($result['Photo+id'])),  
-                "attachmentType"=>"",
-                "attachmentTypeId"=>""
-            );
-
-            
-            $dataSubmissionInstitution = array(
-                "id" => 'NM1',
-                "institutionName" => "Ministry of Health",
-                "dateOfSubmission" => date("Y-m-d H:i:s"),
-                "referenceData" => "https://hris.health.go.ug/national/view?id=".$result['person+id'],
-                "healthWorker" => $result['person+surname'].' '.$result['person+firstname'].' '. @$result['person+othername']
-            );
-
-            $currentAddress = array (
-                "entityAddress" => null,
-                "zipCode" => null,
-                "postalAdress" => @$result['person_contact_personal+address'],
-                "streetAddress" => null,
-                "townOrCity" => @$result['residence_district+name'],
-                "country" => @$this->getCountry($result['person+nationality'])
-            );
-
-            $employmentInfoDto = array(
-                "cadre" => @$this->getcadre($result['classification+cadre']),
-                "date_started_work" => date('Y-m-d', strtotime($result['primary_form+start_date'])),
-                "alternative_workplaces" => null,
-                "former_worker_places" => "[]",
-                "date_at_first_job" => date('Y-m-d', strtotime($result['primary_form+dofa_date'])),
-                "currentAddress" => $result['person_contact_personal+address'],
-                "healthWorker" => null,
-                "working_hours_days_available" => null
-            );
-
-
-            
+        $submittingEntities = array(
+            "name" => "",
+            "date" => "",
+            "externalRef" => "https://hris.health.go.ug/national/view?id=".$result['person+id']
+        );
 
         $row = array(
-            "generalInformation"=>$genInfo,
-            "contactInformation"=>$contactInformation,
-            "nin" => str_replace(" ","",$result['national_id+id_num']),
-            "socialSecurityNumber" => null,
-            "passportNumber" => null,
-            "driverLicenceNumber" => null,
-            "incomeTaxNumber" => null,
-            "insuranceNumber" => null,
-            "externalReferenceId" =>"https://hris.health.go.ug/national/view?id=".$result['person+id'],
-            "address" => $address,
-            "occupationalCategory" => null,
-            "employmentStatus" => "Active_In_service",
-            "employmentStatusId" => null,
-            "employmentTitle" => $result['job+title'],
-            "homePhone" => $result['person_contact_personal+telephone'],
-            "businessPhone" => null,
-            "mobilePhone" => $result['person_contact_personal+telephone'],
-            "faxNumber" => null,
-            "homeMail" => $result['person_contact_personal+email'],
-            "businessMail" => $result['person_contact_personal+email'],
-            "healthFacility"=>$healthFacility,
-            "professionalEntity" => $professionalEntity,
-            "languageInfos" => null,
-            "educationalInstitutions" => null,
-            "licenseRegistrationCertifications" => null,
-            "internshipTrainings" => null,
-            "professionalTrainings" => null,
-            "facilityTypeOwnership" => null,
-            "photograph1" => $photograph1,
-            "photograph2" => null,
-            'dataSubmissionInstitution'=>$dataSubmissionInstitution,
-            "ninDateOfIssue" => null,
-            "ninDateOfExpiration" => null,
-            "nin_date_issue_expiration" => null,
-            "name_dob_gender_id" => null,
-            "psCountryOfIssuance" => null,
-            "psDateOfIssue" => null,
-            "psDateOfExpiration" => null,
-            "educationDetailsDto" => null,
-            "educationDetailId" => null,
-            "currentAddress" =>$currentAddress,
-            "employmentInfoDto" =>$employmentInfoDto 
-
-
+            "identity"=>$identity,
+            "surname"=>@$result['person+surname'] ,
+            "firstname"=> @$result['person+firstname'],
+            "othername"=>@$result['person+othername'],
+            "gender"=>$gender,
+            "maritalStatus"=> @$this->getmarital($result['demographic+marital_status']),
+            "photo": @$image=base64_encode($this->getImagedata($result['Photo+id'])),
+            "birthDate"=>@date('Y-m-d', strtotime($result['demographic+birth_date'])),
+            "countryOfOrigin"=>@$this->getCountry($result['person+nationality']),
+            "citizenship" => $citizenship,
+            "district"=>$result["home_district+name"],
+            "subCounty"=> "",
+            "parish"=> "",
+            "nextOfKin"=>$nextOfKin,
+            "langauge"=>$language,
+            "contact" =>$contact,
+            "education"=>$education,
+            "professionalLicense" => $professionalLicense,
+            "professionalRegistration" => $professionalRegistration,
+            "professionalGazzette" =>$professionalGazzette,
+            "positionInformation" => $positionInformation,
+            "submittingEntities" => $submittingEntities
         );
 
        
