@@ -257,7 +257,7 @@ Class Api extends REST_Controller
             "othername"=>@$result['person+othername'],
             "gender"=>$gender,
             "maritalStatus"=> @$this->getmarital($result['demographic+marital_status']),
-            "photo": @$image=base64_encode($this->getImagedata($result['Photo+id'])),
+            "photo" => @$image=base64_encode($this->getImagedata($result['Photo+id'])),
             "birthDate"=>@date('Y-m-d', strtotime($result['demographic+birth_date'])),
             "countryOfOrigin"=>@$this->getCountry($result['person+nationality']),
             "citizenship" => $citizenship,
