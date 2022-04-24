@@ -182,10 +182,10 @@ Class Api extends REST_Controller
                 "name"=> "",
                 "phone"=> ""
               ),
-              "mobile_money"=>array(
+              "mobileMoney"=>array(
                 "name"=> "",
                 "phone"=> "",
-                "kyc_verified"=>""
+                "kycVerified"=>""
               )
               );
         
@@ -224,11 +224,13 @@ Class Api extends REST_Controller
 
         $positionInformation = array(
             
+            array(
+            
               "position" => $result['job+title'],
               "startDate" => date('Y-m-d', strtotime($result['primary_form+start_date'])),
               "endDate" => "",
               "dateOfFirst" => date('Y-m-d', strtotime($result['primary_form+dofa_date'])),
-              "positionStatus" => "",
+              "positionStatus" => "Active",
               "facility"=>array(
                 "type" => "",
                 "instituteCategory" => "",
@@ -238,11 +240,13 @@ Class Api extends REST_Controller
                 "dhis2Id"=> "",
                 "ihrisId" => "",
                 "facilityRegId" => "",
-                "facility_name"=>$result['facility+name']
+                "facilityName"=>$result['facility+name']
               ),
               "cadre"=> @$this->getcadre($result['classification+cadre']),
               "workingHours"=> ""
-        );
+        )
+    
+    );
 
         $submittingEntities = array(
             "name" => "",
