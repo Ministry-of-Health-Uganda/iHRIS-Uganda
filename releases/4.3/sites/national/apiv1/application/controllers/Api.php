@@ -232,7 +232,7 @@ Class Api extends REST_Controller
               "dateOfFirst" => date('Y-m-d', strtotime($result['primary_form+dofa_date'])),
               "positionStatus" => "Active",
               "facility"=>array(
-                "type" => "",
+                "facilityType" => "",
                 "instituteCategory" => "",
                 "instituteType" =>$result['institution_type+name'],
                 "district" => "",
