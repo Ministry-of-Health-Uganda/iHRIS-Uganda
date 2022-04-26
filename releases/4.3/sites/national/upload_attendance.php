@@ -154,6 +154,8 @@ foreach ($datas as $data) {
 			  $totalDays = $person_attendance->days_present+$person_attendance->days_or+$person_attendance->days_od+$person_attendance->days_leave; 
 			  
 			  ///No of days absolutely absent
+			  $person_attendance->days_absent=0;
+			  $person_attendance->absenteeism_rate=0;
 			  $person_attendance->absolute_days_absent = ($no_of_days - $totalDays) ;
 			  $person_attendance->absolute_absenteeism_rate = (($person_attendance->absolute_days_absent / $no_of_days)*100);
 			  
