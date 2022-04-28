@@ -15,6 +15,16 @@ Class Api extends REST_Controller
         echo "iHRIS Manage API";
 
     }
+    public function auth($key){
+        $keys= array('92cfdef7-8f2c-433e-ba62-49fa7a243974','3b7abf71-f644-4ff4-a2b9-6b4a9892438c','330b3bc3-4990-4727-98e9-39c32350184b');
+        if (in_array($key, $keys)){
+         return true;
+           
+        }
+        else{
+         return false;
+        }
+    }
 
     //GET ihrisdata
     public function ihrisdata_get() 
@@ -95,73 +105,252 @@ Class Api extends REST_Controller
         }
     }
     //get praction json
-    public function practitioner_get($district=FALSE) 
+    public function practitioner_get($key,$page=FALSE) 
     {
-        $results = $this->requestHandler->practitioner_data($district);
+        if($this->auth($key)){
+        $results = $this->requestHandler->practitioner_data($page);
         $response = array();
 
         foreach($results as $result):  
-        $gender = $result->strval(demographic+gender);
-                if($gender='gender|M'){
+            
+        $gender = $result["demographic+gender"];
+                if($gender=='gender|M'){
                 $sex="MALE";
                 }
-                else if ($gender='gender|F'){
+                else if ($gender=='gender|F'){
                     $sex="FEMALE";
                 }
                 else{
                     $sex=""; 
                 }
-        $marital_status=$result->
-        $genInfo = array(
-            "firstName"=> $result->firstname, // First Name 
-            "surname"=> $result->surname, // Surname
-            "middleName"=> null, // 
-            "maidenName"=> null,
-            "otherName1"=> $result->othername,
-            "otherName2"=> null,
-            "otherName3"=> null,
-            "country1"=> "Uganda", // Country of birth
-            "country2"=> null, // Citizenship at birth
-            "country3"=> null, //Country of present citizenship
-            "country4"=> null, // Country fo residence
-            "country5"=> null, // Country of second citizenship (multiple citizenship)
-            "dateOfBirth"=> $result->birthdate,
-            "gender"=> $sex,
-            "districtOrTown"=> $result->strval(residence_district+name),
-            "subCounty"=> "", 
-            "tribe"=> null, // Tribe of a health worker
-            "fatherName"=> null,
-            "motherName"=> null,
-            "maritalStatus"=> "$marital_status",
-            "fullName"=> "$result->surname.' '.$result->firstname.' '. @$result->othername",
-            "disciplinaryAction"=> ""
+      
+        
+        $citizenship = array(
+                
+            array("country" => @$this->getCountry($result['person+nationality']))
+              
+        ); 
+        
+        $nextOfKin = array(
+            array("name" =>"","type"=>"")
+            
         );
 
-    //     $contactInfo = array(
-    //         "name"=>"Henry"
-    //     );
-
-    //     $row = array(
-    //         "generalInformation"=>$genInfo,
-    //         "contactInformation"=>$contactInfo,
-    //         "district_id"=>$result->district_id,
-    //     );
+        $identity = array(
+            "HWID"=> "",
+            "uhwr"=>array(
+              "nationalID"=> array(
+                "nin"=>ucwords(str_replace(" ","",$result['national_id+id_num'])),
+                "cardNo"=> ucwords(str_replace(" ","",$result['national_id_card_no+id_num'])),
+                "expiryDate"=> $result['national_id_card_no+expiration_date']
+              ),
+              "passport"=> array(
+                "passportNo"=> "",
+                "expiryDate"=> ""
+              ),
+              "driverLicense"=> array(
+                "regNo"=> "",
+                "expiryDate"=> ""
+              ),
+              "employeeIPPS"=>intval($result['ipps_no+id_num'])
         
-    //     $response[] = $row;
+        ));
+
+        $language = array(
+        array(
+              "name"=>"",
+              "proficiency"=> ""
+        ),
+        array(
+            "name"=>"",
+            "proficiency"=> ""
+         ),
+         array(
+            "name"=>"",
+            "proficiency"=> ""
+         ),
+        );
+
+        $contact=
+            array(
+              "phone1" =>@$result['person_contact_personal+mobile_phone'],
+              "phone2"=> @$result['person_contact_personal+telephone'],
+              "phone3"=> "",
+              "email1" =>@$result['person_contact_personal+email'],
+              "email2" => "",
+              "emergencyContact"=>array(
+                "name"=> $result['next_of_kin+name'],
+                "phone"=> $result['next_of_kin+telephone'],
+                "phone1"=>$result['next_of_kin+alt_telephone'],
+                "email"=>$result['next_of_kin+email']
+              ),
+              "mobileMoney"=>array(
+                "name"=> "",
+                "phone"=> "",
+                "kycVerified"=>""
+              )
+              );
+        
+
+        $education = array(
+        
+              "primary"=> "",
+              "secondary"=>array(
+                "upper" => "",
+                "ordinary"=> ""
+              ),
+              "tertiary" =>$result['education+institution'],
+              "other" => "",
+              "speciality" => ""
+        );
+
+        $professionalLicense = array(
+            "professionalCouncil" =>@$this->getCouncil($result['registration+council']),
+            "dateOfIssue" => "",
+            "dateOfExpiry" => "",
+            "attachment" => "",
+            "licenseNo" => $result['registration+license_number']
+        );
+
+        $professionalRegistration = array(
+            "professionalCouncil" => @$this->getCouncil($result['registration+council']),
+            "dateOfRegistration" => "",
+            "registrationNo" => @$result['registration+registration_number']
+        );
+
+        $professionalGazzette = array(
+            "registrationNo" => @$result['registration+registration_number'],
+            "startDate" => "",
+            "endDate" =>""
+        );
+      //regid is from the facility registry 
+        $positionInformation = array(
+            
+            array(
+            
+              "position" => $result['job+title'],
+              "startDate" => date('Y-m-d', strtotime($result['primary_form+start_date'])),
+              "endDate" => "",
+              "dateOfFirst" => date('Y-m-d', strtotime($result['primary_form+dofa_date'])),
+              "positionStatus" => "Active",
+              "employmentTerms" => $result['job+title'],
+              "facility"=>array(
+                "facilityType" => "",
+                "instituteCategory" => $this->getCategory($result["institution_type+institution_category"]),
+                "instituteType" =>$result['institution_type+name'],
+                "district" => $result['facility_district+name'],
+                "subCounty"=> "",
+                "dhis2Id"=> $this->dhis_orgunit($result['facility+id']),
+                "ihrisId" => $result['facility+id'],
+                "facilityRegId" => "",
+                "facilityName"=>$result['facility+name']
+              ),
+              "cadre"=> @$this->getcadre($result['classification+cadre']),
+              "workingHours"=> ""
+        )
+    
+    );
+        $trainingInformation = array(
+        array(
+            "trainingProvider"=>"",
+            "program"=>"",
+            "dateFrom"=>"",
+            "dateTo"=>"",
+            "trainer"=>""
+        )
+    
+      );
+        $submittingEntities = array(
+            "name" => "",
+            "date" => "",
+            "externalRef" => "https://hris.health.go.ug/national/view?id=".$result['person+id']
+        );
+
+        $row = array(
+            "identity"=>$identity,
+            "surname"=>@$result['person+surname'] ,
+            "firstname"=> @$result['person+firstname'],
+            "othername"=>@$result['person+othername'],
+            "gender"=>$sex,
+            "maritalStatus"=> @$this->getmarital($result['demographic+marital_status']),
+            "photo" => @$image=base64_encode($this->getImagedata($result['Photo+id'])),
+            "birthDate"=>@date('Y-m-d', strtotime($result['demographic+birth_date'])),
+            "countryOfOrigin"=>@$this->getCountry($result['person+nationality']),
+            "citizenship" => $citizenship,
+            "district"=>$result["home_district+name"],
+            "subCounty"=> "",
+            "parish"=> "",
+            "nextOfKin"=>$nextOfKin,
+            "langauge"=>$language,
+            "contact" =>$contact,
+            "education"=>$education,
+            "professionalLicense" => $professionalLicense,
+            "professionalRegistration" => $professionalRegistration,
+            "professionalGazzette" =>$professionalGazzette,
+            "positionInformation" => $positionInformation,
+            "trainingInformation"=>$trainingInformation,
+            "submittingEntities" => $submittingEntities
+        );
+
+       
+        
+         $responses[] = $row;
 
         endforeach;
+        $final= array(
+            "count"=>$count=$this->db->get("zebra_staff_list")->num_rows(),
+            "source"=>"https://hris.health.go.ug/national",
+            "page"=>($page/50)." of ".round(($count/50),0),
+            "per_page"=>"50",
+            "increament"=>"+50",
+            "data" =>$responses
+            );
 
         if(!empty($results)){
-        $this->response($results, REST_Controller::HTTP_OK);
+        $this->response($final, REST_Controller::HTTP_OK);
         }
         else{
         $response['status'] = 'FAILED';
-        $response['message'] = 'Practioner Data is Not Found. Generate Stafflist';
+        $response['message'] = 'Practioner Data is Not Found';
         $response['error'] = TRUE;
         $this->response($response, 400);
-    }
+    }}
 
     }
+
+    public function institution_category($id){
+     return $this->db->query("SELECT `Photo+image` as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='$id'")->row()->imagedata;
+    }
+   
+    public function getCategory($id){
+        return $this->db->query("SELECT `name` as `name` from `hippo_institution_category` WHERE `id`='$id'")->row()->name;
+    }
+
+    public function getImagedata($id){
+        return $this->db->query("SELECT `Photo+image` as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='$id'")->row()->imagedata;
+       }
+    
+    public function getcadre($id){
+     return $this->db->query("SELECT `name` as cadrename  from `hippo_cadre` WHERE `id`='$id'")->row()->cadrename;
+    }
+    public function getCouncil($id){
+
+    return $this->db->query("SELECT `name` as council  from `hippo_council` WHERE `id`='$id'")->row()->council;
+  
+    }
+    public function getCountry($id){
+        return $this->db->query("SELECT `name` as country  from `hippo_country` WHERE `id`='$id'")->row()->country;
+   
+    }
+    public function getmarital($id){
+
+    return $this->db->query("SELECT `name` as marital  from `hippo_marital_status` WHERE `id`='$id'")->row()->marital;     
+        
+    }
+
+    public function dhis_orgunit($id){
+        return $this->db->query("SELECT `dhis_orgunit` as `dhis_orgunit` from `hippo_facility` WHERE `id`='$id'")->row()->dhis_orgunit;
+       }
     
   
 

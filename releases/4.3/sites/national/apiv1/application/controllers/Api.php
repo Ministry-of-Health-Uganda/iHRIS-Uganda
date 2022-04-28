@@ -273,7 +273,7 @@ Class Api extends REST_Controller
             "othername"=>@$result['person+othername'],
             "gender"=>$sex,
             "maritalStatus"=> @$this->getmarital($result['demographic+marital_status']),
-            "photo" => @$image=base64_encode($this->getImagedata($result['Photo+id'])),
+            "photo" => @$image=base64_encode($this->getImagedata($result['primary_form+parent'])),
             "birthDate"=>@date('Y-m-d', strtotime($result['demographic+birth_date'])),
             "countryOfOrigin"=>@$this->getCountry($result['person+nationality']),
             "citizenship" => $citizenship,
@@ -318,16 +318,14 @@ Class Api extends REST_Controller
 
     }
 
-    public function institution_category($id){
-     return $this->db->query("SELECT `Photo+image` as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='$id'")->row()->imagedata;
-    }
+   
    
     public function getCategory($id){
         return $this->db->query("SELECT `name` as `name` from `hippo_institution_category` WHERE `id`='$id'")->row()->name;
     }
 
     public function getImagedata($id){
-        return $this->db->query("SELECT `Photo+image` as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='$id'")->row()->imagedata;
+        return $this->db->query("SELECT `Photo+image` as `imagedata` from `zebra_staff_album` WHERE `Photo+parent`='$id'")->row()->imagedata;
        }
     
     public function getcadre($id){

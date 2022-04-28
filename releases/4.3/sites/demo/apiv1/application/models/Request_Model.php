@@ -76,17 +76,14 @@ Class Request_Model extends CI_Model
     return $query->result();
            
     }
-    public function practitioner_data($district){
+    public function practitioner_data($page){
 
-        if(!empty($district)){
-            $filter="where  `district+name`='$district'";
+        if(empty($page)){
+            $page=0;
         }
-        else{
-            $filter="";
-        }
-          
-        $result = $this->db->query("SELECT s.* , a.`Photo+image` as `imagedata`, m.name as 'marital_status ,hc.name as cadre_name FROM `zebra_staff_list` s Left  join `zebra_staff_album` a ON a.`Photo+id`=z.`Photo+id` left join hippo_marital_status m on m.id=s.`demographic+marital_status` join `hippo_cadre` hc on s.`classification+cadre`=hc.id LIMIT 2")->result();
+        $result = $this->db->query("SELECT * FROM `zebra_ihris_data_api` where `national_id+id_num`!='' ORDER BY `person+id` ASC LIMIT $page,50")->result_array();
 
+    
     return $result;
     }
 
