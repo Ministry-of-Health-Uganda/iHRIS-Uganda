@@ -239,7 +239,7 @@ Class Api extends REST_Controller
                 "instituteCategory" => $this->getCategory($result["institution_type+institution_category"]),
                 "instituteType" =>$result['institution_type+name'],
                 "district" => $result['facility_district+name'],
-                "subCounty"=> "",
+                "degion"=> $this->getRegion($result['facility_district+region']),
                 "dhis2Id"=> $this->dhis_orgunit($result['facility+id']),
                 "ihrisId" => $result['facility+id'],
                 "facilityRegId" => "",
@@ -318,7 +318,9 @@ Class Api extends REST_Controller
 
     }
 
-   
+    public function getRegion($id){
+        return $this->db->query("SELECT `name` as `name` from `hippo_region` WHERE `id`='$id'")->row()->name;
+    }
    
     public function getCategory($id){
         return $this->db->query("SELECT `name` as `name` from `hippo_institution_category` WHERE `id`='$id'")->row()->name;
