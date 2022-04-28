@@ -140,9 +140,9 @@ Class Api extends REST_Controller
             "HWID"=> "",
             "uhwr"=>array(
               "nationalID"=> array(
-                "nin"=>str_replace(" ","",$result['national_id+id_num']),
-                "cardNo"=> "",
-                "expiryDate"=> ""
+                "nin"=>ucwords(str_replace(" ","",$result['national_id+id_num'])),
+                "cardNo"=> ucwords(str_replace(" ","",$result['national_id_card_no+id_num'])),
+                "expiryDate"=> $result['national_id_card_no+expiration_date']
               ),
               "passport"=> array(
                 "passportNo"=> "",
@@ -152,7 +152,7 @@ Class Api extends REST_Controller
                 "regNo"=> "",
                 "expiryDate"=> ""
               ),
-              "employeeIPPS"=>"" 
+              "employeeIPPS"=>intval($result['ipps_no+id_num'])
         
         ));
 
@@ -179,8 +179,10 @@ Class Api extends REST_Controller
               "email1" =>@$result['person_contact_personal+email'],
               "email2" => "",
               "emergencyContact"=>array(
-                "name"=> "",
-                "phone"=> ""
+                "name"=> $result['next_of_kin+name'],
+                "phone"=> $result['next_of_kin+telephone'],
+                "phone1"=>$result['next_of_kin+alt_telephone'],
+                "email"=>$result['next_of_kin+email']
               ),
               "mobileMoney"=>array(
                 "name"=> "",
@@ -197,7 +199,7 @@ Class Api extends REST_Controller
                 "upper" => "",
                 "ordinary"=> ""
               ),
-              "tertiary" =>"",
+              "tertiary" =>$result['education+institution'],
               "other" => "",
               "speciality" => ""
         );
@@ -221,7 +223,7 @@ Class Api extends REST_Controller
             "startDate" => "",
             "endDate" =>""
         );
-
+      //regid is from the facility registry 
         $positionInformation = array(
             
             array(
@@ -231,14 +233,15 @@ Class Api extends REST_Controller
               "endDate" => "",
               "dateOfFirst" => date('Y-m-d', strtotime($result['primary_form+dofa_date'])),
               "positionStatus" => "Active",
+              "employmentTerms" => $result['job+title'],
               "facility"=>array(
                 "facilityType" => "",
-                "instituteCategory" => "",
+                "instituteCategory" => $this->getCategory($result["institution_type+institution_category"]),
                 "instituteType" =>$result['institution_type+name'],
-                "district" => "",
+                "district" => $result['facility_district+name'],
                 "subCounty"=> "",
-                "dhis2Id"=> "",
-                "ihrisId" => "",
+                "dhis2Id"=> $this->dhis_orgunit($result['facility+id']),
+                "ihrisId" => $result['facility+id'],
                 "facilityRegId" => "",
                 "facilityName"=>$result['facility+name']
               ),
@@ -247,7 +250,16 @@ Class Api extends REST_Controller
         )
     
     );
-
+        $trainingInformation = array(
+        array(
+            "trainingProvider"=>"",
+            "program"=>"",
+            "dateFrom"=>"",
+            "dateTo"=>"",
+            "trainer"=>""
+        )
+    
+      );
         $submittingEntities = array(
             "name" => "",
             "date" => "",
@@ -276,6 +288,7 @@ Class Api extends REST_Controller
             "professionalRegistration" => $professionalRegistration,
             "professionalGazzette" =>$professionalGazzette,
             "positionInformation" => $positionInformation,
+            "trainingInformation"=>$trainingInformation,
             "submittingEntities" => $submittingEntities
         );
 
@@ -308,10 +321,10 @@ Class Api extends REST_Controller
     public function institution_category($id){
      return $this->db->query("SELECT `Photo+image` as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='$id'")->row()->imagedata;
     }
-
-    public function facility_details($id){
-        return $this->db->query("SELECT `Photo+image` as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='$id'")->row()->imagedata;
-       }
+   
+    public function getCategory($id){
+        return $this->db->query("SELECT `name` as `name` from `hippo_institution_category` WHERE `id`='$id'")->row()->name;
+    }
 
     public function getImagedata($id){
         return $this->db->query("SELECT `Photo+image` as `imagedata` from `zebra_staff_album` WHERE `Photo+id`='$id'")->row()->imagedata;
@@ -331,11 +344,13 @@ Class Api extends REST_Controller
     }
     public function getmarital($id){
 
-    return $this->db->query("SELECT `name` as marital  from `hippo_marital_status` WHERE `id`='$id'")->row()->marital;
-   
-        
+    return $this->db->query("SELECT `name` as marital  from `hippo_marital_status` WHERE `id`='$id'")->row()->marital;     
         
     }
+
+    public function dhis_orgunit($id){
+        return $this->db->query("SELECT `dhis_orgunit` as `dhis_orgunit` from `hippo_facility` WHERE `id`='$id'")->row()->dhis_orgunit;
+       }
     
   
 
