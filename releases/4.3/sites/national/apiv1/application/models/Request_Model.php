@@ -76,12 +76,10 @@ Class Request_Model extends CI_Model
     return $query->result();
            
     }
-    public function practitioner_data($page){
+    public function practitioner_data($limit=null, $start=null){
 
-        if(empty($page)){
-            $page=0;
-        }
-        $result = $this->db->query("SELECT * FROM `zebra_ihris_data_api` where `national_id+id_num`!='' LIMIT $page,50")->result_array();
+       
+        $result = $this->db->query("SELECT * FROM `zebra_ihris_data_api` where `national_id+id_num`!='' LIMIT $limit,$start")->result_array();
 
     
     return $result;
