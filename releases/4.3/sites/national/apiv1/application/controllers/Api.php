@@ -2,9 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require APPPATH . 'libraries/REST_Controller.php';
-require_once('/var/lib/iHRIS/releases/4.3/i2ce/lib/I2CE.php');
-require_once('/var/lib/iHRIS/releases/4.3/i2ce/modules/Forms/lib/I2CE_FormFactory.php');
-require_once('/var/lib/iHRIS/releases/4.3/i2ce/modules/Forms/modules/Fields/lib/I2CE_FieldContainer_Factory.php');
+require_once FCPATH . 'i2ceBridge/I2ceBridge.php';
 
 Class Api extends REST_Controller 
 {
@@ -14,10 +12,7 @@ Class Api extends REST_Controller
      
         $this->load->model('Request_Model', 'requestHandler');
         $this->load->helper('custom');
-        $this->ihrisobject = new I2CE;
-        $this->I2CE_FormFactory = new I2CE_FormFactory;
-        $this->I2CE_FormFactory = new I2CE_FieldContainer_Factory;
-
+        $this->ihrisobject=new I2ceBrige;
     
     }
     public function index_get(){
@@ -137,8 +132,7 @@ Class Api extends REST_Controller
                     $sex=""; 
                 }
         $pid = $result['primary_form+parent'];
-        $person = $this->I2CE_FormFactory->createContainer( "person|$pid" );
-        $person->populate();
+       
         
         $citizenship = array(
                 
@@ -186,12 +180,11 @@ Class Api extends REST_Controller
         //  ),
         // );
 
-        $langauge = array();
-        $person->populateChildren('person_language');
-        foreach($person->getChildren('person_language') as $person_language_form ){
+        
+        foreach($this->getLangauges($result['person+id']) as $person_language_form ){
 
             $langauge['name']= $person_language_form->getField('language')->getDisplayValue();
-            $langauge['proficiency']= 'Reading: '.$person_language_form->reading.' Writing: '.$person_language_form->writing. ' Speaking: '.$person_language_form->speaking;
+            $langauge['proficiency'] = 'Reading: '.$person_language_form->reading.' Writing: '.$person_language_form->writing. ' Speaking: '.$person_language_form->speaking;
            
         }
 
@@ -375,7 +368,13 @@ Class Api extends REST_Controller
     public function dhis_orgunit($id){
         return $this->db->query("SELECT `dhis_orgunit` as `dhis_orgunit` from `hippo_facility` WHERE `id`='$id'")->row()->dhis_orgunit;
     }
-   
+
+    public function getLangauges($id){
+
+        $rows=$this->db->query("SELECT * FROM `hippo_person_language` WHERE parent='$id'");
+    return $rows->result();
+    }
+  
     
   
 
