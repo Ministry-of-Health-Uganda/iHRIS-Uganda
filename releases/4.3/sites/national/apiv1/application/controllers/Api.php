@@ -110,7 +110,7 @@ Class Api extends REST_Controller
     {
         if($this->auth($key)){
         $perPage=50;
-        $page  = ($this->uri->segment(4))? $this->uri->segment(4) : 0;
+        $page  = ($this->uri->segment(4))? $this->uri->segment(4) : 1;
         $results = $this->requestHandler->practitioner_data($perPage, $page);
         
         $response = array();
@@ -304,7 +304,7 @@ Class Api extends REST_Controller
         $final= array(
             "count"=>$count=$this->db->get("zebra_staff_list")->num_rows(),
             "source"=>"https://hris.health.go.ug/national",
-            "page"=>($page/50)." of ".round(($count/50),0),
+            "page"=>($page)." of ".round(($count/50),0),
             "per_page"=>"50",
             "increament"=>"+1",
             "data" =>$responses
