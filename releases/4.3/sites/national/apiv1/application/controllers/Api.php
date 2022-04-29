@@ -183,8 +183,8 @@ Class Api extends REST_Controller
         $langauge=array();
         foreach($this->getLangauges($result['person+id']) as $person_language_form ){
 
-            $langauge['name']= $person_language_form->language;
-            $langauge['proficiency'] = 'Reading: '.$person_language_form->reading.' Writing: '.$person_language_form->writing. ' Speaking: '.$person_language_form->speaking;
+            $langauge['name']= $this->langaugeName($person_language_form->language);
+            $langauge['proficiency'] = 'Reading: '.str_replace('language_proficiency|','',$person_language_form->reading).', Writing: '.str_replace('language_proficiency|','',$person_language_form->writing). ', Speaking: '.str_replace('language_proficiency|','',$person_language_form->speaking);
            
         }
 
@@ -374,7 +374,11 @@ Class Api extends REST_Controller
         $rows=$this->db->query("SELECT * FROM `hippo_person_language` WHERE parent='$id'");
     return $rows->result();
     }
-  
+    public function langaugeName($id){
+
+        $rows=$this->db->query("SELECT name FROM `hippo_language` id='$id'");
+    return $rows->result()->name;
+    }
     
   
 
