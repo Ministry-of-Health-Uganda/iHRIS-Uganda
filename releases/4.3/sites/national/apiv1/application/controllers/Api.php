@@ -109,7 +109,10 @@ Class Api extends REST_Controller
     public function practitioner_get($key,$page=FALSE) 
     {
         if($this->auth($key)){
-        $results = $this->requestHandler->practitioner_data($page);
+        $perPage=50;
+        $page  = ($this->uri->segment(4))? $this->uri->segment(4) : 0;
+        $results = $this->requestHandler->practitioner_data($perPage, $page);
+        
         $response = array();
 
         foreach($results as $result):  
@@ -328,7 +331,7 @@ Class Api extends REST_Controller
     }
 
     public function getImagedata($id){
-        return $this->db->query("SELECT `image` as `imagedata` from `hippo_person_photo_passport` WHERE `paarent`='$id'")->row()->imagedata;
+        return $this->db->query("SELECT `image` as `imagedata` from `hippo_person_photo_passport` WHERE `parent`='$id'")->row()->imagedata;
        }
     
     public function getcadre($id){
