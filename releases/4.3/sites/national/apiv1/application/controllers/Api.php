@@ -377,7 +377,7 @@ Class Api extends REST_Controller
     public function langaugeName($id){
 
         $rows=$this->db->query("SELECT `name` FROM `hippo_language` WHERE id='$id'");
-    return $rows->result()->name;
+    return $rows->row()->name;
     }
     
   
