@@ -306,7 +306,7 @@ Class Api extends REST_Controller
             "source"=>"https://hris.health.go.ug/national",
             "page"=>($page/50)." of ".round(($count/50),0),
             "per_page"=>"50",
-            "increament"=>"+50",
+            "increament"=>"+1",
             "data" =>$responses
             );
 
