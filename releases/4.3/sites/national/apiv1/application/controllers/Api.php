@@ -140,18 +140,15 @@ Class Api extends REST_Controller
               
         ); 
         
-        $nextOfKin = array(
-            array("name" =>"","type"=>"")
-            
-        );
+    
 
         $nextOfKin=array();
         foreach($this->getKins($result['person+id']) as $person_kins_form ){
 
-            $nextOfKin['name']= $person_kins_form->name;
-            $nextOfKin['address'] = $person_kins_form->address;
-            $nextOfKin['mobile_phone'] = $person_kins_form->mobile_phone;
-            $nextOfKin['telephone'] = $person_kins_form->mobile_phone;
+            $nextOfKin['name']= !empty($person_kins_form->name)?$person_kins_form->name: ' ';
+            $nextOfKin['address'] = !empty($person_kins_form->address)?$person_kins_form->address:' ';
+            $nextOfKin['mobile_phone'] = !empty($person_kins_form->mobile_phone)?$person_kins_form->mobile_phone: ' ';
+            $nextOfKin['telephone'] = !empty($person_kins_form->mobile_phone)?$person_kins_form->mobile_phone:' ';
            
         }
 
@@ -179,8 +176,8 @@ Class Api extends REST_Controller
 
         $langauge=array();
         foreach($this->getLangauges($result['person+id']) as $person_language_form ){
-
-            $langauge['name']= $this->langaugeName($person_language_form->language);
+        
+            $langauge['name']= !empty($this->langaugeName($person_language_form->language))?$this->langaugeName($person_language_form->language):null;
             $langauge['proficiency'] = 'Reading: '.str_replace('language_proficiency|','',$person_language_form->reading).', Writing: '.str_replace('language_proficiency|','',$person_language_form->writing). ', Speaking: '.str_replace('language_proficiency|','',$person_language_form->speaking);
            
         }
@@ -275,8 +272,8 @@ Class Api extends REST_Controller
     
       );
         $submittingEntities = array(
-            "name" => "",
-            "date" => "",
+            "name" => "iHRIS Manage",
+            "date" => date('Y-m-d H:i:s'),
             "externalRef" => "https://hris.health.go.ug/national/view?id=".$result['person+id']
         );
 
