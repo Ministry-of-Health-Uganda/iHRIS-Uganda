@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH . 'libraries/REST_Controller.php';
 require_once('/var/lib/iHRIS/releases/4.3/i2ce/lib/I2CE.php');
 require_once('/var/lib/iHRIS/releases/4.3/i2ce/modules/Forms/lib/I2CE_FormFactory.php');
+require_once('/var/lib/iHRIS/releases/4.3/i2ce/modules/Forms/modules/Fields/lib/I2CE_FieldContainer_Factory.php');
 
 Class Api extends REST_Controller 
 {
@@ -15,6 +16,7 @@ Class Api extends REST_Controller
         $this->load->helper('custom');
         $this->ihrisobject = new I2CE;
         $this->I2CE_FormFactory = new I2CE_FormFactory;
+        $this->I2CE_FormFactory = new I2CE_FieldContainer_Factory;
 
     
     }
