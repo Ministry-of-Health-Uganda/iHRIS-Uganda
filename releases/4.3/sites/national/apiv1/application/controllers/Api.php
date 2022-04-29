@@ -183,7 +183,7 @@ Class Api extends REST_Controller
         $langauge=array();
         foreach($this->getLangauges($result['person+id']) as $person_language_form ){
 
-            $langauge['name']= $person_language_form->getField('language')->getDisplayValue();
+            $langauge['name']= $person_language_form->language;
             $langauge['proficiency'] = 'Reading: '.$person_language_form->reading.' Writing: '.$person_language_form->writing. ' Speaking: '.$person_language_form->speaking;
            
         }
