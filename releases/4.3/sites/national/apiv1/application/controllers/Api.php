@@ -111,7 +111,8 @@ Class Api extends REST_Controller
         if($this->auth($key)){
         $perPage=50;
         $page  = ($this->uri->segment(4))? $this->uri->segment(4) : 1;
-        $results = $this->requestHandler->practitioner_data($perPage, $page);
+        $offset = ($page-1) * $perPage; 
+        $results = $this->requestHandler->practitioner_data($offset, $page);
         
         $response = array();
 
@@ -237,7 +238,7 @@ Class Api extends REST_Controller
               "endDate" => "",
               "dateOfFirst" => date('Y-m-d', strtotime($result['primary_form+dofa_date'])),
               "positionStatus" => "Active",
-              "employmentTerms" => $result['job+title'],
+              "employmentTerms" => str_replace("primary_form+employment_terms","",$result['primary_form+employment_terms']),
               "facility"=>array(
                 "facilityType" => "",
                 "instituteCategory" => $this->getCategory($result["institution_type+institution_category"]),
