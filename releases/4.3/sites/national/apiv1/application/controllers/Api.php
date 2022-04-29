@@ -14,6 +14,7 @@ Class Api extends REST_Controller
         $this->load->helper('custom');
         $this->ihrisobject = new I2CE;
         $this->I2CE_Fuzzy = new I2CE_Fuzzy;
+        $this->I2CE_FormFactory = new I2CE_FormFactory;
 
     
     }
