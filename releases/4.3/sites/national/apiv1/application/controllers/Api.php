@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require APPPATH . 'libraries/REST_Controller.php';
-require_once FCPATH . '../i2ce/I2CE.php'; 
+require_once(__DIR__.'/../../i2ce/I2CE.php');
 
 Class Api extends REST_Controller 
 {
@@ -12,7 +12,7 @@ Class Api extends REST_Controller
      
         $this->load->model('Request_Model', 'requestHandler');
         $this->load->helper('custom');
-        $this->ihrisobject = new I2CE;
+        //$this->ihrisobject=new I2ceBrige;
     
     }
     public function index_get(){
