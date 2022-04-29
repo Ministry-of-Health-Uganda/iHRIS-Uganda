@@ -180,7 +180,7 @@ Class Api extends REST_Controller
         //  ),
         // );
 
-        
+        $langauge=array();
         foreach($this->getLangauges($result['person+id']) as $person_language_form ){
 
             $langauge['name']= $person_language_form->getField('language')->getDisplayValue();
