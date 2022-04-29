@@ -135,7 +135,7 @@ Class Api extends REST_Controller
                     $sex=""; 
                 }
         $pid = $result['primary_form+parent'];
-        $person = I2CE_FormFactory::instance()->createContainer( "person|$pid" );
+        $person = $this->I2CE_FormFactory->createContainer( "person|$pid" );
         $person->populate();
         
         $citizenship = array(
