@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require APPPATH . 'libraries/REST_Controller.php';
-require_once('var/lib/iHRIS/releases/4.3/i2ce/I2CE.php');
+require_once('/var/lib/iHRIS/releases/4.3/i2ce/lib/I2CE.php');
 
 Class Api extends REST_Controller 
 {
