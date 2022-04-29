@@ -145,6 +145,16 @@ Class Api extends REST_Controller
             
         );
 
+        $nextOfKin=array();
+        foreach($this->getKins($result['person+id']) as $person_kins_form ){
+
+            $nextOfKin['name']= $person_kins_form->name;
+            $nextOfKin['address'] = $person_kins_form->address;
+            $nextOfKin['mobile_phone'] = $person_kins_form->mobile_phone;
+            $nextOfKin['telephone'] = $person_kins_form->mobile_phone;
+           
+        }
+
         $identity = array(
             "HWID"=> "",
             "uhwr"=>array(
@@ -165,20 +175,7 @@ Class Api extends REST_Controller
         
         ));
          
-        // $language = array(
-        // array(
-        //       "name"=>"",
-        //       "proficiency"=> ""
-        // ),
-        // array(
-        //     "name"=>"",
-        //     "proficiency"=> ""
-        //  ),
-        //  array(
-        //     "name"=>"",
-        //     "proficiency"=> ""
-        //  ),
-        // );
+     
 
         $langauge=array();
         foreach($this->getLangauges($result['person+id']) as $person_language_form ){
@@ -378,6 +375,11 @@ Class Api extends REST_Controller
 
         $rows=$this->db->query("SELECT `name` FROM `hippo_language` WHERE id='$id'");
     return $rows->row()->name;
+    }
+    public function getKins($id){
+
+        $rows=$this->db->query("SELECT * FROM `hippo_person_contact_emergency` WHERE parent='$id'");
+    return $rows->result();
     }
     
   
