@@ -1,6 +1,6 @@
 <?php 
 
-class I2ceBrige extends I2CE_Page{
+class I2ceBrige{
 
     public  function __construct(){
 
