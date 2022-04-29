@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require APPPATH . 'libraries/REST_Controller.php';
-require_once SYSDIR . 'i2cebridge/I2ceBridge.php'; 
+require_once FCPATH . 'i2cebridge/I2ceBridge.php'; 
 
 Class Api extends REST_Controller 
 {
