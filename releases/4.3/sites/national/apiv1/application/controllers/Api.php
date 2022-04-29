@@ -2,7 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require APPPATH . 'libraries/REST_Controller.php';
-require_once(__DIR__.'/../../i2ceBridge/I2ceBridge.php');
 
 Class Api extends REST_Controller 
 {
@@ -300,7 +299,7 @@ Class Api extends REST_Controller
             "subCounty"=> "",
             "parish"=> "",
             "nextOfKin"=>$nextOfKin,
-            "langauge"=>$language,
+            "langauge"=>$langauge,
             "contact" =>$contact,
             "education"=>$education,
             "professionalLicense" => $professionalLicense,
