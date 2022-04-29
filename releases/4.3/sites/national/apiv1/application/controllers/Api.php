@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require APPPATH . 'libraries/REST_Controller.php';
+require_once(__DIR__.'/../../i2ceBridge/I2ceBridge.php');
 
 Class Api extends REST_Controller 
 {
@@ -11,6 +12,8 @@ Class Api extends REST_Controller
      
         $this->load->model('Request_Model', 'requestHandler');
         $this->load->helper('custom');
+        //$this->ihrisobject=new I2ceBrige;
+    
     }
     public function index_get(){
         echo "iHRIS Manage API";
@@ -128,7 +131,9 @@ Class Api extends REST_Controller
                 else{
                     $sex=""; 
                 }
-      
+        $pid = $result['primary_form+parent'];
+        $person = I2CE_FormFactory::instance()->createContainer( "person|$pid" );
+        $person->populate();
         
         $citizenship = array(
                 
@@ -160,21 +165,30 @@ Class Api extends REST_Controller
               "employeeIPPS"=>intval($result['ipps_no+id_num'])
         
         ));
+         
+        // $language = array(
+        // array(
+        //       "name"=>"",
+        //       "proficiency"=> ""
+        // ),
+        // array(
+        //     "name"=>"",
+        //     "proficiency"=> ""
+        //  ),
+        //  array(
+        //     "name"=>"",
+        //     "proficiency"=> ""
+        //  ),
+        // );
 
-        $language = array(
-        array(
-              "name"=>"",
-              "proficiency"=> ""
-        ),
-        array(
-            "name"=>"",
-            "proficiency"=> ""
-         ),
-         array(
-            "name"=>"",
-            "proficiency"=> ""
-         ),
-        );
+        $langauge = array();
+        $person->populateChildren('person_language');
+        foreach($person->getChildren('person_language') as $person_language_form ){
+
+            $langauge['name']= $person_language_form->getField('language')->getDisplayValue();
+            $langauge['proficiency']= 'Reading: '.$person_language_form->reading.' Writing: '.$person_language_form->writing. ' Speaking: '.$person_language_form->speaking;
+           
+        }
 
         $contact=
             array(
@@ -355,7 +369,8 @@ Class Api extends REST_Controller
 
     public function dhis_orgunit($id){
         return $this->db->query("SELECT `dhis_orgunit` as `dhis_orgunit` from `hippo_facility` WHERE `id`='$id'")->row()->dhis_orgunit;
-       }
+    }
+   
     
   
 
