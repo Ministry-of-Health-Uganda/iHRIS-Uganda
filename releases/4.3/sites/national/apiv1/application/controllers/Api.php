@@ -12,7 +12,9 @@ Class Api extends REST_Controller
      
         $this->load->model('Request_Model', 'requestHandler');
         $this->load->helper('custom');
-        $this->ihrisobject=new I2CE;
+        $this->ihrisobject = new I2CE;
+        $this->I2CE_Fuzzy = new I2CE_Fuzzy;
+
     
     }
     public function index_get(){
