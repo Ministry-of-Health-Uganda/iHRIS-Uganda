@@ -10,6 +10,7 @@ Class Api extends REST_Controller
         parent::__construct();
      
         $this->load->model('Request_Model', 'requestHandler');
+        $this->load->helper('custom');
     }
     public function index_get(){
         echo "iHRIS Manage API";
@@ -327,7 +328,7 @@ Class Api extends REST_Controller
     }
 
     public function getImagedata($id){
-        return $this->db->query("SELECT `Photo+image` as `imagedata` from `zebra_staff_album` WHERE `Photo+parent`='$id'")->row()->imagedata;
+        return $this->db->query("SELECT `image` as `imagedata` from `hippo_person_photo_passport` WHERE `paarent`='$id'")->row()->imagedata;
        }
     
     public function getcadre($id){
