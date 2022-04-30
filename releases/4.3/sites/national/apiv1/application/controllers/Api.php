@@ -109,14 +109,16 @@ Class Api extends REST_Controller
         }
     }
     //get praction json
-    public function practitioner_get($key,$page=FALSE) 
+    public function practitioner_get($key,$page_limit=FALSE) 
     {
         if($this->auth($key)){
-        $perPage=50;
+        $page_limit=50;
         $page  = ($this->uri->segment(4))? $this->uri->segment(4) : 1;
-        $offset = ($page-1) * $perPage; 
-        $results = $this->requestHandler->practitioner_data($offset, $page);
-        
+       	
+        $offset = ($page > 1) ? ($page_limit * ($page - 1)) : 0;
+        $results = $this->requestHandler->practitioner_data($offset, $page_limit);
+        $$total_count=$this->db->get("zebra_ihris_data_api")->num_rows();
+         $pages = ($total_count % $page_limit == 0) ? ($total_count / $page_limit) : (round($total_count / $page_limit, 0) + 1);
         $response = array();
 
         foreach($results as $result):  
