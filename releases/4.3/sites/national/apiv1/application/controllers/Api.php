@@ -311,7 +311,7 @@ Class Api extends REST_Controller
 
         endforeach;
         $final= array(
-            "count"=>$count=$this->db->get("zebra_staff_list")->num_rows(),
+            "count"=>$count=$this->db->get("zebra_ihris_data_api")->num_rows(),
             "source"=>"https://hris.health.go.ug/national",
             "page"=>($page)." of ".round(($count/50),0),
             "per_page"=>"50",
