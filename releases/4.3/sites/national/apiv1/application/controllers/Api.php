@@ -342,7 +342,7 @@ Class Api extends REST_Controller
     }
 
     public function getImagedata($id){
-        return $this->db->query("SELECT CAST(`image` AS CHAR(10000) CHARACTER SET utf8)  `imagedata` from `hippo_person_photo_passport` WHERE `parent`='$id'")->row()->imagedata;
+        return $this->db->query("SELECT CAST(`image` AS CHAR(10000) CHARACTER SET utf8)  as `imagedata` from `hippo_person_photo_passport` WHERE `parent`='$id'")->row()->imagedata;
        }
     
     public function getcadre($id){
