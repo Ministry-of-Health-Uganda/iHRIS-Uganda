@@ -288,7 +288,7 @@ Class Api extends REST_Controller
             "othername"=>@$result['person+othername'],
             "gender"=>$sex,
             "maritalStatus"=> @$this->getmarital($result['demographic+marital_status']),
-            "photo" => @base64_encode($this->getImagedata($result['primary_form+parent'])),
+            "photo" => @$image=base64_encode($this->getImagedata($result['primary_form+parent'])),
             "birthDate"=>@date('Y-m-d', strtotime($result['demographic+birth_date'])),
             "countryOfOrigin"=>@$this->getCountry($result['person+nationality']),
             "citizenship" => $citizenship,
@@ -342,7 +342,7 @@ Class Api extends REST_Controller
     }
 
     public function getImagedata($id){
-        return $this->db->query("SELECT CAST(`image` AS CHAR(100000) CHARACTER SET utf8)  as `imagedata` from `hippo_person_photo_passport` WHERE `parent`='$id'")->row()->imagedata;
+        return $this->db->query("SELECT  `image` as `imagedata` from `hippo_person_photo_passport` WHERE `parent`='$id'")->row()->imagedata;
        }
     
     public function getcadre($id){
