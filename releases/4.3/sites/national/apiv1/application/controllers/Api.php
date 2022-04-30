@@ -145,14 +145,14 @@ Class Api extends REST_Controller
     
 
         $nextOfKin=array();
-        $person_kins_form = $this->getKins($result['person+id'])[0];
+        foreach($this->getKins($result['person+id']) as $person_kins_form ){
 
             $nextOfKin['name']= !empty($person_kins_form->name)?$person_kins_form->name: ' ';
             $nextOfKin['address'] = !empty($person_kins_form->address)?$person_kins_form->address:' ';
             $nextOfKin['mobile_phone'] = !empty($person_kins_form->mobile_phone)?$person_kins_form->mobile_phone: ' ';
             $nextOfKin['telephone'] = !empty($person_kins_form->mobile_phone)?$person_kins_form->mobile_phone:' ';
            
-
+        }
 
         $identity = array(
             "HWID"=> "",
@@ -177,12 +177,12 @@ Class Api extends REST_Controller
      
 
         $langauge=array();
-           $person_language_form =$this->getLangauges($result['person+id'])[0];
+        foreach($this->getLangauges($result['person+id']) as $person_language_form ){
         
             $langauge['name']= !empty($this->langaugeName($person_language_form->language))?$this->langaugeName($person_language_form->language):null;
             $langauge['proficiency'] = 'Reading: '.str_replace('language_proficiency|','',$person_language_form->reading).', Writing: '.str_replace('language_proficiency|','',$person_language_form->writing). ', Speaking: '.str_replace('language_proficiency|','',$person_language_form->speaking);
            
-    
+        }
        
 
 
