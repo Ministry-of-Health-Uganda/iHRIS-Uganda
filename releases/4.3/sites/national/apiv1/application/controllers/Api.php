@@ -248,7 +248,7 @@ Class Api extends REST_Controller
               "endDate" => "",
               "dateOfFirst" => date('Y-m-d', strtotime($result['primary_form+dofa_date'])),
               "positionStatus" => "Active",
-              "employmentTerms" => str_replace("primary_form+employment_terms","",$result['primary_form+employment_terms']),
+              "employmentTerms" => str_replace("employment_terms|","",$result['primary_form+employment_terms']),
               "facility"=>array(
                 "facilityType" => "",
                 "instituteCategory" => $this->getCategory($result["institution_type+institution_category"]),
