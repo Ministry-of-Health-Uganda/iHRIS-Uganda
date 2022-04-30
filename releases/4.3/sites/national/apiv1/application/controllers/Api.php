@@ -117,7 +117,7 @@ Class Api extends REST_Controller
        	
         $offset = ($page > 1) ? ($page_limit * ($page - 1)) : 0;
         $results = $this->requestHandler->practitioner_data($offset, $page_limit);
-        $$total_count=$this->db->get("zebra_ihris_data_api")->num_rows();
+        $total_count=$this->db->get("zebra_ihris_data_api")->num_rows();
          $pages = ($total_count % $page_limit == 0) ? ($total_count / $page_limit) : (round($total_count / $page_limit, 0) + 1);
         $response = array();
 
