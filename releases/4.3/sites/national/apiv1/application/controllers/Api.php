@@ -216,7 +216,7 @@ Class Api extends REST_Controller
               ),
               "tertiary" =>$result['education+institution'],
               "other" => "",
-              "speciality" => ""
+              "speciality" => $result['education+major']
         );
 
         $professionalLicense = array(
