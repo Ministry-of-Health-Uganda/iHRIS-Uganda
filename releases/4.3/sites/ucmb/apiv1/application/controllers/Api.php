@@ -191,12 +191,7 @@ Class Api extends REST_Controller
               "phone3"=> "",
               "email1" =>@$result['person_contact_personal+email'],
               "email2" => "",
-              "emergencyContact"=>array(
-                "name"=> $result['next_of_kin+name'],
-                "phone"=> $result['next_of_kin+telephone'],
-                "phone1"=>$result['next_of_kin+alt_telephone'],
-                "email"=>$result['next_of_kin+email']
-              ),
+              "emergencyContact"=>$nextOfKin,
               "mobileMoney"=>array(
                 "name"=> "",
                 "phone"=> "",
