@@ -364,7 +364,7 @@ Class Api extends REST_Controller
     }
 
     public function getLangauges($id){
-
+        //langauges not available
         $rows=$this->db->query("SELECT * FROM `hippo_person_language` WHERE parent='$id'");
     return $rows->result();
     }
