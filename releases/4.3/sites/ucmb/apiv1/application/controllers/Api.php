@@ -288,7 +288,7 @@ Class Api extends REST_Controller
             "birthDate"=>@date('Y-m-d', strtotime($result['demographic+birth_date'])),
             "countryOfOrigin"=>@$this->getCountry($result['person+nationality']),
             "citizenship" => $citizenship,
-            "district"=>$result["home_district+name"],
+            "district"=>$result["district+name"],
             "subCounty"=> "",
             "parish"=> "",
             "nextOfKin"=>$nextOfKin,
