@@ -212,7 +212,7 @@ Class Api extends REST_Controller
               ),
               "tertiary" =>$result['education+institution'],
               "other" => "",
-              "speciality" => $result['education+major']
+              "speciality" => $result['']
         );
 
         $professionalLicense = array(
@@ -249,8 +249,8 @@ Class Api extends REST_Controller
                 "facilityType" => "",
                 "instituteCategory" => $this->getCategory($result["institution_type+institution_category"]),
                 "instituteType" =>$result['institution_type+name'],
-                "district" => $result['facility_district+name'],
-                "region"=> $this->getRegion($result['facility_district+region']),
+                "district" => $result['district+name'],
+                "region"=> $this->getRegion($result['district+region']),
                 "dhis2Id"=> '',
                 "ihrisId" => $result['facility+id'],
                 "facilityRegId" => "",
