@@ -147,6 +147,7 @@ Class Api extends REST_Controller
             $nextOfKin['address'] = !empty($person_kins_form->address)?$person_kins_form->address:' ';
             $nextOfKin['mobile_phone'] = !empty($person_kins_form->mobile_phone)?$person_kins_form->mobile_phone: ' ';
             $nextOfKin['telephone'] = !empty($person_kins_form->mobile_phone)?$person_kins_form->mobile_phone:' ';
+            $nextOfKin['relationship'] = !empty($person_kins_form->mobile_phone)?$person_kins_form->relationship:' ';
            
         }
 
@@ -252,7 +253,7 @@ Class Api extends REST_Controller
                 "instituteType" =>$result['institution_type+name'],
                 "district" => $result['facility_district+name'],
                 "region"=> $this->getRegion($result['facility_district+region']),
-                "dhis2Id"=> $this->dhis_orgunit($result['facility+id']),
+                "dhis2Id"=> '',
                 "ihrisId" => $result['facility+id'],
                 "facilityRegId" => "",
                 "facilityName"=>$result['facility+name']

@@ -151,6 +151,8 @@ Class Api extends REST_Controller
             $nextOfKin['address'] = !empty($person_kins_form->address)?$person_kins_form->address:' ';
             $nextOfKin['mobile_phone'] = !empty($person_kins_form->mobile_phone)?$person_kins_form->mobile_phone: ' ';
             $nextOfKin['telephone'] = !empty($person_kins_form->mobile_phone)?$person_kins_form->mobile_phone:' ';
+            $nextOfKin['relationship'] = !empty($person_kins_form->relationship)?$person_kins_form->relationship:' ';
+          
            
         }
 
