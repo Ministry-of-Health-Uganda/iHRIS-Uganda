@@ -272,7 +272,7 @@ Class Api extends REST_Controller
     
       );
         $submittingEntities = array(
-            "name" => "iHRIS Manage",
+            "name" => "Uganda Catholic Medical Bureau",
             "date" => date('Y-m-d H:i:s'),
             "externalRef" => "https://hris.health.go.ug/national/view?id=".$result['person+id']
         );
