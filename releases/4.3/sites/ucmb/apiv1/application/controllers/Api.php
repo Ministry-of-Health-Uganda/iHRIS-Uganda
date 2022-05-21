@@ -95,7 +95,7 @@ Class Api extends REST_Controller
         }
     }
     public function auth($key){
-        $keys= array('ucmb92cfdef7-8f2c-433e-ba62-49fa7a2456351','3b7abf71-f644-4ff4-a2b9-6b4a98927362','330b3bc3-4990-4727-98e9-39c323501363');
+        $keys= array('ucmb92cfdef7-8f2c-433e-ba62-49fa7a2456351','ucmb3b7abf71-f644-4ff4-a2b9-6b4a98927362','ucmb550b3bc3-4990-4727-98e9-39c323501363');
         if (in_array($key, $keys)){
          return true;
            
