@@ -309,7 +309,7 @@ Class Api extends REST_Controller
 
         endforeach;
         $final= array(
-            "count"=>$count=$this->db->get("zebra_ihris_data_api")->num_rows(),
+            "count"=>$count=$this->db->get("SELECT * FROM  zebra_staff_list where `national_id+id_num`!=''")->num_rows(),
             "source"=>"http://41.173.3.36/",
             "page"=>($page)." of ".round(($count/50),0),
             "per_page"=>"50",
