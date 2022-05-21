@@ -94,6 +94,16 @@ Class Api extends REST_Controller
             $this->response($response, 400);
         }
     }
+    public function auth($key){
+        $keys= array('ucmb92cfdef7-8f2c-433e-ba62-49fa7a2456351','3b7abf71-f644-4ff4-a2b9-6b4a98927362','330b3bc3-4990-4727-98e9-39c323501363');
+        if (in_array($key, $keys)){
+         return true;
+           
+        }
+        else{
+         return false;
+        }
+    }
 
     public function practitioner_get($key,$page_limit=FALSE) 
     {
