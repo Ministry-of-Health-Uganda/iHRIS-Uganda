@@ -173,11 +173,14 @@ Class Api extends REST_Controller
          
      
 
-        $langauge=array(
-       
+        $langauge=array();
+        foreach($this->getLangauges($result['person+id']) as $person_language_form ){
         
-            'name'=> "",
-           'proficiency' =>"" );
+            $langauge['name']= !empty($this->langaugeName($person_language_form->language))?$this->langaugeName($person_language_form->language):null;
+            $langauge['proficiency'] = 'Reading: '.str_replace('language_proficiency|','',$person_language_form->reading).', Writing: '.str_replace('language_proficiency|','',$person_language_form->writing). ', Speaking: '.str_replace('language_proficiency|','',$person_language_form->speaking);
+           
+        }
+       
 
            
         
