@@ -274,7 +274,7 @@ Class Api extends REST_Controller
         $submittingEntities = array(
             "name" => "Uganda Catholic Medical Bureau",
             "date" => date('Y-m-d H:i:s'),
-            "externalRef" => "https://hris.health.go.ug/national/view?id=".$result['person+id']
+            "externalRef" => "http://41.173.3.36/ucmb/view?id=".$result['person+id']
         );
 
         $row = array(
@@ -310,7 +310,7 @@ Class Api extends REST_Controller
         endforeach;
         $final= array(
             "count"=>$count=$this->db->get("zebra_ihris_data_api")->num_rows(),
-            "source"=>"https://hris.health.go.ug/national",
+            "source"=>"http://41.173.3.36/",
             "page"=>($page)." of ".round(($count/50),0),
             "per_page"=>"50",
             "increament"=>"+1",
