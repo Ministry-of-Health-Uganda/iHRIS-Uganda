@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="QuarterlyAuditPageDistricts">
+  <metadata>
+    <displayName>Quarterly Audit Page for Uganda Districts</displayName>
+    <category>Site</category>
+    <description>Create a page to display Quarterly audit reports by district.</description>
+    <creator>IntraHealth Informatics</creator>
+    <email>ihris@capacityplus.org</email>
+    <link>https://launchpad.net/ihris-uganda</link>
+    <version>4.2.0</version>
+    <requirement name="uganda-manage-staffing-norm-report">
+      <atLeast version="4.1.6.0" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+  </metadata>
+  <configurationGroup name="QuarterlyAuditPageDistricts" path="/I2CE">
+    <configurationGroup name="page">
+      <version>4.2.0</version>
+      <configurationGroup name="quarterly_audit_report_districts">
+       <version>4.2.0</version>
+        <displayName>Quarterly Audit Report</displayName>
+        <description>The quarterly audit report for Uganda</description>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <value>iHRIS_PageQuarterlyAuditReport</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Quarterly Audit Report</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <value>quarterly_audit_report_base.html</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>custom_reports_can_access</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="quarterly_audit_summary_districts">
+      <version>4.2.0</version>
+        <displayName>District Audit Summary</displayName>
+        <description>The quartely audit summary for Uganda</description>
+        <configuration name="style">
+          <value>main</value>
+        </configuration>
+        <configuration name="class">
+          <value>iHRIS_PageQuarterlyAuditOpenReport</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" locale="en_US">
+            <value>District Summary</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="many">
+            <value>quarterly_audit_summary_base.html</value>
+          </configuration>
+          <configuration name="access" values="many">
+            <value>all</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

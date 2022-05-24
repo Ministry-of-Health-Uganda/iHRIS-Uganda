@@ -1,0 +1,759 @@
+<?php
+/*
+ * © Copyright 2012 IntraHealth International, Inc.
+ * 
+ * This File is part of iHRIS
+ * 
+ * iHRIS is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
+class iHRIS_PageFormUpload_Csv extends I2CE_PageFormCSV {
+ 
+     protected function validate() {
+        if ( !$this->checked_validation ) {
+            if ( !$this->processHeaderRow( 'upload_csv' ) ) {
+                $this->userMessage("Unable to read headers from CSV file.");
+                $this->invalid = true;
+                return false;
+            }
+            //$required_headers = array( 'ID Number', 'Status', 'Date/Time', 'VerifyCode', 'CardNo' );
+            $required_headers = array( 'Surname', 'Firstname','Othername','Gender','Birth Date','Marital Status','Position','Facility','Residence District','Home District','File Number','Employee/IPPS Number','Date of Current Appointment','Date of First Appointment','DSC Minute','Current Salary','Department','Terms of Employment','Telephone Number', 'Email Address' );
+            $invalid_headers = array();
+            foreach( $required_headers as $header ) {
+                if ( !in_array( $header, $this->current['upload_csv']['header'] ) ) {
+                    $invalid_headers[] = $header;
+                }
+            }
+            if ( count( $invalid_headers ) > 0 ) {
+                $this->userMessage( "There are missing headers in the CSV file:  " . implode( ', ', $invalid_headers ) );
+                $this->invalid = true;
+                return false;
+            }
+            $this->checked_validation = true;
+        }
+        return true;
+    }
+ 
+    protected function validateRow( $key ) {
+        // Don't perform any row level validation for now.
+        return true;
+    }
+    
+     
+    protected function save() {
+        if ( parent::save() ) {
+            $this->userMessage("The CSV file has been uploaded.");
+        } else {
+            $this->userMessage("An error occurred trying to upload your file.");
+        }
+        $this->setRedirect( "configure" );
+        return true;
+    }
+    
+    protected function arrange_date( $date) {
+    //list( $date, $time ) = explode( ' ', $date_time );
+    list( $day, $month, $year ) = explode( '/', $date );
+    return sprintf( "%04d-%02d-%02d", $year, $month, $day);
+	}
+	
+	
+    protected function saveRow( $key ) {
+        if ( !$this->current[$key]['row']['Firstname'] && !$this->current[$key]['row']['Surname'] && !$this->current[$key]['row']['Position'] ) {
+            $this->userMessage("Unable to add people without names and positions.");
+            return false;
+        }
+        
+        // First lookup the Position that was given.
+        $job = $this->lookupList( "job", $this->current[$key]['row']['Position'], 'title' );
+        
+        if ( !$job) {
+            $this->userMessage( "Unable to load row for: " . $this->current[$key]['row']['Position'] . " at "
+                               . $this->current[$key]['row']['Firstname']. " " . $this->current[$key]['row']['Surname'] );
+            // Don't try to load this one, but continue.
+            return true;
+        }
+	// Lookup the facility given.
+	$facility = $this->lookupList( "facility", $this->current[$key]['row']['Facility'], 'name' );
+        
+	if ( !$facility) {
+            $this->userMessage( "Unable to load row for: " . $this->current[$key]['row']['Facility'] . " at "
+                               . $this->current[$key]['row']['Firstname']. " " . $this->current[$key]['row']['Surname'] );
+            // Don't try to load this one, but continue.
+            return true;
+        }	
+
+
+	//if (UGX is in string Current salary){
+
+		//Split Current Salary remove UGX/-
+		//Assign new value to $Current_Salary
+
+	$Current_Salary = $this->current[$key]['row']['Current Salary'];
+	
+         if (strpos($Current_Salary, 'UGX') !== false){
+		$Current_Salary = substr($Current_Salary, 6);
+                //$this->userMessage(strpos($Current_Salary, 'UGX'));
+       	  }else{
+	// else{
+
+	//Assign original Current Salary
+	$Current_Salary = $this->current[$key]['row']['Current Salary'];
+	}
+	//Convert Date from 25 July 1975 to 25/06/1975 
+        
+        //$this->current[$key]['row']['Birth Date'])
+        $b_date = $this->current[$key]['row']['Birth Date'];
+        
+        //list( $day, $b_month, $year ) = explode( ' ', $b_date );
+
+        //$b_month = date('m',strtotime($b_month));
+
+        $b_date= date('d/m/Y',strtotime($b_date));     
+          
+	//$b_date= sprintf( "%02d/%02d/%04d",  $day, $b_month, $year);
+     
+        //$b_date = $b_date->format('d/m/Y'); 
+        //($this->current[$key]['row']['Date of Current Appointment']);
+        $s_date = $this->current[$key]['row']['Date of Current Appointment'];
+
+	//list( $day, $s_month, $year ) = explode( ' ', $s_date );
+
+       // $s_month = date('m',strtotime($s_month));
+
+        //$s_date= sprintf( "%02d/%02d/%04d",  $day, $s_month, $year);
+
+        $s_date= date('d/m/Y',strtotime($s_date));
+     
+        //$s_date = $s_date->format('d/m/Y'); 
+        //$this->arrange_date($this->current[$key]['row']['Date of First Appointment']);
+        $d_date = $this->current[$key]['row']['Date of First Appointment'];
+
+	//list( $day, $d_month, $year ) = explode( ' ', $d_date );
+
+       // $d_month = date('m',strtotime($d_month));
+
+       // $d_date= sprintf( "%02d/%02d/%04d",  $day, $d_month, $year);
+
+	$d_date= date('d/m/Y',strtotime($d_date));
+     
+       // $d_date = $d_date->format('d/m/Y'); 
+
+
+        $birth_date = $this->arrange_date($b_date);
+        $start_date = $this->arrange_date($s_date);
+        $dofa_date = $this->arrange_date($d_date);
+        $file_no = $this->lookupList( "id_type", "Open File Number" );
+        $comp_no = $this->lookupList( "id_type", "Employee/ IPPS/ Computer No" );
+        $district = $this->lookupList( "district", $this->current[$key]['row']['Residence District'], 'name' );
+        $home_district = $this->lookupList( "district", $this->current[$key]['row']['Home District'], 'name' );
+        $job = $this->lookupList( "job", $this->current[$key]['row']['Position'], 'title' );
+        $facility = $this->lookupList( "facility", $this->current[$key]['row']['Facility'], 'name' );
+        $employment_terms = $this->lookupList( "employment_terms", $this->current[$key]['row']['Terms of Employment'] );
+        $department = $this->lookupList( "department", $this->current[$key]['row']['Department'] );
+        $marital_status = $this->lookupList( "marital_status", $this->current[$key]['row']['Marital Status'] );
+        $gender = false;
+        if ( strtolower( $this->current[$key]['row']['Gender'][0] ) == 'm' ) {
+            $gender = "gender|M";
+        } elseif ( strtolower( $this->current[$key]['row']['Gender'][0] ) == 'f' ) {
+            $gender = "gender|F";
+        }
+        $created = false;
+        $person_id = false;
+        $demographic_id = false;
+
+	
+		
+        
+        if ( !$person_id ) {
+            $find_pers = array(
+                               'operator' => 'AND',
+                               'operand' => array(
+                                                  0 => array(
+                                                             'operator' => 'FIELD_LIMIT',
+                                                             'style' => 'lowerequals',
+                                                             'field' => 'firstname',
+                                                             'data' => array(
+                                                                             'value' => $this->current[$key]['row']['Firstname'],
+                                                                             ),
+                                                             ),
+                                                  1 => array(
+                                                             'operator' => 'FIELD_LIMIT',
+                                                             'style' => 'lowerequals',
+                                                             'field' => 'surname',
+                                                             'data' => array(
+                                                                             'value' => $this->current[$key]['row']['Surname'],
+                                                                             ),
+                                                             ),
+                                                  ),
+                               );
+            $person_id = I2CE_FormStorage::search( "person", false, $find_pers, array(), true );
+            //echo $person_id;
+
+	    }
+
+		if ( $person_id ) {
+                $person_id = "person|" . $person_id;
+                
+           
+            if ( $birth_date ) {
+                $find_id = array(
+                               'operator' => 'AND',
+                               'operand' => array(
+                                              0 => array(
+                                                    'operator' => 'FIELD_LIMIT',
+                                                    'style' => 'equals',
+                                                    'field' => 'birth_date',
+                                                    'data' => array(
+                                                                    'value' => $birth_date,
+                                                                    ),
+                                                    ),
+                                              1 => array(
+                                                         'operator' => 'FIELD_LIMIT',
+                                                         'style' => 'equals',
+                                                         'field' => 'parent',
+                                                         'data' => array(
+                                                                         'value' => $person_id,
+                                                                         ),
+                                                         ),
+                                                )
+                                  );
+        $demographic_id = I2CE_FormStorage::search( "demographic", false, $find_id, array(), true );
+              
+		
+            }
+        }
+         
+        //Gender 
+        //Marital Status
+ 	//Residence District
+	//Home District
+       if ( $demographic_id) {
+               
+		//$form_factory = I2CE_FormFactory::instance();
+		$person = $this->factory->createContainer($person_id);
+                $person->populate();
+		$person->getField("residence")->setFromDB( $district );
+     	        $person->getField("home_district")->setFromDB( $home_district );
+		$person->save($this->user );
+    
+             
+             $demographic = $this->factory->createContainer( 'demographic|'. $demographic_id );
+             $demographic->populate();
+             
+     	     $demographic->getField("gender")->setFromDB( $gender );
+     	     $demographic->getField("marital_status")->setFromDB( $marital_status );
+ 	     $demographic->save( $this->user  );
+  
+	     $demographic->cleanup();
+ 	     unset( $demographic );
+ 	                      
+      
+      //File Number
+      if ( $this->current[$key]['row']['File Number']) {
+                    
+                    //if child form "person_id" exists with "id_type" = $file_no do something else , else do whats below
+                   
+			$where = array(
+                                'operator' => 'AND',
+                                'operand' => array(
+                                              0 => array(
+                                                    'operator' => 'FIELD_LIMIT',
+                                                    'style' => 'equals',
+                                                    'field' => 'id_type',
+                                                    'data' => array(
+                                                                    'value' => 'id_type|file',
+                                                                    ),
+                                                    ),
+                                              1 => array(
+                                                         'operator' => 'FIELD_LIMIT',
+                                                         'style' => 'equals',
+                                                         'field' => 'parent',
+                                                         'data' => array(
+                                                                         'value' => $person_id,
+                                                                         ),
+                                                         ),
+                                                )
+												);
+
+     $person_identification_form = $person->getChildIds('person_id','last_modified',$where,true);
+                  
+     $person_identification_id = $person_identification_form[0];
+         if ($person_identification_id) { 
+             
+             $person_identification = $this->factory->createContainer( 'person_id|'. $person_identification_id );
+             $person_identification->populate();
+             }else {
+             $person_identification = $this->factory->createContainer( 'person_id');
+             $person_identification->setParent( $person->getNameID());
+             $person_identification->getField( 'id_type' )->setFromDB( $file_no );
+             }
+     	     $person_identification->id_num = $this->current[$key]['row']['File Number'];
+ 	     $person_identification->save( $this->user  );
+  
+	     $person_identification->cleanup();
+ 	     unset( $person_identification );
+ 	               }
+ 	               
+ 	               
+ 	 
+  		//Employee/IPPS Number
+		if ( $this->current[$key]['row']['Employee/IPPS Number']) {               
+                   
+			$where = array(
+                                'operator' => 'AND',
+                                'operand' => array(
+                                              0 => array(
+                                                    'operator' => 'FIELD_LIMIT',
+                                                    'style' => 'equals',
+                                                    'field' => 'id_type',
+                                                    'data' => array(
+                                                                    'value' => 'id_type|employee',
+                                                                    ),
+                                                    ),
+                                              1 => array(
+                                                         'operator' => 'FIELD_LIMIT',
+                                                         'style' => 'equals',
+                                                         'field' => 'parent',
+                                                         'data' => array(
+                                                                         'value' => $person_id,
+                                                                         ),
+                                                         ),
+                                                )
+												);
+		
+		$person_identification_form = $person->getChildIds('person_id','last_modified',$where,true);
+                  
+               $person_identification_id = $person_identification_form[0];
+         if ($person_identification_id) { 
+             
+             $person_identification = $this->factory->createContainer( 'person_id|'. $person_identification_id );
+             $person_identification->populate();
+             }else {
+             $person_identification = $this->factory->createContainer( 'person_id');
+             $person_identification->setParent( $person->getNameID());
+             $person_identification->getField( 'id_type' )->setFromDB( $comp_no );
+             }
+     	     $person_identification->id_num = $this->current[$key]['row']['Employee/IPPS Number'];
+ 	     $person_identification->save( $this->user  );
+  
+	     $person_identification->cleanup();
+ 	     unset( $person_identification );
+ 	               }
+
+
+
+
+		//Telephone
+		//Email Address
+		if ( $this->current[$key]['row']['Telephone Number']) {               
+                   
+			$where = array(
+                                'operator' => 'AND',
+                                'operand' => array(
+                                              
+                                              0 => array(
+                                                         'operator' => 'FIELD_LIMIT',
+                                                         'style' => 'equals',
+                                                         'field' => 'parent',
+                                                         'data' => array(
+                                                                         'value' => $person_id,
+                                                                         ),
+                                                         ),
+                                                )
+												);
+
+    		 $contact_personal = $person->getChildIds('person_contact_personal','last_modified',$where,true);
+                   // $this->userMessage($contact_personal );
+   		  $contact_personal_id = $contact_personal[0];
+      		   if ($contact_personal_id) { 
+              	   $contact_personal = $this->factory->createContainer( 'person_contact_personal|'. $contact_personal_id );
+         	   $contact_personal->populate();
+          	   }else {
+          	  $contact_personal = $this->factory->createContainer( 'person_contact_personal');
+		  $contact_personal->setParent( $person->getNameID());   
+           	  }
+     	          
+ 		  $contact_personal->telephone = $this->current[$key]['row']['Telephone Number'];
+                  $contact_personal->email = $this->current[$key]['row']['Email Address'];
+ 		  $contact_personal->save( $this->user  );
+  
+	          $contact_personal->cleanup();
+ 		  unset( $contact_personal );
+ 	               }
+	
+             
+
+           //Position 
+	   //Facility
+	   //Date of Current Appointment
+	   //Date of First Appointment
+	   //DSC Minute
+	   //Current Salary
+	   //Department
+	   //Terms of Employment
+     if ( $this->current[$key]['row']['Position']) {               
+                   
+			$where = array(
+                                'operator' => 'AND',
+                                'operand' => array(
+                                            
+                                              0 => array(
+                                                         'operator' => 'FIELD_LIMIT',
+                                                         'style' => 'equals',
+                                                         'field' => 'parent',
+                                                         'data' => array(
+                                                                         'value' => $person_id,
+                                                                         ),
+                                                         ),
+					      1=>array(
+						    'operator'=>'FIELD_LIMIT',
+						    'field'=>'end_date',
+						    'style'=>'null',
+						    'data'=>array()
+						    ),
+					    
+                                                )
+												);
+		
+	       $person_position_form = $person->getChildIds('person_position','last_modified',$where,true);
+                  
+               $person_position_id = $person_position_form[0];
+
+           if ($person_position_id) { 
+             //get position from person_position
+            
+              $person_position = $this->factory->createContainer( 'person_position|'. $person_position_id );
+              $person_position->populate();
+            
+	     $existing_position = $person_position->getField('position')->getDBValue() ;
+	     $existing_dofa_date = $person_position->getField('dofa_date')->getDBValue() ;
+             $existing_employment_terms = $person_position->getField('employment_terms')->getDBValue() ;
+	     $existing_minute = $person_position->getField('minute')->getValue() ;
+	     $existing_start_date = $person_position->getField('start_date')->getDBValue() ;	     
+    
+	     $position = $this->factory->createContainer($existing_position );
+             $position->populate();
+		
+	     $existing_job = $position->getField('job')->getDBValue() ;
+	     $existing_title = $position->getField('title')->getDBValue() ;
+             $existing_facility = $position->getField('facility')->getDBValue() ;
+	     $existing_department = $position->getField('department')->getDBValue() ;
+	     $existing_status = $position->getField('status')->getDBValue() ;
+	     
+		
+	    //compare job and facility with the ones under position
+
+		if ( $existing_job == $job && $existing_facility == $facility){
+
+		//if same
+			//update Date of First Appointment,Date of Current Appointment,Minute,Current Salary,Employement Terms
+
+	     $person_position->getField( 'employment_terms' )->setFromDB( $employment_terms );
+          
+     	     $person_position->minute = $this->current[$key]['row']['DSC Minute'];
+	     $person_position->getField('dofa_date')->setFromDB( $dofa_date );
+             $person_position->getField('start_date')->setFromDB( $start_date );
+    
+ 	     $person_position->save( $this->user  );
+  		if ( $Current_Salary){
+		    $where = array(
+                                'operator' => 'AND',
+                                'operand' => array(
+                                            
+                                              0 => array(
+                                                         'operator' => 'FIELD_LIMIT',
+                                                         'style' => 'equals',
+                                                         'field' => 'parent',
+                                                         'data' => array(
+                                                                         'value' => $person_position->getNameID(),
+                                                                         ),
+                                                         ),
+                                                )
+												);
+		
+		    $salary_form = $person_position->getChildIds('salary','last_modified',$where,true);
+		     $salary_id = $salary_form[0];
+                    if ($salary_id) { 
+                    $salary = $this->factory->createContainer( "salary|".$salary_id );
+                    $salary->populate();
+			}else{
+			 $salary = $this->factory->createContainer( "salary");
+			 $salary->setParent( $person_position->getNameID()); 
+			}
+                    $salary->getField('start_date')->setFromDB( $start_date );
+                    $salary->getField('salary')->setFromDB('currency|UGX='.$Current_Salary);
+                    $salary->save( $this->user );
+                    $salary->cleanup();
+                    unset( $salary );
+                }
+	     $person_position->cleanup();
+ 	     unset( $person_position );
+
+		}else if( $existing_start_date > $start_date ) {
+		//else if(import Date of Current Appointment < existing Date of Current Appointment)
+			//update job,department and facility for position
+			
+			$position->getField( 'job' )->setFromDB( $job );
+			$position->title = $this->current[$key]['row']['Position'];
+                        $position->getField( 'department' )->setFromDB( $department );
+     	      		$position->getField( 'facility' )->setFromDB( $facility );
+
+			$position->save( $this->user );
+
+		
+
+  		      //update DOFA,Date of Current Appointment,DSC Minute,Current Salary,Employement Terms for person position	
+			     $person_position->getField( 'employment_terms' )->setFromDB( $employment_terms );
+			  
+		     	     $person_position->minute = $this->current[$key]['row']['DSC Minute'];
+			     $person_position->getField( 'dofa_date' )->setFromDB( $dofa_date );
+			     $person_position->getField( 'start_date' )->setFromDB( $start_date );
+		    
+		 	     $person_position->save( $this->user  );
+		  		if ( $Current_Salary){
+				    $where = array(
+				                'operator' => 'AND',
+				                'operand' => array(
+				                            
+				                              0 => array(
+				                                         'operator' => 'FIELD_LIMIT',
+				                                         'style' => 'equals',
+				                                         'field' => 'parent',
+				                                         'data' => array(
+				                                                         'value' => $person_position->getNameID(),
+				                                                         ),
+				                                         ),
+				                                )
+														);
+		
+				    $salary_form = $person_position->getChildIds('salary','last_modified',$where,true);
+				     $salary_id = $salary_form[0];
+				    if ($salary_id) { 
+				    $salary = $this->factory->createContainer( "salary|".$salary_id );
+				    $salary->populate();
+					}else{
+					 $salary = $this->factory->createContainer( "salary");
+					 $salary->setParent( $person_position->getNameID()); 
+					}
+				    $salary->getField('start_date')->setFromDB( $start_date );
+				    $salary->getField('salary')->setFromDB('currency|UGX='.$Current_Salary);
+				    $salary->save( $this->user );
+				    $salary->cleanup();
+				    unset( $salary );
+				}
+			     $person_position->cleanup();
+		 	     unset( $person_position );
+
+			     $position->cleanup();
+ 	     		     unset( $position );
+			     		
+
+		}else{
+			
+			
+			
+				
+			//assign end date to person_position(one day less than import Date of Current Appointment)
+		        $start_date = new DateTime($start_date);
+     
+      		        $start_date = $start_date->format('Y-m-d'); 
+			
+			$end_date = date('Y-m-d', strtotime($start_date. ' - 1 days'));
+			
+			
+			
+			list( $year, $month, $day ) = explode( '-', $end_date );
+
+                        $new_end_date= sprintf( "%04d-%02d-%02d", $year, $month, $day);
+
+			//$this->userMessage($new_end_date );
+			
+			$person_position->getField( 'end_date' )->setFromDB( $new_end_date );
+			
+			$person_position->save( $this->user );
+
+			//discontinue current position (Status = discontinued)
+			$position->getField( 'status' )->setFromDB( 'position_status|discontinued' );
+			$position->save( $this->user );
+
+			$person_position->cleanup();
+                        unset( $person_position );
+
+			$position->cleanup();
+ 	     		unset( $position );
+
+
+			//Create new position and assign it
+			// Now we create the position.
+			      $position = $this->factory->createContainer( "position" );
+				
+				$position->getField('job')->setFromDB( $job );
+				$position->title = $this->current[$key]['row']['Position'];
+				$position->getField('facility')->setFromDB( $facility );
+				$position->getField('department')->setFromDB( $department );
+				// $position->getField('salary_grade')->setFromDB( $salary_grade_id );
+				$position->getField('status')->setFromDB( 'position_status|closed' );
+				
+				$position->save( $this->user );
+				$person_position = $this->factory->createContainer( "person_position" );
+				$person_position->setParent( $person_id );
+				$person_position->getField("position")->setFromDB( $position->getNameId() );
+				$person_position->getField("start_date")->setFromDB( $start_date );
+				$person_position->getField("dofa_date")->setFromDB( $dofa_date );
+				$person_position->minute = $this->current[$key]['row']['DSC Minute'];
+				if ( $employment_terms ) {
+				    $person_position->getField("employment_terms")->setFromDB( $employment_terms );
+				}
+				
+				
+				$person_position->save( $this->user );
+				if ( $start_date){
+				    $salary = $this->factory->createContainer( "salary" );
+				    $salary->setParent($person_position->getNameId());
+				    $salary->getField('start_date')->setFromDB( $start_date );
+				    $salary->getField('salary')->setFromDB('currency|UGX='.$Current_Salary);
+				    $salary->save( $this->user );
+				    $salary->cleanup();
+				    unset( $salary );
+				}
+				
+				$person_position->cleanup();
+				unset( $person_position );
+				
+				$position->cleanup();
+				unset( $position ); 
+			
+			
+                   }
+
+		}
+        
+		
+		
+		}	
+	  
+	    
+    
+			
+   	} else{
+                    $created = true;
+                    $person = $this->factory->createContainer( "person" );
+                    $person->surname = $this->current[$key]['row']['Surname'];
+                    $person->firstname = $this->current[$key]['row']['Firstname'];
+                    $person->othername = $this->current[$key]['row']['Othername'];
+                    $person->getField('residence')->setFromDB( $district );
+		    $person->getField('home_district')->setFromDB( $home_district );
+                    if ( !$person->save( $this->user ) ) {
+                        I2CE::raiseError("Unable to save person for provider upload.");
+                        return false;
+                    }
+                    $person_id = $person->getNameID();
+                
+                if ( $gender ) {
+                    $demographic = $this->factory->createContainer( "demographic" );
+                    $demographic->getField("gender")->setFromDB( $gender );
+		    $demographic->getField("marital_status")->setFromDB( $marital_status );
+                    $demographic->getField("birth_date")->setFromDB( $birth_date );
+                    $demographic->setParent( $person_id );
+                    $demographic->save( $this->user );
+                    
+                    $demographic->cleanup();
+                    unset( $demographic );
+                }
+                
+                if ( $this->current[$key]['row']['File Number']) {
+                
+                $per_id = $this->factory->createContainer( "person_id" );
+                $per_id->getField( 'id_type' )->setFromDB( $file_no );
+                $per_id->id_num = $this->current[$key]['row']['File Number'];
+                $per_id->setParent( $person_id );
+                $per_id->save( $this->user );
+                
+                $per_id->cleanup();
+                unset( $per_id );
+                }
+                
+                if ( $this->current[$key]['row']['Employee/IPPS Number'] ) {
+                    $per_id = $this->factory->createContainer( "person_id" );
+                    $per_id->getField( 'id_type' )->setFromDB( $comp_no );
+                    $per_id->id_num = $this->current[$key]['row']['Employee/IPPS Number'];
+                    $per_id->setParent( $person_id );
+                    $per_id->save( $this->user );
+                    
+                    $per_id->cleanup();
+                    unset( $per_id );
+                }
+                // Now we create the position.
+                $position = $this->factory->createContainer( "position" );
+                
+                $position->getField('job')->setFromDB( $job );
+                $position->title = $this->current[$key]['row']['Position'];
+                $position->getField('facility')->setFromDB( $facility );
+                $position->getField('department')->setFromDB( $department );
+                // $position->getField('salary_grade')->setFromDB( $salary_grade_id );
+                $position->getField('status')->setFromDB( 'position_status|closed' );
+                
+                $position->save( $this->user );
+                $person_position = $this->factory->createContainer( "person_position" );
+                $person_position->setParent( $person_id );
+                $person_position->getField("position")->setFromDB( $position->getNameId() );
+                $person_position->getField("start_date")->setFromDB( $start_date );
+                $person_position->getField("dofa_date")->setFromDB( $dofa_date );
+                $person_position->minute = $this->current[$key]['row']['DSC Minute'];
+                if ( $employment_terms ) {
+                    $person_position->getField("employment_terms")->setFromDB( $employment_terms );
+                }
+                
+                
+                $person_position->save( $this->user );
+                if ( $start_date){
+                    $salary = $this->factory->createContainer( "salary" );
+                    $salary->setParent($person_position->getNameId());
+                    $salary->getField('start_date')->setFromDB( $start_date );
+                    $salary->getField('salary')->setFromDB('currency|UGX='.$Current_Salary);
+                    $salary->save( $this->user );
+                    $salary->cleanup();
+                    unset( $salary );
+                }
+                
+                $person_position->cleanup();
+                unset( $person_position );
+                
+                $position->cleanup();
+                unset( $position );
+                
+                if ( $this->current[$key]['row']['Telephone Number'] || $this->current[$key]['row']['Email Address'] ) {
+                    $contact = $this->factory->createContainer( "person_contact_personal" );
+                    $contact->telephone = $this->current[$key]['row']['Telephone Number'];
+                    $contact->email = $this->current[$key]['row']['Email Address'];
+                    $contact->setParent( $person_id );
+                    $contact->save( $this->user );
+                    
+                    $contact->cleanup();
+                    unset( $contact );
+                }
+                
+            
+       }
+        return true;
+       
+  }
+}
+
+# Local Variables:
+# mode: php
+# c-default-style: "bsd"
+# indent-tabs-mode: nil
+# c-basic-offset: 4
+# End:
