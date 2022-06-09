@@ -246,7 +246,7 @@ Class Api extends REST_Controller
               "positionStatus" => "Active",
               "employmentTerms" => str_replace("employment_terms|","",$result['primary_form+employment_terms']),
               "facility"=>array(
-                "facilityType" => "",
+                "facilityType" => @$this->getfacType($result['facility_type+id']),
                 "instituteCategory" => $this->getCategory($result["institution_type+institution_category"]),
                 "instituteType" =>$result['institution_type+name'],
                 "district" => $result['district+name'],
@@ -329,6 +329,10 @@ Class Api extends REST_Controller
     }}
 
     }
+
+    public function getFacType($id){
+        return $this->db->query("SELECT `name` as factype  from `hippo_facility_type` WHERE `id`='$id'")->row()->factype;
+       }
 
     public function getRegion($id){
         return $this->db->query("SELECT `name` as `name` from `hippo_region` WHERE `id`='$id'")->row()->name;

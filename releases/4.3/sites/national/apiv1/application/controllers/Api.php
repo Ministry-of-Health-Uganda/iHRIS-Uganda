@@ -252,7 +252,7 @@ Class Api extends REST_Controller
               "positionStatus" => "Active",
               "employmentTerms" => str_replace("employment_terms|","",$result['primary_form+employment_terms']),
               "facility"=>array(
-                "facilityType" => "",
+                "facilityType" => @$this->getfacType($result['facility_type+id']),
                 "instituteCategory" => $this->getCategory($result["institution_type+institution_category"]),
                 "instituteType" =>$result['institution_type+name'],
                 "district" => $result['facility_district+name'],
@@ -351,6 +351,9 @@ Class Api extends REST_Controller
     public function getcadre($id){
      return $this->db->query("SELECT `name` as cadrename  from `hippo_cadre` WHERE `id`='$id'")->row()->cadrename;
     }
+    public function getFacType($id){
+        return $this->db->query("SELECT `name` as factype  from `hippo_facility_type` WHERE `id`='$id'")->row()->factype;
+       }
     public function getclassification($id){
         return $this->db->query("SELECT `name` as classification  from `hippo_classification` WHERE `id`='$id'")->row()->classification;
        }
