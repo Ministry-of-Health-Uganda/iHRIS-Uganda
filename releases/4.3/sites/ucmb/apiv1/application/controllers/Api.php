@@ -257,7 +257,8 @@ Class Api extends REST_Controller
                 "facilityName"=>$result['facility+name']
               ),
               "cadre"=> @$this->getcadre($result['classification+cadre']),
-              "workingHours"=> ""
+              "classification"=> @$this->getclassification($result['classification+id']),
+              "workingHours"=> "8"
         )
     
     );
@@ -339,6 +340,10 @@ Class Api extends REST_Controller
 
     public function getImagedata($id){
         return $this->db->query("SELECT  `image` as `imagedata` from `hippo_person_photo_passport` WHERE `parent`='$id'")->row()->imagedata;
+       }
+
+       public function getclassification($id){
+        return $this->db->query("SELECT `name` as classification  from `hippo_classification` WHERE `id`='$id'")->row()->classification;
        }
     
     public function getcadre($id){
