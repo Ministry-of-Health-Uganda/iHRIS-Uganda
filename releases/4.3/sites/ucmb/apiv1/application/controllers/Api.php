@@ -246,7 +246,7 @@ Class Api extends REST_Controller
               "positionStatus" => "Active",
               "employmentTerms" => str_replace("employment_terms|","",$result['primary_form+employment_terms']),
               "facility"=>array(
-                "facilityType" => @$this->getfacType($result['facility_type+id']),
+                "facilityType" => @$this->getfacType($result['facility+facility_type']),
                 "instituteCategory" => $this->getCategory($result["institution_type+institution_category"]),
                 "instituteType" =>$result['institution_type+name'],
                 "district" => $result['district+name'],
