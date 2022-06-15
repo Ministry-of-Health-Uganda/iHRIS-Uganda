@@ -173,7 +173,7 @@ $row++;
 				
 			    $job_obj = $form_factory->createContainer("job");
 			    $job_obj->title = $data[iHRIS_JOB];
-			   // $job_obj->getField('cadre')->setFromDB($cadre_id);
+			    $job_obj->getField('cadre')->setFromDB($cadre_id);
 			    $job_obj->save( $user );
 			
 			    echo "Row $row++; Created job ". $data[iHRIS_JOB] ." with ID" . $job_obj->getId() ." \n ";
