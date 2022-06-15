@@ -169,7 +169,7 @@ $row++;
 		    if ( !array_key_exists( $data[iHRIS_JOB] , $cache['job'] ) )
 		     {
 			    $cadre_id = find_or_create( $data[iHRIS_CADRE], "cadre" );
-                $cadre_id = find_or_create( $data[iHRIS_SALARY], "salary_grade");
+                $salary_grade_id = find_or_create( $data[iHRIS_SALARY], "salary_grade");
 				
 			    $job_obj = $form_factory->createContainer("job");
 			    $job_obj->title = $data[iHRIS_JOB];
