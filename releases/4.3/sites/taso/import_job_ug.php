@@ -123,6 +123,7 @@ function find_or_create( $value, $form, $fields=false, $do_create=false, $valida
 $cache = array();
 $cache['job'] = array_flip( rearrange(I2CE_List::listOptions( "job" ) ));
 $cache['cadre'] = array_flip( rearrange(I2CE_List::listOptions( "cadre" )) );
+
 /*
 $fh = fopen( $argv[0], "r" );
 if ( $fh === false ) {
@@ -169,11 +170,10 @@ $row++;
 		    if ( !array_key_exists( $data[iHRIS_JOB] , $cache['job'] ) )
 		     {
 			    $cadre_id = find_or_create( $data[iHRIS_CADRE], "cadre" );
-                $salary_grade_id = find_or_create( $data[iHRIS_SALARY], "salary_grade");
+                
 				
 			    $job_obj = $form_factory->createContainer("job");
 			    $job_obj->title = $data[iHRIS_JOB];
-			    $job_obj->getField('salary_grade')->setFromDB( $salary_grade_id );
 			    $job_obj->getField('cadre')->setFromDB( $cadre_id );
 			    $job_obj->save( $user );
 			
