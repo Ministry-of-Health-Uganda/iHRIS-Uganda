@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-FilledPositions" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-FilledPositions" path="/modules/CustomReports" locale="cs">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships" config="CustomReports_Relationships">
+      <configurationGroup name="filled_positions" config="CustomReports_Relationship">
+        <configuration name="display_name" locale="cs">
+          <value>Naplněné pozice</value>
+        </configuration>
+        <configuration name="description" locale="cs">
+          <value>Historický seznam všech naplněných pozic</value>
+        </configuration>
+        <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+          <configurationGroup name="first_salary" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="cs">
+              <value>První výplata</value>
+            </configuration>
+            <configuration name="description" locale="cs">
+              <value>První výplata pro tuto pozici a osobu.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="last_salary" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="cs">
+              <value>Poslední výplata</value>
+            </configuration>
+            <configuration name="description" locale="cs">
+              <value>Poslední výplata pro tuto pozici a osobu.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="person" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="cs">
+              <value>Osoba</value>
+            </configuration>
+            <configuration name="description" locale="cs">
+              <value>Osoba naplňující tuto pozici</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="employee_position" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="cs">
+              <value>Pzocie zaměstnance</value>
+            </configuration>
+            <configuration name="description" locale="cs">
+              <value>Podrobnosti pozice.</value>
+            </configuration>
+            <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+              <configurationGroup name="supervisor" config="CustomReports_Relationship_Join">
+                <configuration name="display_name" locale="cs">
+                  <value>Pozice vedoucího</value>
+                </configuration>
+                <configuration name="description" locale="cs">
+                  <value>Podrobnosti pozice vedoucího.</value>
+                </configuration>
+                <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+                  <configurationGroup name="supervisor_person_position" config="CustomReports_Relationship_Join">
+                    <configuration name="display_name" locale="cs">
+                      <value>Pozice osobnosti vedoucího</value>
+                    </configuration>
+                    <configuration name="description" locale="cs">
+                      <value>Současná nebo nejaktuálnější osoba naplňující pozici vedoucího.</value>
+                    </configuration>
+                    <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+                      <configurationGroup name="supervisor_person" config="CustomReports_Relationship_Join">
+                        <configuration name="display_name" locale="cs">
+                          <value>Osoba vedoucího</value>
+                        </configuration>
+                        <configuration name="description" locale="cs">
+                          <value>Osoba nejaktuálněji naplňující pozici vedoucího</value>
+                        </configuration>
+                      </configurationGroup>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports" config="CustomReports_Reports">
+      <configurationGroup name="filled_positions" config="CustomReports_Report">
+        <configurationGroup name="meta" config="CustomReports_Report_Meta">
+          <configuration name="display_name" locale="cs">
+            <value>Naplněné pozice</value>
+          </configuration>
+          <configuration name="description" locale="cs">
+            <value>Historické hlášení všech naplněných pozic.</value>
+          </configuration>
+          <configuration name="category" locale="cs">
+            <value>Naplněné pozice</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms" config="CustomReports_Report_ReportingForms">
+          <configurationGroup name="primary_form" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="start_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>Datum zahájení osoby</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="greaterthan">
+                    <configuration name="header" locale="cs">
+                      <value>Datum zahájeni po</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="lessthan">
+                    <configuration name="header" locale="cs">
+                      <value>Datum zahájení před</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="end_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>Datum ukončení osoby</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="greaterthan">
+                    <configuration name="header" locale="cs">
+                      <value>Datum ukončení po</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="lessthan">
+                    <configuration name="header" locale="cs">
+                      <value>Datum ukončení před</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="first_salary" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="salary" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>První výplata</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last_salary" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="salary" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>Poslední výplata</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="surname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>Příjmení</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="firstname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>Jméno</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="employee_position" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="job" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>Název práce</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>Název pozice</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="facility" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>Zařízení</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="department" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>Oddělení</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="status" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>Stav pozice</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>Titul vedoucího</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor_person_position" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="start_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>Datum zahájení vedoucího</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor_person" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="surname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>Příjmení vedoucího</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="firstname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="cs">
+                  <value>Jméno vedoucího</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews" config="CustomReports_ReportViews">
+      <configurationGroup name="filled_positions" config="CustomReports_ReportView">
+        <configuration name="display_name" locale="cs">
+          <value>Export naplněných pozic</value>
+        </configuration>
+        <configuration name="description" locale="cs">
+          <value>Seznam historicky naplněných pozic pro export.</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

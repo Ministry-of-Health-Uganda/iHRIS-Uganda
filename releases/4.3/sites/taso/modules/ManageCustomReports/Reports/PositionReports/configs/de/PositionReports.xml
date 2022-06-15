@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-position-reports" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-position-reports" path="/modules/CustomReports" locale="de">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships" config="CustomReports_Relationships">
+      <configurationGroup name="position" config="CustomReports_Relationship">
+        <configurationGroup name="joins">
+          <configurationGroup name="job">
+            <configurationGroup name="joins">
+              <configurationGroup name="cadre">
+                <configuration name="display_name" locale="de">
+                  <value>Mitarbeitergruppe</value>
+                </configuration>
+                <configuration name="description" locale="de">
+                  <value>Die dieser Tätigkeit zugeordnete Mitarbeitergruppe.</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="classification">
+                <configuration name="display_name" locale="de">
+                  <value>Einstufung</value>
+                </configuration>
+                <configuration name="description" locale="de">
+                  <value>Die dieser Tätigkeit zugeordnete Einstufung.</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+            <configuration name="display_name" locale="de">
+              <value>Tätigkeit</value>
+            </configuration>
+            <configuration name="description" locale="de">
+              <value>Die dieser Stelle zugeordnete Tätigkeit.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="facility">
+            <configuration name="display_name" locale="de">
+              <value>Einrichtung</value>
+            </configuration>
+            <configuration name="description" locale="de">
+              <value>Die Einrichtung, der diese Stelle zugeordnet ist.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="department">
+            <configuration name="display_name" locale="de">
+              <value>Abteilung</value>
+            </configuration>
+            <configuration name="description" locale="de">
+              <value>Die Abteilung, der diese Stelle zugeordnet ist.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="last">
+            <configuration name="display_name" locale="de">
+              <value>Letzte Stelle</value>
+            </configuration>
+            <configuration name="description" locale="de">
+              <value>Der letzte Mitarbeiter, der diese Position innehatte.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="current">
+            <configuration name="display_name" locale="de">
+              <value>Aktuelle Stelle</value>
+            </configuration>
+            <configuration name="description" locale="de">
+              <value>Der aktuelle Mitarbeiter, der diese Stelle innehat.</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="reporting_functions">
+          <configurationGroup name="days_open">
+            <configuration name="description" locale="de">
+              <value>Die Anzahl der Tage, die diese Stelle vakant war, bevor sie neu besetzt wurde.</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configuration name="display_name" locale="de">
+          <value>Stellen</value>
+        </configuration>
+        <configuration name="description" locale="de">
+          <value>Alle mit dieser Stelle in Verbindung stehenden Informationen.</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports" config="CustomReports_Reports">
+      <configurationGroup name="position_list" config="CustomReports_Report">
+        <configurationGroup name="meta" config="CustomReports_Report_Meta">
+          <configuration name="display_name" locale="de">
+            <value>Stellenliste</value>
+          </configuration>
+          <configuration name="description" locale="de">
+            <value>Detailinformationen für alle Stellen.</value>
+          </configuration>
+          <configuration name="category" locale="de">
+            <value>Stellenberichte</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms" config="CustomReports_Report_ReportingForms">
+          <configurationGroup name="primary_form" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="code" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Nummer</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="job" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Tätigkeit der Stelle</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="de">
+                      <value>Tätigkeit</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Bezeichnung</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="facility" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Einrichtungsnummer</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="de">
+                      <value>Einrichtung</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="department" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Abteilungsnummer</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="de">
+                      <value>Abteilung</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="posted_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Veröffentlichungsdatum</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="status" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de"></configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="de"></configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="job" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Tätigkeitsbezeichnung</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="cadre" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Stammbesetzungsnummer</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="de">
+                      <value>Mitarbeitergruppe</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="classification" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Einstufungsnummer</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="de">
+                      <value>Einstufung</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="cadre" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="name" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Mitarbeitergruppe</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="classification" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="name" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Einstufung</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="facility" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="name" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Einrichtung</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="department" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="name" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Abteilung</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="end_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Ausschreibungsdatum</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="current" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="start_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="de">
+                  <value>Besetzungsdatum</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="reporting_functions" config="CustomReports_Report_ReportingFunctions">
+          <configurationGroup name="days_open" config="CustomReports_Report_ReportingFunction">
+            <configuration name="header" locale="de">
+              <value>Vakanztage</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews" config="CustomReports_ReportViews">
+      <configurationGroup name="position_list" config="CustomReports_ReportView">
+        <configuration name="display_name" locale="de">
+          <value>Stellenliste</value>
+        </configuration>
+        <configuration name="description" locale="de">
+          <value>Eine Liste aller Stellen.</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="position_open_duration" config="CustomReports_ReportView">
+        <configuration name="display_name" locale="de">
+          <value>Dauer der Stellenvakanz</value>
+        </configuration>
+        <configuration name="description" locale="de">
+          <value>Die Anzahl der Tage, die jede Stelle vakant war, bevor sie neu besetzt wurde.</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

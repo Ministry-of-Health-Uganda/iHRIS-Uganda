@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-FilledPositions" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-FilledPositions" path="/modules/CustomReports" locale="lt">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships" config="CustomReports_Relationships">
+      <configurationGroup name="filled_positions" config="CustomReports_Relationship">
+        <configuration name="display_name" locale="lt">
+          <value>Užimtos pozicijos</value>
+        </configuration>
+        <configuration name="description" locale="lt">
+          <value>Istorinis sąrašas visų užimtų pozicijų.</value>
+        </configuration>
+        <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+          <configurationGroup name="first_salary" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="lt">
+              <value>Pirmasis Atlyginimas</value>
+            </configuration>
+            <configuration name="description" locale="lt"></configuration>
+          </configurationGroup>
+          <configurationGroup name="last_salary" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="lt">
+              <value>Paskutinis Atlyginimas</value>
+            </configuration>
+            <configuration name="description" locale="lt"></configuration>
+          </configurationGroup>
+          <configurationGroup name="person" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="lt">
+              <value>Asmuo</value>
+            </configuration>
+            <configuration name="description" locale="lt">
+              <value>Asmuo užimantis šią poziciją.</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="employee_position" config="CustomReports_Relationship_Join">
+            <configuration name="display_name" locale="lt"></configuration>
+            <configuration name="description" locale="lt">
+              <value>Pozicijos duomenys.</value>
+            </configuration>
+            <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+              <configurationGroup name="supervisor" config="CustomReports_Relationship_Join">
+                <configuration name="display_name" locale="lt"></configuration>
+                <configuration name="description" locale="lt"></configuration>
+                <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+                  <configurationGroup name="supervisor_person_position" config="CustomReports_Relationship_Join">
+                    <configuration name="display_name" locale="lt"></configuration>
+                    <configuration name="description" locale="lt"></configuration>
+                    <configurationGroup name="joins" config="CustomReports_Relationship_Joins">
+                      <configurationGroup name="supervisor_person" config="CustomReports_Relationship_Join">
+                        <configuration name="display_name" locale="lt"></configuration>
+                        <configuration name="description" locale="lt"></configuration>
+                      </configurationGroup>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports" config="CustomReports_Reports">
+      <configurationGroup name="filled_positions" config="CustomReports_Report">
+        <configurationGroup name="meta" config="CustomReports_Report_Meta">
+          <configuration name="display_name" locale="lt">
+            <value>Užimtos pozicijos</value>
+          </configuration>
+          <configuration name="description" locale="lt"></configuration>
+          <configuration name="category" locale="lt">
+            <value>Užimtos pozicijos</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms" config="CustomReports_Report_ReportingForms">
+          <configurationGroup name="primary_form" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="start_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt">
+                  <value>Asmens pradžios data</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="greaterthan">
+                    <configuration name="header" locale="lt">
+                      <value>Pradžios data po</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="lessthan">
+                    <configuration name="header" locale="lt">
+                      <value>Pradžios data prieš</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configurationGroup name="end_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt">
+                  <value>Asmens pabaigos data</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="greaterthan">
+                    <configuration name="header" locale="lt">
+                      <value>Pabaigos data po</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="lessthan">
+                    <configuration name="header" locale="lt">
+                      <value>Pabaigos data prieš</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="first_salary" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="salary" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt">
+                  <value>Pirmasis Atlyginimas</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last_salary" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="salary" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt">
+                  <value>Paskutinis Atlyginimas</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="person" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="surname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt">
+                  <value>Pavardė</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="firstname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt">
+                  <value>Vardas</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="employee_position" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="job" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt">
+                  <value>Darbo titulas</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt">
+                  <value>Pozicijos titulas</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="facility" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt"></configuration>
+              </configurationGroup>
+              <configurationGroup name="department" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt">
+                  <value>Departamentas</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="status" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt"></configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="title" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt"></configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor_person_position" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="start_date" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt"></configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="supervisor_person" config="CustomReports_Report_ReportingForm">
+            <configurationGroup name="fields" config="CustomReports_Report_ReportingForm_Fields">
+              <configurationGroup name="surname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt"></configuration>
+              </configurationGroup>
+              <configurationGroup name="firstname" config="CustomReports_Report_ReportingForm_Field">
+                <configuration name="header" locale="lt"></configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews" config="CustomReports_ReportViews">
+      <configurationGroup name="filled_positions" config="CustomReports_ReportView">
+        <configuration name="display_name" locale="lt"></configuration>
+        <configuration name="description" locale="lt"></configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-facility-reports" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-facility-reports" path="/modules/CustomReports" locale="nl">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships">
+      <configurationGroup name="facility">
+        <configuration name="display_name" locale="nl">
+          <value>Lijst instellingen</value>
+        </configuration>
+        <configuration name="description" locale="nl">
+          <value>Gegevens instelling</value>
+        </configuration>
+        <configurationGroup name="joins">
+          <configurationGroup name="facility_type">
+            <configuration name="description" locale="nl">
+              <value>Het type van deze instelling.</value>
+            </configuration>
+            <configuration name="display_name" locale="nl">
+              <value>Instellingstype</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="facility_contact">
+            <configuration name="description" locale="nl">
+              <value>De contactgegevens voor deze instelling.</value>
+            </configuration>
+            <configuration name="display_name" locale="nl">
+              <value>Contactpersoon instelling</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="district">
+            <configuration name="description" locale="nl">
+              <value>Het district waar deze instelling is gelegen.</value>
+            </configuration>
+            <configuration name="display_name" locale="nl"></configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports">
+      <configurationGroup name="facility_list">
+        <configurationGroup name="meta">
+          <configuration name="display_name" locale="nl">
+            <value>Lijst instellingen</value>
+          </configuration>
+          <configuration name="description" locale="nl">
+            <value>Gegevens instelling.</value>
+          </configuration>
+          <configuration name="category" locale="nl">
+            <value>Rapport instelling</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms">
+          <configurationGroup name="primary_form">
+            <configurationGroup name="fields">
+              <configurationGroup name="facility_type">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="nl">
+                      <value>Instellingstype</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="nl">
+                  <value>Nummer type instelling</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="location">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="nl">
+                      <value>Vestigingsplaats instelling</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="within">
+                    <configuration name="header" locale="nl">
+                      <value>Vestigingsplaats instelling</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="nl">
+                  <value>Nummer vestigingsplaats instelling</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="name">
+                <configuration name="header" locale="nl">
+                  <value>Naam instelling</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="district">
+            <configurationGroup name="fields">
+              <configurationGroup name="name">
+                <configuration name="header" locale="nl">
+                  <value>Vestigingsplaats</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="facility_contact">
+            <configurationGroup name="fields">
+              <configurationGroup name="address">
+                <configuration name="header" locale="nl">
+                  <value>Postadres</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="telephone">
+                <configuration name="header" locale="nl">
+                  <value>Telefoonnummer</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="email">
+                <configuration name="header" locale="nl">
+                  <value>E-mailadres</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="notes">
+                <configuration name="header" locale="nl">
+                  <value>Opmerkingen contactgegevens</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="facility_type">
+            <configurationGroup name="fields">
+              <configurationGroup name="name">
+                <configuration name="header" locale="nl">
+                  <value>Instellingstype</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews">
+      <configurationGroup name="facility_list">
+        <configuration name="description" locale="nl">
+          <value>Een lijst met alle instellingen.</value>
+        </configuration>
+        <configuration name="display_name" locale="nl">
+          <value>Lijst instellingen</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

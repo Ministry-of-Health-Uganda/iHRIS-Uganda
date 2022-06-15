@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-facility-reports" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-facility-reports" path="/modules/CustomReports" locale="gl">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships">
+      <configurationGroup name="facility">
+        <configuration name="display_name" locale="gl">
+          <value>Lista de establecementos</value>
+        </configuration>
+        <configuration name="description" locale="gl">
+          <value>Información sobre o establecemento</value>
+        </configuration>
+        <configurationGroup name="joins">
+          <configurationGroup name="facility_type">
+            <configuration name="description" locale="gl">
+              <value>O tipo de establecemento deste establecemento.</value>
+            </configuration>
+            <configuration name="display_name" locale="gl">
+              <value>Tipo de establecemento</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="facility_contact">
+            <configuration name="description" locale="gl">
+              <value>A información de contacto deste establecemento.</value>
+            </configuration>
+            <configuration name="display_name" locale="gl">
+              <value>Contacto do establecemento</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="district">
+            <configuration name="description" locale="gl">
+              <value>O distrito no que se atopa o establecemento.</value>
+            </configuration>
+            <configuration name="display_name" locale="gl">
+              <value>Distrito</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports">
+      <configurationGroup name="facility_list">
+        <configurationGroup name="meta">
+          <configuration name="display_name" locale="gl">
+            <value>Lista de establecementos</value>
+          </configuration>
+          <configuration name="description" locale="gl">
+            <value>Información sobre o establecemento.</value>
+          </configuration>
+          <configuration name="category" locale="gl">
+            <value>Informe sobre o establecemento</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms">
+          <configurationGroup name="primary_form">
+            <configurationGroup name="fields">
+              <configurationGroup name="facility_type">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="gl">
+                      <value>Tipo de establecemento</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="gl">
+                  <value>ID do tipo de establecemento</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="location">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="gl">
+                      <value>Localización do establecemento</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="within">
+                    <configuration name="header" locale="gl">
+                      <value>Localización do establecemento</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="gl">
+                  <value>ID da localización do establecemento</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="name">
+                <configuration name="header" locale="gl">
+                  <value>Nome do establecemento</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="district">
+            <configurationGroup name="fields">
+              <configurationGroup name="name">
+                <configuration name="header" locale="gl">
+                  <value>Localización</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="facility_contact">
+            <configurationGroup name="fields">
+              <configurationGroup name="address">
+                <configuration name="header" locale="gl">
+                  <value>Enderezo postal</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="telephone">
+                <configuration name="header" locale="gl">
+                  <value>Número de teléfono</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="email">
+                <configuration name="header" locale="gl">
+                  <value>Enderezo de correo electrónico</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="notes">
+                <configuration name="header" locale="gl">
+                  <value>Notas de contacto</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="facility_type">
+            <configurationGroup name="fields">
+              <configurationGroup name="name">
+                <configuration name="header" locale="gl">
+                  <value>Tipo de establecemento</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews">
+      <configurationGroup name="facility_list">
+        <configuration name="description" locale="gl">
+          <value>Unha lista de todos os establecementos.</value>
+        </configuration>
+        <configuration name="display_name" locale="gl">
+          <value>Lista de establecementos</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

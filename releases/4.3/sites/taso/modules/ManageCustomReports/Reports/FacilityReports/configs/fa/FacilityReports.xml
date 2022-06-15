@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-facility-reports" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-facility-reports" path="/modules/CustomReports" locale="fa">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships">
+      <configurationGroup name="facility">
+        <configuration name="display_name" locale="fa"></configuration>
+        <configuration name="description" locale="fa"></configuration>
+        <configurationGroup name="joins">
+          <configurationGroup name="facility_type">
+            <configuration name="description" locale="fa"></configuration>
+            <configuration name="display_name" locale="fa">
+              <value>نوع امکانات</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="facility_contact">
+            <configuration name="description" locale="fa"></configuration>
+            <configuration name="display_name" locale="fa">
+              <value>تماس با امکانات</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="district">
+            <configuration name="description" locale="fa"></configuration>
+            <configuration name="display_name" locale="fa">
+              <value>ناحیه</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports">
+      <configurationGroup name="facility_list">
+        <configurationGroup name="meta">
+          <configuration name="display_name" locale="fa"></configuration>
+          <configuration name="description" locale="fa"></configuration>
+          <configuration name="category" locale="fa"></configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms">
+          <configurationGroup name="primary_form">
+            <configurationGroup name="fields">
+              <configurationGroup name="facility_type">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="fa">
+                      <value>نوع امکانات</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="fa"></configuration>
+              </configurationGroup>
+              <configurationGroup name="location">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="fa"></configuration>
+                  </configurationGroup>
+                  <configurationGroup name="within">
+                    <configuration name="header" locale="fa"></configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="fa"></configuration>
+              </configurationGroup>
+              <configurationGroup name="name">
+                <configuration name="header" locale="fa"></configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="district">
+            <configurationGroup name="fields">
+              <configurationGroup name="name">
+                <configuration name="header" locale="fa">
+                  <value>موقعیت</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="facility_contact">
+            <configurationGroup name="fields">
+              <configurationGroup name="address">
+                <configuration name="header" locale="fa">
+                  <value>آدرس پستی</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="telephone">
+                <configuration name="header" locale="fa">
+                  <value>شمارهٔ تلفن</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="email">
+                <configuration name="header" locale="fa">
+                  <value>آدرس ایمیل</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="notes">
+                <configuration name="header" locale="fa"></configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="facility_type">
+            <configurationGroup name="fields">
+              <configurationGroup name="name">
+                <configuration name="header" locale="fa">
+                  <value>نوع امکانات</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews">
+      <configurationGroup name="facility_list">
+        <configuration name="description" locale="fa"></configuration>
+        <configuration name="display_name" locale="fa"></configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

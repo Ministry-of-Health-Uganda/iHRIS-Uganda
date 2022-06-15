@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-manage-CustomReports-search-people" path="/modules/CustomReports">
+  <metadata>
+    <version>4.2.2.0.1</version>
+  </metadata>
+  <configurationGroup name="ihris-manage-CustomReports-search-people" path="/modules/CustomReports" locale="it">
+    <version>4.2.0.1</version>
+    <configurationGroup name="relationships">
+      <configurationGroup name="search_people">
+        <configuration name="display_name" locale="it">
+          <value>Cerca persona</value>
+        </configuration>
+        <configuration name="description" locale="it">
+          <value>Cerca relazioni fra tutte le persone</value>
+        </configuration>
+        <configurationGroup name="reporting_functions">
+          <configurationGroup name="employee_status">
+            <configuration name="description" locale="it">
+              <value>Lo stato attuale di questo impiegato</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="joins">
+          <configurationGroup name="last_person_position">
+            <configuration name="description" locale="it">
+              <value>L'ultimo ruolo che ha ricoperto questa persona</value>
+            </configuration>
+            <configuration name="display_name" locale="it">
+              <value>Ultimo ruolo della persona</value>
+            </configuration>
+            <configurationGroup name="joins">
+              <configurationGroup name="last_position">
+                <configuration name="description" locale="it">
+                  <value>I dettagli dell'ultimo ruolo ricoperto da questa persona</value>
+                </configuration>
+                <configuration name="display_name" locale="it">
+                  <value>Ultimo ruolo</value>
+                </configuration>
+                <configurationGroup name="joins">
+                  <configurationGroup name="last_job">
+                    <configuration name="description" locale="it">
+                      <value>Ultimo impiego avuto da questa persona</value>
+                    </configuration>
+                    <configuration name="display_name" locale="it">
+                      <value>Ultimo impiego</value>
+                    </configuration>
+                  </configurationGroup>
+                  <configurationGroup name="last_facility">
+                    <configuration name="description" locale="it">
+                      <value>L'ultima sede dove questa persona ha lavorato</value>
+                    </configuration>
+                    <configuration name="display_name" locale="it">
+                      <value>Ultima sede</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="application">
+            <configuration name="description" locale="it">
+              <value>Dettagli per la candidatura di questa persona</value>
+            </configuration>
+            <configuration name="display_name" locale="it">
+              <value>Candidatura</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reports">
+      <configurationGroup name="search_people">
+        <configurationGroup name="meta">
+          <configuration name="display_name" locale="it">
+            <value>Cerca persona</value>
+          </configuration>
+          <configuration name="description" locale="it">
+            <value>Cerca tra tutte le persone</value>
+          </configuration>
+          <configuration name="category" locale="it">
+            <value>Cerca</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="reporting_forms">
+          <configurationGroup name="primary_form">
+            <configurationGroup name="fields">
+              <configurationGroup name="surname">
+                <configurationGroup name="limits">
+                  <configurationGroup name="contains">
+                    <configuration name="header" locale="it">
+                      <value>Cognome</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="it">
+                  <value>Cognome</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="firstname">
+                <configuration name="header" locale="it">
+                  <value>Nome</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last_person_position">
+            <configurationGroup name="fields">
+              <configurationGroup name="start_date">
+                <configuration name="header" locale="it">
+                  <value>Data inizio</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="end_date">
+                <configuration name="header" locale="it">
+                  <value>Data fine</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last_position">
+            <configurationGroup name="fields">
+              <configurationGroup name="job">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="it">
+                      <value>Impiego</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="it">
+                  <value>ID dell'Impiego di lavoro</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="title">
+                <configuration name="header" locale="it">
+                  <value>Qualifica del ruolo</value>
+                </configuration>
+              </configurationGroup>
+              <configurationGroup name="facility">
+                <configurationGroup name="limits">
+                  <configurationGroup name="equals">
+                    <configuration name="header" locale="it">
+                      <value>Sede</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+                <configuration name="header" locale="it">
+                  <value>ID Sede di lavoro</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last_facility">
+            <configurationGroup name="fields">
+              <configurationGroup name="name">
+                <configuration name="header" locale="it">
+                  <value>Sede</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+          <configurationGroup name="last_job">
+            <configurationGroup name="fields">
+              <configurationGroup name="title">
+                <configuration name="header" locale="it">
+                  <value>Qualifica</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="reporting_functions">
+          <configurationGroup name="employee_status">
+            <configurationGroup name="limits">
+              <configurationGroup name="equals">
+                <configuration name="header" locale="it">
+                  <value>Stato impiegato</value>
+                </configuration>
+              </configurationGroup>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="reportViews">
+      <configurationGroup name="search_people">
+        <configuration name="description" locale="it">
+          <value>Cerca ogni persona nel sistema</value>
+        </configuration>
+        <configuration name="display_name" locale="it">
+          <value>Cerca persona</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>
