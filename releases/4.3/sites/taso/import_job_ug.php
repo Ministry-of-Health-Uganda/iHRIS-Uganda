@@ -21,9 +21,9 @@ $dictionary = array();
  
  
 define( 'iHRIS_DEFAULT_COUNTRY', 'Uganda' );
-define ('iHRIS_SALARY',0);
-define('iHRIS_JOB', 1 );
-define('iHRIS_CADRE', 2);
+
+define('iHRIS_JOB', 0 );
+define('iHRIS_CADRE', 1);
 
 
 
@@ -121,7 +121,6 @@ function find_or_create( $value, $form, $fields=false, $do_create=false, $valida
 $cache = array();
 $cache['job'] = array_flip( rearrange(I2CE_List::listOptions( "job" ) ));
 $cache['cadre'] = array_flip( rearrange(I2CE_List::listOptions( "cadre" )) );
-$cache['salary_grade'] = array_flip( rearrange(I2CE_List::listOptions( "salary_grade" )) );
 /*
 $fh = fopen( $argv[0], "r" );
 if ( $fh === false ) {
@@ -168,7 +167,6 @@ $row++;
 		    if ( !array_key_exists( $data[iHRIS_JOB] , $cache['job'] ) )
 		     {
 			    $cadre_id = find_or_create( $data[iHRIS_CADRE], "cadre" );
-                $salary_grade_id = find_or_create( $data[iHRIS_SALARY], "salary_grade" );
 				
 			    $job_obj = $form_factory->createContainer("job");
 			    $job_obj->title = $data[iHRIS_JOB];
