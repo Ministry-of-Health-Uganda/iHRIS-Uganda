@@ -52,9 +52,9 @@ unset($i2ce_site_module_config);
 global $user;
 
 $user = new I2CE_User(1, false, false, false);
-$db = PDO::singleton();
-if ( PEAR::isError( $db ) ) {
-	die( $db->getMessage() );
+$db = I2CE::PDO();
+if (PEAR::isError($db)) {
+	die($db->getMessage());
 }
 $form_factory = I2CE_FormFactory::instance();
 
