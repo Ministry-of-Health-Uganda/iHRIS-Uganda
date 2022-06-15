@@ -1,7 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 /**
  * The best way to run this is:
  * php import_job_ug.php 2> convert.log
@@ -23,9 +21,9 @@ $dictionary = array();
  
  
 define( 'iHRIS_DEFAULT_COUNTRY', 'Uganda' );
-
-define('iHRIS_JOB', 0 );
-define('iHRIS_CADRE', 1);
+define('iHRIS_SALARY', 0 );
+define('iHRIS_JOB', 1 );
+define('iHRIS_CADRE', 2);
 
 
 
@@ -37,7 +35,7 @@ if (file_exists(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages/local' . DIRECT
 	require_once( dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages/config.values.php');
 }
 
-$i2ce_site_i2ce_path = "/var/lib/iHRIS/4.1.6/I2CE";
+$i2ce_site_i2ce_path = "/var/lib/iHRIS/releases/4.3/i2ce";
 
 require_once ($i2ce_site_i2ce_path . DIRECTORY_SEPARATOR . 'I2CE_config.inc.php');
 
@@ -169,6 +167,7 @@ $row++;
 		    if ( !array_key_exists( $data[iHRIS_JOB] , $cache['job'] ) )
 		     {
 			    $cadre_id = find_or_create( $data[iHRIS_CADRE], "cadre" );
+                $cadre_id = find_or_create( $data[iHRIS_SALARY], "salary_grade");
 				
 			    $job_obj = $form_factory->createContainer("job");
 			    $job_obj->title = $data[iHRIS_JOB];
