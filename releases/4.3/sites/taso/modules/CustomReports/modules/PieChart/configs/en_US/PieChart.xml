@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports_PieChart" path="/modules/CustomReports/displays/PieChart">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="CustomReports_PieChart" path="/modules/CustomReports/displays/PieChart" locale="en_US">
+    <version>4.3.0</version>
+    <configuration name="error_message" locale="en_US" values="single" type="string">
+      <value>No data has been found for this report. Please make sure the report data has been cached or modify your limits.</value>
+    </configuration>
+    <configurationGroup name="display_options">
+      <configurationGroup name="styles">
+        <configurationGroup name="Pie">
+          <configuration name="display_name" locale="en_US" values="single" type="string">
+            <value>Pie Chart(Simple)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="Bar">
+          <configuration name="display_name" locale="en_US" values="single" type="string">
+            <value>Bar Chart(Simple)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="Column">
+          <configuration name="display_name" locale="en_US" values="single" type="string">
+            <value>Column Chart(Simple)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="StackedColumn">
+          <configuration name="display_name" locale="en_US" values="single" type="string">
+            <value>Stacked Column Chart(Simple)</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="Scatter">
+          <configuration name="display_name" locale="en_US" values="single" type="string">
+            <value>Scatter Plot</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

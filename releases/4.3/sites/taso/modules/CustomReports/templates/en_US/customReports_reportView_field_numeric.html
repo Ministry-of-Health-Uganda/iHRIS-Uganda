@@ -1,0 +1,42 @@
+<span>
+  <h2>Field</h2>
+  <span  id='field_content'>
+    <span name='name' class='sortme' style='display:none;visibility:hidden'/>
+    <table class='multiFormTable reportviews' cellpadding="0" cellspacing="0" border="0">
+      <tr>	
+	<td>
+	  <h3><span name='displayName' class='sortablehandle'/></h3>
+	  <br/>
+	  <input name='enabled_hide' type='hidden' value='1'/>	  
+	  <input name='enabled' type='checkbox' value='1'/>
+	  Enabled:  Check to enable this field in the report view
+	</td>
+	<td>
+	  Choose a method to collect (aggregate) this data:
+	  <select name='aggregate'>
+	    <option value='none'>None</option>
+	    <option value='sum'>Sum</option>
+	    <option value='maximum'>Maximum</option>
+	    <option value='minimum'>Minimum</option>
+	    <option value='average'>Average</option>
+	    <option value='count'>Total Number</option>
+	    <option value='count_distinct'>Total Distinct</option>
+	  </select>
+	  <div name='merge_additional_container' ifset='true'>
+	    Select Additional Values To Match:
+	    <select name='merge_additional' id='merge_additional' >
+	      <option value=''>No Additional Values</option>
+	    </select>
+	    <input type='hidden' name='merge_additional_exists' value='1' />
+	  </div>
+	</td>
+      </tr>
+      <tr name='merge_link_container' ifset='true'>
+	<td  colspan='2' style='padding-left:2em'>
+	  <span id='merges_link' class='button toggle_closed '><h2>Merge Another Report</h2></span>
+	  <ul name='merges_ajax'/>
+	</td>
+      </tr>
+    </table>
+  </span>
+</span>

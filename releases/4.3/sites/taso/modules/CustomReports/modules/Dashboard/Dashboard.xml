@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Dashboard">
+  <metadata>
+    <displayName>iHRIS Dashboard</displayName>
+    <category>Application</category>
+    <description>Makes available dashboard reports functionality onto iHRIS Software</description>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+  </metadata>
+  <configurationGroup name="Dashboard" path="/">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US" value="many" type="delimited">
+      <configuration name="can_view_dashboard" locale="en_US" values="single" type="string">
+        <value>Can view dashboard reports</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="dashboards" path="/I2CE/page/dashboard">
+      <configuration name="class" values="single" type="string">
+        <value>I2CE_PageDashboard</value>
+      </configuration>
+      <configuration name="style" values="single" type="string">
+        <value>shell</value>
+      </configuration>
+      <configurationGroup name="args">
+        <displayName>Page Options</displayName>
+        <description>The options that control the access and display of all pages</description>
+        <configuration name="title" values="single" locale="en_US" type="string">
+          <displayName>Page Title</displayName>
+          <description>Page Title</description>
+          <status>required:true</status>
+          <value>iHRIS Dashboard</value>
+        </configuration>
+        <configuration name="defaultHTMLFile" values="many" type="string">
+          <displayName>Default HTML File</displayName>
+          <description>The default HTML File for this page</description>
+          <status>required:true</status>
+          <value>dashboard_base.html</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>
