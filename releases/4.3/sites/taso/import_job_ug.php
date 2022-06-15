@@ -23,9 +23,8 @@ $dictionary = array();
  
  
 define( 'iHRIS_DEFAULT_COUNTRY', 'Uganda' );
-define('iHRIS_SALARY', 0 );
-define('iHRIS_JOB', 1 );
-define('iHRIS_CADRE', 2);
+define('iHRIS_JOB', 0 );
+define('iHRIS_CADRE', 1);
 
 
 
