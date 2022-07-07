@@ -170,7 +170,7 @@ $row++;
 				
 			    $job_obj = $form_factory->createContainer("job");
 			    $job_obj->title = $data[iHRIS_JOB];
-			    $job_obj->getField('salary_grade')->setFromDB( $salary_grade_id );
+			   // $job_obj->getField('salary_grade')->setFromDB( $salary_grade_id );
 			    $job_obj->getField('cadre')->setFromDB( $cadre_id );
 			    $job_obj->save( $user );
 			
