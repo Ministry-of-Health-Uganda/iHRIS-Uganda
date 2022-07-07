@@ -19,6 +19,8 @@ error_reporting(E_ALL);
  * 0772522248
  * generation. christopher
  */
+
+
  global $dictionary;
 $dictionary = array();
  
