@@ -1,7 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 /**
  * The best way to run this is:
  * php import_job_ug.php 2> convert.log
@@ -23,6 +21,7 @@ $dictionary = array();
  
  
 define( 'iHRIS_DEFAULT_COUNTRY', 'Uganda' );
+
 define('iHRIS_JOB', 0 );
 define('iHRIS_CADRE', 1);
 
@@ -51,9 +50,10 @@ unset($i2ce_site_module_config);
 global $user;
 
 $user = new I2CE_User(1, false, false, false);
+// $db = MDB2::singleton();
 $db = I2CE::PDO();
-if (PEAR::isError($db)) {
-	die($db->getMessage());
+if ( PEAR::isError( $db ) ) {
+	die( $db->getMessage() );
 }
 $form_factory = I2CE_FormFactory::instance();
 
@@ -64,6 +64,10 @@ function dotrim(&$value){
   $value = trim($value);
 }
 
+$fh = fopen( $argv[0], "r" );
+if ( $fh === false ) {
+    die( "Couldn't update file: $argv[0].  Syntax: importCSV.php [erase] file.csv\n" );
+}
 
 
 function find_or_create( $value, $form, $fields=false, $do_create=false, $validate=false ) {
@@ -122,7 +126,6 @@ function find_or_create( $value, $form, $fields=false, $do_create=false, $valida
 $cache = array();
 $cache['job'] = array_flip( rearrange(I2CE_List::listOptions( "job" ) ));
 $cache['cadre'] = array_flip( rearrange(I2CE_List::listOptions( "cadre" )) );
-
 /*
 $fh = fopen( $argv[0], "r" );
 if ( $fh === false ) {
@@ -151,10 +154,7 @@ fclose($fh);
 if ( $errors > 0 ) {
     die( "There were errors in the import file.  Please add additional entries to the data dictionary or correct the data!" );
 */
-$fh = fopen( $argv[0], "r" );
-if ( $fh === false ) {
-    die( "Couldn't update file: $argv[0].  Syntax: importCSV.php [erase] file.csv\n" );
-}
+
 
 $row = 0;
 $Skip_no_job = 0;
@@ -169,14 +169,14 @@ $row++;
 		    if ( !array_key_exists( $data[iHRIS_JOB] , $cache['job'] ) )
 		     {
 			    $cadre_id = find_or_create( $data[iHRIS_CADRE], "cadre" );
-                
 				
 			    $job_obj = $form_factory->createContainer("job");
 			    $job_obj->title = $data[iHRIS_JOB];
-			    $job_obj->getField('cadre')->setFromDB($cadre_id);
+			    // $job_obj->getField('salary_grade')->setFromDB( $salary_grade_id );
+			    $job_obj->getField('cadre')->setFromDB( $cadre_id );
 			    $job_obj->save( $user );
 			
-			    echo "Row $row++; Created job ". $data[iHRIS_JOB] ." with ID" . $job_obj->getId() ." \n ";
+			    echo "Row $row++; Created job ". $data[iHRIS_job] ." with ID" . $job_obj->getId() ." \n ";
 			
 			    $job_obj->cleanup();
 			    unset( $job_obj );
