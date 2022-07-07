@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL & ~E_NOTICE);
 /**
  * The best way to run this is:
  * php import_job_ug.php 2> convert.log
