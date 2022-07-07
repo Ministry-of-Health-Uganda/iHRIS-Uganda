@@ -92,7 +92,7 @@ function find_or_create( $value, $form, $fields=false, $do_create=false, $valida
                 $fields = array( 'name' => $value );
             } 
             foreach( $fields as $key => $val ) {
-                $obj->setFromDB($val);
+               print_r($val);
             }
             $obj->save( $user );
             echo "Creating new form ($form) " . $obj->getId() . " ";
