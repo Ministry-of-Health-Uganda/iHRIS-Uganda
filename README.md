@@ -236,7 +236,7 @@ $ sudo service apache2 restart
 
 ```shell script
 $ cd /var/lib
-$ sudo git clone https://github.com/MOH-Zambia/iHRIS.git
+$ sudo git clone https://repo.git
 ```
 
 ### Configuring a Site
