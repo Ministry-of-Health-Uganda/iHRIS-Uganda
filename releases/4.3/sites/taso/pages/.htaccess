@@ -3,7 +3,7 @@
 # Make sure your apache config allows overwrite these options
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase  /taso_manage
+    RewriteBase  /taso
     DirectoryIndex index.php
     ErrorDocument 403 index.php/home
     ErrorDocument 404 index.php/home    
