@@ -26,7 +26,7 @@
 */
 
 
-class I2CE_Page_Report_MagicDataExport extends I2CE_Page_MagicDataExport{
+class I2CE_Page_Report_MagicDataextends I2CE_Page_MagicDataExport{
 
 
 
@@ -90,7 +90,7 @@ class I2CE_Page_Report_MagicDataExport extends I2CE_Page_MagicDataExport{
                 $description .= ' ' .strtolower($this->request_remainder[0]) . ' export';
             } else {
                 $dispName .= ' ' . ucfirst(strtolower(substr($this->request_remainder[0],0,-1)));
-                $description .= ' ' . strtolower(substr($this->request_remainder[0],0,-1)) . ' export of ' . $this->request_remainder[1];
+                $description .= ' ' . strtolower(substr($this->request_remainder[0],0,-1)) . ' of ' . $this->request_remainder[1];
             }
         }
         $description .= ' on  ' . strftime('%c');

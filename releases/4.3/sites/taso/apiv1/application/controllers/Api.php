@@ -114,7 +114,7 @@ Class Api extends REST_Controller
         $offset = ($page > 1) ? ($page_limit * ($page - 1)) : 0;
         $results = $this->requestHandler->practitioner_data($offset, $page_limit);
         $total_count=$this->db->query("SELECT * FROM  zebra_staff_list where `national_id+id_num`!=''")->num_rows();
-         $pages = ($total_count % $page_limit == 0) ? ($total_count / $page_limit) : (round($total_count / $page_limit, 0) + 1);
+         $pages = ($total_count / $page_limit == 0) ? ($total_count / $page_limit) : (round($total_count / $page_limit, 0) + 1);
         $response = array();
 
         foreach($results as $result):  
