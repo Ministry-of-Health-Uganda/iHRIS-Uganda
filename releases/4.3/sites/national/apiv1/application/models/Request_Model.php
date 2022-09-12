@@ -39,10 +39,10 @@ class Request_Model extends CI_Model
          WHEN `classification+cadre` ='cadre|Dental' THEN 'Dental Professionals' 
          WHEN `classification+cadre` ='cadre|Medical' THEN 'Medical Professionals' 
          WHEN `classification+cadre` ='cadre|Midwife' THEN 'Midwifery Professionals' 
-         WHEN `cadre|Non_health` ='cadre|Midwife' THEN 'Non Health Professionals' 
-         WHEN `cadre|Nurse` ='cadre|Midwife' THEN 'Nursing Professionals' 
-         WHEN `cadre|Non_health` ='cadre|Pharma' THEN 'Pharmacy Professionals' 
-         WHEN `cadre|Support` ='cadre|Midwife' THEN 'Support Staffs' 
+         WHEN `classification+cadre` ='cadre|Non_health' THEN 'Non Health Professionals' 
+         WHEN `classification+cadre` ='cadre|Nurse' THEN 'Nursing Professionals' 
+         WHEN `classification+cadre` ='cadre|Non_health' THEN 'Pharmacy Professionals' 
+         WHEN `classification+cadre` ='cadre|Support' THEN 'Support Staffs' 
          ELSE 'Others' END  as cadre
         
         from  `national_manage`.`zebra_staff_list` WHERE `national_id_card_no+id_num` IS NOT NULL AND `institution_type+name`!='UCMB'");
