@@ -32,7 +32,7 @@ class Request_Model extends CI_Model
          CURRENT_TIMESTAMP as last_update,
          CASE WHEN `demographic+gender` ='gender|M' THEN 'Male'
          WHEN `demographic+gender` ='gender|F' THEN 'Female' 
-         ELSE 'NULL' END  as gender,
+         ELSE '' END  as gender,
          `demographic+birth_date` as birth_date,
          CASE WHEN `classification+cadre` ='cadre|AHPC' THEN 'Allied Health Professionals'
          WHEN `classification+cadre` ='cadre|Admin' THEN 'Administration Professionals' 
