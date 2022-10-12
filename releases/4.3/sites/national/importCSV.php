@@ -23,7 +23,6 @@ $dictionary = array();
 $dictionary['gender'] = array( 'M' => 'Male', 'F' => 'Female' );
 
 define( 'iHRIS_DEFAULT_COUNTRY', 'Uganda' );
-
 define( 'iHRIS_RESIDENCE_DISTRICT', 0);
 define( 'iHRIS_FACILITY',1 );
 define( 'iHRIS_FACILITY_TYPE',2 );

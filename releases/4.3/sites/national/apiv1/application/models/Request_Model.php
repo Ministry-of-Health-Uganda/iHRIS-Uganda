@@ -44,7 +44,21 @@ class Request_Model extends CI_Model
          WHEN `classification+cadre` ='cadre|Non_health' THEN 'Pharmacy Professionals' 
          WHEN `classification+cadre` ='cadre|Support' THEN 'Support Staffs' 
          ELSE 'Others' END  as cadre,
-         `person_contact_personal+email` as email
+         `person_contact_personal+email` as email,
+         WHEN `district+region` ='region|1' THEN 'Elgon (Bukedi, Bugisu & Sebei)' 
+         WHEN `district+region` ='region|2' THEN 'Kiira (Busoga)' 
+         WHEN `district+region` ='region|3' THEN 'West Nile' 
+         WHEN `district+region` ='region|4' THEN 'Karamoja' 
+         WHEN `district+region` ='region|5' THEN 'Albertine (Bunyoro)' 
+         WHEN `district+region` ='region|6' THEN 'Central South (South Buganda)' 
+         WHEN `district+region` ='region|7' THEN 'Central North (North Buganda)' 
+         WHEN `district+region` ='region|8' THEN 'Mid Western (Toro)' 
+         WHEN `district+region` ='region|9' THEN 'Lango'
+         WHEN `district+region` ='region|UG-E' THEN 'Eastern (Teso)'
+         WHEN `district+region` ='region|UG-C' THEN 'Kampala (Kampala Metropolitan Area)' 
+         WHEN `district+region` ='region|UG-N' THEN 'Acholi'
+         WHEN `district+region` ='region|UG-W' THEN 'South Western (Ankole & Kigezi)'
+         ELSE 'Others' END  as region
         
         from  `national_manage`.`zebra_staff_list` WHERE `national_id_card_no+id_num` IS NOT NULL AND `institution_type+name`!='UCMB'");
         return $query->result();
