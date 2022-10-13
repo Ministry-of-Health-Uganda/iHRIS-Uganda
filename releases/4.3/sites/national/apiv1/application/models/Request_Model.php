@@ -45,7 +45,7 @@ class Request_Model extends CI_Model
          WHEN `classification+cadre` ='cadre|Support' THEN 'Support Staffs' 
          ELSE 'Others' END  as cadre,
          `person_contact_personal+email` as email,
-         WHEN `district+region` ='region|1' THEN 'Elgon (Bukedi, Bugisu & Sebei)' 
+         CASE  WHEN `district+region` ='region|1' THEN 'Elgon (Bukedi, Bugisu & Sebei)' 
          WHEN `district+region` ='region|2' THEN 'Kiira (Busoga)' 
          WHEN `district+region` ='region|3' THEN 'West Nile' 
          WHEN `district+region` ='region|4' THEN 'Karamoja' 
