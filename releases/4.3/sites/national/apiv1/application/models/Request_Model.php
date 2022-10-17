@@ -60,7 +60,8 @@ class Request_Model extends CI_Model
          WHEN `district+region` ='region|UG-W' THEN 'South Western (Ankole & Kigezi)'
          ELSE 'Others' END  as region
         
-        from  `national_manage`.`zebra_staff_list` WHERE `national_id_card_no+id_num` IS NOT NULL AND `institution_type+name`!='UCMB'");
+        from  `national_manage`.`zebra_staff_list` WHERE  `institution_type+name`!='UCMB'");
+        //`national_id_card_no+id_num` IS NOT NULL AND
         return $query->result();
     }
     public function getallihrisdata()
