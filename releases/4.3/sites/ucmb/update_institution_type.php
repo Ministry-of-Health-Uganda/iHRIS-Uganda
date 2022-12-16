@@ -50,7 +50,7 @@ $form_factory = I2CE_FormFactory::instance();
 			 if($facdata['value']){
 			 	$fac = $form_factory->createContainer( $facdata['value'] );
 				$fac->populate();
-				$institution_type_id = "institution_type|111596";
+				$institution_type_id = "institution_type|112478";
 				$fac->getField('institution_type')->setFromDB($institution_type_id);
 			 	$fac->save( $user );
 				$fac->cleanup();
