@@ -4,7 +4,7 @@
 set -x
 
 # define database connectivity
-_db="hrhdashboard"
+_db="hrh_dashboard"
 _db_user="ihris_manage"
 _db_password="managi123"
 _db_host="172.27.1.110"
@@ -25,14 +25,14 @@ cd $_csv_directory
 php index.php --page=/CustomReports/show/1536096246/Export --post=export_style=CSV > $_csv_file
 
 #truncate old table
-echo "truncate table staff" | mysql -u $_db_user -p$_db_password -h$_db_host -D$_db
+echo "truncate table staff" | mysql -u $_db_user -p$_db_password -h$_db_host $_db
 
 # import csv into mysql
 #mysqlimport --ignore-lines=2 --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by="\n" --verbose --local  -u $_db_user -p$_db_password $_db $_csv_directory/$_csv_file
 mysqlimport --ignore-lines=2 --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by="\n" --verbose --local  -u $_db_user -p$_db_password -h$_db_host  $_db $_csv_directory/$_csv_file
 
 #Delete last row
-echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host -D$_db
+echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host $_db
 
 
 #STAFF TABLE FACILITY
@@ -53,7 +53,7 @@ php index.php --page=/CustomReports/show/staff_analysis_other/Export --post=expo
 mysqlimport --ignore-lines=2 --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by="\n" --verbose --local  -u $_db_user -p$_db_password -h$_db_host $_db $_csv_directory/$_csv_file
 
 #Delete last row
-echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host -D$_db
+echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host $_db
 
 
 #STAFF TABLE  MOH
@@ -74,7 +74,7 @@ php index.php --page=/CustomReports/show/staff_analysis_moh/Export --post=export
 mysqlimport --ignore-lines=2 --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by="\n" --verbose --local  -u $_db_user -p$_db_password -h$_db_host $_db $_csv_directory/$_csv_file
 
 #Delete last row
-echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host -D$_db
+echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host $_db
 
 #STAFF TABLE  II III
 # define directory containing CSV files
@@ -94,7 +94,7 @@ php index.php --page=/CustomReports/show/1612679783/Export --post=export_style=C
 mysqlimport --ignore-lines=2 --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by="\n" --verbose --local  -u $_db_user -p$_db_password -h$_db_host $_db $_csv_directory/$_csv_file
 
 #Delete last row
-echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host -D$_db
+echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host $_db
 
 #STRUCTURE TABLE 
 �# csv_directory="/var/lib/iHRIS/releases/4.3/sites/national/pages"
@@ -109,10 +109,10 @@ echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_
  php index.php --page=/CustomReports/show/1601629155/Export --post=export_style=CSV > $_csv_file
 
 #truncate old table
- echo "truncate table structure" | mysql -u $_db_user -p$_db_password -h$_db_host -D$_db
+ echo "truncate table structure" | mysql -u $_db_user -p$_db_password -h$_db_host $_db
 
 # import csv into mysql
  mysqlimport --ignore-lines=2 --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by="\n" --verbose --local  -u $_db_user -p$_db_password -h$_db_host $_db $_csv_directory/$_csv_file
 
 #Delete last row
- echo "DELETE FROM structure WHERE id='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host -D$_db
+ echo "DELETE FROM structure WHERE id='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host $_db
