@@ -6,7 +6,7 @@ class Request_Model extends CI_Model
     public function getihrisdata()
     {
         $query = $this->db->query("SELECT
-        trim(`person+id`) as ihris_pid,
+        DISTINCT trim(`person+id`) as ihris_pid,
         trim(`district+name`) as district_id,
         `district+name` as district,
          'dhis_facility_id',
@@ -67,7 +67,7 @@ class Request_Model extends CI_Model
     public function getallihrisdata()
     {
         $query = $this->db->query("SELECT
-        trim(`person+id`) as ihris_pid,
+        DISTINCT trim(`person+id`) as ihris_pid,
         trim(`district+id`) as district_id,
         `district+name` as district,
          'dhis_facility_id',
