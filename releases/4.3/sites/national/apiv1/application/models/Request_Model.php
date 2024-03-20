@@ -14,7 +14,7 @@ class Request_Model extends CI_Model
         `national_id+id_num` as nin,
         `national_id_card_no+id_num` as card_number,
         `ipps_no+id_num` as ipps,
-        `facility+facility_type` as facility_type_id,
+        `facility_type+name` as facility_type_id,
         trim(`facility+id`) as facility_id,
         `facility+name` as facility,
         `department_structure+name` as department_id,
