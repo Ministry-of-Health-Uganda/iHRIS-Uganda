@@ -391,6 +391,109 @@ Class Api extends REST_Controller
         $rows=$this->db->query("SELECT * FROM `hippo_person_contact_emergency` WHERE parent='$id'");
     return $rows->result();
     }
+public function ihriscsv_get($key,$facility)
+{
+    if ($this->auth($key)) {
+        $results = $this->requestHandler->csv_practitioner_data($facility);
+        $response = array();
+        foreach ($results as $result) {
+            $gender = $result["demographic+gender"];
+            if ($gender == 'gender|M') {
+                $sex = "MALE";
+            } else if ($gender == 'gender|F') {
+                $sex = "FEMALE";
+            } else {
+                $sex = "";
+            }
+
+            $row = array(
+                "mange_4ihris_id" => @$result['person+id'],
+                "Surname" => @$result['person+surname'],
+                "Firstname" => @$result['person+firstname'],
+                "Othername" => @$result['person+othername'],
+                "Gender" => $sex,
+                "Facility" => @$result['facility+name'],
+                "Home District" => @$result["home_district+name"],
+                "Residence District" => @$result['facility_district+name'],
+                "Department" => @$result['job+department'],
+                "Job" => @$result['job+title'],
+                "Recruitment Mechanism" => @$result['recruitment_mechanism'],
+                "Duty Station" => @$result['duty_station'],
+                "Terms of Employment" => str_replace("employment_terms|", "", $result['primary_form+employment_terms']),
+                "Birth Date" => @date('Y-m-d', strtotime($result['demographic+birth_date'])),
+                "National ID Number" => ucwords(str_replace(" ", "", $result['national_id+id_num'])),
+                "National ID Card Number" => ucwords(str_replace(" ", "", $result['national_id_card_no+id_num'])),
+                "TIN" => @$result['tin'],
+                "File No" => @$result['file_no'],
+                "IPPS No" => intval($result['ipps_no+id_num']),
+                "Marital Status" => @$this->getmarital($result['demographic+marital_status']),
+                "Physical Status" => @$result['physical_status'],
+                "Training Institution" => @$result['education+institution'],
+                "Qualification" => @$result['education+major'],
+                "Own Mobile phone" => @$result['person_contact_personal+mobile_phone'],
+                "Mobile Money Number" => @$result['mobile_money_number'],
+                "Names of Mobile Money Number" => @$result['names_of_mobile_money_number'],
+                "Telephone Number" => @$result['person_contact_personal+telephone'],
+                "Alternative Telephone Number" => @$result['alternative_telephone_number'],
+                "Date of Current Appointment" => date('Y-m-d', strtotime($result['primary_form+start_date'])),
+                "DSC Minute" => @$result['dsc_minute'],
+                "Date of First Appointment" => date('Y-m-d', strtotime($result['primary_form+dofa_date'])),
+                "Uniform Size" => @$result['uniform_size'],
+                "Shoe Size" => @$result['shoe_size'],
+                "Email Address" => @$result['person_contact_personal+email'],
+                "Registration Council" => @$this->getCouncil($result['registration+council']),
+                "Registration Number" => @$result['registration+registration_number'],
+                "Registration Date" => @$result['registration+registration_date'],
+                "License Number" => $result['registration+license_number'],
+                "Able to use English" => @$result['able_to_use_english'],
+                "Other Language" => @$result['other_language']
+            );
+            $response[] = $row;
+        }
+
+        if (!empty($results)) {
+            $this->generate_csv($response);
+        } else {
+            $response['status'] = 'FAILED';
+            $response['message'] = 'Practitioner Data is Not Found';
+            $response['error'] = TRUE;
+            $this->response($response, 400);
+        }
+    }
+}
+
+private function generate_csv($data)
+{
+    // Set the headers for CSV download
+    header('Content-Type: text/csv');
+    header('Content-Disposition: attachment; filename="practitioners.csv"');
+
+    // Open the output stream
+    $output = fopen('php://output', 'w');
+
+    // Output the column headings
+    fputcsv($output, array(
+        "mange_4ihris_id", "Surname", "Firstname", "Othername", "Gender", "Facility", 
+        "Home District", "Residence District", "Department", "Job", "Recruitment Mechanism", 
+        "Duty Station", "Terms of Employment", "Birth Date", "National ID Number", 
+        "National ID Card Number", "TIN", "File No", "IPPS No", "Marital Status", 
+        "Physical Status", "Training Institution", "Qualification", "Own Mobile phone", 
+        "Mobile Money Number", "Names of Mobile Money Number", "Telephone Number", 
+        "Alternative Telephone Number", "Date of Current Appointment", "DSC Minute", 
+        "Date of First Appointment", "Uniform Size", "Shoe Size", "Email Address", 
+        "Registration Council", "Registration Number", "Registration Date", "License Number", 
+        "Able to use English", "Other Language"
+    ));
+
+    // Output the data
+    foreach ($data as $row) {
+        fputcsv($output, $row);
+    }
+
+    // Close the output stream
+    fclose($output);
+}
+
     
   
 
