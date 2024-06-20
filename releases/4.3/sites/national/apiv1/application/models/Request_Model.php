@@ -112,4 +112,9 @@ class Request_Model extends CI_Model
 
         return $result;
     }
+public function practitioner_data($facility)
+{
+    $result = $this->db->query("SELECT * FROM `zebra_ihris_data_api` WHERE `facility+id`='$facility'")->result_array();
+    return $result;
+}
 }
