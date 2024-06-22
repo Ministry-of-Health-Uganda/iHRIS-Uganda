@@ -391,10 +391,10 @@ Class Api extends REST_Controller
         $rows=$this->db->query("SELECT * FROM `hippo_person_contact_emergency` WHERE parent='$id'");
     return $rows->result();
     }
-public function ihriscsv_get($key,$facility)
+public function ihriscsv_get($key,$district,$facility)
 {
     if ($this->auth($key)) {
-        $results = $this->requestHandler->csv_practitioner_data($facility);
+        $results = $this->requestHandler->csv_practitioner_data($district,$facility);
         $response = array();
         foreach ($results as $result) {
             $gender = $result["demographic+gender"];
@@ -405,6 +405,8 @@ public function ihriscsv_get($key,$facility)
             } else {
                 $sex = "";
             }
+
+            
 
             $row = array(
                 "mange_4ihris_id" => @$result['person+id'],
@@ -417,8 +419,8 @@ public function ihriscsv_get($key,$facility)
                 "Residence District" => @$result['facility_district+name'],
                 "Department" => @$result['job+department'],
                 "Job" => @$result['job+title'],
-                "Recruitment Mechanism" => @$result['recruitment_mechanism'],
-                "Duty Station" => @$result['duty_station'],
+                "Recruitment Mechanism" => '',
+                "Duty Station" => @$result['facility+name'],
                 "Terms of Employment" => str_replace("employment_terms|", "", $result['primary_form+employment_terms']),
                 "Birth Date" => @date('Y-m-d', strtotime($result['demographic+birth_date'])),
                 "National ID Number" => ucwords(str_replace(" ", "", $result['national_id+id_num'])),
@@ -431,8 +433,8 @@ public function ihriscsv_get($key,$facility)
                 "Training Institution" => @$result['education+institution'],
                 "Qualification" => @$result['education+major'],
                 "Own Mobile phone" => @$result['person_contact_personal+mobile_phone'],
-                "Mobile Money Number" => @$result['mobile_money_number'],
-                "Names of Mobile Money Number" => @$result['names_of_mobile_money_number'],
+                "Mobile Money Number" => @$result['person_contact_personal+mobile_phone'],
+                "Names of Mobile Money Number" => @$result['person+surname'].' '.@$result['person+firstname'].' '.@$result['person+othername'] ,
                 "Telephone Number" => @$result['person_contact_personal+telephone'],
                 "Alternative Telephone Number" => @$result['alternative_telephone_number'],
                 "Date of Current Appointment" => date('Y-m-d', strtotime($result['primary_form+start_date'])),
