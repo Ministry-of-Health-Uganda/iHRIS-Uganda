@@ -475,7 +475,7 @@ public function ihriscsv_get($key,$district,$facility=FALSE)
     }
 }
 
-private function generate_csv($data,$district,facility=FALSE)
+private function generate_csv($data,$district,$facility=FALSE)
 {
     // Set the headers for CSV download
 $filename = $district . '-' . $facility . '-practitioners.csv';
