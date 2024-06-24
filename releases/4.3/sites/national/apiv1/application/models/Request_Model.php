@@ -112,9 +112,15 @@ class Request_Model extends CI_Model
 
         return $result;
     }
-public function csv_practitioner_data($facility)
+public function csv_practitioner_data($district,$facility)
 {
-    $result = $this->db->query("SELECT * FROM `zebra_ihris_data_api` WHERE `facility+id`='$facility'")->result_array();
+    if(!empty($facility)){
+       $facility =  "AND `facility+id`='$facility'";
+    }
+    else{
+       $facility="";
+    }
+    $result = $this->db->query("SELECT * FROM `zebra_ihris_data_api` WHERE `facility+location`='$district' $facility")->result_array();
     return $result;
 }
 }
