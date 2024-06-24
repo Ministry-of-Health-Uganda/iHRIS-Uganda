@@ -371,6 +371,13 @@ Class Api extends REST_Controller
     return $this->db->query("SELECT `name` as marital  from `hippo_marital_status` WHERE `id`='$id'")->row()->marital;     
         
     }
+    public function get_physical($id)
+    {
+
+        return $this->db->query("SELECT `name` as physical  from `hippo_physical_status` WHERE `id`='$id'")->row()->physical;
+
+    }
+
 
     public function dhis_orgunit($id){
         return $this->db->query("SELECT `dhis_orgunit` as `dhis_orgunit` from `hippo_facility` WHERE `id`='$id'")->row()->dhis_orgunit;
@@ -397,6 +404,7 @@ public function ihriscsv_get($key,$district,$facility)
         $results = $this->requestHandler->csv_practitioner_data($district,$facility);
         $response = array();
         foreach ($results as $result) {
+            $person_id = @$result['person+id'];
             $gender = $result["demographic+gender"];
             if ($gender == 'gender|M') {
                 $sex = "MALE";
@@ -406,10 +414,13 @@ public function ihriscsv_get($key,$district,$facility)
                 $sex = "";
             }
 
-            
+           $mobile  =  @$result['person_contact_personal+mobile_phone'];
+           if(!empty($mobile)){
+            $own_mobile = "Yes";
+           }
 
             $row = array(
-                "mange_4ihris_id" => @$result['person+id'],
+                "mange_4ihris_id" => @$person_id,
                 "Surname" => @$result['person+surname'],
                 "Firstname" => @$result['person+firstname'],
                 "Othername" => @$result['person+othername'],
@@ -425,14 +436,14 @@ public function ihriscsv_get($key,$district,$facility)
                 "Birth Date" => @date('Y-m-d', strtotime($result['demographic+birth_date'])),
                 "National ID Number" => ucwords(str_replace(" ", "", $result['national_id+id_num'])),
                 "National ID Card Number" => ucwords(str_replace(" ", "", $result['national_id_card_no+id_num'])),
-                "TIN" => @$result['tin'],
-                "File No" => @$result['file_no'],
+                "TIN" => @$result['TIN+id_num'],
+                "File No" => @$result['file_no+id_num'],
                 "IPPS No" => intval($result['ipps_no+id_num']),
                 "Marital Status" => @$this->getmarital($result['demographic+marital_status']),
-                "Physical Status" => @$result['physical_status'],
+                "Physical Status" => @$this->get_physical($result['demographic+physical_status']),
                 "Training Institution" => @$result['education+institution'],
                 "Qualification" => @$result['education+major'],
-                "Own Mobile phone" => @$result['person_contact_personal+mobile_phone'],
+                "Own Mobile phone" => $own_mobile,
                 "Mobile Money Number" => @$result['person_contact_personal+mobile_phone'],
                 "Names of Mobile Money Number" => @$result['person+surname'].' '.@$result['person+firstname'].' '.@$result['person+othername'] ,
                 "Telephone Number" => @$result['person_contact_personal+telephone'],
@@ -440,15 +451,15 @@ public function ihriscsv_get($key,$district,$facility)
                 "Date of Current Appointment" => date('Y-m-d', strtotime($result['primary_form+start_date'])),
                 "DSC Minute" => @$result['dsc_minute'],
                 "Date of First Appointment" => date('Y-m-d', strtotime($result['primary_form+dofa_date'])),
-                "Uniform Size" => @$result['uniform_size'],
-                "Shoe Size" => @$result['shoe_size'],
+                "Uniform Size" => @$this->uniform_data($person_id)['dress'],
+                "Shoe Size" => @$this->uniform_data($person_id)['shoes'],
                 "Email Address" => @$result['person_contact_personal+email'],
                 "Registration Council" => @$this->getCouncil($result['registration+council']),
                 "Registration Number" => @$result['registration+registration_number'],
                 "Registration Date" => @$result['registration+registration_date'],
                 "License Number" => $result['registration+license_number'],
-                "Able to use English" => @$result['able_to_use_english'],
-                "Other Language" => @$result['other_language']
+                "Able to use English" => 'Yes',
+                "Other Language" => ''
             );
             $response[] = $row;
         }
@@ -496,6 +507,22 @@ private function generate_csv($data)
     fclose($output);
 }
 
+public function uniform_data($person){
+   $uniform =  $this->db->query("SELECT `uniform+shoe_sizes` as shoe,`uniform+uniform_size` as uniform FROM  zebra_staff_uniform WHERE `person+id`='$person'")->row();
+   $shoes = $uniform->shoe;
+   $dress = $uniform->uniform;
+   $data['shoes']= $this->translate_shoes($shoes);
+   $data['dress'] =$this->translate_uniform($dress);
+return $data;
+}
+public function translate_uniform($uniform_id){
+        return $this->db->query("SELECT name from hippo_uniform_size where id='$uniform_id'")->row()->name;
+
+}
+
+public function translate_shoes($shoes_id){
+    return $this->db->query("SELECT name from hippo_shoes where id='$shoes_id'")->row()->name;
+}
     
   
 
