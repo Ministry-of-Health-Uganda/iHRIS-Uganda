@@ -398,7 +398,7 @@ Class Api extends REST_Controller
         $rows=$this->db->query("SELECT * FROM `hippo_person_contact_emergency` WHERE parent='$id'");
     return $rows->result();
     }
-public function ihriscsv_get($key,$district,$facility)
+public function ihriscsv_get($key,$district,$facility=FALSE)
 {
     if ($this->auth($key)) {
         $results = $this->requestHandler->csv_practitioner_data($district,$facility);
