@@ -465,7 +465,7 @@ public function ihriscsv_get($key,$district,$facility=FALSE)
         }
 
         if (!empty($results)) {
-            $this->generate_csv($response);
+            $this->generate_csv($response,$district);
         } else {
             $response['status'] = 'FAILED';
             $response['message'] = 'Practioner Data is Not Found';
@@ -475,11 +475,12 @@ public function ihriscsv_get($key,$district,$facility=FALSE)
     }
 }
 
-private function generate_csv($data)
+private function generate_csv($data,$district,facility=FALSE)
 {
     // Set the headers for CSV download
+    $filename = $district.'-'.$facility.'-practitioners.csv';
     header('Content-Type: text/csv');
-    header('Content-Disposition: attachment; filename="practitioners.csv"');
+    header('Content-Disposition: attachment; filename=$filename');
 
     // Open the output stream
     $output = fopen('php://output', 'w');
