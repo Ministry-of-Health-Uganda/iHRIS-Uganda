@@ -521,7 +521,7 @@ public function translate_uniform($uniform_id){
 }
 
 public function translate_shoes($shoes_id){
-    return $this->db->query("SELECT name from hippo_shoes where id='$shoes_id'")->row()->name;
+    return $this->db->query("SELECT name from hippo_shoe_sizes where id='$shoes_id'")->row()->name;
 }
     
   
