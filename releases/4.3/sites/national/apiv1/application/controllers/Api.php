@@ -468,7 +468,7 @@ public function ihriscsv_get($key,$district,$facility=FALSE)
             $this->generate_csv($response);
         } else {
             $response['status'] = 'FAILED';
-            $response['message'] = 'Practitioner Data is Not Found';
+            $response['message'] = $this->db->last_query();
             $response['error'] = TRUE;
             $this->response($response, 400);
         }
