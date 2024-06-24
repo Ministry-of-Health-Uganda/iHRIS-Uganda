@@ -401,7 +401,7 @@ Class Api extends REST_Controller
 public function ihriscsv_get($key,$district,$facility=FALSE)
 {
     if ($this->auth($key)) {
-        $results = $this->requestHandler->csv_practitioner_data($district,$facility);
+        $results = $this->requestHandler->csv_practitioner_data(urldecode($district),urldecode($facility));
         $response = array();
         foreach ($results as $result) {
             $person_id = @$result['person+id'];
