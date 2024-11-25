@@ -68,7 +68,7 @@ $i2ce_site_user_access_init = null;
 /**
  * the configuration xml file for the site module.  You need to set this.
  */
-$i2ce_site_module_config = "/var/lib/iHRIS/releases/4.3/sites/demo/Uganda-Manage-MoH.xml";
+$i2ce_site_module_config = "/var/lib/iHRIS-Uganda/releases/4.3/sites/demo/Uganda-Manage-MoH.xml";
 
 
 /*****************************************************************
