@@ -440,7 +440,7 @@ class I2CE_Util {
                 $beg_qry = $i +1;
                 $t_qry = '';
                 if (!$qry) {
-                    continue 2;
+                    continue;
                 }
                 try {
                     $db->exec($qry);
