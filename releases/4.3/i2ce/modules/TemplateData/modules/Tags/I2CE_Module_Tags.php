@@ -613,7 +613,7 @@ class I2CE_Module_Tags extends I2CE_Module {
                         $var = null;
                     }
                     $arg = '';
-                    continue;
+                    continue 2;
                 } else {
                     $arg .= $c;
                     continue 2;
