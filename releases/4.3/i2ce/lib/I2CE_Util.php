@@ -465,7 +465,7 @@ class I2CE_Util {
                     return false;
                 }
 
-                continue;
+                continue 2;
                 break;
             default:
                 break;
