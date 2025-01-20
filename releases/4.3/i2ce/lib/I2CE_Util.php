@@ -434,7 +434,7 @@ class I2CE_Util {
                 break;
             case $delimiter: 
                 if ($in_string_single !== false || $in_string_double || $in_string_back || $in_comment || $in_comment_ml) {
-                    continue;
+                    continue 2;
                 }
                 $qry = trim($t_qry . trim(substr($sql,$beg_qry,$i - $beg_qry )));
                 $beg_qry = $i +1;
