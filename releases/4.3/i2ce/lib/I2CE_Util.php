@@ -138,7 +138,7 @@ class I2CE_Util {
         foreach ($vars as $key=>$val) {
             $keys = explode(':',$key);
             if (count($keys) == 0) {
-                continue 2;
+                continue;
             }
             foreach ($keys as &$key) {
                 $key = str_replace('%2F','.',$key);
