@@ -405,7 +405,7 @@ class I2CE_Util {
                 } else  if ($in_string_single=== false && !$in_string_back) {
                     $in_string_double = true;
                 }
-                continue;
+                continue 2;
                 break;
             case "'":
                 if ($in_comment || $in_comment_ml) {
