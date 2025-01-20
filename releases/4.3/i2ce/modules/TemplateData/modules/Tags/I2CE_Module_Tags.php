@@ -870,15 +870,16 @@ class I2CE_Module_Tags extends I2CE_Module {
                     if (!is_object($method)) { //shouldn't be here as we checked in case self::VARIABLE, but we are being paranoid
                         throw new Exception("Expecting object to access properoty $func, but not found at $i in $orig_argument");
                     }
-                    @$method = $method->$func;
-                    if (!is_object($method)) {
-                        throw new Exception("Expecting object to at property $func, but not found at $i in $orig_argument");
-                    }
-                    $func = '';
-                    continue;
+                
+              @$method = $method->$func;
+                if (!is_object($method)) {
+                    throw new Exception("Expecting object to at property $func, but not found at $i in $orig_argument");
+                }
+                $func = '';
+                continue 2; // Use 'continue 2' to skip to the next iteration of the enclosing loop
                 } else {
                     $func .= $c;
-                    continue;
+                    continue; // This 'continue' is fine if inside the same loop, not in a switch block
                 }
                 break;
             case self::VARIABLE:
