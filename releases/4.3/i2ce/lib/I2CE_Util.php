@@ -55,7 +55,7 @@ class I2CE_Util {
                         continue;
                     }
                     if (!$addEmpty && empty($v)) {
-                        continue 2;
+                        continue;
                     }
                     self::merge_recursive($a[$k],$b[$k]);
                 }
