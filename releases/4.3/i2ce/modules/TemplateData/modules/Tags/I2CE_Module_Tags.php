@@ -879,7 +879,7 @@ class I2CE_Module_Tags extends I2CE_Module {
                 continue 2; // Use 'continue 2' to skip to the next iteration of the enclosing loop
                 } else {
                     $func .= $c;
-                    continue; // This 'continue' is fine if inside the same loop, not in a switch block
+                    continue 2; // This 'continue' is fine if inside the same loop, not in a switch block
                 }
                 break;
             case self::VARIABLE:
