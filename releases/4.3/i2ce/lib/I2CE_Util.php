@@ -409,7 +409,7 @@ class I2CE_Util {
                 break;
             case "'":
                 if ($in_comment || $in_comment_ml) {
-                    continue;
+                    continue 2;
                 }
                 if ($in_string_single !== false) {
                     $in_escape_slash = false;
