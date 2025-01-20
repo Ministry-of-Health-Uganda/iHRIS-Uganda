@@ -430,7 +430,7 @@ class I2CE_Util {
                 } else if (!$in_string_back && !$in_string_double) {
                     $in_string_single = $i;
                 }
-                continue;
+                continue 2;
                 break;
             case $delimiter: 
                 if ($in_string_single !== false || $in_string_double || $in_string_back || $in_comment || $in_comment_ml) {
