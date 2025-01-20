@@ -616,7 +616,7 @@ class I2CE_Module_Tags extends I2CE_Module {
                     continue;
                 } else {
                     $arg .= $c;
-                    continue;
+                    continue 2;
                 }
                 $state = self::FUNC_ARGS;   
                 self::addArgument($args,$arg,$append);                          
