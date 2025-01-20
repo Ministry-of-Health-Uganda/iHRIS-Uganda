@@ -52,7 +52,7 @@ class I2CE_Util {
                 }
                 foreach ($b as $k=>$v) {
                     if (!$addNew && !array_key_exists($k,$a)) {
-                        continue 2;
+                        continue;
                     }
                     if (!$addEmpty && empty($v)) {
                         continue 2;
