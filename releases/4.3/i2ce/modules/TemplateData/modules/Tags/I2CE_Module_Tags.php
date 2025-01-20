@@ -634,7 +634,7 @@ class I2CE_Module_Tags extends I2CE_Module {
                     $state = self::FUNC_ARG_VARIABLE_METH_PROP;                    
                 }else {
                     $arg .= $c;
-                    continue;
+                    continue 2;
                 }
                 $var = null;
                 if (strlen($arg) == 0) {
