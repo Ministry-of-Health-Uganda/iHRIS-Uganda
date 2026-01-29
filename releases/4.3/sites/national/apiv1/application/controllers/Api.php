@@ -46,11 +46,13 @@ Class Api extends REST_Controller
             $this->response($response, 400);
     }
   }
- // confirm request 
-  public function ihrisdatapaginated_get() 
-  {
+  // confirm request 
+  public function ihrisdatapaginated_get($key) 
+  {  
+      if($this->auth($key)){
           // Get page parameter from URL segment or default to 1
-          $page = ($this->uri->segment(3)) ? (int)$this->uri->segment(3) : 1;
+          // segment(3) = $key, segment(4) = page number
+          $page = ($this->uri->segment(4)) ? (int)$this->uri->segment(4) : 1;
           
           // Ensure page is at least 1
           if ($page < 1) {
@@ -108,7 +110,15 @@ Class Api extends REST_Controller
               );
               $this->response($response, 400);
           }
+      }
+      else{
+          $response['status'] = 'FAILED';
+          $response['message'] = 'Invalid API key';
+          $response['error'] = TRUE;
+          $this->response($response, 401);
+      }
   }
+  
   public function hwdata_get($district=FALSE){
       if(!empty($district)){
           $filter="where  `district+name`='$district'";
