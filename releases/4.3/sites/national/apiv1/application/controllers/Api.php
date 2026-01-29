@@ -46,6 +46,69 @@ Class Api extends REST_Controller
             $this->response($response, 400);
     }
   }
+
+  public function ihrisdatapaginated_get() 
+  {
+          // Get page parameter from URL segment or default to 1
+          $page = ($this->uri->segment(3)) ? (int)$this->uri->segment(3) : 1;
+          
+          // Ensure page is at least 1
+          if ($page < 1) {
+              $page = 1;
+          }
+          
+          // Set records per page
+          $page_limit = 20;
+          
+          // Calculate offset
+          $offset = ($page > 1) ? ($page_limit * ($page - 1)) : 0;
+          
+          // Get paginated results
+          $results = $this->requestHandler->getihrisdatapaginated($offset, $page_limit);
+          
+          // Get total count for metadata
+          $total_count = $this->requestHandler->getihrisdatacount();
+          
+          // Calculate total pages
+          $total_pages = ($total_count > 0) ? ceil($total_count / $page_limit) : 0;
+          
+          if(!empty($results)){
+              // Build response with pagination metadata
+              $response = array(
+                  'status' => 'SUCCESS',
+                  'data' => $results,
+                  'pagination' => array(
+                      'current_page' => $page,
+                      'per_page' => $page_limit,
+                      'total_records' => $total_count,
+                      'total_pages' => $total_pages,
+                      'has_next_page' => $page < $total_pages,
+                      'has_previous_page' => $page > 1,
+                      'next_page' => ($page < $total_pages) ? $page + 1 : null,
+                      'previous_page' => ($page > 1) ? $page - 1 : null
+                  )
+              );
+              
+              $this->response($response, REST_Controller::HTTP_OK);
+          }
+          else{
+              $response['status'] = 'FAILED';
+              $response['message'] = 'ihrisdata is not found. Force generate stafflist ';
+              $response['error'] = TRUE;
+              $response['data'] = array();
+              $response['pagination'] = array(
+                  'current_page' => $page,
+                  'per_page' => $page_limit,
+                  'total_records' => 0,
+                  'total_pages' => 0,
+                  'has_next_page' => false,
+                  'has_previous_page' => false,
+                  'next_page' => null,
+                  'previous_page' => null
+              );
+              $this->response($response, 400);
+          }
+  }
   public function hwdata_get($district=FALSE){
       if(!empty($district)){
           $filter="where  `district+name`='$district'";
