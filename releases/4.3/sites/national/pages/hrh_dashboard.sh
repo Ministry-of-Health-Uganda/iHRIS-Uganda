@@ -97,7 +97,7 @@ _year=`date +%Y`
 #echo "DELETE FROM staff WHERE person_id='</table>'" | mysql -u $_db_user -p$_db_password -h$_db_host $_db
 
 #STRUCTURE TABLE 
-_csv_directory="/var/lib/iHRIS/releases/4.3/sites/national/pages"
+_csv_directory="/var/lib/iHRIS-Uganda/releases/4.3/sites/national/pages"
 
 #  CSV file
  _csv_file="structure.csv"
