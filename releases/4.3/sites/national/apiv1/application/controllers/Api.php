@@ -46,7 +46,7 @@ Class Api extends REST_Controller
             $this->response($response, 400);
     }
   }
-
+ // confirm request 
   public function ihrisdatapaginated_get() 
   {
           // Get page parameter from URL segment or default to 1
