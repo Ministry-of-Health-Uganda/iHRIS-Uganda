@@ -65,7 +65,7 @@ class Request_Model extends CI_Model
         return $query->result();
     }
 
-    public function getihrisdatapaginated($offset = 0, $page_limit = 20)
+    public function getihrisdatapaginated($offset = 0, $page_limit = 100)
     {
         // Ensure offset and limit are integers to prevent SQL injection
         $offset = (int)$offset;

@@ -60,7 +60,7 @@ Class Api extends REST_Controller
           }
           
           // Set records per page
-          $page_limit = 20;
+          $page_limit = 100;
           
           // Calculate offset
           $offset = ($page > 1) ? ($page_limit * ($page - 1)) : 0;
