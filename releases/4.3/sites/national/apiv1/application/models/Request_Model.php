@@ -133,7 +133,6 @@ class Request_Model extends CI_Model
          ELSE 'Others' END  as region
         
         from  `national_manage`.`zebra_staff_list` 
-        WHERE  `institution_type+name` != 'UCMB'
         ORDER BY `person+id` ASC
         LIMIT $page_limit OFFSET $offset");
         
@@ -143,8 +142,7 @@ class Request_Model extends CI_Model
     public function getihrisdatacount()
     {
         $query = $this->db->query("SELECT COUNT(*) as total
-        from  `national_manage`.`zebra_staff_list` 
-        WHERE  `institution_type+name` != 'UCMB'");
+        from  `national_manage`.`zebra_staff_list`");
         $result = $query->row();
         return (int)$result->total;
     }
