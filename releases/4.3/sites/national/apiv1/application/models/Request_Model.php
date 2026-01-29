@@ -65,11 +65,17 @@ class Request_Model extends CI_Model
         return $query->result();
     }
 
-    public function getihrisdatapaginated($offset = 0, $page_limit = 100)
+    public function getihrisdatapaginated($offset = 0, $page_limit = 200)
     {
+
+        
         // Ensure offset and limit are integers to prevent SQL injection
         $offset = (int)$offset;
         $page_limit = (int)$page_limit;
+        
+        // Ensure positive values
+        if ($offset < 0) $offset = 0;
+        if ($page_limit < 1) $page_limit = 200;
         
         $query = $this->db->query("SELECT
         trim(`person+id`) as ihris_pid,
@@ -127,7 +133,7 @@ class Request_Model extends CI_Model
          ELSE 'Others' END  as region
         
         from  `national_manage`.`zebra_staff_list` 
-        WHERE  `institution_type+name`!='UCMB'
+        WHERE  `institution_type+name` != 'UCMB'
         ORDER BY `person+id` ASC
         LIMIT $page_limit OFFSET $offset");
         
@@ -136,11 +142,9 @@ class Request_Model extends CI_Model
     
     public function getihrisdatacount()
     {
-        // Optimized count query - only counts, doesn't fetch all data
         $query = $this->db->query("SELECT COUNT(*) as total
-        FROM  `national_manage`.`zebra_staff_list` 
+        from  `national_manage`.`zebra_staff_list` 
         WHERE  `institution_type+name` != 'UCMB'");
-        
         $result = $query->row();
         return (int)$result->total;
     }

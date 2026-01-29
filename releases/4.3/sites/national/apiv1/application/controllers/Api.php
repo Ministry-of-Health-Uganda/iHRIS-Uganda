@@ -46,29 +46,27 @@ Class Api extends REST_Controller
             $this->response($response, 400);
     }
   }
-  // confirm request 
-  public function ihrisdatapaginated_get($key) 
-  {  
-      if($this->auth($key)){
-          // Get page parameter from URL segment or default to 1
-          // segment(3) = $key, segment(4) = page number
-          $page = ($this->uri->segment(4)) ? (int)$this->uri->segment(4) : 1;
+
+  public function ihrisdatapaginated_get() 
+  {     
+    if($this->auth($key)){
+          // Get page parameter from query string or URI segment, default to 1
+          $page = ($this->input->get('page')) ? (int)$this->input->get('page') : 
+                  (($this->uri->segment(4)) ? (int)$this->uri->segment(4) : 1);
           
           // Ensure page is at least 1
-          if ($page < 1) {
-              $page = 1;
-          }
+          if ($page < 1) $page = 1;
           
-          // Set records per page
-          $page_limit = 100;
-          
+          // Set page limit to 200 records per page
+          $page_limit = 200;
+            
           // Calculate offset
           $offset = ($page > 1) ? ($page_limit * ($page - 1)) : 0;
           
           // Get paginated results
           $results = $this->requestHandler->getihrisdatapaginated($offset, $page_limit);
           
-          // Get total count for metadata
+          // Get total count for pagination metadata
           $total_count = $this->requestHandler->getihrisdatacount();
           
           // Calculate total pages
@@ -78,14 +76,15 @@ Class Api extends REST_Controller
               // Build response with pagination metadata
               $response = array(
                   'status' => 'SUCCESS',
+                  'error' => FALSE,
                   'data' => $results,
                   'pagination' => array(
                       'current_page' => $page,
                       'per_page' => $page_limit,
                       'total_records' => $total_count,
                       'total_pages' => $total_pages,
-                      'has_next_page' => $page < $total_pages,
-                      'has_previous_page' => $page > 1,
+                      'has_next_page' => ($page < $total_pages),
+                      'has_previous_page' => ($page > 1),
                       'next_page' => ($page < $total_pages) ? $page + 1 : null,
                       'previous_page' => ($page > 1) ? $page - 1 : null
                   )
@@ -110,15 +109,14 @@ Class Api extends REST_Controller
               );
               $this->response($response, 400);
           }
-      }
-      else{
-          $response['status'] = 'FAILED';
-          $response['message'] = 'Invalid API key';
-          $response['error'] = TRUE;
-          $this->response($response, 401);
-      }
   }
-  
+  else{
+    $response['status'] = 'FAILED';
+    $response['message'] = 'Invalid API key';
+    $response['error'] = TRUE;
+    $this->response($response, 401);
+  }
+  }
   public function hwdata_get($district=FALSE){
       if(!empty($district)){
           $filter="where  `district+name`='$district'";
