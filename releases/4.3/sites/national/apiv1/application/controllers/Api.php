@@ -47,7 +47,7 @@ Class Api extends REST_Controller
     }
   }
 
-  public function ihrisdatapaginated_get() 
+  public function ihrisdatapaginated_get($key) 
   {     
     if($this->auth($key)){
           // Get page parameter from query string or URI segment, default to 1
@@ -59,7 +59,7 @@ Class Api extends REST_Controller
           
           // Set page limit to 200 records per page
           $page_limit = 200;
-            
+
           // Calculate offset
           $offset = ($page > 1) ? ($page_limit * ($page - 1)) : 0;
           
