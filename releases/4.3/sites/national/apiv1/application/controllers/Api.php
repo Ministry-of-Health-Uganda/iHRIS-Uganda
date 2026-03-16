@@ -6,14 +6,16 @@ require_once FCPATH . 'i2cebridge/I2ceBridge.php';
 
 Class Api extends REST_Controller 
 {
+    /** Cache TTL for practitioner data (seconds) */
+    const PRACTITIONER_CACHE_TTL = 300;
+
     public function __construct()
     {
         parent::__construct();
-     
         $this->load->model('Request_Model', 'requestHandler');
         $this->load->helper('custom');
-        $this->ihrisobject=new I2ceBrige;
-    
+        $this->ihrisobject = new I2ceBrige;
+        $this->load->driver('cache', array('adapter' => 'file', 'backup' => 'file'));
     }
     public function index_get(){
         echo "iHRIS Manage API";
@@ -183,9 +185,19 @@ Class Api extends REST_Controller
     public function practitioner_get($key,$page_limit=FALSE) 
     {
         if($this->auth($key)){
-        $page_limit=50;
-        $page  = ($this->uri->segment(4))? $this->uri->segment(4) : 1;
-       	
+        $page_limit = 50;
+        $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 1;
+        // Cache key includes page so each paginated page has its own cached response
+        $cache_key = 'practitioner_' . md5($key . '_' . $page);
+
+        // Serve from cache if available (full response for this page: data, count, page, per_page)
+        $cached = $this->cache->get($cache_key);
+        if ($cached !== FALSE) {
+            $this->response($cached, REST_Controller::HTTP_OK);
+            return;
+        }
+
+        // Cache miss or expired: update cache then serve from cache
         $offset = ($page > 1) ? ($page_limit * ($page - 1)) : 0;
         $results = $this->requestHandler->practitioner_data($offset, $page_limit);
         $total_count=$this->db->get("zebra_ihris_data_api")->num_rows();
@@ -395,15 +407,17 @@ Class Api extends REST_Controller
             "data" =>$responses
             );
 
-        if(!empty($results)){
-        $this->response($final, REST_Controller::HTTP_OK);
+        if (!empty($results)) {
+            // Update cache with fresh data, then serve (next request for this page will hit cache)
+            $this->cache->save($cache_key, $final, self::PRACTITIONER_CACHE_TTL);
+            $this->response($final, REST_Controller::HTTP_OK);
+        } else {
+            $response['status'] = 'FAILED';
+            $response['message'] = 'Practioner Data is Not Found';
+            $response['error'] = TRUE;
+            $this->response($response, 400);
         }
-        else{
-        $response['status'] = 'FAILED';
-        $response['message'] = 'Practioner Data is Not Found';
-        $response['error'] = TRUE;
-        $this->response($response, 400);
-    }}
+        }
 
     }
 
