@@ -484,15 +484,17 @@ Class Api extends REST_Controller
      */
     public function getLangauges($id)
     {
-        try {
-            $rows = $this->db->query("SELECT * FROM `hippo_person_language` WHERE parent='" . $this->db->escape_str($id) . "'");
-            if (!$rows) {
-                return array();
-            }
-            return $rows->result();
-        } catch (Exception $e) {
+        if (!$this->db->table_exists('hippo_person_language')) {
             return array();
         }
+        $db_debug = $this->db->db_debug;
+        $this->db->db_debug = FALSE;
+        $rows = $this->db->query("SELECT * FROM `hippo_person_language` WHERE parent='" . $this->db->escape_str($id) . "'");
+        $this->db->db_debug = $db_debug;
+        if (!$rows) {
+            return array();
+        }
+        return $rows->result();
     }
 
     /**
@@ -500,16 +502,18 @@ Class Api extends REST_Controller
      */
     public function langaugeName($id)
     {
-        try {
-            $rows = $this->db->query("SELECT `name` FROM `hippo_language` WHERE id='" . $this->db->escape_str($id) . "'");
-            if (!$rows) {
-                return null;
-            }
-            $row = $rows->row();
-            return $row ? $row->name : null;
-        } catch (Exception $e) {
+        if (!$this->db->table_exists('hippo_language')) {
             return null;
         }
+        $db_debug = $this->db->db_debug;
+        $this->db->db_debug = FALSE;
+        $rows = $this->db->query("SELECT `name` FROM `hippo_language` WHERE id='" . $this->db->escape_str($id) . "'");
+        $this->db->db_debug = $db_debug;
+        if (!$rows) {
+            return null;
+        }
+        $row = $rows->row();
+        return $row ? $row->name : null;
     }
     public function getKins($id){
 
