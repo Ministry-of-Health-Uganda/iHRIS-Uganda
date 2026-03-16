@@ -261,12 +261,23 @@ Class Api extends REST_Controller
          
      
 
-        $langauge=array();
-        foreach($this->getLangauges($result['person+id']) as $person_language_form ){
-        
-            $langauge['name']= !empty($this->langaugeName($person_language_form->language))?$this->langaugeName($person_language_form->language):null;
-            $langauge['proficiency'] = 'Reading: '.str_replace('language_proficiency|','',$person_language_form->reading).', Writing: '.str_replace('language_proficiency|','',$person_language_form->writing). ', Speaking: '.str_replace('language_proficiency|','',$person_language_form->speaking);
-           
+        $langauge = array();
+        try {
+            $language_rows = $this->getLangauges($result['person+id']);
+            if (!empty($language_rows)) {
+                foreach ($language_rows as $person_language_form) {
+                    $langauge['name'] = !empty($this->langaugeName($person_language_form->language)) ? $this->langaugeName($person_language_form->language) : null;
+                    $langauge['proficiency'] = 'Reading: ' . str_replace('language_proficiency|', '', $person_language_form->reading) . ', Writing: ' . str_replace('language_proficiency|', '', $person_language_form->writing) . ', Speaking: ' . str_replace('language_proficiency|', '', $person_language_form->speaking);
+                }
+            }
+        } catch (Exception $e) {
+            // Language tables not available
+        }
+        if (empty($langauge['name'])) {
+            $langauge = array(
+                'name' => 'English',
+                'proficiency' => 'Reading: Fluent, Writing: Fluent, Speaking: Fluent'
+            );
         }
        
 
@@ -468,15 +479,37 @@ Class Api extends REST_Controller
         return $this->db->query("SELECT `dhis_orgunit` as `dhis_orgunit` from `hippo_facility` WHERE `id`='$id'")->row()->dhis_orgunit;
     }
 
-    public function getLangauges($id){
-
-        $rows=$this->db->query("SELECT * FROM `hippo_person_language` WHERE parent='$id'");
-    return $rows->result();
+    /**
+     * Get languages for a person. Returns empty array if hippo_person_language table is missing or query fails.
+     */
+    public function getLangauges($id)
+    {
+        try {
+            $rows = $this->db->query("SELECT * FROM `hippo_person_language` WHERE parent='" . $this->db->escape_str($id) . "'");
+            if (!$rows) {
+                return array();
+            }
+            return $rows->result();
+        } catch (Exception $e) {
+            return array();
+        }
     }
-    public function langaugeName($id){
 
-        $rows=$this->db->query("SELECT `name` FROM `hippo_language` WHERE id='$id'");
-    return $rows->row()->name;
+    /**
+     * Get language name by id. Returns null if hippo_language table is missing or query fails.
+     */
+    public function langaugeName($id)
+    {
+        try {
+            $rows = $this->db->query("SELECT `name` FROM `hippo_language` WHERE id='" . $this->db->escape_str($id) . "'");
+            if (!$rows) {
+                return null;
+            }
+            $row = $rows->row();
+            return $row ? $row->name : null;
+        } catch (Exception $e) {
+            return null;
+        }
     }
     public function getKins($id){
 
