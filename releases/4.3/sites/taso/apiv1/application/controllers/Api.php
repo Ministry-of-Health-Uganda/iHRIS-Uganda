@@ -122,7 +122,7 @@ Class Api extends REST_Controller
             $this->response($cached, REST_Controller::HTTP_OK);
             return;
         }
-
+ //cache miss
         // Cache miss or expired: update cache then serve from cache
         $offset = ($page > 1) ? ($page_limit * ($page - 1)) : 0;
         $results = $this->requestHandler->practitioner_data($offset, $page_limit);
